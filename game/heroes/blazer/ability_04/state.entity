@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Blazer_Ability4"
+
+	passiveeffect=""  
+	icon="icon.tga"
+	fadetime="500"
+	stealthtype="item"
+	unitwalking="true"
+
+	movespeed="100"
+
+	ishidden="true"
+	modifierkey="Blazer_Ability4_Invis"
+	
+	impactinterval="250"
+	
+	basedamagemultiplier="1"	
+
+>
+
+	<aura gadget="Gadget_Blazer_Ability4" radius="3000" targetscheme="enemy_heroes" condition="target_health_percent lt 0.5"/>
+
+	<oninflict> 
+		<forgetattacks />
+		<startfade /> 
+	</oninflict>
+	
+	<onframe>
+		<areaofeffect targetscheme="enemy_heroes" effecttype="" ignoreinvulnerable="true" targetselection="all" radius="500" maximpactspertarget="1" >
+			<applystate name="State_Blazer_Ability4_Revealed" duration="50" target="source_entity" />
+		</areaofeffect>
+		
+		<areaofeffect targetscheme="visible_enemy_heroes" effecttype="" ignoreinvulnerable="true" targetselection="all" radius="500" maximpactspertarget="1" > 
+			<applystate name="State_Blazer_Ability4_Revealed_Effect" duration="50" target="source_entity" />
+		</areaofeffect>
+		
+		<areaofeffect targetscheme="enemy_towers" effecttype="" ignoreinvulnerable="true" targetselection="all" radius="750" maximpactspertarget="1" > 
+			<applystate name="State_Blazer_Ability4_Revealed" duration="50" target="source_entity" />
+		</areaofeffect>
+
+		<areaofeffect targetscheme="enemy_main_base_structure" effecttype="" ignoreinvulnerable="true" targetselection="all" radius="750" maximpactspertarget="1" > 
+			<applystate name="State_Blazer_Ability4_Revealed" duration="50" target="source_entity" />
+		</areaofeffect>
+	</onframe>
+	
+	<onimpact>
+		<playeffect effect="effects/area.effect" source="this_owner_entity" visibility="allies"/>
+	</onimpact>
+	
+	<onactivatestart>
+		<casteffecttype entity="inflictor_entity" effecttype="NoResponse" >
+			<casteffecttype entity="inflictor_entity" effecttype="BreakStealth" >
+				<expire/>
+			</casteffecttype>
+		</casteffecttype>
+		<else>
+			<expire/>
+		</else>
+	</onactivatestart>
+
+	<!--
+	<onattackstart>
+		<expire/>
+	</onattackstart>
+	-->
+	
+	<onattackimpact>
+		<!-- <popup name="critical" target="source_entity" a="total_adjusted_damage" /> -->
+		<expire/>
+	</onattackimpact>	
+
+	<onexpired>
+		<starttimer duration="0" entity="tool_entity" />
+		<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+		<applystate name="State_Blazer_Ability4_Linger" target="this_owner_entity" duration="2000" />
+	</onexpired>
+	
+	
+
+</state>
