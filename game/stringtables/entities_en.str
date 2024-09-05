@@ -781,7 +781,7 @@ Ability_Blazer3_description										Passively adds ^o$attack_bonus$ Attack Dama
 Ability_Blazer3_description_simple								bonus attack damage and critical
 // Ability_Blazer4
 Ability_Blazer4_name											Hunter Mode
-Ability_Blazer4_description										Activate to become shrouded for $duration$ seconds.  While shrouded, Blazer gains +^c100 movespeed^* & +^o100% Attack Damage^* when attacking from stealth.  Hunter Mode detects the position of nearby enemies below 50% health within 3000 range.
+Ability_Blazer4_description										Activate to become shrouded for $duration$ seconds.  While shrouded, Blazer gains +^c100 movespeed^* & +^o10% Attack Damage^* when attacking from stealth.  Hunter Mode detects the position of nearby enemies below 50% health within 3000 range.
 Ability_Blazer4_description_simple								stealth and enemy detection
 
 
