@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="default_1.max" file="high.model" type="K2">
 
-	<skin name="default_old">
+	<skin name="default">
 		<reference mesh="model_high_Krytos" 	material="krytos_material.material" />
 		<reference mesh="model_high" 			material="material.material" />
 		<reference mesh="_invis" 				material="unnamed.material" />
@@ -14,7 +14,7 @@
 	</skin>
 	
 	<!-- Pink Update -->
-	<skin name="default">
+	<skin name="pink">
 		<reference mesh="model_high_Krytos" 	material="krytos_material_pink.material" />
 		<reference mesh="model_high"	 		material="material.material" />
 		<reference mesh="_invis" 				material="unnamed.material" />

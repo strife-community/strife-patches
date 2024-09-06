@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
 
-	<skin name="default_old">	<reference mesh="Box005" material="material_glow.material"/>	<reference mesh="Box008" material="sword.material"/>	</skin>
+	<skin name="default">	<reference mesh="Box005" material="material_glow.material"/>	<reference mesh="Box008" material="sword.material"/>	</skin>
 	<skin name="black">			<reference mesh="Box005" material="material_black.material"/>	<reference mesh="Box008" material="sword.material"/>	</skin>
 	
 	<!-- Pink Update -->
-	<skin name="default">		<reference mesh="Box005" material="material_pink.material"/>	<reference mesh="Box008" material="sword.material"/>	</skin>	
+	<skin name="pink">		<reference mesh="Box005" material="material_pink.material"/>	<reference mesh="Box008" material="sword.material"/>	</skin>	
 
 	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" />
 	<anim name="tutorial_ability_2" clip="clips/tutorial_ability_2.clip" fps="26" loop="false"/>

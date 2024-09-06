@@ -3,7 +3,7 @@
 <definitions>
 
 <!-- Modifier (no shadow) -->
-<modifier life="20000" name="modifier0" alpha="1" material="../material_pink_noshadow.material"/>
+<modifier life="20000" name="modifier0" alpha="1" material="../material_noshadow.material"/>
 
 <!-- 0 -->
 <particlesystem name="system0" space="world" scale="2">

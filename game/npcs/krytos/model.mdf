@@ -3,11 +3,11 @@
 
 	<!-- <fur mesh="model_high" apxfile="hair/krytos.apx" material="hair/fur.material" /> -->
 
-	<skin name="default_old">	
+	<skin name="default">	
 		<reference mesh="model_high" material="material.material" />		
 	</skin>
 	
-	<skin name="black">		
+	<skin name="pink">		
 		<reference mesh="model_high" material="material_black.material"/>	
 	</skin>	
 	
