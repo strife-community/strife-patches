@@ -83,6 +83,7 @@
 	<lua file="/ui/main/news/newsComponentManager.lua"/>
 	<lua file="/ui/main/news/components/newsStories.lua"/>
 	<lua file="/ui/main/news/components/quickBotGame.lua"/>
+	<lua file="/ui/main/news/components/discord.lua"/>
 	<lua file="/ui/main/news/components/quickParty.lua"/>
 	<lua file="/ui/main/news/components/accountProgression.lua"/>
 	<lua file="/ui/main/news/components/modelPanel.lua"/>
