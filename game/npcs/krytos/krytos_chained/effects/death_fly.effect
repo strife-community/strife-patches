@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+<definitions>
+
+<!-- Modifier (no shadow) -->
+<modifier life="20000" name="modifier0" alpha="1" material="../material_noshadow.material"/>
+
+<!-- 0 -->
+<particlesystem name="system0" space="world" scale="2">
+
+		<simpleemitter spawnrate="5000" count="1" particlelife="5000" gravity="-8">
+			<particle>
+				<model delay="200" life="500" position="0 0 0" startscale=".5" endscale="3.5" model="puff/model.mdf" anim="idle" color=".65 .8 1" startalpha=".75" endalpha="0" midalphapos=".35"/>
+			</particle>
+		</simpleemitter>
+		<simpleemitter spawnrate="5000" count="1" particlelife="5000" gravity="-2">
+			<particle>
+				<model delay="325" life="500" position="0 0 0" startscale=".5" endscale="3.5" model="puff/model.mdf" anim="idle" color=".65 .8 1" startalpha=".5" endalpha="0" midalphapos=".35"/>
+			</particle>
+		</simpleemitter>
+		<simpleemitter count="1" spawnrate="5000" particlelife="8500" minangle="0" maxangle="0" direction="0 1 0">
+			<particle turn="1">
+				<groundsprite life="8000" position="0 0 0" material="/shared/effects/smaterials/torch_hole_overlay.material" size="65" color="1 1 1" startalpha=".75" midalpha=".75" endalpha="0" midalphapos=".35" yaw="-35"/>
+			</particle>
+		</simpleemitter>
+		<simpleemitter count="1" spawnrate="5000" particlelife="8500" minangle="0" maxangle="0" direction="0 1 0">
+			<particle turn="1">
+				<groundsprite life="8000" position="-18 0 0" material="/shared/effects/smaterials/torch_hole_overlay.material" size="60" color="1 1 1" startalpha=".75" midalpha=".75" endalpha="0" midalphapos=".35" yaw="45"/>
+			</particle>
+		</simpleemitter>
+		<simpleemitter count="1" spawnrate="5000" particlelife="5000" minangle="0" maxangle="0" direction="0 1 0">
+			<particle turn="1">
+				<model position="-35 0 0" minlife="4000" maxlife="5000" model="rocks/model.mdf" anim="idle_slower" color=".5 .8 1.4" expirelife="500" startalpha="1" midalpha="1" endalpha="0" midalphapos=".5" scale=".15" directionalspace="local" minyaw="0" maxyaw="180"/>
+				<model position="-35 20 0" minlife="4000" maxlife="5000" model="rocks/model.mdf" anim="idle_slower" color=".5 .8 1.4" expirelife="500" startalpha="1" midalpha="1" endalpha="0" midalphapos=".5" scale=".25" directionalspace="local" minyaw="0" maxyaw="180"/>
+			</particle>
+		</simpleemitter>
+		<simpleemitter count="1" spawnrate="5000" particlelife="5000" minangle="0" maxangle="0" direction="0 1 0">
+			<particle turn="1">
+				<model position="16 0 0" minlife="4000" maxlife="5000" model="rocks/model.mdf" anim="idle_slower" color=".5 .8 1.4" expirelife="500" startalpha="1" midalpha="1" endalpha="0" midalphapos=".5" scale=".2" directionalspace="local" minyaw="0" maxyaw="180"/>
+			</particle>
+		</simpleemitter>
+		<billboard position="0 0 0" life="800" param="0.1" startsize="100" endsize="500" startalpha="0" midalpha=".25" endalpha="0" midalphapos=".2" material="/shared/effects/smaterials/refract_swell.material" lockup="1" lockright="1" pitch="90"/>
+		
+</particlesystem>
+
+</definitions>
+<thread>
+<!-- Order -->
+<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+<camerashake2 scale="20" radius="6500" duration="500" frequency="20"/>
+<spawnmodifier instance="instance1" modifier="modifier0"/>
+<waitfordeath instance="instance0"/>
+<waitfordeath instance="instance1"/>
+</thread>
+</effect>
+

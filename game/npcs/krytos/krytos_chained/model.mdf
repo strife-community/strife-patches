@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="high.model" type="K2">
+
+	<skin name="default">	
+		<reference mesh="model_high" material="material.material" />		
+		<reference mesh="chains_model" material="chain_material.material" />
+	</skin>	
+	
+	<skin name="black"> 
+		<reference mesh="model_high" material="material_black.material"/> 	
+		<reference mesh="chains_model" material="chain_material.material"/> 
+	</skin>
+	
+	<!-- Pink Update -->
+	<skin name="pink"> 		
+		<reference mesh="model_high" material="material_pink.material"/> 	
+		<reference mesh="chains_model" material="chain_material.material"/> 
+	</skin>	
+	
+	
+	<!-- <fur mesh="model_high" apxfile="hair/krytos.apx" material="hair/fur.material" /> -->
+	<!-- <fur mesh="model_high" apxfile="../hair/krytos.apx" material="../hair/fur.material" /> -->
+	
+	
+	<anim name="idle" clip="clips/default_1_chained.clip" loop="true">
+		<frameevent frame="55" cmd="PlaySoundLinear sounds/sfx_idle.wav 750 2500 .2"/>
+	</anim>
+	<anim name="death_1" clip="clips/break.clip" fps="120" loop="true" loopbackframe="-1">
+		<frameevent frame="12" cmd="PlaySoundLinear sounds/sfx_unleash.wav 1000 2600 .45"/>
+		<frameevent frame="1" cmd="StartEffect effects/death_start.effect"/>
+		<frameevent frame="512" cmd="StartEffect effects/death.effect"/>
+		<frameevent frame="730" cmd="StartEffect effects/death_fly.effect"/>
+	</anim>
+	<anim name="pound_1" clip="clips/break.clip" fps="120" numframes="200"/>
+
+		
+	
+</model>

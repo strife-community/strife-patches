@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="high.model" type="K2">
+
+	<skin name="default">	<reference mesh="model_high" material="material.material" />		</skin>	
+	<skin name="black">			<reference mesh="model_high" material="material_black.material" />	</skin>	
+	
+	<!-- Pink Update -->
+	<skin name="pink">		<reference mesh="model_high" material="material_pink.material" />	</skin>		
+	
+	<anim name="death_1" clip="clips/death_1.clip" startframe="86" numframes="1" fps="30" loop="true" loopbackframe="-1"/>
+
+</model>

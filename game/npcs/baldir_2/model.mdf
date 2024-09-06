@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+
+	<skin name="default">	<reference mesh="Box005" material="material_glow.material"/>	<reference mesh="Box008" material="sword.material"/>	</skin>
+	<skin name="black">			<reference mesh="Box005" material="material_black.material"/>	<reference mesh="Box008" material="sword.material"/>	</skin>
+	
+	<!-- Pink Update -->
+	<skin name="pink">		<reference mesh="Box005" material="material_pink.material"/>	<reference mesh="Box008" material="sword.material"/>	</skin>	
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" />
+	<anim name="tutorial_ability_2" clip="clips/tutorial_ability_2.clip" fps="26" loop="false"/>
+	<anim name="tutorial_spawn" clip="clips/tutorial_ability_2.clip" startframe="53" fps="26" numframes="40" loop="false"/>
+	<anim name="portrait" clip="clips/portrait_1.clip" loop="true"/>
+	<anim name="talking_1" clip="clips/talking_1.clip" loop="true"/>
+	<anim name="emote_1" clip="clips/taunt_1.clip" fps="30" loop="false"/> 
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+	<anim name="item_1" clip="clips/item_1.clip"/>
+	<anim name="flying_1" clip="clips/default_1.clip" fps="30" loop="true"/>
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="40" loop="false"/>
+	<anim name="ability_2" clip="clips/ability_4.clip" fps="60" loop="false"/>
+	<anim name="ability_4" clip="clips/ability_2.clip" fps="38" loop="false" blendtime="200"/>
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="20" loop="false" blendtime="200">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/sfx_attack_%.wav 500 1800 0.5"/>
+	</anim>
+	<anim name="ability_3_start" clip="clips/attack_1.clip" loopbackframe="4" fps="4" numframes="4" loop="true" blendtime="200">
+		<frameevent frame="1" cmd="PlaySoundLinear /maps/tutorial/resources/heroes/boss/ability_03/sounds/sfx_dash.wav 1000 3000 0.85"/>
+	</anim>
+	<anim name="ability_3_mid" clip="clips/attack_1.clip" startframe="4" fps="20" numframes="10" loop="true" loopbackframe="14" blendtime="200"/>
+	<anim name="ability_3_end" clip="clips/attack_1.clip" startframe="14" fps="20" numframes="10" loop="false"  blendtime="200"/>
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="20" loop="false" blendtime="200">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/sfx_attack_%.wav 500 1800 0.5"/>
+	</anim>
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true"/>
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30" loop="false"/>
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/sfx_death.wav 800 2600 0.75"/>
+	</anim>
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	<anim name="nohand_idle" clip="clips/default_1.clip" fps="30" loop="true" />
+	<anim name="nohand_portrait" clip="clips/default_1.clip" loop="true"/>
+	<anim name="nohand_taunt_1" clip="clips/default_1.clip"/>
+	<anim name="nohand_item_1" clip="clips/default_1.clip"/>
+	<anim name="nohand_flying_1" clip="clips/default_1.clip" fps="30" loop="true"/>
+	<anim name="nohand_ability_1" clip="clips/default_1.clip" fps="30" loop="false"/>
+	<anim name="nohand_ability_2" clip="clips/default_1.clip" fps="30" loop="false"/>
+	<anim name="nohand_ability_4" clip="clips/default_1.clip" fps="38" loop="false" blendtime="200"/>
+	<anim name="nohand_attack_1" clip="clips/default_1.clip" fps="30" loop="false" blendtime="200"/>
+	<anim name="nohand_attack_2" clip="clips/default_1.clip" fps="30" loop="false" blendtime="200"/>
+	<anim name="nohand_walk_1" clip="clips/default_1.clip" fps="32" loop="true"/>
+	<anim name="nohand_bored_1" clip="clips/default_1.clip" fps="30" loop="false"/>
+	<anim name="nohand_death_1" clip="clips/default_1.clip" fps="30" loop="true" loopbackframe="-1"/>
+	<anim name="nohand_knock_1" clip="clips/default_1.clip" loop="true" loopbackframe="-1"/>
+	<anim name="baldir_defeated" clip="clips/death_1.clip" startframe="30" numframes="50" fps="36" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/sfx_death.wav 800 2600 0.75"/>
+	</anim>
+
+</model>

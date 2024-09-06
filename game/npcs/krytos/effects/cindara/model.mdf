@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="high.model" type="K2">
+
+	<skin name="default">
+		<reference mesh="model_high_Krytos" 	material="krytos_material.material" />
+		<reference mesh="model_high" 			material="material.material" />
+		<reference mesh="_invis" 				material="unnamed.material" />
+	</skin>
+	
+	<skin name="black">
+		<reference mesh="model_high_Krytos" 	material="krytos_material_black.material" />
+		<reference mesh="model_high" 			material="material.material" />
+		<reference mesh="_invis" 				material="unnamed.material" />
+	</skin>
+	
+	<!-- Pink Update -->
+	<skin name="pink">
+		<reference mesh="model_high_Krytos" 	material="krytos_material_pink.material" />
+		<reference mesh="model_high"	 		material="material.material" />
+		<reference mesh="_invis" 				material="unnamed.material" />
+	</skin>	
+	
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" fps="30" loopbackframe="-1"/>
+	
+
+</model>
