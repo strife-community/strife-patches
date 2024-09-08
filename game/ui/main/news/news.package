@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+
+	<include file="newsComponents.package"/>
+	<include file="newsComponentManager.package"/>
+	
+	<panel name="main_news_sleeper" noclick="true"/>
+	<panel name="main_news_container" noclick="true">
+		<!-- Artwork and Screen Edge Fades -->
+		<image width="200s" align="right" hflip="1" texture="/ui/main/shared/textures/grad_horz.tga" color="0.02 0.04 0.05 0.8" noclick="1" />
+		<image width="400s" align="left" texture="/ui/main/shared/textures/grad_horz.tga" color="0.02 0.04 0.05 0.8" noclick="1" />
+		
+		
+		<panel name="main_artwork_container" align="right" valign="center" height="1024s" width="1024s" noclick="1" visible="0" >
+			<image name="main_news_splash_image_1" texture="$invis" noclick="1" />
+			
+			<!-- Featured Art/Message -->
+			<panel grow="1" width="580s" x="-30s" y="-190s" align="right" valign="bottom" noclick="1">
+				<label name="main_news_splash_label_1" textalign="right" font="maindyn_30" fity="1" color="#9acace" outline="1" outlinecolor="black" content="" noclick="1"/>
+				<label name="main_news_splash_label_2" textalign="right" font="maindyn_64" y="22s" fity="1" wrap="1" lineheight="55s" color="white" outline="1" outlinecolor="black" content="" noclick="1"/>
+			</panel>
+		</panel>
+		
+		<image height="200s" valign="bottom" texture="/ui/main/shared/textures/grad_vert.tga" color="0.02 0.04 0.05 0.8" noclick="1" />
+		
+		<panel name="main_news_component_container" noclick="1"/>
+		
+	
+		<sizingframe name="main_news_component_sizer" canmove="1" width="400s" height="400s" visible="0">
+			<panel color="white" width="10s" height="10s" align="left" valign="top" noclick="1"/>
+			<panel color="white" width="10s" height="10s" align="left" valign="center" noclick="1"/>
+			<panel color="white" width="10s" height="10s" align="left" valign="bottom" noclick="1"/>
+			<panel color="white" width="10s" height="10s" align="center" valign="top" noclick="1"/>
+			<panel color="white" width="10s" height="10s" align="center" valign="bottom" noclick="1"/>
+			<panel color="white" width="10s" height="10s" align="right" valign="top" noclick="1"/>
+			<panel color="white" width="10s" height="10s" align="right" valign="center" noclick="1"/>
+			<panel color="white" width="10s" height="10s" align="right" valign="bottom" noclick="1"/>
+		</sizingframe>
+		
+		<panel name="main_news_component_mover" canmove="1" cangrab="1" width="400s" height="400s" visible="0">
+			<panel color="gray" width="10s" height="10s" align="left" valign="top" noclick="1"/>
+			<panel color="gray" width="10s" height="10s" align="left" valign="center" noclick="1"/>
+			<panel color="gray" width="10s" height="10s" align="left" valign="bottom" noclick="1"/>
+			<panel color="gray" width="10s" height="10s" align="center" valign="top" noclick="1"/>
+			<panel color="gray" width="10s" height="10s" align="center" valign="bottom" noclick="1"/>
+			<panel color="gray" width="10s" height="10s" align="right" valign="top" noclick="1"/>
+			<panel color="gray" width="10s" height="10s" align="right" valign="center" noclick="1"/>
+			<panel color="gray" width="10s" height="10s" align="right" valign="bottom" noclick="1"/>
+		</panel>
+	
+		<panel name="main_news_edit_button" valign="bottom" x="20s" y="-50s" height="30s" width="30s" visible="0"
+			onclicklua="mainUI.news.ToggleEditing()"
+		>
+			<frame texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+				<image name="main_news_edit_button_img" texture="/ui/shared/textures/edit.tga" width="80%" height="80%" align="center" valign="center" noclick="1"/>
+			</frame>
+		</panel>
+		
+		
+		<instance name="main_news_component_manager_container_template"/>
+		
+	</panel>
+	
+	<!-- Friends Available
+	<panel name="main_news_friends_available_container" height="133s" noclick="0" visible="0" sticky="1" stickytoinvis="0">
+		<frame texture="/ui/elements:squareglow" color="0 0 0 0.8" borderthickness="12s" bordercolor="0 0 0 0.8" width="+10s" height="+10s" align="center" valign="center" noclick="1"/>
+		<frame texture="/ui/elements:rounded_bg_white" color="#09191c" borderthickness="3s" bordercolor="#03090a" noclick="1"/>
+		<panel x="15s" float="bottom" valign="top" grow="1" regrow="1" width="-15s" noclick="1">
+			<panel width="100%" grow="1" regrow="1" noclick="1">
+				<label color="#88c1c5" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="news_quickplay_desc" fity="1" noclick="1" />
+			</panel>
+		</panel>
+		<panel name="main_news_friends_available_list_container" x="-10s" width="188s" height="60s" align="right" valign="center">
+
+		</panel>
+	</panel>			
+	 -->
+
+	<instance name="quick_play_role_selection_template" />
+	<instance name="main_news_component_manager_new_component_dialog_template" />
+	
+	<lua file="/ui/main/news/news.lua"/>
+	<lua file="/ui/main/news/newsComponentManager.lua"/>
+	<lua file="/ui/main/news/components/newsStories.lua"/>
+	<lua file="/ui/main/news/components/quickBotGame.lua"/>
+	<lua file="/ui/main/news/components/discord.lua"/>
+	<lua file="/ui/main/news/components/quickParty.lua"/>
+	<lua file="/ui/main/news/components/accountProgression.lua"/>
+	<lua file="/ui/main/news/components/modelPanel.lua"/>
+	
+</package>

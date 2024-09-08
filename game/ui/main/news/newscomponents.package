@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<style name="main_accountprogress_bar_styleLG" y="-28s" width="951s" height="119s" align="center" valign="center" noclick="1"/>
+	<style name="main_accountprogress_bar_styleSM" x="27s" y="-19s" align="left" valign="center" width="550s" height="41" noclick="1"/>
+	
+	<!-- component templates -->
+	<template name="main_news_simple_panel">
+		<panel/>
+	</template>
+	
+	<!-- component templates -->
+	<template name="main_news_change_news_button">
+		<panel name="main_news_change_news_button_{id}" group="main_news_change_news_buttons" width="15s" height="15s" noclick="0" sticky="1" stickytoinvis="0">
+			<frame texture="/ui/elements:rounded_bg_white" borderthickness="13s" width="13s" height="13s" color="black" valign="center" align="center" noclick="1"/>
+			<frame texture="/ui/elements:roundframe" borderthickness="15s" color="0.64 0.89 0.93 0.16" noclick="1"/>
+			
+			<!-- This highlights onces the news frame is displayed OR on hover -->
+			<frame name="main_news_change_news_button_{id}_selected" texture="/ui/elements:rounded_bg_solid" borderthickness="15s" color="#00f8f9" noclick="1" group="main_news_change_news_button_selected_group" visible="0"/>
+		</panel>
+	</template>
+	
+	<template name="main_accountprogress_upcoming_unlock_template">
+		<panel name="main_accountprogress_prize_parent_{index}" height="52s" width="52s" noclick="0" sticky="1" stickytoinvis="0"
+			onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('{tipLabel}'), Translate('{tipLabel2}'))"
+			onmouseoutlua="simpleTipGrowYUpdate(false)"
+			>
+			<frame texture="/ui/elements:squareglow" color="0 0 0 1" borderthickness="10s" bordercolor="0 0 0 1" width="+10s" height="+10s" align="center" valign="center" noclick="1" />
+			<image name="main_accountprogress_prize_icon_{index}" texture="{texture}" align="center" valign="center" noclick="1"/>
+			<!--<image name="main_accountprogress_prize_icon2_{index}" texture="$checker" align="center" valign="center" rendermode="grayscale" color="1 1 1 0.8" noclick="1"/>-->
+			<!--<image name="main_accountprogress_prize_lock_{index}" texture="/ui/main/shared/textures/herorole_frame_locked.tga" align="center" valign="center" noclick="1"/>-->
+		</panel>
+	</template>
+
+	<template name="main_accountprogress_top_hero_template">
+		<panel name="main_accountprogress_top_hero_{index}" height="42s" width="42s" noclick="0" sticky="1" stickytoinvis="0">
+			<frame texture="/ui/elements:squareglow" color="0 0 0 1" borderthickness="10s" bordercolor="0 0 0 1" width="+10s" height="+10s" align="center" valign="center" noclick="1" />
+			<image name="main_accountprogress_top_hero_{index}" align="center" valign="center" noclick="1"/>
+			<frame color="invisible" bordercolor="#1b455a" borderthickness="2s" noclick="1" />
+		</panel>
+	</template>
+	
+	<template name="main_news_simple_sub_image">
+		<panel noclick="1">
+			<panel x="{parentX=0}" y="{parentY=0}" width="{parentWidth=100%}" height="{parentHeight=100%}" clip="1" noclick="1">
+				<image x="{offsetX=0}" y="{offsetY=0}" width="{childWidth=100%}" height="{childHeight=100%}" texture="$invis" noclick="1"
+					oninstantiatelua="
+						local imageUrl 	= string.match('{texture}', '^http://(.+)')
+						if (imageUrl) then
+							self:SetTextureURL('{texture}')
+						else
+							self:SetTexture('{texture}')
+						end
+					"
+				/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="main_accountprogress_pips">
+		<panel x="{x1=0s}" y="{y=0s}" height="{height1=30s}" width="2s" valign="center" color="0 0 0 0.5" noclick="1" />
+		<panel x="{x2=0s}" y="{y=0s}" height="{height2=30s}" width="2s" valign="center" color="0 0 0 0.5" noclick="1" />
+		<panel x="{x3=0s}" y="{y=0s}" height="{height3=30s}" width="2s" valign="center" color="0 0 0 0.5" noclick="1" />
+		<panel x="{x4=0s}" y="{y=0s}" height="{height4=30s}" width="2s" valign="center" color="0 0 0 0.5" noclick="1" />
+	</template>
+	
+	<template name="main_accountprogress_levels">
+		<panel name="main_accountprogress_levels_{id}" x="{x=0s}" y="-17s" width="{width=0s}" align="left" valign="center" noclick="1" >
+			<panel name="main_accountprogress_levels_{id}_clickable" width="50%" height="35%" align="center" valign="center" noclick="0"/>
+			<image name="main_accountprogress_levels_{id}_hover" noclick="1" texture="/ui/main/postgame/textures/account_bar_hover.tga" rendermode="additive" width="{hoverWidth=0s}" height="{hoverHeight=0s}" align="center" valign="center" color="1 1 1 0.5" visible="0"/>
+			<image name="main_accountprogress_levels_{id}_glow" noclick="1" texture="/ui/main/shared/textures/circular.tga" rendermode="additive" height="50%" width="120%" align="center" valign="center" color="0.13 0.76 1 0.5" visible="0"/>
+			<label name="main_accountprogress_label_{id}" fitx="1" fity="1" align="center" valign="center" textalign="center" textvalign="center" color="0.24 0.26 0.3 1" outline="1" outlinecolor="0.18 0.39 0.45 0.8" font="maindyn_16" content="{id}" noclick="1" />
+		</panel>
+	</template>
+	
+	<template name="quickModeOption">
+		<panel name="{id}" width="{optionWidth=244s}" height="100%" sticky="1" stickytoinvis="0" visible="{visible=1}"
+			onmouseoverlua="
+				GetWidget('playScreenOption{id}Frame'):SetColor('#081f27')
+				GetWidget('playScreenOption{id}Frame'):SetBorderColor('#081f27')
+				GetWidget('playScreenOption{id}IconGlow'):FadeIn(250)
+				GetWidget('playScreenOption{id}CurrentBar'):FadeIn(250)
+			"
+			onmouseoutlua="
+				GetWidget('playScreenOption{id}Frame'):SetColor('#040c0f')
+				GetWidget('playScreenOption{id}Frame'):SetBorderColor('#040c0f')
+				GetWidget('playScreenOption{id}IconGlow'):FadeOut(100)
+				GetWidget('playScreenOption{id}CurrentBar'):FadeOut(100)
+			"
+		>			
+			<frame name="playScreenOption{id}Frame" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="6s" color="#040c0f" bordercolor="#040c0f" noclick="1"/>
+			<frame texture="/ui/elements:thick" borderthickness="6s" bordercolor="0 0 0 .7" noclick="1"/>
+			
+			<panel name="playScreenOption{id}CurrentBar" noclick="1" visible="0">
+				<image texture="/ui/main/play/textures/mode_highlight.tga" y="-1s" align="center" valign="bottom" width="92%" height="90s" color="#30cdff33" noclick="1" />
+				<image texture="/ui/main/play/textures/mode_bar.tga" y="18s" width="+180s" height="6s" valign="bottom" align="center" />
+			</panel>
+			
+			<panel name="playScreenOption{id}IconContainer" noclick="1">
+				<image name="playScreenOption{id}Icon" texture="/ui/main/play/textures/{artTexture}.tga" align="center" valign="center" noclick="1" width="{artSize}@" height="{artSize}%" y="{artY}" x="{artX}" color="1 1 1 1" />
+				<image name="playScreenOption{id}IconGlow" texture="/ui/main/play/textures/{artTexture}_glow.tga" align="center" valign="center" width="{artSize}@" height="{artSize}%" y="{artY}" x="{artX}" noclick="1" visible="0" />
+			</panel>
+			
+			<label y="153s" style="labelBase" font="maindyn_36" textalign="center" content="{title}" noclick="1" />
+			<label y="195s" width="-30s" align="center" style="labelBase" color="#a5c6cf" outlinecolor="#072128" font="subdyn_15" textalign="center" wrap="1" lineheight="18s" content="{details}" noclick="1" />
+			
+
+		</panel>
+	</template>
+	
+	
+	<!-- Quick Play -->
+	<template name="quick_play_role_selection_template" >	
+		<panel name="quick_play_role_selection" color="0 0 0 .75" visible="0">		
+			<panel y="-10s" height="268s" width="+20s" align="center" valign="center" color="0 0 0 0.6" noclick="1">
+				<image texture="/ui/shared/frames/squareglow_b.tga" valign="bottom" y="10s" height="10s" color="0 0 0 .4" noclick="1" />
+				<frame color="invisible" borderthickness="1s" bordercolor="0 0 0 .7" noclick="1" />
+				<label y="-48s" style="labelBase" color="#b6d0e0" font="maindyn_30" textalign="center" content="heroselect_filter_selectahero" noclick="1" />
+				<panel grow="1" regrow="1" growinvis="0" height="250s" align="center" valign="center" float="right" padding="8s" x="-8s">
+					<instance name="quickModeOption" id="quick_play_role_selection_role_btn_1" optionWidth="300s" artTexture="quickmatch_attack" artSize="100" artY="-15%" artX="0" title="heroselect_filter_PhysDamage" details="heroselect_filter_PhysDamage_quick" visible="1" />
+					<instance name="quickModeOption" id="quick_play_role_selection_role_btn_2" optionWidth="300s" artTexture="quickmatch_ability" artSize="92" artY="-16%" artX="0" title="heroselect_filter_MagDamage" details="heroselect_filter_MagDamage_quick" visible="1" />
+					<instance name="quickModeOption" id="quick_play_role_selection_role_btn_3" optionWidth="300s" artTexture="quickmatch_survive" artSize="100" artY="-15%" artX="0" title="heroselect_filter_Survival" details="heroselect_filter_Survival_quick" visible="1" />
+					<instance name="quickModeOption" id="quick_play_role_selection_role_btn_4" optionWidth="300s" artTexture="quickmatch_support" artSize="100" artY="-15%" artX="0" title="heroselect_filter_Utility" details="heroselect_filter_Utility_quick" visible="1" />
+				</panel>				
+				<instance name="closeXButton" buttonName="quick_play_role_selection_closex" width="32s" height="32s" align="right" y="-40s" x="-36s" onclicklua="self:GetWidget('quick_play_role_selection'):FadeOut(250)"/>						
+				<instance name="standardButton" id="quick_play_role_selection_closebutton" y="70s" width="140s" height="34s" align="center" valign="bottom" rendermode="grayscale" font="maindyn_22" label="general_close" borderthickness="4s" onclicklua="self:GetWidget('quick_play_role_selection'):FadeOut(250)" />
+			</panel>
+		</panel>
+	</template>
+	
+	<!-- Components -->
+	
+	<!-- New Hero Splash -->
+	<template name="main_news_new_hero_template" >
+		<panel name="main_artwork_component">
+			<panel name="main_artwork_container" align="right" valign="center" height="1024s" width="1024s" noclick="1" visible="0" >
+				<image x="310s" texture="/ui/main/shared/textures/circular.tga" color="#639dde82" noclick="1" />
+				<image name="main_news_splash_image_1" texture="$invis" noclick="1" />
+			</panel>
+			
+			<image height="200s" valign="bottom" texture="/ui/main/shared/textures/grad_vert.tga" color="0.02 0.04 0.05 0.8" noclick="1" />
+			
+			<!-- Hero Name -->
+			<label name="main_news_splash_label_1" y="-120s" x="-40s" textalign="right" font="maindyn_30" fity="1" valign="bottom" color="#9acace" outline="1" outlinecolor="black" content="-" noclick="1"/>
+			<label name="main_news_splash_label_2" y="-65s" x="-50s" textalign="right" font="maindyn_64" fity="1" valign="bottom" color="white" outline="1" outlinecolor="black" content="-" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="main_news_container_template" >
+		<!-- News -->
+		<panel name="main_news_story_container" x="{x}" y="{y}" width="{w}" height="{h}" noclick="1">
+			<frame texture="/ui/elements:rounded_bg_white" borderthickness="3s" color="#040c0d" bordercolor="#03090a" noclick="1"/>
+			
+				<!-- Main News Graphic -->
+				<image name="main_news_image_background" y="-111.435%" width="168.977%" height="229.596%" align="center" texture="/ui/main/news/textures/news_background01.tga" noclick="1" />
+				<!-- Fancy Swapping Graphic -->
+				<panel name="main_news_swap_image_container" y="-111.435%" width="168.977%" height="229.596%" align="center" noclick="1" />
+			
+			<!-- Clicking this panel should display more information, likely via web -->
+			<panel name="main_news_link" noclick="0">
+				<frame texture="/ui/elements:rounded_bg_white" color="0.04 0.09 0.11 0.88" borderthickness="3s" bordercolor="#03090a" height="35%" align="center" valign="bottom" noclick="1">
+				
+					<!-- Link Indicator - Hide if no link -->
+					<panel name="main_news_link_indicator" x="-1s" y="14.09%" grow="1" height="26.906%" align="right" noclick="1" visible="1">						
+						<frame grow="1" height="100%" texture="/ui/elements:rounded_bg_white" borderthickness="4s" color="#0f242d" bordercolor="#0f242d" noclick="1">
+							<label x="2.805%" fitx="1" fitxpadding="5s" textvalign="center" style="labelBase" font="subdyn_11" color="#88c1c5" outlinecolor="#1b393b" content="general_more_info" noclick="1" />
+							<frame x="-2.5s" width="+5s" align="center" texture="/ui/elements:roundframe" borderthickness="4s" color="0.64 0.89 0.93 0.16" noclick="1"/>
+						</frame>
+						<panel width="100@" height="100%" valign="center" x="-110@" noclick="1">
+							<image texture="/ui/main/shared/textures/infomouse.tga" y="-1s" width="30s" height="30s" valign="center" align="center" noclick="1" />
+						</panel>
+					</panel>
+				
+					<!-- News Buttons -->
+					<panel name="main_news_button_container" x="-3.3%" y="-32.03%" noclick="1" padding="6s" float="right" align="right" grow="1" regrow="1" />
+					
+					<!-- Bottom half of the news frame - this is where the text is displayed -->
+					<panel x="2.475%" y="-3.843%" float="bottom" valign="center" grow="1" regrow="1" width="-2.475%" noclick="1">
+						<panel width="100%" grow="1" regrow="1" noclick="1">
+							<label name="main_news_label1" color="white" outline="1" outlinecolor="#0b1a1b" font="maindyn_30" content="" fity="1" noclick="1" />			
+						</panel>
+						<panel width="100%" grow="1" regrow="1" noclick="1">
+							<label name="main_news_label2" color="#88c1c5" outline="1" wrap="1" lineheight="16s" outlinecolor="#0b1a1b" font="maindyn_16" content="" fity="1" noclick="1" />
+						</panel>						
+					</panel>
+				</frame>
+			</panel>
+		</panel>
+	</template>			
+	
+	<template name="main_quickplay_container_template" >
+		<!-- Quick Match with bots, not used right now -->
+		<panel name="main_quickplay_container" x="{x}" y="{y}" width="{w}" height="{h}" noclick="0" visible="1" sticky="1" stickytoinvis="0">
+			<frame texture="/ui/elements:squareglow" color="0 0 0 0.8" borderthickness="12s" bordercolor="0 0 0 0.8" width="+10s" height="+10s" align="center" valign="center" noclick="1"/>
+			<frame texture="/ui/elements:rounded_bg_white" color="#09191c" borderthickness="3s" bordercolor="#03090a" noclick="1"/>
+			<panel x="15s" float="bottom" valign="center" grow="1" regrow="1" width="-15s" noclick="1">
+				<panel width="100%" grow="1" regrow="1" noclick="1">
+					<label color="#88c1c5" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="news_quickplay_desc" fity="1" noclick="1" />
+				</panel>
+				<panel width="100%" grow="1" regrow="1" noclick="1">
+					<label color="white" outline="1" outlinecolor="#0b1a1b" font="maindyn_30" content="news_quickplay" fity="1" noclick="1" />
+				</panel>
+			</panel>
+			<panel name="main_quickplay_button_container" x="-10s" width="188s" height="60s" align="right" valign="center">
+				<frame name="main_quickplay_button" x="-10s" texture="/ui/shared/frames/blue_btn_up.tga" width="188s" height="60s" borderthickness="4s" align="right" valign="center" noclick="1">
+					<label content="news_quickplay_btn" font="maindyn_30" textalign="center" textvalign="center" color="white" outline="1" outlinecolor="#194053" noclick="1"/>
+				</frame>
+			</panel>
+		</panel>
+	</template>
+
+	<template name="main_discord_container_template" >
+		<panel name="main_discord_container" x="{x}" y="{y}" width="{w}" height="{h}" noclick="0" visible="1" sticky="1" stickytoinvis="0">
+			<frame texture="/ui/elements:squareglow" color="0 0 0 0.8" borderthickness="12s" bordercolor="0 0 0 0.8" width="+10s" height="+10s" align="center" valign="center" noclick="1"/>
+			<frame texture="/ui/elements:rounded_bg_white" color="#09191c" borderthickness="3s" bordercolor="#03090a" noclick="1"/>
+			<panel x="15s" float="bottom" valign="center" grow="1" regrow="1" width="-15s" noclick="1">
+				<panel width="100%" grow="1" regrow="1" noclick="1">
+					<label color="#88c1c5" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="news_discord_desc" fity="1" noclick="1" />
+				</panel>
+				<panel width="100%" grow="1" regrow="1" noclick="1">
+					<label color="white" outline="1" outlinecolor="#0b1a1b" font="maindyn_30" content="news_discord" fity="1" noclick="1" />
+				</panel>
+			</panel>
+			<panel name="main_discord_button_container" x="-10s" width="188s" height="60s" align="right" valign="center">
+				<frame name="main_discord_button" x="-10s" texture="/ui/shared/frames/blue_btn_up.tga" width="300s" height="60s" borderthickness="4s" align="right" valign="center" noclick="1">
+					<image width="260s" height="50s" texture="/ui/main/news/textures/discord-logo-white.tga" rendermode="additive" color="white" outline="1" outlinecolor="#194053" align="center" valign="center" noclick="1" />
+				</frame>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="main_quickparty_container_template" >
+		<!-- Quick Match -->
+		<panel name="main_quickparty_container" x="{x}" y="{y}" width="{w}" height="{h}" noclick="0" visible="1" sticky="1" stickytoinvis="0">
+			<frame texture="/ui/elements:squareglow" color="0 0 0 0.8" borderthickness="12s" bordercolor="0 0 0 0.8" width="+10s" height="+10s" align="center" valign="center" noclick="1"/>
+			<frame texture="/ui/elements:rounded_bg_white" color="#09191c" borderthickness="3s" bordercolor="#03090a" noclick="1"/>
+			<panel x="15s" float="bottom" valign="center" grow="1" regrow="1" width="-15s" noclick="1">
+				<panel width="100%" grow="1" regrow="1" noclick="1">
+					<label color="#88c1c5" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="news_quickparty_desc" fity="1" noclick="1" />
+				</panel>
+				<panel width="100%" grow="1" regrow="1" noclick="1">
+					<label color="white" outline="1" outlinecolor="#0b1a1b" font="maindyn_30" content="news_quickparty" fity="1" noclick="1" />
+				</panel>
+			</panel>
+			<panel name="main_quickparty_button_container" x="-10s" width="188s" height="60s" align="right" valign="center">
+				<frame name="main_quickparty_button" x="-10s" texture="/ui/shared/frames/blue_btn_up.tga" width="188s" height="60s" borderthickness="4s" align="right" valign="center" noclick="1">
+					<label content="news_quickparty_btn" font="maindyn_30" textalign="center" textvalign="center" color="white" outline="1" outlinecolor="#194053" noclick="1"/>
+				</frame>
+			</panel>
+		</panel>
+	</template>
+
+	<template name="main_accountprogress_container_tab">
+		<panel 
+			name="main_accountprogress_container_tab{id}"
+			usebitmask="1" bitmaskfile="/ui/main/news/textures/news_component_tab.tga"
+			x="{x}" y="-44s" height="56s" width="256s"
+			onclicklua="{onclicklua}" onmouseoverlua="{onmouseoverlua}" onmouseoutlua="{onmouseoutlua}"
+		>
+			<image texture="/ui/main/news/textures/news_component_tab.tga" noclick="1" />
+			<image name="main_accountprogress_container_tab{id}hover" texture="/ui/main/news/textures/news_component_tab_current.tga" color="1 1 1 .65" visible="0" noclick="1" />
+			<image texture="/ui/main/news/textures/news_component_tab_current.tga" visible="{isCurrent=0}" noclick="1" />
+			<label y="-8s" width="200s" font="maindyn_22" style="labelBase" color="{fontColor=#11363c}" textvalign="bottom" textalign="center" content="{label}" noclick="1" />
+		</panel>
+	</template>
+	
+	<template name="main_accountprogress_container_template" >
+		<!-- Account Progress -->
+		<panel name="main_accountprogress_container" x="{x}" y="{y}" width="{w}" height="{h}" noclick="0" visible="1" sticky="1" stickytoinvis="0">
+			<panel name="main_accountprogress_visiblility_handler" width="100%" height="100%" visible="0">
+				<frame texture="/ui/elements:squareglow" color="0 0 0 0.8" borderthickness="12s" bordercolor="0 0 0 0.8" width="+10s" height="+10s" align="center" valign="center" noclick="1"/>
+				<frame texture="/ui/elements:rounded_bg_white" color="#09191c" borderthickness="3s" bordercolor="#03090a" noclick="1"/>
+				
+				<panel height="76s" noclick="1">
+					<panel y="5s" x="15s" float="bottom" valign="center" grow="1" regrow="1" width="-15s" noclick="1">
+						<panel width="100%" grow="1" regrow="1" noclick="1">
+							<label name="main_accountprogress_unlocked_at" color="#88c1c5" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="postgame_upcoming_unlocks_header" fity="1" noclick="1" />
+						</panel>
+						<panel width="100%" grow="1" regrow="1" noclick="1">
+							<label name="main_accountprogress_play_more" color="white" outline="1" outlinecolor="#0b1a1b" font="maindyn_30" content="postgame_upcoming_unlocks_remaining_game" fity="1" noclick="1" />
+						</panel>
+					</panel>
+					
+					<!-- Account Reward(s) -->
+					<panel name="main_accountprogress_upcoming_unlocks_insert" x="-20s" valign="center" align="right" grow="1" regrow="1" growinvis="0" float="right" padding="8s" noclick="1"/>
+				</panel>
+				
+				<!-- Level Bar -->
+				<frame height="-76s" texture="/ui/elements:rounded_bg_white" color="#040c0d" borderthickness="3s" bordercolor="#03090a" valign="bottom" noclick="1">
+					<panel style="main_accountprogress_bar_styleLG">
+						<image texture="/ui/main/postgame/textures/account_bar.tga" noclick="1" />
+					</panel>
+					
+					<!-- Current Progress Bar -->						
+					<panel style="main_accountprogress_bar_styleSM">
+						<panel name="main_accountprogress_level_bar" align="left" clip="1" height="100%" width="100%" noclick="1">
+							<image texture="/ui/main/postgame/textures/account_bar_previous.tga" width="550s" height="41s" align="left" valign="center" noclick="1" />
+						</panel>
+					</panel>
+						
+					<image style="main_accountprogress_bar_styleLG" texture="/ui/main/postgame/textures/account_bar_top.tga" />
+						
+					<!--Pips-->
+					<panel style="main_accountprogress_bar_styleSM">
+						<instance name="main_accountprogress_pips" y="1s" x1="4%" x2="8%" x3="12%" x4="16%" height1="37s" height2="37s" height3="38s" height4="38s" />
+						<instance name="main_accountprogress_pips" y="1s" x1="24%" x2="28%" x3="32%" x4="36%" height1="39s" height2="39s" height3="39s" height4="39s" />
+						<instance name="main_accountprogress_pips" x1="44%" x2="48%" x3="52%" x4="56%" height1="40s" height2="40s" height3="40s" height4="40s" />
+						<instance name="main_accountprogress_pips" x1="64%" x2="68%" x3="72%" x4="76%" height1="40s" height2="40s" height3="40s" height4="40s" />
+						<instance name="main_accountprogress_pips" x1="84%" x2="88%" x3="92%" x4="96%" height1="41s" height2="41s" height3="41s" height4="41s" />
+						
+						<!-- Leading Edge - This should change with the bar width-->
+						<panel x="-8s" align="left" height="100%" width="100%" noclick="1">
+							<panel x="55%" name="main_accountprogress_bar_leader" visible="1" noclick="1">
+								<image texture="/ui/main/postgame/textures/account_bar_progress_leading_blue.tga" width="20s" height="60s" valign="center" align="left" noclick="1"/>
+								<panel width="14s" height="60s" valign="center" noclick="1">
+									<modelpanel
+										x="-18s" width="60s" height="60s" align="left" valign="center"
+										noclick="1"
+										model="/shared/models/invis.mdf"
+										camerapos="0 0 0"
+										cameraangles="0 0 0"
+										camerafov="30"
+										depthclear="true"
+										depthcompress="true"
+										onshowlua="self:SetEffect('/ui/main/postgame/effects/progress_bar_leader.effect')"
+									/>
+								</panel>	
+							</panel>
+						</panel>						
+					</panel>
+					
+					<!-- Glow should change with the bar width -->
+					<image name="main_accountprogress_bar_glow" style="main_accountprogress_bar_styleLG" texture="/ui/main/postgame/textures/account_bar_glow.tga" rendermode="additive" color="0.11 0.85 1 0.3" />
+					<image style="main_accountprogress_bar_styleLG" texture="/ui/main/postgame/textures/account_bar_levels.tga" />
+					
+					<!-- These need hover state recognition - atm they are on -->
+					<instance name="main_accountprogress_levels" id="1" x="4s" width="40s" hoverWidth="40s" hoverHeight="40s" />
+					<instance name="main_accountprogress_levels" id="2" x="113s" width="45s" hoverWidth="45s" hoverHeight="45s" />
+					<instance name="main_accountprogress_levels" id="3" x="224s" width="47s" hoverWidth="48s" hoverHeight="48s" />
+					<instance name="main_accountprogress_levels" id="4" x="330s" width="50s" hoverWidth="53s" hoverHeight="52s" />
+					<instance name="main_accountprogress_levels" id="5" x="441s" width="52s" hoverWidth="56s" hoverHeight="55s" />
+					<instance name="main_accountprogress_levels" id="6" x="552s" width="55s" hoverWidth="61s" hoverHeight="59s" />
+					
+					<!-- Look at more levels -->
+					<image
+						name="main_accountprogress_bar_back"
+						texture="/ui/main/shared/textures/scroll_arrow.tga"
+						x="24s" y="-10s" width="34s" height="34s" valign="bottom" color=".6 .6 .6 .6'"
+						hflip="1"
+						usebitmask="1"
+						bitmaskfile="/ui/main/shared/textures/scroll_arrow.tga"
+					/>
+					<image
+						name="main_accountprogress_bar_forward"
+						texture="/ui/main/shared/textures/scroll_arrow.tga"
+						x="-24s" y="-10s" width="34s" height="34s" valign="bottom" align="right" color=".6 .6 .6 .6'"
+						usebitmask="1"
+						bitmaskfile="/ui/main/shared/textures/scroll_arrow.tga"
+					/>
+					
+					<!-- Current Level -->
+					<label name="main_accountprogress_currentlevel" y="-24s" color="#88c1c5" align="center" valign="bottom" fitx="1" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="postgame_upcoming_unlocks_current_level" fity="1" noclick="1" />
+				</frame>
+			
+				<instance
+					name="main_accountprogress_container_tab" id="0" label="news_compenent_stats_progress" x="205s"
+					onmouseoverlua="GetWidget('main_accountprogress_container_tab0hover'):FadeIn(125)"
+					onmouseoutlua="GetWidget('main_accountprogress_container_tab0hover'):FadeOut(125)"					
+					onclicklua="mainUI.news.SelectAccountProgressionTabByIndex(2, 125)"
+				/>
+				
+				<instance
+					name="main_accountprogress_container_tab" id="1" label="news_compenent_unlock_progress" x="0s"
+					fontColor="#88c1c5"
+					isCurrent="1"						
+					onclicklua="mainUI.news.SelectAccountProgressionTabByIndex(1, 125)"
+				/>	
+				
+
+				
+			</panel>
+
+
+			<panel name="main_accountprogress_visiblility_handler_elo" width="100%" height="100%" visible="0">
+				<frame texture="/ui/elements:squareglow" color="0 0 0 0.8" borderthickness="12s" bordercolor="0 0 0 0.8" width="+10s" height="+10s" align="center" valign="center" noclick="1"/>
+				<frame texture="/ui/elements:rounded_bg_white" color="#09191c" borderthickness="3s" bordercolor="#03090a" noclick="1"/>
+
+				<frame height="-76s" texture="/ui/elements:rounded_bg_white" color="#040c0d" borderthickness="3s" bordercolor="#03090a" valign="bottom" noclick="1"/>
+				
+				<image name="main_accountprogress_league" texture="/ui/main/shared/textures/elo_rank_1.tga" color="1 1 1 1" valign="center" align="left" width="180s" height="180s" noclick="1"/>
+				
+				<panel height="76s" noclick="1">					
+					<panel y="-12s" noclick="1" float="right" padding="20s" width="-185s" align="right" >
+						<panel grow="1" regrow="1" height="100%" noclick="1" >
+							<label name="main_accountprogress_ELO_label_1" textvalign="bottom" color=".6 .6 .6 1" outline="1" outlinecolor="#0b1a1b" font="maindyn_30" content="playerProfileELO_label_1" fitx="1" noclick="1" />
+						</panel>
+						<panel grow="1" regrow="1" height="100%" noclick="1" >
+							<label name="main_accountprogress_Division" y="-2s" valign="bottom" color=".6 .6 .6 1" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="playerProfileDivision" fitx="1" fity="1" noclick="1" />
+						</panel>
+					</panel>					
+				</panel>				
+				
+				<panel height="100s" width="-185s" align="right" valign="bottom">
+					
+					<panel height="42s" valign="top" noclick="1">					
+						<label name="main_accountprogress_LadderPoints" style="labelBase" color="1 1 1 1" font="maindyn_24" content="" noclick="1" />						
+						<label name="main_accountprogress_Rank" x="62%" style="labelBase" color="1 1 1 1" font="maindyn_24" content="playerProfileRank" noclick="1"/><!-- Wins -->
+						
+						<!-- Top Heroes - Can be removed -->
+						<panel grow="1" height="100%" align="center" float="right" padding="10s" noclick="1" visible="0">
+							<label style="labelBase" font="maindyn_26" fitx="1" textvalign="center" content="news_progression_top_heroes" noclick="1" />
+							<panel grow="1" height="100%" float="right" padding="6s" noclick="1">
+								<instance name="main_accountprogress_top_hero_template" index="1" />
+								<instance name="main_accountprogress_top_hero_template" index="2" />
+								<instance name="main_accountprogress_top_hero_template" index="3" />							
+							</panel>
+						</panel>
+					</panel>
+					
+					<instance name="standardButtonBlue"
+						id="viewLadderBtn"
+						y="-16s" height="36s" width="300s" align="center" valign="bottom" borderthickness="4s"
+						label="news_compenent_view_ladder"
+						font="maindyn_26" outlinecolor="#194053"
+						onclicklua="
+							local mainPanelStatus	= LuaTrigger.GetTrigger('mainPanelStatus')
+							mainPanelStatus.main	= 23
+							mainPanelStatus:Trigger(false)
+							libThread.threadFunc(function()
+								wait(10)
+								mainUI.setBreadcrumbsSelected(9)
+							end)
+							mainUI.BoostToPlayerCard()
+							local playerProfileAnimStatus = LuaTrigger.GetTrigger('playerProfileAnimStatus')
+							playerProfileAnimStatus.section = 'ladder'
+							playerProfileAnimStatus:Trigger(false)
+							mainUI.savedLocally.profileSection1 = playerProfileAnimStatus.section
+							SaveState()
+						"
+					/>					
+					
+				</panel>
+			
+				<instance
+					name="main_accountprogress_container_tab" id="4" label="news_compenent_unlock_progress" x="0s"
+					onclicklua="mainUI.news.SelectAccountProgressionTabByIndex(1, 125)"
+					onmouseoverlua="GetWidget('main_accountprogress_container_tab4hover'):FadeIn(125)"
+					onmouseoutlua="GetWidget('main_accountprogress_container_tab4hover'):FadeOut(125)"							
+				/>				
+				
+				<instance
+					name="main_accountprogress_container_tab" id="3" label="news_compenent_stats_progress" x="205s"			
+					onclicklua="mainUI.news.SelectAccountProgressionTabByIndex(2, 125)"
+					fontColor="#88c1c5"
+					isCurrent="1"					
+				/>
+
+			</panel>
+		
+		</panel>
+	</template>
+	
+	<template name="main_hero_model_container_config_template">
+		<panel align="center" width="300s" height="40s">
+			<instance name="simple_combobox_textured" height="32s" id="main_hero_model_container_config_combobox" maxlistheight="8" handleheight="24s" texturel="/ui/shared/textures/combobox_blue_background_l.tga" texturec="/ui/shared/textures/combobox_blue_background_c.tga" texturer="/ui/shared/textures/combobox_blue_background_r.tga" />
+		</panel>
+	</template>
+	
+	
+	<template name="main_hero_model_container_template" >
+		<!-- Model -->
+		<panel name="main_model_container{index}" x="{x}" y="{y}" width="{w}" height="{h}" noclick="1" visible="1" sticky="1" stickytoinvis="0">
+			<modelpanel
+				noclick="1"
+				depthclear="true" depthcompress="false"
+				lookat="false"
+				cameranear="0.0"
+				camerafar="3000.0"
+				cameradistance="30"
+				camerapos="0 1320 1350"
+				cameraangles="-45 0 180"
+				camerafov="7"
+				modelpos="{pos}" modelangles="{angles}" modelscale="{scale}"
+				sunazimuth="120" sunaltitude="50" suncolor="0.9 0.9 0.9" ambientcolor="0.6 0.7 0.7"
+				resourcecontext=""
+				anim="idle"
+				model="{model}"
+				color="1 1 1 1"
+			/>
+		</panel>
+	</template>
+	
+	<!-- Friends Available
+	<panel name="main_news_friends_available_container" height="133s" noclick="0" visible="0" sticky="1" stickytoinvis="0">
+		<frame texture="/ui/elements:squareglow" color="0 0 0 0.8" borderthickness="12s" bordercolor="0 0 0 0.8" width="+10s" height="+10s" align="center" valign="center" noclick="1"/>
+		<frame texture="/ui/elements:rounded_bg_white" color="#09191c" borderthickness="3s" bordercolor="#03090a" noclick="1"/>
+		<panel x="15s" float="bottom" valign="top" grow="1" regrow="1" width="-15s" noclick="1">
+			<panel width="100%" grow="1" regrow="1" noclick="1">
+				<label color="#88c1c5" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="news_quickplay_desc" fity="1" noclick="1" />
+			</panel>
+		</panel>
+		<panel name="main_news_friends_available_list_container" x="-10s" width="188s" height="60s" align="right" valign="center">
+
+		</panel>
+	</panel>			
+	 -->
+	 
+</package>
