@@ -167,7 +167,7 @@
 	<precachetexture file="/ui/main/news/textures/news_background_uio.tga"/>
 	<precachetexture file="/ui/main/news/textures/news_background_palmalph.tga"/>
 	<precachetexture file="/ui/main/news/textures/news_background_top5plays.tga"/>
-	<precachetexture file="/ui/main/news/textures/hero_art_newhero.tga"/>
+	<precachetexture file="/ui/main/news/textures/splash_art_bastion.tga"/>
 	<precachetexture file="/ui/main/shared/textures/infomouse.tga"/>
 	<precachetexture file="/ui/main/news/textures/news_component_tab.tga"/>
 	<precachetexture file="/ui/main/news/textures/news_component_tab_current.tga"/>

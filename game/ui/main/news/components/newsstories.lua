@@ -11,7 +11,7 @@ local interface = object
 
 local splashSection = {
 	-- Splash art, top label, bottom label
-	{"/ui/main/news/textures/hero_art_newhero.tga", Translate("news_default_splash_title"), Translate("news_default_splash_label")},
+	{"/ui/main/news/textures/splash_art_bastion.tga", Translate("news_default_splash_title"), Translate("news_default_splash_label")},
 }
 
 -- Easy news config:
