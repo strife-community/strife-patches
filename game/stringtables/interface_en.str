@@ -5238,7 +5238,6 @@ news_component_manager_addDialog			Add Component
 news_component_manager_toggle_overlay		Overlay
 news_discord								Join our Discord!
 news_discord_desc                           Connect with the Community
-news_discord_btn							Discord
 
 //news components
 news_component_stories						Stories

@@ -171,6 +171,7 @@
 	<precachetexture file="/ui/main/shared/textures/infomouse.tga"/>
 	<precachetexture file="/ui/main/news/textures/news_component_tab.tga"/>
 	<precachetexture file="/ui/main/news/textures/news_component_tab_current.tga"/>
+	<precachetexture file="/ui/main/news/textures/discord-logo-white.tga"/>
 	
 	<!-- Player Profile-->
 	<precachetexture file="/ui/_textures/icons/pin.tga"/>

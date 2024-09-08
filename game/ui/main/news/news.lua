@@ -19,9 +19,9 @@ local function registerNews(interface)
 		mainUI.savedLocally.newsComponents = -- mainUI.savedLocally.newsComponents or 
 		{
 			{name="main_news_stories", x="20s", y="152s", w="606s", h="223s"},
-			{name="main_news_bot_match", x="20s", y="390s", w="606s", h="83s"},
-			{name="main_news_progression", x="20s", y="508s", w="606s", h="190s"},
-			{name="main_news_discord", x="20s", y="488s", w="606s", h="83s"},
+			--{name="main_news_bot_match", x="20s", y="390s", w="606s", h="83s"},
+			{name="main_news_discord", x="20s", y="390s", w="606s", h="83s"},
+			{name="main_news_progression", x="20s", y="508s", w="606s", h="190s"},			
 			revision = 1
 		}
 
