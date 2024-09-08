@@ -195,7 +195,6 @@
 	<modifier key="Blazer_Ability4_Invis" modpriority="100" passiveeffect="effects/body_invis.effect" />
 	<modifier key="voidkeyactive" modpriority="100" passiveeffect="" />
 	
-	<modifier key="gear_1" modpriority="1" altavatar="true" passiveeffect="effects/body.effect" icon2="gear_1/icon.tga" portrait="gear_1/icon.tga" model="gear_1/model.mdf" previewmodel="gear_1/preview.mdf" storemodel="gear_1/preview.mdf" />
 	<modifier key="gear_2" modpriority="1" altavatar="true" passiveeffect="gear_2/effects/body.effect" icon2="gear_2/icon.tga" portrait="gear_2/icon.tga" model="gear_2/model.mdf" previewmodel="gear_2/preview.mdf" storemodel="gear_2/preview.mdf" />
 
 	
