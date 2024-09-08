@@ -5217,8 +5217,8 @@ social_groups_newIM							New IM
 social_groups_newIM_msg						Enter a nickname to start a conversation with a player.
 
 //news.package
-news_default_splash_label					Trace and Midnight
-news_default_splash_title					New Heroes!
+news_default_splash_label					Arise, chosen!
+news_default_splash_title					Trials of Strife continue!
 new_hero									New Hero
 new_heroes									New Heroes!
 news_title									News Updates
