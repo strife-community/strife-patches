@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d_%H-%M-%S')"
     - uses: actions/checkout@master
     - name: Archive Release
       uses: thedoctor0/zip-release@0.7.5
@@ -12,10 +15,11 @@ jobs:
         type: 'zip'
         filename: 'resources2.s2z'
         directory: 'game'
-        custom: '-acf'
+        custom: '--file=ARCHIVE'
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
         artifacts: "game/resources2.s2z"
-        tag: "2024-09-09-${{ github.sha }}"
+        tag: "${{ steps.date.outputs.date }}-${{ github.sha }}"
         generateReleaseNotes: true
+        removeArtifacts: true
