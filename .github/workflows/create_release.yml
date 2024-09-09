@@ -18,7 +18,7 @@ jobs:
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
-        artifacts: "resources2.s2z"
+        artifacts: "game/resources2.s2z"
         tag: "${{ steps.date.outputs.date }}-${{ github.sha }}"
         generateReleaseNotes: true
         removeArtifacts: true
