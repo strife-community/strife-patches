@@ -1,0 +1,2073 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+
+	<!-- New Game Interface -->
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_tl.tga"/>
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_t.tga"/>
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_l.tga"/>
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_c.tga"/>
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_r.tga"/>
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_b.tga"/>
+	<precachetexture file="/ui/shared/frames/rounded_bg_grad_br.tga"/>
+	
+	<precachetexture file="/ui/shared/frames/stone_tl.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_t.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_l.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_c.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_r.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_b.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_br.tga"/>
+	
+	<precachetexture file="/ui/shared/frames/context_tl.tga"/>
+	<precachetexture file="/ui/shared/frames/context_t.tga"/>
+	<precachetexture file="/ui/shared/frames/context_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/context_l.tga"/>
+	<precachetexture file="/ui/shared/frames/context_c.tga"/>
+	<precachetexture file="/ui/shared/frames/context_r.tga"/>
+	<precachetexture file="/ui/shared/frames/context_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/context_b.tga"/>
+	<precachetexture file="/ui/shared/frames/context_br.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/background_stone.jpg"/>
+	<precachetexture file="/ui/shared/textures/decal_base.tga"/>
+	<precachetexture file="/ui/shared/textures/decal_edge.tga"/>
+	<precachetexture file="/ui/shared/textures/decal_level.tga"/>
+	<precachetexture file="/ui/shared/textures/decal_max.tga"/>
+	<precachetexture file="/ui/shared/textures/decal_orb.tga"/>
+	<precachetexture file="/ui/shared/textures/grass.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_corner_tl.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_corner_tr.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_corner_bl.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_corner_br.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/flag_base.tga"/>
+	<precachetexture file="/ui/shared/textures/flag_color.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/scoreboard_highlight01.tga"/>
+	<precachetexture file="/ui/shared/textures/inside_glow.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/hero_glow.tga"/>
+	<precachetexture file="/ui/shared/textures/plus_icon_green.tga"/>
+	<precachetexture file="/ui/shared/textures/minus_icon_red.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/mini_button_stone.jpg"/>
+	<precachetexture file="/ui/shared/textures/mini_button_stone2.jpg"/>
+	<precachetexture file="/ui/shared/textures/mini_button_stone.tga"/>
+	<precachetexture file="/ui/shared/textures/mini_button_corner_tl.tga"/>
+	<precachetexture file="/ui/shared/textures/mini_button_corner_tr.tga"/>
+	<precachetexture file="/ui/shared/textures/mini_button_corner_bl.tga"/>
+	<precachetexture file="/ui/shared/textures/mini_button_corner_br.tga"/>
+	<precachetexture file="/ui/shared/textures/mini_button_home.tga"/>
+	<precachetexture file="/ui/shared/textures/mini_button_options.tga"/>
+	<precachetexture file="/ui/shared/textures/mini_button_ping.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/mini_close.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/xp_bar_l.tga"/>
+	<precachetexture file="/ui/shared/textures/xp_bar_c.tga"/>
+	<precachetexture file="/ui/shared/textures/xp_bar_r.tga"/>
+	<precachetexture file="/ui/shared/textures/xp_bar_fill.tga"/>
+	<precachetexture file="/ui/shared/textures/xp_bar_end.tga"/>
+	<precachetexture file="/ui/shared/textures/xp_bar_gained.tga"/>
+	<precachetexture file="/ui/shared/textures/xp_bar_gained_end.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/itemtype_base.tga"/>
+	<precachetexture file="/ui/shared/textures/itemtype_boots.tga"/>
+	<precachetexture file="/ui/shared/textures/itemtype_consumable.tga"/>
+	<precachetexture file="/ui/shared/textures/cooldown_border.tga"/>
+	<precachetexture file="/ui/shared/textures/pip_base.tga"/>
+	<precachetexture file="/ui/shared/textures/pip_active.tga"/>
+	<precachetexture file="/ui/shared/textures/ability_leveled.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/orb_container.tga"/>
+	<precachetexture file="/ui/shared/textures/orb_edge_health.tga"/>
+	<precachetexture file="/ui/shared/textures/orb_edge_mana.tga"/>
+	<precachetexture file="/ui/shared/textures/orb_sheen.tga"/>
+	<precachetexture file="/ui/shared/textures/orb_fill_health.tga"/>
+	<precachetexture file="/ui/shared/textures/orb_fill_mana.tga"/>
+	<precachetexture file="/ui/shared/textures/decal_sign.tga"/>
+	
+	<!-- New Shop Interface -->		
+	<precachetexture file="/ui/new_game/shop/textures/shop_bg.jpg"/>
+	<precachetexture file="/ui/new_game/shop/textures/shop_header.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/shop_load.tga"/>
+	
+	<precachetexture file="/ui/new_game/shop/textures/shop_hoverIcon_coins.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/shop_hoverIcon_coins_minus.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/shop_hoverIcon_courier.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/shop_hoverIcon_owned.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/shop_hoverIcon_stash.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/shop_icon_crafted.tga"/>
+	<precachetexture file="/ui/new_game/shop/filters/components_1.tga"/>
+	
+	<precachetexture file="/ui/new_game/shop/textures/category_glow.tga"/>
+	<precachetexture file="/ui/shared/textures/check_mark.tga"/>
+	<precachetexture file="/ui/shared/textures/arrow_rounded_down.tga"/>
+	
+	<precachetexture file="/ui/new_game/shop/textures/scroll_target.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/scroll_cap.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/scroll_slot.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/scroll_highlight.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/scroll_bg.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/shop_header.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/trash/can_static.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/trash/can.tga"/>
+	<precachetexture file="/ui/new_game/shop/textures/trash/lid.tga"/>
+	
+	<!-- New Game Interface for Counter-Strife -->
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/dark_crystal.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/dark_portal.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/dark_portal_floats.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/dark_portal_glow.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/heart_broken.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/iventory_crystal.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/life_count.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/mvp.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/player_event_dead.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/round_flag_base.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/round_flag_color.tga"/>
+	<precachetexture file="/maps/counter-strife/resources/ui/textures/round_inventory.tga"/>
+	
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_details_bg.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_inventory_bg.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_details_bar_bg.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_cover_selected.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_cover_me_selected.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_cover_me.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_cover.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/mvp.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/dead.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/chat_muted.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/chat.tga"/>
+	
+	<!-- Ladder -->
+	<precachetexture file="/ui/main/ladder/textures/gems_0.tga"/>
+	
+	<!-- News -->
+	<precachetexture file="/ui/main/news/textures/news_background01.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background02.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background03.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background04.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background05.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background06.tga"/>	
+	<precachetexture file="/ui/main/news/textures/news_background07.tga"/>	
+	<precachetexture file="/ui/main/news/textures/news_background08.tga"/>	
+	<precachetexture file="/ui/main/news/textures/news_background_ladder.tga"/>	
+	<precachetexture file="/ui/main/news/textures/news_background_eanu.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_aemon.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_midknight.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_minnie.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_tracker.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_buford.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_rip.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_uio.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_palmalph.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_background_top5plays.tga"/>
+	<precachetexture file="/ui/main/news/textures/splash_art_bastion.tga"/>
+	<precachetexture file="/ui/main/shared/textures/infomouse.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_component_tab.tga"/>
+	<precachetexture file="/ui/main/news/textures/news_component_tab_current.tga"/>
+	<precachetexture file="/ui/main/news/textures/discord-logo-white.tga"/>
+	
+	<!-- Player Profile-->
+	<precachetexture file="/ui/_textures/icons/pin.tga"/>
+	<precachetexture file="/ui/_textures/icons/component.tga"/>
+	<precachetexture file="/ui/shared/textures/karma_toxic.tga"/>
+	<precachetexture file="/ui/shared/textures/karma_goodguy.tga"/>	
+	<precachetexture file="/ui/shared/textures/disconnect.tga"/>	
+	<precachetexture file="/ui/main/player_profile/textures/white_flag.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/active_empty_up.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/active_empty_up.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/active_normal_up.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/active_normal_over.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/active_ready_up.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/active_ready_over.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/complete_normal_up.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/complete_normal_over.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/complete_champ_up.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/complete_champ_over.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/complete_grand_up.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/complete_grand_over.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/account_progress.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/mobile_app.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/download_ios.tga"/>
+	<precachetexture file="/ui/main/player_profile/textures/download_android.tga"/>	
+	<precachetexture file="/ui/main/player_profile/textures/raf_boc.tga"/>	
+	<precachetexture file="/ui/main/player_profile/textures/raf_shirt.tga"/>	
+	<precachetexture file="/ui/main/player_profile/textures/raf_travel.tga"/>	
+	<precachetexture file="/ui/main/player_profile/textures/app_wheel.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/rectangle_shadow.tga"/>
+	<precachetexture file="/ui/main/khanquest/textures/champs1.tga"/>
+	<precachetexture file="/ui/main/khanquest/textures/champs2.tga"/>
+	<precachetexture file="/ui/main/shared/textures/elo_rank_0.tga"/>
+	<precachetexture file="/ui/main/shared/textures/elo_rank_1.tga"/>
+	<precachetexture file="/ui/main/shared/textures/elo_rank_2.tga"/>
+	<precachetexture file="/ui/main/shared/textures/elo_rank_3.tga"/>
+	<precachetexture file="/ui/main/shared/textures/elo_rank_4.tga"/>
+	<precachetexture file="/ui/main/shared/textures/elo_rank_5.tga"/>	
+	<precachetexture file="/ui/shared/textures/karma/karma_1.tga"/>	
+	<precachetexture file="/ui/shared/textures/karma/karma_2.tga"/>	
+	<precachetexture file="/ui/shared/textures/karma/karma_3.tga"/>	
+	<precachetexture file="/ui/shared/textures/karma/karma_4.tga"/>	
+	<precachetexture file="/ui/shared/textures/karma/karma_5.tga"/>	
+	<precachetexture file="/ui/main/shared/round_meter/tri_color_base.tga"/>	
+	<precachetexture file="/ui/main/shared/round_meter/outer_ring.tga"/>	
+	<precachetexture file="/ui/main/shared/round_meter/label_base.tga"/>	
+	<precachetexture file="/ui/main/shared/round_meter/meter_nubbin.tga"/>	
+	<precachetexture file="/ui/main/shared/round_meter/meter_nubbin_color.tga"/>
+	<precachetexture file="/ui/main/shared/textures/acct_boost_off.tga"/>
+	<precachetexture file="/ui/main/shared/textures/acct_boost_on.tga"/>
+	<precachetexture file="/ui/main/shared/textures/rocket_banner.tga"/>
+	<precachetexture file="/ui/main/shared/textures/clock.tga"/>
+	<precachetexture file="/ui/main/shared/textures/boosted_rewards.tga"/>
+	<precachetexture file="/ui/main/shared/textures/boosted_xp.tga"/>
+	<precachetexture file="/ui/main/shared/textures/boosted_pets.tga"/>
+	<precachetexture file="/ui/main/shared/textures/boosted_crafting.tga"/>
+	<precachetexture file="/ui/main/shared/textures/raf.tga"/>
+
+	
+	<!-- Account Icons -->
+	<precachetexture file="/ui/shared/textures/account_icons/spe_act1.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/plunder_happy.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/plunder_sad.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/tinker_happy.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/tinker_sad.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/race_to_70.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_10_heroes.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_5_heroes.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_10_heroes.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_5_heroes.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/beta_wins_10.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/beta_wins_50.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/beta_wins_100.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/beta_level_70.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/star_1.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/star_2.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/star_3.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/star_4.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/star_5.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/aol_1.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/aol_2.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/aol_3.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/aol_4.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/aol_5.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/aol_6.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/aol_7.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/aol_8.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/closedbeta.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/closed10.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/closed50.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/closed100.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/collectorsedition.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/collectorsedition2.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/pax_key_icon.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/nvidia2.tga"/>	
+	<precachetexture file="/ui/shared/textures/account_icons/default.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s2staff.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/ac_prog_1.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/ac_prog_2.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/ac_prog_3.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/ac_prog_4.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/ac_prog_5.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/ac_prog_6.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/ac_prog_7.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/steam_pack1.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s01_0.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s01_1.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s01_2.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s01_3.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s01_4.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s02_0.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s02_1.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s02_2.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s02_3.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/s02_4.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/account_icons/tourney_philippines.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/tourney_malaysia.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/tourney_singapore.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/tourney_thailand.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/tourney_vietnam.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/account_icons/hp_mastered.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/hp_division4.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/hp_division5.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_ace.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_bandito.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_bastion.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_blazer.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_bo.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_buford.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_caprice.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_carter.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_chester.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_claudessa.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_eanu.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_fetterstone.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_gokong.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_gambler.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_hale.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_harrower.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_iah.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_jinshe.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_ladytinder.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_malady.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_midknight.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_minerva.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_flak.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_moxie.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_nikolai.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_ray.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_rip.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_rook.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_shank.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_trace.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_trixie.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_vermillion.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_vex.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_zaku.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_ace.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_bandito.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_bastion.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_blazer.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_bo.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_buford.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_caprice.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_carter.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_chester.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_claudessa.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_eanu.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_fetterstone.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_gokong.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_gambler.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_hale.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_harrower.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_iah.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_jinshe.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_ladytinder.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_malady.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_midknight.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_minerva.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_flak.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_moxie.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_1_hero_nikolai.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_ray.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_rip.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_rook.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_shank.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_trace.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_trixie.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_vermillion.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_vex.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/div_2_hero_zaku.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_ace.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_aemon.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_bandito.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_bastion.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_blazer.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_bo.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_buford.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_caprice.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_carter.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_chester.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_claudessa.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_eanu.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_fetterstone.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_gokong.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_gambler.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_hale.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_harrower.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_iah.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_jinshe.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_ladytinder.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_malady.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_malph.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_midknight.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_minerva.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_pal.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_flak.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_moxie.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_nikolai.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_ray.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_rip.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_rook.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_shank.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_trace.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_trixie.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_vermillion.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_vex.tga"/>
+	<precachetexture file="/ui/shared/textures/account_icons/master_hero_zaku.tga"/>
+
+	
+	<!-- Friends List -->
+	<precachetexture file="/ui/main/friends/textures/icon_mute.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_message.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_party.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_profile.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_challenge.tga"/>
+	<precachetexture file="/ui/main/friends/textures/party_gradient.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_friend_add.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_friend_remove.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_friend_unavailable.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_group_invite.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_spectate.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_howto.tga"/>
+	<precachetexture file="/ui/main/friends/textures/party_blower.tga"/>
+	<precachetexture file="/ui/main/friends/textures/icon_change_group.tga"/>
+	<precachetexture file="/ui/main/friends/textures/social.tga"/>
+	<precachetexture file="/ui/main/friends/textures/tip_marker.tga"/>
+	
+	<precachetexture file="/ui_dev/friends/textures/botbar_mid.tga"/>
+	<precachetexture file="/ui_dev/friends/textures/botbar_left.tga"/>
+	<precachetexture file="/ui_dev/friends/textures/botbar_right.tga"/>
+	
+	<precachetexture file="/ui/main/shared/textures/user_status_offline.tga"/>
+	<precachetexture file="/ui/main/shared/textures/gear02.tga"/>
+	<precachetexture file="/ui/main/shared/textures/search02.tga"/>
+	<precachetexture file="/ui/main/shared/textures/maximize.tga"/>
+	<precachetexture file="/ui/main/shared/textures/drop_arrow.tga"/>
+	
+	<!-- Twitch -->
+	<precachetexture file="/ui/main/shared/twitch/textures/broadcast_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/clear_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/edit_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/followers_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/friends_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/overlay_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/quotes_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/save_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/stylized_x.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/text_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/twitch_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/twitch_logo.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/undo_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/user_satus_light.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/views_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/webcam_icon.tga"/>
+	<precachetexture file="/ui/main/shared/twitch/textures/webcam_settings_icon.tga"/>
+	
+	<!-- Icon Frames -->
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_hover.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt_hover.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt_selected.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt2.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt2_hover.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt2_red.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt2_red_hover.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt2_green.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt2_green_hover.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive_txt2_selected.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_tl.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_t.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_l.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_c.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_r.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_b.tga"/>
+	<precachetexture file="/ui/shared/frames/frameglow_br.tga"/>	
+	<precachetexture file="/ui/shared/frames/inner_glow_tl.tga"/>
+	<precachetexture file="/ui/shared/frames/inner_glow_t.tga"/>
+	<precachetexture file="/ui/shared/frames/inner_glow_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/inner_glow_l.tga"/>
+	<precachetexture file="/ui/shared/frames/inner_glow_c.tga"/>
+	<precachetexture file="/ui/shared/frames/inner_glow_r.tga"/>
+	<precachetexture file="/ui/shared/frames/inner_glow_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/inner_glow_b.tga"/>
+	<precachetexture file="/ui/shared/frames/inner_glow_br.tga"/>	
+	<precachetexture file="/ui/shared/frames/header_bg_b.tga.tga"/>
+	<precachetexture file="/ui/shared/frames/header_bg_t.tga"/>
+	<precachetexture file="/ui/shared/frames/header_bg_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/header_bg_l.tga"/>
+	<precachetexture file="/ui/shared/frames/header_bg_c.tga"/>
+	<precachetexture file="/ui/shared/frames/header_bg_r.tga"/>
+	<precachetexture file="/ui/shared/frames/header_bg_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/header_bg_b.tga"/>
+	<precachetexture file="/ui/shared/frames/header_bg_br.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive2.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_interactive2_hover.tga"/>
+	<precachetexture file="/ui/main/shared/textures/iconframe_displayinfo2.tga"/>
+	
+	<!-- UI Elements -->
+	<precachetexture file="/ui/shared/textures/tip_mark.tga"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_tl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_t.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_tr.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_l.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_c.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_r.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_bl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_b.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/std_btn_inset_bl.tga" nocompress="true"/>	
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_tl.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_t.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_l.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_c.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_r.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_b.tga"/>
+	<precachetexture file="/ui/shared/frames/stone_backer_inset_br.tga"/>	
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_tl.tga"/>
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_t.tga"/>
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_l.tga"/>
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_c.tga"/>
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_r.tga"/>
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_b.tga"/>
+	<precachetexture file="/ui/shared/frames/bevel_top_blue_br.tga"/>	
+	<precachetexture file="/ui/shared/frames/roundframe_bold_tl.tga"/>
+	<precachetexture file="/ui/shared/frames/roundframe_bold_t.tga"/>
+	<precachetexture file="/ui/shared/frames/roundframe_bold_tr.tga"/>
+	<precachetexture file="/ui/shared/frames/roundframe_bold_l.tga"/>
+	<precachetexture file="/ui/shared/frames/roundframe_bold_c.tga"/>
+	<precachetexture file="/ui/shared/frames/roundframe_bold_r.tga"/>
+	<precachetexture file="/ui/shared/frames/roundframe_bold_bl.tga"/>
+	<precachetexture file="/ui/shared/frames/roundframe_bold_b.tga"/>
+	<precachetexture file="/ui/shared/frames/roundframe_bold_br.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/waiting.tga"/>
+	<precachetexture file="/ui/shared/textures/pointer_simple.tga"/>
+	
+	<if condition="host_islauncher">
+		<texture file="/ui/main/shared/frames/speech_bl_nip_tl.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_bl_nip_t.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_bl_nip_tr.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_bl_nip_l.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_bl_nip_c.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_bl_nip_r.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_bl_nip_bl.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_bl_nip_b.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_bl_nip_br.tga" nocompress="true"/>	
+		<texture file="/ui/main/shared/frames/speech_br_nip_tl.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_br_nip_t.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_br_nip_tr.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_br_nip_l.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_br_nip_c.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_br_nip_r.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_br_nip_bl.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_br_nip_b.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_br_nip_br.tga" nocompress="true"/>	
+		<texture file="/ui/main/shared/frames/speech_tl_nip_tl.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tl_nip_t.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tl_nip_tr.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tl_nip_l.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tl_nip_c.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tl_nip_r.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tl_nip_bl.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tl_nip_b.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tl_nip_br.tga" nocompress="true"/>	
+		<texture file="/ui/main/shared/frames/speech_tr_nip_tl.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tr_nip_t.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tr_nip_tr.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tr_nip_l.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tr_nip_c.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tr_nip_r.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tr_nip_bl.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tr_nip_b.tga" nocompress="true"/>
+		<texture file="/ui/main/shared/frames/speech_tr_nip_br.tga" nocompress="true"/>	
+		<texture file="/ui/main/shared/frames/speech_tr_nip.tga" nocompress="true"/>	
+		<texture file="/ui/main/shared/frames/speech_tl_nip.tga" nocompress="true"/>	
+		<texture file="/ui/main/shared/frames/speech_br_nip.tga" nocompress="true"/>	
+		<texture file="/ui/main/shared/frames/speech_bl_nip.tga" nocompress="true"/>	
+	</if>
+	
+	<precachetexture file="/ui/shared/frames/togglebox_tl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/togglebox_t.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/togglebox_tr.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/togglebox_l.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/togglebox_c.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/togglebox_r.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/togglebox_bl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/togglebox_b.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/togglebox_br.tga" nocompress="true"/>	
+	<precachetexture file="/ui/shared/frames/framehighlight_tl.tga" />
+	<precachetexture file="/ui/shared/frames/framehighlight_t.tga" />
+	<precachetexture file="/ui/shared/frames/framehighlight_tr.tga" />
+	<precachetexture file="/ui/shared/frames/framehighlight_l.tga" />
+	<precachetexture file="/ui/shared/frames/framehighlight_c.tga" />
+	<precachetexture file="/ui/shared/frames/framehighlight_r.tga" />
+	<precachetexture file="/ui/shared/frames/framehighlight_bl.tga" />
+	<precachetexture file="/ui/shared/frames/framehighlight_b.tga" />
+	<precachetexture file="/ui/shared/frames/framehighlight_br.tga" />
+	<precachetexture file="/ui/main/shared/textures/main_background.tga" />
+	<precachetexture file="/ui/main/shared/textures/logo.tga" />
+	<precachetexture file="/ui/main/shared/textures/logo_cn.tga" />
+	<precachetexture file="/ui/shared/textures/gold_coins.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/stylized_check.tga"/>
+	<precachetexture file="/ui/main/shared/textures/stylized_x.tga"/>
+	<precachetexture file="/ui/main/shared/textures/crafting.tga"/>
+	<precachetexture file="/ui/main/shared/textures/unlock_hero_single.tga"/>
+	<precachetexture file="/ui/main/shared/textures/unlock_hero_all.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/stone_backer/tall_base_top.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/tall_base_bottom.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/tall_base_center.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/tall_glow_top.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/tall_glow_bottom.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/tall_glow_center.tga"/>	
+	<precachetexture file="/ui/shared/textures/stone_backer/wide_base_center.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/wide_base_right.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/wide_base_left.tga"/>	
+	<precachetexture file="/ui/shared/textures/stone_backer/wide_glow_left.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/wide_glow_right.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/wide_glow_center.tga"/>		
+	<precachetexture file="/ui/shared/textures/stone_backer/crack_type01.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/crack_type02.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/crack_type03.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/crack_type04.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/crack_type05.tga"/>
+	<precachetexture file="/ui/shared/textures/stone_backer/text_base.tga"/>
+	
+
+	<precachetexture file="/ui/main/shared/textures/progress_bar_left.tga" />
+	<precachetexture file="/ui/main/shared/textures/progress_bar_center.tga" />
+	<precachetexture file="/ui/main/shared/textures/progress_bar_right.tga" />
+	
+	<precachetexture file="/ui/main/navigation/textures/topmenubtn_off.tga" />
+	<precachetexture file="/ui/main/navigation/textures/alert.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/window_button.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/window_button_hover.tga" />
+	
+	<precachetexture file="/ui/main/windowframe/textures/window_button2.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/window_button2_hover.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/window_button2red.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/window_button2red_hover.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/top_close.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/top_gear.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/top_logout.tga" />
+	<precachetexture file="/ui/main/windowframe/textures/top_minimize.tga" />
+	
+	<!-- Naviagtion -->
+	<precachetexture file="/ui/main/navigation/textures/hero_btn_ace_default.tga" />
+	<precachetexture file="/ui/main/navigation/textures/hero_btn_caprice_default.tga" />
+	<precachetexture file="/ui/main/navigation/textures/hero_btn_tinder_default.tga" />
+	<precachetexture file="/ui/main/navigation/textures/hero_btn_kangus_default.tga" />
+	<precachetexture file="/ui/main/navigation/textures/party_cake.tga" />
+	
+	<precachetexture file="/ui/main/navigation/textures/top_base.tga" />
+	<precachetexture file="/ui/main/navigation/textures/top_menu.tga" />
+	
+	<precachetexture file="/ui/main/navigation/textures/menu_play_up.tga" />
+	<precachetexture file="/ui/main/navigation/textures/menu_play_over.tga" />
+	<precachetexture file="/ui/main/navigation/textures/menu_play_selected.tga" />
+	<precachetexture file="/ui/main/navigation/textures/menu_std_01_up.tga" />
+	<precachetexture file="/ui/main/navigation/textures/menu_std_01_over.tga" />
+	<precachetexture file="/ui/main/navigation/textures/menu_std_01_selected.tga" />
+	<precachetexture file="/ui/main/navigation/textures/menu_std_02_up.tga" />
+	<precachetexture file="/ui/main/navigation/textures/menu_std_02_over.tga" />
+	<precachetexture file="/ui/main/navigation/textures/menu_std_02_selected.tga" />
+	
+	<!-- Pets -->
+	<precachetexture file="/ui/main/pets/textures/progress_meter_bg.tga" />
+	
+	<!-- Party -->
+	<texture file="/ui/main/party/textures/icon_accepted.tga" nocompress="true" />
+	<texture file="/ui/main/party/textures/icon_waiting.tga" nocompress="true" />
+	<texture file="/ui/main/party/textures/icon_ready.tga" nocompress="true" />
+	<texture file="/ui/main/party/textures/icon_boot.tga" nocompress="true" />
+	<texture file="/ui/main/party/textures/icon_door.tga" nocompress="true" />
+	<texture file="/ui/main/party_finder/textures/slot_occupied.tga" nocompress="true" />	
+	
+	<!-- Prize Wheel -->
+	<precachetexture file="/ui/main/wheel/textures/arrow.tga" />
+	<precachetexture file="/ui/main/wheel/textures/background_glow.tga" />
+	<precachetexture file="/ui/main/wheel/textures/food_tier01.tga" />
+	<precachetexture file="/ui/main/wheel/textures/food_tier02.tga" />
+	<precachetexture file="/ui/main/wheel/textures/food_tier03.tga" />
+	<precachetexture file="/ui/main/wheel/textures/food_tier04.tga" />
+	<precachetexture file="/ui/main/wheel/textures/food_tier05.tga" />
+	<precachetexture file="/ui/main/wheel/textures/ore_tier01.tga" />
+	<precachetexture file="/ui/main/wheel/textures/ore_tier02.tga" />
+	<precachetexture file="/ui/main/wheel/textures/ore_tier03.tga" />
+	<precachetexture file="/ui/main/wheel/textures/ore_tier04.tga" />
+	<precachetexture file="/ui/main/wheel/textures/ore_tier05.tga" />
+	<precachetexture file="/ui/main/wheel/textures/spin_sign.tga" />
+	<precachetexture file="/ui/main/wheel/textures/table.tga" />
+	<precachetexture file="/ui/main/wheel/textures/wheel_glow.tga" />
+	<precachetexture file="/ui/main/wheel/textures/wheel_wheel.tga" />
+	
+	<!-- Misc -->	
+	<precachetexture file="/ui/shared/textures/drag_target.tga" />
+	<precachetexture file="/ui/main/shared/textures/salvage.tga" />
+	<precachetexture file="/ui/main/shared/textures/salvage_glow.tga" />
+	<precachetexture file="/ui/main/shared/textures/refresh.tga" />	
+	<precachetexture file="/ui/shared/textures/bot.tga"/>	
+	<precachetexture file="/ui/shared/textures/pack.tga"/>
+	<precachetexture file="/ui/shared/textures/pack2.tga"/>
+	<precachetexture file="/ui/shared/textures/pack3.tga"/>
+	<precachetexture file="/ui/shared/textures/alert.tga"/>		
+	<precachetexture file="/ui/main/friends/textures/social_handdown.tga"/>	
+	<precachetexture file="/ui/main/friends/textures/partyhat.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/grad_vert.tga"/>\
+	<precachetexture file="/ui/main/shared/textures/grad_center.tga"/>
+	<precachetexture file="/ui/main/shared/textures/grad_horz.tga"/>
+	<precachetexture file="/ui/shared/textures/bar_nubbin.tga"/>
+	<precachetexture file="/ui/shared/textures/meter_grad.tga"/>
+	<precachetexture file="/ui/shared/textures/megaphone.tga"/>	
+	<texture file="/ui/shared/textures/star.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/textures/pin.tga"/>	
+	<precachetexture file="/ui/_textures/icons/chat.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/xpm.tga" />
+	<precachetexture file="/ui/shared/textures/question_mark.tga"/>	
+	
+	<!-- Loading -->
+	<precachetexture file="/ui/game/loading/textures/team_logo_glory_green.tga"/>
+	<precachetexture file="/ui/game/loading/textures/team_logo_glory_red.tga"/>
+	<precachetexture file="/ui/game/loading/textures/team_logo_valor_green.tga"/>
+	<precachetexture file="/ui/game/loading/textures/team_logo_valor_red.tga"/>
+	<precachetexture file="/ui/game/loading/textures/team_kablamo_green.tga"/>
+	
+	<precachetexture file="/ui/game/loading/textures/nt_player_bar.tga"/>
+	<precachetexture file="/ui/game/loading/textures/nt_feature_1.tga"/>
+	<precachetexture file="/ui/game/loading/textures/nt_feature_2.tga"/>
+	<precachetexture file="/ui/game/loading/textures/nt_feature_3.tga"/>
+	<precachetexture file="/ui/game/loading/textures/nt_feature_4.tga"/>
+	<precachetexture file="/ui/game/loading/textures/nt_background1.jpg"/>
+	
+	<precachetexture file="/ui/main/shared/textures/grad_center.tga"/>
+	<precachetexture file="/ui/game/loading/textures/loading_disc.tga"/>
+
+	
+	<!-- Inventory -->
+	<precachetexture file="/ui/main/inventory/textures/inventory.tga" />
+	<precachetexture file="/ui/main/inventory/textures/iconframe_common.tga" />
+	<precachetexture file="/ui/main/inventory/textures/iconframe_common_hover.tga" />
+	<precachetexture file="/ui/main/inventory/textures/iconframe_rare.tga" />
+	<precachetexture file="/ui/main/inventory/textures/iconframe_rare_hover.tga" />
+	<precachetexture file="/ui/main/inventory/textures/iconframe_legendary.tga" />
+	<precachetexture file="/ui/main/inventory/textures/iconframe_legendary_hover.tga" />
+	<precachetexture file="/ui/main/inventory/textures/iconframe_components.tga" />
+	<precachetexture file="/ui/main/inventory/textures/iconframe_buttonholder.tga" />	
+	<precachetexture file="/ui/main/inventory/textures/slot_frame.tga" />
+	<precachetexture file="/ui/main/inventory/textures/slot_frame_hover.tga" />
+	<precachetexture file="/ui/main/inventory/textures/slot_frame_action_cover.tga" />	
+	
+	<!-- Crafting -->
+	<precachetexture file="/ui/main/crafting/textures/bar_nubbin.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/component_blank.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/meter_grad.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/recipe_blank.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_bg_up.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_bg_hover.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_bg_selected.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_glow.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_selected.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_selected_-1.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_selected_0.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_selected_1.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_selected_2.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_selected_3.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_selected_4.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/imbue_icon_selected_5.tga"/>
+	<precachetexture file="/ui/main/crafting/textures/jublie.tga"/>
+	
+	<!-- Options -->	
+	<precachetexture file="/ui/shared/options/textures/graphics_high.tga" />
+	<precachetexture file="/ui/shared/options/textures/graphics_med.tga" />
+	<precachetexture file="/ui/shared/options/textures/graphics_low.tga" />		
+	<precachetexture file="/ui/main/shared/textures/cloud_fail.tga" />		
+	<precachetexture file="/ui/main/shared/textures/cloud_success.tga" />		
+	
+	<!-- MiniMap -->	
+	<precachetexture file="/ui/game/shared/minimap/textures/mini_map_ping.tga" />
+	<precachetexture file="/ui/game/shared/minimap/textures/mini_map_options.tga" />
+	<precachetexture file="/ui/game/shared/minimap/textures/mini_map_header.tga" />
+	
+	<precachetexture file="/ui/game/levelup/textures/arrow.tga" />
+	
+	<!-- Radial Selection Wheel -->
+	<precachetexture file="/ui/game/radial_selection/textures/close.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/cone4.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/cone4_highlighted.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/cone4_divider.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/cone8.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/cone8_highlighted.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/cone8_divider.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/wheel_indicator.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/wheel_indicator_arrow.tga" />
+	<precachetexture file="/ui/game/radial_selection/textures/text_fade.tga" />
+	<precachetexture file="/ui/game/radial_command/textures/icon_glow.tga" />
+	<precachetexture file="/ui/shared/textures/text_fade.tga" />
+	<precachetexture file="/ui/shared/textures/circle.tga" />
+	
+	<!-- Radial Command Wheel -->
+	<precachetexture file="/ui/game/radial_command/textures/icon_assist.tga" />
+	<precachetexture file="/ui/game/radial_command/textures/icon_danger.tga" />
+	<precachetexture file="/ui/game/radial_command/textures/icon_missing.tga" />
+	<precachetexture file="/ui/game/radial_command/textures/icon_omw.tga" />
+	<precachetexture file="/ui/game/radial_command/textures/icon_glow.tga" />
+	
+	<!-- Flags -->
+	<precachetexture file="/ui/shared/textures/flags/china.tga"/>	
+	<precachetexture file="/ui/shared/textures/flags/unitedstates.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/thailand.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/eu.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/russia.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/unitedarabemirates.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/southafrica.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/vietnam.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/france.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/germany.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/spain.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/brazil.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/indonesia.tga"/>
+	<precachetexture file="/ui/shared/textures/flags/australia.tga"/>
+	
+	<!-- Watch -->
+	<precachetexture file="/ui/main/watch/textures/icon_featured.tga"/>
+	<precachetexture file="/ui/main/watch/textures/icon_replay.tga"/>
+	<precachetexture file="/ui/main/watch/textures/icon_live.tga"/>
+	<precachetexture file="/ui/main/watch/textures/icon_spectate.tga"/>
+	<precachetexture file="/ui/_textures/elements/toggle_off.tga"/>
+	<precachetexture file="/ui/_textures/elements/toggle_on.tga"/>
+	<precachetexture file="/ui/main/watch/textures/watch_replay_dlconfirmed.tga"/>
+	
+	<!-- Replay -->
+	<precachetexture file="/ui/shared/textures/button_close.tga"/>
+	<precachetexture file="/ui/shared/textures/button_micromode.tga"/>
+	<precachetexture file="/ui/shared/textures/button_minimize.tga"/>
+	<precachetexture file="/ui/shared/textures/down_up.tga"/>
+	<precachetexture file="/ui/shared/textures/dropdown_closed.tga"/>
+	<precachetexture file="/ui/shared/textures/dropdown_open.tga"/>
+	<precachetexture file="/ui/shared/textures/pause.tga"/>
+	<precachetexture file="/ui/shared/textures/rr_ff.tga"/>
+	<precachetexture file="/ui/shared/textures/start.tga"/>
+	<precachetexture file="/ui/shared/textures/tall_slider_handle.tga"/>
+	
+	<!-- Scrim Finder -->
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_neg4.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_neg3.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_neg2.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_neg1.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_even.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_pos1.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_pos2.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_pos3.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/team_comp_pos4.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/icon_challenge.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/challenge_dialog_char.tga"/>	
+	<precachetexture file="/ui/main/scrim_finder/textures/slot_occupied.tga"/>	
+
+	<!-- Dialogs -->
+	<precachetexture file="/ui/main/dialog/textures/boost_pusher.tga"/>	
+	<precachetexture file="/ui/main/dialog/textures/better_listen_to_ace.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/progress_bar_tab_l.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/progress_bar_tab_c.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/progress_bar_tab_r.tga"/>	
+	<precachetexture file="/ui/main/dialog/textures/steam_logo.tga"/>	
+	
+	<!-- Prematch -->	
+	<precachetexture file="/ui/main/play/textures/mode_captains.tga"/>
+	<precachetexture file="/ui/main/play/textures/captainshat.tga"/>
+	<precachetexture file="/ui/main/play/textures/population_pip.tga"/>
+	<precachetexture file="/ui/main/play/textures/play_option_1.tga" nocompress="true"/>
+	<precachetexture file="/ui/main/play/textures/play_option_2.tga" nocompress="true"/>
+	<precachetexture file="/ui/main/play/textures/play_option_3.tga" nocompress="true"/>
+	<precachetexture file="/ui/main/play/textures/play_option_sep.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/herorole_all.tga"/>
+	<precachetexture file="/ui/main/shared/textures/herorole_physdmg.tga"/>
+	<precachetexture file="/ui/main/shared/textures/herorole_magdmg.tga"/>
+	<precachetexture file="/ui/main/shared/textures/herorole_survival.tga"/>
+	<precachetexture file="/ui/main/shared/textures/herorole_cc.tga"/>
+	<precachetexture file="/ui/main/shared/textures/herorole_utility.tga"/>
+	<precachetexture file="/ui/main/shared/textures/herorole_frame.tga"/>
+	<precachetexture file="/ui/main/shared/textures/herorole_frame_locked.tga"/>
+	<precachetexture file="/ui/main/shared/textures/herorole_frame_selected.tga"/>
+	<precachetexture file="/ui/main/play/textures/globe.tga" />
+	<precachetexture file="/ui/main/play/textures/speaker.tga" />
+	<precachetexture file="/ui/main/play/textures/speaker_glow.tga"/>	
+	<precachetexture file="/ui/main/play/textures/player_entry_base.tga"/>
+	<precachetexture file="/ui/main/play/textures/player_entry_highlight_red.tga"/>
+	<precachetexture file="/ui/main/play/textures/player_entry_highlight_green.tga"/>	
+	<precachetexture file="/ui/main/shared/textures/sign.tga"/>	
+	<precachetexture file="/ui/main/postgame/rewards/visuals/doors/question.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/locked.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/ranked_slate.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/ranked_bronze.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/ranked_silver.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/ranked_gold.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/ranked_diamond.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/scroll_tab_up.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/scroll_tab_over.tga"/>	
+	<precachetexture file="/ui/main/pregame/textures/region.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/leave.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/mode.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/flow_arrow.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/corner_arrow.tga"/>	
+	<precachetexture file="/ui/main/pregame/textures/gearpicker_frame_base.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/gearpicker_frame_highlight.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/dyepicker_base.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/dyepicker_frame.tga"/>
+	
+	<precachetexture file="/ui/main/pregame/textures/filter_scroll.tga"/>
+	<precachetexture file="/ui/main/pregame/textures/attribute_grid.tga"/>
+	
+	<precachetexture file="/ui/main/buildBrowser/siteImages/strifeBuilds.png"/>
+
+	<precachetexture file="/ui/main/play/textures/region_map_bg.png"/>
+	<precachetexture file="/ui/main/play/textures/region_map2_bg.png"/>
+	
+	<precachetexture file="/ui/main/play/textures/region_au_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_au_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_cis_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_cis_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_cn_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_cn_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_eu_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_eu_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_sea_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_sea_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_us_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_us_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_use_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_use_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_usw_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_usw_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_cis_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_cis_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_lat_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_lat_yes.png"/>	
+	<precachetexture file="/ui/main/play/textures/region_hk_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_hk_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_id_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_id_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_my_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_my_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_ph_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_ph_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_sg_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_sg_yes.png"/>
+	<precachetexture file="/ui/main/play/textures/region_th_no.png"/>
+	<precachetexture file="/ui/main/play/textures/region_th_yes.png"/>	
+	
+	<precachemodel file="/ui/main/shared/effects/hero_highlight.mdf" />	
+	<precachemodel file="/ui/_effects/portrait_emitter.mdf" />	
+	<if condition="host_islauncher">
+		<effect file="/ui/main/shared/effects/hero_highlight.effect"  />
+	</if>
+	
+	<precachetexture file="/ui/main/shared/textures/hourglass_glow.tga"/>
+	<precachetexture file="/ui/main/shared/textures/hourglass.tga"/>
+	
+	<precachetexture file="/ui/_textures/icons/mystery.tga"/>	
+	
+	<precachetexture file="/ui/main/shared/textures/melee.tga"/>
+	<precachetexture file="/ui/main/shared/textures/ranged.tga"/>
+	<precachetexture file="/ui/main/shared/textures/ranked.tga"/>
+	<precachetexture file="/ui/main/shared/textures/unranked.tga"/>
+	<precachetexture file="/ui/main/shared/textures/khanquest.tga"/>
+	<precachetexture file="/ui/main/play/textures/khantoken_unpaid.tga"/>
+	<precachetexture file="/ui/main/play/textures/khantoken_paid.tga"/>
+	<precachetexture file="/ui/main/play/textures/selection_right_content_header.tga"/>
+	
+	<precachetexture file="/ui/_textures/frames/social_entry_tl.tga"/>
+	<precachetexture file="/ui/_textures/frames/social_entry_t.tga"/>
+	<precachetexture file="/ui/_textures/frames/social_entry_tr.tga"/>
+	<precachetexture file="/ui/_textures/frames/social_entry_l.tga"/>
+	<precachetexture file="/ui/_textures/frames/social_entry_c.tga"/>
+	<precachetexture file="/ui/_textures/frames/social_entry_r.tga"/>
+	<precachetexture file="/ui/_textures/frames/social_entry_bl.tga"/>
+	<precachetexture file="/ui/_textures/frames/social_entry_b.tga"/>
+	<precachetexture file="/ui/_textures/frames/social_entry_br.tga"/>
+	
+	<!-- chat -->
+	<precachetexture file="/ui/main/chat/textures/chat_min.tga"/>
+	<precachetexture file="/ui/main/chat/textures/chat_focus.tga"/>
+	<precachetexture file="/ui/shared/textures/framecontrol_resize.tga"/>
+	
+	<precachetexture file="/ui/main/footer/textures/bottom_base.tga"/>
+	<precachetexture file="/ui/main/footer/textures/friends_tab.tga"/>
+	<precachetexture file="/ui/main/footer/textures/friends_tab_hover.tga"/>
+	<precachetexture file="/ui/main/footer/textures/user_icon.tga"/>
+	
+	<precachetexture file="/ui/main/footer/textures/chat_tab_off_r.tga"/>
+	<precachetexture file="/ui/main/footer/textures/chat_tab_off_l.tga"/>
+	<precachetexture file="/ui/main/footer/textures/chat_tab_off_c.tga"/>
+
+	<precachetexture file="/ui/main/footer/textures/chat_tab_on_r.tga"/>
+	<precachetexture file="/ui/main/footer/textures/chat_tab_on_l.tga"/>
+	<precachetexture file="/ui/main/footer/textures/chat_tab_on_c.tga"/>	
+	
+	<precachetexture file="/ui/main/footer/textures/chat_tab_off_gs_r.tga"/>
+	<precachetexture file="/ui/main/footer/textures/chat_tab_off_gs_l.tga"/>
+	<precachetexture file="/ui/main/footer/textures/chat_tab_off_gs_c.tga"/>
+
+	<precachetexture file="/ui/main/footer/textures/chat_tab_on_gs_r.tga"/>
+	<precachetexture file="/ui/main/footer/textures/chat_tab_on_gs_l.tga"/>
+	<precachetexture file="/ui/main/footer/textures/chat_tab_on_gs_c.tga"/>		
+	
+	<precachetexture file="/ui/main/chat/textures/chat_header_c.tga"/>
+	<precachetexture file="/ui/main/chat/textures/chat_header_l.tga"/>
+	<precachetexture file="/ui/main/chat/textures/chat_header_r.tga"/>
+	
+	<precachetexture file="/ui/main/footer/textures/message_bubble.tga"/>
+	<precachetexture file="/ui/main/footer/textures/message_bubble_focus.tga"/>
+	<precachetexture file="/ui/main/footer/textures/social_tab_add_l.tga"/>
+	<precachetexture file="/ui/main/footer/textures/social_tab_add_c.tga"/>
+	<precachetexture file="/ui/main/footer/textures/social_tab_msg_l.tga"/>
+	<precachetexture file="/ui/main/footer/textures/social_tab_msg_c.tga"/>
+	<precachetexture file="/ui/main/footer/textures/social_tab_std_l.tga"/>
+	<precachetexture file="/ui/main/footer/textures/social_tab_std_c.tga"/>
+	<precachetexture file="/ui/main/footer/textures/social_tab_over.tga"/>
+	
+	<precachetexture file="/ui/main/shared/textures/gear_glow.tga"/>
+	<precachetexture file="/ui/shared/textures/karma_toxic_glow.tga"/>
+
+	<!-- keepers (now all splashimages) -->
+	<precachetexture file="/ui/main/keepers/textures/auros.png"/>
+	<precachetexture file="/ui/main/keepers/textures/rhao.png"/>
+	<precachetexture file="/ui/main/keepers/textures/lexikhan.png"/>
+	<precachetexture file="/ui/main/keepers/textures/draknia.png"/>
+	
+	<!-- Arcade Effects -->
+	<effect file="/ui/game/arcade_text/effects/templates/annihilation/annihilation_red.effect"  />
+	<effect file="/ui/game/arcade_text/effects/templates/doublekill/doublekill_green.effect"  />
+	<effect file="/ui/game/arcade_text/effects/templates/doublekill/doublekill_white.effect"  />
+	<effect file="/ui/game/arcade_text/effects/templates/doublekill/doublekill_orange.effect"  />
+	
+	<effect file="/ui/_effects/portrait_lvlup.effect"  />
+	<effect file="/ui/_models/refresh/refresh.effect"  />
+	<effect file="/ui/_effects/toggle/toggle.effect"  />
+	<effect file="/ui/_effects/ability_active.effect"  />
+	<effect file="/ui/_effects/portrait_emitter.mdf"  />
+	
+	<precachetexture file="/ui/game/arcade_text/textures/icon_holder.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/slash01_green.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/slash02_green.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/slash03_green.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/slash01_red.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/slash02_red.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/slash03_red.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/ks_badge.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/ks_badge_3k.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/ks_badge_5k.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/ks_badge_10k.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/ks_badge_15k.tga"/>
+
+	<precachetexture file="/ui/game/arcade_text/textures/kill_banner_arrow.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/kill_banner_center.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/kill_banner_left.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/kill_banner_star.tga"/>
+	<precachetexture file="/ui/game/arcade_text/textures/kill_banner_star_empty.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/number_2.tga"/>
+	<precachetexture file="/ui/shared/textures/number_3.tga"/>
+	<precachetexture file="/ui/shared/textures/number_4.tga"/>
+	<precachetexture file="/ui/shared/textures/number_5.tga"/>
+
+	<!-- Death Effect -->
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0000.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0001.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0002.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0003.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0004.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0005.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0006.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0007.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0008.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0009.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0010.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0011.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_h_2_0012.tga"/>
+	
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0000.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0001.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0002.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0003.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0004.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0005.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0006.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0007.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0008.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0009.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0010.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0011.tga"/>
+	<precachetexture file="/ui/game/edge_effects/deathfx/deathfx_v_2_0012.tga"/>
+	
+	<!-- Status Bar -->
+	<precachetexture file="/ui/game/status_bar/textures/prematch.tga"/>	
+	
+	<!-- Push Orb -->
+	<precachetexture file="/ui/_textures/elements/game_info/generator_danger.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/generator_safe.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl1_outer_ring.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl1_outer_ring_HL1.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl1_outer_ring_HL2.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl1_outer_ring_HL3.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl1_outer_ring_HL4.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl1_outer_ring_HL5.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl1_outer_ring_HL6.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl2_inner_ring.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl2_inner_ring_seps.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl3_orb_green.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/lvl3_orb_red.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/tower_danger.tga"/>
+	<precachetexture file="/ui/_textures/elements/game_info/tower_safe.tga"/>
+
+
+	<!-- End Match Rewards -->
+	<precachetexture file="/ui/main/shared/textures/circle.tga" />
+	<precachetexture file="/ui/main/shared/textures/circle_filled.tga" />
+	<precachetexture file="/ui/main/shared/textures/circle_outline.tga" />
+	<precachetexture file="/ui/main/shared/textures/circle_ring.tga" />
+	<precachetexture file="/ui/main/shared/textures/shimmer.tga" />
+	<precachetexture file="/ui/main/shared/textures/shine.tga" />
+	<precachetexture file="/ui/main/postgame/textures/rockshelf.tga" />
+	<precachetexture file="/ui/main/postgame/textures/rockshelf_foregrass.tga" />
+	<precachetexture file="/ui/main/postgame/textures/enviro_base_0.tga" />
+	<precachetexture file="/ui/main/postgame/textures/enviro_base_1.tga" />	
+	<precachetexture file="/ui/main/postgame/rewards/visuals/rewards_bg.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_top.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_levels.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_hover.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_glow.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_edge_glow.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_tab_glow.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_previous.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_new.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_boosted.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_progress_leading_blue.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_progress_leading_green.tga" />
+	<precachetexture file="/ui/main/postgame/textures/account_bar_progress_leading_red.tga" />	
+	<precachetexture file="/ui/main/shared/textures/progress.tga" />
+	<precachetexture file="/ui/main/shared/textures/summary.tga" />
+	<precachetexture file="/ui/main/shared/textures/rewards_chest.tga" />
+	<precachetexture file="/ui/main/shared/textures/scroll_arrow.tga" />
+	
+	<precachetexture file="/ui/main/postgame/khanquest/textures/win_mark_base.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/win_mark_glow.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/win_mark_fill.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/life_mark_base.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/life_mark_fill.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/life_mark_glow.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/flare_seperator.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest1.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest2.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest3.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest4.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest5.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest6.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest7.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest1_flash.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_spotlight.tga" />
+	<precachetexture file="/ui/main/postgame/khanquest/textures/prize_chest_sparkle.tga" />	
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0000.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0001.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0002.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0003.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0004.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0005.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0006.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0007.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0008.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0009.tga" />
+	<precachetexture file="/ui/main/postgame/textures/impact/impact0010.tga" />
+	
+	<precachetexture file="/ui/game/alt_info/textures/altinfo_hero_frame_0.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/altinfo_hero_frame_1.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/altinfo_hero_frame_2.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/altinfo_self_frame_0.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/altinfo_self_frame_1.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/altinfo_self_frame_2.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/altinfo_self_frame_spe.tga"/>
+	
+	<!-- End Match Karma Voting -->
+	<precachetexture file="/ui/game/karma/textures/banner_normal.tga"/>
+	<precachetexture file="/ui/game/karma/textures/banner_downvote_red.tga"/>
+	<precachetexture file="/ui/game/karma/textures/banner_upvote.tga"/>
+	<precachetexture file="/ui/game/karma/textures/downvote_icon.tga"/>
+	<precachetexture file="/ui/game/karma/textures/upvote_icon.tga"/>
+	<precachetexture file="/ui/game/karma/textures/upvote_glow.tga"/>
+	<precachetexture file="/ui/game/karma/textures/golden_bgcolor.tga"/>
+	<precachetexture file="/ui/game/karma/textures/golden_border.tga"/>
+	<precachetexture file="/ui/game/karma/textures/golden_border_upvote.tga"/>
+	<precachetexture file="/ui/game/karma/textures/golden_border_downvote.tga"/>
+	<precachetexture file="/ui/game/karma/textures/model_upvote_glow.tga"/>
+	<precachetexture file="/ui/game/karma/textures/radiobutton_checked.tga"/>
+	<precachetexture file="/ui/game/karma/textures/radiobutton_unchecked.tga"/>
+	<precachetexture file="/ui/game/karma/textures/upvote_button_holder.tga"/>
+	
+
+	<!-- Altinfo pip dividers -->
+	<texture file="/ui/game/alt_info/bar_segment_16.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_32.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_64.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_8.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_big_128.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_big_16.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_big_256.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_big_32.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_big_512.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_big_64.tga" />
+	<texture file="/ui/game/alt_info/bar_segment_big_8.tga" />
+
+	<!-- Prerendered Hero Gear Set images -->
+	<precachetexture file="/ui/main/play/textures/gear_hover_glow.tga"/>
+	<precachetexture file="/ui/main/play/textures/gear_selected_glow.tga"/>
+	<precachetexture file="/ui/main/play/textures/gear_unowned_glow.tga"/>	
+	
+	<panel usebitmask="1" bitmaskfile="/heroes/blazer/gear_2/gearselect.tga" onloadlua="self:Destroy()" />	
+	
+	<precachetexture file="/heroes/ace/gearselect.tga"/>
+	<precachetexture file="/heroes/ace/gearicon.tga"/>
+	<precachetexture file="/heroes/ace/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/ace/gear_1/gearicon.tga"/>	
+	<precachetexture file="/heroes/ace/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/ace/gear_2/gearicon.tga"/>	
+	<precachetexture file="/heroes/ace/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/ace/gear_3/gearicon.tga"/>
+	<precachetexture file="/heroes/ace/gear_4/gearselect.tga"/>
+	<precachetexture file="/heroes/ace/gear_4/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/aemon/gearselect.tga"/>
+	<precachetexture file="/heroes/aemon/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/bandito/gearselect.tga"/>
+	<precachetexture file="/heroes/bandito/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/bastion/gearselect.tga"/>
+	<precachetexture file="/heroes/bastion/gearicon.tga"/>
+	<precachetexture file="/heroes/bastion/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/bastion/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/bastion/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/bastion/gear_3/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/blazer/gearselect.tga"/>
+	<precachetexture file="/heroes/blazer/gearicon.tga"/>
+	<precachetexture file="/heroes/blazer/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/blazer/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/blazer/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/blazer/gear_2/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/bo/gearselect.tga"/>
+	<precachetexture file="/heroes/bo/gearicon.tga"/>
+	<precachetexture file="/heroes/bo/gearselect.tga"/>
+	<precachetexture file="/heroes/bo/gearicon.tga"/>
+	<precachetexture file="/heroes/bo/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/bo/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/bo/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/bo/gear_3/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/buford/gearselect.tga"/>
+	<precachetexture file="/heroes/buford/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/caprice/gearselect.tga"/>
+	<precachetexture file="/heroes/caprice/gearicon.tga"/>
+	<precachetexture file="/heroes/caprice/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/caprice/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/caprice/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/caprice/gear_2/gearicon.tga"/>
+	<precachetexture file="/heroes/caprice/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/caprice/gear_3/gearicon.tga"/>
+	<precachetexture file="/heroes/caprice/gear_4/gearselect.tga"/>
+	<precachetexture file="/heroes/caprice/gear_4/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/carter/gearselect.tga"/>
+	<precachetexture file="/heroes/carter/gearicon.tga"/>
+	<precachetexture file="/heroes/carter/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/carter/gear_3/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/chester/gearselect.tga"/>
+	<precachetexture file="/heroes/chester/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/claudessa/gearselect.tga"/>
+	<precachetexture file="/heroes/claudessa/gearicon.tga"/>
+	<precachetexture file="/heroes/claudessa/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/claudessa/gear_1/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/eanu/gearselect.tga"/>
+	<precachetexture file="/heroes/eanu/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/fetterstone/gearselect.tga"/>
+	<precachetexture file="/heroes/fetterstone/gearicon.tga"/>
+	<precachetexture file="/heroes/fetterstone/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/fetterstone/gear_1/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/flak/gearselect.tga"/>
+	<precachetexture file="/heroes/flak/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/gokong/gearselect.tga"/>
+	<precachetexture file="/heroes/gokong/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/hale/gearselect.tga"/>
+	<precachetexture file="/heroes/hale/gearicon.tga"/>
+	<precachetexture file="/heroes/hale/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/hale/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/hale/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/hale/gear_3/gearicon.tga"/>
+	<precachetexture file="/heroes/hale/gear_4/gearselect.tga"/>
+	<precachetexture file="/heroes/hale/gear_4/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/harrower/gearselect.tga"/>
+	<precachetexture file="/heroes/harrower/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/iah/gearselect.tga"/>
+	<precachetexture file="/heroes/iah/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/jinshe/gearselect.tga"/>
+	<precachetexture file="/heroes/jinshe/gearicon.tga"/>
+	<precachetexture file="/heroes/jinshe/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/jinshe/gear_1/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/lady_tinder/gearselect.tga"/>
+	<precachetexture file="/heroes/lady_tinder/gearicon.tga"/>
+	<precachetexture file="/heroes/lady_tinder/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/lady_tinder/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/lady_tinder/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/lady_tinder/gear_2/gearicon.tga"/>
+		
+	<precachetexture file="/heroes/malady/gearselect.tga"/>
+	<precachetexture file="/heroes/malady/gearicon.tga"/>
+	<precachetexture file="/heroes/malady/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/malady/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/malady/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/malady/gear_3/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/malph/gearselect.tga"/>
+	<precachetexture file="/heroes/malph/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/midknight/gearselect.tga"/>
+	<precachetexture file="/heroes/midknight/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/minerva/gearselect.tga"/>
+	<precachetexture file="/heroes/minerva/gearicon.tga"/>
+	<precachetexture file="/heroes/minerva/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/minerva/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/minerva/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/minerva/gear_2/gearicon.tga"/>
+	<precachetexture file="/heroes/minerva/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/minerva/gear_3/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/moxie/gearselect.tga"/>
+	<precachetexture file="/heroes/moxie/gearicon.tga"/>
+	<precachetexture file="/heroes/moxie/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/moxie/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/moxie/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/moxie/gear_2/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/nikolai/gearselect.tga"/>
+	<precachetexture file="/heroes/nikolai/gearicon.tga"/>
+	<precachetexture file="/heroes/nikolai/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/nikolai/gear_1/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/pal/gearselect.tga"/>
+	<precachetexture file="/heroes/pal/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/ray/gearselect.tga"/>
+	<precachetexture file="/heroes/ray/gearicon.tga"/>
+	<precachetexture file="/heroes/ray/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/ray/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/ray/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/ray/gear_2/gearicon.tga"/>
+	<precachetexture file="/heroes/ray/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/ray/gear_3/gearicon.tga"/>
+	<precachetexture file="/heroes/ray/gear_4/gearselect.tga"/>
+	<precachetexture file="/heroes/ray/gear_4/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/rip/gearselect.tga"/>
+	<precachetexture file="/heroes/rip/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/rook/gearselect.tga"/>
+	<precachetexture file="/heroes/rook/gearicon.tga"/>
+	<precachetexture file="/heroes/rook/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/rook/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/rook/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/rook/gear_2/gearicon.tga"/>
+	<precachetexture file="/heroes/rook/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/rook/gear_3/gearicon.tga"/>
+	<precachetexture file="/heroes/rook/gear_4/gearselect.tga"/>
+	<precachetexture file="/heroes/rook/gear_4/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/shank/gearselect.tga"/>
+	<precachetexture file="/heroes/shank/gearicon.tga"/>
+	<precachetexture file="/heroes/shank/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/shank/gear_1/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/trace/gearselect.tga"/>
+	<precachetexture file="/heroes/trace/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/trixie/gearselect.tga"/>
+	<precachetexture file="/heroes/trixie/gearicon.tga"/>
+	<precachetexture file="/heroes/trixie/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/trixie/gear_1/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/vermillion/gearselect.tga"/>
+	<precachetexture file="/heroes/vermillion/gearicon.tga"/>
+	<precachetexture file="/heroes/vermillion/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/vermillion/gear_1/gearicon.tga"/>
+	<precachetexture file="/heroes/vermillion/gear_2/gearselect.tga"/>
+	<precachetexture file="/heroes/vermillion/gear_2/gearicon.tga"/>
+	<precachetexture file="/heroes/vermillion/gear_3/gearselect.tga"/>
+	<precachetexture file="/heroes/vermillion/gear_3/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/vex/gearselect.tga"/>
+	<precachetexture file="/heroes/vex/gearicon.tga"/>
+	<precachetexture file="/heroes/vex/gear_1/gearselect.tga"/>
+	<precachetexture file="/heroes/vex/gear_1/gearicon.tga"/>
+	
+	<precachetexture file="/heroes/zaku/gearselect.tga"/>
+	<precachetexture file="/heroes/zaku/gearicon.tga"/>
+	
+	<!-- Play -->
+	<precachetexture file="/ui/main/shared/textures/main_background.tga"/>
+	<precachetexture file="/ui/main/shared/textures/main_background_overlay_darkener.tga"/>
+	
+	<precachetexture file="/ui/_textures/elements/prematch_info_abililty_container.tga"/>
+	<precachetexture file="/ui/_textures/elements/prematch_info_abililty_container_ready.tga"/>
+	
+	<!-- Match Awards -->
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_building_damage.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_high_level.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_xpm.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_consumables.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_gold_earned.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_damage.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_least_deaths.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_hero_kills.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_goldspent.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_apm.tga" />
+	<precachetexture file="/ui/main/scoreboard/textures/award_most_creep_kills.tga" />
+	
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_actions_av.tga" />	
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_actions_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_actions_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_actions_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_actions_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bdmg_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bdmg_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bdmg_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bdmg_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bdmg_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_cdmg_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_cdmg_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_cdmg_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_cdmg_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_cdmg_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_deaths_l.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_deaths_tl.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_gpm_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_gpm_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_gpm_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_gpm_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_gpm_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_herodmg_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_herodmg_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_herodmg_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_herodmg_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_herodmg_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_killassist_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_killassist_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_killassist_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_killassist_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_killassist_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_level_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_level_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_level_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_level_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_purchaseditems_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_purchaseditems_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_purchaseditems_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_purchaseditems_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_purchaseditems_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_razed_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_razed_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_razed_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_razed_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_razed_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_teamcreepkills_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_teamcreepkills_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_teamcreepkills_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_teamcreepkills_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_teamcreepkills_tm.tga" />
+	
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bosskills_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bosskills_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bosskills_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bosskills_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_bosskills_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_kad_av.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_kad_m.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_kad_pb.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_kad_tav.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_kad_tm.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_noswearing_self.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_special_1.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_special_2.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_special_3.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_special_4.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_special_5.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_special_6.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_special_7.tga" />
+	<precachetexture file="/ui/main/postgame/textures/awards/match_awards_wongame_self.tga" />
+
+	<!-- AltInfo -->
+	<precachetexture file="/ui/_textures/icons/disconnect.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_def_1.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_def_2.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_def_3.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_def_4.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_def_5.tga"/>
+	
+	<precachetexture file="/ui/game/alt_info/textures/np_off_1.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_off_2.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_off_3.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_off_4.tga"/>
+	<precachetexture file="/ui/game/alt_info/textures/np_off_5.tga"/>
+	
+	<!-- Unitframes -->
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_cover_me_selected.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_cover_me.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_cover_selected.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/unit_frame_cover.tga"/>
+	<precachetexture file="/ui/game/unit_frames/textures/dead.tga"/>
+	
+	<!-- Game -->
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0000.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0001.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0002.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0003.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0004.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0005.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0006.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0007.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0008.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0009.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0010.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0011.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0012.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0013.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0014.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0015.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0016.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0017.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0018.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0019.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lvl_up_arrow/lvl_up0020.tga"/>
+	
+	<!-- Lane Choice -->
+	<precachetexture file="/ui/game/shared/textures/lane_top.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lane_mid.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lane_bot.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lane_top_selected.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lane_mid_selected.tga"/>
+	<precachetexture file="/ui/game/shared/textures/lane_bot_selected.tga"/>
+	
+	<!-- Shop hover icons -->
+	<precachetexture file="/ui/shared/shop/textures/shop_hoverIcon_coins.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/shop_hoverIcon_coins_minus.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/shop_hoverIcon_courier.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/shop_hoverIcon_owned.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/shop_hoverIcon_stash.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/shop_icon_crafted.tga"/>
+	<precachetexture file="/ui/shared/shop/filters/components_1.tga"/>
+	
+	<precachetexture file="/ui/game/shared/textures/herostat_power.tga"/>
+	<precachetexture file="/ui/game/shared/textures/herostat_armor.tga"/>
+	<precachetexture file="/ui/game/shared/textures/herostat_dps.tga"/>
+	<precachetexture file="/ui/game/shared/textures/herostat_magicdmg.tga"/>
+	
+	<precachetexture file="/ui/game/event_log/textures/killevent_arrow.tga"/>	
+	<precachetexture file="/ui/shared/shop/textures/scroll_target.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/scroll_cap.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/scroll_slot.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/scroll_highlight.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/scroll_bg.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/shop_header.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/trash/can_static.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/trash/can.tga"/>
+	<precachetexture file="/ui/shared/shop/textures/trash/lid.tga"/>
+	
+	<!-- From Main -->
+	<precachetexture file="/ui/main/footer/textures/botbar_bg.tga" nocompress="true"/>
+	<precachetexture file="/ui/_textures/elements/social_entry_status_online.tga" />
+	<precachetexture file="/ui/shared/textures/user_icon.tga" />
+	<precachetexture file="/ui/_textures/elements/social_arrow.tga" />
+		
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_tl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_t.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_tr.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_l.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_c.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_r.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_bl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_b.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_up_br.tga" nocompress="true"/>
+	
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_tl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_t.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_tr.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_l.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_c.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_r.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_bl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_b.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/stnd_btn_over_br.tga" nocompress="true"/>
+	
+	<precachetexture file="/ui/shared/frames/green_btn_up_tl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/green_btn_up_t.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/green_btn_up_tr.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/green_btn_up_l.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/green_btn_up_c.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/green_btn_up_r.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/green_btn_up_bl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/green_btn_up_b.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/green_btn_up_br.tga" nocompress="true"/>
+	
+	<precachetexture file="/ui/shared/frames/green_btn_over_tl.tga" />
+	<precachetexture file="/ui/shared/frames/green_btn_over_t.tga" />
+	<precachetexture file="/ui/shared/frames/green_btn_over_tr.tga" />
+	<precachetexture file="/ui/shared/frames/green_btn_over_l.tga" />
+	<precachetexture file="/ui/shared/frames/green_btn_over_c.tga" />
+	<precachetexture file="/ui/shared/frames/green_btn_over_r.tga" />
+	<precachetexture file="/ui/shared/frames/green_btn_over_bl.tga" />
+	<precachetexture file="/ui/shared/frames/green_btn_over_b.tga" />
+	<precachetexture file="/ui/shared/frames/green_btn_over_br.tga" />	
+	
+	<precachetexture file="/ui/shared/frames/blue_btn_up_tl.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_up_t.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_up_tr.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_up_l.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_up_c.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_up_r.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_up_bl.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_up_b.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_up_br.tga" />	
+	
+	<precachetexture file="/ui/shared/frames/blue_btn_over_tl.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_over_t.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_over_tr.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_over_l.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_over_c.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_over_r.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_over_bl.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_over_b.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_over_br.tga" />
+	
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_tl.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_t.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_tr.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_l.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_c.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_r.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_bl.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_b.tga" />
+	<precachetexture file="/ui/shared/frames/blue_btn_selected_br.tga" />
+	
+	<precachetexture file="/ui/shared/frames/text_input_menu_tl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/text_input_menu_t.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/text_input_menu_tr.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/text_input_menu_l.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/text_input_menu_c.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/text_input_menu_r.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/text_input_menu_bl.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/text_input_menu_b.tga" nocompress="true"/>
+	<precachetexture file="/ui/shared/frames/text_input_menu_br.tga" nocompress="true"/>
+	
+	<precachetexture file="/ui/shared/frames/text_input_tl.tga" />
+	<precachetexture file="/ui/shared/frames/text_input_t.tga" />
+	<precachetexture file="/ui/shared/frames/text_input_tr.tga" />
+	<precachetexture file="/ui/shared/frames/text_input_l.tga" />
+	<precachetexture file="/ui/shared/frames/text_input_c.tga" />
+	<precachetexture file="/ui/shared/frames/text_input_r.tga" />
+	<precachetexture file="/ui/shared/frames/text_input_bl.tga" />
+	<precachetexture file="/ui/shared/frames/text_input_b.tga" />
+	<precachetexture file="/ui/shared/frames/text_input_br.tga" />
+	
+	<precachetexture file="/ui/shared/textures/combobox_background_l.tga"/>
+	<precachetexture file="/ui/shared/textures/combobox_background_c.tga"/>
+	<precachetexture file="/ui/shared/textures/combobox_background_r.tga"/>
+	<precachetexture file="/ui/shared/textures/combobox_red_background_l.tga"/>
+	<precachetexture file="/ui/shared/textures/combobox_red_background_c.tga"/>
+	<precachetexture file="/ui/shared/textures/combobox_red_background_r.tga"/>
+
+	<precachetexture file="/ui/shared/textures/slider_vslider_vhandle.tga"/>
+	<precachetexture file="/ui/shared/textures/slider_vmin_up.tga"/>
+	<precachetexture file="/ui/shared/textures/slider_vmin_over.tga"/>
+	<precachetexture file="/ui/shared/textures/slider_vmin_down.tga"/>
+	<precachetexture file="/ui/shared/textures/slider_vmax_up.tga"/>
+	<precachetexture file="/ui/shared/textures/slider_vmax_over.tga"/>
+	<precachetexture file="/ui/shared/textures/slider_vmax_down.tga"/>
+	
+	<precachetexture file="/ui/shared/textures/new_slider_vslider_vhandle.tga"/>
+	<precachetexture file="/ui/shared/textures/new_slider_vmin_up.tga"/>
+	<precachetexture file="/ui/shared/textures/new_slider_vmin_over.tga"/>
+	<precachetexture file="/ui/shared/textures/new_slider_vmin_down.tga"/>
+	<precachetexture file="/ui/shared/textures/new_slider_vmax_up.tga"/>
+	<precachetexture file="/ui/shared/textures/new_slider_vmax_over.tga"/>
+	<precachetexture file="/ui/shared/textures/new_slider_vmax_down.tga"/>
+
+	<precachetexture file="/ui/shared/textures/button_more.tga"/>
+	
+	<!-- Enchanting -->
+	<precachetexture file="/ui/main/enchanting/textures/book_timer_base.tga" />
+	
+	<!-- Tutorial Stuff -->
+	<precachetexture file="/maps/tutorial/resources/images/targethero.tga"/>
+	<precachetexture file="/maps/tutorial/resources/images/alone.tga"/>
+	<precachetexture file="/ui/shared/textures/target.tga"/>
+	
+	<!-- SPE Stuff -->
+	<!-- SPE Loading Screen -->
+	<precachetexture file="/ui/game/loading/textures/bastact1_startscreen.jpg"/>
+	<precachetexture file="/ui/game/loading/textures/bastact1_endscreen.jpg"/>
+	<precachetexture file="/ui/game/loading/textures/loading.jpg"/>
+	<precachetexture file="/ui/game/loading/textures/bastact1_loading_disc.tga"/>
+	<precachetexture file="/ui/game/loading/textures/loading_tick01.tga"/>
+	<precachetexture file="/ui/game/loading/textures/loading_tick02.tga"/>
+	<precachetexture file="/ui/game/loading/textures/loading_tick03.tga"/>
+	<precachetexture file="/ui/game/loading/textures/loading_tick04.tga"/>
+	<precachetexture file="/ui/game/loading/textures/loading_tick05.tga"/>
+	
+	<!-- SPE Dialogue -->
+	<precachetexture file="/ui/game/dialogue/textures/windowWide_stoneLeft.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/windowWide_stoneCenter.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/windowWide_stoneRight.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/windowWide_glowLeft.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/windowWide_glowCenter.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/windowWide_glowRight.tga"/>
+	
+	<precachetexture file="/ui/game/dialogue/textures/diagloue_bubble.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/smoke_effect.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/rubble.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/crack_type01.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/crack_type02.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/crack_type03.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/crack_type04.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/crack_type05.tga"/>
+	
+	<precachetexture file="/ui/game/dialogue/textures/detail_ally_tl.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/detail_ally_tr.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/detail_ally_b.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_ally.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_doorsTop_ally.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_doorsBottom_ally.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_frame_ally.tga"/>
+
+	<precachetexture file="/ui/game/dialogue/textures/detail_enemy_tl.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/detail_enemy_tr.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/detail_enemy_b.tga"/>	
+	<precachetexture file="/ui/game/dialogue/textures/model_enemy.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_doorsTop_enemy.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_doorsBottom_enemy.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_frame_enemy.tga"/>
+	
+	<precachetexture file="/ui/game/dialogue/textures/decal_boss.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/detail_boss_tl.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/detail_boss_tr.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/detail_boss_b.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_boss.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_frame_boss.tga"/>
+	<precachetexture file="/ui/game/dialogue/textures/model_glow.tga"/>
+	
+	<precachetexture file="/ui/game/map_objectives/textures/glow.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/particles.tga"/>
+	
+	<!-- SPE Objectives -->
+	<precachetexture file="/ui/game/map_objectives/textures/objectives_hoverBG.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_activeGlow.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_activeLine.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_activeParticles.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_popup_glow.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_popup_stoneBottom.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_popup_stoneTop.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_popup_textBG.tga"/>
+	
+	<precachetexture file="/ui/game/map_objectives/textures/objective_axe_complete.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_axe_locked.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_axe_progress.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_dragon_complete.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_dragon_locked.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_dragon_progress.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_egg_complete.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_egg_locked.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_egg_progress.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_key_complete.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_key_locked.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_key_progress.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_rook_complete.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_rook_locked.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_rook_progress.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_spiders_complete.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_spiders_locked.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_spiders_progress.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_wizard_complete.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_wizard_locked.tga"/>
+	<precachetexture file="/ui/game/map_objectives/textures/objective_wizard_progress.tga"/>
+	
+	<!-- SPE Boss Healthbars -->
+	<precachetexture file="/ui/game/boss_healthbar/textures/boss_baseBar_center.tga"/>
+	<precachetexture file="/ui/game/boss_healthbar/textures/boss_baseBar_left.tga"/>
+	<precachetexture file="/ui/game/boss_healthbar/textures/boss_baseBar_right.tga"/>
+	<precachetexture file="/ui/game/boss_healthbar/textures/boss_healthBar_center.tga"/>
+	
+	<!-- Origins -->
+	<precachetexture file="/ui/main/origins/textures/child_of_the_dawn_act1.jpg"/>
+	<precachetexture file="/ui/main/origins/textures/child_of_the_dawn_act1_head.tga"/>
+	<precachetexture file="/ui/main/origins/textures/child_of_the_dawn_logo.tga"/>
+	<precachetexture file="/ui/main/origins/textures/logo.jpg"/>
+	
+	<precachetexture file="/ui/main/shared/textures/circular.tga"/>
+
+	<effect file="/ui/_models/tut_highlight.effect"/>
+	
+	<!-- Cursor Textures -->
+	<precachetexture file="/core/cursors/action_ally_invalid.tga" />
+	<precachetexture file="/core/cursors/action_ally_outofrange.tga" />
+	<precachetexture file="/core/cursors/action_ally_valid.tga" />
+	<precachetexture file="/core/cursors/action_enemy_invalid.tga" />
+	<precachetexture file="/core/cursors/action_enemy_outofrange.tga" />
+	<precachetexture file="/core/cursors/action_enemy_valid.tga" />
+	<precachetexture file="/core/cursors/action_invalid.tga" />
+	<precachetexture file="/core/cursors/action_valid.tga" />
+	<precachetexture file="/core/cursors/arrow_ally.tga" />
+	<precachetexture file="/core/cursors/arrow_drag.tga" />
+	<precachetexture file="/core/cursors/arrow_enemy.tga" />
+	<precachetexture file="/core/cursors/arrow_left_drag.tga" />
+	<precachetexture file="/core/cursors/arrow_left_right_drag.tga" />
+	<precachetexture file="/core/cursors/arrow_left_right.tga" />
+	<precachetexture file="/core/cursors/arrow_left.tga" />
+	<precachetexture file="/core/cursors/arrow_right_drag.tga" />
+	<precachetexture file="/core/cursors/arrow_right.tga" />
+	<precachetexture file="/core/cursors/arrow.tga" />
+	<precachetexture file="/core/cursors/cost_coin.tga" />
+	<precachetexture file="/core/cursors/cost_gem.tga" />
+	<precachetexture file="/core/cursors/cursor_strife_1.tga" />
+	<precachetexture file="/core/cursors/deny_ally.tga" />
+	<precachetexture file="/core/cursors/draw.tga" />
+	<precachetexture file="/core/cursors/k_busy.png" />
+	<precachetexture file="/core/cursors/k_diagonal_resize_1.png" />
+	<precachetexture file="/core/cursors/k_diagonal_resize_2.png" />
+	<precachetexture file="/core/cursors/k_handwriting.png" />
+	<precachetexture file="/core/cursors/k_help_select.png" />
+	<precachetexture file="/core/cursors/k_horizontal_resize.png" />
+	<precachetexture file="/core/cursors/k_link_select.png" />
+	<precachetexture file="/core/cursors/k_move.png" />
+	<precachetexture file="/core/cursors/k_normal_select.png" />
+	<precachetexture file="/core/cursors/k_precision_select.png" />
+	<precachetexture file="/core/cursors/k_text_select.png" />
+	<precachetexture file="/core/cursors/k_unavailable.png" />
+	<precachetexture file="/core/cursors/k_vertical_resize.png" />
+	<precachetexture file="/core/cursors/k_working_in_background.png" />
+	<precachetexture file="/core/cursors/link.png" />
+	<precachetexture file="/core/cursors/ping_ally.tga" />
+	<precachetexture file="/core/cursors/ping_enemy.tga" />
+	<precachetexture file="/core/cursors/ping.tga" />
+	<precachetexture file="/core/cursors/queue.tga" />
+	<precachetexture file="/core/cursors/scroll_down.tga" />
+	<precachetexture file="/core/cursors/scroll_left_down.tga" />
+	<precachetexture file="/core/cursors/scroll_left.tga" />
+	<precachetexture file="/core/cursors/scroll_left_up.tga" />
+	<precachetexture file="/core/cursors/scroll_right_down.tga" />
+	<precachetexture file="/core/cursors/scroll_right.tga" />
+	<precachetexture file="/core/cursors/scroll_right_up.tga" />
+	<precachetexture file="/core/cursors/scroll_up.tga" />
+	<precachetexture file="/core/cursors/shop.tga" />
+	<precachetexture file="/core/cursors/target_outofrange.tga" />
+	<precachetexture file="/core/cursors/text.tga" />
+
+	<!-- quests -->
+	<precachetexture file="/ui/main/shared/textures/scroll.tga"/>
+	<precachetexture file="/ui/main/shared/textures/quest_chest.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_bg.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_item_card.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_chest_fg.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_chest_bg.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_chest_fg2.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_chest_bg2.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_item_card_lexikhan.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_item_card_rhao.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_item_card_draknia.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_item_card_auros.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_reward_auros.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_lifetime_1prize.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_lifetime_stars.tga"/>
+	<precachetexture file="/ui/main/quests/textures/frame_maximize_up.tga"/>
+	<precachetexture file="/ui/main/quests/textures/frame_maximize_over.tga"/>
+	<precachetexture file="/ui/main/quests/textures/frame_minimize_up.tga"/>
+	<precachetexture file="/ui/main/quests/textures/frame_minimize_over.tga"/>	
+	<precachetexture file="/ui/main/quests/textures/quest_lifetime_base.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_lifetime_progressback_center.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_lifetime_progressback_lcap.tga"/>
+	<precachetexture file="/ui/main/quests/textures/quest_lifetime_progressback_rcap.tga"/>
+
+	<precachetexture file="/ui/game/scoreboard/textures/itemtype_crystal.tga"/>
+	<precachetexture file="/ui/game/scoreboard/textures/dark_crystal.tga"/>
+	
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/1/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/2/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/3/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/4/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/5/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/6/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/7/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/8/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/9/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chest_v2/10/chest.mdf" skin="default" />
+	
+	<!-- Spectator -->
+	<precachetexture file="/ui/specui/textures/info_bg.tga"/>
+	<precachetexture file="/ui/specui/textures/info_bg_teams.tga"/>
+	<precachetexture file="/ui/specui/textures/info_bg_flash_left.tga"/>
+	<precachetexture file="/ui/specui/textures/info_bg_flash_right.tga"/>
+	<precachetexture file="/ui/specui/textures/selectedplayer.tga"/>
+	<precachetexture file="/ui/specui/textures/statbar_c_red.tga"/>
+	<precachetexture file="/ui/specui/textures/statbar_t_red.tga"/>
+	<precachetexture file="/ui/specui/textures/statbar_c_green.tga"/>
+	<precachetexture file="/ui/specui/textures/statbar_t_green.tga"/>
+	<precachetexture file="/ui/specui/textures/spec_hero_frame_background.tga"/>
+	<precachetexture file="/ui/specui/textures/spec_hero_frame_ribbon.tga"/>
+	<precachetexture file="/ui/specui/textures/spec_hero_frame_heroset_right.tga"/>
+	<precachetexture file="/ui/specui/textures/spec_hero_frame_heroset_left.tga"/>
+	<precachetexture file="/ui/specui/textures/hp_bar.tga"/>
+	<precachetexture file="/ui/specui/textures/mana_bar.tga"/>
+	<precachetexture file="/ui/specui/textures/pushbarline.tga"/>
+	<precachetexture file="/ui/specui/textures/pushbarline_green.tga"/>
+	<precachetexture file="/ui/specui/textures/pushbarline_red.tga"/>
+	<precachetexture file="/ui/specui/textures/team_logo_valor_red.tga"/>
+	<precachetexture file="/ui/specui/textures/team_logo_glory_green.tga"/>
+	
+	<precachetexture file="/ui/game/event_log/textures/icon_baldir.tga"/>
+	<precachetexture file="/ui/game/event_log/textures/icon_cindara.tga"/>
+	<precachetexture file="/ui/shared/textures/button_maximize.tga"/>
+	
+	<!-- Old chests, temp -->
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/1/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/2/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/3/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/4/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/5/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/6/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/7/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/8/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/9/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/10/chest.mdf" skin="default" />
+	
+	<precachemodel file="/ui/main/postgame/rewards/visuals/commodities/ore/model.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/visuals/commodities/elixir/model.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/visuals/commodities/food/model.mdf" skin="default" />
+
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/bronze/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/silver/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/gold/chest.mdf" skin="default" />
+	<precachemodel file="/ui/main/postgame/rewards/models/chests/diamond/chest.mdf" skin="default" />
+	
+	<precachemodel file="/ui/main/background/blue/model/model.mdf" />
+	<precachemodel file="/ui/main/background/model/model.mdf" />
+	
+	<if condition="host_islauncher">
+		<effect file="/ui/main/background/blue/main_bg.effect"  />	
+		<effect file="/ui/main/background/blue/main_bg_simple.effect"  />	
+		<effect file="/ui/main/background/main_bg.effect"  />		
+		<effect file="/ui/main/background/blue/front.effect"  />	
+		<effect file="/ui/main/background/front.effect"  />			
+		<effect file="/ui/main/postgame/effects/sun_rays.effect"  />	
+		<effect file="/ui/main/postgame/effects/side_sparks.effect"  />	
+		<effect file="/ui/main/postgame/effects/foreground_sparks.effect"  />	
+		<effect file="/ui/main/postgame/effects/progress_bar_leader.effect"  />	
+		<effect file="/ui/main/craftting/effects/alert.effect"  />	
+		<effect file="/ui/main/craftting/effects/alert_wide.effect"  />	
+		<effect file="/ui/main/craftting/effects/alert_red.effect"  />	
+		<effect file="/ui/main/craftting/effects/alert_imbue.effect"  />
+		<effect file="/ui/main/shared/effects/screenedge_unlock.effect"  />
+		<effect file="/ui/main/shared/effects/generic_highlight_rays.effect"  />
+		<effect file="/ui/main/shared/effects/boost_rocket_flames.effect"  />		
+		<effect file="/ui/main/pregame/effects/empty_slot.effect"  />
+		<effect file="/ui/main/navigation/effects/subtxt.effect"  />
+	</if>
+	
+	<!-- Keepers -->
+	<precachemodel file="/maps/tutorial_2/resources/heroes/lexikhan/model.mdf" skin="default" />
+	<precachemodel file="/maps/tutorial_2/resources/buildings/cage/model.mdf" skin="default" />
+	<precachemodel file="/maps/tutorial/resources/heroes/merchant/model.mdf" skin="default" />
+	<precachemodel file="/maps/tutorial_2/resources/heroes/draknia/model.mdf" skin="default" />
+	
+	<!-- Widget highlight effects -->
+	<effect file="/ui/_models/16to1/button.effect"/>
+	<effect file="/ui/_models/8to1/button.effect"/>
+	<effect file="/ui/_models/4to1/button.effect"/>
+	<effect file="/ui/_models/2to1/button.effect"/>
+	<effect file="/ui/_models/1to1/button.effect"/>
+	<effect file="/ui/_models/1to2/button.effect"/>
+	<effect file="/ui/_models/1to4/button.effect"/>
+	<effect file="/ui/_models/1to8/button.effect"/>
+	<effect file="/ui/_models/1to16/button.effect"/>
+
+	<precachemodel file="/ui/_models/16to1/button.mdf" skin="default" />
+	<precachemodel file="/ui/_models/8to1/button.mdf" skin="default" />
+	<precachemodel file="/ui/_models/4to1/button.mdf" skin="default" />
+	<precachemodel file="/ui/_models/2to1/button.mdf" skin="default" />
+	<precachemodel file="/ui/_models/1to1/button.mdf" skin="default" />
+	<precachemodel file="/ui/_models/1to2/button.mdf" skin="default" />
+	<precachemodel file="/ui/_models/1to4/button.mdf" skin="default" />
+	<precachemodel file="/ui/_models/1to8/button.mdf" skin="default" />
+	<precachemodel file="/ui/_models/1to16/button.mdf" skin="default" />
+		
+	<precachetexture file="/ui/main/clans/textures/what_nogood.tga" />
+	<precachetexture file="/ui/main/clans/textures/prime_marker_seals.tga" />
+	<precachetexture file="/ui/main/clans/textures/prize_marker_diamond_spin.tga" />
+	<precachetexture file="/ui/main/clans/textures/prize_marker_gold_spin.tga" />
+	<precachetexture file="/ui/main/clans/textures/prize_marker_silver_spin.tga" />
+	<precachetexture file="/ui/main/clans/textures/prize_marker_bronze_spin.tga" />	
+	<precachetexture file="/ui/shared/textures/mic_off.tga" />
+	<precachetexture file="/ui/shared/textures/mic_on.tga" />		
+		
+	<precachetexture file="/ui/main/shared/textures/hamburger.tga" />	
+	
+	<precachetexture file="/ui/main/shared/textures/tab_on_l.tga" />
+	<precachetexture file="/ui/main/shared/textures/tab_on_c.tga" />
+	<precachetexture file="/ui/main/shared/textures/tab_on_r.tga" />
+	<precachetexture file="/ui/main/shared/textures/tab_on_bottom.tga" />
+	<precachetexture file="/ui/main/shared/textures/tab_on_arrow.tga" />
+	<precachetexture file="/ui/main/shared/textures/tab_off_l.tga" />
+	<precachetexture file="/ui/main/shared/textures/tab_off_c.tga" />
+	<precachetexture file="/ui/main/shared/textures/tab_off_r.tga" />
+	<precachetexture file="/ui/main/shared/textures/tab_off_bottom.tga" />		
+
+	<texture file="/ui/shared/frames/primary_btn_up_tl.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_up_t.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_up_tr.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_up_l.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_up_c.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_up_r.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_up_bl.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_up_b.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_up_br.tga" nocompress="true"/>	
+
+	<texture file="/ui/shared/frames/primary_btn_over_tl.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_over_t.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_over_tr.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_over_l.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_over_c.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_over_r.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_over_bl.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_over_b.tga" nocompress="true"/>
+	<texture file="/ui/shared/frames/primary_btn_over_br.tga" nocompress="true"/>	
+	
+	<precachetexture file="/ui/shared/textures/mic_off.tga" />
+	<precachetexture file="/ui/shared/textures/mic_on.tga" />
+	<precachetexture file="/ui/main/shared/textures/plus-icon.tga" />	
+	<precachetexture file="/ui/main/shared/textures/edit.tga" />
+	<precachetexture file="/ui/main/shared/textures/delete.tga" />
+	<precachetexture file="/ui/main/shared/textures/filter.tga"/>
+	<precachetexture file="/ui/shared/textures/gear.tga"/>
+	<precachetexture file="/ui/shared/textures/what_dis.tga" />	
+	
+	<!-- PAX Demo -->
+	<if condition="host_islauncher">
+		<texture file="/ui/main/background/textures/pax_play_1.tga" nocompress="true"/>
+		<texture file="/ui/main/background/textures/pax_play_2.tga" nocompress="true"/>
+		<texture file="/ui/main/background/textures/pax_play_3.tga" nocompress="true"/>
+		<texture file="/ui/main/background/textures/pax_play_4.tga" nocompress="true"/>
+		<texture file="/ui/main/background/textures/pax_logo.tga"/>	
+	</if>
+	
+</package>
