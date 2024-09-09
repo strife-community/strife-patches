@@ -13,12 +13,19 @@ jobs:
       uses: thedoctor0/zip-release@0.7.5
       with:
         type: 'zip'
-        filename: 'resources2.s2z'
+        filename: '../output/resources2.s2z'
         directory: 'game'
+        command: 'mkdir output'
+    - name: Archive Release
+      uses: thedoctor0/zip-release@0.7.5
+      with:
+        type: 'zip'
+        filename: 'steam-release.zip'
+        directory: 'output'
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
-        artifacts: "game/resources2.s2z"
+        artifacts: "output/resources2.s2z,output/steam-release.zip"
         tag: "${{ steps.date.outputs.date }}-${{ github.sha }}"
         generateReleaseNotes: true
         removeArtifacts: true
