@@ -467,6 +467,7 @@ pregame_ready_start_over					Start Over
 pregame_general_tab_for_stats				for Detailed Info
 pregame_customize_need_tips					Need tips on
 pregame_customize_watch_howto				Watch How-To
+pregame_queue_size                          Queueing Players:
 
 pregame_breadcrumb_mustunready				Must Un-Ready
 pregame_breadcrumb_mustunready_desc			You must leave the matchmaking queue before using this option.
