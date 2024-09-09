@@ -10,11 +10,11 @@ jobs:
       uses: thedoctor0/zip-release@0.7.5
       with:
         type: 'zip'
-        filename: 'release.zip'
+        filename: 'resources2.s2z'
         directory: 'game'
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
-        artifacts: "release.zip"
+        artifacts: "game/resources2.s2z"
         tag: "2024-09-09-${{ github.sha }}"
         generateReleaseNotes: true
