@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+
+	<style name="infoFrameShadow" width="+6s" height="+6s" align="center" valign="center" color="0 0 0 .7" bordercolor="0 0 0 .7" borderthickness="8s" noclick="1" />
+	<style name="infoFrame" borderthickness="6s" color="#112931" noclick="1" />
+	<style name="infoFrameCorners" color="invisible" bordercolor="#112a32" borderthickness="8s" noclick="1" />
+	<style name="infoFrameBorder" borderthickness="4s" color="#07171b" noclick="true" />
+	<style name="teamIconFrame" borderthickness="4s" color="#112931" noclick="1" />
+	<style name="teamIconFrameBorder" borderthickness="4s" color="#083844" noclick="true" />
+
+	<!-- General templates -->
+	<template name="pregame_locked_template">
+		<panel name="{id}" x="{x=0}" y="{y=60%}" width="{width=100%}" height="{height=20%}" visible="{visible=0}" noclick="1">
+			<image texture="/ui/main/pregame/textures/chain.tga" y="-8%" width="135%" height="100%" align="center" valign="center" noclick="1"/>
+			<image texture="/ui/main/pregame/textures/locked.tga" y="-8%" width="34%" height="34@" align="center" valign="center" noclick="1"/>
+		</panel>
+	</template>
+
+	<!-- Splash screen templates -->
+	<template name="pregame_splashimage_template">
+		<splashimage y="-80s" noclick="1" visible="0" align="center" image="{image}" bgcolor="black" view="clip" width="1280s" height="800s"/>
+	</template>
+
+	<!-- Hero/Pet selection templates -->
+	<template name="main_pregame_skill_template">
+		<panel name="main_pregame_skill_template{index}" width="262s" height="56s" sticky="1" stickytoinvis="0">
+			<frame texture="/ui/shared/frames/squareglow.tga" style="infoFrameShadow"  noclick="1"  />
+			<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame"  noclick="1"  />
+			<frame texture="/ui/elements:thick" style="infoFrameBorder"  noclick="1"  />
+			<panel texture="/ui/shared/frames/rounded_bg_solid.tga" x="4s" width="48s" height="48s" valign="center" noclick="1" >
+				<image name="main_pregame_skill_{index}_image" texture="" noclick="1" />
+				<frame texture="/ui/elements:rounded_corner_white" style="infoFrameCorners" noclick="1"  />
+				<frame texture="/ui/elements:thick" style="infoFrameBorder" noclick="1"  />
+				<frame name="main_pregame_skill_{index}_key_container" texture="/ui/shared/frames/key.tga" borderthickness="4s" y="-3s" x="-3s" width="17s" height="17s" noclick="1">
+					<label name="main_pregame_skill_{index}_key" y="-1s" font="subdyn_11" color="0 0 0 .8" textalign="center" textvalign="center" content="x" noclick="1"  />
+				</frame>
+			</panel>
+			<label name="main_pregame_skill_{index}_name" content="NAME" font="maindyn_16" x="58s" y="5s" color="white" outline="1" noclick="1" />
+			<label name="main_pregame_skill_{index}_desc" content="DESC" font="subdyn_11" x="58s" y="21s" width="-64s" wrap="1" lineheight="15s" color="#a5c6cf" style="labelBase" outlinecolor="0 0 0 .5" noclick="1"  />
+		</panel>
+	</template>
+
+	<template name="main_pregame_detailed_skill_template">
+		<panel name="main_pregame_detailed_skill_template{index}" y="{y}" width="620s" height="116s" sticky="1" stickytoinvis="0" noclick="1">
+			<frame texture="/ui/shared/frames/squareglow.tga" style="infoFrameShadow"  noclick="1"  />
+			<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame"  noclick="1"  />
+			<frame texture="/ui/elements:thick" style="infoFrameBorder"  noclick="1"  />
+			<panel texture="/ui/shared/frames/rounded_bg_solid.tga" x="8s" width="58s" height="58s" valign="top" y="8s" noclick="1" >
+				<image name="main_pregame_detailed_skill_{index}_image" texture="" noclick="1" />
+				<frame texture="/ui/elements:rounded_corner_white" style="infoFrameCorners" noclick="1"  />
+				<frame texture="/ui/elements:thick" style="infoFrameBorder" noclick="1"  />
+				<frame name="main_pregame_detailed_skill_{index}_key_container" texture="/ui/shared/frames/key.tga" borderthickness="4s" y="-3s" x="-3s" width="17s" height="17s" noclick="1">
+					<label name="main_pregame_detailed_skill_{index}_key" y="-1s" font="subdyn_11" color="0 0 0 .8" textalign="center" textvalign="center" content="x" noclick="1"  />
+				</frame>
+			</panel>
+			<label name="main_pregame_detailed_skill_{index}_name" content="NAME" font="maindyn_18" x="76s" y="6s" color="white" outline="1" noclick="1" />
+			<label name="main_pregame_detailed_skill_{index}_desc" content="DESC" font="subdyn_11" x="76s" y="26s" width="-82s" wrap="1" lineheight="14s" color="#a5c6cf" style="labelBase" outlinecolor="0 0 0 .5" noclick="1"  />
+		</panel>
+	</template>
+
+	<template name="main_pregame_new_sign">
+		<panel x="{x}" y="{y}" width="{width}" height="{height}" visible="{isNew}" noclick="1" color="invisible">
+			<image noclick="1" texture="/ui/main/shared/textures/sign.tga" />
+			<modelpanel visible="1"
+				noclick="true"
+				x="-7s" y="-4s" align="center" valign="center"
+				width="+32s" height="+14s"
+				model="/shared/models/invis.mdf"
+				effect="/ui/main/shared/effects/mastery_flames.effect"
+				camerapos="0 0 10"
+				cameraangles="0 0 0"
+				camerafov="80"
+				depthclear="true"
+				depthcompress="true"
+			/>
+			<label textalign="center" textvalign="center" font="subdyn_9" color="#571000" outline="1" outlinecolor="#ffb525" content="general_new" noclick="1" visible="1" />
+		</panel>
+	</template>
+
+	<template name="main_pregame_hero_template">
+		<panel x="{x}" width="91s" height="110s" visible="{visible=true}">
+			<panel y="2s" width="98%" height="98@" align="center" noclick="1">
+				<image name="main_pregame_hero_{prefix}{index}_icon_selected" texture="{icon}" color=".6 .6 .6 .7" width="-4s" height="-4s" align="center" valign="center" group="main_pregame_hero{prefix}_icon_selected_group" noclick="true"/>
+
+				<panel name="main_pregame_hero_{prefix}{index}_locked2" color="0 0 0 0.75" visible="{isLocked=0}" noclick="1"/>
+
+				<!-- Optional Hero Frames
+
+					SetVisible if (in raned mode only?) user had a hero rating of:
+					Ranked Gold | /ui/main/pregame/textures/ranked_slate.tga
+					Ranked Gold | /ui/main/pregame/textures/ranked_bronze.tga
+					Ranked Gold | /ui/main/pregame/textures/ranked_silver.tga
+					Ranked Gold | /ui/main/pregame/textures/ranked_gold.tga
+					Ranked Diamond | /ui/main/pregame/textures/ranked_diamond.tga
+
+					SetVisible if (not in ranked mode) user has mastered hero:
+					Mastered | /ui/shared/textures/account_icons/hp_mastered.tga
+				-->
+				<image texture="{frameTexture}" visible="{hasFrame=0}" noclick="1" />
+
+				<!-- Recommended Glow -->
+				<panel name="main_pregame_hero_{prefix}{index}_recommended" group="main_pregame_hero_recommended_group" width="-4s" height="-4s" align="center" valign="center" visible="0" noclick="true">
+					<modelpanel model="/ui/main/shared/effects/hero_highlight.mdf" anim="idle" effect="/ui/main/shared/effects/hero_highlight.effect" camerapos="0 -40 0" cameraangles="0 0 180" camerafov="55" cameranear="1" camerafar="1000" depthclear="false" depthcompress="true" noclick="true" />
+				</panel>
+
+				<frame texture="/ui/shared/frames/roundframe_bold.tga" style="infoFrameBorder" />
+
+				<!-- FadeIn on Hover (Inner Glow) -->
+				<frame name="main_pregame_hero_{prefix}{index}_selected" group="main_pregame_hero{prefix}_selected_group" texture="/ui/shared/frames/roundframe_bold.tga" borderthickness="4s" color="#30cdff" visible="0" noclick="true">
+					<frame width="-4s" height="-4s" align="center" valign="center" texture="/ui/shared/frames/inner_glow.tga" borderthickness="14s" color="invisible" bordercolor="#30cdff60" rendermode="additive" noclick="true" />
+				</frame>
+
+				<!-- New sign -->
+				<instance name="main_pregame_new_sign" x="-1s" y="-2s" width="32s" height="32s" isNew="{isNew=0}"/>
+			</panel>
+			<label content="{HeroName}" font="subdyn_12" valign="bottom" y="-3s" height="15s" textalign="center" wrap="1" color="#729fad" noclick="true"/>
+			<label name="main_pregame_hero_{prefix}{index}_hero_selected" group="main_pregame_hero{prefix}_hero_selected" content="{HeroName}" font="subdyn_12" valign="bottom" y="-3s" height="15s" textalign="center" wrap="1" color="#30cdff" noclick="true" visible="0"/>
+
+			<instance id="main_pregame_hero_{prefix}{index}_locked" name="pregame_locked_template" visible="{isLocked=0}"/>
+
+			<panel name="main_pregame_hero_{prefix}{index}_picked" color="0 0 0 .6" clip="1" visible="{pickedVisible}">
+				<label name="main_pregame_hero_{prefix}{index}_picked2" y="20%" content="" color="1 .8 .2 1" font="subdyn_13" textalign="center" noclick="1"/>
+				<label name="main_pregame_hero_{prefix}{index}_pickedBy" y="45%" content="{pickedBy}"      color="1 .8 .2 1" font="subdyn_13" textalign="center" noclick="1"/>
+			</panel>
+		</panel>
+	</template>
+
+	<!-- Customize templates -->
+	<template name="pregame_dye_template">
+		<panel x="{x=0}" y="{y=0}" width="48s" height="48s">
+			<panel width="46s" height="44s" noclick="1">
+
+				<!-- Current Glow -->
+				<frame name="main_pregame_dye_{index}_hover" texture="/ui/shared/frames/squareglow.tga" width="+10s" height="+10s" align="center" valign="center" bordercolor="#6ed1e3AA" borderthickness="8s" noclick="1" visible="0" />
+				<frame name="main_pregame_dye_{index}_selected" group="main_pregame_dye_selected_group" texture="/ui/shared/frames/squareglow.tga" width="+10s" height="+10s" align="center" valign="center" bordercolor="#6ed1e3" borderthickness="8s" noclick="1" visible="0" />
+
+				<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="5s" color="{color=.9 .9 .9 1}" noclick="1"/>
+				<frame texture="/ui/elements:roundframe" 				borderthickness="5s" bordercolor="0 0 0 1" noclick="1"/>
+				<image texture="/ui/main/pregame/textures/locked.tga" width="32s" height="32s" align="center" valign="center" noclick="1" color="1 1 1 .5" rendermode="grayscale" visible="{isLocked=0}"/>
+
+				<!-- New sign -->
+				<instance name="main_pregame_new_sign" x="0s" y="30s" width="36s" height="36s" isNew="{isNew=0}"/>
+			</panel>
+		</panel>
+	</template>
+	<template name="pregame_skin_template">
+		<panel width="94s" height="240s" sticky="1" stickytoinvis="0" noclick="1">
+			<panel width="120s" noclick="0" name="pregame_skin_{id}_clicker"
+				usebitmask="1"
+				bitmaskfile="/heroes/blazer/gear_2/gearselect.tga"
+			>
+				<image name="pregame_skin_{id}_image" texture="{texture}" color="{textureColor}" group="pregame_skin_texture_group" noclick="1"/>
+				<image texture="/ui/main/pregame/textures/gearpicker_frame_base.tga" noclick="1" />
+
+				<!-- Set visible for current only -->
+				<image name="pregame_skin_{id}_highlight" group="pregame_skin_highlight_group" texture="/ui/main/pregame/textures/gearpicker_frame_highlight.tga" width="120s" noclick="1" visible="0" />
+
+				<instance name="pregame_locked_template" x="2s" y="170s" width="87s" height="23s" visible="{isLocked=0}"/>
+
+				<!-- Set visible for current only -->
+				<panel name="pregame_skin_{id}_dye" align="right" x="0" y="-4s" width="36s" height="30s">
+					<image name="pregame_skin_{id}_dye_color" texture="/ui/main/pregame/textures/dyepicker_base.tga" width="62s" height="62s" align="right" noclick="1"/>
+					<image texture="/ui/main/pregame/textures/dyepicker_frame.tga" width="62s" height="62s" align="right" noclick="1"/>
+				</panel>
+
+				<panel name="pregame_skin_{id}_dye2" x="-17s" y="205s" width="86s" align="center" height="25s">
+					<frame texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+						<label content="pregame_general_dyes" outline="1" font="maindyn_18" textalign="center" color="white" noclick="1"/>
+					</frame>
+				</panel>
+
+				<!-- New sign -->
+				<instance name="main_pregame_new_sign" x="25s" y="-10s" width="40s" height="40s" isNew="{isNew=0}"/>
+			</panel>
+		</panel>
+	</template>
+	<template name="pregame_pet_skin_template">
+		<panel name="pregame_pet_skin_{id}" group="pregame_pet_skin_group" texture="{texture}" hflip="1" width="80s" height="80s" sticky="1" stickytoinvis="0">
+			<panel name="pregame_pet_skin_{id}_locked" color="0 0 0 0.75" visible="{isLocked=0}" noclick="1"/>
+			<instance name="pregame_locked_template" visible="{isLocked=0}" id="pregame_pet_skin_{id}_locked2"/>
+
+			<!-- Current Glow -->
+			<frame name="pregame_pet_skin_{id}_selected" group="pregame_pet_skin_selected_group" texture="/ui/shared/frames/inner_glow.tga" width="-2s" height="-2s" align="center" valign="center" borderthickness="10s" color="invisible" bordercolor="#78deff" visible="0" noclick="true" />
+
+			<frame texture="/ui/shared/frames/roundframe_bold.tga" style="teamIconFrameBorder" borderthickness="6s" width="+4s" height="+4s" align="center" valign="center" />
+		</panel>
+	</template>
+
+	<template name="pregame_team_entry_template">
+		<panel name="pregame_team_entry_{id}" grow="1" noclick="1" height="58s" align="right" float="right" padding="6s" sticky="1" stickytoinvis="0">
+			<button name="pregame_team_entry_{id}_button" color="invisible" x="0" align="right" width="-20s" />
+			<panel x="0" grow="1" height="100%" noclick="1">
+				<label name="pregame_team_entry_{id}_name" y="21s" fitx="1" fity="1" style="labelBase" font="subdyn_13" align="right" content="Player Name" noclick="1" />
+				<label name="pregame_team_entry_{id}_group" y="28s" fitx="1" fity="1" style="labelBase" color=".7 .7 .7 1" font="subdyn_11" align="right" content="Group/Secondary" noclick="1" />
+			</panel>
+			<panel name="pregame_team_entry_{id}_ready_container" width="36s" noclick="1">
+				<!-- Player Status - Waiting -->
+				<image name="pregame_team_entry_{id}_waiting" texture="/ui/main/shared/textures/waiting.tga" width="32s" height="64s" align="center" valign="center" noclick="1" visible="1" />
+				<!-- Player Status - Ready -->
+				<image name="pregame_team_entry_{id}_ready" texture="/ui/main/shared/textures/stylized_check.tga" width="32s" height="36s" align="center" valign="center" noclick="1" visible="0" />
+				<image name="pregame_team_entry_{id}_voip" texture="/ui/shared/textures/megaphone.tga" width="32s" height="36s" align="center" valign="center" noclick="1" visible="0" />
+			</panel>
+
+			<panel width="100@" height="100%" noclick="1">
+				<!-- Empty background -->
+				<frame texture="/ui/shared/frames/blue_btn_up.tga" width="100@" height="100%" color=".7 .7 .7 1" borderthickness="4s" visible="1" noclick="1"/>
+				<!-- Plus Button -->
+				<panel name="pregame_team_entry_{id}_invite">
+					<panel width="20s" height="4s" align="center" valign="center" color="#528593" noclick="1" />
+					<panel width="4s" height="20s" align="center" valign="center" color="#528593" noclick="1" />
+				</panel>
+				<!-- Slot Filled - Icon -->
+				<panel name="pregame_team_entry_{id}_occupied" visible="{isOccupied=0}" noclick="1">
+					<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="teamIconFrame" noclick="1"/>
+					<label y="-2s" font="maindyn_52" color="1 1 1 .2" textalign="center" textvalign="center" content="QM" noclick="1" />
+					<!-- Hero Icon - Invis to show ? when no hero chosen -->
+					<image name="pregame_team_entry_{id}_texture" texture="/heroes/trixie/icon.tga" width="-2s" height="-2s" align="center" valign="center" noclick="1" />
+					<!-- Inner Glow -->
+					<frame texture="/ui/shared/frames/inner_glow.tga" width="-2s" height="-2s" align="center" valign="center" borderthickness="10s" color="invisible" bordercolor="#78deff" visible="0" noclick="true" />
+
+					<frame texture="/ui/shared/frames/roundframe_bold.tga" style="teamIconFrameBorder" noclick="1" />
+				</panel>
+			</panel>
+
+			<instance name="DropTarget" x="0" index="pregame_team_entry_{id}_droptarget" width="100%" height="100%" visible="0" label="main_social_groupname_addplayer_party" />
+
+		</panel>
+	</template>
+
+	<template name="mastery_star_template">
+		<panel x="{x}" y="{y}" width="{size}" height="{size}" align="{align=center}" noclick="1" >
+			<image name="selection_hero_level_star_{type}_{index}_1" texture="/ui/shared/textures/star.tga" noclick="1"  />
+			<panel name="selection_hero_level_star_{type}_{index}_2" align="right" clip="1" noclick="1" color="invisible"  >
+				<image texture="/ui/shared/textures/star.tga" align="right" width="100@" rendermode="grayscale" color=".3 .3 .3 .9" noclick="1"  />
+			</panel>
+		</panel>
+	</template>
+
+
+	<!-- Ready templates -->
+	<template name="main_pregame_ready_player">
+		<panel name="main_pregame_ready_player{id}" x="{x}" y="{y}" align="center" valign="center" width="180s" height="288s" visible="1">
+
+			<!-- Slot is empty, invite player -->
+			<panel name="main_pregame_ready_empty{id}" visible="1" noclick="1">
+				<modelpanel model="/shared/models/invis.mdf" noclick="true" y="0" camerapos="0 0 0"	cameraangles="0 0 0" camerafov="110" depthclear="true" depthcompress="true" onshowlua="self:SetEffect('/ui/main/shared/effects/generic_highlight_rays.effect', '0.18', '0.67', '0.84')" />
+				<image texture="/ui/main/shared/textures/circular.tga" width="36s" height="180s" align="center" valign="center" x="0" y="0" rendermode="additive" color="#00d2ff33" noclick="1" />
+				<image texture="/ui/shared/textures/plus_icon_white.tga" rendermode="additive" color=".7 .8 .9 .9" width="58s" height="58s" align="center" valign="center" noclick="1" />
+				<modelpanel
+					width="120s" height="120s" align="center" valign="center"
+					noclick="1"
+					model="/shared/models/invis.mdf"
+					camerapos="0 0 0"
+					cameraangles="0 0 0"
+					camerafov="20"
+					depthclear="true"
+					depthcompress="true"
+					onshowlua="self:SetEffect('/ui/main/pregame/effects/empty_slot.effect')"
+				/>
+				<panel name="main_pregame_ready_empty{id}_invite" visible="1" noclick="0" valign="center" align="center" height="50%" width="50@" />
+			</panel>
+
+			<!-- Show Model when slot is full -->
+			<modelpanel
+				name="main_pregame_ready_heromodel{id}" visible="0" noclick="1"
+				y="0" x="30s"
+				width="280%"
+				height="280%"
+				align="center"
+				valign="center"
+				depthclear="true" depthcompress="false"
+				lookat="false"
+
+				cameranear="0.0"
+				camerafar="3000.0"
+				cameradistance="30"
+				camerapos="0 1720 1750"
+				cameraangles="-45 0 180"
+				camerafov="7"
+
+				modelpos="0 0 0" modelangles="50 0 0" modelscale="1.0"
+				sunazimuth="120" sunaltitude="50" suncolor="0.9 0.9 0.9" ambientcolor="0.6 0.7 0.7"
+				resourcecontext=""
+				anim="idle"
+				model="/heroes/ray/gear_1/preview.mdf"
+				color="1 1 1 1"
+			/>
+
+		</panel>
+	</template>
+
+	<!-- Main XML -->
+	<panel name="main_pregame_sleeper" noclick="true"/>
+	<panel name="main_pregame_container" y="90s" height="-90s" visible="0" noclick="true">
+		<panel name="main_pregame_side_fades" noclick="1">
+			<image texture="/ui/main/shared/textures/grad_horz.tga" y="-26s" width="380s" align="left" color=".04 .09 .12 .95" noclick="1" />
+			<image texture="/ui/main/shared/textures/grad_horz.tga" y="-26s" width="420s" align="right" hflip="1" color=".04 .09 .12 .95" noclick="1" />
+		</panel>
+
+		<!-- Hero info -->
+		<panel name="main_pregame_hero_name_container" noclick="1">
+
+			<!-- Mastery - Show when hero is matered - Not in Ranked Mode(s) -->
+			<panel name="main_pregame_hero_mastered_parent" noclick="1">
+				<panel name="main_pregame_hero_mastered" x="15s" y="38s" width="180s" height="54s" noclick="1" visible="0">
+					<image texture="/ui/main/shared/textures/circular.tga" y="5s" valign="center" align="center" width="250s" height="110s" color="#29caf890" noclick="1" visible="1"  />
+					<image texture="/ui/shared/textures/star.tga" align="center" x="-70s" y="14s" width="38s" height="38s" noclick="1"  />
+					<image texture="/ui/shared/textures/star.tga" align="center" x="-40s" y="7s" width="42s" height="42s" noclick="1"  />
+					<image texture="/ui/shared/textures/star.tga" align="center" x="0" y="0" width="54s" height="54s"  noclick="1" />
+					<image texture="/ui/shared/textures/star.tga" align="center" x="40s" y="7s" width="42s" height="42s" noclick="1"  />
+					<image texture="/ui/shared/textures/star.tga" align="center" x="70s" y="14s" width="38s" height="38s" noclick="1"  />
+				</panel>
+			</panel>
+
+			<panel x="15s" y="58s" grow="1" height="64s" float="right" noclick="1" >
+				<label name="main_pregame_hero_name" fitx="1" font="maindyn_64" style="labelBase" textvalign="center" noclick="1" />
+
+				<!-- Rank - When in Ranked Modes -->
+				<image name="main_pregame_hero_ranked_division" texture="/ui/main/shared/textures/elo_rank_1.tga" width="100@" height="100%" noclick="1" visible="0" />
+
+			</panel>
+			<label name="main_pregame_hero_desc" x="17s" y="120s" width="510s" wrap="1" lineheight="20s" font="maindyn_18" style="h3" noclick="1" />
+		</panel>
+
+		<!-- Hero/Pet selection -->
+		<panel name="main_pregame_selection_container" visible="1" noclick="true">
+
+			<panel name="main_pregame_hero_info_container" float="right" padding="6s" x="15s" y="160s" height="32s" noclick="1" >
+				<image name="main_pregame_hero_attacktype" texture="/ui/main/shared/textures/melee.tga" width="100@" height="100%"  noclick="1" />
+				<!-- Division -->
+				<panel name="main_pregame_hero_division" visible="0" width="80s" sticky="1" stickytoinvis="0"  noclick="1" >
+					<panel width="1s" color="1 1 1 .5" />
+					<label content="ranked_division" x="10s" width="70s" y="0s" font="subdyn_11" style="labelBase" color="#c7e3f4" noclick="1" />
+					<label name="main_pregame_hero_division_label" content="Silver" x="10s" y="15s" font="maindyn_20" style="h3" noclick="1" />
+				</panel>
+				<!-- Ranking -->
+				<panel name="main_pregame_hero_rank" visible="0" width="80s" sticky="1" stickytoinvis="0"  noclick="1" >
+					<panel width="1s" color="1 1 1 .5" />
+					<label content="ranked_rank_colon" x="10s" width="70s" y="0s" font="subdyn_11" style="labelBase" color="#c7e3f4" noclick="1" />
+					<label name="main_pregame_hero_rank_label" content="1,502" x="10s" width="70s" y="15s" font="maindyn_20" style="h3" noclick="1" />
+				</panel>
+				<!-- ELO -->
+				<panel name="main_pregame_hero_elo" visible="0" width="80s" sticky="1" stickytoinvis="0"  noclick="1" >
+					<panel width="1s" color="1 1 1 .5" />
+					<label content="pregame_general_elo" x="10s" width="70s" y="0s" font="subdyn_11" style="labelBase" color="#c7e3f4" noclick="1" />
+					<label name="main_pregame_hero_elo_label" content="1500" x="10s" width="70s" y="15s" font="maindyn_20" style="h3" noclick="1" />
+				</panel>
+				<!-- Hero Mastery -->
+				<panel name="main_pregame_hero_mastery" visible="1" width="165s" sticky="1" stickytoinvis="0" noclick="1">
+					<panel width="1s" color="1 1 1 .5" noclick="1"  />
+					<label content="player_profile_hero_mastery" x="10s" y="-4s" font="subdyn_11" style="labelBase" color="#c7e3f4" noclick="1" />
+					<panel x="7s" y="3s" float="right" padding="5s" height="24s" valign="bottom" noclick="0">
+						<instance name="mastery_star_template" index="1" type="heropicker" size="24s" align="left" />
+						<instance name="mastery_star_template" index="2" type="heropicker" size="24s" align="left" />
+						<instance name="mastery_star_template" index="3" type="heropicker" size="24s" align="left" />
+						<instance name="mastery_star_template" index="4" type="heropicker" size="24s" align="left" />
+						<instance name="mastery_star_template" index="5" type="heropicker" size="24s" align="left" />
+					</panel>
+				</panel>
+			</panel>
+
+			<!-- Abilities -->
+			<panel name="main_pregame_skills_container" grow="1" regrow="1" growinvis="0" x="15s" y="210s" float="bottom" padding="3s" noclick="1" >
+				<instance name="main_pregame_skill_template" index="0"/>
+				<instance name="main_pregame_skill_template" index="1"/>
+				<instance name="main_pregame_skill_template" index="2"/>
+				<instance name="main_pregame_skill_template" index="3"/>
+				<panel name="main_pregame_stats_tab" width="262s" height="22s" visible="1">
+					<panel y="7s" grow="1" height="100%" align="center" float="right" padding="6s">
+						<frame texture="/ui/shared/frames/key.tga" borderthickness="6s" width="48s" noclick="1">
+							<label y="-1s" font="maindyn_16" style="labelBase" outlinecolor="#DDDDDD" color="0 0 0 1" textalign="center" textvalign="center" content="TAB" />
+						</frame>
+						<label font="maindyn_16" style="labelBase" color="#c7e3f4" fitx="1" textvalign="center" content="pregame_general_tab_for_stats" />
+					</panel>
+				</panel>
+			</panel>
+
+			<!-- Horizontal Hero Select -->
+			<panel y="5s" valign="bottom" height="220s">
+				<panel name="main_pregame_hero_select_container_grad" valign="top" height="45s" texture="/ui/main/shared/textures/grad_vert.tga" color="0 0 0 0.4" noclick="1" />
+
+				<panel name="main_pregame_hero_select_container" noclick="1">
+					<!-- center -->
+					<frame texture="/ui/shared/frames/bevel_top_blue.tga" y="45s" height="-45s" borderthickness="5s" color="1 1 1 1">
+						<panel valign="bottom" height="50%" texture="/ui/main/shared/textures/grad_vert.tga" color="0 0 0 0.4" noclick="1" />
+					</frame>
+
+					<!-- right -->
+					<frame texture="/ui/shared/frames/bevel_top_blue.tga" y="6s" width="60s" height="41s" borderthickness="5s" align="right" color="1 1 1 1"/>
+					<frame texture="/ui/shared/frames/std_btn_inset.tga" x="-5s" y="11s" align="right" borderthickness="4s" color="#06191e40" width="50s" height="36s"/>
+					<panel y="49s" width="58s" height="6s" color="#0c2027" align="right" noclick="1" />
+					<image texture="/ui/main/shared/textures/inside_corner_nub.tga" x="-58s" y="37s" width="10s" height="10s" align="right" hflip="1" color="1 1 1 1" noclick="1" />
+
+					<!-- left -->
+					<frame texture="/ui/shared/frames/bevel_top_blue.tga" y="6s" width="199s" height="41s" borderthickness="5s" color="1 1 1 1" group="heroselect_filter_container_group" />
+					<panel x="1s" y="49s" width="197s" height="6s" color="#0c2027" noclick="1" group="heroselect_filter_container_group"/>
+					<image texture="/ui/main/shared/textures/inside_corner_nub.tga" x="198s" y="37s" width="10s" height="10s" color="1 1 1 1" noclick="1" group="heroselect_filter_container_group" />
+
+					<!-- Hero filters -->
+					<frame group="heroselect_filter_container_group" texture="/ui/shared/frames/std_btn_inset.tga" x="5s" y="11s" borderthickness="4s" color="#06191e40" width="189s" height="36s">
+						<panel name="heroselect_filter_0" x="8s" y="6s" width="35s">
+							<label name="heroselect_filter_0Text" content="heroselect_filter_All" font="maindyn_20" textalign="center" color="#31ceff" noclick="1"/>
+						</panel>
+
+						<panel x="46s" y="3s" float="right" padding="3s" noclick="1">
+							<image name="heroselect_filter_3" texture="/ui/main/pregame/textures/filter_atk_dmg.tga" 			width="30s" height="30s" font="maindyn_20" color="#3d575e" sticky="1" stickytoinvis="0"/>
+							<image name="heroselect_filter_2" texture="/ui/main/pregame/textures/filter_abl_dmg.tga"			width="30s" height="30s" font="maindyn_20" color="#3d575e" sticky="1" stickytoinvis="0"/>
+							<image name="heroselect_filter_4" texture="/ui/main/pregame/textures/filter_suv.tga" 	 			width="30s" height="30s" font="maindyn_20" color="#3d575e" sticky="1" stickytoinvis="0"/>
+							<image name="heroselect_filter_1" texture="/ui/main/pregame/textures/filter_cc.tga"					width="30s" height="30s" font="maindyn_20" color="#3d575e" sticky="1" stickytoinvis="0" visible="0"/> <!-- if we remove CC here, it should be removed everywhere (this includes the website). -->
+							<image name="heroselect_filter_5" texture="/ui/main/pregame/textures/filter_sup.tga" 	 			width="30s" height="30s" font="maindyn_20" color="#3d575e" sticky="1" stickytoinvis="0"/>
+						</panel>
+					</frame>
+					<!-- Swap to Grid view-->
+					<image name="heroselect_toggle_view" texture="/ui/main/pregame/textures/attribute_grid.tga" align="right" x="-12s" y="11s"  width="36s" height="36s" color=".8 .9 1 .6"/>
+
+					<!-- Heroes (Holds instantiated main_pregame_hero_template's)-->
+					<panel align="center" width="-30s" y="50s" height="-110s" clip="1">
+						<panel name="main_pregame_heros_container"/>
+					</panel>
+
+					<!-- Left/Right Scroll Arrows
+						- Hovering should auto-scroll the list left or right. And also go away when nothing to scroll to. So either left or right slides out if you are scrolled all the way to the start/end of the list. thx -adam
+						- Hover should change texture of scrol tab: 'scroll_tab_up.tga' | 'scroll_tab_over.tga'
+					-->
+					<panel name="main_pregame_heros_scroll_parent" y="40s" height="128s" noclick="1">
+						<panel name="main_pregame_heros_scroll_left" width="32s" align="left">
+							<image name="main_pregame_heros_scroll_left_image" texture="/ui/main/pregame/textures/scroll_tab_up.tga" noclick="1" />
+							<image texture="/ui/shared/textures/arrow_rounded.tga" hflip="1" x="-6s" width="10s" height="10s" align="center" valign="center" color="1 1 1 .8" noclick="1" />
+						</panel>
+						<panel name="main_pregame_heros_scroll_right" width="32s" align="right">
+							<image name="main_pregame_heros_scroll_right_image" texture="/ui/main/pregame/textures/scroll_tab_up.tga" hflip="1" noclick="1" />
+							<image texture="/ui/shared/textures/arrow_rounded.tga" hflip="0" x="6s" width="10s" height="10s" align="center" valign="center" color="1 1 1 .8" noclick="1" />
+						</panel>
+					</panel>
+
+					<panel name="main_pregame_heros_slider_container_parent" y="-42s" height="20s" valign="bottom" align="center" width="-12s">
+						<panel name="main_pregame_heros_slider_container" y="2s" height="-4s">
+							<frame name="main_pregame_heros_slider_backing" x="-5s" texture="/ui/elements:rounded_bg_white" color="#050f12" borderthickness="2s" width="+10s" noclick="1" />
+
+							<panel name="main_pregame_heros_slider" width="30%" color="invisible" y="1s" height="-2s">
+								<frame texture="/ui/elements:rounded_bg_solid" color="#084958" borderthickness="3s" noclick="1" />
+								<panel width="10s" height="-6s" valign="center" align="center" noclick="1">
+									<frame texture="/ui/elements:rounded_bg_white" width="2s" align="left" color="0 0 0 .4" borderthickness="1s" noclick="1" />
+									<frame texture="/ui/elements:rounded_bg_white" width="2s" align="center" color="0 0 0 .4" borderthickness="1s" noclick="1" />
+									<frame texture="/ui/elements:rounded_bg_white" width="2s" align="right" color="0 0 0 .4" borderthickness="1s" noclick="1" />
+								</panel>
+							</panel>
+						</panel>
+					</panel>
+
+				</panel>
+			</panel>
+
+			<panel hover="false" processonlyscroll="true" name="main_pregame_scroll_catcher" visible="1" color="invisible" />
+
+
+			<!-- SCHTUPER Abilities -->
+			<panel name="main_pregame_detailed_skills_container" grow="1" regrow="1" growinvis="0" x="-815s" y="44s" float="bottom" padding="3s" noclick="1" >
+				<frame texture="/ui/shared/frames/squareglow.tga" width="+20s" height="+14s" align="center" valign="center" color="0 0 0 .55" bordercolor="0 0 0 .55" borderthickness="12s"  noclick="1"  />
+				<instance name="main_pregame_detailed_skill_template" y="0" index="0"/>
+				<instance name="main_pregame_detailed_skill_template" index="1"/>
+				<instance name="main_pregame_detailed_skill_template" index="2"/>
+				<instance name="main_pregame_detailed_skill_template" index="3"/>
+			</panel>
+
+			<!-- Stats -->
+			<panel name="main_pregame_stats_container" height="280s" width="265s" x="-315s" y="213s" noclick="1" >
+				<frame texture="/ui/shared/frames/squareglow.tga" style="infoFrameShadow"  noclick="1"  />
+				<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame"  noclick="1"  />
+				<frame texture="/ui/elements:thick" style="infoFrameBorder"  noclick="1"  />
+				<panel hmargin="16s" vmargin="3s" float="bottom" padding="3s">
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="hselect_label_hd_move_speed" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_movespeed" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+					<!--
+					<instance name="hr"/>
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="hselect_label_hd_armor" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_initialarmor" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+					-->
+					<instance name="hr"/>
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="shopfilter_defense_resistance" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_resistance" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+					<instance name="hr"/>
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="hallofheroes_attackdamage" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_attackdamage" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+					<!--
+					<instance name="hr"/>
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="hallofheroes_attackrange" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_attackrange" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+					-->
+					<instance name="hr"/>
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="hallofheroes_healthregen" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_healthregen" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+					<instance name="hr"/>
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="hallofheroes_manaregen" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_manaregen" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+					<instance name="hr"/>
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="hallofheroes_maxhealth" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_maxhealth" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+					<instance name="hr"/>
+					<panel noclick="1" height="32s">
+						<label style="labelBase" textvalign="center" content="hallofheroes_maxmana" font="maindyn_18" noclick="1" />
+						<label fitx="1" align="right" name="main_pregame_stats_hero_maxmana" textvalign="center" font="subdyn_13" style="labelBase" color="#c7e3f4" noclick="1" />
+					</panel>
+				</panel>
+			</panel>
+
+
+		</panel>
+
+		<!-- Customize -->
+		<!-- The majority of the following changes places between pregame and captains pregame modes. To see what changes where, search "arrangePregameToCaptainsMode" in captains_mode.lua -->
+		<panel name="main_pregame_customization_container" visible="0" noclick="true">
+			<!-- Heroes -->
+			<panel name="main_pregame_customization_skin_container_parent" x="20s" y="155s" height="240s" float="right" padding="0s" noclick="1">
+				<panel name="main_pregame_customization_skin_container" float="right" padding="0s" noclick="1"/>
+			</panel>
+
+			<!-- Pets -->
+			<label name="main_pregame_customization_label_2" content="pregame_customize_step_2" x="13s" y="492s" font="maindyn_18" color="0 .9 1 1" noclick="1" outline="1"/>
+			<panel name="main_pregame_customization_pet_skin_container" x="20s" y="520s" height="100s" float="right" padding="10s" noclick="1">
+				<instance name="pregame_pet_skin_template" id="2"/>
+				<instance name="pregame_pet_skin_template" id="1"/>
+				<instance name="pregame_pet_skin_template" id="3"/>
+			</panel>
+
+
+			
+			<!-- Community site button -->
+			<instance name="standardButtonBlue"
+				id="main_pregame_customization_builds_browse"
+				x="35s" y="605s" height="36s" width="230s" borderthickness="4s"
+				label="build_browser_browse"
+				font="maindyn_14" outlinecolor="0 0 0 .5"
+				onclicklua="
+					local trigger = LuaTrigger.GetTrigger('mainBuildBrowser')
+					trigger.hero = mainUI.Pregame.getSelectedHero()
+					trigger.visible = true
+					trigger:Trigger()
+				"
+			/>
+
+			<!-- Build -->
+			<label name="main_pregame_customization_label_3" content="pregame_customize_step_3" x="13s" y="620s" font="maindyn_18" color="0 .9 1 1" noclick="1" outline="1"/>
+			<panel name="main_pregame_customization_builds_combobox_parent" y="645s" noclick="1">
+				<instance name="simple_combobox_textured" id="main_pregame_customization_builds_combobox" x="24s" height="32s" width="262s" maxlistheight="3" handleheight="24s" texturel="/ui/shared/textures/combobox_blue_background_l.tga" texturec="/ui/shared/textures/combobox_blue_background_c.tga" texturer="/ui/shared/textures/combobox_blue_background_r.tga" />
+			</panel>
+			<panel name="main_pregame_customization_edit_build" x="288s" y="647s" height="28s" width="28s">
+				<frame texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+					<image texture="/ui/shared/textures/edit.tga" width="80%" height="80%" align="center" valign="center" noclick="1"/>
+				</frame>
+			</panel>
+			<!--
+			<panel name="main_pregame_customization_new_build" x="318s" y="577s" height="28s" width="28s" visible="0">
+				<frame texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+					<image texture="/ui/shared/textures/plus_icon_white.tga" width="80%" height="80%" align="center" valign="center" noclick="1"/>
+				</frame>
+			</panel>
+			-->
+			<panel noclick="1">
+				<panel name="main_pregame_customization_undo_container" y="-150s" align="center" valign="bottom" width="250s" height="40s">
+					<instance
+						name="standardButton"
+						id="main_pregame_customization_undo" visible="0"
+						font="maindyn_26" label="pregame_general_undo" outlinecolor="0 0 0 .5"
+						borderthickness="6s" glow="1" rendermode="grayscale"
+					/>
+				</panel>
+				<panel name="main_pregame_customization_to_ready_container" y="-150s" align="center" valign="bottom" width="200s" height="40s">
+					<instance
+						name="standardButton"
+						id="main_pregame_customization_to_ready" visible="0"
+						font="maindyn_26" label="pregame_general_to_ready" outlinecolor="0 0 0 .5"
+						borderthickness="6s" glow="1" rendermode="grayscale"
+					/>
+				</panel>
+				<!-- Ready -->
+				<panel name="main_pregame_customization_ready_container" y="-60s" align="center" valign="bottom" width="220s" height="70s">
+					<instance
+						name="standardButton"
+						id="main_pregame_customization_ready"
+						font="maindyn_30" label="general_ready" outlinecolor="0 0 0 .5"
+						borderthickness="6s" glow="1"
+					/>
+				</panel>
+
+				<!-- Hero How-To Link -->
+				<panel name="main_pregame_customization_watch_container" x="-14s" y="-48s" width="148s" height="48s" align="right" valign="bottom" noclick="1">
+					<frame x="-144s" height="-8s" valign="center" texture="/ui/elements:rounded_bg_white" color="#0d181d" borderthickness="4s"/>
+					<frame x="-144s" height="-8s" valign="center" texture="/ui/elements:roundframe" color="#12242e" borderthickness="4s"/>
+					<label y="-8s" x="-138s" width="-16s" content="pregame_customize_need_tips" textvalign="center" style="labelBase" color="#94c5dc" outline="0" font="subdyn_11" textalign="center" noclick="1"/>
+					<label name="main_pregame_customization_watch_label" y="6s" x="-138s" width="-16s" content="" textvalign="center" style="labelBase" color="#94c5dc" outline="0" font="subdyn_11" textalign="center" noclick="1"/>
+					<panel name="main_pregame_customization_watch">
+						<frame name="main_pregame_ready_visit_web_button" texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+							<label content="pregame_customize_watch_howto" y="3s" style="labelBase" color="#94c5dc" outlinecolor="#1e495d" font="maindyn_18" textalign="center" noclick="1"/>
+							<label content="general_video" y="19s" style="labelBase" outlinecolor="#194053" font="maindyn_24" textalign="center" noclick="1"/>
+						</frame>
+					</panel>
+				</panel>
+
+				<!-- Long Queue Warning  -->
+				<panel name="main_pregame_customization_longqueue" x="-14s" y="-48s" width="448s" height="148s" align="right" valign="bottom" noclick="1">
+					<frame valign="center" texture="/ui/elements:rounded_bg_white" color="#0d181d" borderthickness="4s"/>
+					<frame height="-8s" width="-8s" valign="center" align="center" texture="/ui/elements:roundframe" color="#12242e" borderthickness="4s"/>
+					<label x="17s" y="12s" width="-16s" content="selection_long_queue" textvalign="center" style="labelBase" fitx="1" fity="1" color="#FF9326" outline="0" font="maindyn_24" textalign="center" noclick="1"/>
+					<label y="45s" width="-32s" align="center" content="selection_long_queue_desc" wrap="1" textvalign="top" textalign="left" style="labelBase" color="#94c5dc" outline="0" font="maindyn_18" noclick="1"/>
+				</panel>				
+				
+			</panel>
+		</panel>
+
+		<!-- Ready Screen -->
+		<panel name="main_pregame_ready_container" visible="0" noclick="0" >
+			<panel y="-14s" width="-11s" height="5s" align="center" color="#030a0c" noclick="1" />
+			<splashimage
+				name="main_pregame_ready_container_background"
+				y="-14s" width="178.777778@" height="100%"
+				align="center"
+				noclick="true"
+				onshowlua="self:SetImage('/ui/main/pregame/textures/ready_background.jpg')"
+				onhidelua="self:SetImage('')"
+			/>
+
+			<!-- Players -->
+			<instance name="main_pregame_ready_player" id="3" x="-380s" y="-75s" />
+			<instance name="main_pregame_ready_player" id="4" x="380s" y="-75s"  />
+			<instance name="main_pregame_ready_player" id="1" x="-230s" y="-15s" />
+			<instance name="main_pregame_ready_player" id="2" x="230s" y="-15s"	/>
+			<instance name="main_pregame_ready_player" id="0" x="0" y="0s" />
+
+			<modelpanel
+				name="flameBucketLeft" noclick="1"
+				x="-550s" y="-60s"
+				width="578s"
+				height="578s"
+				align="center"
+				valign="center"
+				depthclear="true" depthcompress="false"
+
+				camerapos="0 1750 1750"
+				cameraangles="-45 0 180"
+				camerafov="4"
+
+				modelpos="0 0 0" modelangles="25 -11 26"
+				sunazimuth="80" sunaltitude="50" suncolor=".2 .45 .6" ambientcolor="0.04 0.2 0.48"
+				resourcecontext=""
+				anim="idle"
+				model="/world/sprops/kongor_area/obelisk/model_b.mdf"
+				onshowlua="self:SetEffect('/world/sprops/kongor_area/obelisk/idle_b_quiet.effect')"
+				onhidelua="self:SetEffect('$none')"
+				color="1 1 1 1"
+			/>
+
+			<modelpanel
+				name="flameBucketRight" noclick="1"
+				x="542s" y="-54s"
+				width="578s"
+				height="578s"
+				align="center"
+				valign="center"
+				depthclear="true" depthcompress="false"
+
+				camerapos="0 1750 1750"
+				cameraangles="-45 0 180"
+				camerafov="4"
+
+				modelpos="0 0 0" modelangles="25 2 -18"
+				sunazimuth="100" sunaltitude="50" suncolor=".2 .45 .6" ambientcolor="0.04 0.2 0.48"
+				resourcecontext=""
+				anim="idle"
+				model="/world/sprops/kongor_area/obelisk/model.mdf"
+				onshowlua="self:SetEffect('/world/sprops/kongor_area/obelisk/idle_a_quiet.effect')"
+				onhidelua="self:SetEffect('$none')"
+				color="1 1 1 1"
+			/>
+
+
+			<!-- Selection Status -->
+			<panel name="main_pregame_ready_review_container" width="230s" height="182s" x="15s" y="35s">
+				<frame texture="/ui/elements:squareglow" color="0 0 0 .4" borderthickness="10s" width="+8s" height="+8s" align="center" valign="center" noclick="1"/>
+				<frame texture="/ui/elements:rounded_bg_white" color="#0a1a20eb" borderthickness="8s" noclick="1"/>
+				<frame y="4s" height="30s" width="-8s" align="center" texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" color=".6 .6 .6 1" noclick="1">
+					<label x="8s" y="-1s" textvalign="center" style="labelBase" color=".8 .9 1 1" font="maindyn_18" content="pregame_ready_selection_locked" noclick="1"/>
+					<image texture="/ui/main/pregame/textures/chain.tga" x="12s" y="8s" width="64s" height="14s" align="right" rotation="40" noclick="1" />
+					<image texture="/ui/main/pregame/textures/locked.tga" x="-6s" y="-1s" width="32s" height="32s" align="right" noclick="1" />
+				</frame>
+				<panel y="41s" height="70s" width="148s" align="center" noclick="1">
+					<!-- Selected Gearset -->
+					<panel width="100@" align="left" noclick="1">
+						<image name="main_pregame_ready_gearset" texture="/heroes/caprice/gear_3/gearicon.tga"  noclick="1"/>
+						<frame texture="/ui/shared/frames/roundframe_bold.tga" style="teamIconFrameBorder" bordercolor="#0a1a20" borderthickness="6s" width="+4s" height="+4s" align="center" valign="center" noclick="1" />
+						<!-- Chosen Dye -->
+						<panel align="left" x="-18s" y="-3s" width="42s" height="42s" noclick="1">
+							<image name="main_pregame_ready_dye_color" texture="/ui/main/pregame/textures/dyepicker_base.tga" noclick="1"/>
+							<image texture="/ui/main/pregame/textures/dyepicker_frame.tga" color=".2 .2 .2 1" noclick="1"/>
+						</panel>
+					</panel>
+					<!-- Selected Pet -->
+					<panel width="100@" align="right" noclick="1">
+						<image name="main_pregame_ready_pet" texture="/familiars/pusher/model_1/icon.tga" noclick="1" />
+						<frame texture="/ui/shared/frames/roundframe_bold.tga" style="teamIconFrameBorder" bordercolor="#0a1a20" borderthickness="6s" width="+4s" height="+4s" align="center" valign="center" noclick="1" />
+					</panel>
+				</panel>
+				<panel y="113s" grow="1" height="20s" align="center" float="right" padding="4s" noclick="1">
+					<label fitx="1" style="labelBase" textvalign="center" font="maindyn_20" content="general_guide" noclick="1" />
+					<label name="main_pregame_ready_guide_name" fitx="1" style="h3" textvalign="center" font="maindyn_20" content="Guide Name" noclick="1" />
+				</panel>
+				<instance name="hr" y="136s" width="-14s" align="center" noclick="1" />
+
+
+
+				<frame y="-4s" width="-8s" height="36s" align="center" valign="bottom" texture="/ui/elements:rounded_bg_white" color="0 0 0 .5" borderthickness="6s" noclick="1">
+					<!-- Start Over Btn -->
+					<panel name="main_pregame_ready_start_over" y="1s" width="120s" height="-8s" align="center" valign="center">
+						<frame name="main_pregame_ready_start_over_button" texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+							<label content="pregame_ready_start_over" style="labelBase" font="maindyn_20" textalign="center" textvalign="center" noclick="1"/>
+						</frame>
+					</panel>
+
+				</frame>
+			</panel>
+
+			<!-- Matching Status -->
+			<panel y="-62s" x="-214s" align="center" valign="bottom" height="70s" width="154">
+				<image texture="/ui/main/shared/textures/circular.tga" width="180s" height="180s" valign="center" x="-58s" y="-4s" color="#00d2ff33" noclick="1" />
+				<image texture="/ui/main/pregame/textures/searching_base.tga" y="2s" x="46s" width="128s" height="64s" valign="center" align="center" noclick="1" />
+				<animatedimage texture="/ui/shared/throb/throb.tga" width="70s" height="70s" noclick="true" loop="1" fps="30" onshow="StartAnim(1);" />
+				<label width="-78s" align="right" textvalign="center" textalign="center" style="labelBase" color="#bef8ff" oulinecolor="#122735" wrap="1" lineheight="18s" font="maindyn_18" content="mm_queue_finding" />
+			</panel>
+
+			<!-- Web Link -->
+			<panel x="-14s" y="-48s" width="148s" height="48s" align="right" valign="bottom" noclick="1">
+				<frame x="-144s" height="-8s" valign="center" texture="/ui/elements:rounded_bg_white" color="#0d181d" borderthickness="4s"/>
+				<frame x="-144s" height="-8s" valign="center" texture="/ui/elements:roundframe" color="#12242e" borderthickness="4s"/>
+				<label y="-2s" x="-138s" width="-16s" content="pregame_ready_website_details" textvalign="center" wrap="1" lineheight="13s" style="labelBase" color="#94c5dc" outline="0" font="subdyn_11" textalign="center" noclick="1"/>
+
+
+				<panel name="main_pregame_ready_visit_web">
+					<frame name="main_pregame_ready_visit_web_button" texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+						<label content="pregame_ready_visit" y="3s" style="labelBase" color="#94c5dc" outlinecolor="#1e495d" font="maindyn_18" textalign="center" noclick="1"/>
+						<label content="pregame_ready_website" y="19s" style="labelBase" outlinecolor="#194053" font="maindyn_24" textalign="center" noclick="1"/>
+					</frame>
+				</panel>
+			</panel>
+
+			<!-- Un-Ready -->
+			<panel name="main_pregame_ready_unready_container" y="-60s" align="center" valign="bottom" width="220s" height="70s">
+				<instance
+					name="standardButton"
+					id="main_pregame_ready_unready"
+					font="maindyn_40" label="main_lobby_unready" outlinecolor="0 0 0 .5"
+					borderthickness="6s" glow="1"
+				/>
+			</panel>
+		</panel>
+
+		<!-- Party -->
+		<panel name="main_pregame_party_container" visible="1" noclick="true">
+			<!-- Match Options -->
+			<panel grow="1" growinvis="0" x="-25s" y="50s" height="43s" align="right" float="right" padding="14s" noclick="1">
+				<!-- Mode -->
+				<panel name="main_pregame_party_mode_button" width="100@" height="100%" sticky="1" stickytoinvis="0" visible="1">
+					<image texture="/ui/main/pregame/textures/mode.tga" y="-4s" width="64s" height="64s" align="center" valign="center" noclick="1"/>
+					<label name="main_pregame_party_mode_label" lineheight="11s" y="7s" x="-25%" width="155%" style="labelBase" textalign="center" textvalign="bottom" font="subdyn_10" content="---" noclick="1" />
+				</panel>
+				<!-- Region -->
+				<panel name="main_pregame_region_button" width="100@" height="100%" sticky="1" stickytoinvis="0" visible="1">
+					<image texture="/ui/main/pregame/textures/region.tga" y="-4s" width="64s" height="64s" align="center" valign="center" noclick="1"/>
+					<label name="main_pregame_party_region_label" y="5s" style="labelBase" textalign="center" textvalign="bottom" font="subdyn_10" content="---" noclick="1" />
+				</panel>
+				<!-- Leave -->
+				<panel name="main_pregame_party_leave" width="100@" height="100%" sticky="1" stickytoinvis="0" visible="1">
+					<image texture="/ui/main/pregame/textures/leave.tga" y="-4s" width="64s" height="64s" align="center" valign="center" noclick="1"/>
+					<label y="5s" style="labelBase" textalign="center" textvalign="bottom" font="subdyn_13" color="#f69292" content="general_leave" noclick="1" />
+				</panel>
+			</panel>
+
+			<!-- Team List -->
+			<panel name="pregame_team_entry_container" width="210s" x="-15s" y="115s" align="right" float="bottom" padding="5s" noclick="1">
+				<instance name="pregame_team_entry_template" id="0"/>
+				<instance name="pregame_team_entry_template" id="1"/>
+				<instance name="pregame_team_entry_template" id="2"/>
+				<instance name="pregame_team_entry_template" id="3"/>
+				<instance name="pregame_team_entry_template" id="4"/>
+			</panel>
+
+		</panel>
+
+		<panel noclick="1" visible="1" >
+			<panel name="selection_chat_base" x="630s" y="370s" width="420s" height="250s" noclick="1" />
+		</panel>
+
+		<frame name="main_pregame_timer_container" texture="/ui/elements:rounded_bg_white" color="#0a1a20dd" align="center" height="30s" y="35s" width="200s" borderthickness="8s" noclick="1" visible="false">
+			<label name="main_pregame_timer" style="labelBase" textalign="center" textvalign="center" font="subdyn_13" color="white" content="party_finder_waiting_on_timer" noclick="1" />
+		</frame>
+
+		<!-- Dye Selection -->
+		<panel name="main_pregame_dye_selection_container" y="-24s" visible="0" noclick="true">
+			<panel name="main_pregame_dye_selection_backing" color=".04 .07 .09 .93" height="+20s" y="-20s" />
+
+			<!-- Left Side -->
+			<panel align="center" valign="center" height="420s" x="-235s" y="-5s" width="310s" noclick="1" visible="1">
+				<modelpanel model="/shared/models/invis.mdf" width="180%" height="180%" align="center" valign="center" noclick="true" y="-5s" camerapos="0 0 0" cameraangles="0 0 0" camerafov="72" depthclear="true" depthcompress="true" onshowlua="self:SetEffect('/ui/main/shared/effects/generic_highlight_rays.effect', '0.18', '0.67', '0.84')" />
+				<image texture="/ui/main/shared/textures/circular.tga" width="580s" height="600s" align="center" valign="center" y="-5s" color="#0e3f4d" noclick="1" />
+				<modelpanel
+					name="main_pregame_dye_selection_heromodel" noclick="1"
+					y="-25s"
+					width="180%"
+					height="180%"
+					align="center"
+					valign="center"
+					depthclear="true" depthcompress="false"
+					lookat="false"
+
+					cameranear="0.0"
+					camerafar="3000.0"
+					cameradistance="30"
+					camerapos="20 1720 1750"
+					cameraangles="-45 0 180"
+					camerafov="7"
+
+					modelpos="0 0 0" modelangles="30 25 -45" modelscale="1.0"
+					sunazimuth="120" sunaltitude="50" suncolor="0.9 0.9 0.9" ambientcolor="0.6 0.7 0.7"
+					resourcecontext="selection_model_hero"
+					anim="idle"
+					model=""
+					color="1 1 1 1"
+				/>
+
+				<!-- Can these be made to swap gearset instead of cycling dyes? Sorry and TIA -->
+				<image name="main_pregame_dye_selection_previous" texture="/ui/shared/textures/arrow_rounded.tga" y="0" x="-210s" width="26s" height="26s" align="center" valign="center" hflip="1" color="#5b8890" />
+				<image name="main_pregame_dye_selection_next" texture="/ui/shared/textures/arrow_rounded.tga" y="0" x="210s" width="26s" height="26s" align="center" valign="center" hflip="0" color="#5b8890" />
+
+				<panel name="main_pregame_customization_die_container" valign="bottom" align="center" y="70s" grow="1" regrow="1" growinvis="1" noclick="1"/>
+			</panel>
+
+			<!-- Right Side -->
+			<panel name="main_pregame_purchase_hero_cosmetic_product_purchase_option_parent" align="center" valign="center" width="542s" height="512s" x="280s" y="20s" noclick="1">
+				<image texture="/ui/main/pregame/textures/cosmetic_purchase_info_background.tga" noclick="1" />
+				<panel grow="1" growinvis="0" width="100%" y="-30s" x="20s" valign="center" float="bottom" padding="34s" noclick="1">
+					<label name="main_pregame_customization_die_title" fity="1" textalign="center" style="h3" font="maindyn_36" noclick="1"/>
+					<panel height="130s" noclick="1">
+						<panel x="-20s" grow="1" regrow="1" growinvis="0" height="100%" float="right" padding="20s" align="center">
+							<!-- Rental -->
+							<panel name="main_pregame_purchase_hero_cosmetic_product_purchase_option_1" width="200s" sticky="1" stickytoinvis="0" visible="0" >
+								<panel width="+4s" height="+4s" align="center" valign="center">
+									<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame" borderthickness="8s" />
+									<frame texture="/ui/shared/frames/border_double.tga" borderthickness="8s" bordercolor="#1a383e" color="invisible"/>
+								</panel>
+								<label y="6s" textalign="center" font="maindyn_22" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_rental_one_game" noclick="1"/>
+								<panel y="39s" grow="1" height="34s" align="center" float="right" padding="5s">
+									<panel name="main_pregame_customization_die_rental_cost_container" grow="1" height="100%" noclick="1">
+										<label name="main_pregame_customization_die_rental_cost" fitx="1" textvalign="center" style="labelBase" color=".8 .9 1 1" font="maindyn_30" content="---" noclick="1" />
+									</panel>
+									<image texture="/ui/main/shared/textures/gem.tga" width="100@" height="100%"/>
+								</panel>
+								<instance id="main_pregame_customization_rent_dye_confirm" y="86s" height="34s" width="-34s" align="center" borderthickness="4s"
+									name="standardButton"
+									label="general_rent"
+									font="maindyn_22"
+								/>
+								<instance id="main_pregame_purchase_hero_cosmetic_product_needgems_btn_1" y="86s" height="34s" width="-34s" align="center" visible="0" borderthickness="4s"
+									name="standardButton"
+									label="buygems_title"
+									font="maindyn_22"
+									onclicklua="buyGemsShow()"
+								/>
+								<instance id="main_pregame_purchase_hero_cosmetic_product_specialedition_btn_1" y="86s" height="34s" width="-34s" align="center" visible="0" borderthickness="4s"
+									name="standardButton"
+									label="steamonly_title"
+									font="maindyn_22"
+									onclicklua="mainUI.OpenURL('http://store.steampowered.com/app/339280')"
+								/>
+							</panel>
+
+							<!-- Purchase -->
+							<panel name="main_pregame_purchase_hero_cosmetic_product_purchase_option_2" width="200s" sticky="1" stickytoinvis="0">
+								<panel width="+4s" height="+4s" align="center" valign="center">
+									<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame" borderthickness="6s" />
+									<frame texture="/ui/shared/frames/border_double.tga" borderthickness="6s" bordercolor="#1a383e" color="invisible"/>
+								</panel>
+								<label y="6s" textalign="center" font="maindyn_22" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_purchase_item" noclick="1"/>
+								<panel y="39s" grow="1" height="34s" align="center" float="right" padding="5s">
+									<panel name="main_pregame_customization_die_cost_container" grow="1" height="100%" noclick="1">
+										<label name="main_pregame_customization_die_cost" fitx="1" textvalign="center" style="labelBase" color=".8 .9 1 1" font="maindyn_30" content="---" noclick="1" />
+									</panel>
+									<image texture="/ui/main/shared/textures/gem.tga" width="100@" height="100%"/>
+								</panel>
+								<instance id="main_pregame_customization_purchase_dye_confirm" y="86s" height="34s" width="-34s" align="center" borderthickness="4s"
+									name="standardButton"
+									label="hallofheroes_unlock"
+									font="maindyn_22"
+								/>
+								<instance id="main_pregame_purchase_hero_cosmetic_product_needgems_btn_2" y="86s" height="34s" width="-34s" align="center" visible="0" borderthickness="4s"
+									name="standardButton"
+									label="buygems_title"
+									font="maindyn_22"
+									onclicklua="buyGemsShow()"
+								/>
+								<instance id="main_pregame_purchase_hero_cosmetic_product_specialedition_btn_2" y="86s" height="34s" width="-34s" align="center" visible="0" borderthickness="4s"
+									name="standardButton"
+									label="steamonly_title"
+									font="maindyn_22"
+									onclicklua="mainUI.OpenURL('http://store.steampowered.com/app/339280')"
+								/>
+								<!-- Owned Indication -->
+								<panel name="main_pregame_customization_die_cost_owned" width="+4s" height="+4s" align="center" valign="center" visible="0">
+									<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame" borderthickness="6s" />
+									<frame texture="/ui/shared/frames/border_double.tga" borderthickness="6s" bordercolor="#1a383e" color="invisible"/>
+									<label y="8s" textalign="center" font="maindyn_22" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_purchase_item" noclick="1"/>
+									<label name="main_pregame_customization_die_cost_owned_label" y="40s" textalign="center" style="labelBase" font="maindyn_30" wrap="1" color=".8 .9 1 1" content="pregame_general_owned" noclick="1" />
+									<instance id="main_pregame_purchase_hero_cosmetic_product_cancel_btn" y="88s" height="34s" width="-34s" align="center" borderthickness="4s"
+										name="standardButton" rendermode="grayscale"
+										label="general_close"
+										font="maindyn_22"
+									/>
+								</panel>
+								<!-- steamonly Indication -->
+								<panel name="main_pregame_customization_die_cost_steamonly" width="+4s" height="+4s" align="center" valign="center" visible="0">
+									<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame" borderthickness="6s" />
+									<frame texture="/ui/shared/frames/border_double.tga" borderthickness="6s" bordercolor="#1a383e" color="invisible"/>
+									<label y="8s" textalign="center" font="maindyn_22" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_purchase_item" noclick="1"/>
+									<label y="40s" textalign="center" style="labelBase" font="maindyn_30" wrap="1" color=".8 .9 1 1" content="steamonly_title" noclick="1" />
+									<instance id="main_pregame_purchase_hero_cosmetic_product_specialedition_btn_3" y="86s" height="34s" width="-34s" align="center" visible="1" borderthickness="4s"
+										name="standardButton"
+										label="steamonly_title"
+										font="maindyn_22"
+										onclicklua="mainUI.OpenURL('http://store.steampowered.com/app/339280')"
+									/>
+								</panel>
+							</panel>
+						</panel>
+					</panel>
+					<panel name="main_pregame_purchase_hero_cosmetic_product_ownership_parent" height="38s" noclick="1" visible="0"><!-- Ownership progress bar -->
+						<panel noclick="1" width="-80s"  align="center" >
+							<panel x="-10s" y="20s" noclick="1">
+								<label name="main_pregame_purchase_hero_cosmetic_product_ownership_label" y="-26s" textalign="center" font="maindyn_20" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_item_ownership"/>
+
+								<image texture="/ui/main/postgame/textures/account_bar.tga" y="-8s" width="640s" height="80s" align="center" valign="center" noclick="1" />
+								<panel x="-1s" y="4s" align="center" width="370s" height="27s" noclick="1" >
+									<panel name="main_pregame_purchase_hero_cosmetic_product_ownership_bar" align="left" clip="1" height="100%" width="0%" noclick="1">
+										<image texture="/ui/main/postgame/textures/account_bar_previous.tga" width="602s" height="100%" align="left" valign="center" noclick="1" />
+									</panel>
+								</panel>
+								<panel x="-1s" y="4s" align="center" width="370s" height="27s" float="right" padding="35s" noclick="1">
+									<anchor x="35s"/>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-6s" /></panel>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-4s" /></panel>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-4s" /></panel>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-4s" /></panel>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+									<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+								</panel>
+								<panel x="-1s" y="4s" align="center" width="370s" height="27s" noclick="1" >
+									<panel x="-10s" align="left" height="100%" width="100%" noclick="1">
+										<!-- Bar Leader - SetX to match bar width -->
+										<panel x="0%" name="main_pregame_purchase_hero_remaining_duration_bar_new_leader" visible="1" noclick="1">
+											<image texture="/ui/main/postgame/textures/account_bar_progress_leading_blue.tga" width="16s" height="40s" valign="center" align="left" noclick="1"/>
+											<panel width="32s" height="36s" valign="center" noclick="1">
+												<modelpanel
+													x="-14s" width="48s" height="26s" align="left" valign="center"
+													noclick="1"
+													model="/shared/models/invis.mdf"
+													camerapos="0 0 0"
+													cameraangles="0 0 0"
+													camerafov="40"
+													depthclear="true"
+													depthcompress="true"
+													onshowlua="self:SetEffect('/ui/main/postgame/effects/progress_bar_leader.effect')"
+												/>
+											</panel>
+										</panel>
+									</panel>
+								</panel>
+							</panel>
+							<image name="main_pregame_purchase_hero_cosmetic_product_ownership_tip"
+								texture="/ui/shared/textures/question_mark.tga"
+								y="18s" x="-9s" width="32s" height="32s" align="right" valign="center" color=".9 .9 .9 1"
+								onmouseoverlua="
+									simpleTipGrowYUpdate(true, nil, Translate('hallofheroes_item_ownership_noval'), Translate('hallofheroes_item_ownership_tip'), libGeneral.HtoP(38))
+								"
+								onmouseoutlua="
+									simpleTipGrowYUpdate(false)
+								"
+							/>
+						</panel>
+					</panel>
+				</panel>
+				<instance id="main_pregame_purchase_hero_cosmetic_product_purchase_option_3_leave" borderthickness="4s"
+					name="standardButton" rendermode="grayscale" height="34s" width="180s" align="center" x="20s" y="468s"
+					label="general_go_back"
+					font="maindyn_22"
+				/>
+			</panel>
+
+			<instance buttonName="main_pregame_dye_selection_close" name="closeXButton" onclicklua="" visible="1" x="-20s" y="70s" height="32s" width="32s" align="right"/>
+
+		</panel>
+
+		<!-- Pet Skin Purchasing + Preview -->
+		<panel name="main_pregame_pet_selection_container" y="-24s" visible="0" noclick="true">
+			<panel name="main_pregame_pet_selection_backing" color=".04 .07 .09 .93" height="+20s" y="-20s"/>
+
+			<!-- Left Side -->
+			<panel align="center" valign="center" height="420s" x="-235s" y="-5s" width="310s" noclick="1" visible="1">
+				<modelpanel model="/shared/models/invis.mdf" width="180%" height="180%" align="center" valign="center" noclick="true" y="-5s" camerapos="0 0 0" cameraangles="0 0 0" camerafov="72" depthclear="true" depthcompress="true" onshowlua="self:SetEffect('/ui/main/shared/effects/generic_highlight_rays.effect', '0.18', '0.67', '0.84')" />
+				<image texture="/ui/main/shared/textures/circular.tga" width="580s" height="600s" align="center" valign="center" y="-5s" color="#0e3f4d" noclick="1" />
+				<modelpanel
+					name="main_pregame_pet_selection_heromodel" noclick="1"
+					y="-25s"
+					width="180%"
+					height="180%"
+					align="center"
+					valign="center"
+					depthclear="true" depthcompress="false"
+					lookat="false"
+
+					cameranear="750.0"
+					camerafar="1500.0"
+					cameradistance="30"
+					camerapos="0 -1100 37"
+					cameraangles="0 0 0"
+					camerafov="6"
+
+					modelpos="0 50 0" modelangles="-20 0 -150" modelscale="0.625"
+					sunazimuth="270" sunaltitude="50" suncolor="0.9 0.9 0.9" ambientcolor="0.5 0.5 0.5"
+					resourcecontext="selection_model_pet_preview"
+					anim="idle"
+					model=""
+					color="1 1 1 1"
+
+				/>
+
+				<!-- Can these be made to swap gearset instead of cycling dyes? Sorry and TIA -->
+				<image name="main_pregame_pet_selection_previous" texture="/ui/shared/textures/arrow_rounded.tga" y="0" x="-210s" width="26s" height="26s" align="center" valign="center" hflip="1" color="#5b8890" />
+				<image name="main_pregame_pet_selection_next" texture="/ui/shared/textures/arrow_rounded.tga" y="0" x="210s" width="26s" height="26s" align="center" valign="center" hflip="0" color="#5b8890" />
+
+			</panel>
+
+			<!-- Right Side -->
+			<panel align="center" valign="center" width="542s" height="512s" x="280s" y="20s" noclick="1">
+				<image texture="/ui/main/pregame/textures/cosmetic_purchase_info_background.tga" noclick="1" />
+				<panel grow="1" growinvis="0" width="100%" y="-20s" x="20s" valign="center" float="bottom" padding="34s" noclick="1">
+					<label name="main_pregame_customization_pet_title" fity="1" textalign="center" style="h3" font="maindyn_36" noclick="1"/>
+					<panel height="130s" noclick="1">
+						<panel x="-20s" grow="1" growinvis="0" height="100%" float="right" padding="20s" align="center">
+							<!-- Rental
+							<panel name="main_pregame_purchase_pet_cosmetic_product_purchase_option_1" width="200s" sticky="1" stickytoinvis="0" visible="0" >
+								<panel width="+4s" height="+4s" align="center" valign="center">
+									<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame" borderthickness="8s" />
+									<frame texture="/ui/shared/frames/border_double.tga" borderthickness="8s" bordercolor="#1a383e" color="invisible"/>
+								</panel>
+								<label y="6s" textalign="center" font="maindyn_22" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_rental_one_game" noclick="1"/>
+								<panel y="39s" grow="1" height="34s" align="center" float="right" padding="5s">
+									<label name="splash_screen_purchase_pet_cosmetic_product_cost_label_1" fitx="true" textvalign="center" font="maindyn_30" style="labelBase" color=".8 .9 1 1" content=""/>
+									<image texture="/ui/main/shared/textures/gem.tga" width="100@" height="100%"/>
+								</panel>
+								<instance id="splash_screen_purchase_hero_cosmetic_product_purchase_confirm_btn_1" y="86s" height="34s" width="-34s" align="center" borderthickness="4s"
+									name="standardButton"
+									label="general_rent"
+									font="maindyn_22"
+								/>
+								<instance id="splash_screen_purchase_hero_cosmetic_product_needgems_btn_1" y="86s" height="34s" width="-34s" align="center" visible="0" borderthickness="4s"
+									name="standardButton"
+									label="buygems_title"
+									font="maindyn_22"
+									onclicklua="buyGemsShow()"
+								/>
+							</panel>
+							 -->
+							<!-- Purchase -->
+							<panel name="main_pregame_purchase_pet_cosmetic_product_purchase_option_2" width="200s" sticky="1" stickytoinvis="0">
+								<panel width="+4s" height="+4s" align="center" valign="center">
+									<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame" borderthickness="6s" />
+									<frame texture="/ui/shared/frames/border_double.tga" borderthickness="6s" bordercolor="#1a383e" color="invisible"/>
+								</panel>
+								<label y="6s" textalign="center" font="maindyn_22" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_purchase_item" noclick="1"/>
+								<panel y="39s" grow="1" height="34s" align="center" float="right" padding="5s">
+									<panel name="main_pregame_customization_pet_cost_container" grow="1" height="100%" noclick="1">
+										<label name="main_pregame_customization_pet_cost" fitx="1" textvalign="center" style="labelBase" color=".8 .9 1 1" font="maindyn_30" content="---" noclick="1" />
+									</panel>
+									<image texture="/ui/main/shared/textures/gem.tga" width="100@" height="100%"/>
+								</panel>
+								<instance id="main_pregame_customization_purchase_pet_confirm" y="86s" height="34s" width="-34s" align="center" borderthickness="4s"
+									name="standardButton"
+									label="hallofheroes_unlock"
+									font="maindyn_22"
+								/>
+								<instance id="main_pregame_purchase_pet_cosmetic_product_needgems_btn_2" y="86s" height="34s" width="-34s" align="center" visible="0" borderthickness="4s"
+									name="standardButton"
+									label="buygems_title"
+									font="maindyn_22"
+									onclicklua="buyGemsShow()"
+								/>
+								<!-- Owned Indication -->
+								<panel name="main_pregame_customization_pet_cost_owned" width="+4s" height="+4s" align="center" valign="center" visible="0">
+									<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame" borderthickness="6s" />
+									<frame texture="/ui/shared/frames/border_double.tga" borderthickness="6s" bordercolor="#1a383e" color="invisible"/>
+									<label y="8s" textalign="center" font="maindyn_22" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_purchase_item" noclick="1"/>
+									<label y="40s" textalign="center" style="labelBase" font="maindyn_30" wrap="1" color=".8 .9 1 1" content="pregame_general_owned" noclick="1" />
+									<instance id="main_pregame_purchase_pet_cosmetic_product_cancel_btn" y="88s" height="34s" width="-34s" align="center" borderthickness="4s"
+										name="standardButton" rendermode="grayscale"
+										label="general_close"
+										font="maindyn_22"
+									/>
+								</panel>
+							</panel>
+						</panel>
+					</panel>
+					<panel name="main_pregame_purchase_pet_cosmetic_product_ownership_parent" height="38s" width="-80s" align="center" noclick="1" visible="0"><!-- Ownership progress bar -->
+						<panel x="-10s" y="20s" noclick="1">
+							<!-- Ownership label - 'splash_screen_purchase_hero_cosmetic_product_ownership_label' is the version in dialog.package for reference -->
+							<label name="splash_screen_purchase_pet_cosmetic_product_ownership_label" y="-26s" textalign="center" font="maindyn_20" style="labelBase" color=".6 .6 .6 1" content="hallofheroes_item_ownership"/>
+
+							<image texture="/ui/main/postgame/textures/account_bar.tga" y="-8s" width="640s" height="80s" align="center" valign="center" noclick="1" />
+							<panel x="-1s" y="4s" align="center" width="370s" height="27s" noclick="1" >
+								<panel name="main_pregame_purchase_pet_cosmetic_product_ownership_bar" align="left" clip="1" height="100%" width="0%" noclick="1">
+									<image texture="/ui/main/postgame/textures/account_bar_previous.tga" width="602s" height="100%" align="left" valign="center" noclick="1" />
+								</panel>
+							</panel>
+							<panel x="-1s" y="4s" align="center" width="370s" height="27s" float="right" padding="35s" noclick="1">
+								<anchor x="35s"/>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-6s" /></panel>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-4s" /></panel>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-4s" /></panel>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-4s" /></panel>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+								<panel width="2s" noclick="1"><instance name="vr" valign="center" height="-2s" /></panel>
+							</panel>
+							<panel x="-1s" y="4s" align="center" width="370s" height="27s" noclick="1" >
+								<panel x="-10s" align="left" height="100%" width="100%" noclick="1">
+									<!-- Bar Leader - SetX to match bar width -->
+									<panel x="0%" name="main_pregame_purchase_pet_remaining_duration_bar_new_leader" visible="1" noclick="1">
+										<image texture="/ui/main/postgame/textures/account_bar_progress_leading_blue.tga" width="16s" height="40s" valign="center" align="left" noclick="1"/>
+										<panel width="32s" height="36s" valign="center" noclick="1">
+											<modelpanel
+												x="-14s" width="48s" height="26s" align="left" valign="center"
+												noclick="1"
+												model="/shared/models/invis.mdf"
+												camerapos="0 0 0"
+												cameraangles="0 0 0"
+												camerafov="40"
+												depthclear="true"
+												depthcompress="true"
+												onshowlua="self:SetEffect('/ui/main/postgame/effects/progress_bar_leader.effect')"
+											/>
+										</panel>
+									</panel>
+								</panel>
+							</panel>
+						</panel>
+						<image name="main_pregame_purchase_hero_cosmetic_product_ownership_tip"
+							texture="/ui/shared/textures/question_mark.tga"
+							y="18s" x="-9s" width="32s" height="32s" align="right" valign="center" color=".9 .9 .9 1"
+							onmouseoverlua="
+								simpleTipGrowYUpdate(true, nil, Translate('hallofheroes_item_ownership_noval'), Translate('hallofheroes_item_ownership_tip'), libGeneral.HtoP(38))
+							"
+							onmouseoutlua="
+								simpleTipGrowYUpdate(false)
+							"
+						/>
+					</panel>
+				</panel>
+				<instance id="main_pregame_pet_selection_leave" borderthickness="4s"
+					name="standardButton" rendermode="grayscale" height="34s" width="180s" align="center" x="20s" y="468s"
+					label="general_go_back"
+					font="maindyn_22"
+				/>
+			</panel>
+
+			<instance buttonName="main_pregame_pet_selection_close" name="closeXButton" onclicklua="" visible="1" x="-20s" y="70s" height="32s" width="32s" align="right"/>
+
+		</panel>
+
+		<panel name="main_pregame_sync_container" noclick="1" visible="false">
+			<label x="-70s" y="-113s" width="100s" height="100s" align="right" valign="bottom" textalign="right" content="pregame_general_syncing" font="maindyn_20" style="labelBase" color=".6 .6 .6 1"/>
+			<animatedimage name="main_chat_no_connection_overlay_wheel" texture="/ui/shared/throb/throb.tga" noclick="1" loop="1" fps="30" onshow="StartAnim(1);"
+				x="-70s" y="-205s" height="64s" width="64s" align="right" valign="bottom"
+			/>
+		</panel>
+
+		<!-- How-To popup -->
+		<panel name="main_pregame_how_to_container" visible="0" color="0 0 0 .4">
+			<panel name="main_pregame_how_to_browser_container" visible="0" width="640s" height="370s"  align="center" valign="center" color="0 0 0 1">
+				<webbrowser name="main_pregame_how_to_browser" />
+			</panel>
+		</panel>
+
+	</panel>
+
+	<lua file="/ui/main/pregame/pregame.lua"/>
+</package>
