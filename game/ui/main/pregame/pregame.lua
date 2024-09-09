@@ -1891,9 +1891,8 @@ readyButtonCheck = function()
 							end
 						end
 						println("Currently queueing in queue " .. currentQueue .. ": " .. queuePlayerCount)
-						local queueText = tostring(queuePlayerCount) .. " in Queue"
-						if(currentQueue=='pvp' and queuePlayerCount < 5) then queueText = "< 5 in Queue" end
-						GetWidget('main_pregame_queue_size_label'):SetText(queueText)
+						local countText = (currentQueue=='pvp' and queuePlayerCount < 5) and "< 5" or tostring(queuePlayerCount)
+						GetWidget('main_pregame_queue_size_label'):SetText(Translate('pregame_queue_size') .. " " .. countText)
 						wait(5000)
 					else
 						break
