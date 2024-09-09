@@ -1,5 +1,6 @@
 -- Web requests
 Strife_Web_Requests = Strife_Web_Requests or {}
+Chat_Web_Requests = Chat_Web_Requests or {}
 mainUI = mainUI or {}
 mainUI.savedLocally 	= mainUI.savedLocally 		or {}
 mainUI.savedRemotely 	= mainUI.savedRemotely 		or {}
@@ -2253,4 +2254,12 @@ function Strife_Web_Requests:GetTwitchVods(successFunction, failFunction)
 		failFunction
 	)	
 	
+end
+
+function Chat_Web_Requests:GetQueueInfo()
+	local request = HTTP.SpawnRequest()
+	request:SetTargetURL(GetCvarString('cl_chatAddress')..":7155/queue.json")
+	request:SendRequest('GET')
+	request:Wait()
+	return JSON:decode(request:GetResponse())
 end

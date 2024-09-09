@@ -1793,6 +1793,8 @@ local function updateHowToViewButton(heroTrigger)
 	end
 end	
 	
+
+isQueueCountLoopRunning = false
 readyButtonCheck = function()
 	libThread.threadFunc(function()
 		wait(1) -- wait for triggers to update
@@ -1870,6 +1872,36 @@ readyButtonCheck = function()
 		width = math.max(main_pregame_customization_ready:GetWidthFromString('220s'), width)
 		main_pregame_customization_ready_container:SetWidth(width)
 		main_pregame_customization_readyBody:SetWidth('100%')
+
+		-- Pad: Implemented queue size check
+		if(status == readyStatus.UNREADY and isQueueCountLoopRunning == false) then
+			isQueueCountLoopRunning = true
+			libThread.threadFunc(function()
+				while(true) do
+					local currentStatus = getReadyButtonStatus()
+					if( currentStatus == readyStatus.UNREADY) then 
+						local currentQueue = getQueue()
+						local queuePlayerCount = 0
+						local queueInfo = Chat_Web_Requests:GetQueueInfo()
+						for _,queue in pairs(queueInfo) do
+							if(queue["queue"] == currentQueue) then
+								for _,party in pairs(queue["parties"]) do
+									for _ in pairs(party["members"]) do queuePlayerCount = queuePlayerCount + 1 end
+								end				
+							end
+						end
+						println("Currently queueing in queue " .. currentQueue .. ": " .. queuePlayerCount)
+						local queueText = tostring(queuePlayerCount) .. " in Queue"
+						if(currentQueue=='pvp' and queuePlayerCount < 5) then queueText = "< 5 in Queue" end
+						GetWidget('main_pregame_queue_size_label'):SetText(queueText)
+						wait(5000)
+					else
+						break
+					end
+				end
+				isQueueCountLoopRunning = false
+			end)
+		end
 	end)
 end
 main_pregame_customization_ready:RegisterWatchLua('HeroSelectHeroGearSkin0', function(widget, trigger)

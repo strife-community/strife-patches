@@ -736,11 +736,12 @@
 			</panel>
 
 			<!-- Matching Status -->
-			<panel y="-62s" x="-214s" align="center" valign="bottom" height="70s" width="154">
+			<panel y="-62s" x="-214s" align="center" valign="bottom" height="70s" width="274">
 				<image texture="/ui/main/shared/textures/circular.tga" width="180s" height="180s" valign="center" x="-58s" y="-4s" color="#00d2ff33" noclick="1" />
 				<image texture="/ui/main/pregame/textures/searching_base.tga" y="2s" x="46s" width="128s" height="64s" valign="center" align="center" noclick="1" />
 				<animatedimage texture="/ui/shared/throb/throb.tga" width="70s" height="70s" noclick="true" loop="1" fps="30" onshow="StartAnim(1);" />
-				<label width="-78s" align="right" textvalign="center" textalign="center" style="labelBase" color="#bef8ff" oulinecolor="#122735" wrap="1" lineheight="18s" font="maindyn_18" content="mm_queue_finding" />
+				<label width="-78s" align="center" textvalign="center" textalign="center" style="labelBase" color="#bef8ff" oulinecolor="#122735" wrap="1" lineheight="18s" font="maindyn_18" content="mm_queue_finding" />
+				<label name="main_pregame_queue_size_label" width="-74s" align="center" textvalign="bottom" textalign="center" style="labelBase" color="#bef8ff" oulinecolor="#122735" wrap="1" lineheight="18s" font="maindyn_18"/>
 			</panel>
 
 			<!-- Web Link -->
