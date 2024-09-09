@@ -13,12 +13,13 @@ jobs:
       uses: thedoctor0/zip-release@0.7.5
       with:
         type: 'tar'
-        filename: '../resources2.s2z'
+        filename: '../output/resources2.s2z'
         directory: 'game'
+        command: 'mkdir output'
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
-        artifacts: "resources2.s2z"
+        artifacts: "output/resources2.s2z"
         tag: "${{ steps.date.outputs.date }}-${{ github.sha }}"
         generateReleaseNotes: true
         removeArtifacts: true
