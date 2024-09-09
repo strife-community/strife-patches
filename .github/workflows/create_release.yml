@@ -12,6 +12,7 @@ jobs:
         type: 'zip'
         filename: 'resources2.s2z'
         directory: 'game'
+        custom: '-acf'
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
