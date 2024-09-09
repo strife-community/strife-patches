@@ -17,3 +17,4 @@ jobs:
       with:
         artifacts: "release.zip"
         tag: "2024-09-09-${{ github.sha }}"
+        generateReleaseNotes: true
