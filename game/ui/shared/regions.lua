@@ -373,7 +373,7 @@ Strife_Region.regionTable = {
 			['regionCondition'] = ((GetCvarString('build_branch') == 'prod') and (GetCvarString('host_provider') == 's2')) ,
 			['langCodes'] = {
 				{code = 'en', flag = '/ui/shared/textures/flags/unitedstates.tga', displayName = 'en'},
-				-- {code = 'zh', flag = '/ui/shared/textures/flags/china.tga', displayName = 'zh'},
+				{code = 'zh', flag = '/ui/shared/textures/flags/china.tga', displayName = 'zh'},
 				{code = 'th', flag = '/ui/shared/textures/flags/thailand.tga', displayName = 'th'},
 				{code = 'ru', flag = '/ui/shared/textures/flags/russia.tga', displayName = 'ru'},
 				{code = 'vi', flag = '/ui/shared/textures/flags/vietnam.tga', displayName = 'vi'},
