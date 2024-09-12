@@ -1,0 +1,478 @@
+// Game Mechanics
+
+
+
+
+
+
+// Ability_Bladedancer1
+Ability_Bladedancer1_name										Blade Dance
+Ability_Bladedancer1_description								Blade Dancer darts around the battlefield, cutting through enemies.
+Ability_Bladedancer1_description2								
+Ability_Bladedancer1_description_simple							Allows Blade Dancer to dash ^oforward^*, to the ^oleft^*, and to the ^oright^*, dealing ^o{80,140,200,260} Physical Damage^* to enemies passed through.
+Ability_Bladedancer1_effect_header								
+Ability_Bladedancer1_effect_header2								
+Ability_Bladedancer1_tooltip_flavor								
+Ability_Bladedancer1_IMPACT_effect								Blade Dancer may dash 500 units forward, to the left, and to the right.\n\nEnemies touched with a radius of 200 will suffer {80,140,200,260} Physical Damage.
+
+// Ability_Bladedancer1a
+Ability_Bladedancer1a_name										Dance Left
+Ability_Bladedancer1a_description								Blade Dancer darts to her left, slicing along the way.
+Ability_Bladedancer1a_description2								
+Ability_Bladedancer1a_description_simple						Activate to dash ^o500 units^* to Blade Dancer's ^oleft^*. Deals ^o{80,140,200,260} Physical Damage^* to enemies touched.
+Ability_Bladedancer1a_effect_header								
+Ability_Bladedancer1a_effect_header2							
+Ability_Bladedancer1a_tooltip_flavor							
+Ability_Bladedancer1a_IMPACT_effect								Causes Blade Dancer to dash 500 units to her left over 0.25 seconds. Blade Dancer is invulnerable during the dash, and enemies touched with a radius of 200 will suffer {80,140,200,260} Physical Damage.
+
+// Ability_Bladedancer1b
+Ability_Bladedancer1b_name										Dance Forward
+Ability_Bladedancer1b_description								Blade Dancer darts forward, slicing along the way.
+Ability_Bladedancer1b_description2								
+Ability_Bladedancer1b_description_simple						Activate to dash ^o500 units forward^*. Deals ^o{80,140,200,260} Physical Damage^* to enemies touched.
+Ability_Bladedancer1b_effect_header								
+Ability_Bladedancer1b_effect_header2							
+Ability_Bladedancer1b_tooltip_flavor							
+Ability_Bladedancer1b_IMPACT_effect								Causes Blade Dancer to dash 500 units forward over 0.25 seconds. Blade Dancer is invulnerable during the dash, and enemies touched with a radius of 200 will suffer {80,140,200,260} Physical Damage.
+
+// Ability_Bladedancer1c
+Ability_Bladedancer1c_name										Dance Right
+Ability_Bladedancer1c_description								Blade Dancer darts to her right, slicing along the way.
+Ability_Bladedancer1c_description2								
+Ability_Bladedancer1c_description_simple						Activate to dash ^o500 units^* to Blade Dancer's ^oright^*. Deals ^o{80,140,200,260} Physical Damage^* to enemies touched.
+Ability_Bladedancer1c_effect_header								
+Ability_Bladedancer1c_effect_header2							
+Ability_Bladedancer1c_tooltip_flavor							
+Ability_Bladedancer1c_IMPACT_effect								Causes Blade Dancer to dash 500 units to her right over 0.25 seconds. Blade Dancer is invulnerable during the dash, and enemies touched with a radius of 200 will suffer {80,140,200,260} Physical Damage.
+
+// State_Bladedancer_Ability1
+State_Bladedancer_Ability1_name									Dancing
+State_Bladedancer_Ability1_description							Dancing in the rain~!
+State_Bladedancer_Ability1_description2							
+State_Bladedancer_Ability1_description_simple					
+State_Bladedancer_Ability1_FRAME_effect							
+
+// Ability_Bladedancer2
+Ability_Bladedancer2_name										Double Strike
+Ability_Bladedancer2_description								When Blade Dancer attacks, she strikes with both blades.
+Ability_Bladedancer2_description2								
+Ability_Bladedancer2_description_simple							Passively causes Blade Dancer to perform a bonus Attack when attacking. The bonus attack deals ^o{10,20,30,40}% damage^*.
+Ability_Bladedancer2_effect_header								
+Ability_Bladedancer2_effect_header2								
+Ability_Bladedancer2_tooltip_flavor								
+Ability_Bladedancer2_ATTACK_IMPACT_effect						Blade Dancer performs a bonus Attack when attacking. The bonus attack deals {10,20,30,40}% damage.
+
+// State_Bladedancer_Ability2
+State_Bladedancer_Ability2_name									
+State_Bladedancer_Ability2_description							
+State_Bladedancer_Ability2_description2							
+State_Bladedancer_Ability2_description_simple					
+State_Bladedancer_Ability2_IMPACT_effect						
+
+// Ability_Bladedancer3
+Ability_Bladedancer3_name										Fend
+Ability_Bladedancer3_description								Blade Dancer's attacks also serve to bolster her defenses as she fends off incoming attacks with her whirling blades.
+Ability_Bladedancer3_description2								
+Ability_Bladedancer3_description_simple							Passively grants ^o{0.5,1,1.5,2} Armor^* and ^o{0.25,0.5,0.75,1} Magic Armor^* every time Blade Dancer attacks, ^ostacking up to 6 times^*. Expires after ^o3 seconds^* of not attacking.
+Ability_Bladedancer3_effect_header								
+Ability_Bladedancer3_effect_header2								
+Ability_Bladedancer3_tooltip_flavor								
+Ability_Bladedancer3_ATTACK_IMPACT_effect						Adds a charge to Fend every time Blade Dancer attacks, up to 6 charges. Each charge gives {0.5,1,1.5,2} Armor and {0.25,0.5,0.75,1} Magic Armor. Expires after 3 seconds of not attacking.
+
+// State_Bladedancer_Ability3
+State_Bladedancer_Ability3_name									Fend
+State_Bladedancer_Ability3_description							Blade Dancer's attacks help her defend against incoming attacks.
+State_Bladedancer_Ability3_description2							
+State_Bladedancer_Ability3_description_simple					
+State_Bladedancer_Ability3_INFLICT_effect						
+State_Bladedancer_Ability3_REFRESH_effect						
+
+// Ability_Bladedancer4
+Ability_Bladedancer4_name										Two for One
+Ability_Bladedancer4_description								Blade Dancer combines her blades, creating a new weapon with increased reach and power.
+Ability_Bladedancer4_description2								
+Ability_Bladedancer4_description_simple							Activate to gain ^o128 Attack Range^*, ^o{40,60,80} Attack Damage^*, and increase the radius of ^rBlade Dance^* to ^o300^*. Lasts ^o{10,15,20}^* seconds.
+Ability_Bladedancer4_effect_header								
+Ability_Bladedancer4_effect_header2								
+Ability_Bladedancer4_tooltip_flavor								
+Ability_Bladedancer4_IMPACT_effect								Applies Two for One to self for {10,15,20} seconds, which adds 128 Attack Range, {40,60,80} Attack Damage, and increases the radius of Blade Dance to 300.	
+
+// State_Bladedancer_Ability4
+State_Bladedancer_Ability4_name									Two for One
+State_Bladedancer_Ability4_description							With her weapons combined, she is Captain Blade Dancer!
+State_Bladedancer_Ability4_description2							
+State_Bladedancer_Ability4_description_simple					
+State_Bladedancer_Ability4_FRAME_effect							Increases Attack Range by 128\nIncreases radius of Blade Dance to 300
+
+// Hero_Bladedancer
+Hero_Bladedancer_name											Blade Dancer
+Hero_Bladedancer_description									
+Hero_Bladedancer_role											Sexy beast
+
+
+
+// Ability_Herp1
+Ability_Herp1_name												Combusting Needle
+Ability_Herp1_description										Herp shoots a special needle from his gun that after a few seconds explodes, spewing poison everywhere.
+Ability_Herp1_description2										
+Ability_Herp1_effect_header										
+Ability_Herp1_effect_header2									
+Ability_Herp1_tooltip_flavor									
+Ability_Herp1_IMPACT_effect										Applies a debuff that after 3 seconds explodes dealing {40,80,120,160} magic damage in a 200 radius and applying {3,4,5,6} poison charges to enemies hit and slowing their movement speed for {50,60,70,80}% that tapers off over 3 seconds.\n\nPoison charges do 0.5% of target's maximum health in magic damage per second and last for 5 seconds.
+
+// State_Herp_Ability1
+State_Herp_Ability1_name										Timed Poison
+State_Herp_Ability1_description									You're going to explode with disease soon!
+State_Herp_Ability1_description2								
+State_Herp_Ability1_effect_header								None
+State_Herp_Ability1_effect_header2								None
+State_Herp_Ability1_tooltip_flavor								None
+State_Herp_Ability1_EXPIRED_effect								
+
+// State_Herp_Ability1_Slow
+State_Herp_Ability1_Slow_name									Slowing Poison
+State_Herp_Ability1_Slow_description							Feeling the effects of the herp.
+State_Herp_Ability1_Slow_description2							
+State_Herp_Ability1_Slow_effect_header							None
+State_Herp_Ability1_Slow_effect_header2							None
+State_Herp_Ability1_Slow_tooltip_flavor							None
+
+// Ability_Herp2
+Ability_Herp2_name												Toxin Grenade
+Ability_Herp2_description										Hero launches a Toxin Grenade from his needle gun attachment that affects everyone hit with a very contagious disease!
+Ability_Herp2_description2										
+Ability_Herp2_effect_header										
+Ability_Herp2_effect_header2									
+Ability_Herp2_tooltip_flavor									
+Ability_Herp2_IMPACT_effect										Deals {40,80,120,160} magic damage to targets in a 200 unit radius.  Units hit gain the "Plague Bearer" state for {3,4,5,6} seconds.  Every second the "Plague Bearer" is active, the unit hit spews poison around him adding a poison charge to himself and others in a 150 unit radius.\n\nPoison charges do 0.5% of target's maximum health in magic damage per second and last for 5 seconds.
+
+// State_Herp_Ability2
+State_Herp_Ability2_name										Plague Bearer
+State_Herp_Ability2_description									You are spreading the herp to others in a 150 unit radius!
+State_Herp_Ability2_description2								
+State_Herp_Ability2_effect_header								None
+State_Herp_Ability2_effect_header2								None
+State_Herp_Ability2_tooltip_flavor								None
+State_Herp_Ability2_IMPACT_effect								
+
+// Ability_Herp3
+Ability_Herp3_name												Corrosive Needle
+Ability_Herp3_description										Herp loads his needle gun with a corrosive charge that poisons enemies hit.
+Ability_Herp3_description2										
+Ability_Herp3_effect_header										
+Ability_Herp3_effect_header2									
+Ability_Herp3_tooltip_flavor									
+Ability_Herp3_ACTION_effect										
+Ability_Herp3_IMPACT_effect										Orb Effect: Applies a poison charge to enemies hit.\n\nPoison charges do 0.5% of target's maximum health in magic damage per second and last for 5 seconds.
+
+// Ability_Herp4
+Ability_Herp4_name												Malevolent Cure
+Ability_Herp4_description										Hero throws a canister of antidote that explodes on landing in an area and "cures" the poison from all nearby enemies
+Ability_Herp4_description2										
+Ability_Herp4_effect_header										
+Ability_Herp4_effect_header2									
+Ability_Herp4_tooltip_flavor									
+Ability_Herp4_IMPACT_effect										Hero throws a canister that explodes in a 200 unit radius that deals {200,300,400} base + (25,45,65) magic damage per poison charge on target.  Removes all poison charges from enemies hit.
+
+// State_Herp_Ability4_Ultimate
+State_Herp_Ability4_Ultimate_name								
+State_Herp_Ability4_Ultimate_description						
+State_Herp_Ability4_Ultimate_description2						
+State_Herp_Ability4_Ultimate_effect_header						None
+State_Herp_Ability4_Ultimate_effect_header2						None
+State_Herp_Ability4_Ultimate_tooltip_flavor						None
+
+// State_Herp_Ability4_Ultimate2
+State_Herp_Ability4_Ultimate2_name								
+State_Herp_Ability4_Ultimate2_description						
+State_Herp_Ability4_Ultimate2_description2						
+State_Herp_Ability4_Ultimate2_effect_header						None
+State_Herp_Ability4_Ultimate2_effect_header2					None
+State_Herp_Ability4_Ultimate2_tooltip_flavor					None
+
+// State_Herp_Ability4_Ultimate3
+State_Herp_Ability4_Ultimate3_name								
+State_Herp_Ability4_Ultimate3_description						
+State_Herp_Ability4_Ultimate3_description2						
+State_Herp_Ability4_Ultimate3_effect_header						None
+State_Herp_Ability4_Ultimate3_effect_header2					None
+State_Herp_Ability4_Ultimate3_tooltip_flavor					None
+
+// Hero_Herp
+Hero_Herp_name													Herp
+Hero_Herp_description											A very contagious dude!
+
+// State_Herp_Poison
+State_Herp_Poison_name											The Herp
+State_Herp_Poison_description									Does 0.5% of max hp per second per charge... aka you're dying from the herp.
+State_Herp_Poison_description2									
+State_Herp_Poison_effect_header									None
+State_Herp_Poison_effect_header2								None
+State_Herp_Poison_tooltip_flavor								None
+State_Herp_Poison_IMPACT_effect									
+State_Herp_Poison_EXPIRED_effect				
+
+// Hero_Ashtoreth
+Hero_Ashtoreth_name												Ashtoreth
+Hero_Ashtoreth_description										The evening star.
+
+// Ability_Ashtoreth1
+Ability_Ashtoreth1_name											Consumption Pact
+Ability_Ashtoreth1_description									Ashtoreth is a master of the life force, able to transfer it at will.
+Ability_Ashtoreth1_IMPACT_effect								Transfers ^g{25,50,75,100}^* health per second from an enemy, or ^g{25,50,75,100}^* health per second to an ally.
+Ability_Ashtoreth1_tooltip_flavor								Fair trade.
+
+// Ability_Ashtoreth2
+Ability_Ashtoreth2_name											Gateway
+Ability_Ashtoreth2_description									Space and time cannot conceal the void that envelops us all.
+Ability_Ashtoreth2_IMPACT_effect								Summons a 200 AoE Gateway for ^g{3,4,5,6}^* seconds. Units within become ethereal with -5.5 magic armor and are slowed the closer they are to the epicenter. 
+Ability_Ashtoreth2_tooltip_flavor								It waits behind the wall...
+
+// Ability_Ashtoreth3
+Ability_Ashtoreth3_name											Idle Heresy
+Ability_Ashtoreth3_description									Ashtoreth gives perhaps the most mind-blowing kiss ever. Her lover is hopelessly drawn towards her.
+Ability_Ashtoreth3_IMPACT_effect								Sends a ^g{300,325,350,375}^* speed, 6 second duration heart towards a target. If the heart makes contact, the target is dispelled of any disables and drawn towards Ashtoreth for 3 seconds at ^g{40,60,80,100}%^* movement speed.
+Ability_Ashtoreth3_tooltip_flavor								Kisses, kisses! Only 100 mana!
+
+// Ability_Ashtoreth4
+Ability_Ashtoreth4_name											Glimpse
+Ability_Ashtoreth4_description									The unlucky target has a glimpse of impending doom, damning himself and nearby allies to a fiery fate.
+Ability_Ashtoreth4_IMPACT_effect								Applies the "Glimpse" aura in a 225 AoE around the target for 12 seconds. Enemies in the aura are silenced, perplexed, and receive ^g{30,50,70}^* magic damage per second.
+Ability_Ashtoreth4_tooltip_flavor								The end is nigh!
+
+// State_Ashtoreth_Ability2_Debuff
+State_Ashtoreth_Ability2_Debuff_name							In the Void
+
+// State_Ashtoreth_Ability3
+State_Ashtoreth_Ability3_name									Controlled
+
+// State_Ashtoreth_Ability4_Timer
+State_Ashtoreth_Ability4_Timer_name								Glimpse of Doom
+
+// State_Ashtoreth_Ability4
+State_Ashtoreth_Ability4_name									Glimpse
+
+// Hero_Alchemist
+Hero_Alchemist_name												Alchemist
+Hero_Alchemist_description										Sir Mix-a-Lot!
+
+// Ability_Alchemist1
+Ability_Alchemist1_name											Upheaval
+Ability_Alchemist1_description									The Alchemist throws a flask, raising a line of flesh-eating Mandrakes and creating an impassible wall.
+Ability_Alchemist1_IMPACT_effect								Creates a 600 length wall of Mandrakes for 6 seconds. Each Mandrake deals ^g{12,18,24,30}^* damage. The flask takes ^g{1,0.9,0.8,0.7}^* seconds to throw.
+Ability_Alchemist1_tooltip_flavor								Water your plants!
+
+// Ability_Alchemist2
+Ability_Alchemist2_name											Restoration Wave
+Ability_Alchemist2_description									A wave of volatile energy springs forward, healing allies before combusting violently.
+Ability_Alchemist2_IMPACT_effect								Fires a wave, healing allies for ^g{20,40,60,80}^* health. At the end, it explodes, dealing up to ^g{60,120,180,240}^* damage in a 170 AoE. Every ally you heal will reduce that damage by {6,12,18,24}.
+Ability_Alchemist2_tooltip_flavor								Naughty and nice.
+
+// Ability_Alchemist3
+Ability_Alchemist3_name											Mandala
+Ability_Alchemist3_description									This alchemical circle is imbued with harmful seals that punish the aggressive.
+Ability_Alchemist3_IMPACT_effect								Summons a mandala for 8 seconds. Enemies standing on the mandala will deal have their attack and movement speeds slowed by ^g{10,20,30,40}%^*.
+Ability_Alchemist3_tooltip_flavor								Get off!
+
+// Ability_Alchemist4
+Ability_Alchemist4_name											Transmute
+Ability_Alchemist4_description									Enemies affected by more than one of the Alchemist's spells at once are temporarily cast into soft, malleable gold.
+Ability_Alchemist4_description2									Imbues all of the Alchemist's spells with a 2 second Reagent. Combining Reagents on an enemy will turn it into gold for ^g{1,1.5,2}^* seconds. Passively increases the Alchemist's cast speed by ^g{20,40,60}%^* and decreases his ability cooldowns by 2 seconds per level.\n\n^930This ability can be boosted by ^930Staff ^930of ^930the ^930Master.^*^*^*^*^*\n\n^gStaff Effect:^* Increases Reagent duration to 4 seconds.
+Ability_Alchemist4_name:ult_boost								Transmute ^g(Boosted)^*
+Ability_Alchemist4_description:ult_boost						Enemies affected by more than one of the Alchemist's spells at once are temporarily cast into soft, malleable gold.
+Ability_Alchemist4_description2:ult_boost						Imbues all of the Alchemist's spells with a ^g4^* second Reagent. Combining Reagents on an enemy will turn it into gold for ^g{1,1.5,2}^* seconds. Passively increases the Alchemist's cast speed by ^g{20,40,60}%^* and decreases his ability cooldowns by 2 seconds per level.
+Ability_Alchemist4_tooltip_flavor								Greed is good.
+
+// State_Alchemist_Reagent1
+State_Alchemist_Reagent1_name									Upheaval Reagent
+
+// State_Alchemist_Reagent2
+State_Alchemist_Reagent2_name									Restoration Reagent
+
+// State_Alchemist_Reagent3
+State_Alchemist_Reagent3_name									Mandala Reagent
+
+// State_Alchemist_Reagent4
+State_Alchemist_Reagent4_name									Transmuting Reagent
+
+// State_Alchemist_Ability4
+State_Alchemist_Ability4_name									Golden
+
+// Hero_Cerberus
+Hero_Cerberus_name												Cerberus
+Hero_Cerberus_description										The fabled hound of the underworld. Cerberus is a speedy but fragile agility tanking carry.
+
+// Ability_Cerberus2
+Ability_Cerberus2_name											Baphomet's Ram
+Ability_Cerberus2_description									Cerberus charges at an enemy with burning intensity, crushing him on contact.
+Ability_Cerberus2_IMPACT_effect									Charge at max movement speed at enemy, dealing ^g{70,90,110,130}^* Magic damage and ^g{1}^* second stun on contact. If Baphomet's Ram is cancelled, Cerberus is refunded ^g{40,45,50,55}^* mana and gains ^g{2,4,6,8}^* armor and ^g{1,2,3,4}^* magic armor for ^g3^* seconds.
+Ability_Cerberus2_tooltip_flavor								And I will strike down upon thee...
+
+// Ability_Cerberus4
+Ability_Cerberus4_name											Vulcanic Lance
+Ability_Cerberus4_description									Cerberus focuses his fury into a cone of fire, melting away his enemies' weapons.
+Ability_Cerberus4_IMPACT_effect									Attacking an enemy will passively activate a 2 second cone of fire that burns enemies for ^g{25,40,55,70}^* damage. Affected enemies will burn for 3 additional seconds, taking ^g20^* damage per second and 30% reduced base damage. 
+Ability_Cerberus4_tooltip_flavor								With great vengeance and furious anger...
+Ability_Cerberus4_name:cerberus4_heroes							Vulcanic Lance (HEROES)
+Ability_Cerberus4_IMPACT_effect:cerberus4_heroes				Attacking a hero will passively activate a 2 second cone of fire that burns enemies for ^g{25,40,55,70}^* damage. Affected enemies will burn for 3 additional seconds, taking ^g20^* damage per second and 30% reduced base damage.
+
+// Ability_Cerberus3
+Ability_Cerberus3_name											Ouroburos Crown
+Ability_Cerberus3_description									Cyclicality powers Cerberus, allowing him to return and heal incoming punishment.
+Ability_Cerberus3_description2									Cerberus passively deals up to ^g{20,30,40,50}^* immolation damage and ^g{10,15,20,25}%^* movement slow in a 350 AoE based on how much damage he's taken recently. Heals up to ^g{6,9,12,15}^* HP per second. In addition, if Cerberus is killed, he will deal ^g{170,220,270,320}^* Magic damage in a ^g300^* AoE after a ^g3^* second delay.
+Ability_Cerberus3_tooltip_flavor								Those who would attempt to poison and destroy my brothers...
+
+// Ability_Cerberus1
+Ability_Cerberus1_name											Dregs of Hades
+Ability_Cerberus1_description									Cerberus calls the fiery hounds of hell to seek out his enemies.
+Ability_Cerberus1_IMPACT_effect									Detects ALL enemy heroes in a ^g{3000}^* radius and sends a spectral hound after each of them. Hounds deal ^g{50,75,100}^* damage per second and last for ^g3^* attacks or ^g{8,10,12}^* seconds.
+Ability_Cerberus1_tooltip_flavor								And you will know my name is Cerberus when I lay my vengeance upon thee.
+
+// State_Cerberus_Ability4
+State_Cerberus_Ability4_name									Vulcanic Lance
+
+// State_Cerberus_Ability3_Aura1
+State_Cerberus_Ability3_Aura1_name								Ouroburos Crown LVL1
+
+// State_Cerberus_Ability3_Aura2
+State_Cerberus_Ability3_Aura2_name								Ouroburos Crown LVL2
+
+// State_Cerberus_Ability3_Aura3
+State_Cerberus_Ability3_Aura3_name								Ouroburos Crown LVL3
+
+// State_Cerberus_Ability3_Aura4
+State_Cerberus_Ability3_Aura4_name								Ouroburos Crown LVL4
+
+// Hero_Sylph
+Hero_Sylph_name													Sylph
+Hero_Sylph_description											The forlorn queen of wind.
+
+// Ability_Sylph1
+Ability_Sylph1_name												Wispy Nova
+Ability_Sylph1_description										Highland wisps guide the Sylph's will to her enemies.
+Ability_Sylph1_description2										Fire a projectile that seeks the nearest enemy within ^g150^* AoE. On impact, deals your ^g{20,40,60,80}^* plus your ^gattack^* as Magic damage. Enemies within ^g150^* AoE take 25% of your attack in Magic damage and are slowed for ^g15%^* movespeed.
+Ability_Sylph1_tooltip_flavor									Fly with the winds!
+
+// Ability_Sylph2
+Ability_Sylph2_name												Seclusion
+Ability_Sylph2_description										A thick veil covers a foe, causing him to stray away from others .
+Ability_Sylph2_description2										Debuffs a unit for ^g{3,4.5,6,7.5}^* seconds. Deals a base ^g{20}^* Magic damage every second and ^g{10}%^* slow, with an additional ^g{10}^* Magic damage every second and ^g{3}%^* slow for every additional unit in a {400} AoE. Cap of ^g8^* units.
+Ability_Sylph2_tooltip_flavor									Can't touch this...
+
+// Ability_Sylph3
+Ability_Sylph3_name												Banshee's Gaze
+Ability_Sylph3_description										The Sylph's presence frees the spirits of fallen friends and foes alike. Liberated spirits haunt her enemies.
+Ability_Sylph3_description2										When you kill a unit, you free its soul. The soul seeks the nearest enemy hero within ^g800^* AoE and deals ^g{20,40,60,80}^* Magic damage. Heroe kills deal ^g{50,100,150,200}^* damage. Passively adds ^g{5,10,15,20}^* bonus Intelligence.
+Ability_Sylph3_tooltip_flavor									Free at last!
+
+// Ability_Sylph4
+Ability_Sylph4_name												Whisper Form
+Ability_Sylph4_description										The Sylph channels the spirits to become an embodiment of wind itself.
+Ability_Sylph4_description2										When toggled on, gives the Sylph a ^g{20,40,60}%^* bonus base damage multiplier and ^g{25,50,75}^* bonus movespeed. In return, the Sylph is ^gdisarmed^*, and if damaged, she cannot toggle forms and is slowed for ^g{50,100,150}^* movespeed for ^g{4,3,2}^* seconds.
+Ability_Sylph4_tooltip_flavor									Like a whisper.
+
+// Ability_Sylph5
+Ability_Sylph5_name												Shift
+Ability_Sylph5_description										The Sylph commands the wind, moving quickly through space.
+Ability_Sylph5_description2										Blink ^g{600}^* range in the target direction.
+Ability_Sylph5_tooltip_flavor									Catch me if you can.
+
+// State_Sylph_Ability1
+State_Sylph_Ability1_name										Wispy Nova
+
+// State_Sylph_Ability2
+State_Sylph_Ability2_name										Seclusion
+
+// State_Sylph_Ability4
+State_Sylph_Ability4_name										Whisper Form
+
+// State_Sylph_Ability4_Damaged
+State_Sylph_Ability4_Damaged_name								Unable to change forms!
+
+// Hero_Kratos
+Hero_Kratos_name												Kratos
+Hero_Kratos_description											Busy killing gods etc.
+Hero_Kratos_role												Busy killing gods etc.
+
+// Ability_Kratos1
+Ability_Kratos1_name											Fireballz
+Ability_Kratos1_description										Boomerang Fireballz.
+Ability_Kratos1_description_simple								Launches a fireball at a target location. Fireball returns to you after reaching its destination.\n\n- ^g2^* fireballs available.\n- ^g{10,8,6,4}^* second recharge time.\n- Fireballs deal ^g{50,60,70,80}^* damage.
+Ability_Kratos1_IMPACT_effect									Launches a fireball at a target location. Fireball returns to you after reaching its destination.\n\n- ^g2^* fireballs available.\n- ^g{10,8,6,4}^* second recharge time.\n- Fireballs deal ^g{50,60,70,80}^* damage.
+Ability_Kratos1_tooltip_flavor								
+
+// Ability_Kratos2
+Ability_Kratos2_name											Woosh
+Ability_Kratos2_description										Spinning Fireballz.
+Ability_Kratos2_description_simple								Triggers ^gSpin^* & ^gSlam^* or just ^gSlam^*.\n\n^rSpin:^*\n\nAny airborne ^gQ^* fireballs spin ^g3^* orbits around you dealing ^g{50,60,70,80}^* damage.\n\n^rSlam:^*\n\nDeals ^g{90,135,180,225}^* damage in a ^g200^* AoE line in front of you to enemy units and slows them by ^g30%^* for ^g2^* seconds. 
+Ability_Kratos2_IMPACT_effect									Triggers ^gSpin^* & ^gSlam^* or just ^gSlam^*.\n\n^rSpin:^*\n\nAny airborne ^gQ^* fireballs spin ^g3^* orbits around you dealing ^g{50,60,70,80}^* damage.\n\n^rSlam:^*\n\nDeals ^g{90,135,180,225}^* damage in a ^g200^* AoE line in front of you to enemy units and slows them by ^g30%^* for ^g2^* seconds. 
+Ability_Kratos2_tooltip_flavor								
+
+// Ability_Kratos3
+Ability_Kratos3_name											Stuntastic
+Ability_Kratos3_description										Stunz and Laserz.
+Ability_Kratos3_description_simple								^rPassive:^*\n\nFireball impacts now apply a ^oStun Counter^* to enemy units for ^g{6,7,8,9}^* seconds.\n\nEnemies get stunned for ^g2^* seconds at ^g4^* ^oStun Counters^*.\n\n^rActive:^*\n\nDeals ^g{60,90,120,160}^* damage in an AoE around you to enemies with a ^oStun Counter^* and adds an additional ^oStun Counter^* to them.
+Ability_Kratos3_IMPACT_effect									^rPassive:^*\n\nFireball impacts now apply a ^oStun Counter^* to enemy units for ^g{6,7,8,9}^* seconds.\n\nEnemies get stunned for ^g2^* seconds at ^g4^* ^oStun Counters^*.\n\n^rActive:^*\n\nDeals ^g{60,90,120,160}^* damage in an AoE around you to enemies with a ^oStun Counter^* and adds an additional ^oStun Counter^* to them.
+Ability_Kratos3_tooltip_flavor
+
+// State_Kratos_Ability3
+State_Kratos_Ability3_name										Stuntastic
+State_Kratos_Ability3_FRAME_effect								
+
+// State_Kratos_Ability3_Enemy
+State_Kratos_Ability3_Enemy_name								Stun Counter
+State_Kratos_Ability3_Enemy_FRAME_effect						2 second stun at 5 Stun Counters
+
+// Ability_Kratos4
+Ability_Kratos4_name											Flamethrower
+Ability_Kratos4_description										Caution Advised.
+Ability_Kratos4_description_simple								Launches ^g6^* fireballs over ^g2^* seconds at a target location.\n\nFireballs deal ^g{40,65,90}^* damage and return to you after reaching their destination.
+Ability_Kratos4_IMPACT_effect									Launches ^g6^* fireballs over ^g2^* seconds at a target location.\n\nFireballs deal ^g{40,65,90}^* damage and return to you after reaching their destination.
+Ability_Kratos4_tooltip_flavor		
+
+
+// Hero_BurnyMac
+Hero_BurnyMac_name												Burny Mac
+Hero_BurnyMac_description										Flint Beastwood's blacker cousin.
+Hero_BurnyMac_role												Flint Beastwood's blacker cousin.
+
+// Ability_BurnyMac1
+Ability_BurnyMac1_name											Black Napalm
+Ability_BurnyMac1_description									Burny Mac like to light stuff on fire. Fire no last very long. Black napalm make it last ^o1.5 seconds longer^*. Oh, it also does stacking ^o{4,8,12,16} Magic Damage per second for 6 seconds^*.\n\nIt cost 20 health though. Darn!
+Ability_BurnyMac1_description_simple							Burny Mac like to light stuff on fire. Fire no last very long. Black napalm make it last ^o1.5 seconds longer^*. Oh, it also does stacking ^o{4,8,12,16} Magic Damage per second for 6 seconds^*.\n\nIt cost 20 health though. Darn!
+
+// Ability_BurnyMac2
+Ability_BurnyMac2_name											Watch the World Burn
+Ability_BurnyMac2_description									Make big fire, burn stuff! Explosion does ^o100 Magic Damage^* and burns ^o{8,16,24,32} Magic Damage per second for 3 seconds^*.
+Ability_BurnyMac2_description_simple							Make big fire, burn stuff! Explosion does ^o100 Magic Damage^* and burns ^o{8,16,24,32} Magic Damage per second for 3 seconds^*.
+
+// Ability_BurnyMac3
+Ability_BurnyMac3_name											WAAAGH!
+Ability_BurnyMac3_description									Burny Mac like fire, not magic. Magic make him mad. So when he takes magic damage, he gets ^o{15,30,45,60} Bonus Damage^* and ^o{5,10,15,20}% bonus Movement Speed^* for 6 seconds.
+Ability_BurnyMac3_description_simple							Burny Mac like fire, not magic. Magic make him mad. So when he takes magic damage, he gets ^o{15,30,45,60} Bonus Damage^* and ^o{5,10,15,20}% bonus Movement Speed^* for 6 seconds.
+
+// Ability_BurnyMac4
+Ability_BurnyMac4_name											En Fuego
+Ability_BurnyMac4_description									Haha! Now you take ^o{30,45,60} Magic Damage per second^* and no use spell or item! HAHAHAHA! It last ^o8 seconds^*.
+Ability_BurnyMac4_description_simple							Haha! Now you take ^o{30,45,60} Magic Damage per second^* and no use spell or item! HAHAHAHA! It last ^o8 seconds^*.
+
+// Item_PoweredBoots
+Item_PoweredBoots_name											Powered Boots
+Item_PoweredBoots_description									A charge is gained every time a nearby enemy casts a spell or the bearer moves 1000 distance. When activated, all charges are removed while Health and mana are restored.
+Item_PoweredBoots_description2									This item contains a passive ^yMovement ^ySpeed^* bonus which does not stack with itself or with ^rStriders^*, ^rSteam^* ^rBoots^*, ^rGhost^* ^rMarchers^*, ^rPlated^* ^rGreaves^* or ^rPost^* ^rHaste^*.
+Item_PoweredBoots_effect_header									Status Effect
+Item_PoweredBoots_shop_flavor									By adding a static engine and mana battery to a pair of normal marchers, powered boots are created!
+Item_PowerSupply_IMPACT_effect									Restores 10 Health and 15 mana per charge. Maximum of 15 charges.
+State_PowerSupply_FRAME_effect									+1 charge every time an enemy hero in range casts a spell or the bearer moves 1000 distance.
+
+
+// Item_SabotageKit
+Item_SabotageKit_name											Sabotage Kit
+Item_SabotageKit_description									When used on enemy towers, reduces their attack speed by ^g50%^* and armor by ^g9^*. Lasts 15 seconds.
+Item_SabotageKit_shop_flavor									The Engineer is generous to share his kits!
+
+// Item_TotemOfEruption
+Item_TotemOfEruption_name										Totem of Eruption
+State_ItemTotemOfEruptionChannel_name					Totem of Eruption
+
+// End - do not delete this line
