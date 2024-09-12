@@ -295,9 +295,19 @@ windows										Windows
 mac_os										Mac
 linux										Linux
 
-// New gear
-new_store_item_1							Hero_Carter_gear_3
-new_store_item_2							Hero_Rook_gear_4
+// New gear: None for now, just examples below
+//new_store_hero_1							Hero_Malph
+//new_store_hero_2							Hero_Pal
+//new_store_hero_skin_1						Hero_Ace_gear_4
+//new_store_hero_skin_2						Hero_Bo_gear_3
+//new_store_hero_skin_3						Hero_Ray_gear_2
+//new_store_hero_skin_4						Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2					Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3					Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4					Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5					Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6					Hero_Hale_gear_uber_blood
 
 // Pre-Play
 
@@ -405,6 +415,7 @@ pregame_general_dyes						Dyes
 pregame_customize_step_1					1. ปรับแต่งฮีโร่ของคุณ
 pregame_customize_step_2					2. ปรับแต่งสัตว์เลี้ยงของคุณ
 pregame_customize_step_3					3. ปรับแต่ง Build ของคุณ
+//_pregame_queue_size                       Queueing Players:
 
 // main.interface
 main_peel_tip								ไปที่ร้านค้า
@@ -5315,6 +5326,10 @@ social_groups_newIM_msg						Enter a nickname to start a conversation with a pla
 news_title									News Updates
 news_matchmaking							Matchmaking Improvements
 news_matchmaking_desc						Check out [S2] Fieldings dev blog for the changes.
+//_news_discord								Join our Discord!
+//_news_discord_desc							Connect with the Community
+//_news_default_splash_label					Arise, chosen!
+//_news_default_splash_title					Trials of Strife continue!
 
 //tournaments.package
 tournament_name								Tournament Name

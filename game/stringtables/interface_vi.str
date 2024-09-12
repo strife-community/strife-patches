@@ -286,9 +286,19 @@ windows										Windows
 mac_os										Mac
 linux										Linux
 
-// New gear
-new_store_item_1							Hero_Hale_gear_1
-new_store_item_2							Hero_Bo_gear_1
+// New gear: None for now, just examples below
+//new_store_hero_1							Hero_Malph
+//new_store_hero_2							Hero_Pal
+//new_store_hero_skin_1						Hero_Ace_gear_4
+//new_store_hero_skin_2						Hero_Bo_gear_3
+//new_store_hero_skin_3						Hero_Ray_gear_2
+//new_store_hero_skin_4						Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2					Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3					Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4					Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5					Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6					Hero_Hale_gear_uber_blood
 
 // Pre-Play
 
@@ -370,6 +380,7 @@ selection_long_queue						Long Queue Time
 selection_long_queue_desc					^960Long Queue?^* Bạn có thể rút ngắn thời gian Search bằng cách chọn nhiều khu vực, nhiều dạng trận đấu hay đơn giản là chọn những Hero dễ chơi, không quá hot.
 selection_hero_hero_long_queue_desc			Hero này khá hot, bạn có thể sẽ phải chờ đợi xếp trận khá lâu.
 selection_queue_cannot_play					^rKhông Thể Chơi MODE
+//_pregame_queue_size                       Queueing Players:
 
 // main.interface
 main_peel_tip								Vào Kho Hàng
@@ -4947,6 +4958,10 @@ social_groups_newIM_msg						Ghi nickname để bắt đầu trò chuyện 
 
 //news.package
 news_title									News Updates
+//_news_discord								Join our Discord!
+//_news_discord_desc							Connect with the Community
+//_news_default_splash_label					Arise, chosen!
+//_news_default_splash_title					Trials of Strife continue!
 
 //tournaments.package
 tournament_name								Tournament Name

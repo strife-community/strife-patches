@@ -1067,7 +1067,7 @@ Ability_Blazer3_description_simple								bônus de dano e ataque crítico
 
 // Ability_Blazer4
 Ability_Blazer4_name											Modo de caça
-Ability_Blazer4_description										Ao ativar, se torna furtiva por $duration$ segundos. \n\nDurante a furtividade, Blazer ganha 100 de velocidade de movimento e detecta a posição de inimigos próximos com a vida abaixo de 50% a uma distância de 3000.
+//_Ability_Blazer4_description										Ao ativar, se torna furtiva por $duration$ segundos. \n\nDurante a furtividade, Blazer ganha 100 de velocidade de movimento e detecta a posição de inimigos próximos com a vida abaixo de 50% a uma distância de 3000.
 Ability_Blazer4_description_simple								furtividade e detecção de inimigos
 
 // Hero_Blazer

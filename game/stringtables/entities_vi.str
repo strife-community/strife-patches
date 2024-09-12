@@ -1035,7 +1035,7 @@ Ability_Blazer3_description_simple								Tăng Damage, Đánh Chí Mạng.
 
 // Ability_Blazer4
 Ability_Blazer4_name											Hunter Mode
-Ability_Blazer4_description										Kích hoạt để tàng hình trong $duration$ giây.  Khi tàng hình, Blazer tăng 100 movespeed và phát hiện ra mọi Hero địch dưới 50% HP trong phạm vi 3000 range.
+//_Ability_Blazer4_description										Kích hoạt để tàng hình trong $duration$ giây.  Khi tàng hình, Blazer tăng 100 movespeed và phát hiện ra mọi Hero địch dưới 50% HP trong phạm vi 3000 range.
 Ability_Blazer4_description_simple								Tàng Hình và Nhận Dạng
 
 // Hero_Blazer

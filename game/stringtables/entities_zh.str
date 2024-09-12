@@ -1216,7 +1216,7 @@ Ability_Blazer3_description_simple								使用技能后对敌人造成双倍�
 
 // Ability_Blazer4
 Ability_Blazer4_name											猎杀者
-Ability_Blazer4_description										主动使用将潜行$duration$秒。潜行时，布莱泽增加100移动速度并可侦察到3000范围内生命值在50%以下的敌人。 
+//_Ability_Blazer4_description										主动使用将潜行$duration$秒。潜行时，布莱泽增加100移动速度并可侦察到3000范围内生命值在50%以下的敌人。 
 Ability_Blazer4_description_simple								全屏伤害，技能晕眩
 
 // Hero_Blazer

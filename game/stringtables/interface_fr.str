@@ -279,9 +279,19 @@ windows
 mac_os
 linux
 
-// New gear
-new_store_item_1							Hero_Hale_gear_1
-new_store_item_2							Équipement_héros_Rook_4
+// New gear: None for now, just examples below
+//new_store_hero_1                                  Hero_Malph
+//new_store_hero_2                                  Hero_Pal
+//new_store_hero_skin_1                             Hero_Ace_gear_4
+//new_store_hero_skin_2                             Hero_Bo_gear_3
+//new_store_hero_skin_3                             Hero_Ray_gear_2
+//new_store_hero_skin_4                             Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1                         Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2                         Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3                         Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4                         Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5                         Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6                         Hero_Hale_gear_uber_blood
 
 // pre_matchmaking_selection.package
 general_pet                                                                                  Familier
@@ -307,6 +317,7 @@ selection_recommended_hero_hero_desc		Ce héros vous est recommandé compte tenu
 selection_long_queue                                                                         Longue file d'attente
 selection_long_queue_desc                                                                    ^960La file d'attente est longue ?^* Sélectionnez plusieurs régions, des modes de jeu plus populaires (comme le PvP) et assurez-vous que le héros sélectionné n'est pas actuellement populaire pour la réduire.
 selection_hero_hero_long_queue_desc                                                          Ce héros est populaire, la file d'attente sera plus longue s'il est sélectionné.
+//_pregame_queue_size                                                                        Queueing Players:
 
 // main.interface
 main_peel_tip                                                                                Aller au magasin
@@ -4757,6 +4768,10 @@ social_groups_newIM_msg                                                         
 
 //news.package
 news_title                                                                                   Nouvelles
+//_news_discord                                                                                 Join our Discord!
+//_news_discord_desc                                                                            Connect with the Community
+//_news_default_splash_label                                                                    Arise, chosen!
+//_news_default_splash_title                                                                    Trials of Strife continue!
 
 //tournaments.package
 tournament_name                                                                              Nom du tournoi

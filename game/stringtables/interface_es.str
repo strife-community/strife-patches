@@ -279,9 +279,19 @@ windows
 mac_os
 linux
 
-// New gear
-new_store_item_1							Hero_Hale_gear_1
-new_store_item_2							Hero_Rook_gear_4
+// New gear: None for now, just examples below
+//new_store_hero_1                                  Hero_Malph
+//new_store_hero_2                                  Hero_Pal
+//new_store_hero_skin_1                             Hero_Ace_gear_4
+//new_store_hero_skin_2                             Hero_Bo_gear_3
+//new_store_hero_skin_3                             Hero_Ray_gear_2
+//new_store_hero_skin_4                             Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1                         Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2                         Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3                         Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4                         Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5                         Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6                         Hero_Hale_gear_uber_blood
 
 // pre_matchmaking_selection.package
 general_pet                                                           Mascota
@@ -307,6 +317,7 @@ selection_recommended_hero_hero_desc		Este héroe ha sido recomendado debido a l
 selection_long_queue                                                  Tiempo de espera largo
 selection_long_queue_desc                                             ^960¿Mucha espera?^* Puedes reducir los tiempos de espera seleccionando más regiones de servidores, modos de juego más populares (como PVP), y asegurándote de seleccionar un héroe que no tenga alta demanda.
 selection_hero_hero_long_queue_desc                                   Este héroe tiene una demanda alta, por lo que el tiempo de espera será mayor si se selecciona.
+//_pregame_queue_size                                                 Queueing Players:
 
 // main.interface
 main_peel_tip                                                         Visitar la tienda
@@ -4747,6 +4758,10 @@ social_groups_newIM_msg                                               Escribir u
 
 //news.package
 news_title                                                            Actualizaciones de noticias
+//_news_discord                                                          Join our Discord!
+//_news_discord_desc                                                     Connect with the Community
+//_news_default_splash_label                                             Arise, chosen!
+//_news_default_splash_title                                             Trials of Strife continue!
 
 //tournaments.package
 tournament_name                                                       Nombre del torneo

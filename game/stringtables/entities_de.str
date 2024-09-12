@@ -974,7 +974,7 @@ Ability_Blazer3_description_simple                                         Zusä
 
 // Ability_Blazer4
 Ability_Blazer4_name                                                       Jäger-Modus
-Ability_Blazer4_description                                                Aktivieren, um dich für $duration$ Sekunden zu tarnen. Getarnt erhält Blazer 100 Bewegungsgeschw. und ortet Feinde mit weniger als 50% Gesundheit in einem Radius von 3000.
+//_Ability_Blazer4_description                                                Aktivieren, um dich für $duration$ Sekunden zu tarnen. Getarnt erhält Blazer 100 Bewegungsgeschw. und ortet Feinde mit weniger als 50% Gesundheit in einem Radius von 3000.
 Ability_Blazer4_description_simple                                         Tarnung und Feindortung
 
 // Hero_Blazer

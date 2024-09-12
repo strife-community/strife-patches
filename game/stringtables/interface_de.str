@@ -279,9 +279,19 @@ windows
 mac_os
 linux
 
-// New gear
-new_store_item_1							Hero_Hale_gear_1
-new_store_item_2							Hero_Rook_gear_4
+// New gear: None for now, just examples below
+//new_store_hero_1                                  Hero_Malph
+//new_store_hero_2                                  Hero_Pal
+//new_store_hero_skin_1                             Hero_Ace_gear_4
+//new_store_hero_skin_2                             Hero_Bo_gear_3
+//new_store_hero_skin_3                             Hero_Ray_gear_2
+//new_store_hero_skin_4                             Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1                         Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2                         Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3                         Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4                         Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5                         Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6                         Hero_Hale_gear_uber_blood
 
 // pre_matchmaking_selection.package
 general_pet                                         Haustier
@@ -307,6 +317,8 @@ selection_recommended_hero_hero_desc		Dieser Held wurde aufgrund der aktuellen Z
 selection_long_queue                                Lange Wartezeit
 selection_long_queue_desc                           ^960Lange Wartezeit?^* Du kannst die Wartezeit verkürzen indem du weitere Server-Regionen, beliebtere Spielmodi (wie PvP) wählst und sicherstellst, dass dein Held momentan nicht nachgefragt ist.
 selection_hero_hero_long_queue_desc                 Dieser Held ist nachgefragt, die Auswahl führt zu einer längeren Wartezeit.
+//_pregame_queue_size                                  Queueing Players:
+
 
 // main.interface
 main_peel_tip                                       Zum Laden gehen
@@ -4747,6 +4759,10 @@ social_groups_newIM_msg                             Gib einen Nicknamen ein um e
 
 //news.package
 news_title                                          Neue Updates
+//_news_discord                                        Join our Discord!
+//_news_discord_desc                                   Connect with the Community
+news_default_splash_label					Arise, chosen!
+news_default_splash_title					Trials of Strife continue!
 
 //tournaments.package
 tournament_name                                     Name des Turniers

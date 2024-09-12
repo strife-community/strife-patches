@@ -974,7 +974,7 @@ Ability_Blazer3_description_simple                                           ata
 
 // Ability_Blazer4
 Ability_Blazer4_name                                                         Modo de Cazador
-Ability_Blazer4_description                                                  Activa para ocultarte durante $duration$ segundos. Mientras está oculto, Blazer gana 100 de velocidad de movimiento y detecta la posición de los enemigos debajo del 50% de salud en un alcance de 3000.
+//_Ability_Blazer4_description                                                  Activa para ocultarte durante $duration$ segundos. Mientras está oculto, Blazer gana 100 de velocidad de movimiento y detecta la posición de los enemigos debajo del 50% de salud en un alcance de 3000.
 Ability_Blazer4_description_simple                                           oculta y detecta enemigos
 
 // Hero_Blazer

@@ -292,30 +292,19 @@ windows												Windows
 mac_os												Mac
 linux												Linux
 
-// New gear
-new_store_hero_1							英雄_Trace
-new_store_hero_2							英雄_Flak
-new_store_hero_3							英雄_Midknight
-new_store_hero_skin_1						英雄_艾斯_皮肤_4
-new_store_hero_skin_2						英雄_波大师_皮肤_3
-new_store_hero_skin_3						英雄_雷_皮肤_2
-new_store_hero_skin_4						英雄_佛米利恩_皮肤
-
-// New dye's not working in new UI?
-new_store_hero_skin_dye_1					英雄_黑尔_皮肤_黑色
-new_store_hero_skin_dye_2					英雄_黑尔_皮肤_蓝色
-new_store_hero_skin_dye_3					英雄_黑尔_皮肤_绿色
-new_store_hero_skin_dye_4					英雄_黑尔_皮肤_紫色
-new_store_hero_skin_dye_5					英雄_黑尔_皮肤_金色
-new_store_hero_skin_dye_6					英雄_黑尔_皮肤_血红色
-
-// Old UI Style
-
-new_store_item_1							英雄_卡特_皮肤_3
-new_store_item_2							英雄_洛克_皮肤_4
-new_store_item_3							英雄_黑尔_皮肤
-new_store_item_4							英雄_黑尔_皮肤_3
-new_store_item_5							英雄_黑尔_皮肤_4
+// New gear: None for now, just examples below
+//new_store_hero_1							Hero_Malph
+//new_store_hero_2							Hero_Pal
+//new_store_hero_skin_1						Hero_Ace_gear_4
+//new_store_hero_skin_2						Hero_Bo_gear_3
+//new_store_hero_skin_3						Hero_Ray_gear_2
+//new_store_hero_skin_4						Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2					Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3					Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4					Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5					Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6					Hero_Hale_gear_uber_blood
 
 // Pre-Play
 
@@ -464,6 +453,7 @@ pregame_ready_start_over					重新开始
 pregame_general_tab_for_stats				详细信息
 pregame_customize_need_tips					需要提示
 pregame_customize_watch_howto				观看教学视频
+//_pregame_queue_size                       Queueing Players:
 
 pregame_breadcrumb_mustunready				取消准备
 pregame_breadcrumb_mustunready_desc			使用此选项需必须先离开匹配队列中。
@@ -4994,8 +4984,8 @@ social_groups_newIM												新信息
 social_groups_newIM_msg												输入玩家的用户名，与他开始交流。
 
 //news.package
-news_default_splash_label					特蕾丝和闵奈特
-news_default_splash_title					 新英雄来袭！
+//_news_default_splash_label					Arise, chosen!
+//_news_default_splash_title					Trials of Strife continue!
 new_hero									新英雄
 new_heroes								    新英雄来袭！
 news_title												最新更新
@@ -5011,6 +5001,8 @@ news_component_manager						小件管理
 news_component_manager_add					增加小件
 news_component_manager_addDialog			增加小件
 news_component_manager_toggle_overlay		叠加
+//_news_discord								Join our Discord!
+//_news_discord_desc							Connect with the Community
 
 //news components
 news_component_stories						故事

@@ -292,13 +292,19 @@ windows										Windows
 mac_os										Mac
 linux										Linux
 
-// New gear
-new_store_hero_1							Hero_Aemon
-new_store_hero_2							Hero_Eanu
-new_store_hero_skin_1						Hero_Ace_gear_4
-new_store_hero_skin_2						Hero_Bo_gear_3
-new_store_hero_skin_3						Hero_Ray_gear_2
-new_store_hero_skin_4						Hero_Vermillion_gear_uber
+// New gear: None for now, just examples below
+//new_store_hero_1							Hero_Malph
+//new_store_hero_2							Hero_Pal
+//new_store_hero_skin_1						Hero_Ace_gear_4
+//new_store_hero_skin_2						Hero_Bo_gear_3
+//new_store_hero_skin_3						Hero_Ray_gear_2
+//new_store_hero_skin_4						Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2					Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3					Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4					Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5					Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6					Hero_Hale_gear_uber_blood
 
 // New dye's not working in new UI?
 new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
@@ -463,6 +469,7 @@ pregame_ready_start_over					Начать сначала
 pregame_general_tab_for_stats				для более детальной информации
 pregame_customize_need_tips					Нужна помощь
 pregame_customize_watch_howto				Смотреть видео
+pregame_queue_size                          Игроков в очереди:
 
 pregame_breadcrumb_mustunready				Нужно выйти из поиска игр
 pregame_breadcrumb_mustunready_desc			Необходимо выйти из поиска игр, чтобы внести изменения.
@@ -5016,8 +5023,8 @@ social_groups_newIM							Новое мгновенное сообщение
 social_groups_newIM_msg						Введите имя игрока, чтобы начать общение.
 
 //news.package
-news_default_splash_label					Trace и Midnight
-news_default_splash_title					Новые герои!
+news_default_splash_label					Восстаньте, избранные!
+news_default_splash_title					Испытания Strife продолжаются!
 new_hero									Новый герой
 new_heroes									Новые герои!
 news_title									Обновление новостей
@@ -5035,6 +5042,8 @@ news_component_manager						Менеджер компонентов
 news_component_manager_add					Добавить компонент
 news_component_manager_addDialog			Добавить компонент
 news_component_manager_toggle_overlay		Оверлей
+news_discord								Посетите наш Discord!
+news_discord_desc							Объединяйтесь с сообществом!
 
 
 //news components
