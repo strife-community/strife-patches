@@ -39,9 +39,15 @@
 			</panel>
 			
 			<!-- Soon -->
-			<panel name="playScreenOptionBtn{id}_comingsoon" color=".06 .06 .06 .65" visible="{soon=0}">
-				<image texture="/ui/main/shared/textures/circular.tga" y="-36s" align="center" valign="center" width="110s" height="110s" color="#02eaff" />
-				<image texture="/ui/main/shared/textures/clock.tga" y="-36s" align="center" valign="center" width="60s" height="60s" />
+			<panel 
+                name="playScreenOptionBtn{id}_comingsoon"
+                color=".06 .06 .06 .65"
+                visible="{soon=0}"
+                onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('scrim_finder_comingsoon_feature_locked'), Translate('scrim_finder_comingsoon_feature_locked_desc'), 320)"
+                onmouseoutlua="simpleTipGrowYUpdate(false)"
+			>
+				<image texture="/ui/main/shared/textures/circular.tga" y="-36s" align="center" valign="center" width="110s" height="110s" color="#02eaff" noclick="1"/>
+				<image texture="/ui/main/shared/textures/clock.tga" y="-36s" align="center" valign="center" width="60s" height="60s" noclick="1"/>
 			</panel>
 			
 			<!-- More Info -->
@@ -124,7 +130,7 @@
 					<instance name="playScreenOption" id="1" artTexture="gamemode_std" artSize="100" artY="-16%" artX="0" title="pre_play_pvp" details="pre_play_pvp_desc" moreinfo="1" visible="1" />
 					<instance name="playScreenOption" id="2" artTexture="gamemode_bots" artSize="100" artY="-16%" artX="0" title="pre_play_pve" details="pre_play_pve_desc" visible="1" />
 					<instance name="playScreenOption" id="3" artTexture="gamemode_ranked" artSize="100" artY="-16%" artX="0" title="pre_play_ranked" details="pre_play_ranked_desc" moreinfo="1" visible="1" />
-					<instance name="playScreenOption" id="4" artTexture="gamemode_scrim" artSize="100" artY="-16%" artX="0" title="pre_play_scrim" details="pre_play_scrim_desc" visible="1" />
+					<instance name="playScreenOption" id="4" artTexture="gamemode_scrim" artSize="100" artY="-16%" artX="0" title="pre_play_scrim" details="pre_play_scrim_desc" soon="1" visible="1" />
 					<instance name="playScreenOption" id="5" artTexture="gamemode_kq" artSize="100" artY="-16%" artX="0" title="pre_play_khan" details="pre_play_khan_desc" moreinfo="1" visible="1" />
 				</panel>
 			</panel>
