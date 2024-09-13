@@ -1775,6 +1775,9 @@ local function InitMainChat()
 			
 			ChatClient.ForceInterfaceUpdate()	
 			
+            -- Adding club tab to chat tabs
+            -- Disabled until Clubs reimplemented again
+			--[=====[
 			libThread.threadFunc(function(thread)
 				local channelID = 'Clan'
 				local npeComplete = (NewPlayerExperience.trigger.tutorialProgress >= NPE_PROGRESS_TUTORIALCOMPLETE) or (NewPlayerExperience.trigger.tutorialComplete) or (not NewPlayerExperience.enabled)
@@ -1801,7 +1804,8 @@ local function InitMainChat()
 				wait(1)
 				RecalculateFooterWidgets()
 
-			end)			
+			end)
+			--]=====]
 			
 		elseif (triggerPanelStatus.chatConnected) and (triggerPanelStatus.chatConnectionState == 0) then
 
