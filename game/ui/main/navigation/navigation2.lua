@@ -448,7 +448,8 @@ local function navigationRegister(object)
 			breadCrumbWidgets[n] = widget
 			if (breadCrumbsTable[n].onclick) then widget:SetCallback('onclick', breadCrumbsTable[n].onclick) end
 			if (breadCrumbsTable[n].enabled == false) then
-				mainUI.setBreadcrumbsEnabled(n, false)
+                local disabledTooltip = breadCrumbsTable[n].disabledTooltip or nil
+				mainUI.setBreadcrumbsEnabled(n, false, disabledTooltip)
 			end
 			local width = math.max(GetStringWidth('maindyn_16',breadCrumbsTable[n].text), minWidth)
 			width = width + ((hasIcon and main_top_breadcrumb_Parent:GetWidthFromString('16s')) or 0)

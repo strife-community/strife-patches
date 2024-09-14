@@ -557,11 +557,11 @@ function playerProfileRegister(object)
 		{text='player_profile_hero_progress', 	  onclick=function(widget) setSection('heroes'      ) end, group="profile_menu_group", id="playerProfileSectionTabHeros"},
 		{text='karma_status_1', 	              onclick=function(widget) setSection('karma1(????)') end, group="profile_menu_group", id="playerProfileSectionTabStanding", visible="false"},
 		{text='karma_status_2', 	              onclick=function(widget) setSection('karma2(????)') end, group="profile_menu_group", id="playerProfileSectionTabStanding2", visible="false"},
-		{text='achievements_gamequests', 	      onclick=function(widget) setSection('quests') end, group="profile_menu_group", id="playerProfileSectionTabQuests"},
+		{text='achievements_gamequests', 	      onclick=function(widget) setSection('quests') end, group="profile_menu_group", id="playerProfileSectionTabQuests", enabled=false, disabledTooltip='party_finder_comingsoon_feature_locked'},
 		{text='player_profile_referafriend_title',onclick=function(widget) setSection('referafriend') end, group="profile_menu_group", id="playerProfileSectionTabReferAFriend", visible="false"},
 		{text='player_profile_strifeapp_title',   onclick=function(widget) setSection('strifeapp'   ) end, group="profile_menu_group", id="playerProfileSectionTabStrifeApp", visible="false"},
 		{text='player_profile_khanquest_manager', onclick=function(widget) setSection('khanquest'   ) end, group="profile_menu_group", id="playerProfileSectionTabKhanquest", visible="false"},
-		{text='ladder_title', 					  onclick=function(widget) setSection('ladder'   ) end, group="profile_menu_group", id="playerProfileSectionTabLadder"}
+		{text='ladder_title', 					  onclick=function(widget) setSection('ladder'   ) end, group="profile_menu_group", id="playerProfileSectionTabLadder", enabled=false, disabledTooltip='party_finder_comingsoon_feature_locked'}
 	}
 
 	-- anim overall
@@ -747,6 +747,10 @@ function playerProfileRegister(object)
 	local sectionStrifeApp					= object:GetWidget('playerProfile_strifeapp')
 
 	container:RegisterWatchLua('featureMaintenanceTrigger', function(widget, trigger)
+        --TheChiprel: While it is a nice concept, featureMaintenance is not ready to be used:
+        --  1) there are no required Cvars in client;
+        --  2) implementation doesn't check starting values
+        --[=====[
 		breadCrumbsTable[selectionMap['khanquest']].enabled = not (mainUI.featureMaintenance and mainUI.featureMaintenance['khanquest'])
 		breadCrumbsTable[selectionMap['referafriend']].enabled = not (mainUI.featureMaintenance and mainUI.featureMaintenance['referafriend'])
 		breadCrumbsTable[selectionMap['strifeapp']].enabled = not (mainUI.featureMaintenance and mainUI.featureMaintenance['strifeapp'])
@@ -767,6 +771,7 @@ function playerProfileRegister(object)
 			mainUI.setBreadcrumbsEnabled(selectionMap['strifeapp'], breadCrumbsTable[selectionMap['strifeapp']].visible)
 			mainUI.setBreadcrumbsEnabled(selectionMap['ladder'], breadCrumbsTable[selectionMap['ladder']].visible)
 		end
+        --]=====]
 	end, false, nil)
 
 	-- ==
