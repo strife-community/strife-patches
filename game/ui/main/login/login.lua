@@ -881,8 +881,11 @@ function loginRegister(object)
 			local showing = false
 			if (LoginStatus.launchedViaSteam) then
 				if (SteamLoginNeedToCreateAccount.needToCreateAccount) and (not LoginStatus.loggedInViaSteam) and (not LoginExtraInfoTrigger.linkingSteamAccount) and (not LoginExtraInfoTrigger.linkedSteamAccount) then
-					mainUI.ShowSplashScreen('splash_screen_steam_link')
-					showing = true
+                    -- Prompt to create account or link existing.
+                    -- Disabled, since only creating account with Steam avaliable, creating account right away instead
+                    --mainUI.ShowSplashScreen('splash_screen_steam_link')
+                    Login.AttemptCreateSteamAccount()
+					showing = false
 					libGeneral.fade(widget, false, 250)	
 				elseif (LoginExtraInfoTrigger.linkingSteamAccount) and (not LoginExtraInfoTrigger.linkedSteamAccount) then
 					showing = ( triggerMainPanelStatus.main == 0 and triggerGamePhase.gamePhase == 0 and (not LoginStatus.isLoggedIn) and (((LoginStatus.launchedViaSteam) and (LoginExtraInfoTrigger.linkingSteamAccount)) or (not LoginStatus.externalLogin) or ((LoginStatus.launchedViaSteam) and (not LoginStatus.loggedInViaSteam))))
