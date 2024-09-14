@@ -151,7 +151,8 @@ function buyGemsRegister(object)
 	end
 	
 	function buyGemsShow()
-		container:FadeIn(250)	
+        -- Disabled buying gems window, since microtransactions are not avaliable
+		--container:FadeIn(250)	
 	end
 	
 	function buyGemsClose()

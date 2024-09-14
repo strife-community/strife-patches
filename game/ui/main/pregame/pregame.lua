@@ -1713,9 +1713,13 @@ local function updatePurchasePreview()
 end
 
 local function updatePetPreviewPurchaseButton()
+    local originalCost																= purchaseInfo.gemSaving + purchaseInfo.gemTotal
+    local gemOffer 																	= LuaTrigger.GetTrigger('GemOffer')
+    local currentGems																= gemOffer.gems
 
 	local button = GetWidget('main_pregame_customization_purchase_pet_confirm')
 	local label = GetWidget('main_pregame_customization_purchase_pet_confirmLabel')
+    local needgems_button = GetWidget('main_pregame_purchase_pet_cosmetic_product_needgems_btn_2')
 	
 	if (purchaseInfo.purchasingPetSkin) then
 		label:SetText(Translate('hallofheroes_unlock'))
@@ -1726,7 +1730,7 @@ local function updatePetPreviewPurchaseButton()
 		label:SetText(Translate('general_select'))
 		button:SetCallback('onclick', function() GetWidget('main_pregame_pet_selection_container'):FadeOut(125) end)		
 	end	
-	
+    needgems_button:SetVisible(((purchaseInfo.gemTotal) and (currentGems) and (purchaseInfo.gemTotal > currentGems)) or false)
 end
 
 local function updateHowToViewButton(heroTrigger)
