@@ -144,7 +144,8 @@
 		
 		<panel name="player_card_purchase_bonus" visible="0" y="-25s" x="-5s" height="32s" width="32s" noclick="0">
 			<!-- Boost On -->
-			<panel name="player_card_purchase_bonus_boost" noclick="1" visible="1" height="24s" width="24s" rotation="0" y="29s" x="140s">						
+            <!-- Disabled, since microtransactions are not avaliable -->
+			<panel name="player_card_purchase_bonus_boost" noclick="1" visible="0" height="24s" width="24s" rotation="0" y="29s" x="140s">						
 				<image name="player_card_purchase_bonus_boost_icon" texture="/ui/main/shared/textures/acct_boost_on.tga" noclick="1" color="1 1 1 1" />						
 				<modelpanel name="player_card_purchase_bonus_boost_fx" visible="0" height="100%" width="100%"
 					noclick="true"
