@@ -1,0 +1,3978 @@
+// Game Mechanics 
+AttackType_none												无
+AttackType_melee												近战
+AttackType_ranged												远战
+
+EffectType_Attack												攻击
+EffectType_AttackDamage												物理伤害
+EffectType_Magic												魔法
+EffectType_StatusBuff												增益效果
+EffectType_StatusDebuff												损益效果
+EffectType_StatusDisable
+EffectType_StatusStealth
+EffectType_Push												推线
+EffectType_Splash												溅射
+EffectType_DOT
+EffectType_Buff
+EffectType_Returned
+EffectType_CrowdControl												群体控制
+
+ImmunityType_MagicImmunity1												魔法免疫
+ImmunityType_AncientImmunity												远古免疫
+ImmunityType_BossImmunity
+ImmunityType_SiegeImmunity												围攻免疫
+ImmunityType_TargetingImmunity												目标免疫
+ImmunityType_GadgetImmunity												装置免疫
+ImmunityType_CourierImmunity
+ImmunityType_AttackImmunity
+ImmunityType_IndirectImmunity
+ImmunityType_AncientImmunity2
+ImmunityType_PhysicalImmunity
+ImmunityType_BarrierImmunity
+
+Constant_power												能量
+Constant_damage												基础伤害  
+Constant_pure_damage												纯伤害
+Constant_damage_per_charge												每次充能的基础伤害
+Constant_damage_max												最大基础伤害
+Constant_power_reduction												减少%能量
+Constant_power_steal											%能量偷取
+Constant_attack_charged											额外物理伤害 
+Constant_percent_bonus_damage									%额外伤害 
+Constant_damage_increase												增加%伤害
+Constant_percent_damage											%伤害
+Constant_percent_hp_damage										%生命值/秒 
+Constant_magic_damage_increase												增加%魔法伤害
+Constant_attackspeed_percentreduction												减少%攻速
+Constant_damage_increase_attackbase												增加%基础物理伤害
+Constant_damage_dot												一段时间内所受的基础伤害
+Constant_damage_increase_charges												每次充能增加%伤害
+Constant_damage_reduction												减少%伤害
+Constant_attack_damage_reduction                             减少%物理伤害
+Constant_attack_bonus												基础物理伤害加成
+Constant_shield												基础护盾
+Constant_heal												基础治疗
+Constant_percent_regen												回复%最大生命值
+Constant_percent_maxhp											%最大生命值
+Constant_percent_mana_regen												回复%最大法力值
+Constant_percent_heal												%治疗
+Constant_max_damage_increase												+最大基础伤害
+Constant_attackspeed												攻击速度
+Constant_movespeed												移动速度
+Constant_bonus_attacks												攻击(次)数
+Constant_resistance												坚韧
+Constant_mitigation												格挡
+Constant_botharmor												魔法抗性&护甲  
+Constant_abilityresistencereduction											魔法抗性减免
+Constant_penetration											穿刺
+Constant_taperingslow												逐渐减少%的移动速度
+Constant_slow												减少%移动速度
+Constant_slow_duration												减速效果持续时间
+Constant_slow_max												最多减少%移动速度
+Constant_slow_per_charge												每次充能减少%移动速度
+Constant_mana												已回复的法力值
+Constant_stun												晕眩持续时间
+Constant_ability_resistance_per_charge												每次充能的魔法抗性
+Constant_armor_per_charge												每次充能的护甲
+Constant_armor_reduction												护甲穿刺
+Constant_armor												护甲加成
+Constant_armor_pierce_percent									%护甲穿刺
+Constant_resistance_reduction									坚韧减成
+Constant_magic_armor												魔法抗性
+Constant_cost_hp												基础生命值消耗
+Constant_damage_per_second												基础伤害/秒
+Constant_damage_per_second_charges												每次充能的基础伤害/秒
+Constant_duration												持续时间
+Constant_range												射程加成
+Constant_cooldown_reduction												减少技能冷却时间
+Constant_multicast_chance												%多路传送的机会
+Constant_health												生命值
+Constant_shield_max												最大基础护盾值
+Constant_max_percent_power_increase												最多增加%能量
+Constant_percent_power_increase									增加%能量
+Constant_lifesteal												偷取    
+Constant_bonus_damage												额外伤害
+Constant_numcharges												充能数
+Constant_max_charges												最大充能数
+Constant_splashpercent												溅射%
+Constant_fade												虚弱时间
+Constant_speedsteal												攻击速度偷取
+Constant_bonus_gold												额外金币
+Constant_number_of_icicles												冰柱数量
+Constant_recharge_time												充能时间
+Constant_attacksrequired												攻击次数
+Constant_basedamage_perhealth												基础伤害 / 生命值
+Constant_maxhp													最大生命值
+Constant_cc_reduction												减弱%控制效果
+Constant_critchance												暴击机会
+Constant_cooldown												冷却
+Constant_passive_testing												被动技能测试中
+Constant_shield_percent												护盾百分比
+Constant_armorreduce												减少%护甲
+Constant_absorb												承受%魔法伤害
+Constant_magic_damage_reduction									减少%魔法伤害 
+Constant_hpregen												生命值回复 
+Constant_percentdamagehealed									回复了%所受伤害
+Constant_numattacks												攻击数 
+Constant_cast_range												施法范围
+Constant_illusion_duration										假身持续时间 
+Constant_max_illusions											最多假神
+Constant_illusion_damage										假身造成%伤害
+Constant_immobilize												禁锢时长
+Constant_percent_hp_mana										%生命值/法力值
+Constant_move_attack_slow										减慢%移速/攻速
+Constant_number_of_bounces										弹跳次数  
+Constant_bonus_damage_pct										额外%伤害
+Constant_max_duration											最多持续
+Constant_execute_threshold										%最大生命值
+
+CrowdControl_Stun												晕眩
+CrowdControl_Slow												减速
+CrowdControl_Immobilize												禁锢
+
+Property_range_name												范围
+Property_cooldowntime_name												冷却时间
+Property_channeltime_name												传送时间
+Property_linecastrange_name												施法范围
+Property_areacastrange_name												施法范围
+Property_conecastrange_name												施法范围
+Property_casttime_name												施法时间
+Property_castactiontime_name												施法时间
+
+HeroCategory_cc												群控
+HeroCategory_magic												法系  
+HeroCategory_muc												多单位控制
+HeroCategory_physical												物理
+HeroCategory_protective												辅助
+HeroCategory_tank												肉盾
+
+StealthType_hero												英雄
+StealthType_item												道具
+StealthType_ward												眼
+StealthType_Unrevealable
+
+RevealType_ward												真视守卫
+RevealType_eye												侦查守卫                  
+RevealType_tower												塔
+
+ArmorType_normal												护甲
+ArmorType_magic												魔法抗性
+ArmorType_mitigation											格挡
+ArmorType_resistance											坚韧
+
+TargetScheme_null
+TargetScheme_all												全部
+TargetScheme_nothing
+TargetScheme_self												己方
+TargetScheme_enemy_units												敌方单位
+TargetScheme_enemy_heroes												敌方英雄
+TargetScheme_ally_units												己方单位
+TargetScheme_ally_heroes												己方英雄
+TargetScheme_all_units												全部单位
+TargetScheme_all_visible_units												所有可视单位
+TargetScheme_ally_ranged_units												己方远战单位
+TargetScheme_ally_ranged_heroes												己方远程英雄
+TargetScheme_ally_melee_units												己方近战单位
+TargetScheme_ally_buildings												己方建筑
+TargetScheme_enemy_units_and_Towers
+TargetScheme_enemy_objects												敌人目标
+TargetScheme_teleport_targets												传送目标
+TargetScheme_my_units												自身单位
+TargetScheme_owner
+TargetScheme_owned
+TargetScheme_trees												生命树
+TargetScheme_enemy_melee_units												敌方近战单位
+TargetScheme_enemy_creeps												敌方小兵
+TargetScheme_attack												攻击目标
+TargetScheme_attack_all												未限制攻击目标
+TargetScheme_bottle												主要目标
+TargetScheme_melee_units												近战单位
+TargetScheme_ranged_units												远战单位
+TargetScheme_visible_enemy_units												可视敌方单位
+TargetScheme_visible_enemy_heroes												可视敌方英雄
+TargetScheme_visible_enemy_objects												可视敌方目标
+TargetScheme_injured_ally_units												己方受损单位
+TargetScheme_enemy_units_and_trees												敌方单位和生命树
+TargetScheme_all_other_units												其他单位
+TargetScheme_all_other_organic_units												其他生物
+TargetScheme_enemy_buildings												敌方建筑
+TargetScheme_enemy_melee_heroes												敌方近战英雄
+TargetScheme_hook_targets												所有非攻城单位
+TargetScheme_enemy_units_and_corpses												敌方单位和死尸
+TargetScheme_nonneutral_enemy_units												非中立敌人
+TargetScheme_player_controlled_ally_units												由玩家操控的己方单位
+TargetScheme_all_nonhero_units												所有非英雄单位
+TargetScheme_other_heroes												其他英雄
+TargetScheme_my_other_units												已拥有的帮手
+TargetScheme_enemy_nonhero_units												非英雄的敌方单位
+TargetScheme_organic_enemy_units												敌方生物单位
+TargetScheme_organic_ally_units												己方生物单位
+TargetScheme_all_organic_units												所有生物
+TargetScheme_all_heroes												所有英雄
+TargetScheme_enemy_main_base_structure												敌方主要基础建筑
+TargetScheme_ally_well
+TargetScheme_all_other_nonboss_units												所有非终极敌人单位
+TargetScheme_boss
+TargetScheme_other_bosses
+TargetScheme_enemy_nonboss_units												非boss敌人
+TargetScheme_nonneutral_organic_enemy_units												非中立敌人
+TargetScheme_boss1
+TargetScheme_boss2
+TargetScheme_WellMarker
+TargetScheme_enemy_nonboss_npc_units												  非玩家角色
+TargetScheme_enemy_units_and_structures												敌方单位和建筑物
+TargetScheme_all_other_heroes												所有其他的英雄
+TargetScheme_ally_objects												己方目标
+TargetScheme_visible_organic_enemy_units
+TargetScheme_enemy_units_and_self
+TargetScheme_all_other_units_and_buildings
+TargetScheme_summoned_enemy_units
+TargetScheme_ally_creeps												己方小兵
+TargetScheme_enemy_ranged_heroes
+TargetScheme_all_other_nongadget_units
+TargetScheme_nonneutral_enemy_units_and_other_ally_heroes
+TargetScheme_electriceyes
+TargetScheme_other_ally_units
+TargetScheme_nonstealth_organic_enemy_units
+TargetScheme_nonboss_visible_enemy_units
+TargetScheme_nongadget_ally_units
+TargetScheme_nonboss_organic_enemy_units												敌方生物单位
+TargetScheme_neutral_aggro
+TargetScheme_enemy_creeps_and_corpses
+TargetScheme_my_pseudo_pets
+TargetScheme_ally_main_base_structure_and_trees
+TargetScheme_nonillusion_enemy_heroes
+TargetScheme_my_illusions
+TargetScheme_other_ally_heroes
+TargetScheme_nonillusion_other_ally_heroes												其他己方英雄
+TargetScheme_ray_units												机械单位
+TargetScheme_turret_targets
+TargetScheme_ally_units_and_structures
+TargetScheme_pseudo_pets
+TargetScheme_everything_but_towers
+TargetScheme_Zephyr_Cyclones
+TargetScheme_enemy_mana_units												法术类敌方单位
+TargetScheme_ally_mana_units												法术类己方单位
+TargetScheme_nonboss_organic_enemy_units_and_self
+TargetScheme_all_corpses
+TargetScheme_enemy_units_and_deniable												可反补的敌方单位    
+TargetScheme_ally_nonhero_units												己方非英雄单位
+TargetScheme_player_controlled_enemy_units												由玩家控制的敌方单位
+TargetScheme_all_nonhero_corpses												所有非英雄死尸
+TargetScheme_enemy_units_notmine
+TargetScheme_touchpowerup
+TargetScheme_all_units_except_couriers
+TargetScheme_Gauntlet_Gadget
+TargetScheme_heroes_only
+TargetScheme_movement
+TargetScheme_canattack
+TargetScheme_token
+TargetScheme_cheese
+TargetScheme_doombringer
+TargetScheme_enemy_and_willing_ally_heroes												敌方&己方英雄
+
+Popup_gold												+{value}
+Popup_experience												+{value}
+Popup_quest												新任务
+Popup_quest_complete												完成任务！
+Popup_hint												新提示
+Popup_critical												{value}!
+Popup_miss												未击中
+Popup_miss2												超出射程--未命中
+Popup_deny												被反补
+Popup_deflect												-{value}
+Popup_poison												{value}!
+Popup_bonus_damage												+{value}
+Popup_deflection												-{value}
+Popup_toofar												太糟糕了
+Popup_doublecast												双重施法
+Popup_pluspower													+能量
+Popup_plusmana													+法力 -冷却
+Popup_plushealth												+生命值
+Popup_cliffwalking												飞檐走壁!
+Popup_rockets													发射火箭!
+Popup_bonus_mana												+{value}+
+Popup_execution												+{value}!
+Popup_gainpower												+{value}能量
+Popup_invulnerable												无敌
+Popup_ccbreak													打断控制效果！ 
+Popup_abilityresistence												魔法抗性 
+Popup_loseint												-{value}智力
+Popup_creep_kill												$
+Popup_1s												1.0秒
+Popup_14s												1.4秒
+Popup_18s												1.8秒
+Popup_22s												2.2秒
+Popup_26s												2.6秒
+Popup_3s												3.0秒
+Popup_35s												最多3.5秒
+Popup_javoflight												{value}s!
+Popup_max												最多
+Popup_dot_physical_damage												{value}!
+Popup_timer												{value}
+Popup_timer_hero												{value}
+Popup_too_far												超出射程！
+Popup_homecoming_nogold												金币不足，不能使用。
+Popup_tower_damage												-{value}!
+Popup_multicast												多点传送
+Popup_checkpoint												到达目的地
+Popup_levelup												升级
+Popup_aggro												!!!
+Popup_attackdamage												{value}
+Popup_magicdamage												{value}
+Popup_healdamage												+{value}
+Popup_normaldamage												{value}
+Popup_itemreceived												[3.5h][3.5h][3.5h][3.5h][3.5h][3.5h]已接收！
+Popup_percentbonus												{value}%
+Popup_percentbonus_full											{value}%!
+Popup_deathprotect												死亡保护
+Popup_execute													被击杀!
+
+Popup_stat_movespeed											+{value}移动速度
+Popup_stat_maxhealth											+{value}最大生命值
+Popup_stat_maxmana												+{value}最大法力值
+Popup_stat_healthregen											+{value}生命回复
+Popup_stat_manaregen											+{value}法力回复
+Popup_stat_power												+{value}能量
+Popup_stat_basedamage											+{value}物理伤害
+Popup_stat_attackspeed											+{value}%攻击速度
+Popup_stat_armor												+{value}护甲
+Popup_stat_magicarmor											+{value}魔法抗性
+Popup_stat_mitigation											+{value}格挡
+Popup_stat_resistance											+{value}坚韧
+Popup_stat_attacklifesteal										+{value}%攻击偷取
+Popup_stat_magiclifesteal										+{value}%魔法偷取
+Popup_stat_reducedcooldowns										+{value}%冷却减成
+
+// Game Info
+Mode_Normal												全选
+Mode_RandomDraft												随机组队
+Mode_SingleDraft												指定英雄模式
+Mode_BanningDraft												弃保模式
+Mode_CaptainsDraft												队长指定
+Mode_CaptainsMode												队长模式
+Mode_Deathmatch												死亡匹配 
+Mode_BanningPick												征召模式    
+Mode_AllRandom												全部随机
+Mode_Invalid												无效
+
+Option_None												无
+Option_ForceRandom												强制随机
+Option_AlternateSelection												其他选择
+Option_NoRepick												不能重新选择英雄
+Option_NoSwap												不能交换英雄
+Option_NoAgility												筛除敏捷型英雄
+Option_NoIntelligence												筛除智力型英雄
+Option_NoStrength												筛除能量型英雄
+Option_AllHeroes												所有英雄
+Option_NoRespawnTimer												无重生计时器
+Option_DropItems												道具掉落 
+Option_NoPowerups												无道具
+Option_SuperCreeps												超级士兵
+Option_EasyMode												简单模式
+Option_DuplicateHeroes												选择相同英雄
+Option_ReverseSelection												反向选择
+Option_NoTopLane												接近上路
+Option_NoMiddleLane												接近中路
+Option_NoBottomLane												接近下路
+Option_AllowVeto												允许否决
+Option_ShuffleTeams												随机组队
+Option_AutoBalanceTeams												自动平衡
+Option_DevHeroes												英雄发育
+Option_TournamentRules												联赛规则
+Option_Hardcore												专家模式
+Option_DuplicateTeamHeroes												选择与对方队伍完全相同的英雄
+Option_Casual												休闲模式
+
+// Building_HellbourneStatic
+Building_HellbourneStatic_name												瞭望台
+
+// Building_HellbourneTower
+Building_HellbourneTower_name												防御塔  
+Building_Tutorial2_Tower_name												防御塔
+
+// Building_HellbourneBase
+Building_HellbourneBase_name												基地
+
+// Building_HellbourneRepeater4
+Building_HellbourneRepeater4_name												作战信号旗
+Building_HellbourneRepeater4_description
+
+// Building_HellbourneMeleeBarracks
+Building_HellbourneMeleeBarracks_name												充电水晶
+
+// Building_HellbourneRangedBarracks
+Building_HellbourneRangedBarracks_name												远战兵营
+
+// Building_HellbourneRepeater1
+Building_HellbourneRepeater1_name												圣地
+
+// Building_HellbourneRepeater2
+Building_HellbourneRepeater2_name												圣地
+
+// Building_HellbourneRepeater3
+Building_HellbourneRepeater3_name												圣地
+
+// Building_HellbourneStore
+Building_HellbourneStore_name												瞭望台
+
+// Building_HellbourneWell
+Building_HellbourneWell_name												生命泉水
+
+// Building_HellbourneWell_Attack
+
+// State_HellbourneHealingWell
+State_HellbourneHealingWell_name												生命泉水
+
+// Building_HellbourneWellStore
+Building_HellbourneWellStore_name												商城
+
+// Building_LegionStatic
+Building_LegionStatic_name												瞭望台
+
+// Building_LegionTower
+Building_LegionTower_name												防御塔
+
+// Building_LegionBase
+Building_LegionBase_name												基地
+Building_LegionBase_description												icon.tga
+
+// Building_LegionMeleeBarracks
+Building_LegionMeleeBarracks_name												充电水晶
+Building_LegionMeleeBarracks_description												icon.tga
+
+// Building_LegionRangedBarracks
+Building_LegionRangedBarracks_name												充电水晶
+Building_LegionRangedBarracks_description												icon.tga
+
+// Building_LegionRepeater1
+Building_LegionRepeater1_name												营房
+
+// Building_LegionRepeater2
+Building_LegionRepeater2_name												营房
+
+// Building_LegionRepeater3
+Building_LegionRepeater3_name												营房
+
+// Building_LegionStore
+Building_LegionStore_name												嘹望台
+
+// Building_LegionWell
+Building_LegionWell_name												生命泉水
+
+// Building_LegionWell_Attack
+
+// State_LegionHealingWell
+State_LegionHealingWell_name												治愈泉水
+State_LegionHealingWell_Tooltip_name						治愈泉水
+State_LegionHealingWell_description_simple					玩家可在快速此回复生命值和法力值！
+State_LegionHealingWell_name_FRAME_effect
+
+// Building_LegionWellStore
+Building_LegionWellStore_name												商城
+
+// Building_Outpost
+Building_Outpost_name												前哨站
+Building_Outpost_description												icon.tga
+
+// Ability_AutomatedCourier
+Ability_AutomatedCourier_Tutorial2_name												输送装备
+Ability_AutomatedCourier_Tutorial2_name:automated_courier_cancel												取消装备输送
+Ability_AutomatedCourier_Tutorial2_name:automated_courier_disabled												返回中  
+Ability_AutomatedCourier_Tutorial2_description_simple												主动使用后，浣熊信使将你购买的装备输送给你。如果装备库已满，信使会将多出来的装备放回储存包中。
+
+// Ability_AutomatedCourier
+Ability_AutomatedCourier_name												输送装备
+Ability_AutomatedCourier_name:automated_courier_cancel												取消装备输送
+Ability_AutomatedCourier_name:automated_courier_disabled												返回中 
+Ability_AutomatedCourier_description_simple												主动使用后，浣熊信使将你购买的装备输送给你。如果装备库已满，信使会将多出来的装备放回储存包中。
+
+Ability_AutomatedCourier_name:tutorialmod												输送装备
+Ability_AutomatedCourier_description_simple:tutorialmod												新手教程中不能使用此功能。
+
+// Ability_Taunt
+Ability_Taunt_name												嘲讽
+Ability_Taunt_name:disco_taunt												的士高嘲讽
+Ability_Taunt_name:gore_taunt												戈尔嘲讽
+Ability_Taunt_description
+Ability_Taunt_description_simple												此账号不能使用嘲讽技能。
+Ability_Taunt_description_simple:perks												嘲讽一个敌方英雄。使用嘲讽技能时，其他敌方英雄能获得你的视野。在40秒中内杀死被嘲讽的敌人可获得暴击机会。 
+Ability_Taunt_description_simple:standard_taunt												嘲讽一个敌方英雄。使用嘲讽技能时，其他敌方英雄能获得你的视野。在40秒中内杀死被嘲讽的敌人可获得暴击机会。 
+Ability_Taunt_description_simple:disco_taunt												嘲讽一个敌方英雄。使用嘲讽技能时，其他敌方英雄能获得你的视野。在40秒中内杀死被嘲讽的敌人可获得暴击机会。 
+Ability_Taunt_description_simple:gore_taunt												嘲讽一个敌方英雄。使用嘲讽技能时，其他敌方英雄能获得你的视野。在40秒中内杀死被嘲讽的敌人可获得暴击机会。 
+Ability_Taunt_IMPACT_effect												此账号不能使用嘲讽技能。
+Ability_Taunt_IMPACT_effect:perks												嘲讽目标英雄。使用嘲讽技能时，其他敌方英雄能获得你的视野。在40秒中内杀死被嘲讽的敌人可获得暴击机会。 
+Ability_Taunt_IMPACT_effect:standard_taunt												嘲讽目标英雄。使用嘲讽技能时，其他敌方英雄能获得你的视野。在40秒中内杀死被嘲讽的敌人可获得暴击机会。 
+Ability_Taunt_IMPACT_effect:disco_taunt												嘲讽目标英雄。使用嘲讽技能时，其他敌方英雄能获得你的视野。在40秒中内杀死被嘲讽的敌人可获得暴击机会。 
+Ability_Taunt_IMPACT_effect:gore_taunt												嘲讽目标英雄。使用嘲讽技能时，其他敌方英雄能获得你的视野。在40秒中内杀死被嘲讽的敌人可获得暴击机会。 
+
+
+// Ability_HeroExample1
+Ability_HeroExample1_name
+Ability_HeroExample1_description
+Ability_HeroExample1_description_simple
+
+// Ability_HeroExample2
+Ability_HeroExample2_name
+Ability_HeroExample2_description
+Ability_HeroExample2_description_simple
+
+// Ability_HeroExample3
+Ability_HeroExample3_name
+Ability_HeroExample3_description
+Ability_HeroExample3_description_simple
+
+// Ability_HeroExample4
+Ability_HeroExample4_name
+Ability_HeroExample4_description
+Ability_HeroExample4_description_simple
+
+// Hero_HeroExample
+Hero_HeroExample_name
+Hero_HeroExample_description
+Hero_HeroExample_role
+Hero_HeroExample_lore
+
+// Ability_Bastion1Bastact1_1
+Ability_Bastion1Bastact1_1_name											怒龙之火
+Ability_Bastion1Bastact1_1_description_simple							在巴斯顿面前区域对敌方造成范围伤害。
+Ability_Bastion1Bastact1_1_description									巴斯顿攻击最近的敌人，并对他面前的区域造成范围伤害。
+
+// Ability_Bastion1Bastact1_2
+Ability_Bastion1Bastact1_2_name											飞龙出击
+Ability_Bastion1Bastact1_2_description_simple							翻滚闪避
+Ability_Bastion1Bastact1_2_description									短距离翻滚，巴斯顿可闪避攻击他的敌人。 
+
+// Ability_Bastion1Bastact1_4
+Ability_Bastion1Bastact1_4_name											金龙守护  
+Ability_Bastion1Bastact1_4_description_simple							   为盟友提供被动生命值和护盾
+Ability_Bastion1Bastact1_4_description									 被动：增加$maxhp$最大生命值。主动：激活后为周围盟友提供一个等值你最大生命值$shield_percent$%的盾牌。  
+
+// Ability_Bastion1Bastact1_3
+Ability_Bastion1Bastact1_3_name											炽焰环绕
+Ability_Bastion1Bastact1_3_description_simple							延迟性伤害且使周围敌人减速 
+Ability_Bastion1Bastact1_3_description									巴斯顿召唤龙神炽焰，3秒后对周围敌人造成^o$damage$魔法伤害^*，且使其减速。在接下来的8秒内，巴斯顿增加^o$attack_bonus$物理伤害^*.
+
+// Hero_Bastion1Bastact1
+Hero_Bastion1Bastact1_name												巴斯顿
+Hero_Bastion1Bastact1_description										
+Hero_Bastion1Bastact1_role 
+
+// Ability_Vex1
+Ability_Vex1_name                    光波追踪
+Ability_Vex1_description              朝指定方向发射飞弹，造成最多^o$damage$魔法伤害^*，最多减少$slow$%移动速度。
+Ability_Vex1_description_simple         直线型技能伤害，减少移动速度
+
+// Ability_Vex2
+Ability_Vex2_name												飞弹弹幕
+Ability_Vex2_description												激活后，对附近三个敌人造成^o$damage$的魔法伤害^* ，持续超过6秒。如果维克斯身边只有一个敌人，那么对其造成的额外伤害最多可达70%。
+Ability_Vex2_description_simple												对周围敌人造成持续性伤害 
+
+// Ability_Vex3
+Ability_Vex3_name                        能量护罩
+Ability_Vex3_description                          消除目标盟友身上晕眩/减速效果并提供一个^o$shield$盾牌^*，使其可抵抗70%控制效果，持续2秒。
+Ability_Vex3_description_simple                    防御并减少群控效果
+
+// State_Vex_Ability3
+State_Vex_Ability3_Tooltip_name												能量护罩
+State_Vex_Ability3_description											盾牌激活后能抵挡70%晕眩/减速效果。	
+State_Vex_Ability3_description_simple						盾牌激活后能抵挡70%晕眩/减速效果。
+State_Vex_Ability3_name												能量护罩
+State_Vex_Ability3_name_FRAME_effect
+
+// Ability_Vex4
+Ability_Vex4_name												       传送轰击  
+Ability_Vex4_description											维克斯启用科技力量进行全屏传送，2秒后传送至指定地点并进行轰击，造成^o$damage$魔法伤害^*并造成晕眩效果，持续1秒。\n\n传送时若受到伤害，技能将冷却5秒。
+Ability_Vex4_description_simple												全屏传送、对敌人造成伤害和晕眩
+
+State_Vex_Ability4_Self_name												传送中。。
+
+// Hero_Vex
+Hero_Vex_name												维克斯
+Hero_Vex_description												通用型英雄，移动性高，适合游走杀人   
+Hero_Vex_role
+Hero_Vex_lore												Vexus 331 has a past shrouded in mystery. It is believed he originated from the mysterious cybernetic plane called Vorbis. Little else is known about Vex except for his strength in combat and his cold, calculating mentality. Vex has one overriding directive: to seek and destroy; and it plays out gloriously and mercilessly on the field of battle.
+
+
+// Ability_Carter1
+Ability_Carter1_name												火箭弹幕
+Ability_Carter1_description												卡特朝指定方向发射一枚导弹，对碰到的第一个敌人造成^o$damage$魔法伤害^* 。
+Ability_Carter1_description_simple												远程造成直线型伤害 
+
+// Ability_Carter2
+Ability_Carter2_name												雅克攻击 
+Ability_Carter2_description												对指定地点造成^o$damage$魔法伤害^*，减少$slow$%移动速度，持续4秒。
+Ability_Carter2_description_simple												范围伤害，减少移动速度 
+
+// Ability_Carter3
+Ability_Carter3_name												爆竹牢笼
+Ability_Carter3_description												在卡特周围施法出一个火圈，对火圈内的敌人造成每秒^o$damage_per_second$魔法伤害^*。      \n\n如果卡特的其他攻击技能穿过了此火圈，还能对敌人造成$damage_increase$%额外伤害。
+Ability_Carter3_description_simple												在火圈内的敌人受到伤害，且当技能穿过火圈，伤害加成。
+
+
+// Ability_Carter4
+Ability_Carter4_name												万弹齐发 
+Ability_Carter4_description												对敌人发射导引式加速飞弹。如果飞弹在5秒内击中了敌人，能对其造成^o$damage$魔法伤害^*且造成$stun$秒晕眩。
+Ability_Carter4_description_simple												导引式飞弹可造成晕眩和伤害  
+
+
+// Hero_Carter
+Hero_Carter_name												卡特	
+Hero_Carter_description												擅长造成远距离魔法伤害 
+Hero_Carter_role
+Hero_Carter_lore												Misfit are pyromaniac goblin brothers from Strife with a penchant for blowing up anything they come into contact with. As with most brothers that are close in age, they are nigh inseparable and constantly fighting with one another. Assuming one is not afraid of dying in an explosion, observing the trio in their chaotic dance of fireworks, gunpowder, and sibling rivalry can be quite amusing... from a safe distance of course.
+
+ 
+// Ability_Zaku1
+Ability_Zaku1_name										Bioswarm
+Ability_Zaku1_description								朝目标方向Target direction to channel Bioswarm, 造成每秒^o$damage_per_second$魔法伤害^*并且减少护甲/魔法抗性。\n\n减少最多$armor_reduction$护甲/魔法抗性，持续4秒。
+Ability_Zaku1_description_simple						channeled damage &护甲减成
+
+State_Zaku_Ability1_Channel_name						Bioswarm
+
+
+State_Zaku_Ability1_Tooltip_name						Bioswarm
+State_Zaku_Ability1_description							减成护甲和魔法抗性效果。
+State_Zaku_Ability1_description_simple					减成护甲和魔法抗性效果。
+State_Zaku_Ability1_name								Bioswarm
+State_Zaku_Ability1_FRAME_effect
+
+
+// Ability_Zaku2
+Ability_Zaku2_name										诱捕陷阱
+Ability_Zaku2_description								朝目标地点施放一个隐形陷阱。一旦有敌人踩到陷阱，在此区域里的所有敌人都会被禁锢，持续$immobilize$秒并造成^o$damage$^*伤害。\n\n最多只能同时存在两个陷阱。
+Ability_Zaku2_description_simple						禁锢陷阱
+
+// Ability_Zaku3
+Ability_Zaku3_name										回复蚕茧
+Ability_Zaku3_description								在地上施法出一个蚕茧。10秒后，一个盟军可通过右键点击蚕茧而回复^o$heal$生命值^*和$mana$法力值。\n\n最多只能同时存在3个蚕茧。
+Ability_Zaku3_description_simple						生命值/法力重生
+
+// Ability_Zaku4
+Ability_Zaku4_name										重生拥抱
+Ability_Zaku4_description								保护目标盟友远离死亡，持续6秒。如果在此时间内，盟友死亡，他们会迅速复活，拥有$percent_hp_mana$%生命值/法力值，并出现三只蟑螂协助攻击周围敌人。\n\n蟑螂每次可最多造成^o$damage$ 物理伤害^*且使敌人移动速度和攻击速度减少$move_attack_slow$%。
+Ability_Zaku4_description_simple						重生拥抱
+
+State_Zaku_Ability4_Tooltip_name						重生拥抱
+State_Zaku_Ability4_description							扎古在死亡后迅速重生。
+State_Zaku_Ability4_description_simple					扎古在死亡后迅速重生。
+State_Zaku_Ability4_name								重生拥抱
+State_Zaku_Ability4_FRAME_effect
+
+// Hero_Zaku
+Hero_Zaku_name											扎古
+Hero_Zaku_description									擅长提供支援
+Hero_Zaku_role
+Hero_Zaku_lore 
+
+
+// Ability_Bandito1
+Ability_Bandito1_name											Token Toss	
+Ability_Bandito1_description									Target direction to throw a token, dealing ^o$damage$ Magic damage^* and applying a $stun$ second stun to the first enemy hit.  \n\nIf your target is a hero, gain $bonus_gold$ gold.
+Ability_Bandito1_description_simple								minor stun and gold gain
+
+// Ability_Bandito2
+Ability_Bandito2_name											Searing Cards
+Ability_Bandito2_description									Activate to launch a burning card at each nearby enemy, dealing ^o$damage$ Magic Damage^* instantly, and another ^o$damage_dot$ Magic Damage^* over 3 seconds.
+Ability_Bandito2_description_simple								area damage
+
+
+// Ability_Bandito3
+Ability_Bandito3_name											Gambler's Fortune
+Ability_Bandito3_description									Target an ally to heal them for ^g$heal$ Health^* and grant 75 bonus movement speed for 3.5 seconds.
+Ability_Bandito3_description_simple								heal and speed buff
+
+// Ability_Bandito4
+Ability_Bandito4_name											Double Down
+Ability_Bandito4_description									Passively grants a $multicast_chance$% chance to refund an ability's cooldown and mana cost on use.\n\nActivate to guarantee your next ability will refund, and double the odds of additional abilities refunding for the next 8 seconds.  Once expired, you lose the passive completely for $cooldown$ seconds.
+Ability_Bandito4_description:doubledown							You've doubled down! Your chances to refund are doubled!
+Ability_Bandito4_description:doubledown_off						Double Down is on cooldown, and will not activate.
+Ability_Bandito4_description_simple								chance to refund ability cooldowns
+
+// Hero_Bandito
+Hero_Bandito_name												Bandito
+Hero_Bandito_description										specializes in healing and magic damage						
+Hero_Bandito_role
+Hero_Bandito_lore												Bandit.0 is an ex-slot machine droid from Vorbis. After a number of hacking attempts by unscrupulous casino patrons, Bandit.0 gained sentience and adopted a personality based on his most frequent users: brash, bold and competitive. Armed with attitude, random number generation, and years of gambling experience, he sees the Trials of Strife as a bracket tournament that he is destined to win.
+
+// Ability_Flak1
+Ability_Flak1_name											Extended Barrel	
+Ability_Flak1_description										Activate to gain 400 attack range and $attackspeed$ attack speed, but move 25% slower.  Reactivate to cancel early.
+Ability_Flak1_description_simple								range extension
+
+// Ability_Flak2
+Ability_Flak2_name											Explosive Shot
+Ability_Flak2_description										Target position to launch explosive grenade, dealing ^o$damage$^* Magic Damage, briefly stunning, and knocking away enemies.  Will also knock you away.
+Ability_Flak2_description_simple								area knock back and damage
+
+// Ability_Flak3
+Ability_Flak3_name											Weapon Upgrade
+Ability_Flak3_description										Grants a new upgrade each time you level this ability.^444\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.^*
+Ability_Flak3_description:Flak_Ability3_1					Grants a new upgrade each time you level this ability.\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n^444(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.^*
+Ability_Flak3_description:Flak_Ability3_2					Grants a new upgrade each time you level this ability.\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n^444(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.^*
+Ability_Flak3_description:Flak_Ability3_3					Grants a new upgrade each time you level this ability.\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n^444(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.^*
+Ability_Flak3_description:Flak_Ability3_4					Grants a new upgrade each time you level this ability.\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.
+Ability_Flak3_description_simple								assorted weapon upgrades
+
+// Ability_Flak4
+Ability_Flak4_name											EMP Cannon
+Ability_Flak4_description									Target direction to launch an EMP missle.  Upon reactivation, or contacting an enemy, the EMP explodes - slowing nearby enemies and lowering their Resistance by up to $resistance$.  More potent at closer ranges.
+Ability_Flak4_description_simple							massive slow and resistance reduction
+
+// Hero_Flak
+Hero_Flak_name												Flak
+Hero_Flak_description										Specializes in gun slingin'					
+Hero_Flak_role
+Hero_Flak_lore												Flak is the most effective bounty hunter in the Vorbis plane, armed with a powerful auto-cannon and an online gaming fixation. To cover the cost of weapon upgrades, pizza, and a 30 Petabit datalink, she is drawn to increasingly risky bounties. After picking off the juiciest targets in Vorbis, she was forced to raise her game and enter the Trials of Strife.
+
+
+// Ability_Iah1
+Ability_Iah1_name											沙堆精灵
+Ability_Iah1_description								在目标敌人前召唤出一个沙堆精灵，攻击此敌人时，每次攻击对其造成^o$damage$物理伤害^*且减慢其12%移动速度。\n\n沙堆精灵拥有艾哈最大生命值的$percent_maxhp$%。
+Ability_Iah1_description_simple								召唤小兵
+
+// Ability_Iah2
+Ability_Iah2_name											沙坑之殇
+Ability_Iah2_description										朝指定地点置放一个沙坑，陷入沙坑的敌人将受到^o$damage$魔法伤害^*，持续3秒。
+Ability_Iah2_description_simple								范围伤害并减速 
+
+// Ability_Iah3
+Ability_Iah3_name											风暴之怒
+Ability_Iah3_description									在艾哈周围施放出一个风暴，为周围盟友增添buff,他们受到的物理伤害将减少$attack_damage_reduction$%，攻击速度增加$attackspeed$，移动速度增加40。
+Ability_Iah3_description_simple								伤害减成，攻击速度增加
+
+State_Iah_Ability3_Allies_Tooltip_name						风暴之怒
+State_Iah_Ability3_Allies_description_simple				艾哈受到的物理伤害减少，攻击速度增加，并且移动更快。
+State_Iah_Ability3_Allies_name								风暴之怒
+State_Iah_Ability3_Allies_name_FRAME_effect
+
+// Ability_Iah4
+Ability_Iah4_name											日食
+Ability_Iah4_description										目标区域突然放晴。几秒之后，为盟友提供^o$heal$生命值^*且对敌人造成^o$damage$魔法伤害^*。
+Ability_Iah4_description_simple								全屏伤害和治愈
+
+// Hero_Iah
+Hero_Iah_name												艾哈
+Hero_Iah_description
+Hero_Iah_role												擅长推线，支援盟友
+Hero_Iah_lore 												Centuries ago, Iah was a princess who dabbled in mysticism and sorcery, until her younger brother betrayed her in order to take the throne for himself. Recently resurrected and empowered by the Nestran moon goddess, she has returned as a powerful priestess, and has entered the Trials of Strife with a thirst for vengeance	
+
+
+// Ability_Ray1
+Ability_Ray1_name												蜘蛛雷
+Ability_Ray1_description												在指定地点放置一枚地雷。敌人走近时，地雷会被激活，追逐敌人并在爆炸时对其造成^o$damage$魔法伤害^*。
+Ability_Ray1_description_simple												埋置地雷，造成伤害   
+
+// Ability_Ray2
+Ability_Ray2_name												能量力场
+Ability_Ray2_description											在指定区域施法出一个围栏，持续3秒。\n\n经过此区域的敌人会被晕眩$stun$秒且受到^o$damage$魔法伤害^*。
+Ability_Ray2_description_simple												施法出一块围栏，对敌人造成晕眩 
+
+// Ability_Ray3
+Ability_Ray3_name												霜冻
+Ability_Ray3_description											^被动技能^* \n被动为下一次攻击增加^o+$damage$额外物理伤害^*，逐渐减少敌人50%的移动速度。如果雷用此技能击杀一个单位，冷却时间将重置。
+Ability_Ray3_description_simple												为英雄的攻击提供额外伤害且造成减速  
+ 
+// Ability_Ray4
+Ability_Ray4_name												轰天雷   
+Ability_Ray4_description											 短暂延迟后，朝指定方向发射激光，对这一直线方向上的所有敌人造成^o$damage$魔法伤害^*。每受到一次敌人英雄攻击，激光的有效伤害都会减少15%。 
+Ability_Ray4_description_simple												    短暂延迟后造成直线伤害
+
+// Hero_Ray
+Hero_Ray_name												雷
+Hero_Ray_role
+Hero_Ray_description												善长群控并造成范围伤害
+Hero_Ray_lore												Ray is from the animal kingdom of Lyrie. As a young Caterwaul, Blip “Ray” Radius found he had a knack for invention. Using scraps, he built everything from shelters and furniture to fully-functional robots and speed racers. Ray then turned his talent into profit by building defensive mechanisms and weaponry, and selling them to the warring tribes of Lyrie. When that, however, didn’t prove enough of a challenge for his overactive brain, Ray set out for the Trials, seeking greater conquests among the heroes of the Planes.
+
+
+// Ability_Nikolai1
+Ability_Nikolai1_name												  重锤出击
+Ability_Nikolai1_description										 尼古莱激活重锤出击可连续快速的进行3次攻击，且攻击具有突进效果。其最后一次攻击会将敌人击飞。\n使用技能时，尼古莱的攻击造成$percent_damage$% 伤害。
+Ability_Nikolai1_description_simple									短暂增益攻击效果 
+
+// Ability_Nikolai2
+Ability_Nikolai2_name												 大地冲击
+Ability_Nikolai2_description										 尼古莱重击地面朝指定目标发射3道冲击波。每道冲击波造成^o$damage$^*魔法伤害并减速击中目标。/n被多道冲击波命中的敌人，将会从每一道额外的冲击波上受到30%的伤害。
+Ability_Nikolai2_description_simple									直线伤害、减速 
+
+// Ability_Nikolai3
+Ability_Nikolai3_name												永恒守护
+Ability_Nikolai3_description										尼古莱吸收周围敌军$percent_maxhp$%最大生命值，并将该伤害转化为等值的护盾。
+Ability_Nikolai3_description_simple									范围伤害，护盾增益效果 
+
+// Ability_Nikolai4
+Ability_Nikolai4_name												 深渊重击
+Ability_Nikolai4_description										 尼古莱冲刺向目标，抓住路径上第一个碰触到的敌方英雄，并跃向高空。在空中尼古莱仍可移动。 \n\n落地时，尼古莱会在小范围内造成^o$damage$^*魔法伤害。
+Ability_Nikolai4_description_simple									     单目标控制和群伤
+
+// Hero_Nikolai
+Hero_Nikolai_name													尼古莱
+Hero_Nikolai_role
+Hero_Nikolai_description 											擅长对单一目标造成伤害以及群体控制 
+Hero_Nikolai_lore													
+	
+// Ability_Claudessa1
+Ability_Claudessa1_name												龙之触角
+Ability_Claudessa1_description										对目标位置直线上的敌人造成^o$damage$魔法伤害^*。 \n\n在最大范围内，一条龙会从地面迸发而出，敲击攻击你的敌人，造成30%额外伤害。
+Ability_Claudessa1_description_simple								直线型伤害，拉近技能 
+
+// Ability_Claudessa2
+Ability_Claudessa2_name												熔融护盾
+Ability_Claudessa2_description										被动获得$resistance$坚韧。\n\n对目标盟友提供^o$heal$^*生命值治疗并将克劳迪赛的护盾提供给此盟友。
+Ability_Claudessa2_description_simple								提供治疗和伤害减免 
+
+// State_Claudessa_Ability2
+State_Claudessa_Ability2_Tooltip_name								熔融护盾
+State_Claudessa_Ability2_description								由于克劳迪赛的帮助，伤害获得减免。
+State_Claudessa_Ability2_description_simple							由于克劳迪赛的帮助，伤害获得减免。
+State_Claudessa_Ability2_name										熔融护盾
+State_Claudessa_Ability2_name_FRAME_effect
+
+// State_Claudessa_Ability2_NoPassive
+State_Claudessa_Ability2_NoPassive_Tooltip_name						熔融护盾
+State_Claudessa_Ability2_NoPassive_description						受熔融护盾的保护，伤害获得减免。
+State_Claudessa_Ability2_NoPassive_description_simple				受熔融护盾的保护，伤害获得减免。
+State_Claudessa_Ability2_NoPassive_name								熔融护盾
+State_Claudessa_Ability2_NoPassive_name_FRAME_effect
+
+// Ability_Claudessa3
+Ability_Claudessa3_name												龙之爪
+Ability_Claudessa3_description										^被动技能^* \n被动对下次攻击被动^o额外$damage$物理伤害^*。\n\n攻击速度会减慢$slow$%，持续2.5秒。 
+Ability_Claudessa3_description_simple								溅射型物理伤害且减速
+
+// Ability_Claudessa4
+Ability_Claudessa4_name												灼热大地
+Ability_Claudessa4_description										在周围持续造成范围性^o$damage$魔法伤害^*。 \n\n在接下来的10秒内，你周围的地面会燃烧，每秒对敌人造成^o$damage_dot$魔法伤害^*并减少$power_reduction$%能量。
+Ability_Claudessa4_description_simple								范围伤害，减少能量。
+
+// State_Claudessa_Ability4
+State_Claudessa_Ability4_Tooltip_name								灼热大地
+State_Claudessa_Ability4_description								你正受到持续性伤害，且能量已减少。
+State_Claudessa_Ability4_description_simple							你正受到持续性伤害，且能量已减少。
+State_Claudessa_Ability4_name										灼热大地
+State_Claudessa_Ability4_name_FRAME_effect
+
+// Hero_Claudessa
+Hero_Claudessa_name													克劳迪赛
+Hero_Claudessa_role													肉盾
+Hero_Claudessa_description 											擅长辅助盟友，伤害敌人。
+Hero_Claudessa_lore													
+
+
+
+
+// Ability_Vermillion1
+Ability_Vermillion1_name												岩浆波流
+Ability_Vermillion1_description												对指定地点造成^o$damage$魔法伤害^*，减少35%移动速度，持续$slow_duration$秒。 
+Ability_Vermillion1_description_simple												范围伤害，减少移动速度  
+
+
+// Ability_Vermillion2
+Ability_Vermillion2_name												双管齐发
+Ability_Vermillion2_description												^被动技能^* \n在每$attacksrequired$次攻击后，下次攻击会穿刺此条路径上所有敌方单位，对其造成+$damage_increase$%物理伤害。
+Ability_Vermillion2_description_simple												不定期溅射型攻击 
+
+
+// Ability_Vermillion3
+Ability_Vermillion3_name												死亡之眼
+Ability_Vermillion3_description												^被动技能^*  \n被动增加$range$攻击范围，且增加^o+$attack_bonus$^*基础物理伤害。 
+Ability_Vermillion3_description_simple											 增加攻击范围和伤害
+
+// Ability_Vermillion4
+Ability_Vermillion4_name												火箭弹射
+Ability_Vermillion4_description												对指定地点造成^o$damage$魔法伤害^*，晕眩敌人$stun$秒。发射火箭弹时，弗米利恩会后仰倒地。
+Ability_Vermillion4_description_simple												范围晕眩/伤害 
+
+State_Vermillion_Ability4_name												集火
+
+
+// Hero_Vermillion
+Hero_Vermillion_name												弗米利恩 
+Hero_Vermillion_description												远程物理伤害型英雄
+Hero_Vermillion_role												远程物理伤害型英雄
+Hero_Vermillion_lore												Vermillion is a bounty hunter from the jungles of Lyrie. A resourceful loner, the vermin has a reputation of having “killed a million renegades.” He plays by his own rules - namely, half up front. Using his sharp-shooting skills and his deadly shoulder cannon, Vermillion is quickly becoming one of the deadliest participants in the Trials.
+
+
+// Ability_Trixie1
+Ability_Trixie1_name          巫毒药罐
+Ability_Trixie1_description         特里克茜抛射一个药罐，可以弹跳2次，每次弹射可造成^o$damage$魔法伤害^*，并且减速击中目标。 药罐会弹跳三次。\n\n第一次弹跳会造成50%的伤害，第二次会造成100%伤害，第三次造成150%伤害。
+Ability_Trixie1_description_simple       范围伤害，减速
+
+
+// Ability_Trixie2
+Ability_Trixie2_name                  无情冲刺
+Ability_Trixie2_description           特里克茜翻滚一掉段距离，移除自身的减速效果并得到一个^o$shield$护盾^*持续4秒。 \n\n当横扫射线激活后，可同时使用此技能。
+Ability_Trixie2_description_simple       移动性强，护盾保护
+
+
+// Ability_Trixie3
+Ability_Trixie3_name          巫术射线
+Ability_Trixie3_description         特里克茜引导能量朝目标方向发射一枚有力的光波射线。受此光波攻击的第一个敌方英雄会受到^o$damage$魔法伤害/秒^*，持续5秒。\n\n在目标附近的敌人都会受到25%的伤害。
+Ability_Trixie3_description_simple       强力直线型伤害						
+
+// Ability_Trixie4
+Ability_Trixie4_name          妖术诅咒
+Ability_Trixie4_description         将目标区域的所有敌人变身为青蛙，让他们无法攻击或施法，持续$duration$秒。减速35%，并减少$armor_reduction$魔法抗性。 \n\n青蛙无法攻击敌人或使用技能。
+Ability_Trixie4_description_simple       大范围禁锢   
+
+// State_Trixie_Ability4
+State_Trixie_Ability4_Tooltip_name							嘶哑诅咒
+State_Trixie_Ability4_description							特里克茜将你变身成了一只青蛙！当下你不能进行攻击，不能施法并且速度被减慢。
+State_Trixie_Ability4_description_simple					特里克茜将你变身成了一只青蛙！当下你不能进行攻击，不能施法并且速度被减慢。
+State_Trixie_Ability4_name									嘶哑诅咒
+State_Trixie_Ability4_name_FRAME_effect
+
+
+// Hero_Trixie
+Hero_Trixie_name											特里克茜
+Hero_Trixie_description										远距离物理伤害型英雄
+Hero_Trixie_role												远距离物理伤害型英雄
+Hero_Trixie_lore 											Vermillion is a bounty hunter from the jungles of Lyrie. A resourceful loner, the vermin has a reputation of having “killed a million renegades.” He plays by his own rules - namely, half up front. Using his sharp-shooting skills and his deadly shoulder cannon, Vermillion is quickly becoming one of the deadliest participants in the Trials.
+
+
+// Ability_Caprice1
+Ability_Caprice1_name                    火药桶 
+Ability_Caprice1_description              对指定方向造成直线形^o$damage$魔法伤害^*。 短暂延迟后爆炸，并对直线上的敌人造成50%的额外伤害。
+Ability_Caprice1_description_simple       范围伤害
+
+
+// Ability_Caprice2
+Ability_Caprice2_name												千钧锚
+Ability_Caprice2_description												对目标地点造成^o$damage$魔法伤害^*，并晕眩敌人$stun$秒。
+Ability_Caprice2_description_simple												延迟型范围晕眩和伤害
+
+
+// Ability_Caprice3
+Ability_Caprice3_name                           活性挥发 
+Ability_Caprice3_description             ^被动技能^* \n凯普瑞丝对目标每攻击三次，下次攻击都会再对其造成额外^o$damage$魔法伤害^*。    
+Ability_Caprice3_description_simple          连续攻击可造成额外伤害
+
+// State_Caprice_Ability3
+State_Caprice_Ability3_Tooltip_name												引燃
+State_Caprice_Ability3_description_simple											当凯普瑞丝积攒到3个引燃充能后, 能对敌人造成额外的伤害。
+State_Caprice_Ability3_name												引燃
+State_Caprice_Ability3_name_FRAME_effect
+
+// Ability_Caprice4
+Ability_Caprice4_name												迅雷突击
+Ability_Caprice4_description												跳跃至目标地点，对最近的敌人造成^o$damage$魔法伤害^*。优先攻击敌方英雄。
+Ability_Caprice4_description_simple												跳跃至最近的敌人，对其造成伤害  
+
+
+// Hero_Caprice
+Hero_Caprice_name												凯普瑞丝
+Hero_Caprice_description												游走型英雄，可造成高伤害
+Hero_Caprice_role
+Hero_Caprice_lore												Caprice is a pirate Queen from the Plane of Lyrie. She spent her youth sailing the seas on her father's naval vessel. When she came of age, she set out on her own to make a name for herself. Much to her father's disapproval, she chose pirating as her calling and systematically dismantled her dear old daddy's naval fleet. No name is more feared or infamous in Lyrie than that of Caprice the pirate Queen!
+
+// Gadget_Tutorial_Observatory
+Gadget_Tutorial_Observatory_name									观察哨所
+
+// Ability_CapriceTutorial1
+Ability_CapriceTutorial1_name												火药桶
+Ability_CapriceTutorial1_description_simple											对指定方向造成直线形^o$damage$魔法伤害^*。 短暂延迟后火药桶爆炸，对直线上的敌人造成50%的额外伤害。
+
+
+// Ability_CapriceTutorial2
+Ability_CapriceTutorial2_name												千钧锚
+Ability_CapriceTutorial2_description_simple												对目标地点造成^o$damage$魔法伤害^*，并晕眩敌人$stun$秒。
+
+
+// Ability_CapriceTutorial3
+Ability_CapriceTutorial3_name												活性挥发 
+Ability_CapriceTutorial3_description_simple											^被动技能^* \n凯普瑞丝对目标每攻击三次，下次攻击都会再对其造成额外^o$damage$魔法伤害^*。 
+
+// State_CapriceTutorial_Ability3
+State_CapriceTutorial_Ability3_Tooltip_name												引燃
+State_CapriceTutorial_Ability3_description_simple											当凯普瑞丝积攒到3个引燃充能后, 能对敌人造成额外的伤害。
+State_CapriceTutorial_Ability3_name												引燃
+State_CapriceTutorial_Ability3_name_FRAME_effect
+
+// Ability_CapriceTutorial4
+Ability_CapriceTutorialB4_name												迅雷突击
+Ability_CapriceTutorialB4_description												跳跃至目标地点，对最近的敌人造成^o$damage$魔法伤害^*。
+
+
+// Hero_CapriceTutorial2
+Hero_CapriceTutorial2_name												凯普瑞丝
+Hero_CapriceTutorial2_description
+Hero_CapriceTutorial2_role
+
+Building_Tutorial_Tower_name					防御塔
+Hero_Tutorial_Boss_name												巴蒂尔
+Tutorial_Thief_Laning_name												强盗
+Tutorial_General_name												自卫队首领
+
+// Ability_Bo1
+Ability_Bo1_name												回旋战斧
+Ability_Bo1_description											  波大师投掷斧头，对敌人造成^o$damage$魔法伤害^并稍减慢其速度。斧头沿原轨迹返回并再对敌人造成一次伤害。
+Ability_Bo1_description_simple												 回旋斧头可造成直线伤害并减速敌人 
+
+
+// Ability_Bo2
+Ability_Bo2_name												狂暴
+Ability_Bo2_description												增加额外75移动速度且减少10%的伤害。4秒后，对附近敌人造成^o$damage$魔法伤害、晕眩$stun$秒。
+Ability_Bo2_description_simple												延迟型伤害和晕眩  
+
+
+// Ability_Bo3
+Ability_Bo3_name												恢复图腾
+Ability_Bo3_description												   波大师在自己身旁召唤出一个波大师图腾。图腾每秒为周围己方英雄回复^o$percent_regen$%最大生命值^*。
+Ability_Bo3_description_simple												召唤出治疗图腾  
+
+State_Bo_Ability3_Regen_Tooltip_name						恢复图腾
+State_Bo_Ability3_Regen_description							波大师的图腾正在为你提供治疗。
+State_Bo_Ability3_Regen_description_simple					波大师的图腾正在为你提供治疗。
+State_Bo_Ability3_Regen_name								恢复图腾
+State_Bo_Ability3_Regen_FRAME_effect
+
+// Ability_Bo4
+Ability_Bo4_name												重拳出击
+Ability_Bo4_description												 波大师能迅速抓住直线上的敌人并将其推出一段距离，对其造成^o$damage$魔法伤害^*。 如果撞墙，那么所有敌人都会受到额外的50%伤害,并且眩晕秒。
+Ability_Bo4_description_simple												  冲撞一段距离后对敌人造成伤害并将敌人推出一段距离 
+
+// Hero_Bo
+Hero_Bo_name												波大师 
+Hero_Bo_description												攻击型肉盾, 擅长游走杀人
+Hero_Bo_role
+Hero_Bo_lore												Bo is from an ancient race of Lyrie longhorns called The Ryu-Bo. Long ago seeing the error in their savagery and explosive tempers, the Ryu-Bo have spent many years meditating upon peace and order within and without. One of the few warriors that has emerged from the now gentle race, Bo has entered the trials in order to teach others how to have inner peace amidst great trials. But, the frenzy of the Trials has often gotten the best of him, turning this teacher of peace into a raging inferno, leaving devastation in his path!
+
+// Ability_Bastion1
+Ability_Bastion1_name												怒龙之火  
+Ability_Bastion1_description												巴斯顿朝指定方向喷火，对敌人造成^o$damage$魔法伤害^*。
+Ability_Bastion1_description_simple												受到圆柱型伤害
+
+
+// Ability_Bastion2
+Ability_Bastion2_name												飞龙出击
+Ability_Bastion2_description												    巴斯顿向指定方向进行冲击，将途中的敌人击飞并造成^o$damage$魔法伤害，在击中第一名敌方英雄后停止，并对其造成^o$damage$魔法伤害和晕眩^o$stun$秒。  
+Ability_Bastion2_description_simple												冲撞以造成伤害和晕眩
+
+
+// Ability_Bastion3
+Ability_Bastion3_name												黄金护腕   
+Ability_Bastion3_description												被动提供$maxhp$最大生命值。激活后为周围盟友提供一个等值你最大生命值$shield_percent$%的盾牌。    
+Ability_Bastion3_description_simple												为盟友提供被动生命值和护盾
+
+// State_Bastion_Ability3
+State_Bastion_Ability3_Tooltip_name												奥瑞克斯护盾
+State_Bastion_Ability3_description_simple												巴斯顿为你提供了一个护盾。
+State_Bastion_Ability3_name												奥瑞克斯护盾
+State_Bastion_Ability3_name_FRAME_effect
+
+// Ability_Bastion4
+Ability_Bastion4_name												炽焰
+Ability_Bastion4_description												3秒后，对周围敌人造成^o$damage$魔法伤害^*，且使其减速。在接下来的8秒内，巴斯顿增加^o$attack_bonus$物理伤害^*.
+Ability_Bastion4_description_simple												  延迟性伤害且使周围敌人减速 
+
+// State_Bastion_Ability4_Buildup
+State_Bastion_Ability4_Buildup_Tooltip_name												充能中
+State_Bastion_Ability4_Buildup_description_simple												巴斯顿正准备释放一波伤害。
+State_Bastion_Ability4_Buildup_name												充能中
+State_Bastion_Ability4_Buildup_name_FRAME_effect
+
+// State_Bastion_Ability4_Immolation
+State_Bastion_Ability4_Immolation_Tooltip_name												牺牲
+State_Bastion_Ability4_Immolation_description_simple												巴斯顿喷出的火烧伤了周围的敌人。
+State_Bastion_Ability4_Immolation_name												牺牲
+State_Bastion_Ability4_Immolation_name_FRAME_effect
+
+// Hero_Bastion
+Hero_Bastion_name												巴斯顿
+Hero_Bastion_description												肉盾，擅长造成区域型魔法伤害
+Hero_Bastion_role
+Hero_Bastion_lore												Bastion was a slave boy in the Plane of Gael until, in a chance meeting, the mystical parlance of the Keeper LexiKhan revealed to him his prophetic destiny. That night, he escaped imprisonment with the help of a mystical Zidek dragon named Xander. Now Bastion and Xander fight in the Trials, helping to raise up the Army of Light and warning others of the coming darkness.
+
+
+// Ability_Fetterstone1
+Ability_Fetterstone1_name										水晶弹
+Ability_Fetterstone1_description								朝目标方向发射一枚水晶弹。当其接触到敌人后，水晶弹爆炸，造成^o$damage$魔法伤害^*且减速，减少$armorreduce$护甲。
+Ability_Fetterstone1_description_simple							直线型伤害，减速，护甲减免 
+
+// State_Fetterstone_Ability1
+State_Fetterstone_Ability1_Tooltip_name							水晶弹
+State_Fetterstone_Ability1_description_simple					菲特斯通增强敌人受到的伤害效果。 
+State_Fetterstone_Ability1_name									水晶弹
+
+// Ability_Fetterstone2
+Ability_Fetterstone2_name										防弹护盾
+Ability_Fetterstone2_description								提供一个等值于你最大生命值$shield_percent$%的护盾，持续3秒。 \n\n3秒后护盾爆炸，碎片击中最近的敌人英雄，造成^o$damage$魔法伤害^*。
+Ability_Fetterstone2_description_simple							提供护盾，造成伤害
+
+
+// Ability_Fetterstone3
+Ability_Fetterstone3_name										能源补给
+Ability_Fetterstone3_description								^被动技能^* \n你的攻击被动从敌人英雄处偷取$power_steal$%能量, 最多叠加三次。 \n\n被动增加$power$能量。
+Ability_Fetterstone3_description_simple							能量偷取，被动增加能量 
+
+// State_Fetterstone_Ability3
+State_Fetterstone_Ability3_Tooltip_name							能源补给
+State_Fetterstone_Ability3_description_simple					菲特斯通偷走了你部分能量。
+State_Fetterstone_Ability3_name									能源补给
+
+// Ability_Fetterstone4
+Ability_Fetterstone4_name										高爆弹
+Ability_Fetterstone4_description								菲特斯通使用其特殊的弹药，在接下来的9次攻击中，造成$damage_increase$%额外物理伤害和50%溅射伤害。
+Ability_Fetterstone4_description_simple							追踪单一目标，对其造成伤害 
+
+// State_Fetterstone_Ability4
+State_Fetterstone_Ability4_Tooltip_name							高爆弹
+State_Fetterstone_Ability4_description_simple					菲特斯通的攻击能造成额外伤害和50%溅射伤害。
+State_Fetterstone_Ability4_name									高爆弹
+
+
+// Hero_Fetterstone
+Hero_Fetterstone_name												菲特斯通
+Hero_Fetterstone_description											混合型攻击、法术英雄	
+Hero_Fetterstone_role												爆发伤害，远程英雄 
+Hero_Fetterstone_lore
+
+// Ability_Rook1_Bastact1
+Ability_Rook1_Bastact1_name												爪钩擒杀
+Ability_Rook1_Bastact1_description										洛克朝指定方向抛射吊钩，对敌人造成^o$damage$魔法伤害^*。 \n\n再次主动使用时可以将洛克拉至吊钩位置。  
+Ability_Rook1_Bastact1_description_simple								 造成直线型伤害，再次主动使用时能移动至指定位置
+
+
+// Ability_Rook2_Bastact1
+Ability_Rook2_Bastact1_name												无懈可击
+Ability_Rook2_Bastact1_description										施法后，洛克在1.5秒内是无敌的。     \n\n1.5秒后对最近的敌人造成^o$damage$魔法伤害^*，伤害值的多少取决于施法时间的长短。 
+Ability_Rook2_Bastact1_description_simple								无敌后对周围敌人造成伤害
+State_Rook_Ability2_Bastact1_name										无懈可击   
+
+// Ability_Rook3_Bastact1
+Ability_Rook3_Bastact1_name												贪婪箭术
+Ability_Rook3_Bastact1_description										被动技能 \n洛克连续攻击一个目标，被动造成^o$damage$叠加额外物理伤害^*，最多叠加5次。  \n\n洛克的后两次攻击的攻速都会增加。
+Ability_Rook3_Bastact1_description_simple							   对目标造成双倍攻击
+
+// State_Rook_Ability3_Enemy_Bastact1
+State_Rook_Ability3_Enemy_Bastact1_Tooltip_name							贪婪箭术
+State_Rook_Ability3_Enemy_Bastact1_description_simple					你正受到来自洛克的持续伤害。
+State_Rook_Ability3_Enemy_Bastact1_name									贪婪箭术
+
+// Ability_Rook4_Bastact1
+Ability_Rook4_Bastact1_name												夺命黑鸦
+Ability_Rook4_Bastact1_description											洛克朝指定方向射出一只乌鸦，对击中的第一个敌人英雄造成伤害和晕眩。     最多对目标造成^o$damage$魔法伤害^*且晕眩3.5秒。晕眩的时间取决于乌鸦飞行的距离。  
+Ability_Rook4_Bastact1_description_simple									晕眩敌人且造成伤害  
+
+// Hero_Rook_Bastact1
+ Hero_Rook_Bastact1_name										洛克
+ Hero_Rook_Bastact1_description										
+ Hero_Rook_Bastact1_role
+
+// Ability_Rook1
+Ability_Rook1_name												爪钩擒杀
+Ability_Rook1_description												  洛克朝指定方向抛射吊钩，对敌人造成^o$damage$魔法伤害^*。 \n\n再次主动使用时可以将洛克拉至吊钩位置。     
+Ability_Rook1_description_simple										 造成直线型伤害，再次主动使用时能移动至指定位置
+
+
+// Ability_Rook2
+Ability_Rook2_name												无懈可击
+Ability_Rook2_description												施法后，洛克在1.5秒内是无敌的。     \n\n1.5秒后对最近的敌人造成^o$damage$魔法伤害^*，伤害值的多少取决于施法时间的长短。 
+Ability_Rook2_description_simple												无敌后对周围敌人造成伤害
+State_Rook_Ability2_name												无懈可击   
+
+// Ability_Rook3
+Ability_Rook3_name												贪婪箭术
+Ability_Rook3_description											 ^被动技能^* \n洛克连续攻击一个目标，被动造成^o$damage$叠加额外物理伤害^*，最多叠加5次。  \n\n洛克的后两次攻击的攻速都会增加。
+Ability_Rook3_description_simple												    对目标造成双倍攻击
+
+// State_Rook_Ability3_Enemy
+State_Rook_Ability3_Enemy_Tooltip_name												贪婪箭术
+State_Rook_Ability3_Enemy_description_simple												你正受到来自洛克的持续伤害。
+State_Rook_Ability3_Enemy_name												贪婪箭术
+
+// Ability_Rook4
+Ability_Rook4_name												夺命黑鸦
+Ability_Rook4_description												洛克朝指定方向射出一只乌鸦，对击中的第一个敌人英雄造成伤害和晕眩。     最多对目标造成^o$damage$魔法伤害^*且晕眩3.5秒。晕眩的时间取决于乌鸦飞行的距离。  
+Ability_Rook4_description_simple												晕眩敌人且造成伤害  
+
+// Hero_Rook
+Hero_Rook_name												洛克
+Hero_Rook_description												远程型，高物理伤害英雄
+Hero_Rook_role
+Hero_Rook_lore												Rook is an elven archer from the forests of Gael. Seemingly coming from nowhere, he surfaced mysteriously from the forest during the elves’ darkest hour and led them on a successful campaign against the men of the east and west kingdoms, securing their liberty and becoming a living legend amongst the elven tribes. So much so, that some say he is not an elf at all, but an avenging spirit born out of the dark reaches of the forest itself.
+
+
+// Ability_Blazer1
+Ability_Blazer1_name											武装大炮
+Ability_Blazer1_description										主动使用后开始充能一支强有力的炮弹。重新主动使用时，发射此炮弹，对敌人造成最多^o$damage$魔法伤害^*。\n\n伤害和射程的多少取决于充能时间。（最多在1.2秒后）
+Ability_Blazer1_description_simple								直线伤害，重新主动使用后可急冲
+
+
+// Ability_Blazer2
+Ability_Blazer2_name											链条光波
+Ability_Blazer2_description										朝目标区域发射子弹。当子弹落地时，它会对最近的敌人英雄造成^o$damage$魔法伤害^*且将其束缚$duration$秒。
+Ability_Blazer2_description_simple								自身可抵挡伤害，对周围敌人造成伤害 
+
+State_Blazer_Ability2											链条光波
+State_Blazer_Ability2_description_simple						布雷泽用链条将敌人短暂拉扯至一个区域。
+State_Blazer_Ability2_name										链条光波
+
+// Ability_Blazer3
+Ability_Blazer3_name											神箭手
+Ability_Blazer3_description										被动为普攻添加^o$attack_bonus$^*物理伤害。\n\n不在攻击状态时，布莱泽加强镭光射击，造成$damage_increase$%额外伤害。
+Ability_Blazer3_description_simple								使用技能后对敌人造成双倍伤害 
+
+
+// Ability_Blazer4
+Ability_Blazer4_name											猎杀者
+//_Ability_Blazer4_description										主动使用将潜行$duration$秒。潜行时，布莱泽增加100移动速度并可侦察到3000范围内生命值在50%以下的敌人。 
+Ability_Blazer4_description_simple								全屏伤害，技能晕眩
+
+// Hero_Blazer
+Hero_Blazer_name												布莱泽
+Hero_Blazer_description											高移动性，远程攻击伤害英雄 
+Hero_Blazer_role
+Hero_Blazer_lore												Rook is an elven archer from the forests of Gael. Seemingly coming from nowhere, he surfaced mysteriously from the forest during the elves’ darkest hour and led them on a successful campaign against the men of the east and west kingdoms, securing their liberty and becoming a living legend amongst the elven tribes. So much so, that some say he is not an elf at all, but an avenging spirit born out of the dark reaches of the forest itself.
+
+
+
+// Ability_Hale1
+Ability_Hale1_name												横扫千军
+Ability_Hale1_description												向前冲刺并横扫，冲刺和横扫可造成^o$damage$魔法伤害^*，对同一目标进行多次攻击可造成75%伤害。 若在冲刺和横扫的重叠区域则会多受到50%额外伤害.
+Ability_Hale1_description_simple												冲撞后造成伤害  
+
+// Ability_Hale2
+Ability_Hale2_name												惯性之剑
+Ability_Hale2_description												激活后增加黑尔大刀的能量，使其下一次攻击在直线上造成^o$damage_increase$%额外伤害^*。 \n\n激活后能立即提高移动速度。
+Ability_Hale2_description_simple												下一次攻击造成直线型伤害    
+
+// Ability_Hale3
+Ability_Hale3_name												通冥术
+Ability_Hale3_description												激活后增加额外^o$attackspeed$攻击速度^*，持续5秒。在此期间，攻击为黑尔提供^o$percent_heal$%最大生命值^*治疗. 
+Ability_Hale3_description_simple												增加攻击速度和偷取的增益效果 
+
+// Ability_Hale4
+Ability_Hale4_name												震地术
+Ability_Hale4_description												大刀分解成无数把刺刀拔地而起，对周围敌人造成^o$damage$魔法伤害^*，晕眩$stun$秒。
+Ability_Hale4_description_simple												晕眩周围敌人并对其造成伤害
+
+// Hero_Hale
+Hero_Hale_name												黑尔
+Hero_Hale_description												近战、游走型、高物理伤害英雄	
+Hero_Hale_role
+Hero_Hale_lore												Hale, swordsman of the wastes, hails from a mysterious tribe of Elves – the Kenar-Ahdam – that eek out an existence in the ruins of Strife where they have been effectively exiled to by the other races of Gael as a result of suspicions that they are half-Dharkwave/half-Elf. As perpetual outcasts, the Kenar-Ahdam have remained largely insulated from the worlds around them and have preserved many of their old customs including Rhen-Dhit wherein the second son of the family is sent off to find fortune on their own so as not to challenge the first son for inheritance. Hale, second son of Mhernad, ventured forth to join in the Trials of Strife in order to win himself a place within his tribe, and his tribe a place amongst the rest of the races of the planes.
+
+// Ability_Shank1
+Ability_Shank1_name												地面粉碎器
+Ability_Shank1_description										激活后，粉碎你脚下的地面，造成^o$damage$魔法伤害并对周围敌人减速$slow$%
+Ability_Shank1_description_simple								减速，造成伤害
+
+// Ability_Shank2
+Ability_Shank2_name												越狱
+Ability_Shank2_description										为目标方向的盟友增速，并对敌人造成$taperingslow$%减速。
+Ability_Shank2_description_simple								直线型增速增益和减益效果 
+
+// State_Shank_Ability2
+State_Shank_Ability2_Tooltip_name								越狱
+State_Shank_Ability2_description_simple							善克帮你加快了移动速度。 
+State_Shank_Ability2_name										越狱
+
+// State_Shank_Ability2_Enemy
+State_Shank_Ability2_Enemy_Tooltip_name							越狱
+State_Shank_Ability2_Enemy_description_simple					善克减慢了你的移动速度。
+State_Shank_Ability2_Enemy_name									越狱
+
+// Ability_Shank3
+Ability_Shank3_name												狂乱
+Ability_Shank3_description										^被动技能^* \n被动造成攻击，三次攻击后得到$armor$护甲/魔法伤害和$attackspeed$攻击速度。buff持续4秒。
+Ability_Shank3_description_simple								在战斗中增加加护和攻击速度 
+
+// Ability_Shank4
+Ability_Shank4_name												束缚
+Ability_Shank4_description										朝目标方向投掷链条，附着于第一个被击中的敌人。目标被拉回到Shank身边并造成^o$damage$魔法伤害。
+Ability_Shank4_description_simple								远程链条
+
+// Hero_Shank
+Hero_Shank_name													善克
+Hero_Shank_description											近战英雄
+Hero_Shank_role
+Hero_Shank_lore													
+
+
+
+// Ability_GoKong1
+Ability_GoKong1_name										风火轮
+Ability_GoKong1_description								 孙悟空快速的挥舞金箍棒攻击身边所有敌人，对敌人造成额外的^o$bonus_damage$伤害^*，同时击飞并眩晕敌人。 
+Ability_GoKong1_description_simple							范围攻击，造成伤害
+
+// Ability_GoKong2
+Ability_GoKong2_name										腾云驾雾
+Ability_GoKong2_description								 孙悟空借助金箍棒跃向指定地点，对金箍棒击中的目标造成^o$damage$魔法伤害^*并减速。\n每攻击一次敌方单位，可以减少该技能2秒的冷却时间。
+Ability_GoKong2_description_simple							跳跃，减速
+ 
+// Ability_GoKong3
+Ability_GoKong3_name										随心所欲
+Ability_GoKong3_description								孙悟空操控金箍棒，增加自身^o$attack_bonus$的物理伤害伤害^*，同时攻击距离提升200，持续7秒。
+Ability_GoKong3_description_simple							额外攻击范围，速度加成
+
+// Ability_GoKong4
+Ability_GoKong4_name										 真假猴王
+Ability_GoKong4_description								 孙悟空召唤分身对身边每一个敌人英雄进行攻击，假身造成$illusion_damage$%伤害，可被击杀。\n重新激活该技能并选定分身，孙悟空可与假身交换位置。
+Ability_GoKong4_description_simple							施放假身，传送
+
+// Hero_GoKong
+Hero_GoKong_name											孙悟空
+Hero_GoKong_description									高移动、AD英雄
+Hero_GoKong_role
+Hero_GoKong_lore 										Gokong was born white-haired on a night without a moon.  In the Krymaton of Lyrie, this is an omen for greatness.  From very early on, he was always one step ahead of his peers in all contests of wit and agility.  Following a deadly border dispute with the Rafinks, Gokong challenged the Alpha - whose foolishness had led them into an ambush - for primacy.  In the ensuing battle, Gokong slew his opponent using an unknown technique and assumed role as Alpha of the Krymates.
+
+// Ability_Moxie1
+Ability_Moxie1_name												电击
+Ability_Moxie1_description												对敌人造成^o$damage$魔法伤害^*。对同一敌人的连续攻击可造成额外25%的伤害，叠加后最多造成额外100%的伤害。 
+Ability_Moxie1_description_simple												对同一目标连续攻击造成额外伤害
+
+State_Moxie_Ability1_name												静电触觉
+State_Moxie_Ability1_description												你正受到来自莫克茜的持续伤害。可连续叠加几次。	
+
+// Ability_Moxie2
+Ability_Moxie2_name												闪电风暴
+Ability_Moxie2_description											对直线上的敌人造成^o$damage$魔法伤害。每击打一次敌方英雄，莫克茜可回复$mana$法力值；攻击非敌方英雄可回复10法力值。
+Ability_Moxie2_description_simple												造成直线型伤害
+
+
+// Ability_Moxie3
+Ability_Moxie3_name												强化技
+Ability_Moxie3_description												^被动技能^* \n被动增加所有英雄$damage_increase$%的法术伤害并在每次施法时增加$movespeed$速度。
+Ability_Moxie3_description_simple												施法时增加移动速度并增加法术伤害
+
+// Ability_Moxie4
+Ability_Moxie4_name												雷霆万钧 
+Ability_Moxie4_description												选中目标范围，几秒后会对范围内的敌人造成^o$damage$魔法伤害^*且使其减速60%。\n\n在范围中心的敌人会受到额外^o$bonus_damage$^*的伤害并被减速。
+Ability_Moxie4_description_simple												延迟性范围伤害且减缓敌人速度
+Ability_Moxie4_effect_header
+Ability_Moxie4_IMPACT_effect
+Ability_Moxie4_tooltip_flavor												电流穿过我的裤子。
+
+
+// Hero_Moxie
+Hero_Moxie_name												莫克茜
+Hero_Moxie_description												擅长远程攻击	
+Hero_Moxie_role
+Hero_Moxie_lore												Moxie is a Lightning Cat from the sky realm of Nestra. He was born with the sacred lightning emblem on his chest, the prophetic symbol of the long-awaited savior of Nestra. Therefore, his people named him “The Mach Z,” according to legend. But, Moxie has shunned his savior heritage in preference of a quiet, restful life. To ultimately escape from his people, and their overbearing expectations of heroics and feats of greatness, Moxie has entered the Trials of Strife. There, snuggled up with his lightning yarn ball, he hopes to find refuge from his prophetic heritage (and hopefully get in a nap or two).
+
+
+// Ability_Ace1
+Ability_Ace1_name												冰冻旋风
+Ability_Ace1_description												激活后，对你周围的敌人造成^o$damage$魔法伤害^*。  
+Ability_Ace1_description_simple												对周围敌人造成伤害
+
+// Ability_Ace2
+Ability_Ace2_name												暴雪斩
+Ability_Ace2_description												跳跃至目标区域。对敌人造成^o$damage$魔法伤害^*且使其减速$taperingslow$%，持续3秒。
+Ability_Ace2_description_simple												跳跃至目标地，对其造成伤害且减速  
+
+
+// Ability_Ace3
+Ability_Ace3_name												霜冻
+Ability_Ace3_description												激活后艾斯能施法出$number_of_icicles$冰柱，减少$damage_reduction$%受到的伤害。     \n\n当被一个敌人攻击时，艾斯会消耗一根冰柱，对敌人造成^o$damage$魔法伤害^*且不断减慢敌人的速度$slow$%。
+Ability_Ace3_description_simple												减速且造成伤害 	
+
+
+// Ability_Ace4
+Ability_Ace4_name												死亡寒冰
+Ability_Ace4_description												对指定英雄造成^o$damage$魔法伤害^*，或者当他们最大生命值在$execute_threshold$%以下时可立即把他们击杀。\n\n如果英雄被杀死，艾斯可以回复其生命值和法力值的25%。
+Ability_Ace4_description_simple												造成伤害，杀敌后回复生命值和法力值 	
+
+
+
+// Hero_Ace
+Hero_Ace_name												艾斯           
+Hero_Ace_description												通用型英雄 
+Hero_Ace_role												瞬间爆发出伤害，肉盾型英雄 
+Hero_Ace_lore												Ace is from Tempra, where he gained his strength and notoriety fighting the wild beasts of the frozen ice mountains. In his hometown, he is a living legend (but nowhere more so than in his own mind). Ace’s cocky demeanor and hard-hitting ice fists have gained him a reputation as “The Pride of Tempra”. Now he fights in the trials, hoping to add more trophies to his mantle.
+
+
+// Ability_JinShe1
+Ability_JinShe1_name											鞭影突袭
+Ability_JinShe1_description									   花木兰挥击手中的长鞭，向指定方向释放火焰，对击中的敌方单位造成^o$damage$魔法伤害^*，并眩晕$stun$秒。\n当技能碰触到一个敌方单位或盟军后，技能范围会增大。
+Ability_JinShe1_description_simple								技能伤害、造成晕眩
+
+// Ability_JinShe2
+Ability_JinShe2_name											火焰之舞
+Ability_JinShe2_description									花木兰使用鞭子抽击周围敌人造成^o$damage$魔法伤害^*，且减少击中敌人 $armor_reduction$的魔法抗性，持续5秒，该效果可叠加。 \n花木兰的每次攻击可减少此技能2秒冷却时间。
+Ability_JinShe2_description_simple								范围型魔法伤害，减益效果
+
+
+// Ability_JinShe3
+Ability_JinShe3_name											长鞭弹射
+Ability_JinShe3_description										  蓄力跃向指定地点。\n落地后，花木兰将获得$armor$的护甲和魔法抗性，持续5秒。\n蓄力时，技能是会被敌方英雄的攻击所中断。
+Ability_JinShe3_description_simple								 远距离跳跃 
+
+State_JinShe_Ability3_Channel_name								Firefall..
+
+
+// Ability_JinShe4
+Ability_JinShe4_name											 火焰掌控
+Ability_JinShe4_description										 被动：花木兰的其他技能集中敌方单位后则召唤出一团火苗， 对火苗上的敌人造成每秒^o$damage_per_second$^*的魔法伤害。 \n主动：花木兰吸收四周散落的火苗，每株火苗对经过的敌人造成^o$damage$^*的魔法伤害。，同时回复花木兰2%最大生命值。
+Ability_JinShe4_description_simple								被动伤害，主动治疗/伤害 
+
+
+
+// Hero_JinShe
+Hero_JinShe_name												花木兰
+Hero_JinShe_description											近战英雄、高攻击频率投手、擅长游走杀人
+Hero_JinShe_role												持续性伤害、魔法伤害 
+Hero_JinShe_lore 												Jin She is a warrior of the Tao-Ahasna, a remote tribe settled in Tempra’s far east.  Little is known about her people, except that they have a peculiar affinity for fire.  Legend states that the spirit of Ahasna and its people are the only thing preventing Tempra’s frozen west from engulfing the entire plane.  Fiercely secretive, Jin She entered the Trials without explanation or invitation.  It was only her fierce disposition and unmatched skill with fire that convinced the Keepers to let her fight.
+
+// Ability_Midknight1
+Ability_Midknight1_name											Hookshot
+Ability_Midknight1_description									Target a direction to launch polearm. Upon contacting an enemy, pulls Midknight towards them dealing ^o$damage$ Magic Damage^*.
+Ability_Midknight1_description_simple							skill shot damage and mobility
+
+// Ability_Midknight2
+Ability_Midknight2_name											Night Blossom
+Ability_Midknight2_description									Activate to spin, dealing ^o$damage$ Magic Damage^* to nearby enemies. Enemies at the edge of the spin are also slowed.\n\nIf any enemies are hit along the edge, cooldown is reduced by 3 seconds.
+Ability_Midknight2_description_simple							area magic damage
+
+
+// Ability_Midknight3
+Ability_Midknight3_name											Absorb
+Ability_Midknight3_description									Activate to raise Midknight's shield for 3 seconds, negating the next stun/slow. If a stun or slow is negated, Midknight gains 60 movespeed and $power$ power for 5 seconds.
+Ability_Midknight3_description_simple							block cc and gain movespeed/power
+
+// Ability_Midknight4
+Ability_Midknight4_name											Chains of Judgement
+Ability_Midknight4_description									Activate to attach a link to all nearby enemy heroes, which breaks if they run too far.  Any heroes still linked after 3 seconds take ^o$damage$ Magic Damage^* and are stunned for $stun$ seconds.
+Ability_Midknight4_description_simple							aoe linked damage after delay
+
+// Hero_Midknight
+Hero_Midknight_name												Midknight
+Hero_Midknight_description										Melee bruiser
+Hero_Midknight_role												sustained damage, tank
+Hero_Midknight_lore 											MidKnight is part white knight, part black knight. He is seldom what he appears to be. Coming out of the order of the Knights of the Silver Sands of Tempra, he is dominating and set in his archaic ways. The question is, whose side is he on? Most likely, his own.
+
+// Ability_Harrower1
+Ability_Harrower1_name											掠夺侵袭
+Ability_Harrower1_description									哈洛尔朝指定方向冲刺一小段距离，并使他下一次攻击造成^o$attack_charged$^*额外的物理伤害。
+Ability_Harrower1_description_simple							急冲，下次攻击有增益效果
+
+// Ability_Harrower2
+Ability_Harrower2_name											灵魂伴侣
+Ability_Harrower2_description								哈洛尔召唤一头狼魂，攻击离哈洛尔最近的敌方英雄。狼魂会造成^o$damage$^*魔法伤害并减低敌人$slow$%的速度。 \n接下来狼魂会再随机对附近敌军进行$numattacks$攻击。 连续攻击造成33%伤害。
+Ability_Harrower2_description_simple							造成伤害，对敌方英雄减速
+
+// Ability_Harrower3
+Ability_Harrower3_name												伤痕之宴
+Ability_Harrower3_description								对目标造成伤害的友军可造成$damage_increase$%额外伤害，且$percentdamagehealed$%的伤害将会转换成生命值为其提供治疗。 
+Ability_Harrower3_description_simple							团队偷取，伤害减免 
+
+// State_Harrower_Ability3
+State_Harrower_Ability3_Tooltip_name							伤痕之宴
+State_Harrower_Ability3_description								哈洛尔使用伤痕之宴, 增加额外伤害，提供治疗。
+State_Harrower_Ability3_description_simple						哈洛尔使用伤痕之宴, 增加额外伤害，提供治疗。
+State_Harrower_Ability3_name										伤痕之宴
+
+
+// Ability_Harrower4
+Ability_Harrower4_name											 雪人出击
+Ability_Harrower4_description								哈洛尔变身雪人，获得$maxhp$生命值和额外移动速度。\n\n在雪人状态下，哈洛尔每三次攻击后，下一次攻击会造成$percent_bonus_damage$%额外伤害，并减速。(变身雪人的第一次攻击会造成额外伤害).
+Ability_Harrower4_description:harrower_melee					主动使用时，恢复成远战英雄，丧失所有雪人出击加成。
+Ability_Harrower4_description_simple							在近战和远战英雄间转变 
+
+
+
+// Hero_Harrower
+Hero_Harrower_name													哈洛尔
+Hero_Harrower_description											物理伤害制造者，近战/远战英雄
+Hero_Harrower_role													物理伤害制造者
+Hero_Harrower_lore 													
+
+
+
+// Ability_CapriceTutorial1
+Ability_CapriceTutorial1_name											火药桶
+Ability_CapriceTutorial1_description_simple								对指定方向造成直线形^o$damage$魔法伤害^*。 1.3秒后此直线爆炸，并对直线上的敌人造成50%的额外伤害。
+Ability_CapriceTutorial1_description												对目标方向造成直线形^o$damage$魔法伤害^*。 1.3秒后此直线爆炸，对直线上的敌人造成50%的额外伤害。
+
+
+// Ability_CapriceTutorial2
+Ability_CapriceTutorial2_name											千钧锚	
+Ability_CapriceTutorial2_description_simple								对目标地点造成^o$damage$魔法伤害^*，并晕眩敌人$stun$秒。
+Ability_CapriceTutorial2_description												对目标地点造成^o$damage$魔法伤害^*，并晕眩敌人$stun$秒。
+
+
+// Ability_CapriceTutorial3
+Ability_CapriceTutorial3_name											活性挥发
+Ability_CapriceTutorial3_description_simple										^被动技能^* \n凯普瑞丝对目标每消耗三个法系类攻击，都会对其造成^o$damage$魔法伤害^*。    \n\n技能冷却后，凯普瑞丝的下一次攻击能造成^o$bonus_damage$额外魔法伤害^*。
+Ability_CapriceTutorial3_description												^被动技能^* \n凯普瑞丝对目标每消耗三个法系类攻击，都会对其造成^o$damage$魔法伤害^*。    \n\n技能冷却后，凯普瑞丝的下一次攻击能造成^o$bonus_damage$额外魔法伤害^*。
+
+// State_CapriceTutorial_Ability3
+State_CapriceTutorial_Ability3_Tooltip_name								引燃
+State_CapriceTutorial_Ability3_description_simple					当凯普瑞丝积攒到3个引燃充能后, 能对敌人造成额外的伤害。
+State_CapriceTutorial_Ability3_name										引燃
+State_CapriceTutorial_Ability3_name_FRAME_effect
+
+// Ability_CapriceTutorial4
+Ability_CapriceTutorial4_name											迅雷突击
+Ability_CapriceTutorial4_description_simple								跳跃至目标地点，对最近的敌人造成^o$damage$魔法伤害^*。
+Ability_CapriceTutorial4_description												跳跃至目标地点，对最近的敌人造成^o$damage$魔法伤害^*。
+
+
+// Hero_CapriceTutorial
+Hero_CapriceTutorial_name												凯普瑞丝
+Hero_CapriceTutorial_description
+Hero_CapriceTutorial_role
+
+
+// Ability_Ladytinder1
+Ability_Ladytinder1_name												魔藤缠身
+Ability_Ladytinder1_description												  朝指定方向伸出藤条并将击中的第一个敌人拉至身旁，晕眩第一个攻击玛雅的敌人$stun$且对其造成^o$damage$魔法伤害^*.
+Ability_Ladytinder1_description_simple												  技能晕眩，抓住敌人并造成伤害
+
+// Ability_Ladytinder2
+Ability_Ladytinder2_name												上帝审判 
+Ability_Ladytinder2_description												为目标盟友提供 ^o$heal$^*生命值的治愈，来回弹跳3次。   或者也可以瞄准目标敌人，对其造成^o$heal$魔法伤害^*，并弹跳三次。
+Ability_Ladytinder2_description_simple												为盟友提供治疗或对敌人造成伤害
+State_Ladytinder_Ability2_Self_name												Imprison
+
+// Ability_Ladytinder3
+Ability_Ladytinder3_name												石皮防护      
+Ability_Ladytinder3_description												为己方英雄提供一个$shield_max$^*护盾。激活后为英雄增加$attackspeed$攻击速度，持续8秒。
+Ability_Ladytinder3_description_simple												提供的护盾可增加攻击速度  
+
+// State_Ladytinder_Ability3
+State_Ladytinder_Ability3_Tooltip_name												石皮护盾
+State_Ladytinder_Ability3_description_simple											玛雅女士为你提供了一个盾牌。
+State_Ladytinder_Ability3_name												石皮护盾
+State_Ladytinder_Ability3_name_FRAME_effect
+
+// Ability_Ladytinder4
+Ability_Ladytinder4_name												自然之子
+Ability_Ladytinder4_description												在目标地点召唤出一株植物，其具有玛雅女士60%的生命值，造成^o$damage$物理伤害^*,且位置固定。
+Ability_Ladytinder4_description_simple												召唤出一颗可攻击的植物 	
+
+// Hero_Ladytinder
+Hero_Ladytinder_name												玛雅女士
+Hero_Ladytinder_description												擅长为盟友提供治疗和护盾 
+Hero_Ladytinder_role
+Hero_Ladytinder_lore												Tinder is a majestic forest faerie from Gael. She has long been the sworn protector of a sacred patch of forest called “The Green Leaf” where it is believed all forest life began. Tinder is gentle and supportive, but she also has a fierce aspect to her nature which emerges when her allies are threatened. Along with her serpentine forest pet, Petals, Tinder is a formidable warrior in the Trials.
+
+
+Pet_Ladytinder_Ability4_name												自然之子
+
+
+// Ability_Malady1
+Ability_Malady1_name												死亡飓风
+Ability_Malady1_description												对指定方向造成^o$damage$魔法伤害^*，晕眩$stun$秒。
+Ability_Malady1_description_simple												造成直线型伤害且晕眩敌人	
+
+
+// Ability_Malady2
+Ability_Malady2_name												暗黑风暴
+Ability_Malady2_description												对目标地点的敌人造成^o$damage$魔法伤害^*并使其减速，持续超过7秒。
+Ability_Malady2_description_simple												造成范围伤害且减速敌人	
+
+
+// Ability_Malady3
+Ability_Malady3_name												黄金之门
+Ability_Malady3_description												在指定地点拖拉鼠标可以建起一堵墙，可持续4秒。对敌人来说，敌方小兵和英雄时无法越过这堵墙的。 而可通过此堵墙的友军可获得爆发式移速。
+Ability_Malady3_description_simple												建立一座不可逾越的墙	
+
+// Ability_Malady4
+Ability_Malady4_name												雷电
+Ability_Malady4_description												对目标敌人造成^o$damage$魔法伤害^*。
+Ability_Malady4_description_simple												高伤害
+
+State_Malady_Ability4_Channel_name												充能中
+
+
+// Hero_Malady
+Hero_Malady_name												麦乐迪
+Hero_Malady_description												擅长造成魔法伤害且有效群控
+Hero_Malady_role												群控，造成高魔法伤害  
+Hero_Malady_lore												Malady is a ruthless sky queen from a floating realm in the expanse of Nestra. She is accustomed to getting her way and will use whatever means are necessary to achieve her often ruthless ambitions. She is entitled, aloof, and quite deadly. Wielding the astral weather forces of Nestra, she storms in and leaves carnage in her wake. Few can stand before her royal fury.
+
+
+// Ability_Minerva1
+Ability_Minerva1_name												佐罗之剑
+Ability_Minerva1_description												密涅瓦冲向目标身后，对其造成^o$damage$魔法伤害^*，增加$attackspeed$攻击速度和15移动速度，持续6秒。	 
+Ability_Minerva1_description_simple												造成魔法伤害且增加攻击速度
+
+// State_Minerva_Ability1_Buff
+State_Minerva_Ability1_Buff_Tooltip_name												攻击速度
+State_Minerva_Ability1_Buff_description_simple												攻击速度已增加
+State_Minerva_Ability1_Buff_name												攻击速度
+State_Minerva_Ability1_Buff_name_FRAME_effect
+
+// Ability_Minerva2
+Ability_Minerva2_name												闪电矛
+Ability_Minerva2_description												对目标敌人造成^o$damage$魔法伤害^*且使其减速$taperingslow$%，持续3秒。 	
+Ability_Minerva2_description_simple												造成伤害且减速 	
+
+
+// Ability_Minerva3
+Ability_Minerva3_name												魅影护甲
+Ability_Minerva3_description												 使用技能后，获得一个相当于你最大生命值^o$shield$%的盾牌^*，盾牌有效时间为4秒。							
+Ability_Minerva3_description_simple											 技能使用时附加一个护盾  
+
+// Ability_Minerva4
+Ability_Minerva4_name												嗜血刺击
+Ability_Minerva4_description												对指定敌人造成^o$damage$魔法伤害^*。 如果在目标身后，则对其造成50%额外伤害。 
+Ability_Minerva4_description_simple												在目标身后进行攻击能对其造成额外伤害
+
+
+// Hero_Minerva
+Hero_Minerva_name												密涅瓦
+Hero_Minerva_description												高游走型暗杀英雄  
+Hero_Minerva_role
+Hero_Minerva_lore												Minerva is from the mysterious plane known as Vorbis. Little is known about her or her kind, but it is clear that she is one of the deadliest warriors to ever set foot in the Trials. Her personality is electric and her resolve is unshakable. She emerged from Vorbis seeking a sacred item. Thus she entered the Trials in hopes that one of the valiant warriors there might be able to lead her to it.
+
+// Ability_Chester1
+Ability_Chester1_name											骑士闪电
+Ability_Chester1_description									朝一个方向输送5名骑士。一旦接触到敌人，骑士立即爆炸，造成^o$damage$^*魔法伤害，且造成减速。 
+Ability_Chester1_description_simple								骑士爆炸，造成伤害
+
+// Ability_Chester2
+Ability_Chester2_name											勇往直前
+Ability_Chester2_description									为目标盟军英雄提供最大移动速度，且减缓其受到的控制效果，持续2秒。切斯特和盟军英雄经过敌人时，对他们造成^o$damage$魔法伤害^*.
+Ability_Chester2_description_simple								速度加成，造成伤害 
+
+State_Chester_Ability2_Buff_Tooltip_name						勇往直前
+State_Chester_Ability2_Buff_description_simple					为盟军英雄提供最大移动速度，经过其身边的敌人受到伤害！
+State_Chester_Ability2_Buff_name								勇往直前
+State_Chester_Ability2_Buff_name_FRAME_effect
+
+// Ability_Chester3
+Ability_Chester3_name											小丑效应
+Ability_Chester3_description									创造出一个敌方英雄的幻影，持续4秒。幻影造成目标伤害的$illusion_damage$%，且使其受到双倍伤害。\n\n当幻影消失时或被击杀后，它会爆炸并造成^o$damage$^*魔法伤害。
+Ability_Chester3_description_simple								创造幻影，爆炸，造成伤害 
+
+// Ability_Chester4
+Ability_Chester4_name											王者皇冠
+Ability_Chester4_description									使一名盟军英雄少受到30%的伤害，并在切斯特和此英雄间创造一个连接桥梁。此连接每秒对敌人造成^o$damage$^*魔法伤害。
+Ability_Chester4_description_simple								保护盟军，桥梁对敌人造成伤害
+
+State_Chester_Ability4_Tooltip_name								王者皇冠
+State_Chester_Ability4_description_simple						你受到的伤害减少了30%！
+State_Chester_Ability4_name										王者皇冠
+State_Chester_Ability4_name_FRAME_effect
+
+// Hero_Chester
+Hero_Chester_name												切斯特
+Hero_Chester_description										擅长群控，为盟友提供buffs
+Hero_Chester_role
+Hero_Chester_lore 												Chester is a brilliant but smug court jester from Nestra. A distant cousin of Queen Malady, he harbors a secret ambition to ascend to the throne of Hearts Falls. Until then, he feigns contentment as a jester in Malady's court, using his position to keep an eye on the royal family and develop a long-term strategy of attack. He relishes any opportunity to test his wit and strategic acumen against challengers in the Trials.
+
+
+// Ability_Trace1
+Ability_Trace1_name											Boomerang
+Ability_Trace1_description									Throw a boomerang which deals $percent_damage$% of Trace's attack damage to enemies.\n\nCooldown is reset if caught.
+Ability_Trace1_description_simple								ranged attack
+
+
+// Ability_Trace2
+Ability_Trace2_name											Bomb Toss
+Ability_Trace2_description									Target location to toss bomb, which deals ^o$damage$ Magic Damage^* and stuns enemies for $stun$ seconds after a delay.\n\nBomb can be activated early for half its damage and stun duration by hitting it with your Boomerang.
+Ability_Trace2_description_simple								bomb
+
+
+// Ability_Trace3
+Ability_Trace3_name											Shadowstalk
+Ability_Trace3_description									Activate to gain a burst of speed and ^o$attack_charged$ Bonus Damage^* on your next Basic Attack.  Reactivate to return to your cast location.
+Ability_Trace3_description_simple								stealth and bonus damage
+
+
+// Ability_Trace4
+Ability_Trace4_name											Wanderlust
+Ability_Trace4_description									While moving, passively builds up a shield equal to $shield_percent$% of your Max HP.  While the shield is active, gain $percent_power_increase$% bonus power.\n\nTaking damage stops shield generation for 1.5 seconds.
+Ability_Trace4_description_simple								enemy tracking
+
+// Hero_Trace
+Hero_Trace_name												Trace
+Hero_Trace_description										Stealthy melee and ranged attack damage hero
+Hero_Trace_role												Stealthy melee and ranged attack damage hero
+Hero_Trace_lore												Trace is a humble but passionate young adventurer from the forests of Lyrie. Her parents were legendary explorers, but they never returned from a particularly dangerous quest. Inspired by their bravery, Trace set out upon her own, honing her skills in the wilderness. With a hard life behind her, she has set out upon a new journey by entering the Trials of Strife.
+
+
+// Tutorial2_LexiKhan (Hero entity)
+Tutorial2_LexiKhan_name												莱西可汗
+
+// Tutorial3_LexiKhan (hero entity)
+Tutorial3_LexiKhan_name												莱西可汗
+
+//
+// Items
+//
+
+// Gloves of Haste
+Item_GlovesOfHaste_name												加速手套
+Item_GlovesOfHaste_description												+15攻击速度
+Item_GlovesOfHaste_description_simple												+15攻击速度
+
+// Warpcleft
+Item_Warpcleft_name												碎裂之杖
+Item_Warpcleft_description												+36攻击速度
+Item_Warpcleft_description_simple												+36攻击速度
+
+// Blade
+Item_Blade_name												^o短剑^*
+Item_Blade_description												+6能量  （增加6%普通攻击以及其它显示为橙色文字效果的伤害值）
+Item_Blade_description_simple												+6能量
+
+// Staff
+Item_Staff_name												^o能量之刃^*
+Item_Staff_description												+16能量    (增加16%普通攻击以及其它显示为橙色文字效果的伤害值)
+Item_Staff_description_simple												+16能量
+
+// Relic
+Item_Relic_name												^o圣物^*
+Item_Relic_description												+27能量   (增加27%普通攻击以及其它显示为橙色文字效果的伤害值)
+Item_Relic_description_simple												+27能量
+
+// Manaregen1
+Item_Manaregen1_name												魔力戒指
+Item_Manaregen1_description												+1.0法力回复/秒
+Item_Manaregen1_description_simple												+1.0法力回复/秒
+
+// Manaregen2
+Item_Manaregen2_name												魔力项链
+Item_Manaregen2_description												+2.0法力回复/秒
+Item_Manaregen2_description_simple												+2.0法力回复/秒
+
+// Mender
+Item_Mender_name												治疗项链
+Item_Mender_description												+2生命回复/秒
+Item_Mender_description_simple												+2生命回复/秒
+
+// Sustainer
+Item_Sustainer_name												再生饰物
+Item_Sustainer_description												+3.8生命回复/秒
+Item_Sustainer_description_simple												+3.8生命回复/秒
+
+// Healthstone
+Item_Healthstone_name												生命之石
+Item_Healthstone_description												+85生命值  
+Item_Healthstone_description_simple												+85生命值  
+
+
+// Booster
+Item_Booster_name												红水晶
+Item_Booster_description												+230生命值
+Item_Booster_description_simple												+230生命值
+
+// Heart
+Item_Heart_name												生命之心
+Item_Heart_description												+380生命值
+Item_Heart_description_simple												+380生命值
+
+// Manastone
+Item_Manastone_name												法力之石
+Item_Manastone_description												+55法力值
+Item_Manastone_description_simple												+55法力值
+
+// Diamond
+Item_Diamond_name												钻石
+Item_Diamond_description												+105法力值
+Item_Diamond_description_simple												+105法力值
+
+// Brain
+Item_Brain_name												智慧水晶
+Item_Brain_description												+150法力值
+Item_Brain_description_simple												+150法力值
+
+// Tome of Power
+Item_Tome_Power_name												能量之书
+Item_Tome_Power_description												+7.5能量  
+Item_Tome_Power_description_simple												+7.5能量
+
+// Tome of Health
+Item_Tome_Health_name												生命之书
+Item_Tome_Health_description												+105生命值
+Item_Tome_Health_description_simple												+105生命值
+
+// Tome of Mana
+Item_Tome_Mana_name												法力之书
+Item_Tome_Mana_description												+70法力值
+Item_Tome_Mana_description_simple												+70法力值
+
+// Spellblade
+Item_Spellblade_name												神秘匕首
+Item_Spellblade_description												 +$power$能量 \n施放一次技能后，你的下一次普通攻击会造成^o$damage$点额外伤害^*。
+Item_Spellblade_description_simple											增加能量。施放技能后，你的下一次普通攻击会造成^o$damage$额外伤害^*。
+Item_Spellblade_bonusdescription												+$common_increase$%额外伤害				
+Item_Spellblade_legendaryname												动荡
+Item_Spellblade_legendarydescription											爆炸时，匕首可为英雄返还$mana$法力值。			
+Item_Spellblade_Empower_1_name									能量
+Item_Spellblade_Empower_1_description							主动使用匕首攻击敌人时，可为英雄增加$mana_enchant$法力值。
+Item_Spellblade_Empower_2_name									震级
+Item_Spellblade_Empower_2_description							可最多储存3次充能。
+Item_Spellblade_Empower_3_name									燃烧
+Item_Spellblade_Empower_3_description							溅射出额外伤害。
+
+
+// DemonEdge
+Item_DemonEdge_name												恶魔刀锋
+Item_DemonEdge_description											 +^o$damage$物理伤害^* 
+Item_DemonEdge_description_simple										+额外^o物理伤害^*
+Item_DemonEdge_bonusdescription												+$common_increase$伤害				
+Item_DemonEdge_legendaryname												科塔勒斯提克
+Item_DemonEdge_legendarydescription												当能量达到200后，获得额外$damage_legendary$%的暴击几率。
+Item_DemonEdge_Empower_1_name									专注
+Item_DemonEdge_Empower_1_description							当能量值大于等于200时，为英雄提供额外$damage_power_enchant$物理伤害。
+Item_DemonEdge_Empower_2_name									荒芜
+Item_DemonEdge_Empower_2_description							攻击非英雄单位时，为英雄提供$damage_neutrals_enchant$%额外伤害。
+Item_DemonEdge_Empower_3_name								暴行
+Item_DemonEdge_Empower_3_description							增加$damage_enchant$物理伤害。
+
+// PendantofDefiance
+Item_PendantofDefiance_name												抗魔斗篷
+Item_PendantofDefiance_description												+$hp$生命值  \n$resistance$坚韧。       
+Item_PendantofDefiance_description_simple												获得生命值和坚韧。
+Item_PendantofDefiance_bonusdescription												+$common_increase$%魔法抗性和生命值
+Item_PendantofDefiance_legendaryname												邪恶力量
+Item_PendantofDefiance_legendarydescription											每损失2%生命值，就会得到$mana$法力值。
+Item_PendantofDefiance_Empower_1_name							狂虐
+Item_PendantofDefiance_Empower_1_description					每失去2%生命值，为英雄提供$manareturn_enchant$法力值。
+Item_PendantofDefiance_Empower_2_name							抗性
+Item_PendantofDefiance_Empower_2_description					增加$magicarmor_enchant$魔法伤害。
+Item_PendantofDefiance_Empower_3_name							和平
+Item_PendantofDefiance_Empower_3_description					增加$health_enchant$生命值。
+
+// Item_ShamanHeaddress
+Item_ShamanHeaddress_name												勇气头巾
+Item_ShamanHeaddress_description												 $resistance$坚韧   \n回复$magicheal$%的魔法伤害。
+Item_ShamanHeaddress_description_simple												增加坚韧，回复部分受到的魔法伤害。 
+Item_ShamanHeaddress_bonusdescription											增加$common_increase$%坚韧和治疗。
+Item_ShamanHeaddress_legendarydescription											当生命值低于20%时，增加$armor_legendary$坚韧。
+Item_ShamanHeaddress_legendaryname												绝望生机
+Item_ShamanHeaddress_Empower_1_name								绝望生机
+Item_ShamanHeaddress_Empower_1_description						英雄生命值在20%以下时，增加$magicarmor_enchant$坚韧。 
+Item_ShamanHeaddress_Empower_2_name								修复术
+Item_ShamanHeaddress_Empower_2_description						增加$heal_enchant$治疗百分比，并以最快速度进行两次治疗。
+
+// Item_Kingsmail
+Item_Kingsmail_name												君王铠甲
+Item_Kingsmail_description												$resistance$坚韧  \n+$mitigation$格挡  \n+$hp_regen$生命值/秒   
+Item_Kingsmail_description_simple												增加坚韧、格挡和生命回复。
+Item_Kingsmail_bonusdescription												+$common_increase$%坚韧
+Item_Kingsmail_legendaryname												加固
+Item_Kingsmail_legendarydescription												在受到攻击时，提高$armor_legendary$坚韧，持续3秒，最多叠加4次。
+Item_Kingsmail_Empower_1_name									顺应
+Item_Kingsmail_Empower_1_description							在英雄受攻击时为其增加$mitigation_enchant$格挡， 持续$mitigation_duration_enchant$秒。最多叠加$stack_enchant$次。
+Item_Kingsmail_Empower_2_name									恢复
+Item_Kingsmail_Empower_2_description							每秒回复$healthregen_percent_enchant$%生命值。
+Item_Kingsmail_Empower_3_name									专注
+Item_Kingsmail_Empower_3_description							增加$mitigation_enchant$格挡，但减少生命回复值。
+
+// Item_ResilientVest
+Item_ResilientVest_name												 游侠披风
+Item_ResilientVest_description											   +$hp$生命值  \n格挡$block$来自非英雄单位的伤害。\n对非英雄单位造成的伤害加成10%。
+Item_ResilientVest_description_simple											增加最大生命值，对抗非英雄单位时将更具杀伤力。 
+Item_ResilientVest_bonusdescription												+$common_increase$%生命值
+Item_ResilientVest_legendaryname												缝补术
+Item_ResilientVest_legendarydescription												成功阻挡一次攻击能回复$legendary$生命值。
+Item_ResilientVest_Empower_1_name								回复
+Item_ResilientVest_Empower_1_description						格挡攻击时，回复$heal_enchant$生命值。
+Item_ResilientVest_Empower_2_name								反射
+Item_ResilientVest_Empower_2_description						当成功格挡伤害时，会将本次所受伤害100%反弹给攻击者。
+Item_ResilientVest_Empower_3_name							坚韧
+Item_ResilientVest_Empower_3_description						格挡对来自防御塔的攻击也有效。 
+
+// Item_Shardplate
+Item_Shardplate_name												坚毅铠甲
+Item_Shardplate_description											$resistance$坚韧 \n+$mitigation$格挡 \n被普通攻击击中时，减少攻击者$attackspeedslow$%的攻击速度。
+Item_Shardplate_description_simple												获得坚韧、格挡。减少攻击者的攻速。
+Item_Shardplate_bonusdescription										增加$common_increase$%坚韧，降低敌人$common_increase$%的速度。	
+Item_Shardplate_legendaryname												守护人
+Item_Shardplate_legendarydescription												当生命值低于20%时，增加$armor_legendary$坚韧。
+Item_Shardplate_Empower_1_name									绝望生机
+Item_Shardplate_Empower_1_description							当英雄生命值在20%以下时，增加$armor_enchant$坚韧。
+Item_Shardplate_Empower_2_name									活力
+Item_Shardplate_Empower_2_description							每秒增加$regenpercent_enchant$%生命值。
+Item_Shardplate_Empower_3_name									命令
+Item_Shardplate_Empower_3_description							周围盟军减少$damagereduction_enchant$%物理伤害。
+
+// Item_Buckler
+Item_Buckler_name												铁盾
+Item_Buckler_description												$resistance$坚韧，\n+$mitigation$格挡
+Item_Buckler_description_simple											有效增加坚韧，格挡
+Item_Buckler_bonusdescription												减少$common_increase$%物理伤害
+Item_Buckler_legendaryname												重建
+Item_Buckler_legendarydescription											受到攻击后，增加$regen$生命回复，持续3秒。
+Item_Buckler_Empower_1_name										恢复
+Item_Buckler_Empower_1_description								英雄受到伤害后，每秒增加$regen_enchant$生命值，持续3秒。
+Item_Buckler_Empower_2_name										专注
+Item_Buckler_Empower_2_description								增加$deflection_enchant$物理伤害减免。
+Item_Buckler_Empower_3_name										坚韧
+Item_Buckler_Empower_3_description								增加$magic_armor_enchant$坚韧。
+
+// Ancient Gem
+Item_AncientGem_name												冰川宝石
+Item_AncientGem_description												 +$regen$额外法力回复/秒
+Item_AncientGem_description_simple												有效增加法力回复。 
+Item_AncientGem_bonusdescription												+$common_increase$%法力回复
+Item_AncientGem_legendaryname												激励
+Item_AncientGem_legendarydescription												+$regen_legendary$%脱离战斗后的法力回复
+Item_AncientGem_Empower_1_name									返老还童
+Item_AncientGem_Empower_1_description							在战斗状态外时，增加$ooc_bonus$%法力回复。
+Item_AncientGem_Empower_2_name									活力
+Item_AncientGem_Empower_2_description							增加$regen_bonus$法力回复。 
+Item_AncientGem_Empower_3_name									吸虹
+Item_AncientGem_Empower_3_description							提供$lifesteal$%魔法偷取。
+Item_AncientGem_Empower_4_name									急速
+Item_AncientGem_Empower_4_description							增加额外$movespeed$移动速度。
+
+// Circlet of the Sage
+Item_CircletOfTheSage_name												贤者之环
+Item_CircletOfTheSage_description											 +$mana$额外法力值
+Item_CircletOfTheSage_description_simple											有效增加法力值。
+Item_CircletOfTheSage_bonusdescription												+$common_increase$%法力值
+Item_CircletOfTheSage_legendaryname												持续
+Item_CircletOfTheSage_legendarydescription												+$mana_legendary$%来自其他道具/效果的法力值
+Item_CircletOfTheSage_Empower_1_name							智力
+Item_CircletOfTheSage_Empower_1_description						增加$max_mana_enchant$%额外法力值。
+Item_CircletOfTheSage_Empower_2_name							寿命
+Item_CircletOfTheSage_Empower_2_description						增加$mana_enchant$法力值。
+Item_CircletOfTheSage_Empower_3_name							点金术
+Item_CircletOfTheSage_Empower_3_description						当用法术攻击敌人时，得到$gold_enchant$金币。15秒冷却时间。
+Item_CircletOfTheSage_Empower_4_name							征服
+Item_CircletOfTheSage_Empower_4_description						得到$magic_damage_enchant$%增强的魔法伤害。 
+
+// Fell Blade
+Item_FellBlade_name												凶残之刃
+Item_FellBlade_description												 +$power$额外能量
+Item_FellBlade_description_simple												有效增加能量值。
+Item_FellBlade_bonusdescription												+$common_increase$%能量
+Item_FellBlade_legendaryname												Sharpened
+Item_FellBlade_legendarydescription												每杀死一个英雄获得$power_legendary$能量，持续2分钟。
+Item_FellBlade_Empower_1_name									嗜血
+Item_FellBlade_Empower_1_description							击杀敌人英雄或提供助攻时，能增强$power_legendary$能量，持续2分钟。 
+Item_FellBlade_Empower_2_name									 充权
+Item_FellBlade_Empower_2_description							增加$power_tooltip$能量。
+Item_FellBlade_Empower_3_name									急速
+Item_FellBlade_Empower_3_description							增加$movespeed$移动速度。
+
+// Tinders_Chalice
+Item_Tinders_Chalice_name												 救赎圣杯
+Item_Tinders_Chalice_description											+$regen$法力值/秒 \n每次消耗法力值的$percent$%将转换成对自己的治疗。	
+Item_Tinders_Chalice_description_simple												 消耗法力值对自己进行治疗，适用于法力值较多的英雄。 
+Item_Tinders_Chalice_bonusdescription												+$common_increase$%能量
+Item_Tinders_Chalice_legendaryname												祝福
+Item_Tinders_Chalice_legendarydescription												周围己方英雄消耗法力值的$legendary$%将同时为你提供治疗。
+Item_Tinders_Chalice_Empower_1_name								善行
+Item_Tinders_Chalice_Empower_1_description						附近盟友使用的$mana_enchant$%法力值同样也能治疗自身英雄。
+Item_Tinders_Chalice_Empower_2_name								青春
+Item_Tinders_Chalice_Empower_2_description						增加$percent_enchant$治疗百分比。
+Item_Tinders_Chalice_Empower_3_name								保护
+Item_Tinders_Chalice_Empower_3_description						获得$support_enchant$%效力以为附近盟友提供治疗&护盾。 
+
+// Scepter of Clearcasting
+Item_ScepterOfClearcasting_name												节能权杖
+Item_ScepterOfClearcasting_description											 +$cd_reduction$%冷却缩减 +$mana$法力值
+Item_ScepterOfClearcasting_description_simple												减少所有技能冷却时间，提供额外法力值。
+Item_ScepterOfClearcasting_bonusdescription											 +$common_increase$%冷却缩减
+Item_ScepterOfClearcasting_legendaryname												协助
+Item_ScepterOfClearcasting_legendarydescription												每次施放技能都会使你的能量增加$legendary$，持续5秒。最多叠加7次。 		
+Item_ScepterOfClearcasting_Empower_1_name						灌能
+Item_ScepterOfClearcasting_Empower_1_description				每次施法都能增加$power_enchant$能量，最多增加20能量。持续5秒。最多叠加$stacks_enchant$次。
+Item_ScepterOfClearcasting_Empower_2_name						智慧
+Item_ScepterOfClearcasting_Empower_2_description				增加$cd_enchant$%冷却减免。
+
+// Gauntlet
+Item_Gauntlet_name												力量护腕
+Item_Gauntlet_description												 +$hp$生命值   \n+$power$能量
+Item_Gauntlet_description_simple												有效增加能量和生命值。
+Item_Gauntlet_bonusdescription												+$common_increase$%能量
+Item_Gauntlet_legendaryname												坚定
+Item_Gauntlet_legendarydescription												每获取$legendary$能量，可得到1最大生命值。	
+Item_Gauntlet_Empower_1_name									力量
+Item_Gauntlet_Empower_1_description								每个高于100的$power_req$能量值，都可为英雄获得$hp_bonus$生命值。
+Item_Gauntlet_Empower_2_name								    寿命
+Item_Gauntlet_Empower_2_description								+$hp_bonus$生命值，+$power_bonus$能量
+Item_Gauntlet_Empower_3_name									Might
+Item_Gauntlet_Empower_3_description								增加$boss_enchant$%对辛德拉和巴蒂尔的伤害值。 
+Item_Gauntlet_Empower_4_name									恩惠
+Item_Gauntlet_Empower_4_description								击杀敌人或助攻时，增加$gold_enchant$可得金币。
+
+// Headress Of Rejuvenation
+Item_HeadressOfRejuvenation_name												治疗吊坠
+Item_HeadressOfRejuvenation_description												+$regen$生命值/秒。
+Item_HeadressOfRejuvenation_description_simple												有效生命回复装备 
+Item_HeadressOfRejuvenation_bonusdescription												+$common_increase$%生命回复	
+Item_HeadressOfRejuvenation_legendaryname												回复
+Item_HeadressOfRejuvenation_legendarydescription												脱战时增加$regen_legendary$%治疗。
+Item_HeadressOfRejuvenation_Empower_1_name						恢复
+Item_HeadressOfRejuvenation_Empower_1_description				脱战时，每秒增加$ooc_bonus$%生命值。
+Item_HeadressOfRejuvenation_Empower_2_name						活力
+Item_HeadressOfRejuvenation_Empower_2_description				每秒增加$regen_bonus$生命值。 
+Item_HeadressOfRejuvenation_Empower_3_name						吸血
+Item_HeadressOfRejuvenation_Empower_3_description				提供$lifesteal$%物理偷取。
+Item_HeadressOfRejuvenation_Empower_4_name						潜力
+Item_HeadressOfRejuvenation_Empower_4_description				增加$potion_bonus$%药水有效性。
+
+// MaxManaPower
+Item_MaxManaPower_name												宁静皇冠
+Item_MaxManaPower_description												 将法力值的$power$%转变为能量。
+Item_MaxManaPower_description_simple											根据法力值的百分比增加额外的能量	
+Item_MaxManaPower_bonusdescription												+$common_increase$%能量 				
+Item_MaxManaPower_legendaryname												血统
+Item_MaxManaPower_legendarydescription												法力值的$hp$%将转变成生命值。
+Item_MaxManaPower_Empower_1_name								杀戮
+Item_MaxManaPower_Empower_1_description							增加最大法力值的$maxmana_health_enchant$%生命值。
+Item_MaxManaPower_Empower_2_name								专精
+Item_MaxManaPower_Empower_2_description							增加$magicdamage_enchant$%魔法伤害。
+Item_MaxManaPower_Empower_3_name								返老还童
+Item_MaxManaPower_Empower_3_description							每秒回复$maxmana_manaregen_health_enchant$%最大法力值。
+
+// Giants Visage
+Item_GiantsVisage_name												 巨人雕像
+Item_GiantsVisage_description												  $resistance$坚韧   \n增加相当于你最大生命值$power$%的能量
+Item_GiantsVisage_description_simple												基于生命值上限的能量值增加坚韧。 
+Item_GiantsVisage_bonusdescription												增加$common_increase$%能量 
+Item_GiantsVisage_legendaryname												强韧
+Item_GiantsVisage_legendarydescription											增加$hp$%最大生命值  	
+Item_HeadressOfRejuvenation_Empower_1_name						恢复
+Item_HeadressOfRejuvenation_Empower_1_description				增加$ooc_bonus$%最大生命值。
+Item_HeadressOfRejuvenation_Empower_2_name						恢复
+Item_HeadressOfRejuvenation_Empower_2_description				每秒获得等同于最大生命值$regen_enchant$%的生命值。
+Item_HeadressOfRejuvenation_Empower_3_name						力量
+Item_HeadressOfRejuvenation_Empower_3_description				增加$power_enchant$%能量，转换成最大生命值。  
+
+
+// ScalingPower
+Item_ScalingPower_name												收割之镰
+Item_ScalingPower_description										每完成一次击杀或助攻可获得$power_scale$能量和$health_scale$生命值。每死一次充能数将掉一层。当叠加到5层后，你的英雄可获得10点移动速度。
+Item_ScalingPower_description_simple												通过击杀或助攻获得额外能量。
+Item_ScalingPower_bonusdescription											+$common_increase$%基础能量/生命值和最大能量/生命值。					
+Item_ScalingPower_legendaryname												充能
+Item_ScalingPower_legendarydescription												达到最大充能值后，增加$power_legendary$能量。
+Item_ScalingPower_Empower_1_name								光荣
+Item_ScalingPower_Empower_1_description							击杀辛德拉或巴蒂尔会添加两次充能。
+Item_ScalingPower_Empower_2_name								能量
+Item_ScalingPower_Empower_2_description							得到$power_enchant$能量
+Item_ScalingPower_Empower_3_name								熟化
+Item_ScalingPower_Empower_3_description							增加$charges_enchant$最大充能数。
+
+ // EnduringHelm
+Item_EnduringHelm_name												耐久头盔
+Item_EnduringHelm_description												 +$hp$生命值
+Item_EnduringHelm_description_simple											有效增加生命值。
+Item_EnduringHelm_bonusdescription												+$common_increase$%生命值   
+Item_EnduringHelm_legendaryname												温和
+Item_EnduringHelm_legendarydescription												每击杀一个单位，都将增加$hp_bonus$生命值。最多重叠40次。
+Item_EnduringHelm_Empower_1_name								统治
+Item_EnduringHelm_Empower_1_description							每击杀一个敌方单位，都能获得$hp_bonus$生命值。最多叠加50次。 
+Item_EnduringHelm_Empower_2_name								毅力
+Item_EnduringHelm_Empower_2_description							增加$hp_bonus$生命值。
+Item_EnduringHelm_Empower_3_name								勇气
+Item_EnduringHelm_Empower_3_description							减少$tower_reduction$%来自塔的攻击。
+
+
+ // Elderstone
+Item_ElderStone_name												长者之石
+Item_ElderStone_description												+$hp$最大生命值    \n+$mp$法力值  \n每分钟增加$hp_gain$最大生命值和$mp_gain$法力值，持续10分钟。
+Item_ElderStone_description_simple												获得额外的生命值和法力值。
+Item_ElderStone_bonusdescription												+$common_increase$%生命值
+Item_ElderStone_legendaryname												阴沉
+Item_ElderStone_legendarydescription                            当达到最大充能数时，增加$resistance_legendary$坚韧。
+Item_ElderStone_Empower_1_name								遗产
+Item_ElderStone_Empower_1_description							当达到最大充能数时，增加$resistance_enchant$坚韧。
+Item_ElderStone_Empower_2_name									经验
+Item_ElderStone_Empower_2_description							增加$health_mana_enchant$生命值和法力值。
+Item_ElderStone_Empower_3_name									熟化
+Item_ElderStone_Empower_3_description							增加$max_charges_enchant$最大充能数。
+Item_ElderStone_Empower_4_name									智慧
+Item_ElderStone_Empower_4_description							减少$cooldown_enchant$%冷却减免。
+
+ // CrusaderShield
+Item_CrusaderShield_name												十字军之盾
+Item_CrusaderShield_description												$resistance$坚韧    n+$mitigation$格挡 \n为周围友军小兵提供$regen_aura$生命值/秒，减少受到$tower_buff$%来自防御塔的伤害。 
+Item_CrusaderShield_description_simple												为友军小兵提供格挡，减少防御塔的伤害。
+Item_CrusaderShield_bonusdescription												+$common_increase$%护甲
+Item_CrusaderShield_legendaryname												正直
+Item_CrusaderShield_legendarydescription												增加周围友军的攻击速度$legendary$%。
+Item_CrusaderShield_Empower_1_name								威信
+Item_CrusaderShield_Empower_1_description						周围友军的攻击速度也将增加$attackspeed_enchant$%。
+Item_CrusaderShield_Empower_2_name								保护
+Item_CrusaderShield_Empower_2_description						友军小兵的生命值每秒增加$aura_boost_enchant$。
+Item_CrusaderShield_Empower_3_name								专注
+Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$坚韧，周围盟军魔受到的防御塔伤害减免至$tower_reduction_enchant$%。
+
+
+// Item_StoneSkin
+Item_StoneSkin_name												石化之肤
+Item_StoneSkin_description										^o+$damage$物理伤害^*   \n\n使用：+$resistance$坚韧，持续6秒。                                         
+Item_StoneSkin_description_simple												+^o物理伤害^* \n使用: gain massive Resistance for a duration.^*
+Item_StoneSkin_bonusdescription												+$common_increase$%伤害减免效果
+Item_StoneSkin_legendaryname												再充能
+Item_StoneSkin_legendarydescription												减少石化之肤$cooldown_legendary$秒冷却时间。
+Item_StoneSkin_Empower_1_name									勤恳
+Item_StoneSkin_Empower_1_description							减少$cooldown_enchant$秒冷却时间。
+Item_StoneSkin_Empower_2_name									回复
+Item_StoneSkin_Empower_2_description							每秒得到$healthregen_enchant$生命值，但移除$attack_enchant$物理伤害。
+Item_StoneSkin_Empower_3_description							Grants $resistance_enchant$% additional Resistance.
+
+// DesperationsEdge
+Item_DesperationsEdge_name												水晶剃刀
+Item_DesperationsEdge_description												  根据当前生命的占比增加额外能量和法力回复，占比越高增加的越多，最多可以增加$power$能量和$manaregen$法力回复/秒。
+Item_DesperationsEdge_description_simple												根据你的生命值的量决定增加的额外能量和法力回复量。
+Item_DesperationsEdge_bonusdescription												+$common_increase$%能量。
+Item_DesperationsEdge_legendaryname												泊克
+Item_DesperationsEdge_legendarydescription												在最大生命值时，提供$power_legendary$额外能量。
+Item_DesperationsEdge_Empower_1_name							完美
+Item_DesperationsEdge_Empower_1_description						当英雄在全生命状态时，增加$power_poke_enchant$能量。
+Item_DesperationsEdge_Empower_2_name							才智
+Item_DesperationsEdge_Empower_2_description						增加$power_enchant$额外能量，并每秒增加$manaregen_enchant$法力值/秒。
+Item_DesperationsEdge_Empower_3_name							重生
+Item_DesperationsEdge_Empower_3_description						每秒回复$healthregen_enchant$生命值。
+Item_DesperationsEdge_Empower_4_name							吸虹
+Item_DesperationsEdge_Empower_4_description						获得$spellsteal_enchant$%魔法偷取。
+
+// Riftshards
+Item_Riftshards_name												毁灭之斧
+Item_Riftshards_description											 +^o$attack_damage$物理伤害^*	  \n你的普通攻击有$critchance$%几率造成两倍伤害。
+Item_Riftshards_description_simple												获得额外^o物理伤害^*，且增加额外攻击力并可能造成两倍伤害 
+Item_Riftshards_bonusdescription												+$common_increase$%暴击伤害
+Item_Riftshards_legendaryname												支离破碎
+Item_Riftshards_legendarydescription												受到攻击的敌人会减少$armor$坚韧，持续3秒。				
+Item_Riftshards_Empower_1_name									毁灭
+Item_Riftshards_Empower_1_description							攻击敌人，减少$reducearmor_enchant$坚韧，持续$reducearmor_duration_enchant$秒。
+Item_Riftshards_Empower_2_name									财富
+Item_Riftshards_Empower_2_description							增加$crit_enchant$%暴击机会。
+Item_Riftshards_Empower_3_name									3
+Item_Riftshards_Empower_3_description							获得$lifesteal_enchant$%物理偷取。
+
+// Assassin's shroud
+Item_AssasinsShroud_name												狡诈斗篷
+Item_AssasinsShroud_description												+100生命值     \n\n使用：使你的英雄潜行并增加移动速度，持续$duration$秒，潜行时会被周围600范围内的敌方英雄发现。
+Item_AssasinsShroud_description_simple												增加最大生命值。使用：潜行，并获得移动速度加成。
+Item_AssasinsShroud_bonusdescription												+$common_increase$%移动速度
+Item_AssasinsShroud_legendaryname												意外
+Item_AssasinsShroud_legendarydescription												潜行期间增加$damage$攻击力。
+Item_AssasinsShroud_Empower_1_name								预谋
+Item_AssasinsShroud_Empower_1_description						潜行时攻击敌人能造成$damage_enchant$额外伤害。
+Item_AssasinsShroud_Empower_2_name								勤恳
+Item_AssasinsShroud_Empower_2_description						冷却时间减少$cd_enchant$%,但潜行时不会在获得移动速度。
+Item_AssasinsShroud_Empower_3_name								 3
+Item_AssasinsShroud_Empower_3_description						潜行时，攻击非玩家单位能偏转$deflection_enchant$前行。
+
+// SpringBoots
+Item_SpringBoots_name												弹跳之靴
+Item_SpringBoots_description												+55移动速度         \n使用：使你的英雄朝所指方向跳跃525距离。
+Item_SpringBoots_description_simple												增加移动速度，主动使用能进行弹跳。     
+
+// ASBoots
+Item_ASBoots_name												狂热之靴
+Item_ASBoots_description												     +50移动速度     \n+25攻击速度   \n使用：增加80移动速度且无视单位碰撞体积，持续3秒。
+Item_ASBoots_description_simple												增加移动速度和攻击力，主动使用增加移动速度。
+
+// HealthBoots
+Item_HealthBoots_name												惯性之靴
+Item_HealthBoots_description											+65移动速度  \n+250生命值   \n使用：解除英雄受到的所有控制效果并在接下来的2秒内减少50%的控制效果。
+Item_HealthBoots_description_simple												增加移动速度和生命值，主动使用解除受到的控制效果。
+
+// RuneBoots
+Item_RuneBoots_name												符文之靴
+Item_RuneBoots_description												+70移动速度  \n15%冷却缩减  \n使用：3秒内回复20%最大生命值和法力值，受攻击则失去恢复效果。 
+Item_RuneBoots_description_simple												增加移动速度和冷却缩减。主动使用会快速回复生命值和法力值。 
+
+// PowerBoots
+Item_PowerBoots_name												能量之靴
+Item_PowerBoots_description												+65移动速度     \n+20能量
+Item_PowerBoots_description_simple												增加移动速度和能量。
+
+// WarpBoots
+Item_WarpBoots_name												冲锋之靴
+Item_WarpBoots_description												+85移动速度     \n使用：冲锋至目标地点
+Item_WarpBoots_description_simple											+85移动速度     \n使用：冲锋至目标地点
+
+// TeleportBoots
+Item_TeleportBoots_name												传送之靴  
+Item_TeleportBoots_description												+85移动速度     \n使用：使你的英雄传送至友方建筑或小兵处。
+Item_TeleportBoots_description_simple												增加移动速度，主动使用能传送至友军处。
+
+// HealthElixir
+Item_HealthElixir_name												生命药剂
+Item_HealthElixir_description												10秒内回复350生命值，受攻击会失去效果。
+Item_HealthElixir_description_simple												大量回复生命值。 受攻击会失去效果。
+
+// State_HealthElixir
+State_HealthElixir_Tooltip_name												生命药剂
+State_HealthElixir_description_simple												生命药剂能帮你回血。 受攻击会失去效果。
+State_HealthElixir_name												生命药剂
+State_HealthElixir_name_FRAME_effect
+
+// ManaElixir
+Item_ManaElixir_name												法力药剂
+Item_ManaElixir_description												10秒内回复150法力值，受攻击会失去效果。
+Item_ManaElixir_description_simple												大量回复法力值.受攻击会失去效果。
+
+// State_ManaElixir
+State_ManaElixir_Tooltip_name												法力药剂
+State_ManaElixir_description_simple													法力药剂可以帮你回复法力值。受攻击会失去效果。
+State_ManaElixir_name												法力药剂
+State_ManaElixir_name_FRAME_effect
+
+// RejuvenationElixir
+Item_RejuvenationElixir_name												返老还童药水
+Item_RejuvenationElixir_description												大约10秒钟时间，得到360生命值治疗且储存100法力值。在此期间受到伤害道具将失效。
+Item_RejuvenationElixir_description_simple												大约10秒钟时间，得到360生命值治疗且储存100法力值。在此期间受到伤害道具将失效。							
+
+// Indestructible
+Item_Indestructible_name												不灭之盔
+Item_Indestructible_description												  +$hp$生命值  \n\n脱战时，每秒恢复$regen_outofcombat$%最大生命值。
+Item_Indestructible_description_simple												可获取大量生命值且可提高脱战生命回复
+Item_Indestructible_bonusdescription												+$common_increase$%生命和生命回复
+Item_Indestructible_Empower_1_name									绝望生机
+Item_Indestructible_Empower_1_description							英雄生命值不足20%时，每秒为其增加$hpregen_mult$%生命值。
+Item_Indestructible_Empower_2_name									 活力
+Item_Indestructible_Empower_2_description							当达到满生命状态且脱战时，每秒的生命值回复会转换成法力回复。 
+Item_Indestructible_Empower_3_name									敏捷
+Item_Indestructible_Empower_3_description							满生命状态时，获得$movespeed$移动速度。
+
+
+
+// Stormspirit
+Item_Stormspirit_name												虚空之杖
+Item_Stormspirit_description												使用：2秒内，英雄变为无敌状态。
+Item_Stormspirit_description_simple											使用：2秒内，英雄变为无敌状态。
+Item_Stormspirit_bonusdescription											减少该装备$cooldown_analog$秒冷却时间。
+Item_Stormspirit_legendaryname												消除
+Item_Stormspirit_legendarydescription												使用后回复$mana$法力值。
+Item_Stormspirit_Empower_1_name									活力
+Item_Stormspirit_Empower_1_description							回复$mana_enchant$法力值。
+Item_Stormspirit_Empower_2_name									勤恳
+Item_Stormspirit_Empower_2_description							减少$cooldown_bonus$秒冷却时间。
+Item_Stormspirit_Empower_3_name									敏捷
+Item_Stormspirit_Empower_3_description							使用虚空之杖后，增加$movespeed_enchant$移动速度，持续2秒。
+
+
+// Item_Frostfield
+Item_FrostfieldPlate_name												永冬符咒
+Item_FrostfieldPlate_description											$resistance$坚韧  \n\n使用: 减速周围敌人，对其造成^o$damage$魔法伤害^*。
+Item_FrostfieldPlate_description_simple											增加坚韧。减低周围敌人的速度且对其造成伤害。
+Item_FrostfieldPlate_IMPACT_effect												伤害范围扩大至半径500内，对敌人造成$damage$魔法伤害并使其减速4秒。
+Item_FrostfieldPlate_bonusdescription												增加$common_increase$%伤害和护甲。
+Item_FrostfieldPlate_legendaryname												冻伤
+Item_FrostfieldPlate_legendarydescription												每个敌方英雄的攻击都会使自己增加$armorlegendary$坚韧，持续4秒。
+Item_FrostfieldPlate_Empower_1_name								美德
+Item_FrostfieldPlate_Empower_1_description						使用永冬符咒袭击每个敌方英雄将获得$armor_active_enchant$护甲和魔法抗性。持续$armor_activeduration_enchant$秒。
+Item_FrostfieldPlate_Empower_2_name								持久
+Item_FrostfieldPlate_Empower_2_description						使用时，永冬符咒会在地面停留$linger_enchant$秒。
+Item_FrostfieldPlate_Empower_3_name							    遏制
+Item_FrostfieldPlate_Empower_3_description						增加$duration_enchant$秒减速效果。
+
+// Item_RingOfSorcery
+Item_RingOfSorcery_name												巫术之戒
+Item_RingOfSorcery_description										+$manamax$法力值	\n\n使用：为你和周围的友方英雄回复$mana$法力值。
+Item_RingOfSorcery_description_simple										增加法力值，为自己和友方英雄回复法力。
+Item_RingOfSorcery_bonusdescription												+$common_increase$%法力回复
+Item_RingOfSorcery_legendaryname												盛名
+Item_RingOfSorcery_legendarydescription												回复英雄最大法力值$mana_percent$%的法力值
+Item_RingOfSorcery_Empower_1_name								浓缩
+Item_RingOfSorcery_Empower_1_description						增加最大法力值$maxmana_restore_enchant$%法力回复量。
+Item_RingOfSorcery_Empower_2_name								法力
+Item_RingOfSorcery_Empower_2_description						增加$maxmana_enchant$法力值。
+Item_RingOfSorcery_Empower_3_name								感化
+Item_RingOfSorcery_Empower_3_description						增加$area_enchant$有效范围。
+Item_RingOfSorcery_Empower_4_name								4
+Item_RingOfSorcery_Empower_4_description						使用时同时得到$manaboost_enchant$法力值，持续$manaboost_duration_enchant$秒。
+
+// Item_Mask_Of_Madman
+Item_Mask_Of_Madman_name												狂怒面具
+Item_Mask_Of_Madman_description											+$vamp$%物理偷取 \n\n使用：增加$attackspeed$%攻击速度和$movespeed$移动速度，并且所受伤害提高15%，持续6秒。
+Item_Mask_Of_Madman_description_simple												将增加攻击速度和移动速度，但也会承受更多伤害。
+Item_Mask_Of_Madman_bonusdescription												+$common_increase$%额外伤害和移动速度
+Item_Mask_Of_Madman_legendaryname												坚定
+Item_Mask_Of_Madman_legendarydescription												降低$scale$%受到的额外伤害。
+Item_Mask_Of_Madman_Empower_1_name								恢复
+Item_Mask_Of_Madman_Empower_1_description						降低$reduction_enchant$%额外伤害。
+Item_Mask_Of_Madman_Empower_2_name								毁坏
+Item_Mask_Of_Madman_Empower_2_description						使用时，攻击建筑会增加$building_enchant$%伤害。
+Item_Mask_Of_Madman_Empower_3_name								疯狂
+Item_Mask_Of_Madman_Empower_3_description						参团击杀敌人时，冷却时间会刷新。
+
+
+// Item_Lasthit
+Item_Lasthit_name												飞斧
+Item_Lasthit_description											   普通攻击对非英雄单位造成的伤害提高$damage$%  \n使用：对敌方小兵立即造成1.2倍伤害。
+Item_Lasthit_description_simple												普通攻击对小兵造成物理伤害。  \n使用：对小兵立即造成伤害。
+Item_Lasthit_bonusdescription												减少该装备$cooldown$秒冷却时间。
+Item_Lasthit_legendaryname												繁盛
+Item_Lasthit_legendarydescription												用飞斧击杀一个单位能获得额外的$gold$金币。
+Item_Lasthit_Empower_1_name										1
+Item_Lasthit_Empower_1_description								用飞斧击杀一个非英雄单位会得到额外$gold_enchant$金币。
+Item_Lasthit_Empower_2_name										2
+Item_Lasthit_Empower_2_description								对小兵造成多$damage_enchant$%伤害。
+Item_Lasthit_Empower_3_name										3
+Item_Lasthit_Empower_3_description								增加$health_regen_enchant$生命回复。
+Item_Lasthit_Empower_4_name										4
+Item_Lasthit_Empower_4_description								减少$cooldown_enchant$秒冷却时间。
+Item_Lasthit_Empower_5_name										5
+Item_Lasthit_Empower_5_description								用飞斧击杀一个敌方单位会为英雄提供$heal_enchant$生命回复。
+
+// Item_HealingScepter
+Item_HealingScepter_name												愈合权杖
+Item_HealingScepter_description									^使用: 为目标提供^* ^o$heal$生命值^*的治疗。^0积攒最多$mana$法力。^* 
+Item_HealingScepter_description_simple											使用后立即回复生命值和法力值。
+Item_HealingScepter_bonusdescription												+$common_increase$%回复的生命和法力值
+Item_HealingScepter_legendaryname												卓越
+Item_HealingScepter_legendarydescription												增加$legendary$最小&最大充能数。 
+Item_HealingScepter_Empower_1_name								专注
+Item_HealingScepter_Empower_1_description						增加最大治疗效力，以提供^o$heal_enchant$生命值^*和$mana_enchant$法力值。冷却时间减少一半。 
+Item_HealingScepter_Empower_2_name								勤奋
+Item_HealingScepter_Empower_2_description						储存充能时速度加快33%。 
+Item_HealingScepter_Empower_3_name								慷慨
+Item_HealingScepter_Empower_3_description						为周围盟友提供$areaheal_enchant$%治疗。
+
+// InfernoBrand
+Item_InfernoBrand_name												地狱火徽记
+Item_InfernoBrand_description											 $resistance$坚韧 \n对周围$radius$距离内的敌方单位被动造成每秒^o$damage$的魔法伤害^* 。
+Item_InfernoBrand_description_simple									 获取坚韧，不停灼烧附近敌人。
+Item_InfernoBrand_bonusdescription												 +$common_increase$%伤害&坚韧
+Item_InfernoBrand_legendaryname												光芒四射
+Item_InfernoBrand_legendarydescription											效果范围增加至$radius$。
+Item_InfernoBrand_Empower_1_name								影响
+Item_InfernoBrand_Empower_1_description							增加$radius_enchant$有效范围。
+Item_InfernoBrand_Empower_2_name								奉献
+Item_InfernoBrand_Empower_2_description							增加healthregen_enchant$%生命回复的伤害。 伤害不再受能量多少的影响。
+Item_InfernoBrand_Empower_3_name								美德
+Item_InfernoBrand_Empower_3_description							每对一个敌方英雄造成伤害，都将获得$armor_enchant$坚韧。
+Item_InfernoBrand_Empower_4_name								专注
+Item_InfernoBrand_Empower_4_description							增加$damage_enchant$伤害，但减少$area_enchant$有效范围。
+
+// Codex
+Item_Codex_name												烈焰法杖
+Item_Codex_description											 使用：对目标造成^o$damage$魔法伤害^*。 
+Item_Codex_description_simple												主动使用对目标造成魔法伤害。
+Item_Codex_bonusdescription												+$common_increase$%伤害
+Item_Codex_legendaryname												偷取
+Item_Codex_legendarydescription												用烈焰法杖杀死一个敌人将减低$cooldown$秒的冷却时间。
+Item_Codex_Empower_1_name										1
+Item_Codex_Empower_1_description								使用烈焰法杖击杀敌人都将减少$cooldown_enchant$秒冷却时间。
+Item_Codex_Empower_2_name									神箭手
+Item_Codex_Empower_2_description								增加$range_enchant$施法范围。
+Item_Codex_Empower_3_name										完美
+Item_Codex_Empower_3_description								增加$damage_enchant$造成的伤害。
+
+// Hellflower
+Item_Hellflower_name												诅咒魔杖
+Item_Hellflower_description											+$power$能量 \n使用：减少指定敌方单位30%的坚韧，并减速30%，持续$duration$秒。
+Item_Hellflower_description_simple										+能量\n^主动使用: 对指定敌人减速，减少坚韧。^*
+Item_Hellflower_bonusdescription                                  +$common_increase$%效果持续时间
+Item_Hellflower_legendaryname												羸弱
+Item_Hellflower_legendarydescription												+$legendary$%减速效果。
+Item_Hellflower_Empower_1_name									遏制
+Item_Hellflower_Empower_1_description							增加$slow_enchant$减速效果。
+Item_Hellflower_Empower_2_name									2
+Item_Hellflower_Empower_2_description							获得目标的视野，持续一段时间。
+Item_Hellflower_Empower_3_name									毁坏
+Item_Hellflower_Empower_3_description							增加$armorreduction_enchant$护甲&魔法抗性减免。
+
+
+// State_Hellflower
+State_Hellflower_Tooltip_name												诅咒魔杖
+State_Hellflower_description_simple												诅咒魔杖减少了你的护甲值。
+State_Hellflower_name												诅咒魔杖
+State_Hellflower_name_FRAME_effect
+
+// Energizer
+Item_Energizer_name												风行
+Item_Energizer_description												+$movespeed$移动速度  \n\n使用：短时间内使你和周围盟友单位的移动速度提高100，持续4秒。
+Item_Energizer_description_simple											+移动速度\n^主动使用：短时间内大幅提高你和周围友方单位的移动速度。^*
+Item_Energizer_bonusdescription												减少$common_increase$%风行的冷却时间。
+Item_Energizer_legendaryname												坚韧
+Item_Energizer_legendarydescription												主动使用同时减少$legendary$%受控制的时间。
+Item_Energizer_Empower_1_name									韧性
+Item_Energizer_Empower_1_description							主动使用时，风行为英雄提供$slowresist_enchant$%减速减免。
+Item_Energizer_Empower_2_name									勤奋
+Item_Energizer_Empower_2_description							减少$cooldown_enchant$秒冷却时间。
+Item_Energizer_Empower_3_name									3
+Item_Energizer_Empower_3_description							增加$area_enchant$有效范围。
+Item_Energizer_Empower_4_name									敏捷
+Item_Energizer_Empower_4_description							增加$active_movespeed_enchant$主动移动速度，同时减少$active_duration_enchant$秒持续时间。
+
+// State_Energizer_Buff
+State_Energizer_Buff_Tooltip_name												风行
+State_Energizer_Buff_description_simple												此装备能增加你的移动速度。
+State_Energizer_Buff_name												风行
+State_Energizer_Buff_name_FRAME_effect
+
+// Supercharger
+Item_Supercharger_name												毁灭神像
+Item_Supercharger_description												+$power$能量  \n杀敌和助攻时，2.5秒内会回复英雄最大法力值的$percent_manarestore$%   
+Item_Supercharger_description_simple												大量增加能量。杀敌和贡献助攻时会在一段时间内回复法力值。    
+Item_Supercharger_bonusdescription												+$common_increase$%能量			
+Item_Supercharger_legendaryname												科塔拉斯迪克
+Item_Supercharger_legendarydescription											增加$bonus$%额外能量。
+Item_Supercharger_Empower_1_name								威力
+Item_Supercharger_Empower_1_description							获得$powerpercent_enchant$%额外能量。
+Item_Supercharger_Empower_2_name								充能过量
+Item_Supercharger_Empower_2_description							增加$cooldown_enchant$%冷却时间，但获得$bonus$额外能量。
+Item_Supercharger_Empower_3_name								专注
+Item_Supercharger_Empower_3_description							增加$power_enchant$能量，但不再回复法力。
+
+// Blessed Orb
+Item_Blessed_Orb_name												祝福之球
+Item_Blessed_Orb_description												   +$power$能量  \n所受治疗效果和护盾效果增加$amp$%。 
+Item_Blessed_Orb_description_simple												            增加能量、治疗效果和护盾效果。
+Item_Blessed_Orb_bonusdescription												+$common_increase$%奖励和能量			
+Item_Blessed_Orb_legendaryname												宽容
+Item_Blessed_Orb_legendarydescription												施放技能后，有25%的机会对周围生命值最低的英雄提供$legendary$治疗。
+Item_Blessed_Orb_Empower_1_name									宽容
+Item_Blessed_Orb_Empower_1_description							施法有$heal_chance_enchant$%机会为附近生命值最低的己方英雄提供$heal_enchant$生命值。
+Item_Blessed_Orb_Empower_2_name									牺牲
+Item_Blessed_Orb_Empower_2_description							获得$health_enchant$生命值，但减少$power_enchant$能量。
+Item_Blessed_Orb_Empower_3_name									专注
+Item_Blessed_Orb_Empower_3_description							获得$mana_enchant$法力，但减少$power_enchant$能量。
+
+// Timewarper
+Item_Timewarper_name												时光扭曲者
+Item_Timewarper_description												 +$power$能量  \n+$cd$%冷却缩减
+Item_Timewarper_description_simple											增加冷却缩减和能量。
+Item_Timewarper_bonusdescription												+$common_increase$%冷却缩减
+Item_Timewarper_legendaryname												清澈
+Item_Timewarper_legendarydescription											每次施放法术都增加$legendary$法力回复，持续4秒。
+Item_Timewarper_Empower_1_name									效能
+Item_Timewarper_Empower_1_description							每次施法增加$manaregen_enchant$法力/秒，持续$manaregen_duration_enchant$秒。无叠加效果。
+Item_Timewarper_Empower_2_name									 灌能
+Item_Timewarper_Empower_2_description							获得$magicdamage_enchant$%魔法伤害。
+Item_Timewarper_Empower_3_name									吸虹
+Item_Timewarper_Empower_3_description							获得$spellsteal_enchant$%魔法偷取。
+
+
+// Zealot's blade
+Item_Zealotsblade_name												狂战之刃
+Item_Zealotsblade_description												+$attackspeed$%攻击速度      \n+$movespeed$移动速度    
+Item_Zealotsblade_description_simple											增加额外攻击速度和移动速度
+Item_Zealotsblade_bonusdescription												+额外$common_increase$攻击速度和移动速度
+Item_Zealotsblade_legendaryname												充能
+Item_Zealotsblade_legendarydescription											每次普通攻击增加$power$能量，最多叠加3次。3秒内不进行攻击，效果将消失。						
+Item_Zealotsblade_Empower_1_name								韵律
+Item_Zealotsblade_Empower_1_description							每次攻击获得$power_enchant$能量，最多叠加3次。当在攻击状态外$power_duration_enchant$秒后功能失效。
+Item_Zealotsblade_Empower_2_name								吸血
+Item_Zealotsblade_Empower_2_description							获得$lifesteal_enchant$%物理偷取。
+Item_Zealotsblade_Empower_3_name								 3
+Item_Zealotsblade_Empower_3_description							增加$movespeed_enchant$移动速度。
+
+
+// Soulstealer
+Item_Soulstealer_name												灵魂窃取
+Item_Soulstealer_description												+$manamax$法力值 \n+$vamp$%的法术吸血，范围法术效果减半。
+Item_Soulstealer_description_simple											增加法力和法术吸血	
+Item_Soulstealer_bonusdescription												+$common_increase$%法术吸血
+Item_Soulstealer_legendaryname												法力消耗
+Item_Soulstealer_legendarydescription												每杀掉一个敌方单位就会回复$mana$法力值。
+Item_Soulstealer_Empower_1_name									法力消耗
+Item_Soulstealer_Empower_1_description							击杀一个敌方单位，回复$mana_enchant$法力。
+Item_Soulstealer_Empower_2_name									统治
+Item_Soulstealer_Empower_2_description							每击杀一个敌方单位能获得额外$power_enchant$能量。最多叠加$stacks_enchant$次。英雄被击杀后，叠层数会清零。
+Item_Soulstealer_Empower_3_name									防御
+Item_Soulstealer_Empower_3_description							获得$resistance_enchant$坚韧，但减少$mana_enchant$法力。
+
+
+// Slayer
+Item_Slayer_name												亡者遗物
+Item_Slayer_description												 +$health$生命值   \n当对一个敌人造成三次伤害后，敌人的能量会下降$power_reduction$%。持续6秒。
+Item_Slayer_description_simple												增加攻击速度，三次攻击后减少敌人能量。
+Item_Slayer_bonusdescription									+$common_increase$%攻击速度，减少目标能量
+Item_Slayer_legendaryname												衰弱
+Item_Slayer_legendarydescription												当叠满3层时，目标承受额外$amp_legendary$%伤害。
+Item_Slayer_Empower_1_name										毁坏
+Item_Slayer_Empower_1_description								受减益效果影响的目标同样受到Debuffed targets also take $damage_enchant$% increased damage.
+Item_Slayer_Empower_2_name										熟化
+Item_Slayer_Empower_2_description								持续时间增加$duration_enchant$秒。
+Item_Slayer_Empower_3_name										专注
+Item_Slayer_Empower_3_description								+$powerreduction_enchant$%能量减成.
+
+// Vampiric Blade
+Item_VampiricBlade_name												吸血鬼之剑
+Item_VampiricBlade_description												+$vamp$%攻击偷取，+$resistance$坚韧   
+Item_VampiricBlade_description_simple												增加偷取
+Item_VampiricBlade_bonusdescription												 +$common_increase$%偷取奖励。
+Item_VampiricBlade_legendaryname												吞食
+Item_VampiricBlade_legendarydescription												杀死一个非英雄单位，你可回复敌人最大生命值的$heal$%。
+Item_VampiricBlade_Empower_1_name								吸收
+Item_VampiricBlade_Empower_1_description						击杀非英雄单位能回复敌人最大生命值的$healthrestore_creep_enchant$%给自身英雄。
+Item_VampiricBlade_Empower_2_name								荒芜
+Item_VampiricBlade_Empower_2_description						获得$bonusdamage_chance_enchant$%机会，对非英雄单位造成$bonusdamage_enchant$伤害。
+Item_VampiricBlade_Empower_3_name								渴望
+Item_VampiricBlade_Empower_3_description						人头数和助攻数回复你最大生命值的$healthrestore_kill_enchant$%。持续$healthrestore_killduration_enchant$秒。
+
+// Item_ThunderClaw
+Item_ThunderClaw_name												雷电大棒
+Item_ThunderClaw_description												    普通攻击有25%的几率附带一个闪电链，造成^o$damage$魔法伤害^*并最多来回弹跳7次。 \n闪电对非英雄目标造成1.5倍伤害。
+Item_ThunderClaw_description_simple											增加施法出闪电链的概率，对多个敌人造成^o魔法伤害^*。  
+Item_ThunderClaw_bonusdescription												+$common_increase$%伤害
+Item_ThunderClaw_legendaryname												震惊
+Item_ThunderClaw_legendarydescription												减少受攻击目标$resistance$坚韧。
+Item_ThunderClaw_Empower_1_name									破坏
+Item_ThunderClaw_Empower_1_description							被击中的目标的魔法抗性将减少$armor_reduction_enchant$。
+Item_ThunderClaw_Empower_2_name									重导
+Item_ThunderClaw_Empower_2_description							英雄最多可弹跳数增加至$bounce_enchant$。
+Item_ThunderClaw_Empower_3_name									财富
+Item_ThunderClaw_Empower_3_description							增加可触发百分比至$chance_enchant$。
+Item_ThunderClaw_Empower_4_name									 4
+Item_ThunderClaw_Empower_4_description							激活后，提供$mana_enchant$法力。
+
+
+// Item_Mana_Shield
+Item_Mana_Shield_name												法力之盾
+Item_Mana_Shield_description										+$resistance$坚韧	 \n\n使用：消耗$shield_manapercent$%最大法力值为周围友军创造一个等值的护盾，持续8秒。                  
+Item_Mana_Shield_description_simple												获得坚韧  \n主动使用：给附近盟军提供一个护盾。^*
+Item_Mana_Shield_bonusdescription												+$common_increase$%伤害。
+Item_Mana_Shield_legendaryname												激励
+Item_Mana_Shield_legendarydescription										法力护盾同样会吸收英雄受到的$legendary$%伤害，转换成其法力值。
+Item_Mana_Shield_Empower_1_name									皈依
+Item_Mana_Shield_Empower_1_description							法力护盾回复$mana_restore_enchant$%护盾在法力值中吸收的伤害。
+Item_Mana_Shield_Empower_2_name									 宽容
+Item_Mana_Shield_Empower_2_description							护盾失效后，目标会获得$heal_enchant$%剩余护盾值的治疗。
+Item_Mana_Shield_Empower_3_name									保护
+Item_Mana_Shield_Empower_3_description							获得$support_enchant$%效能，由你提供治疗&护盾。
+
+// Item_Shieldbreaker
+Item_Shieldbreaker_name												压制之锤
+Item_Shieldbreaker_description												   +^o$attack_damage$物理伤害^*  \n普通攻击无视目标$resistance$%坚韧。    
+Item_Shieldbreaker_description_simple											造成额外^o物理伤害^*和普通攻击坚韧穿刺
+Item_Shieldbreaker_bonusdescription												+$common_increase$%护甲穿刺
+Item_Shieldbreaker_legendaryname												天崩地裂
+Item_Shieldbreaker_legendarydescription												对非大怪单位的功击造成相当于目标最大生命值$legendary$%的额外伤害。
+Item_Shieldbreaker_Empower_1_name								天崩地裂
+Item_Shieldbreaker_Empower_1_description						你的攻击造成额外伤害，伤害值等同于目标最大生命值的$damagebonus_enchant$%。
+Item_Shieldbreaker_Empower_2_name								 2
+Item_Shieldbreaker_Empower_2_description						你的攻击总是刺透最少$armorpierce_enchant$护甲。
+Item_Shieldbreaker_Empower_3_name								吸血
+Item_Shieldbreaker_Empower_3_description						获得$lifesteal_enchant$%物理偷取。
+
+
+// Item_Malevolence
+Item_Malevolence_name												诅咒之书
+Item_Malevolence_description												+$power$能量    \n法术忽略目标$armor$%坚韧。	
+Item_Malevolence_description_simple											获取能量和技能坚韧穿刺
+Item_Malevolence_bonusdescription											增加$common_increase$%坚韧减成和法术能量。
+Item_Malevolence_legendaryname												Energized
+Item_Malevolence_legendarydescription												+$regen$法力回复。
+Item_Malevolence_Empower_1_name									返老还童
+Item_Malevolence_Empower_1_description							每秒获得$manaregen_enchant$%法力。
+Item_Malevolence_Empower_2_name									吸虹
+Item_Malevolence_Empower_2_description							$spellsteal_enchant$%魔法偷取。
+Item_Malevolence_Empower_3_name									 3
+Item_Malevolence_Empower_3_description							法术总是能穿刺最少$magicarmor_enchant$坚韧。
+
+// Item_BarrierToken
+Item_BarrierToken_name												  法术屏障
+Item_BarrierToken_description												  ++$resistance$坚韧    \n在受到魔法伤害前，减少$reduction$%魔法伤害。25秒冷却时间。
+Item_BarrierToken_description_simple											获取坚韧
+Item_BarrierToken_bonusdescription												增加$common_increase$%魔法伤害的减免。
+Item_BarrierToken_legendaryname												格挡
+Item_BarrierToken_legendarydescription												法术值将会额外减少$legendary$%。
+Item_BarrierToken_Empower_1_name								守护
+Item_BarrierToken_Empower_1_description							触发法术屏障的符文被额外减少spelltrigger_enchant$%效能。
+Item_BarrierToken_Empower_2_name								勤恳
+Item_BarrierToken_Empower_2_description							减少$cooldown_enchant$秒冷却时间。
+Item_BarrierToken_Empower_3_name								简洁
+Item_BarrierToken_Empower_3_description							不再获得$magicarmor_enchant$坚韧。 
+
+// Item_OraclesTrinket
+Item_OraclesTrinket_name										圣谕徽章
+Item_OraclesTrinket_description									+$resistance$坚韧  \n\n^主动使用: 消除所有晕眩效果/减速且晕眩敌人，晕眩效果为50%/减速减成，持续2秒。 \n\n如果能消除群控效果，可提供^* ^o$heal$^*生命值回复。^*
+Item_OraclesTrinket_description_simple							获取坚韧 \n主动使用：减除晕眩/减速效果，提供自我治疗 
+Item_OraclesTrinket_Empower_1_name								浓缩
+Item_OraclesTrinket_Empower_1_description						移除群控效果，回复$mana_enchant$法力值。
+Item_OraclesTrinket_Empower_2_name								勤勉
+Item_OraclesTrinket_Empower_2_description						减少$cooldown_enchant$秒冷却时间。
+
+// Item_TwinFang
+Item_TwinFang_name												神秘象征
+Item_TwinFang_description										+5能量  \n+18坚韧
+Item_TwinFang_description_simple								获得能量和技能坚韧穿刺
+Item_TwinFang_Empower_1_name									吸虹
+Item_TwinFang_Empower_1_description								$spellsteal_enchant$%魔法偷取
+Item_TwinFang_Empower_2_name									聚焦
+Item_TwinFang_Empower_2_description								额外获得$penetration_enchant$魔法穿刺，但同时减少$magicarmor$坚韧。
+Item_TwinFang_Empower_3_name									传承
+Item_TwinFang_Empower_3_description								当队一名敌方英雄造成魔法伤害后，可持续获得$mana$法力值，最多叠加25次。
+
+// Item_Titanslayer
+Item_Titanslayer_name											屠杀猎刀
+Item_Titanslayer_description									攻击造成等同于目标最大生命值的$healthdamage$%额外伤害。
+Item_Titanslayer_description_simple								根据目标生命值，对其造成额外^o物理伤害^*。
+Item_Titanslayer_Empower_1_name									毁灭
+Item_Titanslayer_Empower_1_description							攻击造成自身最大生命值$damage_enchant$%的加成伤害。
+Item_Titanslayer_Empower_2_name									神箭手
+Item_Titanslayer_Empower_2_description							+$range_enchant$攻击范围
+Item_Titanslayer_Empower_3_name									体质
+Item_Titanslayer_Empower_3_description							当生命值在75%上时，增加额外$healthdamage_bonus$%的伤害加成。
+
+// Item_Marchers
+Item_Marchers_name												行军之靴 
+Item_Marchers_description												35移动速度
+Item_Marchers_description2												行军之靴能被动加点^y移动 ^y速度^*，（移动速度加成效果不与其他鞋类叠加）。
+Item_Marchers_description_simple												+35移动速度
+Item_Marchers_effect_header												行军之靴作用
+Item_Marchers_shop_flavor												发明行军之靴的发明家意图通过加快士兵行进速度来缓解军队疲惫性。然而他发现，这些士兵已经被逼迫行进了很久，行进路程也非常远。
+Item_Marchers_shop_categories												配件，靴子
+
+
+// Item_Sheepstick
+Item_SheepStick_name												巫毒娃娃
+Item_SheepStick_description											  主动使用：对敌方目标施放变形术，持续2.5秒。\n\n被变形的目标不能攻击和施放技能。
+Item_SheepStick_description_simple												 主动使用：使敌人丧失攻击力且不能施放技能。
+Item_SheepStick_effect_header												变形术  
+Item_SheepStick_shop_flavor												少数萨满教的工具带给人一种恐惧不安的感觉，就像是Kuldra的图腾一样。生活赐予你智慧，语言赐予你力量，挥舞的法杖能赐予你速度。而它们也能帮助主人们利用隐藏的法力流并更迅速地恢复能量。虽然这些工具有如此多的益处，但大多数人还是不愿意使用这些异教的工具。
+Item_SheepStick_bonusdescription												减少$cooldown$秒冷却时间。
+Item_SheepStick_legendaryname												疼痛
+Item_SheepStick_legendarydescription											减少被变形目标$armor$坚韧。	     
+Item_SheepStick_IMPACT_effect												对目标施用变形术,持续时间为2.5秒。
+Item_SheepStick_Empower_1_name									 1
+Item_SheepStick_Empower_1_description							冷却时间从30秒增加至$cd_enchant$秒。
+Item_SheepStick_Empower_2_name									智慧
+Item_SheepStick_Empower_2_description							得到$cooldown_enchant$%冷却减成。
+Item_SheepStick_Empower_3_name									遏制
+Item_SheepStick_Empower_3_description							目标变形后，获得$slow_enchant$%减速效果。
+
+// Item_Orb_Of_Revelation
+Item_Orb_Of_Revelation_name												洞察之球  
+Item_Orb_Of_Revelation_description												+$health$生命值 \n\n^主动使用：照亮目标区域视野，持续8秒。
+Item_Orb_Of_Revelation_description_simple												增加生命值。\n^主动使用照亮目标区域。
+Item_Orb_Of_Revelation_effect_header												变形效果
+Item_Orb_Of_Revelation_shop_flavor												少数萨满教的工具带给人一种恐惧不安的感觉，就像是Kuldra的图腾一样。生活赐予你智慧，语言赐予你力量，挥舞的法杖能赐予你速度。而它们也能帮助主人们利用隐藏的法力流并更迅速地恢复能量。虽然这些工具有如此多的益处，但大多数人还是不愿意使用这些异教的工具。
+Item_Orb_Of_Revelation_bonusdescription												减少$cooldown$秒冷却时间。
+Item_Orb_Of_Revelation_legendaryname												减速
+Item_Orb_Of_Revelation_legendarydescription												使被暴露的敌人减速$legendary$%，持续3秒。
+Item_Orb_Of_Revelation_Empower_1_name							遏制
+Item_Orb_Of_Revelation_Empower_1_description					为显形敌人提供$slow_enchant$%减速效果，持续$slow_duration_enchant$秒。
+Item_Orb_Of_Revelation_Empower_2_name							2
+Item_Orb_Of_Revelation_Empower_2_description					显形的敌人可最少显形$reveal_enchant$秒。
+Item_Orb_Of_Revelation_Empower_3_name							勤恳
+Item_Orb_Of_Revelation_Empower_3_description					减少$cooldown_enchant$秒冷却时间。
+
+// State_Orb_Of_Revelation_Reveal
+State_Orb_Of_Revelation_Reveal_Tooltip_name												洞察
+State_Orb_Of_Revelation_Reveal_description_simple											因使用了洞察之球，你被暴露在敌人视野中。
+State_Orb_Of_Revelation_Reveal_name												洞察
+State_Orb_Of_Revelation_Reveal_name_FRAME_effect
+
+// Item_Frostbrand
+Item_Frostbrand_name												 冰霜之刃
+Item_Frostbrand_description												+^o$damage$^*物理伤害 \n攻击将降低目标移动速度，持续2秒。\n减速效果对远程英雄影响相对较小。
+Item_Frostbrand_description_simple											造成额外^o物理伤害^*，且使敌人减速。	
+Item_Frostbrand_effect_header												冰霜的作用                                             
+Item_Frostbrand_tooltip_flavor												即使放在火中1小时，它还是冰冷的。
+Item_Frostbrand_effect_header:attack												冰霜的作用       
+Item_Frostbrand_ATTACK_IMPACT_effect:attack												禁锢目标英雄，持续2秒。
+Item_Frostbrand_bonusdescription												+$common_increase$%减速效果
+Item_Frostbrand_legendaryname												敏捷性
+Item_Frostbrand_legendarydescription												攻击时，为你的英雄增加$movespeed$的移动速度，持续3秒。
+Item_Frostbrand_Empower_1_name									敏捷性
+Item_Frostbrand_Empower_1_description							攻击时获得$movespeed_enchant$移动速度，持续2.5秒。
+Item_Frostbrand_Empower_2_name								疲乏
+Item_Frostbrand_Empower_2_description							攻击时同时减少$attackspeed_enchant$敌人攻击速度。
+Item_Frostbrand_Empower_3_name									专注
+Item_Frostbrand_Empower_3_description							增加$slowincrease_enchant$%减速效果，但减少$basedamage_enchant$物理伤害。
+
+
+// State_Frostbrand
+State_Frostbrand_name												冷却
+State_FrostbrandRanged_name											冷却
+
+//
+// Familiars
+//
+
+// Luster
+Ability_Luster_Passive_1_name												点金术
+Ability_Luster_Passive_2_name												点金术
+Ability_Luster_Passive_3_name												点金术
+Ability_Luster_Passive_1_description												击杀非英雄单位获得额外$passive$金钱。
+Ability_Luster_Passive_2_description												击杀非英雄单位获得额外$passive$金钱。
+Ability_Luster_Passive_3_description												击杀非英雄单位获得额外$passive$金钱。
+Ability_Luster_Passive_1_description_simple												击杀非英雄单位获得额外金钱
+Ability_Luster_Passive_2_description_simple												击杀非英雄单位获得额外金钱
+Ability_Luster_Passive_3_description_simple												击杀非英雄单位获得额外金钱
+Ability_Luster_Passive2_1_name												血之渴求
+Ability_Luster_Passive2_2_name												血之渴求
+Ability_Luster_Passive2_3_name												血之渴求
+Ability_Luster_Passive2_1_description_simple												 击杀非英雄单位可获得治疗
+Ability_Luster_Passive2_2_description_simple												 击杀非英雄单位可获得治疗
+Ability_Luster_Passive2_3_description_simple												 击杀非英雄单位可获得治疗
+Ability_Luster_Passive2_1_description												 每杀死一个非英雄单位将恢复$passive$生命值。
+Ability_Luster_Passive2_2_description											 每杀死一个非英雄单位将恢复$passive$生命值。
+Ability_Luster_Passive2_3_description												 每杀死一个非英雄单位将恢复$passive$生命值。
+Ability_Luster_TriggeredPassive_1_name												贪婪
+Ability_Luster_TriggeredPassive_2_name												贪婪
+Ability_Luster_TriggeredPassive_3_name												贪婪
+Ability_Luster_TriggeredPassive_1_description										  在你附近的非英雄单位即将死亡时，卢斯特尔会帮你进行击杀。冷却时间$cooldown$秒^*。
+Ability_Luster_TriggeredPassive_2_description											  在你附近的非英雄单位即将死亡时，卢斯特尔会帮你进行击杀。冷却时间^c$cooldown$秒^*。
+Ability_Luster_TriggeredPassive_3_description										  在你附近的非英雄单位即将死亡时，卢斯特尔会帮你进行击杀。冷却时间^c$cooldown$秒^*。
+Ability_Luster_TriggeredPassive_1_description_simple												不定期进行补刀
+Ability_Luster_TriggeredPassive_2_description_simple												不定期进行补刀
+Ability_Luster_TriggeredPassive_3_description_simple												不定期进行补刀
+Ability_Luster_Ult_1_name												冲击波
+Ability_Luster_Ult_2_name												冲击波
+Ability_Luster_Ult_3_name												冲击波
+Ability_Luster_Ult_1_description												对小兵和野怪造成$damage$伤害。冷却时间120秒。
+Ability_Luster_Ult_2_description												对小兵和野怪造成$damage$伤害。冷却时间80秒。
+Ability_Luster_Ult_3_description												对小兵和野怪造成$damage$伤害。冷却时间80秒。
+Ability_Luster_Ult_1_description_simple												使用：对非英雄单位造成伤害。
+Ability_Luster_Ult_2_description_simple												使用：对非英雄单位造成伤害。
+Ability_Luster_Ult_3_description_simple												使用：对非英雄单位造成伤害。
+
+// Topps
+Ability_Topps_Passive_1_name												 能量精通
+Ability_Topps_Passive_2_name												 能量精通
+Ability_Topps_Passive_3_name												 能量精通
+Ability_Topps_Passive_1_description												  增加英雄$passive$点能量
+Ability_Topps_Passive_2_description												  增加英雄$passive$点能量
+Ability_Topps_Passive_3_description												  增加英雄$passive$点能量
+Ability_Topps_Passive_1_description_simple												增加能量
+Ability_Topps_Passive_2_description_simple												增加能量
+Ability_Topps_Passive_3_description_simple												增加能量
+Ability_Topps_Passive2_1_name												韧性皮肤
+Ability_Topps_Passive2_2_name												韧性皮肤
+Ability_Topps_Passive2_3_name												韧性皮肤
+Ability_Topps_Passive2_1_description												减少$passive$%被控制的时间。
+Ability_Topps_Passive2_2_description												减少$passive$%被控制的时间。
+Ability_Topps_Passive2_3_description												减少$passive$%被控制的时间。
+Ability_Topps_Passive2_1_description_simple												减少被控制的时间
+Ability_Topps_Passive2_2_description_simple												减少被控制的时间
+Ability_Topps_Passive2_3_description_simple												减少被控制的时间
+Ability_Topps_TriggeredPassive_1_name												  能量震荡
+Ability_Topps_TriggeredPassive_2_name												  能量震荡
+Ability_Topps_TriggeredPassive_3_name												  能量震荡
+Ability_Topps_TriggeredPassive_1_description											当敌方英雄进入攻击范围内时，托普斯对其造成$pure_damage$真实伤害，持续5秒（伤害取决于英雄等级）。冷却时间27秒。
+Ability_Topps_TriggeredPassive_2_description											当敌方英雄进入攻击范围内时，托普斯对其造成$pure_damage$真实伤害，持续5秒（伤害取决于英雄等级）。冷却时间27秒。
+Ability_Topps_TriggeredPassive_3_description										当敌方英雄进入攻击范围内时，托普斯对其造成$pure_damage$真实伤害，持续5秒（伤害取决于英雄等级）。冷却时间27秒。
+Ability_Topps_TriggeredPassive_1_description_simple												 周期性对附近敌方英雄造成伤害
+Ability_Topps_TriggeredPassive_2_description_simple												 周期性对附近敌方英雄造成伤害
+Ability_Topps_TriggeredPassive_3_description_simple												 周期性对附近敌方英雄造成伤害
+Ability_Topps_Ult_1_name												 颤栗
+Ability_Topps_Ult_2_name												 颤栗
+Ability_Topps_Ult_3_name												 颤栗
+Ability_Topps_Ult_1_description												 减速周围所有敌方英雄1.5秒，冷却时间$cooldown$秒。
+Ability_Topps_Ult_2_description												 减速周围所有敌方英雄1.5秒，冷却时间$cooldown$秒。
+Ability_Topps_Ult_3_description											    减速周围所有敌方英雄1.5秒，冷却时间$cooldown$秒。
+Ability_Topps_Ult_1_description_simple												    减速周围所有敌方英雄。
+Ability_Topps_Ult_2_description_simple												    减速周围所有敌方英雄。
+Ability_Topps_Ult_3_description_simple												    减速周围所有敌方英雄。
+
+// Bounder
+Ability_Bounder_Passive_1_name												迅捷
+Ability_Bounder_Passive_2_name												迅捷
+Ability_Bounder_Passive_3_name												迅捷
+Ability_Bounder_Passive_1_description												增加$passive$%移动速度
+Ability_Bounder_Passive_2_description												增加$passive$%移动速度
+Ability_Bounder_Passive_3_description												增加$passive$%移动速度
+Ability_Bounder_Passive_1_description_simple												增加移动速度
+Ability_Bounder_Passive_2_description_simple												增加移动速度
+Ability_Bounder_Passive_3_description_simple												增加移动速度
+Ability_Bounder_Passive2_1_name											强劲
+Ability_Bounder_Passive2_2_name												强劲
+Ability_Bounder_Passive2_3_name												强劲
+Ability_Bounder_Passive2_1_description												增加$passive$物理伤害。
+Ability_Bounder_Passive2_2_description												增加$passive$物理伤害。
+Ability_Bounder_Passive2_3_description												增加$passive$物理伤害。
+Ability_Bounder_Passive2_1_description_simple												增加物理伤害
+Ability_Bounder_Passive2_2_description_simple												增加物理伤害
+Ability_Bounder_Passive2_3_description_simple												增加物理伤害
+Ability_Bounder_TriggeredPassive_1_name												冻伤
+Ability_Bounder_TriggeredPassive_2_name												冻伤
+Ability_Bounder_TriggeredPassive_3_name												冻伤
+Ability_Bounder_TriggeredPassive_1_description												当你攻击时，班德尔会使你攻击附加减速效果，降低敌人20%移动速度，持续2秒。冷却时间$cooldown$秒。
+Ability_Bounder_TriggeredPassive_2_description												当你攻击时，班德尔会使你攻击附加减速效果，降低敌人20%移动速度，持续2秒。冷却时间$cooldown$秒。
+Ability_Bounder_TriggeredPassive_3_description												当你攻击时，班德尔会使你攻击的目标减低20%移动速度，持续^c3秒^*。$cooldown$秒冷却。
+Ability_Bounder_TriggeredPassive_1_description_simple												周期性使你攻击的目标减速
+Ability_Bounder_TriggeredPassive_2_description_simple												周期性使你攻击的目标减速
+Ability_Bounder_TriggeredPassive_3_description_simple												周期性使你攻击的目标减速
+Ability_Bounder_Ult_1_name												跃迁
+Ability_Bounder_Ult_2_name												跃迁
+Ability_Bounder_Ult_3_name												跃迁
+Ability_Bounder_Ult_1_description												  向指定方向冲锋400距离。冷却时间$cooldown$秒。
+Ability_Bounder_Ult_2_description												  向指定方向冲锋400距离。冷却时间$cooldown$秒。
+Ability_Bounder_Ult_3_description												  向指定方向冲锋400距离。冷却时间$cooldown$秒。
+Ability_Bounder_Ult_1_description_simple												使用：跳向目标区域。
+Ability_Bounder_Ult_2_description_simple												使用：跳向目标区域。
+Ability_Bounder_Ult_3_description_simple												使用：跳向目标区域。
+
+// Ganker
+Ability_Ganker_Passive_1_name								潜行
+Ability_Ganker_Passive_2_name								潜行
+Ability_Ganker_Passive_3_name								潜行
+Ability_Ganker_Passive_1_description						脱战状态时，增加$ooc_movespeed$%移动速度。  
+Ability_Ganker_Passive_2_description						脱战状态时，增加$ooc_movespeed$%移动速度。
+Ability_Ganker_Passive_3_description						脱战状态时，增加$ooc_movespeed$%移动速度。
+Ability_Ganker_Passive_1_description_simple					战斗状态外增加移动速度
+Ability_Ganker_Passive_2_description_simple					战斗状态外增加移动速度
+Ability_Ganker_Passive_3_description_simple					战斗状态外增加移动速度
+Ability_Ganker_TriggeredPassive_1_name						奖励
+Ability_Ganker_TriggeredPassive_2_name						奖励
+Ability_Ganker_TriggeredPassive_3_name						奖励
+Ability_Ganker_TriggeredPassive_1_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_2_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_3_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_1_description_simple		击杀敌方英雄后，获得额外奖励  
+Ability_Ganker_TriggeredPassive_2_description_simple		击杀敌方英雄后，获得额外奖励
+Ability_Ganker_TriggeredPassive_3_description_simple		击杀敌方英雄后，获得额外奖励
+Ability_Ganker_Ult_1_name									影子追踪
+Ability_Ganker_Ult_2_name									影子追踪
+Ability_Ganker_Ult_3_name									影子追踪
+Ability_Ganker_Ult_1_description                            不停对目标敌人造成$damage$并为己方英雄提供视野。$cooldown$秒冷却时间^*。
+Ability_Ganker_Ult_2_description							不停对目标敌人造成$damage$并为己方英雄提供视野。 ^c$cooldown$秒冷却时间^*。
+Ability_Ganker_Ult_3_description							不停对目标敌人造成^c$damage$并为己方英雄提供视野。 $cooldown$秒冷却时间^*。				
+Ability_Ganker_Ult_1_description_simple						不停伤害敌人并为己方英雄提供视野
+Ability_Ganker_Ult_2_description_simple						不停伤害敌人并为己方英雄提供视野
+Ability_Ganker_Ult_3_description_simple						不停伤害敌人并为己方英雄提供视野
+
+// State_Ganker_Ult_1
+State_Ganker_Ult_1_Tooltip_name								影子追踪
+State_Ganker_Ult_1_description								菲兹正在对你造成伤害，且使你显形。
+State_Ganker_Ult_1_description_simple						菲兹正在对你造成伤害，且使你显形。
+State_Ganker_Ult_1_name										影子追踪
+State_Ganker_Ult_1_name_FRAME_effect
+
+// State_Ganker_Ult_2
+State_Ganker_Ult_2_Tooltip_name								影子追踪
+State_Ganker_Ult_2_description								菲兹正在对你造成伤害，且使你显形。
+State_Ganker_Ult_2_description_simple						菲兹正在对你造成伤害，且使你显形。
+State_Ganker_Ult_2_name										影子追踪
+State_Ganker_Ult_2_name_FRAME_effect
+
+// State_Ganker_Ult_3
+State_Ganker_Ult_3_Tooltip_name								影子追踪
+State_Ganker_Ult_3_description								菲兹正在对你造成伤害，且使你显形。
+State_Ganker_Ult_3_description_simple						菲兹正在对你造成伤害，且使你显形。
+State_Ganker_Ult_3_name										影子追踪
+State_Ganker_Ult_3_name_FRAME_effect
+
+// Pusher
+Ability_Pusher_Passive_1_name								恢复
+Ability_Pusher_Passive_2_name								恢复
+Ability_Pusher_Passive_3_name								恢复
+Ability_Pusher_Passive_1_description						每秒增加$passive$魔法抗性。(根据英雄等级而定).
+Ability_Pusher_Passive_2_description						每秒增加$passive$魔法抗性。(根据英雄等级而定).
+Ability_Pusher_Passive_3_description						每秒增加$passive$魔法抗性。(根据英雄等级而定).
+Ability_Pusher_Passive_1_description_simple					增加抗性
+Ability_Pusher_Passive_2_description_simple					增加抗性
+Ability_Pusher_Passive_3_description_simple					增加抗性
+Ability_Pusher_TriggeredPassive_1_name						掠夺
+Ability_Pusher_TriggeredPassive_2_name						掠夺
+Ability_Pusher_TriggeredPassive_3_name						掠夺
+Ability_Pusher_TriggeredPassive_1_description				攻击一个敌人英雄或建筑物将得到$gold$金币。45秒冷却时间。
+Ability_Pusher_TriggeredPassive_2_description				攻击一个敌人英雄或建筑物将得到$gold$金币。  ^c30秒冷却时间^*。
+Ability_Pusher_TriggeredPassive_3_description				攻击一个敌人英雄或建筑物将得到^c$gold$金币^*。   30秒冷却时间。
+Ability_Pusher_TriggeredPassive_1_description_simple		攻击敌人/建筑物时会得到金币  
+Ability_Pusher_TriggeredPassive_2_description_simple		攻击敌人/建筑物时会得到金币 
+Ability_Pusher_TriggeredPassive_3_description_simple		攻击敌人/建筑物时会得到金币 
+Ability_Pusher_Ult_1_name									晋升
+Ability_Pusher_Ult_2_name									晋升
+Ability_Pusher_Ult_3_name									晋升
+Ability_Pusher_Ult_1_description							为5个己方小兵增加$attackspeed$额外移动速度, +$damage_increase$%基础伤害, 和$health$生命值。(随英雄等级变化而变化)，持续15秒。$cooldown$秒冷却时间。
+Ability_Pusher_Ult_2_description							为5个己方小兵增加$attackspeed$额外移动速度, +$damage_increase$%基础伤害, 和$health$生命值。(随英雄等级变化而变化)，持续15秒。$cooldown$秒冷却时间。
+Ability_Pusher_Ult_3_description							为5个己方小兵增加^c$attackspeed$额外移动速度, +$damage_increase$%基础伤害, 和$health$生命值。(随英雄等级变化而变化)，持续15秒。$cooldown$秒冷却时间。
+Ability_Pusher_Ult_1_description_simple						己方小兵可获得增益效果 
+Ability_Pusher_Ult_2_description_simple						己方小兵可获得增益效果
+Ability_Pusher_Ult_3_description_simple					己方小兵可获得增益效果
+
+
+// Pincer
+Ability_Pincer_Passive_1_name												复苏
+Ability_Pincer_Passive_2_name												复苏
+Ability_Pincer_Passive_3_name												复苏
+Ability_Pincer_Passive_1_description												增加$passive$生命回复 (根据英雄等级而定).
+Ability_Pincer_Passive_2_description												增加$passive$生命回复 (根据英雄等级而定).
+Ability_Pincer_Passive_3_description												增加$passive$生命回复 (根据英雄等级而定).
+Ability_Pincer_Passive_1_description_simple												增加生命回复
+Ability_Pincer_Passive_2_description_simple												增加生命回复
+Ability_Pincer_Passive_3_description_simple												增加生命回复
+Ability_Pincer_Passive2_1_name												防御
+Ability_Pincer_Passive2_2_name												防御
+Ability_Pincer_Passive2_3_name												防御
+Ability_Pincer_Passive2_1_description												增加$passive$护甲  (根据英雄等级而定).
+Ability_Pincer_Passive2_2_description												增加$passive$护甲  (根据英雄等级而定).
+Ability_Pincer_Passive2_3_description												增加$passive$护甲  (根据英雄等级而定).
+Ability_Pincer_Passive2_1_description_simple												增加护甲
+Ability_Pincer_Passive2_2_description_simple												增加护甲
+Ability_Pincer_Passive2_3_description_simple												增加护甲
+Ability_Pincer_TriggeredPassive_1_name												反击
+Ability_Pincer_TriggeredPassive_2_name												反击
+Ability_Pincer_TriggeredPassive_3_name												反击
+Ability_Pincer_TriggeredPassive_1_description												 当被敌方英雄攻击时，平瑟会反击攻击者，造成最多$pure_damage$真实伤害（伤害取决于英雄等级）。冷却时间30秒。
+Ability_Pincer_TriggeredPassive_2_description												当被敌方英雄攻击时，平瑟会反击攻击者，造成最多$pure_damage$真实伤害（伤害取决于英雄等级）。冷却时间^c20秒^*。
+Ability_Pincer_TriggeredPassive_3_description												    当被敌方英雄攻击时，平瑟会反击攻击者，造成最多^c$pure_damage$真实伤害^*（伤害取决于英雄等级）。冷却时间20秒。
+Ability_Pincer_TriggeredPassive_1_description_simple												平瑟会反攻击攻击者
+Ability_Pincer_TriggeredPassive_2_description_simple												平瑟会反攻击攻击者
+Ability_Pincer_TriggeredPassive_3_description_simple												平瑟会反攻击攻击者
+Ability_Pincer_Ult_1_name												脱逃
+Ability_Pincer_Ult_2_name												脱逃
+Ability_Pincer_Ult_3_name												脱逃
+Ability_Pincer_Ult_1_description												  移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间$cooldown$秒。
+Ability_Pincer_Ult_2_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
+Ability_Pincer_Ult_3_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间$cooldown$秒。
+Ability_Pincer_Ult_1_description_simple												移除晕眩/减速效果
+Ability_Pincer_Ult_2_description_simple												移除晕眩/减速效果
+Ability_Pincer_Ult_3_description_simple												移除晕眩/减速效果
+
+// Tortus
+Ability_Tortus_Passive_1_name												活力
+Ability_Tortus_Passive_2_name												活力
+Ability_Tortus_Passive_3_name												活力
+Ability_Tortus_Passive_1_description_simple												增加最大生命值
+Ability_Tortus_Passive_2_description_simple												增加最大生命值
+Ability_Tortus_Passive_3_description_simple												增加最大生命值
+Ability_Tortus_Passive_1_description												增加$passive$最大生命值。(根据英雄等级而定)
+Ability_Tortus_Passive_2_description												增加$passive$最大生命值。(根据英雄等级而定)
+Ability_Tortus_Passive_3_description												增加$passive$最大生命值。(根据英雄等级而定)
+Ability_Tortus_Passive2_1_name												清晰术
+Ability_Tortus_Passive2_2_name												清晰术
+Ability_Tortus_Passive2_3_name												清晰术
+Ability_Tortus_Passive2_1_description												增加$passive$法力回复(根据英雄等级而定)
+Ability_Tortus_Passive2_2_description												增加$passive$法力回复(根据英雄等级而定)
+Ability_Tortus_Passive2_3_description												增加$passive$法力回复(根据英雄等级而定)
+Ability_Tortus_Passive2_1_description_simple												增加法力回复 
+Ability_Tortus_Passive2_2_description_simple												增加法力回复 
+Ability_Tortus_Passive2_3_description_simple												增加法力回复 
+Ability_Tortus_TriggeredPassive_1_name											援护
+Ability_Tortus_TriggeredPassive_2_name												援护
+Ability_Tortus_TriggeredPassive_3_name												援护
+Ability_Tortus_TriggeredPassive_1_description												 托特斯对你进行援护，减少来自敌方英雄$deflection$普通攻击伤害(根据英雄等级而定)。冷却时间18秒。
+Ability_Tortus_TriggeredPassive_2_description													  托特斯对你进行援护，减少来自敌方英雄$deflection$普通攻击伤害(根据英雄等级而定)。冷却时间^c12秒^*。
+Ability_Tortus_TriggeredPassive_3_description													 托特斯对你进行援护，减少来自敌方英雄^c$deflection$^*普通攻击伤害(根据英雄等级而定)。冷却时间12秒。
+Ability_Tortus_TriggeredPassive_1_description_simple												抵抗来自普攻的伤害 
+Ability_Tortus_TriggeredPassive_2_description_simple												抵抗来自普攻的伤害
+Ability_Tortus_TriggeredPassive_3_description_simple												抵抗来自普攻的伤害
+Ability_Tortus_Ult_1_name												治疗术
+Ability_Tortus_Ult_2_name												治疗术
+Ability_Tortus_Ult_3_name												治疗术
+Ability_Tortus_Ult_1_description											恢复英雄$heal$生命值(根据英雄等级而定)。冷却时间240秒。
+Ability_Tortus_Ult_2_description											恢复英雄$heal$生命值(根据英雄等级而定)。 ^c冷却时间160秒^*。
+Ability_Tortus_Ult_3_description											   恢复英雄$heal$生命值(根据英雄等级而定)。 冷却时间160秒。
+Ability_Tortus_Ult_1_description_simple												恢复生命值
+Ability_Tortus_Ult_2_description_simple												恢复生命值
+Ability_Tortus_Ult_3_description_simple												恢复生命值
+
+
+// Tinker
+Ability_Tinker_Passive_1_name									回复效果增强
+Ability_Tinker_Passive_2_name									回复效果增强
+Ability_Tinker_Passive_3_name									回复效果增强
+Ability_Tinker_Passive_1_description_simple						增加脱战时的回复值
+Ability_Tinker_Passive_2_description_simple						增加脱战时的回复值
+Ability_Tinker_Passive_3_description_simple						增加脱战时的回复值
+Ability_Tinker_Passive_1_description							增加额外$passive$%脱战时的回复值。
+Ability_Tinker_Passive_2_description							增加额外$passive$%脱战时的回复值。
+Ability_Tinker_Passive_3_description							增加额外$passive$%脱战时的回复值。
+Ability_Tinker_TriggeredPassive_1_name							抵御攻击效果
+Ability_Tinker_TriggeredPassive_2_name							抵御攻击效果
+Ability_Tinker_TriggeredPassive_3_name							抵御攻击效果
+Ability_Tinker_TriggeredPassive_1_description					当受到晕眩或者减速时，获得$passive$%晕眩/减速减成，持续3秒。60秒冷却时间。
+Ability_Tinker_TriggeredPassive_2_description					当受到晕眩或者减速时，获得$passive$%晕眩/减速减成，持续3秒。 ^c40秒冷却时间^*.
+Ability_Tinker_TriggeredPassive_3_description					当受到晕眩或者减速时，获得$passive$%晕眩/减速减成，持续3秒。 40秒冷却时间。
+Ability_Tinker_TriggeredPassive_1_description_simple			定期减少晕眩/减速效果
+Ability_Tinker_TriggeredPassive_2_description_simple			定期减少晕眩/减速效果
+Ability_Tinker_TriggeredPassive_3_description_simple			定期减少晕眩/减速效果
+Ability_Tinker_Ult_1_name										增强防御效果
+Ability_Tinker_Ult_2_name										增强防御效果
+Ability_Tinker_Ult_3_name										增强防御效果
+Ability_Tinker_Ult_1_description								 +$towerdamage$%伤害，增加在接下来8次攻击小兵时$towersplash$%的溅射伤害。\n\n击杀敌方英雄和推塔后的收益都将给予自身英雄。 270秒冷却时间。
+Ability_Tinker_Ult_2_description								 +$towerdamage$%伤害，增加在接下来8次攻击小兵时$towersplash$%的溅射伤害。\n\n击杀敌方英雄和推塔后的收益都将给予自身英雄。 ^c180秒冷却时间^*。
+Ability_Tinker_Ult_3_description								 +$towerdamage$%伤害，增加在接下来8次攻击小兵时$towersplash$%的溅射伤害。\n\n击杀敌方英雄和推塔后的收益都将给予自身英雄。  180秒冷却时间。
+Ability_Tinker_Ult_1_description_simple							瞄准一个防御塔，为伤害加成 
+Ability_Tinker_Ult_2_description_simple							瞄准一个防御塔，为伤害加成
+Ability_Tinker_Ult_3_description_simple							瞄准一个防御塔，为伤害加成
+
+// Mystik
+Ability_Mystik_Passive_1_name												法术专精
+Ability_Mystik_Passive_2_name												法术专精
+Ability_Mystik_Passive_3_name												法术专精
+Ability_Mystik_Passive_1_description												增加$passive$%魔法伤害。
+Ability_Mystik_Passive_2_description												增加$passive$%魔法伤害。
+Ability_Mystik_Passive_3_description												增加$passive$%魔法伤害。
+Ability_Mystik_Passive_1_description_simple												 增加魔法伤害 
+Ability_Mystik_Passive_2_description_simple												 增加魔法伤害
+Ability_Mystik_Passive_3_description_simple												 增加魔法伤害 
+Ability_Mystik_Passive2_1_name												虹吸
+Ability_Mystik_Passive2_2_name												虹吸
+Ability_Mystik_Passive2_3_name												虹吸
+Ability_Mystik_Passive2_1_description												增加$passive$%魔法偷取。
+Ability_Mystik_Passive2_2_description												增加$passive$%法偷取。
+Ability_Mystik_Passive2_3_description												增加$passive$%法偷取。
+Ability_Mystik_Passive2_1_description_simple												造成魔法伤害，回复生命值	
+Ability_Mystik_Passive2_2_description_simple												造成魔法伤害，回复生命值
+Ability_Mystik_Passive2_3_description_simple												造成魔法伤害，回复生命值
+Ability_Mystik_TriggeredPassive_1_name												冲击炸弹
+Ability_Mystik_TriggeredPassive_2_name												冲击炸弹
+Ability_Mystik_TriggeredPassive_3_name												冲击炸弹
+Ability_Mystik_TriggeredPassive_1_description												 当你的技能命中敌方英雄时，密斯迪克会对其造成额外$pure_damage$真实伤害(根据英雄等级而定)。冷却时间24秒。
+Ability_Mystik_TriggeredPassive_2_description												  当你的技能命中敌方英雄时，密斯迪克会对其造成额外$pure_damage$真实伤害(根据英雄等级而定)。冷却时间^c16秒^*。
+Ability_Mystik_TriggeredPassive_3_description											  当你的技能命中敌方英雄时，密斯迪克会对其造成额外^c$pure_damage$真实伤害^*(根据英雄等级而定)。冷却时间16秒。
+Ability_Mystik_TriggeredPassive_1_description_simple												 密斯迪克对你命中的敌方英雄造成伤害 
+Ability_Mystik_TriggeredPassive_2_description_simple												 密斯迪克对你命中的敌方英雄造成伤害 
+Ability_Mystik_TriggeredPassive_3_description_simple												 密斯迪克对你命中的敌方英雄造成伤害 
+Ability_Mystik_Ult_1_name												灵感
+Ability_Mystik_Ult_2_name												灵感
+Ability_Mystik_Ult_3_name												灵感
+Ability_Mystik_Ult_1_description												 快速恢复英雄$mana$法力值。冷却时间180秒。
+Ability_Mystik_Ult_2_description												 快速恢复英雄$mana$法力值。冷却时间^c120秒^*。
+Ability_Mystik_Ult_3_description										快速恢复英雄^c$mana$法力值^*。冷却时间120秒。
+Ability_Mystik_Ult_1_description_simple												回复法力值
+Ability_Mystik_Ult_2_description_simple												回复法力值
+Ability_Mystik_Ult_3_description_simple												回复法力值
+
+// Fiki
+Ability_Fiki_Passive_name										偏斜
+Ability_Fiki_Passive_description								减少$block$英雄受到的小兵伤害(效果随英雄等级而提高)。
+Ability_Fiki_Passive_description_simple							减少英雄受到的小兵伤害 
+Ability_Fiki_TriggeredPassive_name								回复
+Ability_Fiki_TriggeredPassive_description						当英雄生命值在75%以下时，回复$heal$生命值。(效果随英雄等级而提高)。 24秒冷却时间。
+Ability_Fiki_TriggeredPassive_description_simple				当英雄生命值在75%以下时，回复生命值。 
+Ability_Fiki_Ult_name											嘲讽
+Ability_Fiki_Ult_description								    标记一个目标，使费奇嘲讽范围内单位。持续时间15秒，45秒冷却时间。
+Ability_Fiki_Ult_description_simple								嘲讽范围内单位
+
+// Razer
+Ability_Razer_Passive2_1_name												野蛮
+Ability_Razer_Passive2_2_name												野蛮
+Ability_Razer_Passive2_3_name												野蛮
+Ability_Razer_Passive2_1_description												增加$passive$%的物理伤害。 (根据英雄等级而定)
+Ability_Razer_Passive2_2_description												增加$passive$%的物理伤害。 (根据英雄等级而定)
+Ability_Razer_Passive2_3_description												增加$passive$%的物理伤害。 (根据英雄等级而定)
+Ability_Razer_Passive2_1_description_simple												 增加基础攻击速度。
+Ability_Razer_Passive2_2_description_simple												 增加基础攻击速度。
+Ability_Razer_Passive2_3_description_simple												 增加基础攻击速度。
+Ability_Razer_Passive_1_name												抑制
+Ability_Razer_Passive_2_name												抑制
+Ability_Razer_Passive_3_name												抑制
+Ability_Razer_Passive_1_description												增加$passive$魔法抗性  (根据英雄等级而定)
+Ability_Razer_Passive_2_description												增加$passive$魔法抗性(根据英雄等级而定)
+Ability_Razer_Passive_3_description												增加$passive$魔法抗性(根据英雄等级而定)
+Ability_Razer_Passive_1_description_simple												增加魔法抗性
+Ability_Razer_Passive_2_description_simple												增加魔法抗性
+Ability_Razer_Passive_3_description_simple												增加魔法抗性
+Ability_Razer_TriggeredPassive_1_name												撕咬
+Ability_Razer_TriggeredPassive_2_name												撕咬
+Ability_Razer_TriggeredPassive_3_name												撕咬
+Ability_Razer_TriggeredPassive_1_description										  普通攻击击中敌方英雄时，瑞泽会进行撕咬为自身英雄吸取最多$health$生命值(取决于英雄等级)。  冷却时间24秒。
+Ability_Razer_TriggeredPassive_2_description											   普通攻击击中敌方英雄时，瑞泽会进行撕咬为自身英雄吸取最多$health$生命值(取决于英雄等级)。 冷却时间^c16秒^*。
+Ability_Razer_TriggeredPassive_3_description												  普通攻击击中敌方英雄时，瑞泽会进行撕咬为自身英雄吸取最多$health$生命值(取决于英雄等级)。冷却时间16秒。
+Ability_Razer_TriggeredPassive_1_description_simple											瑞泽攻击敌方英雄时会为自身英雄提供治疗。
+Ability_Razer_TriggeredPassive_2_description_simple											瑞泽攻击敌方英雄时会为自身英雄提供治疗。
+Ability_Razer_TriggeredPassive_3_description_simple											瑞泽攻击敌方英雄时会为自身英雄提供治疗。
+Ability_Razer_Ult_1_name												影遁
+Ability_Razer_Ult_2_name												影遁
+Ability_Razer_Ult_3_name												影遁
+Ability_Razer_Ult_1_description												  创造一个分身并使你的英雄隐形，持续1.5秒。当你在进行攻击、施法或分身死亡时英雄将会显形。冷却时间为$cooldown$秒。
+Ability_Razer_Ult_2_description											   创造一个分身并使你的英雄隐形，持续1.5秒。当你在进行攻击、施法或分身死亡时英雄将会显形。^c冷却时间为$cooldown$秒^*。 
+Ability_Razer_Ult_3_description											  创造一个分身并使你的英雄隐形，^c持续2.25秒^*。当你在进行攻击、施法或分身死亡时英雄将会显形。^c冷却时间为$cooldown$秒^*。
+Ability_Razer_Ult_1_description_simple												创造一个分身并使你的英雄隐形
+Ability_Razer_Ult_2_description_simple												创造一个分身并使你的英雄隐形
+Ability_Razer_Ult_3_description_simple												创造一个分身并使你的英雄隐形
+
+// State_Razer_Invis
+State_Razer_Invis_Tooltip_name												潜行  
+State_Razer_Invis_description_simple											敌人将丢失你的视野。
+State_Razer_Invis_name												潜行   
+State_Razer_Invis_name_FRAME_effect
+
+pet_skin_name_Familiar_Pincer_baby              幼期平瑟
+pet_skin_name_Familiar_Pincer_teen              青年平瑟
+pet_skin_name_Familiar_Pincer_adult             成年平瑟
+
+pet_skin_name_Familiar_Bounder_baby               幼期班德尔
+pet_skin_name_Familiar_Bounder_teen               青年班德尔
+pet_skin_name_Familiar_Bounder_adult              成年班德尔
+
+pet_skin_name_Familiar_Mystik_baby               幼期密斯迪克 
+pet_skin_name_Familiar_Mystik_teen               青年密斯迪克 
+pet_skin_name_Familiar_Mystik_adult              成年密斯迪克
+
+pet_skin_name_Familiar_Topps_baby               幼期托普斯
+pet_skin_name_Familiar_Topps_teen               青年托普斯
+pet_skin_name_Familiar_Topps_adult              成年托普斯
+
+pet_skin_name_Familiar_Ganker_baby               幼期菲兹
+pet_skin_name_Familiar_Ganker_teen               青年菲兹
+pet_skin_name_Familiar_Ganker_adult              成年菲兹
+
+pet_skin_name_Familiar_Luster_baby               幼期卢思特
+pet_skin_name_Familiar_Luster_teen               青年卢思特 
+pet_skin_name_Familiar_Luster_adult              成年卢思特
+
+pet_skin_name_Familiar_Tortus_baby               幼期托特斯
+pet_skin_name_Familiar_Tortus_teen               青年托特斯
+pet_skin_name_Familiar_Tortus_adult              成年托特斯
+
+pet_skin_name_Familiar_Razer_baby               幼期瑞泽
+pet_skin_name_Familiar_Razer_teen               青年瑞泽 
+pet_skin_name_Familiar_Razer_adult              成年瑞泽
+
+// State_ShopAccess_Main
+State_ShopAccess_Main_name												基地商城
+State_ShopAccess_Main_description												购置装备。
+
+// Ability_Kongor1
+Ability_Kongor1_name												被动奖励   
+Ability_Kongor1_description												托斯的技能效果随着等级的提高和被动的奖励而加强。
+Ability_Kongor1_effect_header												效果
+
+// Ability_Kongor2
+Ability_Kongor2_name												猛击 
+Ability_Kongor2_description												此技能能减慢周围所有玩家的移动速度和攻击速度。当托斯的近战范围内有3个或更多单位时再使用此技能。
+Ability_Kongor2_effect_header												效果
+
+// State_Kongor_Ability2
+State_Kongor_Ability2_name												猛击
+State_Kongor_Ability2_description												托斯强有力的猛击会减慢移动速度和攻击速度。
+
+// Neutral_Kongor
+Neutral_Kongor_name												托斯
+Neutral_Kongor_description												猿王
+
+// Gadget_Kongor_Wall
+Gadget_Kongor_Wall_name												石墙
+
+// Neutral_TowerGuardian
+Neutral_TowerGuardian_name												穆坦斯	
+
+// Neutral_TowerMaster
+Neutral_TowerMaster2_name												守护者
+
+// State_Kongor
+State_Kongor_name												托斯升级
+State_Kongor_description												托斯在战斗中能慢慢升级自己的技能。
+
+// Creep_HellbourneMelee
+Creep_HellbourneMelee_name												隐普
+Creep_HellbourneMelee_description												斯嘉的门徒
+
+// Creep_HellbourneRanged
+Creep_HellbourneRanged_name												法术士
+Creep_HellbourneRanged_description												斯嘉的门徒
+
+// Creep_HellbourneSiege
+Creep_HellbourneSiege_name												弹弓
+
+// Critter_Chiprel
+Critter_Chiprel_name												迟普瑞
+
+// Critter_Frog
+Critter_Frog_name												青蛙
+
+// Critter_Lizard
+Critter_Lizard_name												蜥蜴
+
+// Critter_Rat
+Critter_Rat_name												老鼠
+
+// Critter_Squeye
+Critter_Squeye_name												思奎耶
+
+// Creep_LegionMelee
+Creep_LegionMelee_name												幼苗
+Creep_LegionMelee_description												军团守护者
+
+// Creep_LegionRanged
+Creep_LegionRanged_name												弓箭手
+Creep_LegionRanged_description												军团守护者
+
+// Creep_LegionSiege
+Creep_LegionSiege_name												重型弩炮  
+
+// State_Stunned
+State_Stunned_name												被晕眩
+
+// State_NonCombatRegen
+State_NonCombatRegen_name												脱战时的生命回复
+State_NonCombatRegen_description												+0.03%最大生命值/秒, +100%生命值回复。 同时，每秒回复最大法力值的0.04%，增加50%法力回复。 
+State_NonCombatRegen_description_simple												+0.03%最大生命值/秒, +100%生命值回复。 同时，每秒回复最大法力值的0.04%，增加50%法力回复。
+
+// State_InCombat
+State_InCombat_name												战斗状态
+State_InCombat_description												在战斗状态中时是无法自动回复生命值的。
+State_InCombat_description_simple												在战斗状态中时是无法自动回复生命值的。
+
+// State_HealingWellMovespeed
+State_HealingWellMovespeed_name												回城
+State_HealingWellMovespeed_description												你已回到己方基地且移动速度加快。造成或受到伤害后此效果会失效。 
+State_HealingWellMovespeed_description_simple												你已回到己方基地且移动速度加快。造成或受到伤害后此效果会失效。 
+
+// State_ConsecutiveTowerHit
+State_ConsecutiveTowerHit_name												防御塔的焦点
+State_ConsecutiveTowerHit_description												你正被一座防御塔攻击。除非你直接推塔，否则塔对英雄造成的伤害会逐渐增加。
+
+// State_ConsecutiveTowerHit_Immunity
+State_ConsecutiveTowerHit_Immunity_name												摧毁防御塔
+State_ConsecutiveTowerHit_Immunity_description												你已摧毁了一座防御塔，它不会再对你造成额外伤害。	
+
+// State_TowerRegen
+State_TowerRegen_name											防御塔回复功能
+State_TowerRegen_Tooltip_name									防御塔回复功能
+State_TowerRegen_description									当站己方防御塔附近时，你的脱战回复会更有效。
+State_TowerRegen_description_simple								当站己方防御塔附近时，你的脱战回复会更有效。
+
+// State_Taunted
+State_Taunted_name												已被嘲讽
+
+
+
+// Ability_HomecomingStone
+Ability_HomecomingStone_name												重新定位 
+Ability_HomecomingStone_description_simple												选中指定地点，传送至最近的己方建筑（包括观察哨）。冷却时间需要3秒。   \n\n如果受到来自其他英雄的伤害，会使此技能失效3秒。
+
+// Ability_HomecomingStone_Home
+Ability_HomecomingStone_Tutorial2_name												回城
+Ability_HomecomingStone_Tutorial2_description_simple											主动使用回城术，耗时8秒。
+Ability_HomecomingStone_Tutorial2_name:tutorialmod												回城
+Ability_HomecomingStone_Tutorial2_description_simple:tutorialmod												本章节的新手教程无法使用此功能。
+
+// Ability_HomecomingStone_Home
+Ability_HomecomingStone_Home_name												回城
+Ability_HomecomingStone_Home_description_simple												主动使用回城术，耗时8秒。
+Ability_HomecomingStone_Home_name:tutorialmod												回城
+Ability_HomecomingStone_Home_description_simple:tutorialmod												本章节的新手引导无法使用此功能。
+
+State_HomecomingStone_Source_Base_name												回城
+State_HomecomingStone_Source_Base_description												回城中
+State_HomecomingStone_Source_Base_description_simple												回城中
+
+State_HomecomingStone_Tutorial2_Source_Base_name												回城
+State_HomecomingStone_Tutorial2_Source_Base_description												回城中
+State_HomecomingStone_Tutorial2_Source_Base_description_simple												回城中
+
+State_HomecomingStone_Tutorial2_name												回城
+State_HomecomingStone_Tutorial2_description												回城中
+State_HomecomingStone_Tutorial2_description_simple												回城中
+
+// Ability_Ward
+Ability_Ward_name												插眼  
+Ability_Ward_description_simple												在指定地点插眼。可持续3分钟。如果两个插眼位置接近，将会同时被暴露。
+
+// Ability_StanceSwitch
+Ability_StanceSwitch_name												手动攻击目标     
+Ability_StanceSwitch_description_simple												如果你下达移动攻击命令或攻击命令，你的英雄只会攻击指定目标。    \n\n主动使用此技能能使英雄自动攻击新目标。
+Ability_StanceSwitch_name:stance_autoacquire												自动攻击目标
+Ability_StanceSwitch_description_simple:stance_autoacquire												如果没有其他的指令，你的英雄会自动攻击身旁的敌人。       \n\n主动使用此技能能阻止你的英雄自动攻击新的目标。
+
+Gadget_Observatory_name												瞭望台
+Gadget_Observatory_InFog_name												瞭望台
+
+Neutral_BossPowerUp_name												巴蒂尔
+Neutral_TowerMaster_name										辛德拉
+Creep_Kongor_name												托斯
+
+Gadget_FlamingEye_name												眼的视角
+
+Ability_WardSwitch_name												重新插眼
+State_Ward_Channel_Self_name												重新插眼    
+
+// State_Item4K
+State_Item4K_name												变形效果
+State_Item4K_description												基础移动速度调至100
+
+//Familiar Mystik
+Familiar_Mystik_name												密斯迪克
+Familiar_Mystik_description												密斯迪克可提升法术施法的有效性。
+
+//Familiar Pincer
+Familiar_Pincer_name												平瑟
+Familiar_Pincer_description												平瑟可提升对群控和骚扰的抵抗力。
+
+//Familiar Luster
+Familiar_Luster_name												卢斯特尔
+Familiar_Luster_description												卢斯特尔可提升金钱收入量。
+
+//Familiar Tortus
+Familiar_Tortus_name												托特斯
+Familiar_Tortus_description												托特斯可提升生命力。
+
+//Familiar Tinker
+Familiar_Tinker_name											廷克
+Familiar_Tinker_description										廷克可提升防御能力。
+
+//Familiar Bounder
+Familiar_Bounder_name												班德尔
+Familiar_Bounder_description												班德尔可提升机动性。
+
+//Familiar Ganker
+Familiar_Ganker_name											菲茨
+Familiar_Ganker_description									  	菲茨擅长游走消耗敌方英雄。
+
+//Familiar Pusher
+Familiar_Pusher_name											普兰德
+Familiar_Pusher_description										普兰德擅长围攻、推敌方基地。
+
+
+//Familiar Fiki
+Familiar_Fiki_name												费奇
+Familiar_Fiki_description										费奇提供打野能力。
+
+//Familiar Razer
+Familiar_Razer_name												瑞泽
+Familiar_Razer_description												瑞泽可提升攻击能力。
+
+//Familiar Topps
+Familiar_Topps_name												托普斯
+Familiar_Topps_description												托普斯可提升邻近范围内的攻击能力。
+
+///////////////////////////////////////////////////////
+//Crafting Masteries
+///////////////////////////////////////////////////////
+
+// Mastery_Tier0_Base
+Mastery_Tier0_Base_name												基础技能 
+Mastery_Tier0_Base_description												道具有效期为14天，一旦合成失败，再进行合成时成功的机会就会加倍。
+
+// Mastery_Tier1_DurableGoods
+Mastery_Tier1_DurableGoods_name												物品可使用时间
+Mastery_Tier1_DurableGoods_description												合成物品有效期将提高(2/4/6)天
+
+// Mastery_Tier1_OreEfficiency
+Mastery_Tier1_OreEfficiency_name												矿石效能
+Mastery_Tier1_OreEfficiency_description												合成会少消耗1个矿石。
+
+// Mastery_Tier1_TrashToTreasure
+Mastery_Tier1_TrashToTreasure_name												回收道具
+Mastery_Tier1_TrashToTreasure_description												回收道具，从中得到精华的几率增大(5/10/15)%。
+
+//Mastery_Tier2_TwoForOne
+Mastery_Tier2_TwoForOne_name												以二换一
+Mastery_Tier2_TwoForOne_description												得到(5/10)%合成机会来还原所有用过的矿石。
+
+// Mastery_Tier2_Junker
+Mastery_Tier2_Junker_name												云克
+Mastery_Tier2_Junker_description												回收普通道具时，从中多得到一个矿石的几率增大(50/100)% 。
+
+// Mastery_Tier2_CuttingLosses
+Mastery_Tier2_CuttingLosses_name												减少损失
+Mastery_Tier2_CuttingLosses_description												附魔失败的话会还原(1/2/3)精华。
+
+// Mastery_Tier3_ArtisanCrafting
+Mastery_Tier3_ArtisanCrafting_name												阿提桑合成
+Mastery_Tier3_ArtisanCrafting_description												提高(8/16/24)%合成稀有道具的几率。
+
+// Mastery_Tier3_MysticRetrieval
+Mastery_Tier3_MysticRetrieval_name												神秘回收
+Mastery_Tier3_MysticRetrieval_description												回收稀有道具时，有(50/100)%几率换取更多的矿石。
+
+// Mastery_Tier3_ArtisanEnchanting
+Mastery_Tier3_ArtisanEnchanting_name												阿提桑附魔
+Mastery_Tier3_ArtisanEnchanting_description												减少(1/2)附魔时需消耗的精华。
+
+// Mastery_Tier4_MasterCrafting
+Mastery_Tier4_MasterCrafting_name												专精合成
+Mastery_Tier4_MasterCrafting_description												合成传奇道具的几率提高33%。
+
+// Mastery_Tier4_EfficientTemperer
+Mastery_Tier4_EfficientTemperer_name												有效锻造
+Mastery_Tier4_EfficientTemperer_description												减少20%锻造时所需的精华。
+
+// Mastery_Tier4_MasterEnchanting
+Mastery_Tier4_MasterEnchanting_name												专精附魔
+Mastery_Tier4_MasterEnchanting_description												提高33%对传奇物品的附魔几率。
+
+
+///////////////////////////////////
+//Rare Components
+///////////////////////////////////
+
+// Brutality
+Rare_Brutality_name												暴行
+Rare_Brutality_description												^b普攻增加$rare_value$物理伤害
+Rare_Brutality_description_simple												^b最多增加2点基础伤害^*   
+
+// Casting
+Rare_Casting_name												铸造
+Rare_Casting_description										^b减少$rare_value$%冷却时间^*
+Rare_Casting_description_simple									^b减少$rare_value$%冷却时间^*
+
+// Fervor
+Rare_Fervor_name												坚韧
+Rare_Fervor_description												^b减少$rare_value$控制效果^*
+Rare_Fervor_description_simple												^b减少$rare_value$控制效果^*
+
+// Mastery
+Rare_Mastery_name												专精
+Rare_Mastery_description												^b增加$rare_value$%魔法伤害加点^*
+Rare_Mastery_description_simple												^b增加$rare_value$%魔法伤害加点^*
+
+// Perseverence
+Rare_Perseverence_name												毅力
+Rare_Perseverence_description												^b增加$rare_value$%倍生命值回复^*
+Rare_Perseverence_description_simple												^b增加$rare_value$%倍生命值回复^*
+
+// Power
+Rare_Power_name												能量
+Rare_Power_description												^b增加$rare_value$%倍能量^*
+Rare_Power_description_simple												^b增加$rare_value$%倍能量^*
+
+// Resistance
+Rare_Resistance_name												坚韧
+Rare_Resistance_description												^b增加$rare_value$坚韧^*
+Rare_Resistance_description_simple												^b增加$rare_value$坚韧^*
+
+// Siphoning
+Rare_Siphoning_name												虹吸作用
+Rare_Siphoning_description												^b增加$rare_value$%魔法偷取^*
+Rare_Siphoning_description_simple												^b增加$rare_value$%魔法偷取^*
+
+// Swiftness
+Rare_Swiftness_name												敏捷
+Rare_Swiftness_description												^b增加$rare_value$移动速度^*
+Rare_Swiftness_description_simple												^b增加$rare_value$移动速度^*
+
+// Toughness
+Rare_Toughness_name												韧性
+Rare_Toughness_description												^b增加$rare_value$护甲^* 
+Rare_Toughness_description_simple												^b增加$rare_value$护甲^* 
+
+// Vampirism
+Rare_Vampirism_name												吸血效果
+Rare_Vampirism_description												^b增加$rare_value$%攻击偷取^*
+Rare_Vampirism_description_simple												^b增加$rare_value$%攻击偷取^*
+
+// Wisdom
+Rare_Wisdom_name												智慧
+Rare_Wisdom_description											^b增加$rare_value$%法力池^*
+Rare_Wisdom_description_simple								^b增加$rare_value$%法力池^*
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//GearPacks
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Hero_Ace_Hero_Ace												基础色
+Hero_Ace_Hero_Ace_black												黑色
+Hero_Ace_Hero_Ace_aqua												浅绿色
+Hero_Ace_Hero_Ace_green												绿色
+Hero_Ace_Hero_Ace_orange												橙色
+Hero_Ace_Hero_Ace_pink												粉红色
+Hero_Ace_Hero_Ace_red												红色
+Hero_Ace_gear_1												北欧海盗
+Hero_Ace_gear_1_black												冰蓝色
+Hero_Ace_gear_1_blue												蓝色
+Hero_Ace_gear_1_green												绿色
+Hero_Ace_gear_1_purple												紫色
+Hero_Ace_gear_1_pink												粉红色
+Hero_Ace_gear_1_red												红色
+Hero_Ace_gear_1_clown											小丑
+Hero_Ace_gear_1_evil											恶魔
+Hero_Ace_gear_1_hunter											猎人
+Hero_Ace_gear_2												飞行员
+Hero_Ace_gear_2_pink												粉红色
+Hero_Ace_gear_2_black											黑色
+Hero_Ace_gear_2_aqua											浅绿色		
+Hero_Ace_gear_2_green												绿色	
+Hero_Ace_gear_2_orange												橙色	
+Hero_Ace_gear_2_red												红色
+Hero_Ace_uber												征服者
+Hero_Ace_uber_pink												粉红色
+Hero_Ace_uber_aqua												浅绿色
+Hero_Ace_gear_2_green												绿色	
+Hero_Ace_uber_red												红色
+Hero_Ace_uber_yellow												黄色
+Hero_Ace_uber_black												黑色
+Hero_Ace_gear_4													刽子手
+Hero_Ace_gear_4_pink											粉红色
+Hero_Ace_gear_4_red												红色
+Hero_Ace_gear_4_black											黑色
+
+Hero_Bastion_Hero_Bastion												基础色	
+Hero_Bastion_Hero_Bastion_black												黑色	
+Hero_Bastion_Hero_Bastion_blue												蓝色	
+Hero_Bastion_Hero_Bastion_gold												金色
+Hero_Bastion_Hero_Bastion_green												绿色
+Hero_Bastion_Hero_Bastion_pink												粉红色
+Hero_Bastion_Hero_Bastion_red												红色
+Hero_Bastion_gear_1												锦标赛服	
+Hero_Bastion_gear_1_black												黑色
+Hero_Bastion_gear_1_blue												蓝色	
+Hero_Bastion_gear_1_green												绿色
+Hero_Bastion_gear_1_grey												灰色
+Hero_Bastion_gear_1_orange												橙色
+Hero_Bastion_gear_1_red												红色
+Hero_Bastion_gear_2												臆想空间
+Hero_Bastion_gear_2_black												黑色	
+Hero_Bastion_gear_2_blue												蓝色		
+Hero_Bastion_gear_2_green												绿色
+Hero_Bastion_gear_2_purple												紫色
+Hero_Bastion_gear_2_red												红色
+Hero_Bastion_gear_2_yellow												黄色	
+Hero_Bastion_uber												金色盔甲	
+Hero_Bastion_uber_black												黑色	
+Hero_Bastion_uber_blue												蓝色
+Hero_Bastion_uber_yellow												金色	
+Hero_Bastion_uber_green												绿色
+Hero_Bastion_uber_purple												粉红色	
+Hero_Bastion_uber_teal												红色
+
+Hero_Blazer_Hero_Blazer											基础色
+Hero_Blazer_Hero_Blazer_blue									蓝色
+Hero_Blazer_Hero_Blazer_gold									金色
+Hero_Blazer_Hero_Blazer_yellowblack								黄黑色 
+Hero_Blazer_Hero_Blazer_mint									薄荷色
+Hero_Blazer_Hero_Blazer_candy									糖果
+Hero_Blazer_gear_1												变形金刚
+Hero_Blazer_gear_1_green										绿色
+Hero_Blazer_gear_1_red											红色
+Hero_Blazer_gear_1_pink											粉色
+Hero_Blazer_gear_1_blue											蓝色
+
+Hero_Bo_Hero_Bo												底色
+Hero_Bo_Hero_Bo_black												黑色	
+Hero_Bo_Hero_Bo_green												绿色
+Hero_Bo_Hero_Bo_pink												粉色
+Hero_Bo_Hero_Bo_red												红色
+Hero_Bo_Hero_Bo_blue												蓝色
+Hero_Bo_Hero_Bo_rwb												红白蓝
+Hero_Bo_Hero_Bo_redBlack										刺客
+Hero_Bo_Hero_Bo_maroon											栗色
+Hero_Bo_Hero_Bo_leafGreen										叶绿色
+Hero_Bo_Hero_Bo_blueGreen										蓝绿色
+Hero_Bo_Hero_Bo_purpleGreen										紫绿色
+Hero_Bo_Hero_Bo_teal											青色
+Hero_Bo_Hero_Bo_brown											棕色
+
+Hero_Bo_Hero_gear_1												公牛
+Hero_Bo_Hero_gear_1_black												黑色
+Hero_Bo_Hero_gear_1_green												绿色
+Hero_Bo_Hero_gear_1_orange												橙色
+Hero_Bo_Hero_gear_1_red												红色
+Hero_Bo_Hero_gear_1_blue												蓝色
+Hero_Bo_Hero_gear_1_purple												紫色
+Hero_Bo_gear_2													流浪汉
+Hero_Bo_gear_2_black											黑色
+Hero_Bo_gear_2_blue												蓝色
+Hero_Bo_gear_2_joker											小丑
+Hero_Bo_gear_2_green											绿色
+Hero_Bo_gear_2_pink												粉红色
+Hero_Bo_gear_2_yellow											黄色
+Hero_Bo_gear_3												礼服
+Hero_Bo_gear_3_black											黑色
+Hero_Bo_gear_3_blue												蓝色
+Hero_Bo_gear_3_pink												粉红色
+
+Hero_Caprice_Hero_Caprice												基础色
+Hero_Caprice_Hero_Caprice_blue												蓝色	
+Hero_Caprice_Hero_Caprice_black												黑色
+Hero_Caprice_Hero_Caprice_green												绿色
+Hero_Caprice_Hero_Caprice_orange												橙色		
+Hero_Caprice_Hero_Caprice_pink												粉红色
+Hero_Caprice_Hero_Caprice_purple												紫色	
+Hero_Caprice_Hero_Caprice_spooky								幽灵
+Hero_Caprice_gear_1												冒险家	
+Hero_Caprice_gear_1_aqua												浅绿色	
+Hero_Caprice_gear_1_black												黑色
+Hero_Caprice_gear_1_blue												蓝色	
+Hero_Caprice_gear_1_green												绿色	
+Hero_Caprice_gear_1_pink												粉红色	
+Hero_Caprice_gear_1_red												红色	
+Hero_Caprice_gear_2												亡命之徒	
+Hero_Caprice_gear_2_aqua												浅绿色	
+Hero_Caprice_gear_2_black												黑色
+Hero_Caprice_gear_2_blue												蓝色	
+Hero_Caprice_gear_2_green												绿色	
+Hero_Caprice_gear_2_pink												粉红色	
+Hero_Caprice_gear_2_red												红色
+Hero_Caprice_uber												上校出装
+Hero_Caprice_uber_orange												橙色
+Hero_Caprice_uber_black												黑色
+Hero_Caprice_uber_blue												蓝色
+Hero_Caprice_uber_green												绿色
+Hero_Caprice_uber_pink												粉红色	
+Hero_Caprice_uber_purple												紫色
+
+Hero_Carter_Hero_Carter												皮肤颜色
+Hero_Carter_Hero_Carter_black												黑色	
+Hero_Carter_Hero_Carter_blue												蓝色	
+Hero_Carter_Hero_Carter_green												绿色
+Hero_Carter_Hero_Carter_offwhite												米白色
+Hero_Carter_Hero_Carter_red												红色
+Hero_Carter_Hero_Carter_yellow												黄色
+Hero_Carter_Hero_Carter_orange									橙色
+Hero_Carter_Hero_Carter_tiedye									扎染
+Hero_Carter_Hero_Carter_purple									紫色
+Hero_Carter_gear_1												推车
+Hero_Carter_gear_1_black												黑色
+Hero_Carter_gear_1_blue												蓝色
+Hero_Carter_gear_1_green												绿色
+Hero_Carter_gear_1_pink												粉红色
+Hero_Carter_gear_1_red												红色
+Hero_Carter_gear_1_yellow												黄色
+Hero_Carter_gear_2												武士
+Hero_Carter_gear_2_black												黑色
+Hero_Carter_gear_2_green												绿色
+Hero_Carter_gear_2_blue												蓝色
+Hero_Carter_gear_2_offwhite												米白色
+Hero_Carter_gear_2_purple												紫色
+Hero_Carter_gear_2_yellow												黄色
+Hero_Carter_uber												坦克
+Hero_Carter_uber_black												黑色
+Hero_Carter_uber_blue												蓝色
+Hero_Carter_uber_green												绿色
+Hero_Carter_uber_yellow												黄色
+Hero_Carter_uber_white												白色
+Hero_Carter_uber_red												红色
+
+Hero_Claudessa_Hero_Claudessa								基础色
+Hero_Claudessa_Hero_Claudessa_black								黑色
+Hero_Claudessa_Hero_Claudessa_gold								金色
+Hero_Claudessa_Hero_Claudessa_ice								冰蓝色
+Hero_Claudessa_Hero_Claudessa_green								绿色
+Hero_Claudessa_Hero_Claudessa_orange							橙色
+Hero_Claudessa_Hero_Claudessa_purple							紫色
+Hero_Claudessa_gear_1											钢铁联盟
+Hero_Claudessa_gear_1_black										紫色
+Hero_Claudessa_gear_1_flames									烈焰
+Hero_Claudessa_gear_1_pink										粉色
+
+Hero_Fetterstone_Hero_Fetterstone												基础色
+Hero_Fetterstone_Hero_Fetterstone_black												黑色
+Hero_Fetterstone_Hero_Fetterstone_blue						蓝色
+Hero_Fetterstone_Hero_Fetterstone_green												绿色
+Hero_Fetterstone_Hero_Fetterstone_pink												粉色
+Hero_Fetterstone_Hero_Fetterstone_red												红色
+Hero_Fetterstone_Hero_Fetterstone_purple												紫色
+Hero_Fetterstone_Hero_gear_1_blue												蓝色
+Hero_Fetterstone_Hero_gear_1												矿工
+Hero_Fetterstone_Hero_gear_1_black												黑色
+Hero_Fetterstone_Hero_gear_1_green												绿色
+Hero_Fetterstone_Hero_gear_1_pink												粉红色
+Hero_Fetterstone_Hero_gear_1_red												红色
+Hero_Fetterstone_Hero_gear_1_purple												紫色
+
+Hero_Hale_Hero_Hale												基础色
+Hero_Hale_Hero_Hale_black												黑色
+Hero_Hale_Hero_Hale_spooky										幽灵
+Hero_Hale_Hero_Hale_red												红色
+Hero_Hale_Hero_Hale_green												绿色
+Hero_Hale_Hero_Hale_orange												橙色
+Hero_Hale_Hero_Hale_pink												粉色
+Hero_Hale_Hero_Hale_blue												蓝色
+Hero_Hale_Hero_Hale_gold										金色
+Hero_Hale_Hero_Hale_gear_1												基础色
+Hero_Hale_Hero_Hale_gear_1_black												黑色
+Hero_Hale_Hero_Hale_gear_1_red												红色
+Hero_Hale_Hero_Hale_gear_1_pink												粉色
+Hero_Hale_Hero_Hale_gear_1_blue												蓝色
+Hero_Hale_gear_2												Kenar-Ahdam
+Hero_Hale_gear_2_tan											黄褐色
+Hero_Hale_gear_2_black											黑色
+Hero_Hale_gear_2_red										   红色
+Hero_Hale_gear_2_green											绿色
+Hero_Hale_gear_2_blue											蓝色
+Hero_Hale_gear_2_pink											粉色
+Hero_Hale_uber													黑暗拥抱
+Hero_Hale_uber_blood											血红色
+Hero_Hale_uber_blue												蓝色
+Hero_Hale_uber_black											黑色
+Hero_Hale_uber_green											绿色
+Hero_Hale_uber_gold												金色
+Hero_Hale_uber_purple											紫色
+
+Hero_Harrower_Hero_Harrower										基础色							
+Hero_Harrower_Hero_Harrower_green								部落人							
+Hero_Harrower_Hero_Harrower_red									粗犷
+Hero_Harrower_Hero_Harrower_purple								紫色
+Hero_Harrower_Hero_Harrower_coon								浣熊
+
+Hero_Ladytinder_Hero_Ladytinder												基础色	
+Hero_Ladytinder_Hero_Ladytinder_blue												蓝色	
+Hero_Ladytinder_Hero_Ladytinder_magenta												洋红色	
+Hero_Ladytinder_Hero_Ladytinder_orange												橙色	
+Hero_Ladytinder_Hero_Ladytinder_pink												粉红色
+Hero_Ladytinder_Hero_Ladytinder_yellow												黄色		
+Hero_Ladytinder_Hero_Ladytinder_black												黑色	
+Hero_Ladytinder_gear_1												甲虫精灵
+Hero_Ladytinder_gear_1_black												黑色
+Hero_Ladytinder_gear_1_green												绿色
+Hero_Ladytinder_gear_1_maroon												褐红色
+Hero_Ladytinder_gear_1_pink												粉红色
+Hero_Ladytinder_gear_1_red												红色
+Hero_Ladytinder_gear_1_yellow												黄色	
+Hero_Ladytinder_gear_2												蘑菇怪
+Hero_Ladytinder_gear_2_black												黑色
+Hero_Ladytinder_gear_2_blue												蓝色
+Hero_Ladytinder_gear_2_orange												橙色
+Hero_Ladytinder_gear_2_pink												粉红色
+Hero_Ladytinder_gear_2_magenta												洋红色
+Hero_Ladytinder_gear_2_yellow												黄色	
+Hero_Ladytinder_uber												自然之王
+Hero_Ladytinder_uber_blue												蓝色
+Hero_Ladytinder_uber_black												黑色
+Hero_Ladytinder_uber_magenta												洋红色
+Hero_Ladytinder_uber_orange												橙色
+Hero_Ladytinder_uber_pink												粉红色
+Hero_Ladytinder_uber_yellow												黄色	
+
+Hero_Malady_Hero_Malady												基础色
+Hero_Malady_Hero_Malady_blue												蓝色	
+Hero_Malady_Hero_Malady_black												黑色
+Hero_Malady_Hero_Malady_green												绿色
+Hero_Malady_Hero_Malady_red												红色
+Hero_Malady_Hero_Malady_pink												粉红色
+Hero_Malady_Hero_Malady_limegreen												墨绿色
+Hero_Malady_gear_1												女王装	
+Hero_Malady_gear_1_violet												紫罗兰色	
+Hero_Malady_gear_1_black												黑色	
+Hero_Malady_gear_1_blue												蓝色	
+Hero_Malady_gear_1_green												绿色
+Hero_Malady_gear_1_orange												橙色	
+Hero_Malady_gear_1_pink												粉红色
+Hero_Malady_gear_2												面具	
+Hero_Malady_gear_2_aqua												浅绿色	
+Hero_Malady_gear_2_black												黑色	
+Hero_Malady_gear_2_blue												蓝色
+Hero_Malady_gear_2_green												绿色	
+Hero_Malady_gear_2_pink												粉红色	
+Hero_Malady_gear_2_red												红色
+Hero_Malady_uber												铁甲战士
+Hero_Malady_uber_black												黑色
+Hero_Malady_uber_blue												蓝色
+Hero_Malady_uber_green												绿色
+Hero_Malady_uber_red												红色
+Hero_Malady_uber_pink												粉红色
+Hero_Malady_uber_limegreen												石灰绿
+
+Hero_Minerva_Hero_Minerva										基础色
+Hero_Minerva_Hero_Minerva_grey									黑色
+Hero_Minerva_Hero_Minerva_blue									蓝色
+Hero_Minerva_Hero_Minerva_green									绿色
+Hero_Minerva_Hero_Minerva_orange								橙色
+Hero_Minerva_Hero_Minerva_pink									粉色
+Hero_Minerva_Hero_Minerva_red									红色
+Hero_Minerva_gear_1												电流系
+Hero_Minerva_gear_1_black									  黑色
+Hero_Minerva_gear_1_blue										蓝色
+Hero_Minerva_gear_1_green										绿色
+Hero_Minerva_gear_1_orange										橙色
+Hero_Minerva_gear_1_pink										粉色
+Hero_Minerva_gear_1_red											红色
+Hero_Minerva_gear_2												棱镜
+Hero_Minerva_gear_2_gold										金色
+Hero_Minerva_gear_2_gray										黑色
+Hero_Minerva_gear_2_green										绿色
+Hero_Minerva_gear_2_purple										紫色
+Hero_Minerva_gear_2_red											红色
+Hero_Minerva_gear_2_orange										橙色
+Hero_Minerva_uber												金属装
+Hero_Minerva_uber_black											黑色
+Hero_Minerva_uber_green											绿色
+Hero_Minerva_uber_orange										橙色
+Hero_Minerva_uber_red											红色
+Hero_Minerva_uber_pink											粉色
+Hero_Minerva_uber_yellow										黄色
+
+Hero_Moxie_Hero_Moxie												基础色
+Hero_Moxie_Hero_Moxie_black												黑色
+Hero_Moxie_Hero_Moxie_green												绿色
+Hero_Moxie_Hero_Moxie_nyan												粉色
+Hero_Moxie_Hero_Moxie_orange												橙色
+Hero_Moxie_Hero_Moxie_pink												粉色
+Hero_Moxie_Hero_Moxie_white												白色
+Hero_Moxie_Hero_Moxie_neon										紫色
+Hero_Moxie_Hero_Moxie_spooky								幽灵
+Hero_Moxie_Hero_Moxie_flash										闪光
+Hero_Moxie_gear_1											魔术师
+Hero_Moxie_gear_1_black												黑色
+Hero_Moxie_gear_1_blue												蓝色
+Hero_Moxie_gear_1_green												绿色
+Hero_Moxie_gear_1_grey												灰色
+Hero_Moxie_gear_1_pink												粉色
+Hero_Moxie_gear_1_red												红色
+Hero_Moxie_gear_2												超人猫
+Hero_Moxie_gear_2_yellow												黄色
+Hero_Moxie_gear_2_black												黑色
+Hero_Moxie_gear_2_blue												蓝色
+Hero_Moxie_gear_2_green												绿色
+Hero_Moxie_gear_2_purple												紫色
+Hero_Moxie_gear_2_red												红色
+Hero_Moxie_uber												星系猫
+Hero_Moxie_uber_black												黑色
+Hero_Moxie_uber_green												绿色
+Hero_Moxie_uber_nyan												粉色
+Hero_Moxie_uber_orange												橙色
+Hero_Moxie_uber_pink												粉色
+Hero_Moxie_uber_white												白色
+
+Hero_Ray_Hero_Ray												基础色
+Hero_Ray_Hero_Ray_black												黑色
+Hero_Ray_Hero_Ray_green												绿色
+Hero_Ray_Hero_Ray_pink												粉色
+Hero_Ray_Hero_Ray_primary												紫色
+Hero_Ray_Hero_Ray_fall												红色
+Hero_Ray_Hero_Ray_nuclear												土黄色
+Hero_Ray_Hero_Ray_cableGuy										修理工
+Hero_Ray_Hero_Ray_nuclear2										防核服
+Hero_Ray_Hero_gear_1												基础色
+Hero_Ray_Hero_gear_1_black												黑色
+Hero_Ray_Hero_gear_1_green												绿色
+Hero_Ray_Hero_gear_1_pink												粉色
+Hero_Ray_gear_1_purple											紫色
+Hero_Ray_gear_1_tieDye											扎染
+Hero_Ray_gear_1_blue											蓝色
+Hero_Ray_gear_2													Egon
+Hero_Ray_gear_2_black											黑色
+Hero_Ray_gear_2_brown											褐色
+Hero_Ray_gear_2_pink											粉色
+Hero_Ray_gear_2_red												红色
+Hero_Ray_gear_3													机械黎明
+Hero_Ray_gear_3_black												黑色
+Hero_Ray_gear_3_green												绿色
+Hero_Ray_gear_3_pink												粉色
+Hero_Ray_gear_3_primary											紫色
+Hero_Ray_gear_3_fall												红色
+Hero_Ray_gear_3_nuclear											土黄色
+
+Hero_Rook_Hero_Rook												洛克
+Hero_Rook_Hero_Rook_black												黑色
+Hero_Rook_Hero_Rook_yellow												黄色
+Hero_Rook_Hero_Rook_blue												蓝色
+Hero_Rook_Hero_Rook_green												绿色
+Hero_Rook_Hero_Rook_red												红色
+Hero_Rook_Hero_Rook_pink												粉红色
+Hero_Rook_Hero_Rook_assassinRook								刺客
+Hero_Rook_gear_1												暗黑系
+Hero_Rook_gear_1_blue												蓝色
+Hero_Rook_gear_1_gold												金色
+Hero_Rook_gear_1_green												绿色
+Hero_Rook_gear_1_opera												歌剧装
+Hero_Rook_gear_1_pink												粉红色
+Hero_Rook_gear_1_orange												橙色
+Hero_Rook_gear_2												稻草人
+Hero_Rook_gear_2_brown												棕色
+Hero_Rook_gear_2_black												黑色
+Hero_Rook_gear_2_blue												蓝色
+Hero_Rook_gear_2_aqua											浅绿色
+Hero_Rook_gear_2_green												绿色
+Hero_Rook_gear_2_red												红色
+Hero_Rook_gear_2_pink												粉红色
+Hero_Rook_gear_4												黎明使者
+Hero_Rook_gear_4_hunter											猎人
+Hero_Rook_gear_4_Black											黑色
+Hero_Rook_gear_4_Legion											军团装
+Hero_Rook_gear_4_green											绿色
+Hero_Rook_gear_4_red											红色
+Hero_Rook_gear_4_pink											粉红色
+Hero_Rook_uber												黄金战士
+Hero_Rook_uber_black												黑色
+Hero_Rook_uber_ruby												红宝石
+Hero_Rook_uber_emerald												绿宝石
+Hero_Rook_uber_sapphire												蓝宝石
+Hero_Rook_uber_topaz												黄宝石
+Hero_Rook_uber_obsidian												黑曜石
+
+Hero_Shank_Hero_Shank											基础色
+Hero_Shank_Hero_Shank_green										绿色
+Hero_Shank_Hero_Shank_orange									橙色
+Hero_Shank_Hero_Shank_pink										粉色
+Hero_Shank_Hero_Shank_black										黑色
+Hero_Shank_Hero_Shank_red										红色
+Hero_Shank_Hero_Shank_redwhiteblue								红白蓝
+Hero_Shank_Hero_Shank_inmate									犯人
+Hero_Shank_Hero_Shank_spooky									幽灵
+Hero_Shank_gear_1												骑士
+Hero_Shank_gear_1_green											绿色
+Hero_Shank_gear_1_orange										橙色
+Hero_Shank_gear_1_pink											粉色
+Hero_Shank_gear_1_black											黑色
+Hero_Shank_gear_1_red											红色
+Hero_Shank_gear_1_redwhiteblue									红白蓝
+
+Hero_Trixie_Hero_Trixie											基础色
+Hero_Trixie_Hero_Trixie_prentice								学徒
+Hero_Trixie_Hero_Trixie_ranger									骑警
+Hero_Trixie_Hero_Trixie_sorcerer								女巫
+Hero_Trixie_gear_1												红骑手
+Hero_Trixie_gear_1_alice										蓝色
+Hero_Trixie_gear_1_elf											绿色
+Hero_Trixie_gear_1_jester										小丑
+
+Hero_Vermillion_Hero_Vermillion												基础色
+Hero_Vermillion_Hero_Vermillion_black												黑色
+Hero_Vermillion_Hero_Vermillion_green												绿色
+Hero_Vermillion_Hero_Vermillion_orange												橙色
+Hero_Vermillion_Hero_Vermillion_pink												粉色
+Hero_Vermillion_Hero_Vermillion_red												红色
+Hero_Vermillion_Hero_Vermillion_redwhiteblue												红白蓝
+Hero_Vermillion_gear_1												海盗
+Hero_Vermillion_gear_1_black												黑色
+Hero_Vermillion_gear_1_blue												蓝色
+Hero_Vermillion_gear_1_red												红色
+Hero_Vermillion_gear_1_irish												爱尔兰人
+Hero_Vermillion_gear_1_tan												棕褐色
+Hero_Vermillion_gear_1_violet												紫罗兰色
+Hero_Vermillion_gear_2												起义者
+Hero_Vermillion_gear_2_black									黑色
+Hero_Vermillion_gear_2_blue										蓝色
+Hero_Vermillion_gear_2_blue												蓝色
+Hero_Vermillion_uber												铠甲
+Hero_Vermillion_uber_black												黑色
+Hero_Vermillion_uber_blue												蓝色
+Hero_Vermillion_uber_green												绿色
+Hero_Vermillion_uber_purple												紫色
+Hero_Vermillion_uber_red												红色
+Hero_Vermillion_uber_silver												银色
+
+Hero_Vex_Hero_Vex												基础色
+Hero_Vex_Hero_Vex_black												黑色	
+Hero_Vex_Hero_Vex_camo												保护色
+Hero_Vex_Hero_Vex_classic												经典色	
+Hero_Vex_Hero_Vex_red												红色
+Hero_Vex_Hero_Vex_pink												粉红色
+Hero_Vex_Hero_Vex_blue												蓝色
+Hero_Vex_gear_1												潜水系	
+Hero_Vex_gear_1_black												黑色	
+Hero_Vex_gear_1_whiteblue										蓝白色
+Hero_Vex_gear_1_deepsea											深蓝色
+Hero_Vex_gear_1_classic											经典色	
+Hero_Vex_gear_1_pink												粉色
+Hero_Vex_gear_1_red												红色
+Hero_Vex_gear_2												超人猫
+Hero_Vex_gear_2_black												黑色
+Hero_Vex_gear_Vex_camo												保护色	
+Hero_Vex_gear_2_blue												蓝色	
+Hero_Vex_gear_Vex_classic												经典色	
+Hero_Vex_gear_2_hazmat											毒化物
+Hero_Vex_gear_2_pink										粉色
+Hero_Vex_uber												星系猫
+Hero_Vex_uber_green												绿色	
+Hero_Vex_uber_pink												粉色
+Hero_Vex_uber_purple										紫色
+
+Hero_GoKong_Hero_GoKong											基础色
+Hero_GoKong_Hero_GoKong_pink									粉红色
+Hero_GoKong_Hero_GoKong_orange									橙色
+Hero_GoKong_Hero_GoKong_zombie									丧失
+
+Hero_JinShe_Hero_JinShe											基础色
+Hero_JinShe_Hero_JinShe_pink									粉红色
+Hero_JinShe_Hero_JinShe_purple									紫色
+Hero_JinShe_Hero_JinShe_green									绿色
+
+Hero_Nikolai_Hero_Nikolai										基础色
+Hero_Nikolai_Hero_Nikolai_black									黑色
+Hero_Nikolai_Hero_Nikolai_blue									蓝色
+Hero_Nikolai_Hero_Nikolai_green									绿色
+
+Hero_Zaku_Hero_Zaku												基础色
+Hero_Zaku_Hero_Zaku_black										黑色
+Hero_Zaku_Hero_Zaku_blue										蓝色
+Hero_Zaku_Hero_Zaku_red											红色
+
+Hero_Chester_Hero_Chester										基础色
+Hero_Chester_Hero_Chester_mime									小丑
+Hero_Chester_Hero_Chester_joker									小丑
+Hero_Chester_Hero_Chester_red									红色
+Hero_Chester_Hero_Chester_black									黑色
+
+Hero_Midknight_Hero_Midknight									基础色
+Hero_Midknight_Hero_Midknight_black								黑色
+Hero_Midknight_Hero_Midknight_pink								粉红色
+Hero_Midknight_Hero_Midknight_green								绿色
+
+Hero_Flak_Hero_Flak												基础色
+Hero_Flak_Hero_Flak_red											红色
+Hero_Flak_Hero_Flak_purple										紫色
+Hero_Flak_Hero_Flak_green										绿色
+
+Hero_Trace_Hero_Trace											基础色
+Hero_Trace_Hero_Trace_black										黑色
+Hero_Trace_Hero_Trace_green										绿色
+Hero_Trace_Hero_Trace_red										红色
+
+
+// Misc dev stuff
+A_Gadget_CreepBatchSpawn_name									_DebugCreepBatch
+
+// END - Leave this as the last line and do not deletee
+

@@ -1,0 +1,3494 @@
+// Game Mechanics 
+AttackType_none													None
+AttackType_melee												Melee
+AttackType_ranged												Ranged
+
+EffectType_Attack												Tấn Công
+EffectType_AttackDamage											Damage Tấn Công
+EffectType_Magic												Magic
+EffectType_StatusBuff											Buff
+EffectType_StatusDebuff											Debuff
+EffectType_StatusDisable
+EffectType_StatusStealth
+EffectType_Push													Push
+EffectType_Splash												Splash
+EffectType_DOT
+EffectType_Buff
+EffectType_Returned
+EffectType_CrowdControl											Crowd Control
+
+ImmunityType_MagicImmunity1										Magic Immunity
+ImmunityType_AncientImmunity									Ancient Immunity
+ImmunityType_BossImmunity
+ImmunityType_SiegeImmunity										Siege Immunity
+ImmunityType_TargetingImmunity									Targeting Immunity
+ImmunityType_GadgetImmunity										Gadget Immunity
+ImmunityType_CourierImmunity
+ImmunityType_AttackImmunity
+ImmunityType_IndirectImmunity
+ImmunityType_AncientImmunity2
+ImmunityType_PhysicalImmunity
+ImmunityType_BarrierImmunity
+
+Constant_power													Power
+Constant_damage													Damage Cơ Bản
+Constant_pure_damage											Damage Thuần
+Constant_damage_per_charge										Damage Cơ Bản Mỗi Tích Lũy
+Constant_damage_max												Damage Cơ Bản Tối Đa
+Constant_power_reduction										% Làm Giảm Power
+Constant_power_steal											% Cướp Power
+Constant_attack_charged											Damage Tấn Công Tăng Thêm
+Constant_percent_bonus_damage									% Damage Tăng Thêm
+Constant_damage_increase										% Damage Gia Tăng
+Constant_percent_hp_damage										% HP Mỗi Giây
+Constant_magic_damage_increase									% Magic Damage Gia Tăng
+Constant_attackspeed_percentreduction							% Tốc Độ Đánh Bị Giảm
+Constant_damage_increase_attackbase								% Damage Tấn Công Cơ Bản Gia Tăng
+Constant_damage_dot												Damage Cơ Bản Theo Thời Gian
+Constant_damage_increase_charges								% Damage Gia Tăng Mỗi Tích Lũy
+Constant_damage_reduction										% Damage Bị Giảm
+Constant_attack_bonus											Damage Tấn Công Cơ Bản Tăng Thêm
+Constant_shield													Shield Cơ Bản
+Constant_heal													Hồi Máu Cơ Bản
+Constant_percent_regen											% Max HP Hồi Phục
+Constant_percent_mana_regen										% Max MP Hồi Phục
+Constant_percent_heal											Phần Trăm Hồi Máu
+Constant_max_damage_increase									Damage Tối Đa Cơ Bản Gia Tăng
+Constant_attackspeed											Tốc Độ Đánh
+Constant_movespeed												Tốc Độ Di Chuyển
+Constant_bonus_attacks											Số Đòn Đánh
+Constant_botharmor												Giáp Magic & Giáp
+Constant_abilityresistencereduction								Giáp Magic Bị Giảm
+Constant_maxhp													Tăng Thêm HP
+Constant_taperingslow											% Slow Dần
+Constant_slow													% Slow Di Chuyển
+Constant_slow_duration											Thời Gian Slow
+Constant_slow_max												% Slow Di Chuyển Tối Đa
+Constant_slow_per_charge										% Slow Di Chuyển Mỗi Tích Lũy
+Constant_mana													Phục Hồi Mana
+Constant_stun													Thời Gian Stun
+Constant_ability_resistance_per_charge							Giáp Magic Mỗi Tích Lũy
+Constant_armor_per_charge										Giáp Mỗi Tích Lũy
+Constant_armor_reduction										Giáp Bị Giảm
+Constant_armor													Giáp Tăng Thêm
+Constant_magic_armor											Giáp Magic
+Constant_cost_hp												HP Cơ Bản Tiêu Tốn
+Constant_damage_per_second										Damage Cơ Bản/Giây
+Constant_damage_per_second_charges								Damage Cơ Bản/Giây Mỗi Tích Lũy
+Constant_duration												Thời Gian
+Constant_range													Khoảng Cách Tăng Thêm
+Constant_cooldown_reduction										Giảm Cooldown
+Constant_multicast_chance										% Khả Năng Multicast
+Constant_health													HP
+Constant_shield_max												Tối Đa Shield Cơ Bản
+Constant_max_percent_power_increase								Tối Đa % Power Gia Tăng
+Constant_lifesteal												Hút Máu
+Constant_bonus_damage											Damage Tăng Thêm
+Constant_numcharges												Tích Lũy
+Constant_max_charges											Tích Lũy Tối Đa
+Constant_splashpercent											Splash %
+Constant_fade													Thời Gian Ẩn Thân
+Constant_speedsteal												Ăn Cắp Tốc Độ Đánh
+Constant_bonus_gold												Tăng Thêm Gold
+Constant_number_of_icicles										Số Mảnh Băng
+Constant_recharge_time											Cooldown Tích Lũy
+Constant_attacksrequired										Yêu Cầu Các Đòn Đánh
+Constant_basedamage_perhealth									Damage Cơ Bản / HP
+Constant_maxhp													Tối Đa HP
+Constant_cc_reduction											CC Bị Giảm
+Constant_critchance												Khả Năng Crit
+Constant_cooldown												Cooldown
+Constant_passive_testing										Nội Tại Không Xác Định
+Constant_shield_percent											Phần Trăm Shield
+Constant_armorreduce											Giáp Bị Giảm
+Constant_absorb													% Magic Damage Hấp Thụ
+Constant_magic_damage_reduction									% Magic Damage Bị Giảm
+Constant_hpregen												Hồi Phục HP
+Constant_percentdamagehealed									% Damage Làm Hồi Máu
+Constant_numattacks												Số Đòn Đánh
+Constant_cast_range												Khoảng Cách Dùng Phép
+
+CrowdControl_Stun												Stun
+CrowdControl_Slow												Slow
+CrowdControl_Immobilize											Bất Động
+
+Property_range_name												Khoảng Cách
+Property_cooldowntime_name										Thời Gian Cooldown
+Property_channeltime_name										Thời Gian Channel
+Property_linecastrange_name										Khoảng Cách Dùng Phép
+Property_areacastrange_name										Khoảng Cách Dùng Phép
+Property_conecastrange_name										Khoảng Cách Dùng Phép
+Property_casttime_name											Thời Gian Dùng Phép
+Property_castactiontime_name									Thời Gian Dùng Phép
+
+HeroCategory_cc													Gây Hiệu Ứng
+HeroCategory_magic												Magic damage
+HeroCategory_muc												Điều Khiển Nhiều Đơn Vị
+HeroCategory_physical											Damage Tấn Công
+HeroCategory_protective											Hỗ Trợ
+HeroCategory_tank												Tank
+
+StealthType_hero												Hero
+StealthType_item												Item
+StealthType_ward												Ward
+StealthType_Unrevealable
+
+RevealType_ward													Ward of Revelation
+RevealType_eye													Bound Eye
+RevealType_tower												Tower
+
+ArmorType_normal												Giáp
+ArmorType_magic													Giáp Magic
+
+TargetScheme_null
+TargetScheme_all												All
+TargetScheme_nothing
+TargetScheme_self												Self
+TargetScheme_enemy_units										Quân Địch
+TargetScheme_enemy_heroes										Hero Đối Phương
+TargetScheme_ally_units											Quân Đồng Minh
+TargetScheme_ally_heroes										Hero Đồng Đội
+TargetScheme_all_units											Mọi Đơn Vị
+TargetScheme_all_visible_units									Đơn Vị Hiện Hữu
+TargetScheme_ally_ranged_units									Đơn Vị Bắn Xa Đồng Minh
+TargetScheme_ally_ranged_heroes									Hero Bắn Xa Đồng Minh
+TargetScheme_ally_melee_units									Đơn Vị Cận Chiến Đồng Minh
+TargetScheme_ally_buildings										Công Trình Đồng Minh
+TargetScheme_enemy_units_and_Towers
+TargetScheme_enemy_objects										Đối Tượng Quân Địch
+TargetScheme_teleport_targets									Mục Tiêu Teleport
+TargetScheme_my_units											Đơn Vị Của Bản Thân
+TargetScheme_owner
+TargetScheme_owned
+TargetScheme_trees												Cây
+TargetScheme_enemy_melee_units									Địch Đánh Gần
+TargetScheme_enemy_creeps										Quân Lính Địch
+TargetScheme_attack												Tấn Công Mục Tiêu
+TargetScheme_attack_all											Không Giới Hạn Mục Tiêu
+TargetScheme_bottle												Nhóm Mục Tiêu
+TargetScheme_melee_units										Lính Cận Chiến
+TargetScheme_ranged_units										Lính Bắn Xa
+TargetScheme_visible_enemy_units								Lính Quân Địch Hiện Hữu
+TargetScheme_visible_enemy_heroes								Hero Quân Địch Hiện Hữu
+TargetScheme_visible_enemy_objects								Đối Tượng Quân Địch Hiện Hữu
+TargetScheme_injured_ally_units									Đơn Vị Đồng Minh Bị Thương
+TargetScheme_enemy_units_and_trees								Quân Địch và Cây
+TargetScheme_all_other_units									Các Đơn Vị Khác
+TargetScheme_all_other_organic_units							Các Dạng Đơn Vị Khác
+TargetScheme_enemy_buildings									Công Trình Quân Địch
+TargetScheme_enemy_melee_heroes									Hero Cận Chiến Quân Địch
+TargetScheme_hook_targets										Tất cả các đơn vị không phải là công trình
+TargetScheme_enemy_units_and_corpses							Đơn Vị Quân Địch và Xác Chết
+TargetScheme_nonneutral_enemy_units								Quái Vật Rừng
+TargetScheme_player_controlled_ally_units						Đơn Vị Được Đồng Đội Điều Khiển
+TargetScheme_all_nonhero_units									Các Loại Lính
+TargetScheme_other_heroes										Hero Khác
+TargetScheme_my_other_units										Lính Của Bản Thân
+TargetScheme_enemy_nonhero_units								Các Đơn Vị Địch Không Phải Là Hero
+TargetScheme_organic_enemy_units								Các Quân Lính Quân Địch
+TargetScheme_organic_ally_units									Các Quân Lính Đồng Minh
+TargetScheme_all_organic_units									Tất Cả Đơn Vị Lính
+TargetScheme_all_heroes											Tất Cả Hero
+TargetScheme_enemy_main_base_structure							Căn Cứ Chính Quân Địch
+TargetScheme_ally_well
+TargetScheme_all_other_nonboss_units							Tất Cả Đơn Vị Lính Nhỏ Khác
+TargetScheme_boss
+TargetScheme_other_bosses
+TargetScheme_enemy_nonboss_units								Tất Cả Đơn Vị Lính Nhỏ Quân Địch
+TargetScheme_nonneutral_organic_enemy_units						Các Quái Vật Rừng
+TargetScheme_boss1
+TargetScheme_boss2
+TargetScheme_WellMarker
+TargetScheme_enemy_nonboss_npc_units							Các NPC Quân Địch
+TargetScheme_enemy_units_and_structures							Quân Lính và Nhà Quân Địch
+TargetScheme_all_other_heroes									Tất Cả Hero Khác
+TargetScheme_ally_objects										Đồng Minh
+TargetScheme_visible_organic_enemy_units
+TargetScheme_enemy_units_and_self
+TargetScheme_all_other_units_and_buildings
+TargetScheme_summoned_enemy_units
+TargetScheme_ally_creeps										Đồng Minh Non-Hero
+TargetScheme_enemy_ranged_heroes
+TargetScheme_all_other_nongadget_units
+TargetScheme_nonneutral_enemy_units_and_other_ally_heroes
+TargetScheme_electriceyes
+TargetScheme_other_ally_units
+TargetScheme_nonstealth_organic_enemy_units
+TargetScheme_nonboss_visible_enemy_units
+TargetScheme_nongadget_ally_units
+TargetScheme_nonboss_organic_enemy_units						Binh Lính Quân Địch
+TargetScheme_neutral_aggro
+TargetScheme_enemy_creeps_and_corpses
+TargetScheme_my_pseudo_pets
+TargetScheme_ally_main_base_structure_and_trees
+TargetScheme_nonillusion_enemy_heroes
+TargetScheme_my_illusions
+TargetScheme_other_ally_heroes
+TargetScheme_nonillusion_other_ally_heroes						Các Đồng Đội
+TargetScheme_ray_units											Quân Lính Cơ Giới
+TargetScheme_turret_targets
+TargetScheme_ally_units_and_structures
+TargetScheme_pseudo_pets
+TargetScheme_everything_but_towers
+TargetScheme_Zephyr_Cyclones
+TargetScheme_enemy_mana_units									MP Quân Địch
+TargetScheme_ally_mana_units									MP Quân Đồng Minh
+TargetScheme_nonboss_organic_enemy_units_and_self
+TargetScheme_all_corpses
+TargetScheme_enemy_units_and_deniable							Binh Lính Quân Địch và Đơn Vị Bị Bỏ Đi
+TargetScheme_ally_nonhero_units									Lính Đồng Minh
+TargetScheme_player_controlled_enemy_units						Các Đơn Vị Bị Điều Khiển Bởi Quân Địch
+TargetScheme_all_nonhero_corpses								Tất Cả Các Xác Lính
+TargetScheme_enemy_units_notmine
+TargetScheme_touchpowerup
+TargetScheme_all_units_except_couriers
+TargetScheme_Gauntlet_Gadget
+TargetScheme_heroes_only
+TargetScheme_movement
+TargetScheme_canattack
+TargetScheme_token
+TargetScheme_cheese
+TargetScheme_doombringer
+TargetScheme_enemy_and_willing_ally_heroes						Quân Địch & Hero Đồng Đội Chấp Thuận
+
+Popup_gold														+{value}
+Popup_experience												+{value}
+Popup_quest														Quest Mới!
+Popup_quest_complete											Quest Hoàn Thành!
+Popup_hint														Mẹo Vặt!
+Popup_critical													{value}!
+Popup_miss														Miss!
+Popup_miss2														Miss - Quá Xa!
+Popup_deny														Denied!
+Popup_deflect													-{value}
+Popup_poison													{value}!
+Popup_bonus_damage												+{value}
+Popup_deflection												-{value}
+Popup_toofar													Too bad!
+Popup_doublecast												DOUBLE-CAST!
+Popup_bonus_mana												+{value}+
+Popup_execution													+{value}!
+Popup_gainpower													+{value} Power!
+Popup_invulnerable												Bất Tử!
+Popup_abilityresistence											Giáp Magic!
+Popup_loseint													-{value} Int!
+Popup_creep_kill												$
+Popup_1s														1.0s!
+Popup_14s														1.4s!
+Popup_18s														1.8s!
+Popup_22s														2.2s!
+Popup_26s														2.6s!
+Popup_3s														3.0s!
+Popup_35s														Tối Đa 3.5s!
+Popup_javoflight												{value}s!
+Popup_max														Tối Đa!
+Popup_dot_physical_damage										{value}!
+Popup_timer														{value}
+Popup_timer_hero												{value}
+Popup_too_far													Quá Xa!
+Popup_homecoming_nogold											Không Đủ Gold Để Dùng!
+Popup_tower_damage												-{value}!
+Popup_multicast													MULTICAST!
+Popup_checkpoint												Đạt Được Checkpoint!
+Popup_levelup													LEVEL UP!
+Popup_aggro														!!!
+Popup_attackdamage												{value}
+Popup_magicdamage												{value}
+Popup_healdamage												{value}
+Popup_normaldamage												{value}
+Popup_itemreceived												[3.5h][3.5h][3.5h][3.5h][3.5h][3.5h]Received!
+
+// Game Info
+Mode_Normal														All Pick
+Mode_RandomDraft												Random Draft
+Mode_SingleDraft												Single Draft
+Mode_BanningDraft												Banning Draft
+Mode_CaptainsDraft												Captains Draft
+Mode_CaptainsMode												Captains Mode
+Mode_Deathmatch													Deathmatch
+Mode_BanningPick												Banning Pick
+Mode_AllRandom													All Random
+Mode_Invalid													Invalid
+
+Option_None														None
+Option_ForceRandom												Chơi Random
+Option_AlternateSelection										Luân Phiên
+Option_NoRepick													No Repick
+Option_NoSwap													No Swap
+Option_NoAgility												No Agility
+Option_NoIntelligence											No Intelligence
+Option_NoStrength												No Strength
+Option_AllHeroes												All Hero
+Option_NoRespawnTimer											Hồi Sinh Ngay
+Option_DropItems												Rơi Items
+Option_NoPowerups												Không Thêm Power
+Option_SuperCreeps												Siêu Creep
+Option_EasyMode													Mode Dễ
+Option_DuplicateHeroes											Hero Trùng Lặp
+Option_ReverseSelection											Chọn Ngược
+Option_NoTopLane												Khóa Đường Top
+Option_NoMiddleLane												Khóa Đường Mid
+Option_NoBottomLane												Khóa Đường Bot
+Option_AllowVeto												Cho Phép Veto
+Option_ShuffleTeams												Trộn Teams
+Option_AutoBalanceTeams											Tự Cân Bằng
+Option_DevHeroes												Dev Hero
+Option_TournamentRules											Tournament Rules
+Option_Hardcore													Hardcore
+Option_DuplicateTeamHeroes										Trùng Hero Trong Team
+Option_Casual													Casual Mode
+
+// Building_HellbourneStatic
+Building_HellbourneStatic_name									Observation Post
+
+// Building_HellbourneTower
+Building_HellbourneTower_name									Defense Tower
+Building_Tutorial_Tower_name									Defense Tower
+Building_Tutorial2_Tower_name									Defense Tower
+
+// Building_HellbourneBase
+Building_HellbourneBase_name									Crux
+
+// Building_HellbourneRepeater4
+Building_HellbourneRepeater4_name								Meatball
+Building_HellbourneRepeater4_description
+
+// Building_HellbourneMeleeBarracks
+Building_HellbourneMeleeBarracks_name							Generator
+
+// Building_HellbourneRangedBarracks
+Building_HellbourneRangedBarracks_name							Ranged Barracks
+
+// Building_HellbourneRepeater1
+Building_HellbourneRepeater1_name								Shrine
+
+// Building_HellbourneRepeater2
+Building_HellbourneRepeater2_name								Shrine
+
+// Building_HellbourneRepeater3
+Building_HellbourneRepeater3_name								Shrine
+
+// Building_HellbourneStore
+Building_HellbourneStore_name									Observatory
+
+// Building_HellbourneWell
+Building_HellbourneWell_name									Well of Life
+
+// Building_HellbourneWell_Attack
+
+// State_HellbourneHealingWell
+State_HellbourneHealingWell_name								Well of Life
+
+// Building_HellbourneWellStore
+Building_HellbourneWellStore_name								Shop
+
+// Building_LegionStatic
+Building_LegionStatic_name										Observation Post
+
+// Building_LegionTower
+Building_LegionTower_name										Defense Tower
+
+// Building_LegionBase
+Building_LegionBase_name										Crux
+Building_LegionBase_description									icon.tga
+
+// Building_LegionMeleeBarracks
+Building_LegionMeleeBarracks_name								Generator
+Building_LegionMeleeBarracks_description						icon.tga
+
+// Building_LegionRangedBarracks
+Building_LegionRangedBarracks_name								Generator
+Building_LegionRangedBarracks_description						icon.tga
+
+// Building_LegionRepeater1
+Building_LegionRepeater1_name									Hut
+
+// Building_LegionRepeater2
+Building_LegionRepeater2_name									Hut
+
+// Building_LegionRepeater3
+Building_LegionRepeater3_name									Hut
+
+// Building_LegionStore
+Building_LegionStore_name										Observatory
+
+// Building_LegionWell
+Building_LegionWell_name										Well of Life
+
+// Building_LegionWell_Attack
+
+// State_LegionHealingWell
+State_LegionHealingWell_name									Healing Well
+
+// Building_LegionWellStore
+Building_LegionWellStore_name									Shop
+
+// Building_Outpost
+Building_Outpost_name											Outpost
+Building_Outpost_description									icon.tga
+
+// Ability_AutomatedCourier
+Ability_AutomatedCourier_Tutorial2_name									Chuyển Item
+Ability_AutomatedCourier_Tutorial2_name:automated_courier_cancel		Dừng Chuyển Đồ
+Ability_AutomatedCourier_Tutorial2_name:automated_courier_disabled		Đang trở về
+Ability_AutomatedCourier_Tutorial2_description_simple					Kích hoạt để chuyển giao Item trong kho đến bạn. Nếu hành trang của bạn không thể chứa hết Item, Item cuối cùng trong kho sẽ được chuyển ngược về.
+
+// Ability_AutomatedCourier
+Ability_AutomatedCourier_name									Chuyển Item
+Ability_AutomatedCourier_name:automated_courier_cancel			Dừng Chuyển Đồ
+Ability_AutomatedCourier_name:automated_courier_disabled		Đang trở về
+Ability_AutomatedCourier_description_simple						Kích hoạt để chuyển giao Item trong kho đến bạn. Nếu hành trang của bạn không thể chứa hết Item, Item cuối cùng trong kho sẽ được chuyển ngược về.
+
+Ability_AutomatedCourier_name:tutorialmod						Chuyển Item
+Ability_AutomatedCourier_description_simple:tutorialmod			Không thể dùng trong phần này của hướng dẫn!
+
+// Ability_Taunt
+Ability_Taunt_name												Taunt
+Ability_Taunt_name:disco_taunt									Disco Taunt
+Ability_Taunt_name:gore_taunt									Gore Taunt
+Ability_Taunt_description
+Ability_Taunt_description_simple								Taunt bị vô hiệu hóa trong tài khoản này.
+Ability_Taunt_description_simple:perks							Chọn một hero đối phương để taunt nó. Bạn sẽ bị lộ vị trí khi bạn taunt. Hạ gục mục tiêu bị taunt trong thời hạn 40 giây nhận được Smackdown.
+Ability_Taunt_description_simple:standard_taunt					Chọn một hero đối phương để taunt nó. Bạn sẽ bị lộ vị trí khi bạn taunt. Hạ gục mục tiêu bị taunt trong thời hạn 40 giây nhận được Smackdown.
+Ability_Taunt_description_simple:disco_taunt					Chọn một hero đối phương để taunt nó. Bạn sẽ bị lộ vị trí khi bạn taunt. Hạ gục mục tiêu bị taunt trong thời hạn 40 giây nhận được Smackdown.
+Ability_Taunt_description_simple:gore_taunt						Chọn một hero đối phương để taunt nó. Bạn sẽ bị lộ vị trí khi bạn taunt. Hạ gục mục tiêu bị taunt trong thời hạn 40 giây nhận được Smackdown.
+Ability_Taunt_IMPACT_effect										Taunt bị vô hiệu hóa trong tài khoản này.
+Ability_Taunt_IMPACT_effect:perks								Taunt Hero đối phương. Bạn sẽ bị lộ vị trí khi bạn taunt. Hạ gục mục tiêu bị taunt trong thời hạn 40 giây nhận được Smackdown.
+Ability_Taunt_IMPACT_effect:standard_taunt						Taunt Hero đối phương. Bạn sẽ bị lộ vị trí khi bạn taunt. Hạ gục mục tiêu bị taunt trong thời hạn 40 giây nhận được Smackdown.
+Ability_Taunt_IMPACT_effect:disco_taunt							Taunt Hero đối phương. Bạn sẽ bị lộ vị trí khi bạn taunt. Hạ gục mục tiêu bị taunt trong thời hạn 40 giây nhận được Smackdown.
+Ability_Taunt_IMPACT_effect:gore_taunt							Taunt Hero đối phương. Bạn sẽ bị lộ vị trí khi bạn taunt. Hạ gục mục tiêu bị taunt trong thời hạn 40 giây nhận được Smackdown.
+
+
+// Ability_HeroExample1
+Ability_HeroExample1_name
+Ability_HeroExample1_description
+Ability_HeroExample1_description_simple
+
+// Ability_HeroExample2
+Ability_HeroExample2_name
+Ability_HeroExample2_description
+Ability_HeroExample2_description_simple
+
+// Ability_HeroExample3
+Ability_HeroExample3_name
+Ability_HeroExample3_description
+Ability_HeroExample3_description_simple
+
+// Ability_HeroExample4
+Ability_HeroExample4_name
+Ability_HeroExample4_description
+Ability_HeroExample4_description_simple
+
+// Hero_HeroExample
+Hero_HeroExample_name
+Hero_HeroExample_description
+Hero_HeroExample_role
+Hero_HeroExample_lore 
+
+// Ability_Bastion1Bastact1_1
+Ability_Bastion1Bastact1_1_name											Bash
+Ability_Bastion1Bastact1_1_description_simple							Tấn công một khu vực phía trước của Bastion.
+Ability_Bastion1Bastact1_1_description									Bastion tấn công kẻ địch đứng gần nhất, gây damage lên một khu vực phía trước anh ta.
+
+// Ability_Bastion1Bastact1_2
+Ability_Bastion1Bastact1_2_name											Roll
+Ability_Bastion1Bastact1_2_description_simple							Nhào lộn và né tránh trên một khoảng ngắn.
+Ability_Bastion1Bastact1_2_description									Nhào lộn nhanh trên một khoảng ngắn giúp Bastion thoát khỏi đường tấn công của quân địch.
+
+// Ability_Bastion1Bastact1_4
+Ability_Bastion1Bastact1_4_name											Pick Up and Throw
+Ability_Bastion1Bastact1_4_description_simple							Nâng lên và ném đi vài đối tượng.
+Ability_Bastion1Bastact1_4_description									Nâng lên và làm cháy sáng đối tượng. Kích hoạt lần nữa để ném đối tượng vào vị trí chỉ định.
+
+// Ability_Bastion1Bastact1_3
+Ability_Bastion1Bastact1_3_name											Rook Bird
+Ability_Bastion1Bastact1_3_description_simple							Làm Stun quân địch và gây damage theo thời gian.
+Ability_Bastion1Bastact1_3_description									Xác định một kẻ địch và cho một chú chim của Rook tấn công nó, làm Stun một thời gian ngắn và gây một lượng sát thương theo thời gian.
+
+// Hero_Bastion1Bastact1
+Hero_Bastion1Bastact1_name												Bastion
+Hero_Bastion1Bastact1_description										
+Hero_Bastion1Bastact1_role
+
+// Ability_Vex1
+Ability_Vex1_name											Swarm Shot
+Ability_Vex1_description									Bắn ra một chùm tia Lazer, có thể gây ^o$damage$ Magic damage^* và Slow $slow$% tốc độ di chuyển.
+Ability_Vex1_description_simple								Gây sát thương và làm chậm
+
+// Ability_Vex2
+Ability_Vex2_name											Vorbis Seekers
+Ability_Vex2_description									Phóng 3 chùm Đạn Nổ vào các mục tiêu ở gần gây ^o$damage$ Magic damage^* trong 6 giây. Gây thêm 70% Damage nếu chỉ có một mục tiêu trúng phải.
+Ability_Vex2_description_simple								Sát thương địch ở gần
+
+// Ability_Vex3
+Ability_Vex3_name											Anti-Matter Shield
+Ability_Vex3_description									Giúp đồng đội hóa giải toàn bộ Stun/Slow và tạo lớp bảo vệ ^o$shield$ shield^* có khả năng kháng 70% Stun/Slow trong 2 giây.
+Ability_Vex3_description_simple								shield và làm giảm Stun/Slow
+
+// State_Vex_Ability3
+State_Vex_Ability3_Tooltip_name								Anti-Matter Shield
+State_Vex_Ability3_description								Giáp tăng 70% khả năng kháng Stun/Slow khi kích hoạt.
+State_Vex_Ability3_description_simple						Giáp tăng 70% khả năng kháng Stun/Slow khi kích hoạt.
+State_Vex_Ability3_name										Anti-Matter Shield
+State_Vex_Ability3_name_FRAME_effect
+
+// Ability_Vex4
+Ability_Vex4_name											Orbital Drop
+Ability_Vex4_description									Bay đến vị trí đã chỉ định, gây chấn động mạnh và sát thương ^o$damage$ Magic damage^* kèm stun trong 1 giây.  \n\n2.0 giây Thời Gian thi triển.  Bị tấn công sẽ làm ngắt quảng skill trong 5 giây.
+Ability_Vex4_description_simple								Di chuyển toàn map, gây damage và stun
+
+State_Vex_Ability4_Self_name								Đang dịch chuyển..
+
+// Hero_Vex
+Hero_Vex_name												Vex
+Hero_Vex_description										Là Hero rất linh hoạt và cơ động, thích hợp cho vị trí Gank
+Hero_Vex_role
+Hero_Vex_lore                                               Vexus 331 có một quá khứ bí ẩn. Có người cho rằng anh ta đến từ một hành tinh cơ khí bí ẩn có tên là Vorbis. Người ta biết rất ít về Vex ngoại trừ việc hắn ta mạnh kinh hồn và máu lạnh, tâm lý thì khác người. Vex chỉ có một tôn chỉ: tìm kiếm và tiêu diệt; Trên chiến trường, Vex xem chém giết là mục tiêu hàng đầu.
+
+
+// Ability_Carter1
+Ability_Carter1_name											Rocket Barrage
+Ability_Carter1_description										Bắn các viên pháo hoa bay rất xa, gây ^o$damage$ Magic damage^* cho kẻ địch đầu tiên trúng phải.
+Ability_Carter1_description_simple								Skill gây sát thương khoảng cách rất xa
+
+// Ability_Carter2
+Ability_Carter2_name											Yak Attack
+Ability_Carter2_description										Gây sát thương ^o$damage$ Magic damage^* và làm chậm $slow$% Movement Speed trong 4 giây.
+Ability_Carter2_description_simple								Gây sát thương rộng và làm chậm
+
+// Ability_Carter3
+Ability_Carter3_name											Ring of Fire
+Ability_Carter3_description										Tạo vòng tròn lửa gây ^o$damage_per_second$ Magic damage^* mỗi giây nếu địch chạm vào.\n\nKhi dùng skill hay tấn công thường xuyên qua vòng lửa sẽ gây thêm $damage_increase$% damage.
+Ability_Carter3_description_simple								ring that damages and powers up skills
+
+
+// Ability_Carter4
+Ability_Carter4_name											Imminent Boom
+Ability_Carter4_description										Phóng tên lửa bám đuổi vào mục tiêu. Nếu trong 5 giây, tên lửa bắn trúng địch thì sẽ gây sát thương ^o$damage$ Magic damage^* và Stun choáng $stun$ giây.
+Ability_Carter4_description_simple								Gây sát thương và Choáng
+
+
+// Hero_Carter
+Hero_Carter_name												Carter
+Hero_Carter_description											Sát thương magic damage cực xa
+Hero_Carter_role
+Hero_Carter_lore												Bộ đôi song sát của Strife là anh em thuộc dòng họ Yêu Tinh, họ rất thích thú với việc cho nổ tung mọi thú trong tầm mắt. Như hầu hết các anh em đồng trang lứa, 2 gã này có nhiều khi choảng nhau sứt đầu mẻ trán nhưng đôi khi rất khắng khít. Một tên thì chơi thuốc nổ, còn tên kia thì chọi pháo... nên giữ khoảng cách khi gặp bọn này.
+
+
+// Ability_Ray1
+Ability_Ray1_name												Burrow Bots
+Ability_Ray1_description										Đặt bom Robot dưới đất. Địch đến gần thì bom sẽ trồi lên và đuổi theo địch rồi nổ tung, gây ^o$damage$ Magic damage.^*
+Ability_Ray1_description_simple									Đặt bom gây sát thương
+
+// Ability_Ray2
+Ability_Ray2_name												Shock Field
+Ability_Ray2_description										Tạo một vòng tròn điện trong 3 giây.\n\nĐịch đứng trong hoặc ngoài thì không sao, nhưng chậm vào sẽ bị Choáng $stun$ giây và bị ^o$damage$ Magic damage^*.
+
+Ability_Ray2_description_simple									Tạo Vòng Điện gây sát thương và choáng
+// Ability_Ray3
+Ability_Ray3_name												Freeze Ray
+Ability_Ray3_description										^rPassive Skill^*\nĐòn tấn công thường sẽ gây ra thêm ^o+$damage$ Damage^* làm chậm 50% Di Chuyển của địch.
+Ability_Ray3_description_simple									Bắn sát thương và làm chậm.
+
+// Ability_Ray4
+Ability_Ray4_name												Death Ray
+Ability_Ray4_description										Canh súng theo đường thẳng.  Tia Laser gây ^o$damage$ Magic damage^* cho toàn bộ địch dính phải.  Giảm 15% sát thương cho các hero ăn đạn sau kẻ khác.
+Ability_Ray4_description_simple									Sát thương rất dài, thẳng
+
+// Hero_Ray
+Hero_Ray_name													Ray
+Hero_Ray_role
+Hero_Ray_description 											Khống Chế và gây AoE magic damage
+Hero_Ray_lore													Ray xuất thân từ Vương Quốc Dã Thú Lyrie. Từ trong bản nhạc Blip Ray Radius, anh ấy đã tìm được biệt danh riêng của mình. Với các mảnh ghép từ phế liệu, anh đã tạo ra các robot và chúng có thể chạy rất nhanh. Ray từ từ chuyển hướng sang kỹ thuật và công nghệ vũ khí, rồi chế tạo các thiết bị chiến tranh và bán chúng cho các bộ lạc đang có chiến sự tại Lyrie. Sau đó, chưa hài lòng về trí tuệ của mình, Ray đã thủ nghiệm và nghiên cứu sâu hơn với tham vọng về Anh Hùng của các Máy Bay.
+
+
+
+// Ability_Claudessa1
+Ability_Claudessa1_name												Dragon's Reach
+Ability_Claudessa1_description										Tạo ra luồng ma thuật trên đường thẳng gây ^o$damage$ Magic damage^*.\n\nTại vị trí cuối, xuất hiện con rồng và kéo địch về phía bạn, sát thương lên địch thêm 30% damage.
+Ability_Claudessa1_description_simple								Sát thương dài và kéo địch.
+
+// Ability_Claudessa2
+Ability_Claudessa2_name												Scale Shield
+Ability_Claudessa2_description										Tăng $damage_reduction$% kháng sát thương.\n\nKích hoạt skill lên đồng đội, sẽ bọm cho họ ^o$heal$^* HP và một phần giáp. 
+Ability_Claudessa2_description_simple								Bơm máu và kháng sát thương
+
+// State_Claudessa_Ability2
+State_Claudessa_Ability2_Tooltip_name								Scale Shield
+State_Claudessa_Ability2_description								Claudessa giáp, kháng sát thương của địch.
+State_Claudessa_Ability2_description_simple							Claudessa giáp, kháng sát thương của địch.
+State_Claudessa_Ability2_name										Scale Shield
+State_Claudessa_Ability2_name_FRAME_effect
+
+// State_Claudessa_Ability2_NoPassive
+State_Claudessa_Ability2_NoPassive_Tooltip_name						Scale Shield
+State_Claudessa_Ability2_NoPassive_description						Scale Shield kháng sát thương của địch.
+State_Claudessa_Ability2_NoPassive_description_simple				Scale Shield kháng sát thương của địch.
+State_Claudessa_Ability2_NoPassive_name								Scale Shield
+State_Claudessa_Ability2_NoPassive_name_FRAME_effect
+
+// Ability_Claudessa3
+Ability_Claudessa3_name												Dragon Claw
+Ability_Claudessa3_description										Đòn đánh tiếp theo sẽ gây ^o$damage$ bonus Attack Damage^* kèm hiệu ứng Chém Lan khá rộng.\n\nĐối thủ bị dính đòn chém này sẽ bị giảm $slow$% di chuyển trong 2.5 giây.
+Ability_Claudessa3_description_simple								Chém Lan Rộng và Làm Chậm
+
+// Ability_Claudessa4
+Ability_Claudessa4_name												Scorched Earth
+Ability_Claudessa4_description										Đốt cháy mọi vật xung quanh trong 10 giây, gây ra ^o$damage_dot$ Magic damage^* Mỗi Giây và làm địch giảm $power_reduction$% Power.
+Ability_Claudessa4_description_simple								Sát Thương AoE Rộng và Giảm Power Địch
+
+// State_Claudessa_Ability4
+State_Claudessa_Ability4_Tooltip_name								Scorched Earth
+State_Claudessa_Ability4_description								Claudessa gây sát thương và giảm Power địch.
+State_Claudessa_Ability4_description_simple							Claudessa gây sát thương và giảm Power địch.
+State_Claudessa_Ability4_name										Scorched Earth
+State_Claudessa_Ability4_name_FRAME_effect
+
+// Hero_Claudessa
+Hero_Claudessa_name													Claudessa
+Hero_Claudessa_role													Tanky support
+Hero_Claudessa_description 											Bảo vệ đồng đội và làm suy yếu địch thủ.
+Hero_Claudessa_lore													Claudessa là thành viên nữ đầu tiên trong hiệp hội Knights of Claudus tại Gael. Trong một lần làm nhiệm vụ bảo vệ khu vực, cô chạm trán một con rồng. Mặc dù mất đi 1 cánh tay nhưng cô đã giết được nó và lấy móng làm vũ khí. Thứ vũ khí có ma thuật rất mạnh mẽ.
+
+
+
+
+// Ability_Vermillion1
+Ability_Vermillion1_name										Cheese Shot
+Ability_Vermillion1_description									Phun Phô Mai gây ^o$damage$ Magic damage^* và làm địch chậm 35% Tốc Độ Chạy trong $slow_duration$ giây.
+Ability_Vermillion1_description_simple							Sát thương rộng và làm chậm
+
+
+// Ability_Vermillion2
+Ability_Vermillion2_name										Piercing Shot
+Ability_Vermillion2_description									Cứ $attacksrequired$ phát bắn, sẽ có phát bắn cực mạnh, gây thêm +$damage_increase$% Attack Damage.
+Ability_Vermillion2_description_simple							Sát thương theo Đường Đạn
+
+
+// Ability_Vermillion3
+Ability_Vermillion3_name										Dead Eye
+Ability_Vermillion3_description									Tăng $range$ khoảng cách tấn công và ^o+$attack_bonus$^* Base Attack damage
+Ability_Vermillion3_description_simple							Tăng tầm bắn và sát thương
+
+// Ability_Vermillion4
+Ability_Vermillion4_name										Rocket Jump
+Ability_Vermillion4_description									Phóng Rocket to, gây ^o$damage$ Magic damage^* và Choáng $stun$ giây, đẩy Vermillion bay lùi về sau.
+Ability_Vermillion4_description_simple							Gây sát thương, choáng và bay lùi.
+
+State_Vermillion_Ability4_name									Focus Fire
+
+
+// Hero_Vermillion
+Hero_Vermillion_name											Vermillion
+Hero_Vermillion_description										Sát Thương Tầm Xa
+Hero_Vermillion_role											Sát Thương Tầm Xa
+Hero_Vermillion_lore 											Vermin là tên đồ tể khét tiếng đã giết chóc hàng triệu tên phản loạn tại Lyrie. Hắn luôn tuân theo một luật riêng của mình, thích thì làm, không thích thì miễn. Kỹ năng bắn đạn rất chuẩn và bệ phóng cannon trên vai luôn được hắn sử dụng chính xác. Vermillion nhanh chóng trở thành đại biểu cho Cuộc Thử Nghiệm trong chiến trường Strife.
+
+
+// Ability_Trixie1
+Ability_Trixie1_name										Pot Shot
+Ability_Trixie1_description									Ném chậu thuốc vào khu vực chỉ định gây ^o$damage$ Magic damage^* và làm chậm địch.  Khi ném chậu, nó sẽ lăn vài lần, gây thêm sát thương. \n\nHero địch bị dính liên tiếp thì mức sát thương lên họ bị giảm 60%.
+Ability_Trixie1_description_simple							Ném Chậu rất xa và Làm Chậm
+
+
+// Ability_Trixie2
+Ability_Trixie2_name										Barrel Roll 
+Ability_Trixie2_description									Lướt đến vị trí mới, loại bõ các hiệu ứng Bị Chậm trên cơ thể và được ^o$shield$ Shield^* Giáp trong 4 giây. \n\nCó thể kết hợp skill này với skill Aether Beam cùng lúc.
+Ability_Trixie2_description_simple							Lướt Chạy và Tăng Giáp
+
+
+// Ability_Trixie3
+Ability_Trixie3_name										Aether Beam
+Ability_Trixie3_description									Phóng ra luồng năng lượng mạnh, tấn công kẻ địch.  Chiếu tia năng lượng vào mục tiêu gây ^o$damage$ Magic Damage/giây^* trong 5 giây.  Địch xung quanh mục tiêu chỉ bị 50% sát thương.\n\nKhi phóng năng lượng, Trixie có thể di chuyển nhưng tạm ngưng đánh thường.
+Ability_Trixie3_description_simple							Phóng Tia Năng Lượng xa và dài
+
+// Ability_Trixie4
+Ability_Trixie4_name										Croaking Curse
+Ability_Trixie4_description									Tạo vòng tròn phép, biến địch thành Con Ếch trong $duration$ giây, làm địch chậm 35% và khiến chúng không thể đánh hay dùng skill.
+Ability_Trixie4_description_simple							Vô Hiệu Hóa địch, Xa, Rộng
+
+// State_Trixie_Ability4
+State_Trixie_Ability4_Tooltip_name							Croaking Curse
+State_Trixie_Ability4_description							Trixie đã biến bạn thành cóc, không thể làm gì được!
+State_Trixie_Ability4_description_simple					Trixie đã biến bạn thành cóc, không thể làm gì được!
+State_Trixie_Ability4_name									Croaking Curse
+State_Trixie_Ability4_name_FRAME_effect
+
+
+// Hero_Trixie
+Hero_Trixie_name											Trixie
+Hero_Trixie_description										Sát Thương Phép Tầm Xa
+Hero_Trixie_role											Sát Thương Phép Tầm Xa
+Hero_Trixie_lore 											Sinh ra trong gia đình Phù Thủy thuộc khu vực Đầm Lầy Phía Tây Lyrie, một nơi rất xa các thành thị, vì họ muốn trốn tránh Hải Quân Osirian. Trixie đã có thiên bẩm về phép thuật từ khi sinh ra. Nhưng thật đáng buồn, toàn bộ gia tộc của cô đã bị bắt trong cuộc vây truy lùng của Hải Quân Osirian. Cô may mắn trốn thoát và lang thang cô độc trong khu đầm lầy. Cưỡi trên con ngựa gỗ Tempest - món quà yêu quí nhất mà người mẹ để lại cho cô, thật ra đây là thứ đồ chơi được mẹ làm cho để cô không quấy rầy bà ấy. Trong lúc quẫn trí và sợ hãi, cô đã gặp được tay súng Rafink, kẻ sống thầm lặng trong rừng sâu. Cả hai kết thân và cùng có mối thù với bọn người đến từ Gael, và Rafink đã dạy cho cô rất nhiều thứ. Trixie luyện tập và trở thành Cây Đũa Phép Nhanh Nhất Miền Tây, cô gia nhập Trial of Strife để đánh giá khả năng bản thân.
+
+
+// Ability_Caprice1
+Ability_Caprice1_name											Fire Lager
+Ability_Caprice1_description									Gây ^o$damage$ Magic damage^* trên đường lửa kéo dài.  Sau khi lăn thùng rượu sẽ kéo theo lửa gây một nửa sát thương.
+Ability_Caprice1_description_simple								Sát thương dài và rộng
+
+
+// Ability_Caprice2
+Ability_Caprice2_name											Anchors Aweigh
+Ability_Caprice2_description									Ném mỏ neo gây ^o$damage$ Magic damage^* và choáng trong $stun$ giây.
+Ability_Caprice2_description_simple								Gây Choáng và sát thương
+
+
+// Ability_Caprice3
+Ability_Caprice3_name											Volatility
+Ability_Caprice3_description									Địch bị đánh trúng 3 lần sẽ bị cháy nổ, sát thương ^o$damage$ bonus Magic damage^*.
+Ability_Caprice3_description_simple								Dồn sát thương khi đánh trúng.
+
+// State_Caprice_Ability3
+State_Caprice_Ability3_Tooltip_name								Volatility
+State_Caprice_Ability3_description_simple						Khi đánh trúng 3 cái, Caprice sẽ gây sát thương cao.
+State_Caprice_Ability3_name										Bốc Khói
+State_Caprice_Ability3_name_FRAME_effect
+
+// Ability_Caprice4
+Ability_Caprice4_name											Quick Draw
+Ability_Caprice4_description									Phóng nhanh đến vị trí đã chọn, gây ^o$damage$ Magic damage^* cho địch gần đó.  Đặc biệt là hero địch.
+Ability_Caprice4_description_simple								Phóng Nhanh và Bắn Đạn
+
+
+// Hero_Caprice
+Hero_Caprice_name												Caprice
+Hero_Caprice_description										Tiêu Diệt Lính Cực Nhanh
+Hero_Caprice_role
+Hero_Caprice_lore												Caprice là Nữ Hoàng Cướp Biển tại Lyrie. Khi còn trẻ, cô đã theo tàu hài quân của cha rong ruổi trên biển. Khi trưởng thành, cô muốn tạo dựng tên tuổi riêng cho mình. Nhưng cha cô không đồng ý, thế là cô chọn đường Hải Tặc, chôm chỉa và từ từ triệt phá hệ thống hải quân của người cha đáng thương. Không có cái tên nào đáng sợ và nổi tiếng khắp Lyrie bằng Nữ Hoàng Cướp Biển Caprice!
+
+
+// Ability_CapriceTutorial1
+Ability_CapriceTutorial1_name											Fire Lager
+Ability_CapriceTutorial1_description_simple								Gây sát thương ^o$damage$ Magic damage^* trên đường thẳng.  Đốt thêm lửa sau 1.3 giây, gây thêm sát thương phụ.
+
+// Gadget_Tutorial_Observatory
+Gadget_Tutorial_Observatory_name										Observatory
+
+// Ability_CapriceTutorial2
+Ability_CapriceTutorial2_name											Anchors Aweigh
+Ability_CapriceTutorial2_description_simple								Ném mỏ neo gây ^o$damage$ Magic damage^* và choáng trong $stun$ giây.
+
+
+// Ability_CapriceTutorial3
+Ability_CapriceTutorial3_name											Volatility
+Ability_CapriceTutorial3_description_simple								Địch bị đánh trúng 3 lần sẽ bị cháy nổ, sát thương ^o$damage$ bonus Magic damage^*.
+
+// State_CapriceTutorial_Ability3
+State_CapriceTutorial_Ability3_Tooltip_name								Volatility
+State_CapriceTutorial_Ability3_description_simple						Khi đánh trúng 3 cái, Caprice sẽ gây sát thương cao.
+State_CapriceTutorial_Ability3_name										Bốc Khói
+State_CapriceTutorial_Ability3_name_FRAME_effect
+
+// Ability_CapriceTutorial4
+Ability_CapriceTutorial4_name											Quick Draw
+Ability_CapriceTutorial4_description_simple								Phóng nhanh đến vị trí đã chọn, gây ^o$damage$ Magic damage^* cho địch gần đó.  Đặc biệt là hero địch.
+
+
+// Hero_CapriceTutorial
+Hero_CapriceTutorial_name												Caprice
+Hero_CapriceTutorial_description
+Hero_CapriceTutorial_role
+
+// Ability_CapriceTutorial1
+Ability_CapriceTutorialB1_name											Fire Lager
+Ability_CapriceTutorialB1_description									Gây sát thương ^o$damage$ Magic damage^* trên đường thẳng.  Đốt thêm lửa sau 1.3 giây, gây thêm sát thương phụ.
+
+
+// Ability_CapriceTutorial2
+Ability_CapriceTutorialB2_name											Anchors Aweigh
+Ability_CapriceTutorialB2_description									Ném mỏ neo gây ^o$damage$ Magic damage^* và choáng trong $stun$ giây.
+
+
+// Ability_CapriceTutorial3
+Ability_CapriceTutorialB3_name											Volatility
+Ability_CapriceTutorialB3_description									Địch bị đánh trúng 3 lần sẽ bị cháy nổ, sát thương ^o$damage$ bonus Magic damage^*.
+
+// State_CapriceTutorial_Ability3
+State_CapriceTutorial_AbilityB3_Tooltip_name							Volatility
+State_CapriceTutorial_AbilityB3_description_simple					Khi đánh trúng 3 cái, Caprice sẽ gây thêm sát thương.
+State_CapriceTutorial_AbilityB3_name									Volatility
+State_CapriceTutorial_AbilityB3_name_FRAME_effect
+
+// Ability_CapriceTutorial4
+Ability_CapriceTutorialB4_name											Quick Draw
+Ability_CapriceTutorialB4_description									Phóng nhanh đến vị trí đã chọn, gây ^o$damage$ Magic damage^* cho địch gần đó.  Đặc biệt là hero địch.
+
+
+// Hero_CapriceTutorial2
+Hero_CapriceTutorial2_name												Caprice
+Hero_CapriceTutorial2_description
+Hero_CapriceTutorial2_role
+
+Building_Tutorial_Tower_name					Tower
+Hero_Tutorial_Boss_name							Baldir
+Tutorial_Thief_Laning_name						Bandit
+Tutorial_General_name							Militia Leader
+
+
+
+// Ability_Bo1
+Ability_Bo1_name												Bo Throw
+Ability_Bo1_description											Ném Côn gây ^o$damage$ Magic damage^* và làm địch chậm.  Cây Côn bay đi và bay về trên cùng 1 đường.
+Ability_Bo1_description_simple									Gây sát thương và làm chậm
+
+
+// Ability_Bo2
+Ability_Bo2_name												Inner Rage
+Ability_Bo2_description											Tăng 75 movespeed và 15% Kháng Sát Thương.  Sau 4 giây, sẽ quật Côn gây ^o$damage$ Magic damage^* và gây Choáng $stun$ giây cho địch ở gần.
+Ability_Bo2_description_simple									Gây Choáng và sát thương địch xung quanh 
+
+
+// Ability_Bo3
+Ability_Bo3_name												Tranquility Totem
+Ability_Bo3_description											Tạo ra Thánh Vật giúp tăng ^o$percent_regen$% Max HP/sec^*.
+Ability_Bo3_description_simple									Tạo khu vực tăng HP
+
+// Ability_Bo4
+Ability_Bo4_name												Bull Rush
+Ability_Bo4_description											Lao đầu chạy nhanh về phía trước mặt.  Tất cả mọi địch thủ trên đường chạy sẽ bị ^o$damage$ Magic damage^* và bị kéo theo BO.   \n\nNếu BO húc đầu vào tường, địch thủ sẽ bị thêm 75% Damage và Stun 1 giây.
+Ability_Bo4_description_simple									Dash that Damages and Pushes Enemies
+
+// Hero_Bo
+Hero_Bo_name													Bo
+Hero_Bo_description												Tank Mạnh Mẽ, Gank Tuyệt Vời
+Hero_Bo_role
+Hero_Bo_lore													Bo xuất thân từ chủng tộc cổ xưa tại Lyrie có tên là Ryu-Bo. Rất lâu trước đây, họ là các chiến binh man rợ và nóng tính, Ryu-Bo đã trải qua một quãng thời gian dài để cố gắng sống hòa bình và trật với mọi thế lực. Một vài chiến binh xuất chúng trong tộc đã tạo cho mình con đường riêng. Bo được cử đến đầu trường thử nghiệm này để dạy cho các chiến binh khác tính điềm đạm và tự chủ. Nhưng, đấu trường quá khốc liệt đã làm anh đánh mất mục tiêu ban đầu, biến một giáo sư hòa bình trở thành dã thú địa ngục!
+
+
+// Ability_Bastion1
+Ability_Bastion1_name											Breath of Oracles
+Ability_Bastion1_description									Khè Lửa gây ^o$damage$ Magic damage^*. 
+Ability_Bastion1_description_simple								Sát Thương Gần
+
+
+// Ability_Bastion2
+Ability_Bastion2_name											Zidek Charge
+Ability_Bastion2_description									Xua rồng lao nhanh lên trước.  Đụng trúng Hero, gây ^o$damage$ Magic damage^* và Stun Choáng $stun$ giây.
+Ability_Bastion2_description_simple								Lướt lên gây sát thương và Choáng
+
+
+// Ability_Bastion3
+Ability_Bastion3_name											Golden Bracers
+Ability_Bastion3_description									Tăng $maxhp$ Max HP. Sử dụng skill sẽ tăng Giáp Bảo Vệ dựa trên $shield_percent$% Max HP của Bastion.
+Ability_Bastion3_description_simple								Tăng Máu, kích hoạt giáp.
+
+// State_Bastion_Ability3
+State_Bastion_Ability3_Tooltip_name								Shield of the Oracles
+State_Bastion_Ability3_description_simple						Bastion tạo áo giáp bảo vệ bạn.
+State_Bastion_Ability3_name										Áo Giáo Nhiệm Màu
+State_Bastion_Ability3_name_FRAME_effect
+
+// Ability_Bastion4
+Ability_Bastion4_name											The Chosen One
+Ability_Bastion4_description									Niệm chú 3 giây và bùng nổ gây ^o$damage$ Magic damage^* cho địch ở gần.  Kèm thêm 8 giây sau đó, Bastion cầm Kiếm Lửa giúp tăng ^o$attack_bonus$ Attack damage^*.
+Ability_Bastion4_description_simple								Làm chậm xung quanh, gây sát thương.
+
+// State_Bastion_Ability4_Buildup
+State_Bastion_Ability4_Buildup_Tooltip_name						Charging
+State_Bastion_Ability4_Buildup_description_simple				Bastion gây sóng lực tạo ra sát thương.
+State_Bastion_Ability4_Buildup_name								Charging
+State_Bastion_Ability4_Buildup_name_FRAME_effect
+
+// State_Bastion_Ability4_Immolation
+State_Bastion_Ability4_Immolation_Tooltip_name					Immolate
+State_Bastion_Ability4_Immolation_description_simple			Đốt cháy các địch thủ ở gần.
+State_Bastion_Ability4_Immolation_name							Immolate
+State_Bastion_Ability4_Immolation_name_FRAME_effect
+
+// Hero_Bastion
+Hero_Bastion_name												Bastion
+Hero_Bastion_description										Chuyên Tank và Gây Magic Damage Rộng
+Hero_Bastion_role
+Hero_Bastion_lore												Bastion là nô lệ trong một gia đình Kỵ Sĩ Rồng tại Gael, trong một dịp tình cờ, chàng nghe được lời đồn của đấng tiên tri và định mệnh bản thân từ Keeper Lexikhan. Đêm đó, chàng trốn thoát khỏi nhà cùng con rồng Xander. Bây giờ chàng và Xander sát cánh cùng nhau trong các cuộc chiến Trial, giúp liên minh Army of Light lớn mạnh và cảnh giác ngày hắc ám trổi dậy.
+
+
+// Ability_Fetterstone1
+Ability_Fetterstone1_name										Crystal Shot
+Ability_Fetterstone1_description								Bắn Chùm Đạn tinh thể vào địch.  Khi trúng địch, tinh thể phát nổ gây ^o$damage$ Magic damage^*, làm chậm và giảm phòng ngự địch $armorreduce$.
+Ability_Fetterstone1_description_simple							Sát Thương, Làm Chậm, Giảm Def Địch
+
+// State_Fetterstone_Ability1
+State_Fetterstone_Ability1_Tooltip_name							Crystal Shot
+State_Fetterstone_Ability1_description_simple					Fetterstone tăng thêm sát thương khi tấn công bạn.
+State_Fetterstone_Ability1_name									Crystal Shot
+
+// Ability_Fetterstone2
+Ability_Fetterstone2_name										Splinter Shield
+Ability_Fetterstone2_description								Tạo một lớp giáp tương đương $shield_percent$% Max HP của bản thân trong 3 giây.  \n\nKhi hết thời gian mà giáp vẫn còn, nó sẽ phát nổ và bắn tứ tưng, gây ^o$damage$ Magic Damage^* cho xung quanh.
+Ability_Fetterstone2_description_simple							Tăng Giáp và Gây Sát Thương
+
+
+// Ability_Fetterstone3
+Ability_Fetterstone3_name										Power Hungry
+Ability_Fetterstone3_description								Tấn công bình thường sẽ cướp $power_steal$% power của Hero Địch, cướp được nhiều nhất 3 lần.  \n\nPassively tăng $power$ Power
+Ability_Fetterstone3_description_simple							Cướp Power và Tăng Power
+
+// State_Fetterstone_Ability3
+State_Fetterstone_Ability3_Tooltip_name							Power Hungry
+State_Fetterstone_Ability3_description_simple					Fetterstone đã cướp lấy sức mạnh của bạn.
+State_Fetterstone_Ability3_name									Power Hungry
+
+// Ability_Fetterstone4
+Ability_Fetterstone4_name										Explosive Rounds
+Ability_Fetterstone4_description								Kích hoạt sẽ tăng hiệu ứng đặc biệt trong 8 giây, Fetterstone gây thêm $damage_increase$% bonus attack damage kèm 50% damage lan rộng.
+Ability_Fetterstone4_description_simple							Sát Thương, Đánh Lan
+
+// State_Fetterstone_Ability4
+State_Fetterstone_Ability4_Tooltip_name							Explosive Rounds
+State_Fetterstone_Ability4_description_simple					Bạn tăng sát thương và 50% đánh lan!
+State_Fetterstone_Ability4_name									Explosive Rounds
+
+
+// Hero_Fetterstone
+Hero_Fetterstone_name											Fetterstone
+Hero_Fetterstone_description									Hero kết hợp Damage và Magic
+Hero_Fetterstone_role											Tấn Công Tầm Xa
+Hero_Fetterstone_lore 											Lorne là một thợ mỏ siêng năng tại vùng núi Fetterstone, Phía Bắc Gael, sâu trong vùng núi có một khu mỏ gọi là Dwarf Rock. Anh ấy siêng năng và luôn an phận, không ham thích phiêu lưu mạo hiểm. Nhưng anh ta luôn yêu thích các loại đá quý đến nỗi trở thành cuồng tín Đá Quý.\n\nVào một ngày định mệnh, sâu trong khu mỏ, có ánh sáng đá quý tỏa ra rực rỡ. Với lòng ham thích tột độ, anh đã đào miệt mài và tìm thấy 2 khẩu súng bằng Ngọc Thạch. Lúc anh thấy chúng, đã có giọng nói thì thầm bên tai anh "Hãy đến với chúng tôi, nhặt súng lên và đó là định mệnh của anh." Ánh ngọc trong trẻo như mời gọi. Lorne cầm chúng lên, gọi chúng là Glimmer và Glint, anh lặng lẽ rời khu mỏ.\n\n Vài tuần sau, một tài súng người lùn, cùng cặp súng mà thuật, làm rúng động cả vùng núi phía bắc Gael. Hắn tự gọi mình là Fetterstone, sau khi rời khỏi khu mỏ, anh ta sẵn sàng giết bất cứ ai nói hắn xấu xí. Có người nói linh hồn anh ta đã bị ăn mòn bởi những âm hồn xấu xa, cặp súng đã làm vẫn đục và dẫn đắt hắn vào con đường tội ác.
+
+// Ability_Rook1_Bastact1
+Ability_Rook1_Bastact1_name												Grappling Hook
+Ability_Rook1_Bastact1_description										Quăng dây Móc gây ^o$damage$ Magic damage^* cho địch.\n\nKích hoạt thêm một lần nữa sẽ kéo Rook đến vị trí cái Móc.
+Ability_Rook1_Bastact1_description_simple								Sát thương xa, lướt nhanh
+
+
+// Ability_Rook2_Bastact1
+Ability_Rook2_Bastact1_name												Hide Then Seek
+Ability_Rook2_Bastact1_description										Biến vào chiều không gian khác trong 1.5 giây.\n\nSau đó, phóng lông chim gây ^o$damage$ Magic damage^* cho địch, dựa trên thời gian biến.
+Ability_Rook2_Bastact1_description_simple								Vô hiệu hóa mọi sát thương
+State_Rook_Ability2_Bastact1_name										Hide Then Seek...
+
+// Ability_Rook3_Bastact1
+Ability_Rook3_Bastact1_name												Murder of Crows
+Ability_Rook3_Bastact1_description										^rPassive Skill^*\nCứ mỗi phát bắn sẽ gây thêm ^o$damage$ bonus attack damage^*.  Dồn lên 5 lần.\n\nVà mỗi lần dùng skill sẽ giúp Rook bắn nhanh thêm 2 phát.
+Ability_Rook3_Bastact1_description_simple								Bắn 2 phát khi dùng skill
+
+// State_Rook_Ability3_Enemy_Bastact1
+State_Rook_Ability3_Enemy_Bastact1_Tooltip_name							Murder of Crows
+State_Rook_Ability3_Enemy_Bastact1_description_simple					Rook sẽ gây thêm sát thương.
+State_Rook_Ability3_Enemy_Bastact1_name									Murder of Crows
+
+// Ability_Rook4_Bastact1
+Ability_Rook4_Bastact1_name												Deliverance
+Ability_Rook4_Bastact1_description										Bắn ra con qua xuyên mọi vật cả, chỉ gây choáng và sát thương cho Hero.\n\nGây ^o$damage$ Magic damage^* và choáng 3.5 giây, khoảng cách càng xa, choáng càng lâu.
+Ability_Rook4_Bastact1_description_simple								Bắn xuyên địa hình và gây choáng
+
+// Hero_Rook_Bastact1
+ Hero_Rook_Bastact1_name										Rook
+ Hero_Rook_Bastact1_description										
+ Hero_Rook_Bastact1_role
+
+// Ability_Rook1
+Ability_Rook1_name												Grappling Hook
+Ability_Rook1_description										Quăng dây Móc gây ^o$damage$ Magic damage^* cho địch.\n\nKích hoạt thêm một lần nữa sẽ kéo Rook đến vị trí cái Móc.
+Ability_Rook1_description_simple								Sát thương xa, lướt nhanh
+
+
+// Ability_Rook2
+Ability_Rook2_name												Hide Then Seek
+Ability_Rook2_description										Biến vào chiều không gian khác trong 1.5 giây.\n\nSau đó, phóng lông chim gây ^o$damage$ Magic damage^* cho địch, dựa trên thời gian biến.
+Ability_Rook2_description_simple								Vô hiệu hóa mọi sát thương
+State_Rook_Ability2_name										Hide Then Seek...
+
+// Ability_Rook3
+Ability_Rook3_name												Murder of Crows
+Ability_Rook3_description										^rPassive Skill^*\nCứ mỗi phát bắn sẽ gây thêm ^o$damage$ bonus attack damage^*.  Dồn lên 5 lần.\n\nVà mỗi lần dùng skill sẽ giúp Rook bắn nhanh thêm 2 phát.
+Ability_Rook3_description_simple								Bắn 2 phát khi dùng skill
+
+// State_Rook_Ability3_Enemy
+State_Rook_Ability3_Enemy_Tooltip_name							Murder of Crows
+State_Rook_Ability3_Enemy_description_simple					Rook sẽ gây thêm sát thương.
+State_Rook_Ability3_Enemy_name									Murder of Crows
+
+// Ability_Rook4
+Ability_Rook4_name												Deliverance
+Ability_Rook4_description										Bắn ra con qua xuyên mọi vật cả, chỉ gây choáng và sát thương cho Hero.\n\nGây ^o$damage$ Magic damage^* và choáng 3.5 giây, khoảng cách càng xa, choáng càng lâu.
+Ability_Rook4_description_simple								Bắn xuyên địa hình và gây choáng
+
+// Hero_Rook
+Hero_Rook_name													Rook
+Hero_Rook_description											Sát Thương Mạnh, Tầm Xa 
+Hero_Rook_role
+Hero_Rook_lore													Rook là cung thủ tộc Elf trong rừng sau thuộc đại lục Gael. Không ai biết rõ anh đến từ đâu nhưng nhờ tài năng lãnh đạo và kỹ năng của mình, Rook đã lãnh đạo tộc Elf chống lại người phía đông và phía tây vương quốc Gael để giành quyền tự do cho tộc. Rook trở thành huyền thoại của tộc Elf. Nhưng, người ta vẫn có nghi ngờ rằng, Rook không phải là người tộc Elf và anh ta là linh hồn phục hận đến từ rừng sâu.
+
+
+// Ability_Blazer1
+Ability_Blazer1_name											Ion Cannon
+Ability_Blazer1_description										Kích hoạt đạn cannon truy sát.  Chọn mục tiêu và bắn viên đạn Ion gây ^o$damage$ Magic Damage^* cho địch.\n\nSát thương và khoảng cách dựa trên thời gian (max là 1.2 giây).
+Ability_Blazer1_description_simple								Sát Thương, Truy Đuổi
+
+
+// Ability_Blazer2
+Ability_Blazer2_name											Tether Shot
+Ability_Blazer2_description										Tạo ra trụ Lazer tấn công địch.  Khi địch nằm trong vùng tấn công của trụ Lazer, sẽ bị sát thương ^o$damage$ Magic Damage^* và bị giữ chân trong khu vực đó $duration$ giây.
+Ability_Blazer2_description_simple								Sát Thương, Khóa Đối Thủ
+
+State_Blazer_Ability2											Tethered
+State_Blazer_Ability2_description_simple						Blazer tạo ra khu vực bắt nhốt địch thủ
+State_Blazer_Ability2_name										Tethered
+
+// Ability_Blazer3
+Ability_Blazer3_name											Overcharge
+Ability_Blazer3_description										Passively tăng ^o$attack_bonus$^* Attack Damage vào Basic Attacks.\n\nKhi không tấn công, Blazer hội tụ tia Lazer vào súng, tạo ra critical attack cho đòn đánh với $damage_increase$% Bonus Damage.
+Ability_Blazer3_description_simple								Tăng Damage, Đánh Chí Mạng. 
+
+
+// Ability_Blazer4
+Ability_Blazer4_name											Hunter Mode
+//_Ability_Blazer4_description										Kích hoạt để tàng hình trong $duration$ giây.  Khi tàng hình, Blazer tăng 100 movespeed và phát hiện ra mọi Hero địch dưới 50% HP trong phạm vi 3000 range.
+Ability_Blazer4_description_simple								Tàng Hình và Nhận Dạng
+
+// Hero_Blazer
+Hero_Blazer_name												Blazer
+Hero_Blazer_description											Hero Đánh Lén, Magic kèm Đánh Thường
+Hero_Blazer_role
+Hero_Blazer_lore												
+
+
+
+// Ability_Hale1
+Ability_Hale1_name												Sweeping Strikes
+Ability_Hale1_description										Lướt về phía trước xoay chém 2 nhát.  Mỗi phát gây ^o$damage$ Magic damage^*.  Nếu kẻ địch bị dính cả 2 phát thì phát thứ 2 gây thêm 50% bonus damage.
+Ability_Hale1_description_simple								Lướt và Chém
+
+// Ability_Hale2
+Ability_Hale2_name												Inertial Sword
+Ability_Hale2_description										Kích hoạt Kiếm Khí Hale.  Chém 1 nhát gây ^o$damage_increase$% bonus damage^* trên đường thẳng dài.  \n\nTăng một ít tốc độ chạy khi dùng skill.
+Ability_Hale2_description_simple								Chém kiếm sát thương xa
+
+// Ability_Hale3
+Ability_Hale3_name												Sheol Calibur
+Ability_Hale3_description										Kích hoạt tăng ^o$attackspeed$ Attack Speed^* trong 5 giây.  Trong lúc này, mỗi nhát chém sẽ hút về ^o$percent_heal$% max HP^*.
+Ability_Hale3_description_simple								Tăng tốc độ đánh và hút máu
+
+// Ability_Hale4
+Ability_Hale4_name												Earthquake
+Ability_Hale4_description										Nhảy lên và dậm kiếm tại chỗ, gây ^o$damage$ Magic damage^* cho địch xung quang và gây choáng $stun$ giây.
+Ability_Hale4_description_simple								Stun choáng, sát thương xung quanh
+
+// Hero_Hale
+Hero_Hale_name													Hale
+Hero_Hale_description											Sát Thương Cận Chiến, Rất Mạnh
+Hero_Hale_role
+Hero_Hale_lore													Kiếm sĩ thuộc dòng tộc bị ruồng rẫy, bộ tộc của chàng là tạp chủng con lai Kenar-Ahdam, vì một lý do nào đó, các bộ tộc tại Gael không chấp nhận chung sống với tộc Kenar-Ahdam, nhưng đơn giản là vì tộc này lai tạp giữa Dharkwaven và Elf. Trong tộc này, có những quy định rất hà khắc về con trưởng và con thứ gọi chung là Rhen - Dhit, con trai thứ ở các gia đình phải bị gửi đi xa để tự tìm vận may cho chính bản thân, để con thứ không thách thức con trưởng. Hale là con thứ của Mhernad nên anh quyết tâm tham gia vào Trail để tìm kiếm vinh quang cho bản thân và gia tộc. Anh quyết tâm rất lớn để làm các tộc khác phải tôn trọng mình.
+
+// Ability_Shank1
+Ability_Shank1_name												Ground Pound
+Ability_Shank1_description										Phóng lên và dậm xuống, gây ^o$damage$ Magic damage^* và làm địch chậm chạy chậm $slow$%.
+Ability_Shank1_description_simple								Làm chậm và sát thương xung quanh.
+
+// Ability_Shank2
+Ability_Shank2_name												Jailbreak
+Ability_Shank2_description										Chọn mục tiêu, khà hơi giúp đồng đội tăng tốc độ chạy hay làm giảm tốc độ chạy của địch lên tới $taperingslow$%. 
+Ability_Shank2_description_simple								Tăng Tốc hay Giảm Tốc
+
+// State_Shank_Ability2
+State_Shank_Ability2_Tooltip_name								Jailbreak
+State_Shank_Ability2_description_simple							Được hỗ trợ tăng tốc độ chạy.
+State_Shank_Ability2_name										Jailbreak
+
+// State_Shank_Ability2_Enemy
+State_Shank_Ability2_Enemy_Tooltip_name							Jailbreak
+State_Shank_Ability2_Enemy_description_simple					Bị ếm giảm tốc độ chạy.
+State_Shank_Ability2_Enemy_name									Jailbreak
+
+// Ability_Shank3
+Ability_Shank3_name												Frenzy
+Ability_Shank3_description										Khi tấn công sẽ tăng $armor$ Armor / Magic Armor và $attackspeed$ Attack Speed mỗi 3 phát đánh.  Buff kéo dài 4 giây.
+Ability_Shank3_description_simple								Tăng phòng thủ và tốc độ khi đánh
+
+// Ability_Shank4
+Ability_Shank4_name												Manacle
+Ability_Shank4_description										Ném Còng Sắt và kéo địch đến gần.  Địch sẽ bị kéo đến chỗ Hero và bị ^o$damage$ Magic damage^*.
+Ability_Shank4_description_simple								Ném Dây Bắt Địch
+
+// Hero_Shank
+Hero_Shank_name													Shank
+Hero_Shank_description											Cận chiến Mạnh, Quăng Dây Kéo
+Hero_Shank_role
+Hero_Shank_lore													
+
+
+
+// Ability_Moxie1
+Ability_Moxie1_name												Z Zap
+Ability_Moxie1_description										Sát thương địch ^o$damage$ Magic damage^*. Đòn tiếp theo lên cùng địch thủ sẽ gây thêm 25% Bonus Damage mỗi lần, lên Max 100% bonus.
+Ability_Moxie1_description_simple								Sát Thương Đơn
+
+State_Moxie_Ability1_name										Static Touch
+State_Moxie_Ability1_description								Moxie Giât Điện gây thêm sát thương.  Dồn nhiều lần.
+
+// Ability_Moxie2
+Ability_Moxie2_name												Ball Lightning
+Ability_Moxie2_description										Phóng quả cầu điện trên đường dài gây ^o$damage$ Magic damage^* cho mọi địch thủ bị trúng.  Hút về $mana$ Mana nếu đánh trúng Hero, và $manacreeps$ mana ở các mục tiêu khác.
+Ability_Moxie2_description_simple								line damage
+
+
+// Ability_Moxie3
+Ability_Moxie3_name												Astral Winds
+Ability_Moxie3_description										Tăng mọi loại sát thương Magic thêm $damage_increase$% và tăng $movespeed$ tốc độ chạy khi sử dụng skill.
+Ability_Moxie3_description_simple								Phép Thuật Mạnh, Chạy Nhanh Lẹ
+
+// Ability_Moxie4
+Ability_Moxie4_name												Catastrophe
+Ability_Moxie4_description										Tạo Vùng Phóng Điện. Sau ít giây, điện dội xuống gây ^o$damage$ Magic damage^* làm địch chậm 60% tốc độ chạy.\n\nĐịch đứng ở trung tâm Vùng Điện sẽ bị thêm ^o$bonus_damage$ damage^* và Chậm kéo dài.
+Ability_Moxie4_description_simple								Sát Thương Rộng, làm Chậm
+Ability_Moxie4_effect_header
+Ability_Moxie4_IMPACT_effect
+Ability_Moxie4_tooltip_flavor									Giật Điện... Quấy Rối..
+
+
+// Hero_Moxie
+Hero_Moxie_name													Moxie
+Hero_Moxie_description											Quấy Rối, Sát Thương Xa
+Hero_Moxie_role
+Hero_Moxie_lore													Moxie là Mèo Điện đến từ Thiên Giới Nestra. Khi được sinh ra đã mang trên ngực biểu tượng sấm chớp uy phong. Đây là biểu tượng của Đấng Cứu Tinh được Tiên Tri từ lâu tại Nestra. Moxie được mọi người ca tụng với cái tên Mach Z như trong truyền thuyết. Nhưng, Moxie không thích điều đó, anh chỉ thích cuộc sống bình yên và tĩnh lặng. Mọi người luôn dồn ép anh thực hiện những kỳ công vĩ đại hay công việc của siêu anh hùng, để họ được thảnh thơi. Moxie tham gia vào  Trials of Strife chỉ đơn giản là muốn tìm một nơi tốt để có cớ xa lánh đám lợi dụng và cũng như có 1 nơi để ngã lưng thư giản (với anh, được ngũ một tý là hạnh phúc rồi).
+
+
+// Ability_Ace1
+Ability_Ace1_name												Spincicle
+Ability_Ace1_description										XOay búa chém vòng vòng gây ^o$damage$ Magic damage^* cho địch xung quanh.
+Ability_Ace1_description_simple									Sát Thương Xung Quanh
+
+// Ability_Ace2
+Ability_Ace2_name												Avalanche
+Ability_Ace2_description										Phóng lên cao và dậm xuống vị trí chỉ định, gây ^o$damage$ Magic damage^* và làm chậm $taperingslow$% tốc độ chạy trong 3.5 giây.
+Ability_Ace2_description_simple									Bay Dậm và Làm Chậm
+
+
+// Ability_Ace3
+Ability_Ace3_name												Frostbite
+Ability_Ace3_description										Kích hoạt sẽ tạo ra $number_of_icicles$ Mảnh Băng, Kháng  $damage_reduction$% sát thương. \n\nMỗi lần Hero địch tấn công vào Ace, sẽ làm mất đi 1 mảnh băng, mảnh băng này sẽ bắn vào địch gây ^o$damage$ Magic damage^* và làm chậm $slow$% tốc độ đánh của địch.
+Ability_Ace3_description_simple									Kháng Sát Thương, Phản Đòn
+
+
+// Ability_Ace4
+Ability_Ace4_name												Ace in the Hole
+Ability_Ace4_description										Gồng búa và phang mạnh vào đầu địch gây sát thương ^o$damage$ Magic damage^*.\n\nNếu mục tiêu bị giết, hồi phục 25% HP/MP cho Ace.
+Ability_Ace4_description_simple									Hồi HP/MP nếu giết được địch
+
+
+
+// Hero_Ace
+Hero_Ace_name													Ace
+Hero_Ace_description											Đa Chức Năng, Nhiều Lối Chơi
+Hero_Ace_role													Burst damage, tanky, initiator
+Hero_Ace_lore 													Ace đến từ Tempra, nơi mà anh ấy rèn luyện sức mạnh cũng như kỹ năng chiến đấu Dã Thú Băng Giá trên các đỉnh núi tuyết. Tại quê nhà, anh là một huyền thoại sống ( chắc do không đi xa nên mới nghĩ thế ). Ace rất tự mãn và cho rằng nắm đấm của anh sẽ đem lại tự hào cho Tempra. Anh quyết định tham gia vào Trial of Strife để thể hiện bản lĩnh đàn ông của mình..
+
+
+
+// Ability_Harrower1
+Ability_Harrower1_name											Predator Strike
+Ability_Harrower1_description									Lướt tới trước theo hướng chỉ định. Đòn đánh ngay sau đó sẽ gây thêm ^o$attack_charged$^* bonus Attack damage.
+Ability_Harrower1_description_simple							Lướt Nhanh, Đánh Mạnh
+
+// Ability_Harrower2
+Ability_Harrower2_name											Spirit Companion
+Ability_Harrower2_description									Tạo ra chó Sói Spirit Wolf để tấn công Hero địch. Khi đó, Sói sẽ tấn công ^o$damage$^* Magic damage và làm địch chậm 25%.  \n\nCon sói sẽ tấn công ngẫu nhiên thêm $numattacks$ lần nữa.  Tấn công liên tiếp gây thêm 45% damage.
+Ability_Harrower2_description_simple							Sát Thương, Làm Chậm
+
+// Ability_Harrower3
+Ability_Harrower3_name											Feast on Wounds
+Ability_Harrower3_description									Gây thêm sát thương. Mục tiêu sẽ bị đồng đội sát thương thêm $damage_increase$% extra damage và hút lấy $percentdamagehealed$% sát thương gây ra cho địch làm HP.
+Ability_Harrower3_description_simple							Tăng Hút Máu cho Team, Dồn Sát Thương
+
+// State_Harrower_Ability3
+State_Harrower_Ability3_Tooltip_name							Feast on Wounds
+State_Harrower_Ability3_description								Harrower đã dùng "Feast on Wounds", địch sẽ gây thêm nhiều sát thương cho bạn và chúng sẽ hồi máu khi đánh bạn.
+State_Harrower_Ability3_description_simple						Harrower đã dùng "Feast on Wounds", địch sẽ gây thêm nhiều sát thương cho bạn và chúng sẽ hồi máu khi đánh bạn.
+State_Harrower_Ability3_name									Feast on Wounds
+
+
+// Ability_Harrower4
+Ability_Harrower4_name											Grendlefang
+Ability_Harrower4_description									Biến Hình thành Siêu Sói Grendlefang, tăng $maxhp$ Max HP và 35 Movespeed.\n\nKhi đó, cứ 4 phát cắn sẽ tạo ra hiệu ứng Cấu Xé, gây $percent_bonus_damage$% bonus damage và giảm 30% tốc độ chạy của địch trong 2 giây.\n\nĐòn đánh đấu tiên sau khi biến hình sẽ có tác dụng Cấu Xé.
+Ability_Harrower4_description:harrower_melee					Kích hoạt lần nữa trở về dạng tấn công xa, hết Cấu Xé.
+Ability_Harrower4_description_simple							Biến Đổi đánh gần hay xa	
+
+
+
+// Hero_Harrower
+Hero_Harrower_name													Harrower
+Hero_Harrower_description											Sát Thương Vật Lý
+Hero_Harrower_role													Sát Thương Vật Lý
+Hero_Harrower_lore 													Hero đang chờ nâng cấp tiểu sử! Sẽ có một tiểu sử thú vị dành cho vị Hero lắm tài nhiều tật ngày, sẽ rất hứng thú.
+
+
+
+// Ability_CapriceTutorial1
+Ability_CapriceTutorial1_name											Fire Lager
+Ability_CapriceTutorial1_description_simple								Gây sát thương ^o$damage$ Magic damage^* trên đường thằng.  Sau đó khoảng 1.3 giây, gây thêm một nửa sát thương.
+Ability_CapriceTutorial1_description									Gây sát thương ^o$damage$ Magic damage^* trên đường thằng.  Sau đó khoảng 1.3 giây, gây thêm một nửa sát thương.
+
+
+// Ability_CapriceTutorial2
+Ability_CapriceTutorial2_name											Anchors Aweigh
+Ability_CapriceTutorial2_description_simple								Ném Mỏ Neo gây ^o$damage$ Magic damage^* và gây Choáng $stun$ giây.
+Ability_CapriceTutorial2_description									Ném Mỏ Neo gây ^o$damage$ Magic damage^* và gây Choáng $stun$ giây.
+
+
+// Ability_CapriceTutorial3
+Ability_CapriceTutorial3_name											Volatility
+Ability_CapriceTutorial3_description_simple								Đánh trúng 3 phát sẽ gây thêm sát thương, sát thương ^o$damage$ Magic damage^*. \n\nKhi đang ngắt Cooldown, phát đánh kế tiếp gây ra ^o$bonus_damage$ Bonus Magic damage^*.
+Ability_CapriceTutorial3_description									Đánh trúng 3 phát sẽ gây thêm sát thương, sát thương ^o$damage$ Magic damage^*. \n\nKhi đang ngắt Cooldown, phát đánh kế tiếp gây ra ^o$bonus_damage$ Bonus Magic damage^*.
+
+// State_CapriceTutorial_Ability3
+State_CapriceTutorial_Ability3_Tooltip_name								Volatility
+State_CapriceTutorial_Ability3_description_simple						Đánh trúng 3 lần, Caprice gây thêm sát thương.
+State_CapriceTutorial_Ability3_name										Volatility
+State_CapriceTutorial_Ability3_name_FRAME_effect
+
+// Ability_CapriceTutorial4
+Ability_CapriceTutorial4_name											Quick Draw
+Ability_CapriceTutorial4_description_simple								Phóng qua vị trí mới, sát thương ^o$damage$ Magic damage^* cho địch ở gần.
+Ability_CapriceTutorial4_description									Phóng qua vị trí mới, sát thương ^o$damage$ Magic damage^* cho địch ở gần.
+
+
+// Hero_CapriceTutorial
+Hero_CapriceTutorial_name												Caprice
+Hero_CapriceTutorial_description
+Hero_CapriceTutorial_role
+
+// Ability_Magebane1
+Ability_Magebane1_name											Mage Bane
+Ability_Magebane1_description									Phóng đến gần địch và gây sát thương ^o$damage$ Magic damage^*.\n\nTự Đánh Dấu khu vực gần kẻ địch trong 2 giây sau khi chúng dùng skill. Tấn công vào chỗ đánh dấu sẽ gây thêm ^o30% bonus damage^* và gây thêm ^o1.5 second Stun^*.
+Ability_Magebane1_description_simple							Phóng đến gần địch và gây sát thương ^o$damage$ Magic damage^*.\n\nTự Đánh Dấu khu vực gần kẻ địch trong 2 giây sau khi chúng dùng skill. Tấn công vào chỗ đánh dấu sẽ gây thêm ^o30% bonus damage^* và gây thêm ^o1.5 second Stun^*.
+
+// Ability_Magebane2
+Ability_Magebane2_name											Spelldrinker
+Ability_Magebane2_description									Passive tăng ^y$attackspeed$ Attack Speed và Move Speed^*.\n\nKích hoạt lên sẽ Hấp Thu skill tấn công bạn trong 2 giây. Nếu hấp thu được, sẽ tạo ra hiệu ứng Spelldrinker ^ytripled trong 5 seconds^*.
+Ability_Magebane2_description_simple							Passive tăng ^y$attackspeed$ Attack Speed và Move Speed^*.\n\nKích hoạt lên sẽ Hấp Thu skill tấn công bạn trong 2 giây. Nếu hấp thu được, sẽ tạo ra hiệu ứng Spelldrinker ^ytripled trong 5 seconds^*.
+
+
+// Ability_Magebane3
+Ability_Magebane3_name											Lifedrinker
+Ability_Magebane3_description									Passive tăng ^o$attack_bonus$ bonus Base Damage^* cho bạn.\n\nThay đổi sau 15 lần đánh. Kích hoạt sẽ tăng ^g$heal$ Health^*.
+Ability_Magebane3_description_simple							Passive tăng ^o$attack_bonus$ bonus Base Damage^* cho bạn.\n\nThay đổi sau 15 lần đánh. Kích hoạt sẽ tăng ^g$heal$ Health^*.
+
+// Ability_Magebane4
+Ability_Magebane4_name											Prey on the Mighty
+Ability_Magebane4_description									Mục tiêu sẽ bị sát thương ^o$damage$ Magic damage^*.\n\nSkill này cũng tích hợp với Bonus Power của địch.
+Ability_Magebane4_description_simple							Mục tiêu sẽ bị sát thương ^o$damage$ Magic damage^*.\n\nSkill này cũng tích hợp với Bonus Power của địch.
+
+// Hero_Magebane
+Hero_Magebane_name												Fenris
+Hero_Magebane_description
+Hero_Magebane_role
+
+// Ability_Ladytinder1
+Ability_Ladytinder1_name										Bindweed
+Ability_Ladytinder1_description									Phóng Bụi Cây bắt trới địch, khi phóng trúng sẽ gây Choáng $stun$ giây và sát thương ^o$damage$ Magic damage^*.
+Ability_Ladytinder1_description_simple							Gây Choáng, Sát Thương
+
+// Ability_Ladytinder2
+Ability_Ladytinder2_name										Tinder Touch
+Ability_Ladytinder2_description									Đồng đội sẽ được tăng ^o$heal$^* Health, lan ra 3 đối tượng.  \n\nNgược lại, địch trúng chiêu sẽ bị ^o$damage$ Magic damage^*, lan ra 3 đối tượng.  Giảm một phần hiệu ứng khi lan dội.
+Ability_Ladytinder2_description_simple							Hồi Máu hoặc Sát Thương
+State_Ladytinder_Ability2_Self_name								Imprison
+
+// Ability_Ladytinder3
+Ability_Ladytinder3_name										Stonebark Shield
+Ability_Ladytinder3_description									Đồng đội được tăng ^o$shield_max$^* Giáp.  Khi được Buff, nhận thêm $attackspeed$ tốc độ tấn công.  Duy trì 6 giây.
+Ability_Ladytinder3_description_simple							Bảo Vệ và Tăng Tốc Độ Đánh
+
+// State_Ladytinder_Ability3
+State_Ladytinder_Ability3_Tooltip_name							Stonebark Shield
+State_Ladytinder_Ability3_description_simple					Lady Tinder tạo lớp Áo Giáp.
+State_Ladytinder_Ability3_name									Stonebark Shield
+State_Ladytinder_Ability3_name_FRAME_effect
+
+// Ability_Ladytinder4
+Ability_Ladytinder4_name										Nature's Fury
+Ability_Ladytinder4_description									Tinder Cây Quái Vật.  Cây có 60% HP của Lady Tinder, ^o$damage$ Attack damage^*, và không thể di chuyển.
+Ability_Ladytinder4_description_simple							Tạo Cây Tấn Công
+
+// Hero_Ladytinder
+Hero_Ladytinder_name											Lady Tinder
+Hero_Ladytinder_description										Hỗ Trợ, Bảo Vệ
+Hero_Ladytinder_role
+Hero_Ladytinder_lore											Tinder là một Tinh Linh trong Đại Lâm tại Gael. Cô từ lâu là người bảo vệ sự thiêng liêng của rừng được gọi là "The Green Leaf", nơi người ta tin tất cả cuộc sống bắt đầu từ rừng. Tinder giỏi hỗ trợ, nhưng vì các cuộc chiến quá khốc liệt nên cô cũng phát triển những kỹ năng tấn công để bảo vệ đồng đội. Cùng với cây rừng, bụi gay, cánh hoa, Tinder là một chiến binh đáng gờm trong sự kiện Trial of Strife.
+
+
+Pet_Ladytinder_Ability4_name									Nature Incarnate
+
+
+// Ability_Malady1
+Ability_Malady1_name											Whirlwind
+Ability_Malady1_description										Gây sát thương ^o$damage$ Magic damage^* và gây thêm $stun$ giây stun choáng.
+Ability_Malady1_description_simple								Sát Thương và Gây Choáng
+
+
+// Ability_Malady2
+Ability_Malady2_name											Dark Storm
+Ability_Malady2_description										Tạo cột lốc xoáy tại chỗ gây ^o$damage$ Magic damage^* trong 5 giây.
+Ability_Malady2_description_simple								Sát Thương và Làm Chậm
+
+
+// Ability_Malady3
+Ability_Malady3_name											Golden Gate
+Ability_Malady3_description										Tạo một cánh cổng to, cản đường địch 4 giây. Làm kẻ địch không thể đi qua.
+Ability_Malady3_description_simple								Tạo Rào Cản
+
+// Ability_Malady4
+Ability_Malady4_name											Bolt of Bedlam
+Ability_Malady4_description										Phóng Tia Sét sát thương ^o$damage$ Magic damage^*.
+Ability_Malady4_description_simple								Sát Thương Lớn
+
+State_Malady_Ability4_Channel_name								Charging..
+
+
+// Hero_Malady
+Hero_Malady_name												Malady
+Hero_Malady_description											AoE Khống Chế và Magic Damage
+Hero_Malady_role												Khống Chế địch và Magic Damage
+Hero_Malady_lore 												Malady được mệnh danh là Nữ Hoàng của Bầu Trời Tàn Bạo trên các tầng mây tại Nestra. Nàng rất thích thú với các sở thích cá nhân và thường dùng mọi thủ đoạn tàn bạo để đạt được tham vọng của mình. Nàng thích hưởng thụ, sống khép kín và rất nguy hiểm. Nắm quyền kiểm soát thời tiết tại Nestra, nên nàng tha hồ sử dụng bão tố tàn phá khắp nơi. Rất ít cao thủ có thể kháng cự được sự cuồng nộ của nàng.
+
+// Ability_Waterbender1
+Ability_Waterbender1_name										Riptide
+Ability_Waterbender1_description								Gây sát thương ^o$damage$ Magic Damage^*.  Nếu đánh trung, hồi phục ^o$heal$ Health^* và 30% lượng MP tiêu hao.
+Ability_Waterbender1_description_simple							Gây sát thương ^oMagic Damage^*.  Nếu đánh trung, hồi phục ^oHealth^* và một ít MP tiêu hao.
+
+
+// Ability_Waterbender2
+Ability_Waterbender2_name										Whirlpool
+Ability_Waterbender2_description								Chọn vị trí, tạo cột xoáy nước, hút địch vào và làm chậm $slow$%.  Sau 2 giây, cột nước sát thương ^o$damage$ Magic damage^* và hất tung địch lên trời.
+Ability_Waterbender2_description_simple							Chọn vị trí, tạo cột xoáy nước, hút địch vào và làm chậm.  Sau vài giây, cột nước sát thương ^oMagic damage^* hất tung địch lên trời.
+
+
+
+// Ability_Waterbender3
+Ability_Waterbender3_name										Splash Kick
+Ability_Waterbender3_description								Khi đã sẵn sàng, đòn đánh sẽ gây sát thương ^o$damage$ bonus Magic splash damage^*.
+Ability_Waterbender3_description_simple							Khi đã sẵn sàng, đòn đánh sẽ gây sát thương ^obonus Magic splash damage^*.
+
+// Ability_Waterbender4
+Ability_Waterbender4_name										Typhoon
+Ability_Waterbender4_description								Tạo bão tố, cơn bão sẽ sát thương địch và hồi máu cho đồng đội ^o$damage$ Magic damage^* mỗi giây.  Ngoài ra, còn giúp đồng đội tăng tốc độ thêm 75.
+Ability_Waterbender4_description_simple							Tạo bão tố, cơn bão sẽ sát thương địch và hồi máu cho đồng đội ^oMagic damage^* mỗi giây.  Ngoài ra, còn giúp đồng đội tăng tốc độ thêm.
+
+
+// Hero_Waterbender
+Hero_Waterbender_name											Waterbender
+Hero_Waterbender_description									Không thành phố nào thờ phụng Sol thành kính hơn  Arasunia, không ai nhiệt huyết hơn Witch Slayer. Ngoài ra, anh còn được biết đến như Pháp Sư Dã Thú và Hiền Triết Nhân Loại tại liên minh, khi anh dùng phép sẽ mang đến sức mạnh chiến đấu và hỗ trợ đồng đội cực tốt.Tay cầm súng kèm biểu tượng Sol. Không chỉ kiểm soát thế trận, mà phép thuật của anh còn rút đi sức mạnh của địch, triệt tiêu địch nhanh chóng.
+
+// Ability_Minerva1
+Ability_Minerva1_name											Cyber Stalk
+Ability_Minerva1_description									Lướt tới sau lưng địch, sát thương ^o$damage$ Magic damage^* và sau đó tăng $attackspeed$ Attack Speed kèm 15 Tốc Độ Chạy trong 6 giây.
+Ability_Minerva1_description_simple								Sát Thương, tăng Tốc Độ
+
+// State_Minerva_Ability1_Buff
+State_Minerva_Ability1_Buff_Tooltip_name						Attack Speed
+State_Minerva_Ability1_Buff_description_simple				Bạn được tăng tốc độ đánh.
+State_Minerva_Ability1_Buff_name								Attack speed
+State_Minerva_Ability1_Buff_name_FRAME_effect
+
+// Ability_Minerva2
+Ability_Minerva2_name											Hunter's Strike
+Ability_Minerva2_description									Địch sẽ bị sát thương ^o$damage$ Magic damage^* và gây thêm $taperingslow$% tác động làm chậm trong 3 giây.
+Ability_Minerva2_description_simple								Sát Thương và Làm Chậm
+
+
+// Ability_Minerva3
+Ability_Minerva3_name											Shield of Vorbis
+Ability_Minerva3_description									Passive tăng $shield$% Giáp dựa trên Max HP của Hero. Shield duy trì 4 giây.
+Ability_Minerva3_description_simple								Tăng Giáp khi dùng skill.
+
+// Ability_Minerva4
+Ability_Minerva4_name											Impaling Sting
+Ability_Minerva4_description									Sát thương ^o$damage$ Magic damage^*. Nếu đánh vào lưng địch sẽ gây thêm +50% bonus damage.
+Ability_Minerva4_description_simple								Đâm sau lưng, sát thương lớn
+
+
+// Hero_Minerva
+Hero_Minerva_name												Minerva
+Hero_Minerva_description										Siêu Ám Sát Solo
+Hero_Minerva_role
+Hero_Minerva_lore 												Minerva đến từ vùng đất bí ẩn Vorbis. Rất ít thông tin về cô ta cũng như chủng tộc, nhưng có 1 điều chắc chắn rằng, cô ta cực kỳ nguy hiểm khi vừa đặt chân đến cuộc thử nghiệm Trial. Năng lượng điện và quyết tâm của cô ta ít ai bì được. Cô đang tìm kiếm một vật thiêng liêng cho Vorbis.Cô tham gia vào cuộc chiến này để tìm người trợ giúp cô ấy tìm nó.
+
+// Tutorial2_LexiKhan (Hero entity)
+Tutorial2_LexiKhan_name											LexiKhan
+
+// Tutorial3_LexiKhan (hero entity)
+Tutorial3_LexiKhan_name											LexiKhan
+
+//
+// Items
+//
+
+// Gloves of Haste
+Item_GlovesOfHaste_name											Agility Stone
+Item_GlovesOfHaste_description									15 Tốc Độ Đánh
+Item_GlovesOfHaste_description_simple							15 Tốc Độ Đánh
+
+// Warpcleft
+Item_Warpcleft_name												Agility Relic
+Item_Warpcleft_description										36 Tốc Độ Đánh
+Item_Warpcleft_description_simple								36 Tốc Độ Đánh
+
+// Blade
+Item_Blade_name													^oPower Shard^*
+Item_Blade_description											6 Power (Tăng sát thương cơ bản và hiệu ứng skill 6%)
+Item_Blade_description_simple									6 Power
+
+// Staff
+Item_Staff_name													^oPower Crystal^*
+Item_Staff_description											16 Power (Tăng sát thương cơ bản và hiệu ứng skill 16%)
+Item_Staff_description_simple									16 Power
+
+// Relic
+Item_Relic_name													^oPower Relic^*
+Item_Relic_description											27 Power (Tăng sát thương cơ bản và hiệu ứng skill 27%)
+Item_Relic_description_simple									27 Power
+
+// Manaregen1
+Item_Manaregen1_name											Clarity Shard
+Item_Manaregen1_description										1.25 MP/Giây
+Item_Manaregen1_description_simple								1.25 MP/Giây
+
+// Manaregen2
+Item_Manaregen2_name											Clarity Stone
+Item_Manaregen2_description										2.4 MP/Giây
+Item_Manaregen2_description_simple								2.4 MP/Giây
+
+// Mender
+Item_Mender_name											Vitality Shard
+Item_Mender_description										2 HP/Giây
+Item_Mender_description_simple								2 HP/Giây
+
+// Sustainer
+Item_Sustainer_name											Vitality Stone
+Item_Sustainer_description									3.8 HP/Giây
+Item_Sustainer_description_simple							3.8 HP/Giây
+
+// Healthstone
+Item_Healthstone_name											Health Shard
+Item_Healthstone_description									85 HP
+Item_Healthstone_description_simple								85 HP
+
+
+// Booster
+Item_Booster_name												Health Crystal
+Item_Booster_description										230 HP
+Item_Booster_description_simple									230 HP
+
+// Heart
+Item_Heart_name													Health Relic
+Item_Heart_description											380 HP
+Item_Heart_description_simple									380 HP
+
+// Manastone
+Item_Manastone_name												Mana Shard
+Item_Manastone_description										55 Mana
+Item_Manastone_description_simple								55 Mana
+
+// Diamond
+Item_Diamond_name												Mana Stone
+Item_Diamond_description										105 Mana
+Item_Diamond_description_simple									105 Mana
+
+// Brain
+Item_Brain_name													Mana Crystal
+Item_Brain_description											150 Mana
+Item_Brain_description_simple									150 Mana
+
+// Tome of Power
+Item_Tome_Power_name											Tome of Power
+Item_Tome_Power_description										7 Power (Tăng sát thương cơ bản và sức mạnh skill)
+Item_Tome_Power_description_simple								7 Power
+
+// Tome of Health
+Item_Tome_Health_name											Tome of Health
+Item_Tome_Health_description									105 HP
+Item_Tome_Health_description_simple								105 HP
+
+// Tome of Mana
+Item_Tome_Mana_name												Tome of Mana
+Item_Tome_Mana_description										65 Mana
+Item_Tome_Mana_description_simple								65 Mana
+
+// Spellblade
+Item_Spellblade_name											Mystic Dagger
+Item_Spellblade_description										+$power$ Power\nDùng skill tốn MP, sẽ tăng ^o$damage$ bonus damage^* cho đòn đánh tiếp theo.
+Item_Spellblade_description_simple								Grants power.  Dùng skill sẽ tăng ^obonus damage^* cho đòn đánh tiếp theo.
+Item_Spellblade_bonusdescription								Tăng thêm sát thương $common_increase$%.
+Item_Spellblade_legendaryname									Unstable
+Item_Spellblade_legendarydescription							Thanh Gươm phục hồi $mana$ MP khi nó biến mất.
+Item_Spellblade_Empower_1_name									Energy
+Item_Spellblade_Empower_1_description							Nhận $mana_enchant$ MP mỗi đòn đánh khi kích hoạt con dao.
+Item_Spellblade_Empower_2_name									Empower 2
+Item_Spellblade_Empower_2_description							Có thể lưu trữ 3 lần.
+Item_Spellblade_Empower_3_name									Combustion
+Item_Spellblade_Empower_3_description							Bonus damage dạng đánh lan.
+
+
+// DemonEdge
+Item_DemonEdge_name												Demon Fang
+Item_DemonEdge_description										^o+$damage$ Attack Damage^*
+Item_DemonEdge_description_simple								Thêm ^oAttack Damage^*
+Item_DemonEdge_bonusdescription									Tăng sát thương thêm $common_increase$%.
+Item_DemonEdge_legendaryname									Catalystic
+Item_DemonEdge_legendarydescription								Khi power từ 200 trở lên, tăng thêm $damage_legendary$ attack damage.
+Item_DemonEdge_Empower_1_name									Empower 1
+Item_DemonEdge_Empower_1_description							Khi power từ 200 trở lên, tăng thêm $damage_power_enchant$ attack damage.
+Item_DemonEdge_Empower_2_name									Desolation
+Item_DemonEdge_Empower_2_description							Tăng $damage_neutrals_enchant$% bonus damage lên quân lính.
+Item_DemonEdge_Empower_3_name									Brutality
+Item_DemonEdge_Empower_3_description							Tăng Attack Damage thêm $damage_enchant$.
+
+// PendantofDefiance
+Item_PendantofDefiance_name										Dampening Cloak
+Item_PendantofDefiance_description								Tăng Magic Armor thêm $armor$ và HP thêm $hp$.
+Item_PendantofDefiance_description_simple						Tăng Magic Armor và HP
+Item_PendantofDefiance_bonusdescription							Tăng Magic Armor và HP lên thêm $common_increase$%.
+Item_PendantofDefiance_legendaryname							Satanic
+Item_PendantofDefiance_legendarydescription						Cứ mỗi 2% HP mất đi, Tăng $mana$ mana.
+Item_PendantofDefiance_Empower_1_name							Sadism
+Item_PendantofDefiance_Empower_1_description					Cứ mỗi 2% HP mất đi, Tăng $manareturn_enchant$ mana.
+Item_PendantofDefiance_Empower_2_name							Resistance
+Item_PendantofDefiance_Empower_2_description					Tăng Magic Armor thêm $magicarmor_enchant$.
+Item_PendantofDefiance_Empower_3_name							Empower 3
+Item_PendantofDefiance_Empower_3_description					Tăng HP thêm $health_enchant$.
+
+// Item_ShamanHeaddress
+Item_ShamanHeaddress_name										Guardian Helm
+Item_ShamanHeaddress_description								Tăng Magic Armor thêm $armor$. $magicheal$% Magic Damage sẽ hấp thu làm HP.
+Item_ShamanHeaddress_description_simple							Tăng Magic Armor và HP. Hồi Phục một phần HP khi bị tấn công bằng Magic.
+Item_ShamanHeaddress_bonusdescription							Tăng Magic Armor và HP lên thêm $common_increase$%.
+Item_ShamanHeaddress_legendaryname								Desperation
+Item_ShamanHeaddress_legendarydescription						Tăng Magic Armor thêm $armor_legendary$ khi HP dưới 20%.
+Item_ShamanHeaddress_Empower_1_name								Desperation
+Item_ShamanHeaddress_Empower_1_description						Tăng Magic Armor thêm $magicarmor_enchant$ khi HP dưới 20%.
+Item_ShamanHeaddress_Empower_2_name								Mending
+Item_ShamanHeaddress_Empower_2_description						Tăng $heal_enchant$ phần trăm HP và tốc độ hồi máu gấp đôi.
+
+// Item_Kingsmail
+Item_Kingsmail_name												Golden Protector
+Item_Kingsmail_description										Tăng Armor thêm $armor$ và Thêm $hp_regen$ HP/Giây.
+Item_Kingsmail_description_simple								Tăng Armor và HP Hồi Phụceration.
+Item_Kingsmail_bonusdescription									Tăng Armor lên thêm $common_increase$%.
+Item_Kingsmail_legendaryname									Adaptation
+Item_Kingsmail_legendarydescription								Tăng Armor thêm $armor_legendary$ trong 3 giây khi bị đánh.  Cộng hưởng 4 lần.
+Item_Kingsmail_Empower_1_name									Adaptation
+Item_Kingsmail_Empower_1_description							Tăng Armor thêm $armor_enchant$ trong $armor_duration_enchant$ giây khi bị đánh.  Cộng hưởng $stack_enchant$ lần.
+Item_Kingsmail_Empower_2_name									Restoration
+Item_Kingsmail_Empower_2_description							Tăng $healthregen_percent_enchant$% HP/Giây.
+Item_Kingsmail_Empower_3_name									Focus
+Item_Kingsmail_Empower_3_description							Tăng $armor_enchant$ Armor nhưng không được tăng $healthregen_enchant$ HP/Giây.
+
+// Item_ResilientVest
+Item_ResilientVest_name											Ranger's Vest
+Item_ResilientVest_description									Tăng $hp$ HP.\n\nAlso Tăng 70% cơ hội khóa $block$ damage từ lính.
+Item_ResilientVest_description_simple							Tăng thêm Max HP và giảm sát thương từ lính.
+Item_ResilientVest_bonusdescription								Tăng HP lên thêm $common_increase$%.
+Item_ResilientVest_legendaryname								Recovery
+Item_ResilientVest_legendarydescription							Khi khóa đòn đánh, hồi phục $legendary$ HP.
+Item_ResilientVest_Empower_1_name								Recovery
+Item_ResilientVest_Empower_1_description						Khi khóa đòn đánh, hồi phục $heal_enchant$ HP.
+Item_ResilientVest_Empower_2_name								Reflection
+Item_ResilientVest_Empower_2_description						Tăng 100% Damage Phản Đòn cho mọi dạng Khóa Đòn.
+Item_ResilientVest_Empower_3_name								Fortitude
+Item_ResilientVest_Empower_3_description						Khóa đòn tấn công từ Trụ.
+
+// Item_Shardplate
+Item_Shardplate_name											Iceforged Plate
+Item_Shardplate_description										Tăng Armor thêm $armor$. Địch bị giảm Tốc Độ Đánh $attackspeedslow$% khi tấn công bạn.
+Item_Shardplate_description_simple								Tăng nhiều giáp, làm địch đánh chậm khi tấn công bạn.
+Item_Shardplate_bonusdescription								Tăng Armor và chậm chạp thêm $common_increase$%.
+Item_Shardplate_legendaryname									Guardian
+Item_Shardplate_legendarydescription							Tăng Armor thêm $armor_legendary$ khi HP dưới 20%.
+Item_Shardplate_Empower_1_name									Desperation
+Item_Shardplate_Empower_1_description							Tăng Armor thêm $armor_enchant$ khi HP dưới 20%.
+Item_Shardplate_Empower_2_name									Vigor
+Item_Shardplate_Empower_2_description							Tăng $regenpercent_enchant$% HP/Giây.
+
+// Item_Buckler
+Item_Buckler_name												Silver Buckler
+Item_Buckler_description										$armor$ Armor. Kháng sát thương từ Hero $deflection_melee$ ($deflection$ đối với Hero bắn xa)
+Item_Buckler_description_simple									Tăng Armor và kháng sát thương từ Hero
+Item_Buckler_bonusdescription									Tăng khả năng kháng sát thương $common_increase$%.
+Item_Buckler_legendaryname										Restoring
+Item_Buckler_legendarydescription								Tăng $regen$ Hit Points trong 3 giây sau khi bị đánh.
+Item_Buckler_Empower_1_name										Recovery
+Item_Buckler_Empower_1_description								Tăng $regen_enchant$ HP/Giây trong 3 sau khi bị đánh.
+Item_Buckler_Empower_2_name										Empower 2
+Item_Buckler_Empower_2_description								Tăng kháng sát thương thêm $deflection_enchant$.
+Item_Buckler_Empower_3_name										Resistance
+Item_Buckler_Empower_3_description								Tăng $magic_armor_enchant$ Magic Armor.
+
+// Ancient Gem
+Item_AncientGem_name											Glacial Gem
+Item_AncientGem_description										Tăng thêm $regen$ MP/Giây.
+Item_AncientGem_description_simple								Rẻ, hồi MP nhanh
+Item_AncientGem_bonusdescription								Tăng MP Hồi Phục lên thêm $common_increase$%.
+Item_AncientGem_legendaryname									Energizing
+Item_AncientGem_legendarydescription							Khi Out Combat sẽ tăng thêm $regen_legendary$% MP hồi phục.
+Item_AncientGem_Empower_1_name									Rejuvenation
+Item_AncientGem_Empower_1_description							Khi Out Combat sẽ tăng thêm $ooc_bonus$% MP/Giây.
+Item_AncientGem_Empower_2_name									Empower 2
+Item_AncientGem_Empower_2_description							Tăng thêm $regen_bonus$ MP/Giây.
+Item_AncientGem_Empower_3_name									Siphoning
+Item_AncientGem_Empower_3_description							Thêm $lifesteal$% Magic Lifesteal.
+Item_AncientGem_Empower_4_name									Haste
+Item_AncientGem_Empower_4_description							Tăng $movespeed$ Movement Speed.
+
+// Circlet of the Sage
+Item_CircletOfTheSage_name										Sage Circlet
+Item_CircletOfTheSage_description								Tăng thêm $mana$ Mana.
+Item_CircletOfTheSage_description_simple						Rẻ, tăng thêm MP
+Item_CircletOfTheSage_bonusdescription							Tăng MP lên thêm $common_increase$%.
+Item_CircletOfTheSage_legendaryname								Sustaining
+Item_CircletOfTheSage_legendarydescription						Tăng MP bonus từ items/effects thêm $mana_legendary$%.
+Item_CircletOfTheSage_Empower_1_name							Intellect
+Item_CircletOfTheSage_Empower_1_description						Tăng $max_mana_enchant$% bonus Mana.
+Item_CircletOfTheSage_Empower_2_name							Empower 2
+Item_CircletOfTheSage_Empower_2_description						Tăng MP thêm $mana_enchant$.
+Item_CircletOfTheSage_Empower_3_name							Alchemy
+Item_CircletOfTheSage_Empower_3_description						Thêm $gold_enchant$ Gold khi giết lính bằng Skill. 15 giây cooldown.
+Item_CircletOfTheSage_Empower_4_name							Mastery
+Item_CircletOfTheSage_Empower_4_description						Tăng $magic_damage_enchant$% Magic Damage.
+
+// Fell Blade
+Item_FellBlade_name												Fel Blade
+Item_FellBlade_description										Tăng thêm $power$ power.
+Item_FellBlade_description_simple								Rẻ, tăng Power nhiều
+Item_FellBlade_bonusdescription									Tăng power lên thêm $common_increase$%.
+Item_FellBlade_legendaryname									Sharpened
+Item_FellBlade_legendarydescription								Khi giết Hero, tăng $power_legendary$ trong 2 phút.
+Item_FellBlade_Empower_1_name									Bloodlust
+Item_FellBlade_Empower_1_description							Khi giết hay hỗ trợ, tăng $power_legendary$ power trong 2 phút.
+Item_FellBlade_Empower_2_name									Empower 2
+Item_FellBlade_Empower_2_description							Tăng $power_tooltip$ Power.
+Item_FellBlade_Empower_3_name									Haste
+Item_FellBlade_Empower_3_description							Tăng $movespeed$ Movement Speed.
+
+// Tinders_Chalice
+Item_Tinders_Chalice_name										Cleric's Chalice
+Item_Tinders_Chalice_description								$regen$ MP/Giây\nHút lấy lượng HP, tương ứng với $percent$% MP tiêu hao.
+Item_Tinders_Chalice_description_simple							Tăng MP Hồi Phục. Sử dụng MP sẽ tăng HP.
+Item_Tinders_Chalice_bonusdescription							Tăng power lên thêm $common_increase$%.
+Item_Tinders_Chalice_legendaryname								Blessed
+Item_Tinders_Chalice_legendarydescription						$legendary$% MP mà đồng đội sử dụng sẽ tăng HP cho bạn.
+Item_Tinders_Chalice_Empower_1_name								Benevolence
+Item_Tinders_Chalice_Empower_1_description						$mana_enchant$% MP mà đồng đội sử dụng sẽ tăng HP cho bạn.
+Item_Tinders_Chalice_Empower_2_name								Youth
+Item_Tinders_Chalice_Empower_2_description						Tăng thêm $percent_enchant$ tỉ lệ hồi HP.
+Item_Tinders_Chalice_Empower_3_name								Empower 3
+Item_Tinders_Chalice_Empower_3_description						$mana_enchant$% MP mà bạn sử dụng sẽ tăng HP cho đồng.
+
+// Scepter of Clearcasting
+Item_ScepterOfClearcasting_name									Runed Scepter
+Item_ScepterOfClearcasting_description							Giảm $cd_reduction$% cooldown và tăng $mana$ mana.
+Item_ScepterOfClearcasting_description_simple					Giảm mọi loại Cooldown và Thêm Mana.
+Item_ScepterOfClearcasting_bonusdescription						Tỉ lệ cd-reduction và MP lên thêm $common_increase$%.
+Item_ScepterOfClearcasting_legendaryname						Empowerment
+Item_ScepterOfClearcasting_legendarydescription					Mỗi dùng dùng skill sẽ tăng $legendary$ power trong 5 giây. Cộng hưởng 7 lần.
+Item_ScepterOfClearcasting_Empower_1_name						Empowerment
+Item_ScepterOfClearcasting_Empower_1_description				Mỗi dùng dùng skill sẽ tăng $power_enchant$ power trong 5 giây.  Cộng hưởng $stacks_enchant$ lần.
+Item_ScepterOfClearcasting_Empower_2_name						Wisdom
+Item_ScepterOfClearcasting_Empower_2_description				Thêm $cd_enchant$ phần trăm của cooldown reduction 
+
+// Gauntlet
+Item_Gauntlet_name												Empowered Bracer
+Item_Gauntlet_description										Tăng $power$ power và $hp$ HP.
+Item_Gauntlet_description_simple								Cheap source of HP và Power
+Item_Gauntlet_bonusdescription									Tăng power lên thêm $common_increase$%.
+Item_Gauntlet_legendaryname										Hardened
+Item_Gauntlet_legendarydescription								Cứ mỗi $legendary$ power mà bạn có, nhận 1 Max HP.
+Item_Gauntlet_Empower_1_name									Strength
+Item_Gauntlet_Empower_1_description								Cứ mỗi $power_req$ Power hơn 100, nhận $hp_bonus$ HP.
+Item_Gauntlet_Empower_2_name									Empower 2
+Item_Gauntlet_Empower_2_description								Tăng HP thêm $hp_bonus$ và Power thêm $power_bonus$.
+Item_Gauntlet_Empower_3_name									Might
+Item_Gauntlet_Empower_3_description								Tăng damage khi đánh Cindara và Baldir thêm $boss_enchant$%.
+Item_Gauntlet_Empower_4_name									Bounty
+Item_Gauntlet_Empower_4_description								Nhận thêm $gold_enchant$ gold khi giết hay hỗ trợ Hero.
+
+// Headress Of Rejuvenation
+Item_HeadressOfRejuvenation_name								Blood Pendant
+Item_HeadressOfRejuvenation_description							Tăng additional $regen$ HP/Giây.
+Item_HeadressOfRejuvenation_description_simple					Rẻ, HP hồi phục nhanh.
+Item_HeadressOfRejuvenation_bonusdescription					Tăng hồi phục thêm $common_increase$%.
+Item_HeadressOfRejuvenation_legendaryname						Restoring
+Item_HeadressOfRejuvenation_legendarydescription				Khi Out Combat sẽ tăng hồi phục thêm $regen_legendary$%.
+Item_HeadressOfRejuvenation_Empower_1_name						Restoration
+Item_HeadressOfRejuvenation_Empower_1_description				Khi Out Combat sẽ tăng $ooc_bonus$% HP/Giây.
+Item_HeadressOfRejuvenation_Empower_2_name						Empower 2
+Item_HeadressOfRejuvenation_Empower_2_description				Tăng $regen_bonus$ HP/Giây.
+Item_HeadressOfRejuvenation_Empower_3_name						Vampirism
+Item_HeadressOfRejuvenation_Empower_3_description				Tăng $lifesteal$% Attack Lifesteal.
+Item_HeadressOfRejuvenation_Empower_4_name						Potency
+Item_HeadressOfRejuvenation_Empower_4_description				Tăng $potion_bonus$% tác dụng của các loại Thuốc.
+
+// MaxManaPower
+Item_MaxManaPower_name											Diadem
+Item_MaxManaPower_description									Thêm Power dựa trên $power$% MP của bạn.
+Item_MaxManaPower_description_simple							Tăng Power dựa trên tỉ lệ MP.
+Item_MaxManaPower_bonusdescription								Tăng Power lên thêm $common_increase$%.
+Item_MaxManaPower_legendaryname									Blood
+Item_MaxManaPower_legendarydescription							$hp$% MP chuyển thành HP.
+Item_MaxManaPower_Empower_1_name								Blood
+Item_MaxManaPower_Empower_1_description							$maxmana_health_enchant$% Max MP thêm vào cho HP.
+Item_MaxManaPower_Empower_2_name								Mastery
+Item_MaxManaPower_Empower_2_description							Tăng $magicdamage_enchant$% Magic Damage.
+Item_MaxManaPower_Empower_3_name								Rejuvenation
+Item_MaxManaPower_Empower_3_description							Hồi Phục Mỗi Giây $maxmana_manaregen_health_enchant$% dựa trên Max MP.
+
+// Giants Visage
+Item_GiantsVisage_name											Giant's Visage
+Item_GiantsVisage_description									+$armor$ Armor và Magic Armor\nThêm Power dựa trên $power$% Max HP.
+Item_GiantsVisage_description_simple							Tăng Armor và Magic Armor. Thêm Power dựa trên tỉ lệ Max HP.
+Item_GiantsVisage_bonusdescription								Tăng power lên thêm $common_increase$%.
+Item_GiantsVisage_legendaryname									Constitution
+Item_GiantsVisage_legendarydescription							Boosts Max HP thêm $hp$%
+Item_GiantsVisage_Empower_1_name								Constitution
+Item_GiantsVisage_Empower_1_description							Boosts Max HP thêm $hp_enchant$%.
+Item_GiantsVisage_Empower_2_name								Restoration
+Item_GiantsVisage_Empower_2_description							Tăng HP/Giây dựa trên $regen_enchant$% Max HP.
+Item_GiantsVisage_Empower_3_name								Conversion
+Item_GiantsVisage_Empower_3_description							Tăng thêm Power dựa trên $power_enchant$% Max HP nhưng loại bõ $armor_enchant$ Magic Armor và Armor.
+
+
+// ScalingPower
+Item_ScalingPower_name											Reaper's Scythe
+Item_ScalingPower_description									Cứ mỗi kill/assist tăng $power_scale$ Power và $health_scale$ HP. Nhiều nhất là (10) lần, Tăng 10 Movement Speed.
+Item_ScalingPower_description_simple							Tăng HP & Power khi kill/assist Hero.
+Item_ScalingPower_bonusdescription								Tăng base power/health và max power/health thêm $common_increase$%.
+Item_ScalingPower_legendaryname									Charging
+Item_ScalingPower_legendarydescription							Khi Max 10 lần, tăng thêm $power_legendary$ power.
+Item_ScalingPower_Empower_1_name								Glory
+Item_ScalingPower_Empower_1_description							Giết Cindara hay Baldir sẽ tính thêm số lần.
+Item_ScalingPower_Empower_2_name								Power
+Item_ScalingPower_Empower_2_description							Tăng $power_enchant$ Power
+Item_ScalingPower_Empower_3_name								Ages
+Item_ScalingPower_Empower_3_description							Tăng thêm $charges_enchant$ Lần tích góp cho item.
+
+ // EnduringHelm
+Item_EnduringHelm_name											Enduring Helm
+Item_EnduringHelm_description									Tăng thêm $hp$ HP.
+Item_EnduringHelm_description_simple							Rẻ, tăng Max HP
+Item_EnduringHelm_bonusdescription								Tăng HP lên thêm $common_increase$%.
+Item_EnduringHelm_legendaryname									Tempered
+Item_EnduringHelm_legendarydescription							Cứ mỗi lần giết lính sẽ tăng $hp_bonus$ HP.  Cộng hưởng 40 lần.
+Item_EnduringHelm_Empower_1_name								Dominion
+Item_EnduringHelm_Empower_1_description							Mỗi lần giết lính tăng $hp_bonus$ HP.  Cộng hưởng 50 lần.
+Item_EnduringHelm_Empower_2_name								Empower 2
+Item_EnduringHelm_Empower_2_description							Tăng HP thêm $hp_bonus$.
+Item_EnduringHelm_Empower_3_name								Fortitude
+Item_EnduringHelm_Empower_3_description							Giảm $tower_reduction$% sát thương từ Trụ.
+
+
+ // Elderstone
+Item_ElderStone_name											Elder Stone
+Item_ElderStone_description										+$hp$ Max HP, +$mp$ Mana.  \n\nMỗi phút, tăng thêm $hp_gain$ Max HP và $mp_gain$ Mana.  Tích góp nhiều nhất 10 phút.
+Item_ElderStone_description_simple								Tăng HP và MP theo thời gian.
+Item_ElderStone_bonusdescription								Tăng HP lên thêm $common_increase$%.
+Item_ElderStone_legendaryname									Heavy
+Item_ElderStone_legendarydescription							Khi Max 10 phút, tăng armor & magic armor thêm $armor_legendary$.
+Item_ElderStone_Empower_1_name									Heritage
+Item_ElderStone_Empower_1_description							Khi Max 10 phút, tăng Armor & Magic Armor thêm $armor_magicarmor_enchant$.
+Item_ElderStone_Empower_2_name									Empower 2
+Item_ElderStone_Empower_2_description							Tăng HP và MP thêm $health_mana_enchant$.
+Item_ElderStone_Empower_3_name									Ages
+Item_ElderStone_Empower_3_description							Thêm $max_charges_enchant$ phút tích góp.
+Item_ElderStone_Empower_4_name									Wisdom
+Item_ElderStone_Empower_4_description							Thêm $cooldown_enchant$% cooldown reduction.
+
+ // CrusaderShield
+Item_CrusaderShield_name										Captain's Crest
+Item_CrusaderShield_description									+$armor$ Armor\nTăng $armor_aura$ Armor và Magic Armor đồng đội xung quanh.
+Item_CrusaderShield_description_simple							Tăng Armor và thêm phòng ngự cho đồng đội xung quanh.
+Item_CrusaderShield_bonusdescription							Tăng Armor lên thêm $common_increase$%.
+Item_CrusaderShield_legendaryname								Righteous
+Item_CrusaderShield_legendarydescription						Tăng thêm $legendary$% tốc độ đánh cho đồng đội xung quanh.
+Item_CrusaderShield_Empower_1_name								Authority
+Item_CrusaderShield_Empower_1_description						Tăng thêm $attackspeed_enchant$% tốc độ đánh cho đồng đội xung quanh.
+Item_CrusaderShield_Empower_2_name								Preservation
+Item_CrusaderShield_Empower_2_description						Tăng $aura_boost_enchant$ Armor và Magic Armor cho đồng đội xung quanh.
+Item_CrusaderShield_Empower_3_name								Focus
+Item_CrusaderShield_Empower_3_description						Tăng thêm $sacrifice_enchant$ Armor và Magic Armor cho đồng đội nhưng giảm $sacrifice_enchant$ Armor của bạn.
+
+
+
+
+// Item_StoneSkin
+Item_StoneSkin_name												Stone Skin
+Item_StoneSkin_description										^o+$damage$ Attack Damage^* \nKích hoạt sẽ kháng $damage_scale$% các sát thương, và $ccreduction$% Crowd Control trong 6 giây. 
+Item_StoneSkin_description_simple								Tăng ^oAttack Damage^*. Kháng sát thương và Crowd Control.
+Item_StoneSkin_bonusdescription									
+Item_StoneSkin_legendaryname									
+Item_StoneSkin_legendarydescription	
+Item_StoneSkin_Empower_1_name									Diligence
+Item_StoneSkin_Empower_1_description							Giảm Cooldown $cooldown_enchant$ giây.
+Item_StoneSkin_Empower_2_name									Regeneration
+Item_StoneSkin_Empower_2_description							Tăng $healthregen_enchant$ HP/Giây nhưng bị giảm $attack_enchant$ Attack Damage.
+
+// DesperationsEdge
+Item_DesperationsEdge_name										Crystalline Shiv
+Item_DesperationsEdge_description								Tăng bonus power và MP Hồi Phục dựa trên số lượng HP còn lại của Hero, Max là $power$ bonus Power và $manaregen$ MP/Giây.
+Item_DesperationsEdge_description_simple						Tăng bonus Power và MP Hồi Phục dựa trên lượng HP đầy hay thiếu của Hero.
+Item_DesperationsEdge_bonusdescription							Tăng power lên thêm up to $common_increase$%.
+Item_DesperationsEdge_legendaryname								Poking
+Item_DesperationsEdge_legendarydescription						Thêm $power_legendary$ additional power khi max HP.
+Item_DesperationsEdge_Empower_1_name							Perfection
+Item_DesperationsEdge_Empower_1_description						Khi Full hp, tăng $power_poke_enchant$ Power.
+Item_DesperationsEdge_Empower_2_name							Wit
+Item_DesperationsEdge_Empower_2_description						Increases $power_enchant$ bonus Power và $manaregen_enchant$  MP/Giây.
+Item_DesperationsEdge_Empower_3_name							Empower 3
+Item_DesperationsEdge_Empower_3_description						Tăng $healthregen_enchant$ HP/Giây.
+Item_DesperationsEdge_Empower_4_name							Siphoning
+Item_DesperationsEdge_Empower_4_description						Tăng $spellsteal_enchant$% Magic Lifesteal.
+
+// Riftshards
+Item_Riftshards_name											Woundsplitter
+Item_Riftshards_description										^o+$attack_damage$ Attack Damage^*. Tăng $critchance$% cơ hội gây 2x damage khi đánh.
+Item_Riftshards_description_simple								Thêm ^oAttack Damage^* và cơ hội Crit Damage.
+Item_Riftshards_bonusdescription								Tăng critical chance và damage thêm $common_increase$%.
+Item_Riftshards_legendaryname									Crushing
+Item_Riftshards_legendarydescription							Khi đánh địch, làm chúng giảm $armor$ Armor trong 3 giây.
+Item_Riftshards_Empower_1_name									Ruin
+Item_Riftshards_Empower_1_description							Khi đánh địch, làm chúng giảm $reducearmor_enchant$ Armor trong $reducearmor_duration_enchant$ giây. Không dồn.
+Item_Riftshards_Empower_2_name									Fortune
+Item_Riftshards_Empower_2_description							Tăng $crit_enchant$ cơ hội Crit.
+Item_Riftshards_Empower_3_name									Empower 3
+Item_Riftshards_Empower_3_description							Tăng $lifesteal_enchant$% Attack Lifesteal.
+
+// Assassin's shroud
+Item_AssasinsShroud_name										Shadowveil
+Item_AssasinsShroud_description								 	Tăng 100 Max HP.\nKích hoạt tàng hình $duration$ giây.  Khi tàng hình, tăng $movespeed$ Tốc Độ Chạy và kẻ địch trong 600 range mới thấy bạn.
+Item_AssasinsShroud_description_simple							Tăng Max HP. Tàng hình và tăng tốc độ chạy.
+Item_AssasinsShroud_bonusdescription							Tăng $common_increase$% movespeed.
+Item_AssasinsShroud_legendaryname								Malice
+Item_AssasinsShroud_legendarydescription						Tăng Attack Damage thêm $damage$ khi tàng hình và đánh trúng địch.
+Item_AssasinsShroud_Empower_1_name								Malice
+Item_AssasinsShroud_Empower_1_description						Gây thêm $damage_enchant$ bonus damage khi đang tàng hình.
+Item_AssasinsShroud_Empower_2_name								Diligence
+Item_AssasinsShroud_Empower_2_description						Giảm Cooldown của item $cd_enchant$%, nhưng khi tàng hình thì không tăng tốc độ chạy.
+Item_AssasinsShroud_Empower_3_name								Empower 3
+Item_AssasinsShroud_Empower_3_description						Tăng $deflection_enchant$ tầm nhìn khi đang tàng hình.
+
+// SpringBoots
+Item_SpringBoots_name											Rocket Boots
+Item_SpringBoots_description									55 Movement Speed.\nKích hoạt để lướt xa 525 range.
+Item_SpringBoots_description_simple								Tăng movespeed.  Lướt nhanh.
+
+// ASBoots
+Item_ASBoots_name												Fervor Boots
+Item_ASBoots_description										50 Movement Speed, 25 Tốc Độ Đánh.  Kích hoạt sẽ tăng movespeed lên thêm 80 và đi xuyên lính 3 giây.
+Item_ASBoots_description_simple									Tăng Tốc Độ Chạy và Tốc Độ Đánh.  Cho phép đi xuyên lính khi kích hoạt.
+
+// HealthBoots
+Item_HealthBoots_name											Inertia Boots
+Item_HealthBoots_description									65 Movement Speed, +240 HP \nKích hoạt để giải trừ mọi trạng thái Stun/Slow và tăng 50% CC-Reduction trong 1 second. Khi bị Stun/Slow vẫn dùng được item.
+Item_HealthBoots_description_simple								Tăng Tốc Độ Chạy và HP.  Kích hoạt item để chạy khi bị Stun/Slow.
+
+// RuneBoots
+Item_RuneBoots_name												Rune Boots
+Item_RuneBoots_description										70 Movement Speed, 15% Cooldown Reduction\nKích hoạt sẽ tăng 20% Max HP và Mana trong 3 giây. Đang bơm, bị đánh sẽ mất hiệu ứng.
+Item_RuneBoots_description_simple								Tăng Tốc Độ Chạy và cooldown reduction. Kích hoạt hồi phục HP và mana.
+
+// PowerBoots
+Item_PowerBoots_name											Power Boots
+Item_PowerBoots_description										65 Movement Speed, \n+20 Power
+Item_PowerBoots_description_simple								Tăng Tốc Độ Chạy và Power.
+
+// WarpBoots
+Item_WarpBoots_name												Warp Boots
+Item_WarpBoots_description										75 Movement Speed\nCó thể di chuyển nhanh đến chỗ Lính hay Trụ.
+Item_WarpBoots_description_simple								75 Movement Speed\nCó thể di chuyển nhanh đến chỗ Lính hay Trụ.
+
+// TeleportBoots
+Item_TeleportBoots_name											Warp Boots
+Item_TeleportBoots_description									75 Movement Speed\nCó thể di chuyển nhanh đến chỗ Lính hay Trụ
+Item_TeleportBoots_description_simple							Tăng Tốc Độ Chạy. Có thể di chuyển nhanh đến chỗ Lính hay Trụ
+
+// HealthElixir
+Item_HealthElixir_name											Health Elixir
+Item_HealthElixir_description									Hồi phục 350 HP trong 7 giây. Mất tác dụng nếu bị đánh trúng.
+Item_HealthElixir_description_simple							Tăng nhanh HP.  Mất tác dụng nếu bị đánh trúng.
+
+// State_HealthElixir
+State_HealthElixir_Tooltip_name									Health Elixir
+State_HealthElixir_description_simple							Được tăng HP.  Mất tác dụng nếu bị đánh trúng.
+State_HealthElixir_name											Health Elixir
+State_HealthElixir_name_FRAME_effect
+
+// ManaElixir
+Item_ManaElixir_name											Mana Elixir
+Item_ManaElixir_description										Hồi phục 150 Mana trong 10 giây. Mất tác dụng nếu bị đánh trúng.
+Item_ManaElixir_description_simple								Tăng nhanh MP.  Mất tác dụng nếu bị đánh trúng.
+
+// State_ManaElixir
+State_ManaElixir_Tooltip_name									Mana Elixir
+State_ManaElixir_description_simple							Được tăng MP.  Mất tác dụng nếu bị đánh trúng.
+State_ManaElixir_name											Mana Elixir
+State_ManaElixir_name_FRAME_effect
+
+// RejuvenationElixir
+Item_RejuvenationElixir_name									Rejuvenation Elixir
+Item_RejuvenationElixir_description								Heals 360 HP và hồi phục 100 Mana over 10 giây. Mất tác dụng nếu bị đánh trúng.
+Item_RejuvenationElixir_description_simple						Heals 360 HP và hồi phục 100 Mana over 10 giây. Mất tác dụng nếu bị đánh trúng.
+
+// Indestructible
+Item_Indestructible_name										Immortal Gaze
+Item_Indestructible_description									Tăng $hp$ HP.\n\nThêm $regen_outofcombat$% Max HP hồi phục mỗi giây khi Out Combat.
+Item_Indestructible_description_simple							Tăng HP. Hồi phục nhanh HP khiOut Combat.
+Item_Indestructible_bonusdescription							Tăng HP và regen lên thêm $common_increase$%.
+Item_Indestructible_Empower_1_name									Desperation
+Item_Indestructible_Empower_1_description							Tăng thêm $hpregen_mult$% HP/Giây khi HP dưới 20%.
+Item_Indestructible_Empower_2_name									Empower 2
+Item_Indestructible_Empower_2_description							?
+Item_Indestructible_Empower_3_name									Swiftness
+Item_Indestructible_Empower_3_description							Tăng $movespeed$ Tốc Độ Chạy khi Full HP.
+
+
+
+// Stormspirit
+Item_Stormspirit_name											Void Key
+Item_Stormspirit_description									Kích hoạt để Bất Động, Kháng Đòn trong 2 giây.
+Item_Stormspirit_description_simple								Kích hoạt để Bất Động, Kháng Đòn trong 2 giây.
+Item_Stormspirit_bonusdescription								Giảm cooldown $cooldown_analog$ giây.
+Item_Stormspirit_legendaryname									Clearcasting
+Item_Stormspirit_legendarydescription							Tăng $mana$ MP.
+Item_Stormspirit_Empower_1_name									Empower 1
+Item_Stormspirit_Empower_1_description							Hồi phục $mana_enchant$ MP khi sử dụng.
+Item_Stormspirit_Empower_2_name									Diligence
+Item_Stormspirit_Empower_2_description							Giảm cooldown $cooldown_bonus$ giây.
+Item_Stormspirit_Empower_3_name									Swiftness
+Item_Stormspirit_Empower_3_description							Tăng $movespeed_enchant$ Tốc Độ Chạy trong 2 giây sau khi sử dụng.
+
+
+// Item_Frostfield
+Item_FrostfieldPlate_name										Everwinter Charm
+Item_FrostfieldPlate_description								+$armor$ Armor & Magic Armor\n\nKích hoạt item, làm dịch giảm tốc độ chạy và gây ^o$damage$ Magic damage^* cho địch.
+Item_FrostfieldPlate_description_simple							Tăng Armor & Magic Armor. Làm chậm và sát thương địch.
+Item_FrostfieldPlate_IMPACT_effect								Địch trong phạm vi 500 range sẽ bị chậm và sát thương $damage$ Magic damage.
+Item_FrostfieldPlate_bonusdescription							Tăng damage và armor by $common_increase$%
+Item_FrostfieldPlate_legendaryname								Virtue
+Item_FrostfieldPlate_legendarydescription						Tăng Armor và Magic Armor $armorlegendary$ cho mỗi Hero bị dính đòn từ Item, duy trì 4 giây.
+Item_FrostfieldPlate_Empower_1_name								Virtue
+Item_FrostfieldPlate_Empower_1_description						Tăng Armor và Magic Armor $armor_active_enchant$ cho mỗi Hero bị dính dòn. Duy trì $armor_activeduration_enchant$ giây.
+Item_FrostfieldPlate_Empower_2_name								Empower 2
+Item_FrostfieldPlate_Empower_2_description						Tăng Armor và Magic Armor $armor_enchant$ nhưng không gây sát thương.
+Item_FrostfieldPlate_Empower_3_name								Restraint
+Item_FrostfieldPlate_Empower_3_description						Tăng $duration_enchant$ giây làm chậm nhưng không gây sát thương.
+
+// Item_RingOfSorcery
+Item_RingOfSorcery_name											Archmage's Ring
+Item_RingOfSorcery_description									+$manamax$ Mana\nKích hoạt để hồi phục $mana$ MP cho đồng đội ở gần.
+Item_RingOfSorcery_description_simple							Tăng Mana. Kích hoạt để hồi phục MP cho đồng đội ở gần.
+Item_RingOfSorcery_bonusdescription								Tăng MP và MP hồi phục $common_increase$%.
+Item_RingOfSorcery_legendaryname								Concentration
+Item_RingOfSorcery_legendarydescription							Tăng MP hồi phục $mana_percent$% Max Mana.
+Item_RingOfSorcery_Empower_1_name								Concentration
+Item_RingOfSorcery_Empower_1_description						Tăng MP hồi phục $maxmana_restore_enchant$% Max Mana.
+Item_RingOfSorcery_Empower_2_name								Mana
+Item_RingOfSorcery_Empower_2_description						Tăng MP $maxmana_enchant$.
+Item_RingOfSorcery_Empower_3_name								Empower 3
+Item_RingOfSorcery_Empower_3_description						Tăng $area_enchant$ phạm vi tác dụng.
+Item_RingOfSorcery_Empower_4_name								Empower 4
+Item_RingOfSorcery_Empower_4_description						Kích hoạt giúp tăng $manaboost_enchant$ Max MP trong $manaboost_duration_enchant$ giây.
+
+// Item_Mask_Of_Madman
+Item_Mask_Of_Madman_name										Berserker's Mask
+Item_Mask_Of_Madman_description									$vamp$% Attack Lifesteal. \n\nKích hoạt để tăng Tốc Độ Đánh $attackspeed$ và movement $movespeed$ trong 6 giây.  Nhưng bị yếu phòng ngự 20% khi kích hoạt.
+Item_Mask_Of_Madman_description_simple							Kích hoạt để tăng Tốc Độ Đánh và Movespeed - nhưng bị yếu phòng ngự.
+Item_Mask_Of_Madman_bonusdescription							Tăng damage và movespeed bonus $common_increase$%.
+Item_Mask_Of_Madman_legendaryname								Resilience
+Item_Mask_Of_Madman_legendarydescription						Giảm $scale$ mức độ suy yếu phòng ngự.
+Item_Mask_Of_Madman_Empower_1_name								Resilience
+Item_Mask_Of_Madman_Empower_1_description						Giảm $reduction_enchant$ mức độ suy yếu phòng ngự.
+Item_Mask_Of_Madman_Empower_2_name								Destruction
+Item_Mask_Of_Madman_Empower_2_description						Thêm $building_enchant$% damage lên Nhà, Trụ khi kích hoạt.
+Item_Mask_Of_Madman_Empower_3_name								Madness
+Item_Mask_Of_Madman_Empower_3_description						Hồi phục lại Item ngay khi giết được Hero.
+
+
+// Item_Lasthit
+Item_Lasthit_name												Throwing Axe
+Item_Lasthit_description										Kích hoạt để gây 1.2x attack damage cho lính.  Tăng $damage$% sát thương lên lính.
+Item_Lasthit_description_simple									Tăng sát thương lên lính. \nKích hoạt để ném búa.
+Item_Lasthit_bonusdescription									Giảm cooldown $cooldown$ giây.
+Item_Lasthit_legendaryname										Prosperous
+Item_Lasthit_legendarydescription								Dùng item, ném búa giết lính, tăng thêm $gold$ gold.
+Item_Lasthit_Empower_1_name										Prosperity
+Item_Lasthit_Empower_1_description								Dùng item, ném búa giết lính, tăng thêm $gold_enchant$ gold.
+Item_Lasthit_Empower_2_name										Desolation
+Item_Lasthit_Empower_2_description								Gây thêm $damage_enchant$% damage lên quân lính.
+Item_Lasthit_Empower_3_name										Empower 3
+Item_Lasthit_Empower_3_description								Thêm $health_regen_enchant$ HP/Giây.
+Item_Lasthit_Empower_4_name										Empower 4
+Item_Lasthit_Empower_4_description								Giảm cooldown thêm $cooldown_enchant$ giây.
+Item_Lasthit_Empower_5_name										The Hunt
+Item_Lasthit_Empower_5_description								Dùng item, ném búa giết lính, hồi phục $heal_enchant$ HP.
+
+// Item_HealingScepter
+Item_HealingScepter_name										Healing Rod
+Item_HealingScepter_description									Kích hoạt để hồi phục ^o$heal$ HP^* (dựa trên power) và hồi phục $mana$ mana, nhiều hay ít dựa trên số lượng tích trữ.
+Item_HealingScepter_description_simple							Kích hoạt để hồi phục HP và Mana.
+Item_HealingScepter_bonusdescription							Tăng HP và MP hồi phục $common_increase$%.
+Item_HealingScepter_legendaryname								Greater
+Item_HealingScepter_legendarydescription						Tăng Min & Max số lần tích trữ thêm $legendary$.
+Item_HealingScepter_Empower_1_name								Empower 1
+Item_HealingScepter_Empower_1_description						Tăng Min & Max số lần tích trữ thêm $charges_enchant$.
+Item_HealingScepter_Empower_2_name								Diligence
+Item_HealingScepter_Empower_2_description						Tăng 33% tốc độ lưu trữ.
+Item_HealingScepter_Empower_3_name								Generosity
+Item_HealingScepter_Empower_3_description						Hồi phục cho đồng đội với $areaheal_enchant$% hiểu quả.
+
+// InfernoBrand
+Item_InfernoBrand_name											Inferno Brand
+Item_InfernoBrand_description									+$armor$ Armor và Magic Armor\nPassively gây ^o$damage$ Magic damage/giây^* cho địch ở $radius$ range xung quanh.
+Item_InfernoBrand_description_simple							Tăng Armor và Magic Armor. Sát thương địch xung quanh.
+Item_InfernoBrand_bonusdescription								Tăng damage & Armor $common_increase$%.
+Item_InfernoBrand_legendaryname									Radiant
+Item_InfernoBrand_legendarydescription							Tăng $radius$ phạm vi sát thương.
+Item_InfernoBrand_Empower_1_name								Influence
+Item_InfernoBrand_Empower_1_description							Tăng $radius_enchant$ phạm vi sát thương.
+Item_InfernoBrand_Empower_2_name								Empower 2
+Item_InfernoBrand_Empower_2_description							Tăng $movespeed_enchant$ Movement Speed.
+Item_InfernoBrand_Empower_3_name								Virtue
+Item_InfernoBrand_Empower_3_description							Tăng $armor_enchant$ armor trên mỗi Hero địch.
+Item_InfernoBrand_Empower_4_name								Focus
+Item_InfernoBrand_Empower_4_description							Tăng sát thương thêm $damage_enchant$ nhưng phạm vị ảnh hưởng giảm $area_enchant$ range.
+
+// Codex
+Item_Codex_name													Pyrostaff
+Item_Codex_description											Kích hoạt để gây ^o$damage$ Magic damage^* cho mục tiêu.
+Item_Codex_description_simple									Kích hoạt để gây Magic damage cho mục tiêu.
+Item_Codex_bonusdescription										Tăng damage của Pyrostaff thêm $common_increase$%.
+Item_Codex_legendaryname										Kill Stealing
+Item_Codex_legendarydescription									Giết địch bằng Pyrostaff sẽ giảm cooldown $cooldown$ giây.
+Item_Codex_Empower_1_name										Empower 1
+Item_Codex_Empower_1_description								Giết địch bằng Pyrostaff sẽ giảm cooldown $cooldown_enchant$ giây.
+Item_Codex_Empower_2_name										Marksmanship
+Item_Codex_Empower_2_description								Tăng khoảng cách sử dụng thêm $range_enchant$.
+Item_Codex_Empower_3_name										Perfection
+Item_Codex_Empower_3_description								Tăng damage thêm $damage_enchant$.
+
+// Hellflower
+Item_Hellflower_name											Cursed Wand
+Item_Hellflower_description										+$power$ power\nGiảm 25% armor và magic Armor của địch  và làm chậm 30% di chuyển trong $duration$ giây.
+Item_Hellflower_description_simple								Tăng power. Làm chậm, giảm Armor/Magic Armor của địch.
+Item_Hellflower_bonusdescription								Tăng $common_increase$% giây duy trì.
+Item_Hellflower_legendaryname									Diseased
+Item_Hellflower_legendarydescription							Tăng $legendary$% tác dụng làm chậm của Cursed Wand 
+Item_Hellflower_Empower_1_name									Restraint
+Item_Hellflower_Empower_1_description							Tăng $slow_enchant$ phần trăm tác dụng làm chậm của Cursed Wand .
+Item_Hellflower_Empower_2_name									Empower 2
+Item_Hellflower_Empower_2_description							Tăng phạm vi tác dụng của item
+Item_Hellflower_Empower_3_name									Ruin
+Item_Hellflower_Empower_3_description							Tăng thiệt hại về armor & magic armor của địch thêm $armorreduction_enchant$.
+
+
+// State_Hellflower
+State_Hellflower_Tooltip_name									Entropy
+State_Hellflower_description_simple							Entropy Grasp đã giảm giáp của bạn.
+State_Hellflower_name											Entropy
+State_Hellflower_name_FRAME_effect
+
+// Energizer
+Item_Energizer_name												Windrush
+Item_Energizer_description										Tăng $movespeed$ Movement Speed.\n\nKích hoạt để provide 100 Tốc Độ Chạy cho đồng đội ở gần trong a 4 giây.
+Item_Energizer_description_simple								Tăng some movespeed và can Kích hoạt để provide a burst of move speed cho đồng đội ở gần.
+Item_Energizer_bonusdescription									Giảm cooldown of Windrush $common_increase$%.
+Item_Energizer_legendaryname									Tenacious
+Item_Energizer_legendarydescription								Windrush tăng $legendary$% CC-Reduction khi kích hoạt.
+Item_Energizer_Empower_1_name									Tenacity
+Item_Energizer_Empower_1_description							Windrush thêm $slowresist_enchant$% Slow-Reduction khi kích hoạt.
+Item_Energizer_Empower_2_name									Diligence
+Item_Energizer_Empower_2_description							Giảm cooldown $cooldown_enchant$ giây.
+Item_Energizer_Empower_3_name									Empower 3
+Item_Energizer_Empower_3_description							Tăng thêm $area_enchant$ range phạm vi ảnh hưởng.
+Item_Energizer_Empower_4_name									Swiftness
+Item_Energizer_Empower_4_description							Tăng Tốc Độ Chạy $active_movespeed_enchant$ và giảm thời gian duy trì $active_duration_enchant$ giây.
+
+// State_Energizer_Buff
+State_Energizer_Buff_Tooltip_name								Windrush
+State_Energizer_Buff_description_simple							Windrush giúp bạn tăng Movement Speed.
+State_Energizer_Buff_name										Windrush
+State_Energizer_Buff_name_FRAME_effect
+
+// Supercharger
+Item_Supercharger_name											Power Conduit
+Item_Supercharger_description									+$power$ power\nKills và assists hồi phục $percent_manarestore$% MP trong 5 giây.  
+Item_Supercharger_description_simple							Tăng Power.  Kills và assists sẽ hồi phục MP.
+Item_Supercharger_bonusdescription								Tăng bonus $common_increase$%.
+Item_Supercharger_legendaryname									Catalystic
+Item_Supercharger_legendarydescription							Tăng $bonus$% bonus power.
+Item_Supercharger_Empower_1_name								Might
+Item_Supercharger_Empower_1_description							Tăng $powerpercent_enchant$% bonus Power.
+Item_Supercharger_Empower_2_name								Empower 2
+Item_Supercharger_Empower_2_description							Bị trừ cooldowns $cooldown_enchant$%, nhưng tăng $bonus$ bonus Power.
+Item_Supercharger_Empower_3_name								Focus
+Item_Supercharger_Empower_3_description							Tăng thêm Power $power_enchant$ nhưng không còn hồi phục Mana.
+
+// Blessed Orb
+Item_Blessed_Orb_name											Blessed Orb
+Item_Blessed_Orb_description									+$power$ power\nTăng heals & shield bars thêm $amp$%.
+Item_Blessed_Orb_description_simple								Tăng power và heals/shields.
+Item_Blessed_Orb_bonusdescription								Tăng bonus và power $common_increase$%.
+Item_Blessed_Orb_legendaryname									Charity
+Item_Blessed_Orb_legendarydescription							Dùng skill sẽ có 25% cơ hội bơm một phần nhỏ $legendary$ HP cho hero đồng đội.
+Item_Blessed_Orb_Empower_1_name									Charity
+Item_Blessed_Orb_Empower_1_description							Dùng skill sẽ có $heal_chance_enchant$% cơ hội bơm một phần nhỏ $heal_enchant$ HP cho hero đồng đội.
+Item_Blessed_Orb_Empower_2_name									Empower 2
+Item_Blessed_Orb_Empower_2_description							Tăng $health_enchant$ HP nhưng bị trừ $power_enchant$ Power.
+Item_Blessed_Orb_Empower_3_name									Focus
+Item_Blessed_Orb_Empower_3_description							Tăng $mana_enchant$ MP nhưng bị trừ $power_enchant$ Power.
+
+// Timewarper
+Item_Timewarper_name											Wizard's Hourglass
+Item_Timewarper_description										+$power$ power, $cd$% cooldown reduction.
+Item_Timewarper_description_simple								Tăng Power và Cooldown Reduction
+Item_Timewarper_bonusdescription								Tăng bonus $common_increase$%.
+Item_Timewarper_legendaryname									Clear
+Item_Timewarper_legendarydescription							Mỗi lần dùng skill Tăng MP Hồi Phục $legendary$ trong 4 giây.
+Item_Timewarper_Empower_1_name									Efficiency
+Item_Timewarper_Empower_1_description							Mỗi lần dùng skill Tăng MP/Giây $manaregen_enchant$ trong $manaregen_duration_enchant$ giây. Không cộng dồn.
+Item_Timewarper_Empower_2_name									Empower 2
+Item_Timewarper_Empower_2_description							Tăng $magicdamage_enchant$% Magic Damage.
+Item_Timewarper_Empower_3_name									Siphoning
+Item_Timewarper_Empower_3_description							Tăng $spellsteal_enchant$% Magic Lifesteal.
+
+
+// Zealot's blade
+Item_Zealotsblade_name											Zealot's Blade
+Item_Zealotsblade_description									Tăng Tốc Độ Đánh $attackspeed$ và Tốc Độ Chạy $movespeed$.
+Item_Zealotsblade_description_simple							Tăng bonus Tốc Độ Chạy và Tốc Độ Đánh.
+Item_Zealotsblade_bonusdescription								Tăng bonus Tốc Độ Chạy và Tốc Độ Đánh $common_increase$%
+Item_Zealotsblade_legendaryname									Charging
+Item_Zealotsblade_legendarydescription							Tăng $power$ Power mỗi phát đánh, cộng dồn 3 lần.  Duy trì trong 3 giây.
+Item_Zealotsblade_Empower_1_name								Rhythm
+Item_Zealotsblade_Empower_1_description							Tăng $power_enchant$ Power mỗi phát đánh, cộng dồn 3 lần.  Duy trì trong $power_duration_enchant$ giây.
+Item_Zealotsblade_Empower_2_name								Vampirism
+Item_Zealotsblade_Empower_2_description							Tăng $lifesteal_enchant$% Attack Lifesteal.
+Item_Zealotsblade_Empower_3_name								Empower 3
+Item_Zealotsblade_Empower_3_description							Tăng Tốc Độ Chạy $movespeed_enchant$ nhưng giảm Tốc Độ Đánh $attackspeed_enchant$.
+
+
+// Soulstealer
+Item_Soulstealer_name											Soulstealer
+Item_Soulstealer_description									$manamax$ mana\n$vamp$% Magic Lifesteal. Các skill dạng lan rộng chỉ nhận phân nửa hiệu ứng. 
+Item_Soulstealer_description_simple								Tăng MP và Magic Lifesteal (dựa trên sức mạnh magic của skill)
+Item_Soulstealer_bonusdescription								Tăng magic vampiric $common_increase$%.
+Item_Soulstealer_legendaryname									Mana Draining
+Item_Soulstealer_legendarydescription							Hồi phục $mana$ MP khi tiêu diệt địch.
+Item_Soulstealer_Empower_1_name									Mana Draining
+Item_Soulstealer_Empower_1_description							Hồi phục $mana_enchant$ MP khi tiêu diệt địch.
+Item_Soulstealer_Empower_2_name									Dominion
+Item_Soulstealer_Empower_2_description							Tăng $power_enchant$ Power cho mỗi tên lính bị diệt.  Cộng hưởng $stacks_enchant$ lần. Tác dụng này bị reset khi bạn chết.
+Item_Soulstealer_Empower_3_name									Defense
+Item_Soulstealer_Empower_3_description							Tăng $armor_enchant$ Armor & Magic Armor nhưng bị trừ $mana_enchant$ Mana.
+
+
+// Slayer
+Item_Slayer_name												Numbing Lantern
+Item_Slayer_description											+$attackspeed$ Tốc Độ Đánh\nĐánh trúng địch, làm chúng giảm $power_reduction$% Power.  Dồn lên 3 lần.
+Item_Slayer_description_simple									Tăng Tốc Độ Đánh.  Giảm Power của địch.
+Item_Slayer_bonusdescription									Tăng $common_increase$% khả năng giảm Power của item.
+Item_Slayer_legendaryname										Ruin
+Item_Slayer_legendarydescription								Khi địch bị dính 3 đòn, địch sẽ bị sát thương thêm $amp_legendary$% damage.
+Item_Slayer_Empower_1_name										Ruin
+Item_Slayer_Empower_1_description								Khi địch bị dính 3 đòn, địch sẽ bị sát thương thêm $damage_enchant$% damage.
+Item_Slayer_Empower_2_name										Ages
+Item_Slayer_Empower_2_description								Tăng lên Max $charges_enchant$ lần tác dụng.
+Item_Slayer_Empower_3_name										Empower 3
+Item_Slayer_Empower_3_description								Tăng $power_enchant$ power nhưng bị trừ Tốc Độ Đánh. Không còn dồn và bị giảm $powerreduction_enchant$% tác dụng trừ Power.
+
+// Vampiric Blade
+Item_VampiricBlade_name											Vampiric Dagger
+Item_VampiricBlade_description									$vamp$% Attack Lifesteal.
+Item_VampiricBlade_description_simple							Tăng Lifesteal (dựa trên sức sát thương vật lý)
+Item_VampiricBlade_bonusdescription								Tăng lifesteal bonus $common_increase$%.
+Item_VampiricBlade_legendaryname								Absorption
+Item_VampiricBlade_legendarydescription							Giết địch, Hồi phục HP dựa trên $heal$% Max HP của địch.
+Item_VampiricBlade_Empower_1_name								Absorption
+Item_VampiricBlade_Empower_1_description						Giết địch, Hồi phục HP dựa trên $healthrestore_creep_enchant$% Max HP của địch.
+Item_VampiricBlade_Empower_2_name								Desolation
+Item_VampiricBlade_Empower_2_description						Tăng $bonusdamage_chance_enchant$% cơ hội gây $bonusdamage_enchant$ damage lên quân lính.
+Item_VampiricBlade_Empower_3_name								Thirst
+Item_VampiricBlade_Empower_3_description						Kills và assists hồi phục $healthrestore_kill_enchant$%  Max HP trong $healthrestore_killduration_enchant$ giây.
+
+// Item_ThunderClaw
+Item_ThunderClaw_name											Thundercaller
+Item_ThunderClaw_description									Tạo ra 25% cơ hội gây Giật Điện lan truyền 7 mục tiêu gần kề với mức sát thương ^o$damage$ Magic damage^*. \n\nGây ra 150% sát thương đối với kẻ địch không phải Hero.
+Item_ThunderClaw_description_simple								Tăng cơ hội gây giật điện, gây ^oMagic damage^* lên nhiều địch thủ.
+Item_ThunderClaw_bonusdescription								Tăng damage $common_increase$%.
+Item_ThunderClaw_legendaryname									Devastation
+Item_ThunderClaw_legendarydescription							Giảm $armor$ magic armor của địch.
+Item_ThunderClaw_Empower_1_name									Devastation
+Item_ThunderClaw_Empower_1_description							Giảm $armor_reduction_enchant$ magic armor của địch.
+Item_ThunderClaw_Empower_2_name									Redirection
+Item_ThunderClaw_Empower_2_description							Tăng Max $bounce_enchant$ đối tượng bị giật lan.
+Item_ThunderClaw_Empower_3_name									Fortune
+Item_ThunderClaw_Empower_3_description							Tăng tỷ lệ $chance_enchant$ cơ hội gây giật điện.
+Item_ThunderClaw_Empower_4_name									Empower 4
+Item_ThunderClaw_Empower_4_description							Khi gây điện giật, tăng $mana_enchant$ mana.
+
+
+// Item_Mana_Shield
+Item_Mana_Shield_name											Spirit Ward
+Item_Mana_Shield_description									Kích hoạt để tăng giáp cho đồng đội ở gần, tương ứng $shield_manapercent$% MP của bạn. Duy trì 6 giây.
+Item_Mana_Shield_description_simple								Tăng giáp cho đồng đội ở gần tương ứng với phần trăm của MP.
+Item_Mana_Shield_bonusdescription								Tăng damage $common_increase$%.
+Item_Mana_Shield_legendaryname									Energizing
+Item_Mana_Shield_legendarydescription							Mana Shield giúp hồi phục MP tương ứng $legendary$% Damage mà bạn bị đánh.
+Item_Mana_Shield_Empower_1_name									Conversion
+Item_Mana_Shield_Empower_1_description							Mana Shield giúp hồi phục MP tương ứng $mana_restore_enchant$% Damage mà bạn bị đánh.
+Item_Mana_Shield_Empower_2_name									Empower 2
+Item_Mana_Shield_Empower_2_description							Tăng $area_enchant$ range phạm vi.
+Item_Mana_Shield_Empower_3_name									Protection
+Item_Mana_Shield_Empower_3_description							Tăng $support_enchant$% tác dụng heals & shield từ bạn.
+
+// Item_Shieldbreaker
+Item_Shieldbreaker_name											Crushing Mace
+Item_Shieldbreaker_description									^o+$attack_damage$ Attack Damage^*. Đánh thường gây xuyên $armor$% giáp.
+Item_Shieldbreaker_description_simple							Thêm ^oAttack Damage^*. Đánh xuyên giáp địch thủ.
+Item_Shieldbreaker_bonusdescription								Xuyên qua $common_increase$% Giáp.
+Item_Shieldbreaker_legendaryname								Sundering
+Item_Shieldbreaker_legendarydescription							Đòn tấn công tăng thêm sát thương tương ứng $legendary$% Max HP của địch, tác dụng lên lính mà thôi.
+Item_Shieldbreaker_Empower_1_name								Sundering
+Item_Shieldbreaker_Empower_1_description						Đòn tấn công tăng thêm sát thương tương ứng $damagebonus_enchant$% Max HP của địch, tác dụng lên lính mà thôi.
+Item_Shieldbreaker_Empower_2_name								Empower 2
+Item_Shieldbreaker_Empower_2_description						Đòn tấn công của bạn luôn luôn xuyên ít nhất $armorpierce_enchant$ Armor.
+Item_Shieldbreaker_Empower_3_name								Vampirism
+Item_Shieldbreaker_Empower_3_description						Tăng $lifesteal_enchant$% Attack Lifesteal.
+
+
+// Item_Malevolence
+Item_Malevolence_name											Grimoire
+Item_Malevolence_description									+$power$ Power\nSkill sẽ xuyên qua $armor$% magic armor
+Item_Malevolence_description_simple								Tăng Power. Dùng skill tấn công xuyên giáp phép của địch.
+Item_Malevolence_bonusdescription								Magic armor reduction và spell power tăng $common_increase$%.
+Item_Malevolence_legendaryname									Energized
+Item_Malevolence_legendarydescription							Tăng MP Hồi Phục $regen$%.
+Item_Malevolence_Empower_1_name									Rejuvenation
+Item_Malevolence_Empower_1_description							Tăng $manaregen_enchant$% increased MP/Giây.
+Item_Malevolence_Empower_2_name									Siphoning
+Item_Malevolence_Empower_2_description							$spellsteal_enchant$% Magic Lifesteal.
+Item_Malevolence_Empower_3_name									Empower 3
+Item_Malevolence_Empower_3_description							Skill của bạn luôn xuyên qua ít nhất $magicarmor_enchant$ Magic Armor.
+
+// Item_BarrierToken
+Item_BarrierToken_name											Barrier Token
+Item_BarrierToken_description									15 Magic Armor\nTrước khi bị sát thương Magic damage, Kháng Magic damage $reduction$% trong 2 giây.  Cần 25 giây hồi phục lại.
+Item_BarrierToken_description_simple							Tăng Magic Armor và kháng sát thương Magic.
+Item_BarrierToken_bonusdescription								Tăng $common_increase$% Kháng magic damage.
+Item_BarrierToken_legendaryname									Warding
+Item_BarrierToken_legendarydescription							Tăng thêm $legendary$% khả năng kháng sát thương magic.
+Item_BarrierToken_Empower_1_name								Warding
+Item_BarrierToken_Empower_1_description							Tăng thêm $spelltrigger_enchant$% khả năng kháng sát thương magic.
+Item_BarrierToken_Empower_2_name								Diligence
+Item_BarrierToken_Empower_2_description							Thêm cooldown $cooldown_enchant$ giây.
+Item_BarrierToken_Empower_3_name								Simplicity
+Item_BarrierToken_Empower_3_description							Không còn tăng $magicarmor_enchant$ Magic Armor.
+
+
+
+// Item_Marchers
+Item_Marchers_name												Boots
+Item_Marchers_description										35 Movement Speed
+Item_Marchers_description2										Item này có một nội tại tăng thêm ^yMovement ^ySpeed^* không stack lên chính bản thân nó or với ^oStriders^*, ^oSteam^* ^oBoots^*, ^oGhost^* ^oMarchers^*, ^oPlated^* ^oGreaves^* hoặc ^oPost^* ^oHaste^*.
+Item_Marchers_description_simple								35 Movement Speed
+Item_Marchers_effect_header										Status Effect
+Item_Marchers_shop_flavor										Nhà phát minh sống ẩn dật đã làm ra Marchers với mong muốn làm giảm đi sự mệt mỏi của các chiến dịch bằng cách cho phép binh sĩ di chuyển nhanh hơn. Nhưng thay vào đó, ông lại phát hiện ra họ bị buộc phải di chuyển nhiều giờ hơn và xa hơn.
+Item_Marchers_shop_categories									component,boots
+
+
+// Item_Sheepstick
+Item_SheepStick_name											Hexbane
+Item_SheepStick_description										Tăng $hp$ HP.\n\n Kích hoạt để biến địch thành cóc trong 3.5 giây. Địch không thể dùng skill hay đánh.
+Item_SheepStick_description_simple								Địch không thể dùng skill hay đánh trong 3.5 giây.
+Item_SheepStick_effect_header									Transfigured Effects
+Item_SheepStick_shop_flavor										Một vài dụng cụ phù thủy đáng sợ như Totems của Kuldra: Cây gậy có sự sống, có thể nói, quằn quại truyền đạt sự khôn ngoan, sức mạnh, cùng tốc độ giúp người chủ của chúng nắm bắt được dòng chảy của mana và do đó phục hồi sức mạnh của họ nhanh chóng hơn. Dù có những lợi ích như vậy, hầu hết các cong người bất đắc dĩ  mới vận dụng tới những công cụ tà đạo đó.
+Item_SheepStick_bonusdescription								Giảm cooldown $cooldown$ giây.
+Item_SheepStick_legendaryname									Painful
+Item_SheepStick_legendarydescription							Giảm armor và magic Armor địch $armor$ trong thời gian biến cóc.
+Item_SheepStick_IMPACT_effect									Áp dụng với thời gian đầu trong 2.5 giây.
+Item_SheepStick_Empower_1_name									Empower 1
+Item_SheepStick_Empower_1_description							Giảm Armor và Magic Armor địch $armor_enchant$ trong thời gian biến cóc.
+Item_SheepStick_Empower_2_name									Wisdom
+Item_SheepStick_Empower_2_description							Thêm $cooldown_enchant$% cooldown reduction.
+Item_SheepStick_Empower_3_name									Restraint
+Item_SheepStick_Empower_3_description							Tăng tác dụng $slow_enchant$% làm chậm khi biến cóc.
+
+// Item_Orb_Of_Revelation
+Item_Orb_Of_Revelation_name										Seer's Eye
+Item_Orb_Of_Revelation_description								Tăng +$health$ HP \nPhát Quang giúp nhìn rõ các mục tiêu trong khu vực chỉ định trong 6 giây.
+Item_Orb_Of_Revelation_description_simple						Tăng HP và giúp nhìn thấy khu vực chỉ định!
+Item_Orb_Of_Revelation_effect_header							Transfigured Effects
+Item_Orb_Of_Revelation_shop_flavor								Một vài dụng cụ phù thủy đáng sợ như Totems của Kuldra: Cây gậy có sự sống, có thể nói, quằn quại truyền đạt sự khôn ngoan, sức mạnh, cùng tốc độ giúp người chủ của chúng nắm bắt được dòng chảy của mana và do đó phục hồi sức mạnh của họ nhanh chóng hơn. Dù có những lợi ích như vậy, hầu hết các cong người bất đắc dĩ  mới vận dụng tới những công cụ tà đạo đó.
+Item_Orb_Of_Revelation_bonusdescription							Giảm cooldown $cooldown$ giây.
+Item_Orb_Of_Revelation_legendaryname							Slowing
+Item_Orb_Of_Revelation_legendarydescription						Thêm Seer's Eye tác dụng $legendary$% làm chậm địch trong 3 giây.
+Item_Orb_Of_Revelation_Empower_1_name							Restraint
+Item_Orb_Of_Revelation_Empower_1_description					Thêm Seer's Eye tác dụng $slow_enchant$% làm chậm địch trong $slow_duration_enchant$ giây.
+Item_Orb_Of_Revelation_Empower_2_name							Empower 2
+Item_Orb_Of_Revelation_Empower_2_description					Địch bị phát hiện sẽ phải ở trong khu vực đó ít nhất $reveal_enchant$ giây
+Item_Orb_Of_Revelation_Empower_3_name							Diligence
+Item_Orb_Of_Revelation_Empower_3_description					Giảm cooldown $cooldown_enchant$ giây.
+
+// State_Orb_Of_Revelation_Reveal
+State_Orb_Of_Revelation_Reveal_Tooltip_name						Revelation
+State_Orb_Of_Revelation_Reveal_description_simple				You are revealed to the enemy a Seer's Eye
+State_Orb_Of_Revelation_Reveal_name								Revelation
+State_Orb_Of_Revelation_Reveal_name_FRAME_effect
+
+// Item_Frostbrand
+Item_Frostbrand_name											Frost Prism
+Item_Frostbrand_description										^o+$damage$ Attack Damage^*.\nTấn công làm địch bị giảm $slow$% tốc độ chạy.  Duy trì 2.5 giây.
+Item_Frostbrand_description_simple								Thêm ^oAttack Damage^* và làm chậm địch thủ.
+Item_Frostbrand_effect_header									Frost Effect
+Item_Frostbrand_tooltip_flavor									Dù rèn trong lửa nhưng nó lại rất lạnh.
+Item_Frostbrand_effect_header:attack							Frost Effects
+Item_Frostbrand_ATTACK_IMPACT_effect:attack						Kéo dài 4 giây đối với Hero cận chiến, 2.5 giây đối với Hero đánh xa. Max 5 lần liên tiếp.
+Item_Frostbrand_bonusdescription								Tăng thêm $common_increase$% tác dụng làm chậm.
+Item_Frostbrand_legendaryname									Swiftness
+Item_Frostbrand_legendarydescription							Tăng $movespeed$ Tốc Độ Chạy cho bạn trong 3 giây khi đánh trúng địch.
+Item_Frostbrand_Empower_1_name									Swiftness
+Item_Frostbrand_Empower_1_description							Tăng $movespeed_enchant$ Tốc Độ Chạy cho bạn trong 2.5 giây khi đánh trúng địch.
+Item_Frostbrand_Empower_2_name									Fatigue
+Item_Frostbrand_Empower_2_description							Làm địch giảm Tốc Độ Đánh $attackspeed_enchant$.
+Item_Frostbrand_Empower_3_name									Focus
+Item_Frostbrand_Empower_3_description							Tăng $slowincrease_enchant$ hiệu ứng làm chậm nhưng bạn bị giảm Attack Damage $basedamage_enchant$.
+
+
+// State_Frostbrand
+State_Frostbrand_name											Chilled
+
+
+//
+// Familiars
+//
+
+// Luster
+Ability_Luster_Passive_1_name								Luster Touch
+Ability_Luster_Passive_2_name								Luster Touch
+Ability_Luster_Passive_3_name								Luster Touch
+Ability_Luster_Passive_1_description						Tăng gold từ Lính $passive$
+Ability_Luster_Passive_2_description						Tăng gold từ Lính $passive$
+Ability_Luster_Passive_3_description						Tăng gold từ Lính $passive$
+Ability_Luster_Passive_1_description_simple					Tăng gold từ Lính
+Ability_Luster_Passive_2_description_simple					Tăng gold từ Lính
+Ability_Luster_Passive_3_description_simple					Tăng gold từ Lính
+Ability_Luster_Passive2_1_name								Blood Rush
+Ability_Luster_Passive2_2_name								Blood Rush
+Ability_Luster_Passive2_3_name								Blood Rush
+Ability_Luster_Passive2_1_description_simple				Tăng HP khi giết Lính.
+Ability_Luster_Passive2_2_description_simple				Tăng HP khi giết Lính.
+Ability_Luster_Passive2_3_description_simple				Tăng HP khi giết Lính.
+Ability_Luster_Passive2_1_description						Tăng $passive$ HP khi giết Lính.
+Ability_Luster_Passive2_2_description						Tăng $passive$ HP khi giết Lính.
+Ability_Luster_Passive2_3_description						Tăng $passive$ HP khi giết Lính.
+Ability_Luster_TriggeredPassive_1_name						Greed is Good
+Ability_Luster_TriggeredPassive_2_name						Greed is Good
+Ability_Luster_TriggeredPassive_3_name						Greed is Good
+Ability_Luster_TriggeredPassive_1_description				Nếu bạn không giết được lính, Luster sẽ lấy tiền về cho bạn.  ^c$cooldown$ Second Cooldown^*.
+Ability_Luster_TriggeredPassive_2_description				Nếu bạn không giết được lính, Luster sẽ lấy tiền về cho bạn.  ^c$cooldown$ Second Cooldown^*.
+Ability_Luster_TriggeredPassive_3_description				Nếu bạn không giết được lính, Luster sẽ lấy tiền về cho bạn.  ^c$cooldown$ Second Cooldown^*.
+Ability_Luster_TriggeredPassive_1_description_simple		Cướp tiền về khi giết hút Lính
+Ability_Luster_TriggeredPassive_2_description_simple		Cướp tiền về khi giết hút Lính
+Ability_Luster_TriggeredPassive_3_description_simple		Cướp tiền về khi giết hút Lính
+Ability_Luster_Ult_1_name									Blast
+Ability_Luster_Ult_2_name									Blast
+Ability_Luster_Ult_3_name									Blast
+Ability_Luster_Ult_1_description							Kích hoạt để gây $damage$ damage to non-hero lên Lính.  120 Second Cooldown.
+Ability_Luster_Ult_2_description							Kích hoạt để gây $damage$ damage to non-hero lên Lính.  ^c80 Second Cooldown^*.
+Ability_Luster_Ult_3_description							Kích hoạt để gây ^c$damage$ damage^* to non-hero lên Lính.  80 Second Cooldown.
+Ability_Luster_Ult_1_description_simple						Gây sát thương mạnh lên Lính.
+Ability_Luster_Ult_2_description_simple						Gây sát thương mạnh lên Lính.
+Ability_Luster_Ult_3_description_simple						Gây sát thương mạnh lên Lính.
+
+// Topps
+Ability_Topps_Passive_1_name								Unleashed
+Ability_Topps_Passive_2_name								Unleashed
+Ability_Topps_Passive_3_name								Unleashed
+Ability_Topps_Passive_1_description							Tăng Power $passive$ (scales with hero level)
+Ability_Topps_Passive_2_description							Tăng Power $passive$ (scales with hero level)
+Ability_Topps_Passive_3_description							Tăng Power $passive$ (scales with hero level)
+Ability_Topps_Passive_1_description_simple					Tăng Power
+Ability_Topps_Passive_2_description_simple					Tăng Power
+Ability_Topps_Passive_3_description_simple					Tăng Power
+Ability_Topps_Passive2_1_name								Hardened Skin
+Ability_Topps_Passive2_2_name								Hardened Skin
+Ability_Topps_Passive2_3_name								Hardened Skin
+Ability_Topps_Passive2_1_description						Tăng $passive$% CC-reduction.
+Ability_Topps_Passive2_2_description						Tăng $passive$% CC-reduction.
+Ability_Topps_Passive2_3_description						Tăng $passive$% CC-reduction.
+Ability_Topps_Passive2_1_description_simple					Tăng CC-reduction.
+Ability_Topps_Passive2_2_description_simple					Tăng CC-reduction.
+Ability_Topps_Passive2_3_description_simple					Tăng CC-reduction.
+Ability_Topps_TriggeredPassive_1_name						Immolate
+Ability_Topps_TriggeredPassive_2_name						Immolate
+Ability_Topps_TriggeredPassive_3_name						Immolate
+Ability_Topps_TriggeredPassive_1_description				Khi Hero địch ở gần, Topps gây sát thương $pure_damage$ Pure Damage trong 5 giây(dựa trên lv Hero).  27 giây Cooldown.
+Ability_Topps_TriggeredPassive_2_description				Khi Hero địch ở gần, Topps gây sát thương $pure_damage$ Pure Damage trong 5 giây(dựa trên lv Hero).  ^c18 giây Cooldown^*.
+Ability_Topps_TriggeredPassive_3_description				Khi Hero địch ở gần, Topps gây sát thương ^c$pure_damage$ Pure Damage^* trong 5 giây(dựa trên lv Hero).  18 giây Cooldown.
+Ability_Topps_TriggeredPassive_1_description_simple			Sát thương Hero Địch ở gần
+Ability_Topps_TriggeredPassive_2_description_simple			Sát thương Hero Địch ở gần
+Ability_Topps_TriggeredPassive_3_description_simple			Sát thương Hero Địch ở gần
+Ability_Topps_Ult_1_name									Tremble
+Ability_Topps_Ult_2_name									Tremble
+Ability_Topps_Ult_3_name									Tremble
+Ability_Topps_Ult_1_description								Kích hoạt để làm chậm Hero Địch trong 1.5 giây.  $cooldown$ giây Cooldown.
+Ability_Topps_Ult_2_description								Kích hoạt để làm chậm Hero Địch trong 1.5 giây.  ^c$cooldown$ giây Cooldown^*.
+Ability_Topps_Ult_3_description								Kích hoạt để làm chậm Hero Địch trong ^c2.25 seconds^*.  $cooldown$ giây Cooldown.
+Ability_Topps_Ult_1_description_simple						Kích hoạt để làm chậm Hero Địch
+Ability_Topps_Ult_2_description_simple						Kích hoạt để làm chậm Hero Địch
+Ability_Topps_Ult_3_description_simple						Kích hoạt để làm chậm Hero Địch
+
+// Bounder
+Ability_Bounder_Passive_1_name								Quickness
+Ability_Bounder_Passive_2_name								Quickness
+Ability_Bounder_Passive_3_name								Quickness
+Ability_Bounder_Passive_1_description						Tăng Movespeed $passive$%
+Ability_Bounder_Passive_2_description						Tăng Movespeed $passive$%
+Ability_Bounder_Passive_3_description						Tăng Movespeed $passive$%
+Ability_Bounder_Passive_1_description_simple				Tăng Movespeed
+Ability_Bounder_Passive_2_description_simple				Tăng Movespeed
+Ability_Bounder_Passive_3_description_simple				Tăng Movespeed
+Ability_Bounder_Passive2_1_name								Forceful
+Ability_Bounder_Passive2_2_name								Forceful
+Ability_Bounder_Passive2_3_name								Forceful
+Ability_Bounder_Passive2_1_description						Tăng Attack Damage thêm $passive$ (dựa trên lv Hero).
+Ability_Bounder_Passive2_2_description						Tăng Attack Damage thêm $passive$ (dựa trên lv Hero).
+Ability_Bounder_Passive2_3_description						Tăng Attack Damage thêm $passive$ (dựa trên lv Hero).
+Ability_Bounder_Passive2_1_description_simple				Tăng attack damage
+Ability_Bounder_Passive2_2_description_simple				Tăng attack damage
+Ability_Bounder_Passive2_3_description_simple				Tăng attack damage
+Ability_Bounder_TriggeredPassive_1_name						Frostbite
+Ability_Bounder_TriggeredPassive_2_name						Frostbite
+Ability_Bounder_TriggeredPassive_3_name						Frostbite
+Ability_Bounder_TriggeredPassive_1_description				Khi bạn tấn công, Bounder làm chậm mục tiêu 20% trong 2 giây.  $cooldown$ giây Cooldown.
+Ability_Bounder_TriggeredPassive_2_description				Khi bạn tấn công, Bounder làm chậm mục tiêu 20% trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
+Ability_Bounder_TriggeredPassive_3_description				Khi bạn tấn công, Bounder làm chậm mục tiêu 20% trong ^c3 seconds^*.  $cooldown$ giây Cooldown.
+Ability_Bounder_TriggeredPassive_1_description_simple		Tấn công làm chậm địch
+Ability_Bounder_TriggeredPassive_2_description_simple		Tấn công làm chậm địch
+Ability_Bounder_TriggeredPassive_3_description_simple		Tấn công làm chậm địch
+Ability_Bounder_Ult_1_name									Slide
+Ability_Bounder_Ult_2_name									Slide
+Ability_Bounder_Ult_3_name									Slide
+Ability_Bounder_Ult_1_description							Kích hoạt để lướt nhanh 400 distance tới vị trí chỉ định.  $cooldown$ giây Cooldown.
+Ability_Bounder_Ult_2_description							Kích hoạt để lướt nhanh 400 distance tới vị trí chỉ định.  ^c$cooldown$ giây Cooldown^*.
+Ability_Bounder_Ult_3_description							Kích hoạt để lướt nhanh ^c500 distance^* tới vị trí chỉ định.  $cooldown$ giây Cooldown.
+Ability_Bounder_Ult_1_description_simple					Kích hoạt để lướt nhanh tới vị trí chỉ định
+Ability_Bounder_Ult_2_description_simple					Kích hoạt để lướt nhanh tới vị trí chỉ định
+Ability_Bounder_Ult_3_description_simple					Kích hoạt để lướt nhanh tới vị trí chỉ định
+
+// Ganker
+Ability_Ganker_Passive_1_name								On The Prowl
+Ability_Ganker_Passive_2_name								On The Prowl
+Ability_Ganker_Passive_3_name								On The Prowl
+Ability_Ganker_Passive_1_description						Tăng Movespeed $ooc_movespeed$% khi Out Combat
+Ability_Ganker_Passive_2_description						Tăng Movespeed $ooc_movespeed$% khi Out Combat
+Ability_Ganker_Passive_3_description						Tăng Movespeed $ooc_movespeed$% khi Out Combat
+Ability_Ganker_Passive_1_description_simple					Tăng Movespeed khi Out Combat
+Ability_Ganker_Passive_2_description_simple					Tăng Movespeed khi Out Combat
+Ability_Ganker_Passive_3_description_simple					Tăng Movespeed khi Out Combat
+Ability_Ganker_TriggeredPassive_1_name						Bounty
+Ability_Ganker_TriggeredPassive_2_name						Bounty
+Ability_Ganker_TriggeredPassive_3_name						Bounty
+Ability_Ganker_TriggeredPassive_1_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  $cooldown$ giây Cooldown.
+Ability_Ganker_TriggeredPassive_2_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown$ giây Cooldown^*.
+Ability_Ganker_TriggeredPassive_3_description				Khi giết được Hero địch, Tăng ^c$gold$ bonus gold^*.  $cooldown$ giây Cooldown.
+Ability_Ganker_TriggeredPassive_1_description_simple		Tăng bonus bounty khi giết Hero địch
+Ability_Ganker_TriggeredPassive_2_description_simple		Tăng bonus bounty khi giết Hero địch
+Ability_Ganker_TriggeredPassive_3_description_simple		Tăng bonus bounty khi giết Hero địch
+Ability_Ganker_Ult_1_name									Shadow Stalk
+Ability_Ganker_Ult_2_name									Shadow Stalk
+Ability_Ganker_Ult_3_name									Shadow Stalk
+Ability_Ganker_Ult_1_description							Gây sát thương $damage$ damage kéo dài và thấy vị trí địch.  $cooldown$ giây Cooldown.
+Ability_Ganker_Ult_2_description							Gây sát thương $damage$ damage kéo dài và thấy vị trí địch.  ^c$cooldown$ giây Cooldown^*.
+Ability_Ganker_Ult_3_description							Gây sát thương ^c$damage$ damage kéo dài^* và grant vision.  $cooldown$ giây Cooldown.
+Ability_Ganker_Ult_1_description_simple						Damage enemy kéo dài và thấy vị trí địch
+Ability_Ganker_Ult_2_description_simple						Damage enemy kéo dài và thấy vị trí địch
+Ability_Ganker_Ult_3_description_simple						Damage enemy kéo dài và thấy vị trí địch
+
+// State_Ganker_Ult_1
+State_Ganker_Ult_1_Tooltip_name								Shadow Stalk
+State_Ganker_Ult_1_description								Fitz sát thương và do thám bạn.
+State_Ganker_Ult_1_description_simple						Fitz sát thương và do thám bạn.
+State_Ganker_Ult_1_name										Shadow Stalk
+State_Ganker_Ult_1_name_FRAME_effect
+
+// State_Ganker_Ult_2
+State_Ganker_Ult_2_Tooltip_name								Shadow Stalk
+State_Ganker_Ult_2_description								Fitz sát thương và do thám bạn.
+State_Ganker_Ult_2_description_simple						Fitz sát thương và do thám bạn.
+State_Ganker_Ult_2_name										Shadow Stalk
+State_Ganker_Ult_2_name_FRAME_effect
+
+// State_Ganker_Ult_3
+State_Ganker_Ult_3_Tooltip_name								Shadow Stalk
+State_Ganker_Ult_3_description								Fitz sát thương và do thám bạn.
+State_Ganker_Ult_3_description_simple						Fitz sát thương và do thám bạn.
+State_Ganker_Ult_3_name										Shadow Stalk
+State_Ganker_Ult_3_name_FRAME_effect
+
+// Pusher
+Ability_Pusher_Passive_1_name								Regeneration
+Ability_Pusher_Passive_2_name								Regeneration
+Ability_Pusher_Passive_3_name								Regeneration
+Ability_Pusher_Passive_1_description						Tăng HP Hồi Phụceration $passive$ HP/Giây (dựa trên lv Hero).
+Ability_Pusher_Passive_2_description						Tăng HP Hồi Phụceration $passive$ HP/Giây (dựa trên lv Hero).
+Ability_Pusher_Passive_3_description						Tăng HP Hồi Phụceration $passive$ HP/Giây (dựa trên lv Hero).
+Ability_Pusher_Passive_1_description_simple					Tăng HP Hồi Phụceration
+Ability_Pusher_Passive_2_description_simple					Tăng HP Hồi Phụceration
+Ability_Pusher_Passive_3_description_simple					Tăng HP Hồi Phụceration
+Ability_Pusher_TriggeredPassive_1_name						Pillage
+Ability_Pusher_TriggeredPassive_2_name						Pillage
+Ability_Pusher_TriggeredPassive_3_name						Pillage
+Ability_Pusher_TriggeredPassive_1_description				Tấn công Hero địch hay Nhà, Trụ sẽ Tăng $gold$ gold.  $cooldown$ giây Cooldown.
+Ability_Pusher_TriggeredPassive_2_description				Tấn công Hero địch hay Nhà, Trụ sẽ Tăng $gold$ gold.  ^c$cooldown$ giây Cooldown^*.
+Ability_Pusher_TriggeredPassive_3_description				Tấn công Hero địch hay Nhà, Trụ sẽ Tăng ^c$gold$ gold^*.  $cooldown$ giây Cooldown.
+Ability_Pusher_TriggeredPassive_1_description_simple		Tăng gold khi đánh Hero/Nhà/Trụ
+Ability_Pusher_TriggeredPassive_2_description_simple		Tăng gold khi đánh Hero/Nhà/Trụ
+Ability_Pusher_TriggeredPassive_3_description_simple		Tăng gold khi đánh Hero/Nhà/Trụ
+Ability_Pusher_Ult_1_name									Promote
+Ability_Pusher_Ult_2_name									Promote
+Ability_Pusher_Ult_3_name									Promote
+Ability_Pusher_Ult_1_description							Tăng thêm cho mục tiêu $damage$ bonus damage (dựa trên lv Hero), $health$ HP (dựa trên lv Hero), và 10 attackspeed.  $cooldown$ giây Cooldown.
+Ability_Pusher_Ult_2_description							Tăng thêm cho mục tiêu $damage$ bonus damage (dựa trên lv Hero), $health$ HP (dựa trên lv Hero), và 10 attackspeed.  ^c$cooldown$ giây Cooldown^*.
+Ability_Pusher_Ult_3_description							Tăng thêm cho mục tiêu ^c$damage$ bonus damage (dựa trên lv Hero), $health$ HP^* (dựa trên lv Hero), và 10 attackspeed.  $cooldown$ giây Cooldown.
+Ability_Pusher_Ult_1_description_simple						Tăng cường sức mạnh cho đồng đội
+Ability_Pusher_Ult_2_description_simple						Tăng cường sức mạnh cho đồng đội
+Ability_Pusher_Ult_3_description_simple						Tăng cường sức mạnh cho đồng đội
+
+
+// Pincer
+Ability_Pincer_Passive_1_name									Recovery
+Ability_Pincer_Passive_2_name									Recovery
+Ability_Pincer_Passive_3_name									Recovery
+Ability_Pincer_Passive_1_description							Tăng HP Hồi Phục $passive$ (dựa trên lv Hero).
+Ability_Pincer_Passive_2_description							Tăng HP Hồi Phục $passive$ (dựa trên lv Hero).
+Ability_Pincer_Passive_3_description							Tăng HP Hồi Phục $passive$ (dựa trên lv Hero).
+Ability_Pincer_Passive_1_description_simple						Tăng HP Hồi Phục
+Ability_Pincer_Passive_2_description_simple						Tăng HP Hồi Phục
+Ability_Pincer_Passive_3_description_simple						Tăng HP Hồi Phục
+Ability_Pincer_Passive2_1_name									Defense
+Ability_Pincer_Passive2_2_name									Defense
+Ability_Pincer_Passive2_3_name									Defense
+Ability_Pincer_Passive2_1_description							Tăng Armor thêm $passive$ (dựa trên lv Hero)
+Ability_Pincer_Passive2_2_description							Tăng Armor thêm $passive$ (dựa trên lv Hero)
+Ability_Pincer_Passive2_3_description							Tăng Armor thêm $passive$ (dựa trên lv Hero)
+Ability_Pincer_Passive2_1_description_simple					Tăng Armor
+Ability_Pincer_Passive2_2_description_simple					Tăng Armor
+Ability_Pincer_Passive2_3_description_simple					Tăng Armor
+Ability_Pincer_TriggeredPassive_1_name							Retaliate
+Ability_Pincer_TriggeredPassive_2_name							Retaliate
+Ability_Pincer_TriggeredPassive_3_name							Retaliate
+Ability_Pincer_TriggeredPassive_1_description					Khi địch đánh bạn, Pincer phản công $pure_damage$ Pure Damage (dựa trên lv Hero).  30 giây Cooldown^*.
+Ability_Pincer_TriggeredPassive_2_description					Khi địch đánh bạn, Pincer phản công $pure_damage$ Pure Damage (dựa trên lv Hero).  ^c20 giây Cooldown.
+Ability_Pincer_TriggeredPassive_3_description					Khi địch đánh bạn, Pincer phản công ^c$pure_damage$ Pure Damage^* (dựa trên lv Hero).  20 giây Cooldown.
+Ability_Pincer_TriggeredPassive_1_description_simple			Pincer phản công Hero địch đánh bạn
+Ability_Pincer_TriggeredPassive_2_description_simple			Pincer phản công Hero địch đánh bạn
+Ability_Pincer_TriggeredPassive_3_description_simple			Pincer phản công Hero địch đánh bạn
+Ability_Pincer_Ult_1_name										Breakout
+Ability_Pincer_Ult_2_name										Breakout
+Ability_Pincer_Ult_3_name										Breakout
+Ability_Pincer_Ult_1_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  $cooldown$ giây Cooldown.
+Ability_Pincer_Ult_2_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
+Ability_Pincer_Ult_3_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
+Ability_Pincer_Ult_1_description_simple							Loại bõ mọi tác động xấu trên Hero
+Ability_Pincer_Ult_2_description_simple							Loại bõ mọi tác động xấu trên Hero
+Ability_Pincer_Ult_3_description_simple							Loại bõ mọi tác động xấu trên Hero
+
+// Tortus
+Ability_Tortus_Passive_1_name									Vitality
+Ability_Tortus_Passive_2_name									Vitality
+Ability_Tortus_Passive_3_name									Vitality
+Ability_Tortus_Passive_1_description_simple						Tăng Max HP
+Ability_Tortus_Passive_2_description_simple						Tăng Max HP
+Ability_Tortus_Passive_3_description_simple						Tăng Max HP
+Ability_Tortus_Passive_1_description							Tăng Max HP thêm $passive$ (dựa trên lv Hero)
+Ability_Tortus_Passive_2_description							Tăng Max HP thêm $passive$ (dựa trên lv Hero)
+Ability_Tortus_Passive_3_description							Tăng Max HP thêm $passive$ (dựa trên lv Hero)
+Ability_Tortus_Passive2_1_name									Clarity
+Ability_Tortus_Passive2_2_name									Clarity
+Ability_Tortus_Passive2_3_name									Clarity
+Ability_Tortus_Passive2_1_description							Tăng MP Hồi Phục $passive$ (dựa trên lv Hero)
+Ability_Tortus_Passive2_2_description							Tăng MP Hồi Phục $passive$ (dựa trên lv Hero)
+Ability_Tortus_Passive2_3_description							Tăng MP Hồi Phục $passive$ (dựa trên lv Hero)
+Ability_Tortus_Passive2_1_description_simple					Tăng MP Hồi Phục
+Ability_Tortus_Passive2_2_description_simple					Tăng MP Hồi Phục
+Ability_Tortus_Passive2_3_description_simple					Tăng MP Hồi Phục
+Ability_Tortus_TriggeredPassive_1_name							Harden
+Ability_Tortus_TriggeredPassive_2_name							Harden
+Ability_Tortus_TriggeredPassive_3_name							Harden
+Ability_Tortus_TriggeredPassive_1_description					Khóa $deflection$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  18 giây Cooldown.
+Ability_Tortus_TriggeredPassive_2_description					Khóa $deflection$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c12 giây Cooldown^*.
+Ability_Tortus_TriggeredPassive_3_description					Khóa ^c$deflection$ Damage^* từ đòn đánh thường của địch (dựa trên lv Hero).  12 giây Cooldown.
+Ability_Tortus_TriggeredPassive_1_description_simple			Khóa đòn đánh thường
+Ability_Tortus_TriggeredPassive_2_description_simple			Khóa đòn đánh thường
+Ability_Tortus_TriggeredPassive_3_description_simple			Khóa đòn đánh thường
+Ability_Tortus_Ult_1_name										Rejuvenate
+Ability_Tortus_Ult_2_name										Rejuvenate
+Ability_Tortus_Ult_3_name										Rejuvenate
+Ability_Tortus_Ult_1_description								Kích hoạt để regenerate $heal$ HP từ từ (dựa trên lv Hero).  240 giây Cooldown.
+Ability_Tortus_Ult_2_description								Kích hoạt để regenerate $heal$ HP từ từ (dựa trên lv Hero).  ^c160 giây Cooldown^*.
+Ability_Tortus_Ult_3_description								Kích hoạt để regenerate ^c$heal$ HP^* từ từ (dựa trên lv Hero).  160 giây Cooldown.
+Ability_Tortus_Ult_1_description_simple							Kích hoạt để Hồi Phục HP
+Ability_Tortus_Ult_2_description_simple							Kích hoạt để Hồi Phục HP
+Ability_Tortus_Ult_3_description_simple							Kích hoạt để Hồi Phục HP
+
+// Mystik
+Ability_Mystik_Passive_1_name									Spell Mastery
+Ability_Mystik_Passive_2_name									Spell Mastery
+Ability_Mystik_Passive_3_name									Spell Mastery
+Ability_Mystik_Passive_1_description							Tăng Magic damage $passive$%
+Ability_Mystik_Passive_2_description							Tăng Magic damage $passive$%
+Ability_Mystik_Passive_3_description							Tăng Magic damage $passive$%
+Ability_Mystik_Passive_1_description_simple						Amplifies magic damage
+Ability_Mystik_Passive_2_description_simple						Amplifies magic damage
+Ability_Mystik_Passive_3_description_simple						Amplifies magic damage
+Ability_Mystik_Passive2_1_name									Siphoning
+Ability_Mystik_Passive2_2_name									Siphoning
+Ability_Mystik_Passive2_3_name									Siphoning
+Ability_Mystik_Passive2_1_description							Tăng $passive$% Magic Lifesteal.
+Ability_Mystik_Passive2_2_description							Tăng $passive$% Magic Lifesteal.
+Ability_Mystik_Passive2_3_description							Tăng $passive$% Magic Lifesteal.
+Ability_Mystik_Passive2_1_description_simple					Gây sát thương phép sẽ tăng HP
+Ability_Mystik_Passive2_2_description_simple					Gây sát thương phép sẽ tăng HP
+Ability_Mystik_Passive2_3_description_simple					Gây sát thương phép sẽ tăng HP
+Ability_Mystik_TriggeredPassive_1_name							Dive Bomb
+Ability_Mystik_TriggeredPassive_2_name							Dive Bomb
+Ability_Mystik_TriggeredPassive_3_name							Dive Bomb
+Ability_Mystik_TriggeredPassive_1_description					Khi dùng Skill đánh trúng địch, Mystik gây sát thương $pure_damage$ Pure Damage (dựa trên lv Hero).  24 giây Cooldown.
+Ability_Mystik_TriggeredPassive_2_description					Khi dùng Skill đánh trúng địch, Mystik gây sát thương $pure_damage$ Pure Damage (dựa trên lv Hero).  ^c16 giây Cooldown^*.
+Ability_Mystik_TriggeredPassive_3_description					Khi dùng Skill đánh trúng địch, Mystik gây sát thương ^c$pure_damage$ Pure Damage^* (dựa trên lv Hero).  16 giây Cooldown.
+Ability_Mystik_TriggeredPassive_1_description_simple			Mystik gây thêm sát thương lên địch
+Ability_Mystik_TriggeredPassive_2_description_simple			Mystik gây thêm sát thương lên địch
+Ability_Mystik_TriggeredPassive_3_description_simple			Mystik gây thêm sát thương lên địch
+Ability_Mystik_Ult_1_name										Inspiration
+Ability_Mystik_Ult_2_name										Inspiration
+Ability_Mystik_Ult_3_name										Inspiration
+Ability_Mystik_Ult_1_description								Kích hoạt để tăng nhanh $mana$ MP (dựa trên lv Hero).  180 giây Cooldown.
+Ability_Mystik_Ult_2_description								Kích hoạt để tăng nhanh $mana$ MP (dựa trên lv Hero).  ^c120 giây Cooldown^*.
+Ability_Mystik_Ult_3_description								Kích hoạt để tăng nhanh ^c$mana$ mana^* (dựa trên lv Hero).  120 giây Cooldown.
+Ability_Mystik_Ult_1_description_simple							Kích hoạt để hồi phục MP
+Ability_Mystik_Ult_2_description_simple							Kích hoạt để hồi phục MP
+Ability_Mystik_Ult_3_description_simple							Kích hoạt để hồi phục MP
+
+// Razer
+Ability_Razer_Passive2_1_name									Savagery
+Ability_Razer_Passive2_2_name									Savagery
+Ability_Razer_Passive2_3_name									Savagery
+Ability_Razer_Passive2_1_description							Tăng Attack Damage thêm $passive$ (dựa trên lv Hero).
+Ability_Razer_Passive2_2_description							Tăng Attack Damage thêm $passive$ (dựa trên lv Hero).
+Ability_Razer_Passive2_3_description							Tăng Attack Damage thêm $passive$ (dựa trên lv Hero).
+Ability_Razer_Passive2_1_description_simple						Tăng attack damage.
+Ability_Razer_Passive2_2_description_simple						Tăng attack damage.
+Ability_Razer_Passive2_3_description_simple						Tăng attack damage.
+Ability_Razer_Passive_1_name									Dampening
+Ability_Razer_Passive_2_name									Dampening
+Ability_Razer_Passive_3_name									Dampening
+Ability_Razer_Passive_1_description								Tăng Magic Armor thêm $passive$ (dựa trên lv Hero)
+Ability_Razer_Passive_2_description								Tăng Magic Armor thêm $passive$ (dựa trên lv Hero)
+Ability_Razer_Passive_3_description								Tăng Magic Armor thêm $passive$ (dựa trên lv Hero)
+Ability_Razer_Passive_1_description_simple						Tăng Magic Armor
+Ability_Razer_Passive_2_description_simple						Tăng Magic Armor
+Ability_Razer_Passive_3_description_simple						Tăng Magic Armor
+Ability_Razer_TriggeredPassive_1_name							Carnivorous Bite
+Ability_Razer_TriggeredPassive_2_name							Carnivorous Bite
+Ability_Razer_TriggeredPassive_3_name							Carnivorous Bite
+Ability_Razer_TriggeredPassive_1_description					Đòn tấn công thường lên Hero sẽ hút $health$ HP (dựa trên lv Hero).  24 giây Cooldown.
+Ability_Razer_TriggeredPassive_2_description					Đòn tấn công thường lên Hero sẽ hút $health$ HP (dựa trên lv Hero).  ^c16 giây Cooldown^*.
+Ability_Razer_TriggeredPassive_3_description					Đòn tấn công thường lên Hero sẽ hút ^c$health$ HP^* (dựa trên lv Hero).  16 giây Cooldown.
+Ability_Razer_TriggeredPassive_1_description_simple				Tấn công thường lên Hero địch sẽ hút HP
+Ability_Razer_TriggeredPassive_2_description_simple				Tấn công thường lên Hero địch sẽ hút HP
+Ability_Razer_TriggeredPassive_3_description_simple				Tấn công thường lên Hero địch sẽ hút HP
+Ability_Razer_Ult_1_name										Into the Shadows
+Ability_Razer_Ult_2_name										Into the Shadows
+Ability_Razer_Ult_3_name										Into the Shadows
+Ability_Razer_Ult_1_description									Tạo ra phân thân và giúp Hero tàng hình.  Mất tàng hình nếu bạn đánh địch, dùng skill hay bóng bị giết.  Trụ của địch có thể thấy tàng hình.  Duy trì 1.5 giây.  $cooldown$ giây Cooldown.
+Ability_Razer_Ult_2_description									Tạo ra phân thân và giúp Hero tàng hình.  Mất tàng hình nếu bạn đánh địch, dùng skill hay bóng bị giết.  Trụ của địch có thể thấy tàng hình.  Duy trì 1.5 giây.  ^c$cooldown$ giây Cooldown^*.
+Ability_Razer_Ult_3_description									Tạo ra phân thân và giúp Hero tàng hình.  Mất tàng hình nếu bạn đánh địch, dùng skill hay bóng bị giết.  Trụ của địch có thể thấy tàng hình.  ^cDuy trì 2.25 seconds^*.  $cooldown$ giây Cooldown.
+Ability_Razer_Ult_1_description_simple							Tàng hình và tạo Phân Thân
+Ability_Razer_Ult_2_description_simple							Tàng hình và tạo Phân Thân
+Ability_Razer_Ult_3_description_simple							Tàng hình và tạo Phân Thân
+
+// State_Razer_Invis
+State_Razer_Invis_Tooltip_name									Stealth
+State_Razer_Invis_description_simple							Địch không thấy bạn.  
+State_Razer_Invis_name											Stealth
+State_Razer_Invis_name_FRAME_effect
+
+// State_ShopAccess_Main
+State_ShopAccess_Main_name										Base Shop
+State_ShopAccess_Main_description								Cho phép bạn xem Shop
+
+// Ability_Kongor1
+Ability_Kongor1_name											Passive Bonuses
+Ability_Kongor1_description										Krytos sẽ nâng cấp sức mạnh và kỹ năng từ từ.
+Ability_Kongor1_effect_header									Status Effect
+
+// Ability_Kongor2
+Ability_Kongor2_name											Slam
+Ability_Kongor2_description										Giảm tốc độ đánh và chạy của toàn bộ địch ở gần. Chỉ kích hoạt khi có nhiều hơn 3 lính cận chiến gần Kongor.
+Ability_Kongor2_effect_header									Status Effect
+
+// State_Kongor_Ability2
+State_Kongor_Ability2_name										Slam
+State_Kongor_Ability2_description								Krytos đã làm bạn giảm tốc độ chạy và đánh.
+
+// Neutral_Kongor
+Neutral_Kongor_name												Kongor
+Neutral_Kongor_description										King of Apes
+
+// Gadget_Kongor_Wall
+Gadget_Kongor_Wall_name											Stone Wall
+
+// Neutral_TowerGuardian
+Neutral_TowerGuardian_name										Transmutanstein
+
+// Neutral_TowerMaster
+Neutral_TowerMaster_name										Guardian
+Neutral_TowerMaster2_name										Guardian
+
+// State_Kongor
+State_Kongor_name												Kongor Upgrade
+State_Kongor_description										Kongor sẽ tăng cấp từ từ trong chiến trường.
+
+// Creep_HellbourneMelee
+Creep_HellbourneMelee_name										Imp
+Creep_HellbourneMelee_description								Disciple of the Scar
+
+// Creep_HellbourneRanged
+Creep_HellbourneRanged_name										Warlock
+Creep_HellbourneRanged_description								Disciple of the Scar
+
+// Creep_HellbourneSiege
+Creep_HellbourneSiege_name										Catapult
+
+// Critter_Chiprel
+Critter_Chiprel_name											Chiprel
+
+// Critter_Frog
+Critter_Frog_name												Frog
+
+// Critter_Lizard
+Critter_Lizard_name												Lizard
+
+// Critter_Rat
+Critter_Rat_name												Rat
+
+// Critter_Squeye
+Critter_Squeye_name												Squeye
+
+// Creep_LegionMelee
+Creep_LegionMelee_name											Sapling
+Creep_LegionMelee_description									Legion Guard
+
+// Creep_LegionRanged
+Creep_LegionRanged_name											Archer
+Creep_LegionRanged_description									Legion Guard
+
+// Creep_Kongor
+Creep_Kongor_name												Krytos
+
+// Creep_LegionSiege
+Creep_LegionSiege_name											Heavy Ballista
+
+// State_Stunned
+State_Stunned_name												Stunned
+
+// State_NonCombatRegen
+State_NonCombatRegen_name										Non-combat Regen Bonus
+State_NonCombatRegen_description								Tăng 0.03%  Maximum HP Mỗi Giây và Tăng HP Hồi Phục 100%.  Ngoài ra, Tăng MP Hồi Phục 0.04%  Maximum MP Mỗi Giây và Tăng MP Hồi Phục 50%.
+State_NonCombatRegen_description_simple							Tăng 0.03%  Maximum HP Mỗi Giây và Tăng HP Hồi Phục 100%.  Ngoài ra, Tăng MP Hồi Phục 0.04%  Maximum MP Mỗi Giây và Tăng MP Hồi Phục 50%.
+
+// State_InCombat
+State_InCombat_name												In-combat
+State_InCombat_description										Đang đánh nhau, không nhận được bonus regen
+State_InCombat_description_simple								Đang đánh nhau, không nhận được bonus regen
+
+// State_HealingWellMovespeed
+State_HealingWellMovespeed_name									Rush
+State_HealingWellMovespeed_description							Bạn nhận được phù hộ tăng tốc độ chạy. Nếu bạn đánh nhau, sẽ mất tác dụng
+State_HealingWellMovespeed_description_simple					Bạn nhận được phù hộ tăng tốc độ chạy. Nếu bạn đánh nhau, sẽ mất tác dụng
+
+// State_ConsecutiveTowerHit
+State_ConsecutiveTowerHit_name									Tower's Focus
+State_ConsecutiveTowerHit_description							Trụ đang tập trung bắn bạn, nếu bạn vẫn ngoan cố, nó sẽ gây thêm sát thương.
+
+// State_ConsecutiveTowerHit_Immlên Línhy
+State_ConsecutiveTowerHit_Immlên Línhy_name							Tower Engaged
+State_ConsecutiveTowerHit_Immlên Línhy_description					Bạn tấn công phản đòn trụ, trụ không gây thêm sát thương cho bạn.
+
+// State_Taunted
+State_Taunted_name												Taunted
+
+
+
+// Ability_HomecomingStone
+Ability_HomecomingStone_name									Relocate!
+Ability_HomecomingStone_description_simple						Bạn đang niệm chú, trong 3 giây để biến đến mục tiêu.\n\nBị Hero khác tấn công thì sẽ mất tác dụng trong 3 giây.
+
+// Ability_HomecomingStone_Home
+Ability_HomecomingStone_Tutorial2_name								Retreat!
+Ability_HomecomingStone_Tutorial2_description_simple				Kích hoạt để biến về Nhà Chính. Cần 8 giây niệm chú.
+Ability_HomecomingStone_Tutorial2_name:tutorialmod					Retreat!
+Ability_HomecomingStone_Tutorial2_description_simple:tutorialmod	Không thể dùng mục này trong phần hướng dẫn!
+
+// Ability_HomecomingStone_Home
+Ability_HomecomingStone_Home_name									Retreat!
+Ability_HomecomingStone_Home_description_simple						Kích hoạt để biến về Nhà Chính. Cần 8 giây niệm chú.
+Ability_HomecomingStone_Home_name:tutorialmod						Retreat!
+Ability_HomecomingStone_Home_description_simple:tutorialmod			Không thể dùng mục này trong phần hướng dẫn!
+
+State_HomecomingStone_Source_Base_name 								Retreat!
+State_HomecomingStone_Source_Base_description 						Retreating!
+State_HomecomingStone_Source_Base_description_simple				Retreating!
+
+State_HomecomingStone_Tutorial2_Source_Base_name 					Retreat!
+State_HomecomingStone_Tutorial2_Source_Base_description 			Retreating!
+State_HomecomingStone_Tutorial2_Source_Base_description_simple		Retreating!
+
+State_HomecomingStone_Tutorial2_name 								Retreat!
+State_HomecomingStone_Tutorial2_description 						Retreating!
+State_HomecomingStone_Tutorial2_description_simple					Retreating!
+
+// Ability_Ward
+Ability_Ward_name												Place Ward
+Ability_Ward_description_simple									Chiếm lĩnh vị trí Tầm Nhìn. Duy trì trong 3 minutes. Cột Tầm Nhìn có thể bị địch chạm vào và lấy mất.
+
+// Ability_StanceSwitch
+Ability_StanceSwitch_name										Manually Attack Targets
+Ability_StanceSwitch_description_simple							Hero của bạn chỉ tấn công khi được bạn ra lệnh.\n\nNếu bạn kích hoạt, hệ thống sẽ tự động thực thi việc tấn công các mục tiêu.
+Ability_StanceSwitch_name:stance_autoacquire					Automatically Attack Targets
+Ability_StanceSwitch_description_simple:stance_autoacquire		Tự động kích hoạt việc tấn công các mục tiêu xung quanh.\n\nNếu bạn kích hoạt, hệ thống sẽ tự động ngưng việc tấn công các mục tiêu.
+
+Gadget_Observatory_name											Observatory
+Gadget_Observatory_InFog_name									Observatory
+
+Neutral_BossPowerUp_name										Baldir
+Neutral_TowerMaster_name										Cindara
+Creep_Kongor_name												Krytos
+
+Gadget_FlamingEye_name											Ward of Sight
+
+Ability_WardSwitch_name											Relocating Ward...
+State_Ward_Channel_Self_name									Relocating Ward...
+
+// State_Item4K
+State_Item4K_name												Transfigured
+State_Item4K_description										Base Tốc Độ Chạy set to 100
+
+//Familiar Mystik
+Familiar_Mystik_name											Mystik
+Familiar_Mystik_description										Mystik chuyên dùng cho phép thuật.
+
+//Familiar Pincer
+Familiar_Pincer_name											Pincer
+Familiar_Pincer_description										Pincer phản đòn và kháng hiệu ứng xấu.
+
+//Familiar Luster
+Familiar_Luster_name											Luster
+Familiar_Luster_description										Luster kiếm tiền là chính.
+
+//Familiar Tortus
+Familiar_Tortus_name											Tortus
+Familiar_Tortus_description										Tortus giúp sinh tồn.
+
+//Familiar Bounder
+Familiar_Bounder_name											Bounder
+Familiar_Bounder_description									Bounder quấy rối địch.
+
+//Familiar Ganker
+Familiar_Ganker_name											Fitz
+Familiar_Ganker_description									  	Fitz phù hợp với ám sát
+
+//Familiar Pusher
+Familiar_Pusher_name											Plunder
+Familiar_Pusher_description										Plunder tấn công và bao vây nhà địch 
+//Familiar Razer
+Familiar_Razer_name												Razer
+Familiar_Razer_description										Razer tấn công mãnh liệt.
+
+//Familiar Topps
+Familiar_Topps_name												Topps
+Familiar_Topps_description										Topps tấn công cận chiến.
+
+///////////////////////////////////////////////////////
+//Crafting Masteries
+///////////////////////////////////////////////////////
+
+// Mastery_Tier0_Base
+Mastery_Tier0_Base_name								Basic Skills
+Mastery_Tier0_Base_description						Gia tăng 14 ngày cho thời hạn Item, tăng gấp đôi cơ hội sau khi thất bại
+
+// Mastery_Tier1_DurableGoods
+Mastery_Tier1_DurableGoods_name						Durable Goods
+Mastery_Tier1_DurableGoods_description				Tăng thời hạn của Item được Craft thêm (2/4/6) Ngày.
+
+// Mastery_Tier1_OreEfficiency
+Mastery_Tier1_OreEfficiency_name					Ore Efficiency
+Mastery_Tier1_OreEfficiency_description				Craft tiêu tốn một ít Ore.
+
+// Mastery_Tier1_TrashToTreasure
+Mastery_Tier1_TrashToTreasure_name					Trash to Treasure
+Mastery_Tier1_TrashToTreasure_description			Tăng (5/10/15)% cơ hội nhận được một Essence từ Salvage.
+
+//Mastery_Tier2_TwoForOne
+Mastery_Tier2_TwoForOne_name						Two for One
+Mastery_Tier2_TwoForOne_description					Tăng (5/10)% cơ hội khi Craft nhận lại toàn bộ Ore được sử dụng.
+
+// Mastery_Tier2_Junker
+Mastery_Tier2_Junker_name							Junker
+Mastery_Tier2_Junker_description					Tăng (50/100)% cơ hội để nhận thêm 1 Ore từ Salvage item thường.
+
+// Mastery_Tier2_CuttingLosses
+Mastery_Tier2_CuttingLosses_name					Cutting Losses
+Mastery_Tier2_CuttingLosses_description				Nỗ lực Enchant khi thất bại sẽ hoàn trả (1/2/3) Essence.
+
+// Mastery_Tier3_ArtisanCrafting
+Mastery_Tier3_ArtisanCrafting_name					Artisan Crafting
+Mastery_Tier3_ArtisanCrafting_description			Tăng cường cơ hội Craft được một Item Rare (8/16/24)%.
+
+// Mastery_Tier3_MysticRetrieval
+Mastery_Tier3_MysticRetrieval_name					Mystic Retrieval
+Mastery_Tier3_MysticRetrieval_description			Salvage Rare item được (50/100) %thêm Ore.
+
+// Mastery_Tier3_ArtisanEnchanting
+Mastery_Tier3_ArtisanEnchanting_name				Artisan Enchanting
+Mastery_Tier3_ArtisanEnchanting_description			Làm giảm chi phí của Enchant đi (1/2) Essence.
+
+// Mastery_Tier4_MasterCrafting
+Mastery_Tier4_MasterCrafting_name					Master Crafting
+Mastery_Tier4_MasterCrafting_description			Tăng cường cơ hội Craft được một Item Legendary 33%.
+
+// Mastery_Tier4_EfficientTemperer
+Mastery_Tier4_EfficientTemperer_name				Efficient Tempering
+Mastery_Tier4_EfficientTemperer_description			Làm giảm tiêu tốn Essence khi Temper đi 20%.
+
+// Mastery_Tier4_MasterEnchanting
+Mastery_Tier4_MasterEnchanting_name					Master Enchanting
+Mastery_Tier4_MasterEnchanting_description			Tăng cường cơ hội cho Enchant một Item Legendary thêm 33%.
+
+
+///////////////////////////////////
+//Rare Components
+///////////////////////////////////
+
+// Brutality
+Rare_Brutality_name												Brutality
+Rare_Brutality_description										^bThêm $rare_value$ Attack Damage^* vào basic attack
+Rare_Brutality_description_simple								^bLên đến 2 Base Damage^*
+
+// Casting
+Rare_Casting_name												Casting
+Rare_Casting_description										^bThêm $rare_value$% cooldown reduction^*
+Rare_Casting_description_simple									^bThêm $rare_value$% cooldown reduction^*
+
+// Fervor
+Rare_Fervor_name												Tenacity
+Rare_Fervor_description											^bThêm $rare_value$% CC-reduction^*
+Rare_Fervor_description_simple									^bThêm $rare_value$% CC-reduction^*
+
+// Mastery
+Rare_Mastery_name												Mastery
+Rare_Mastery_description										^bThêm $rare_value$% Magic damage cực đại^*
+Rare_Mastery_description_simple									^bThêm $rare_value$% Magic damage cực đại^*
+
+// Perseverence
+Rare_Perseverence_name											Perseverence
+Rare_Perseverence_description									^bThêm $rare_value$% HP Hồi Phục Multiplier^*
+Rare_Perseverence_description_simple							^bThêm $rare_value$% HP Hồi Phục Multiplier^*
+
+// Power
+Rare_Power_name													Power
+Rare_Power_description											^bThêm $rare_value$% Power Multiplier^*
+Rare_Power_description_simple									^bThêm $rare_value$% Power Multiplier^*
+
+// Resistance
+Rare_Resistance_name											Resistance
+Rare_Resistance_description										^bThêm $rare_value$ Magic Armor^*
+Rare_Resistance_description_simple								^bThêm $rare_value$ Magic Armor^*
+
+// Siphoning
+Rare_Siphoning_name												Siphoning
+Rare_Siphoning_description										^bThêm $rare_value$% Magic Lifesteal^*
+Rare_Siphoning_description_simple								^bThêm $rare_value$% Magic Lifesteal^*
+
+// Swiftness
+Rare_Swiftness_name												Swiftness
+Rare_Swiftness_description										^bThêm $rare_value$ Move Speed^*
+Rare_Swiftness_description_simple								^bThêm $rare_value$ Move Speed^*
+
+// Toughness
+Rare_Toughness_name												Toughness
+Rare_Toughness_description										^bThêm $rare_value$ Armor^*
+Rare_Toughness_description_simple								^bThêm $rare_value$ Armor^*
+
+// Vampirism
+Rare_Vampirism_name												Vampirism
+Rare_Vampirism_description										^bThêm $rare_value$% Attack Lifesteal^*
+Rare_Vampirism_description_simple								^bThêm $rare_value$% Attack Lifesteal^*
+
+// Wisdom
+Rare_Wisdom_name												Wisdom
+Rare_Wisdom_description											^bThêm $rare_value$% increased MP Pool^*
+Rare_Wisdom_description_simple									^bThêm $rare_value$% increased MP Pool^*
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//GearPacks
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Hero_Ace_Hero_Ace												Base
+Hero_Ace_Hero_Ace_black											Black
+Hero_Ace_Hero_Ace_aqua											Aqua
+Hero_Ace_Hero_Ace_green											Green
+Hero_Ace_Hero_Ace_orange										Orange
+Hero_Ace_Hero_Ace_pink											Pink
+Hero_Ace_Hero_Ace_red											Red
+Hero_Ace_gear_1													Westlands
+Hero_Ace_gear_1_black											Ice Blue
+Hero_Ace_gear_1_blue											Blue
+Hero_Ace_gear_1_green											Green
+Hero_Ace_gear_1_purple											Purple
+Hero_Ace_gear_1_pink											Pink
+Hero_Ace_gear_1_red												Red
+Hero_Ace_gear_1_clown											Clown
+Hero_Ace_gear_1_evil											Evil
+Hero_Ace_gear_1_hunter											Hunter
+Hero_Ace_gear_2													Pilot
+Hero_Ace_gear_2_pink											Pink
+Hero_Ace_gear_2_black											Black
+Hero_Ace_gear_2_aqua											Aqua
+Hero_Ace_gear_2_green											Green
+Hero_Ace_gear_2_orange											Orange
+Hero_Ace_gear_2_red												Red
+Hero_Ace_uber													Conquerer
+Hero_Ace_uber_pink												Pink
+Hero_Ace_uber_aqua												Aqua
+Hero_Ace_uber_green												Green
+Hero_Ace_uber_red												Red
+Hero_Ace_uber_yellow											Yellow
+Hero_Ace_uber_black												Black
+
+Hero_Bastion_Hero_Bastion										Base
+Hero_Bastion_Hero_Bastion_black									Black
+Hero_Bastion_Hero_Bastion_blue									Blue
+Hero_Bastion_Hero_Bastion_gold									Gold
+Hero_Bastion_Hero_Bastion_green									Green
+Hero_Bastion_Hero_Bastion_pink									Pink
+Hero_Bastion_Hero_Bastion_red									Red
+Hero_Bastion_gear_1												Tournament
+Hero_Bastion_gear_1_black										Black
+Hero_Bastion_gear_1_blue										Blue
+Hero_Bastion_gear_1_green										Green
+Hero_Bastion_gear_1_grey										Grey
+Hero_Bastion_gear_1_orange										Orange
+Hero_Bastion_gear_1_red											Red
+Hero_Bastion_gear_2												Imagination
+Hero_Bastion_gear_2_black										Black
+Hero_Bastion_gear_2_blue										Blue
+Hero_Bastion_gear_2_green										Green
+Hero_Bastion_gear_2_purple										Purple
+Hero_Bastion_gear_2_red											Red
+Hero_Bastion_gear_2_yellow										Yellow
+Hero_Bastion_uber												Child of Dawn
+Hero_Bastion_uber_black											Black
+Hero_Bastion_uber_blue											Blue
+Hero_Bastion_uber_yellow										Gold
+Hero_Bastion_uber_green											Green
+Hero_Bastion_uber_purple										Pink
+Hero_Bastion_uber_red											Red
+
+Hero_Blazer_Hero_Blazer											Base
+Hero_Blazer_Hero_Blazer_blue									Blue
+Hero_Blazer_Hero_Blazer_gold									Gold
+Hero_Blazer_Hero_Blazer_yellowblack								Yellow and Black
+
+Hero_Bo_Hero_Bo													Base
+Hero_Bo_Hero_Bo_black											Black
+Hero_Bo_Hero_Bo_green											Green
+Hero_Bo_Hero_Bo_pink											Pink
+Hero_Bo_Hero_Bo_red												Red
+Hero_Bo_Hero_Bo_blue											Blue
+Hero_Bo_Hero_Bo_rwb												Red White and Blue
+Hero_Bo_gear_1													Guardian
+Hero_Bo_gear_1_black											Black
+Hero_Bo_gear_1_green											Green
+Hero_Bo_gear_1_orange											Orange
+Hero_Bo_gear_1_red												Red
+Hero_Bo_gear_1_blue												Blue
+Hero_Bo_gear_1_purple											Purple
+Hero_Bo_gear_2													Hobo
+Hero_Bo_gear_2_black											Black
+Hero_Bo_gear_2_blue												Blue
+Hero_Bo_gear_2_joker											Joker
+Hero_Bo_gear_2_green											Green
+Hero_Bo_gear_2_pink												Pink
+Hero_Bo_gear_2_yellow											Yellow
+Hero_Bo_uber													Ceremonial
+Hero_Bo_uber_black												Black
+Hero_Bo_uber_blue												Blue
+Hero_Bo_uber_pink												Pink
+
+Hero_Caprice_Hero_Caprice										Base
+Hero_Caprice_Hero_Caprice_blue									Blue
+Hero_Caprice_Hero_Caprice_black									Black
+Hero_Caprice_Hero_Caprice_green									Green
+Hero_Caprice_Hero_Caprice_orange								Orange
+Hero_Caprice_Hero_Caprice_pink									Pink
+Hero_Caprice_Hero_Caprice_purple								Purple
+Hero_Caprice_gear_1										  		Archaeologist
+Hero_Caprice_gear_1_aqua									  	Aqua
+Hero_Caprice_gear_1_black										Black
+Hero_Caprice_gear_1_blue										Blue
+Hero_Caprice_gear_1_green										Green
+Hero_Caprice_gear_1_pink										Pink
+Hero_Caprice_gear_1_red											Red
+Hero_Caprice_gear_2												Bandit
+Hero_Caprice_gear_2_aqua										Aqua
+Hero_Caprice_gear_2_black										Black
+Hero_Caprice_gear_2_blue										Blue
+Hero_Caprice_gear_2_green										Green
+Hero_Caprice_gear_2_pink										Pink
+Hero_Caprice_gear_2_red											White and Red
+Hero_Caprice_uber										        Admiral
+Hero_Caprice_uber_orange										Orange
+Hero_Caprice_uber_black											Black
+Hero_Caprice_uber_blue											Blue
+Hero_Caprice_uber_green											Green
+Hero_Caprice_uber_pink											Pink
+Hero_Caprice_uber_purple	                               		Purple
+
+Hero_Carter_Hero_Carter											Base
+Hero_Carter_Hero_Carter_black									Black
+Hero_Carter_Hero_Carter_blue									Blue
+Hero_Carter_Hero_Carter_green									Green
+Hero_Carter_Hero_Carter_offwhite								Off White
+Hero_Carter_Hero_Carter_red										Red
+Hero_Carter_Hero_Carter_yellow									Yellow
+Hero_Carter_gear_1												Meltdown
+Hero_Carter_gear_1_black										Black
+Hero_Carter_gear_1_blue											Blue
+Hero_Carter_gear_1_green										Green
+Hero_Carter_gear_1_pink											Pink
+Hero_Carter_gear_1_red											Red
+Hero_Carter_gear_1_yellow										Yellow
+Hero_Carter_gear_2												Ronin
+Hero_Carter_gear_2_black										Black
+Hero_Carter_gear_2_green										Green
+Hero_Carter_gear_2_blue											Blue
+Hero_Carter_gear_2_offwhite										Off White
+Hero_Carter_gear_2_purple										Purple
+Hero_Carter_gear_2_yellow										Yellow
+Hero_Carter_uber												Treadheadz
+Hero_Carter_uber_black											Black
+Hero_Carter_uber_blue											Blue
+Hero_Carter_uber_green											Green
+Hero_Carter_uber_yellow											Yellow
+Hero_Carter_uber_white											White
+Hero_Carter_uber_red											Red
+
+Hero_Claudessa_Hero_Claudessa									Base
+Hero_Claudessa_Hero_Claudessa_black								Black
+Hero_Claudessa_Hero_Claudessa_gold								Gold
+Hero_Claudessa_Hero_Claudessa_ice								Ice Blue
+Hero_Claudessa_Hero_Claudessa_green								Green
+Hero_Claudessa_Hero_Claudessa_orange							Orange
+Hero_Claudessa_Hero_Claudessa_purple							Purple
+Hero_Claudessa_gear_1											Fire Forged
+Hero_Claudessa_gear_1_black										Purple
+Hero_Claudessa_gear_1_flames									Flames
+Hero_Claudessa_gear_1_pink										Pink
+
+Hero_Fetterstone_Hero_Fetterstone								Base
+Hero_Fetterstone_Hero_Fetterstone_black							Black
+Hero_Fetterstone_Hero_Fetterstone_blue							Blue
+Hero_Fetterstone_Hero_Fetterstone_green							Green
+Hero_Fetterstone_Hero_Fetterstone_pink							Pink
+Hero_Fetterstone_Hero_Fetterstone_red							Red
+Hero_Fetterstone_Hero_Fetterstone_purple						Purple
+Hero_Fetterstone_Hero_Fetterstone_blue							Blue
+Hero_Fetterstone_gear_1											Lorne
+Hero_Fetterstone_gear_1_black									Black
+Hero_Fetterstone_gear_1_green									Green
+Hero_Fetterstone_gear_1_pink									Pink
+Hero_Fetterstone_gear_1_red										Red
+Hero_Fetterstone_gear_1_purple									Purple
+Hero_Fetterstone_gear_1_blue									Blue
+
+Hero_Hale_Hero_Hale												Base
+Hero_Hale_Hero_Hale_black										Black
+Hero_Hale_Hero_Hale_red											Red
+Hero_Hale_Hero_Hale_green										Green
+Hero_Hale_Hero_Hale_orange										Orange
+Hero_Hale_Hero_Hale_pink										Pink
+Hero_Hale_Hero_Hale_blue										Blue
+Hero_Hale_gear_1												Exile
+Hero_Hale_gear_1_black											Black
+Hero_Hale_gear_1_red											Red
+Hero_Hale_gear_1_pink											Pink
+Hero_Hale_gear_1_blue											Yellow and Blue
+Hero_Hale_gear_2												Kenar-Ahdam
+Hero_Hale_gear_2_tan											Tan
+Hero_Hale_gear_2_black											Black
+Hero_Hale_gear_2_red											Red
+Hero_Hale_gear_2_green											Green
+Hero_Hale_gear_2_blue											Blue
+Hero_Hale_gear_2_pink											Pink
+Hero_Hale_uber													Dark Embrace
+Hero_Hale_uber_blood											Blood Red
+Hero_Hale_uber_blue												Blue
+Hero_Hale_uber_black											Black
+Hero_Hale_uber_green											Green
+Hero_Hale_uber_gold												Gold
+Hero_Hale_uber_purple											Purple
+
+Hero_Harrower_Hero_Harrower										Base
+Hero_Harrower_Hero_Harrower_green								Green
+Hero_Harrower_Hero_Harrower_red									Red
+Hero_Harrower_Hero_Harrower_purple								Purple
+
+Hero_Ladytinder_Hero_Ladytinder									Base
+Hero_Ladytinder_Hero_Ladytinder_blue							Blue
+Hero_Ladytinder_Hero_Ladytinder_magenta							Magenta
+Hero_Ladytinder_Hero_Ladytinder_orange							Orange
+Hero_Ladytinder_Hero_Ladytinder_pink							Pink
+Hero_Ladytinder_Hero_Ladytinder_yellow							Yellow
+Hero_Ladytinder_Hero_Ladytinder_black							Black
+Hero_Ladytinder_gear_1											Queen Bee
+Hero_Ladytinder_gear_1_black									Black
+Hero_Ladytinder_gear_1_green									Green
+Hero_Ladytinder_gear_1_maroon									Maroon
+Hero_Ladytinder_gear_1_pink										Pink
+Hero_Ladytinder_gear_1_red										Red
+Hero_Ladytinder_gear_1_yellow									Yellow
+Hero_Ladytinder_gear_2											Kinoko
+Hero_Ladytinder_gear_2_black									Black
+Hero_Ladytinder_gear_2_blue										Blue
+Hero_Ladytinder_gear_2_orange									Orange
+Hero_Ladytinder_gear_2_pink										Pink
+Hero_Ladytinder_gear_2_magenta									Magenta
+Hero_Ladytinder_gear_2_yellow									Yellow
+Hero_Ladytinder_uber											Nature Queen
+Hero_Ladytinder_uber_blue										Blue
+Hero_Ladytinder_uber_black										Black
+Hero_Ladytinder_uber_magenta									Magenta
+Hero_Ladytinder_uber_orange										Orange
+Hero_Ladytinder_uber_pink										Pink
+Hero_Ladytinder_uber_yellow										Yellow
+
+Hero_Malady_Hero_Malady											Base
+Hero_Malady_Hero_Malady_blue									Blue
+Hero_Malady_Hero_Malady_black									Black
+Hero_Malady_Hero_Malady_green									Green
+Hero_Malady_Hero_Malady_red										Red
+Hero_Malady_Hero_Malady_pink									Pink
+Hero_Malady_Hero_Malady_limegreen								Lime Green
+Hero_Malady_gear_1												Queen of Cards
+Hero_Malady_gear_1_violet										Violet
+Hero_Malady_gear_1_black										Black
+Hero_Malady_gear_1_blue											Blue
+Hero_Malady_gear_1_green										Green
+Hero_Malady_gear_1_orange										Orange
+Hero_Malady_gear_1_pink											Pink
+Hero_Malady_gear_2												Masked
+Hero_Malady_gear_2_aqua											Aqua
+Hero_Malady_gear_2_black										Black
+Hero_Malady_gear_2_blue											Blue
+Hero_Malady_gear_2_green										Green
+Hero_Malady_gear_2_pink											Pink
+Hero_Malady_gear_2_red											Red
+Hero_Malady_uber												Royal Giáp
+Hero_Malady_uber_black											Black
+Hero_Malady_uber_blue											Blue
+Hero_Malady_uber_green											Green
+Hero_Malady_uber_red											Red
+Hero_Malady_uber_pink											Pink
+Hero_Malady_uber_limegreen										Lime Green
+
+Hero_Minerva_Hero_Minerva										Base
+Hero_Minerva_Hero_Minerva_grey									Black
+Hero_Minerva_Hero_Minerva_blue									Blue
+Hero_Minerva_Hero_Minerva_green									Green
+Hero_Minerva_Hero_Minerva_orange								Orange
+Hero_Minerva_Hero_Minerva_pink									Pink
+Hero_Minerva_Hero_Minerva_red									Red
+Hero_Minerva_gear_1												Current
+Hero_Minerva_gear_1_black									  	Black
+Hero_Minerva_gear_1_blue										Blue
+Hero_Minerva_gear_1_green										Green
+Hero_Minerva_gear_1_orange										Orange
+Hero_Minerva_gear_1_pink										Pink
+Hero_Minerva_gear_1_red											Red
+Hero_Minerva_gear_2												Prism
+Hero_Minerva_gear_2_gold										Gold
+Hero_Minerva_gear_2_gray										Black
+Hero_Minerva_gear_2_green										Green
+Hero_Minerva_gear_2_purple										Purple
+Hero_Minerva_gear_2_red											Red
+Hero_Minerva_gear_2_orange										Orange
+Hero_Minerva_uber												Metalbound
+Hero_Minerva_uber_black											Black
+Hero_Minerva_uber_green											Green
+Hero_Minerva_uber_orange										Orange
+Hero_Minerva_uber_red											Red
+Hero_Minerva_uber_pink											Pink
+Hero_Minerva_uber_yellow										Yellow
+
+Hero_Moxie_Hero_Moxie											Base
+Hero_Moxie_Hero_Moxie_black										Black
+Hero_Moxie_Hero_Moxie_green										Green
+Hero_Moxie_Hero_Moxie_nyan										Toaster Pastry
+Hero_Moxie_Hero_Moxie_orange									Orange
+Hero_Moxie_Hero_Moxie_pink										Pink
+Hero_Moxie_Hero_Moxie_white										White
+Hero_Moxie_gear_1												Mage
+Hero_Moxie_gear_1_black											Black
+Hero_Moxie_gear_1_blue											Blue
+Hero_Moxie_gear_1_green											Green
+Hero_Moxie_gear_1_grey											Grey
+Hero_Moxie_gear_1_pink										 	Pink
+Hero_Moxie_gear_1_red											Red
+Hero_Moxie_gear_2                                               Super Kitty
+Hero_Moxie_gear_2_yellow										Yellow
+Hero_Moxie_gear_2_black											Black
+Hero_Moxie_gear_2_blue											Blue
+Hero_Moxie_gear_2_green											Green
+Hero_Moxie_gear_2_purple										Purple
+Hero_Moxie_gear_2_red											Red
+Hero_Moxie_uber													Future
+Hero_Moxie_uber_black											Black
+Hero_Moxie_uber_green											Green
+Hero_Moxie_uber_nyan											Toaster Pastry
+Hero_Moxie_uber_orange											Orange
+Hero_Moxie_uber_pink											Pink
+Hero_Moxie_uber_white											White
+
+Hero_Ray_Hero_Ray												Base
+Hero_Ray_Hero_Ray_black											Black
+Hero_Ray_Hero_Ray_green											Green
+Hero_Ray_Hero_Ray_pink											Pink
+Hero_Ray_Hero_Ray_primary										Primary
+Hero_Ray_Hero_Ray_fall											Fall
+Hero_Ray_Hero_Ray_nuclear										Nuclear
+Hero_Ray_gear_1													Inspector
+Hero_Ray_gear_1_black											Black
+Hero_Ray_gear_1_green											Green
+Hero_Ray_gear_1_pink											Pink
+Hero_Ray_gear_2													Egon
+Hero_Ray_gear_2_black											Black
+Hero_Ray_gear_2_brown											Brown
+Hero_Ray_gear_2_pink											Pink
+Hero_Ray_gear_2_red												Red
+Hero_Ray_uber													Mechanical Dawn
+Hero_Ray_uber_black												Black
+Hero_Ray_uber_green												Green
+Hero_Ray_uber_pink												Pink
+Hero_Ray_uber_primary											Primary
+Hero_Ray_uber_fall												Fall
+Hero_Ray_uber_nuclear											Nuclear
+
+Hero_Rook_Hero_Rook												Base
+Hero_Rook_Hero_Rook_black										Black
+Hero_Rook_Hero_Rook_yellow										Yellow
+Hero_Rook_Hero_Rook_blue										Blue
+Hero_Rook_Hero_Rook_green										Green
+Hero_Rook_Hero_Rook_red											Red
+Hero_Rook_Hero_Rook_pink										Pink
+Hero_Rook_gear_1												Bard
+Hero_Rook_gear_1_blue											Blue
+Hero_Rook_gear_1_gold											Gold
+Hero_Rook_gear_1_green											Green
+Hero_Rook_gear_1_opera											Opera
+Hero_Rook_gear_1_pink											Pink
+Hero_Rook_gear_1_orange											Orange
+Hero_Rook_gear_2												Watcher
+Hero_Rook_gear_2_brown											Brown
+Hero_Rook_gear_2_black											Black
+Hero_Rook_gear_2_blue											Blue
+Hero_Rook_gear_2_aqua											Aqua
+Hero_Rook_gear_2_green											Green
+Hero_Rook_gear_2_red											Red
+Hero_Rook_gear_2_pink											Pink
+Hero_Rook_uber													Ancient Guardian
+Hero_Rook_uber_black											Onyx
+Hero_Rook_uber_ruby												Ruby
+Hero_Rook_uber_emerald											Emerald
+Hero_Rook_uber_sapphire											Sapphire
+Hero_Rook_uber_topaz											Topaz
+Hero_Rook_uber_obsidian											Obsidian
+
+Hero_Shank_Hero_Shank											Base
+Hero_Shank_Hero_Shank_green										Green
+Hero_Shank_Hero_Shank_orange									Orange
+Hero_Shank_Hero_Shank_pink										Pink
+Hero_Shank_Hero_Shank_black										Black
+Hero_Shank_Hero_Shank_red										Red
+Hero_Shank_Hero_Shank_redwhiteblue								Red White and Blue
+Hero_Shank_gear_1												Knight
+Hero_Shank_gear_1_green											Green
+Hero_Shank_gear_1_orange										Orange
+Hero_Shank_gear_1_pink											Pink
+Hero_Shank_gear_1_black											Black
+Hero_Shank_gear_1_red											Red
+Hero_Shank_gear_1_redwhiteblue									Red White and Blue
+
+Hero_Trixie_Hero_Trixie											Base
+Hero_Trixie_Hero_Trixie_prentice								Apprentice
+Hero_Trixie_Hero_Trixie_ranger									Ranger
+Hero_Trixie_Hero_Trixie_sorcerer								Sorceress
+Hero_Trixie_gear_1												Red Rider
+Hero_Trixie_gear_1_alice										Blue
+Hero_Trixie_gear_1_elf											Green
+Hero_Trixie_gear_1_jester										Jester
+
+Hero_Vermillion_Hero_Vermillion									Base
+Hero_Vermillion_Hero_Vermillion_black							Black
+Hero_Vermillion_Hero_Vermillion_green							Green
+Hero_Vermillion_Hero_Vermillion_orange							Orange
+Hero_Vermillion_Hero_Vermillion_pink							Pink
+Hero_Vermillion_Hero_Vermillion_red								Red
+Hero_Vermillion_Hero_Vermillion_redwhiteblue					Red White and Blue
+Hero_Vermillion_gear_1											Stowaway
+Hero_Vermillion_gear_1_black									Black
+Hero_Vermillion_gear_1_blue										Blue
+Hero_Vermillion_gear_1_red										Red
+Hero_Vermillion_gear_1_irish									Irish
+Hero_Vermillion_gear_1_tan										Tan
+Hero_Vermillion_gear_1_violet									Violet
+Hero_Vermillion_gear_2											Apocalypse
+Hero_Vermillion_gear_2_black									Black
+Hero_Vermillion_gear_2_blue										Blue
+Hero_Vermillion_gear_2_pink										Pink
+Hero_Vermillion_uber											Iron Rat
+Hero_Vermillion_uber_black										Black
+Hero_Vermillion_uber_blue										Blue
+Hero_Vermillion_uber_green										Green
+Hero_Vermillion_uber_purple										Purple
+Hero_Vermillion_uber_red										Red
+Hero_Vermillion_uber_silver										Silver
+
+Hero_Vex_Hero_Vex												Base
+Hero_Vex_Hero_Vex_black											Black
+Hero_Vex_Hero_Vex_camo											Camo
+Hero_Vex_Hero_Vex_classic										Classic
+Hero_Vex_Hero_Vex_red											Red
+Hero_Vex_Hero_Vex_pink											Pink
+Hero_Vex_Hero_Vex_blue											Blue
+Hero_Vex_gear_1													Biosuit
+Hero_Vex_gear_1_black											Black
+Hero_Vex_gear_1_whiteblue										White and Blue
+Hero_Vex_gear_1_deepsea											Deep Sea
+Hero_Vex_gear_1_classic											Classic
+Hero_Vex_gear_1_pink										 	Pink
+Hero_Vex_gear_1_red												Red
+Hero_Vex_gear_2                                               	Commando
+Hero_Vex_gear_2_black											Black
+Hero_Vex_gear_2_camo											Camo
+Hero_Vex_gear_2_blue											Blue
+Hero_Vex_gear_2_classic											Classic
+Hero_Vex_gear_2_hazmat											Hazmat
+Hero_Vex_gear_2_pink											Pink
+Hero_Vex_uber													Uber
+Hero_Vex_uber_green												Green
+Hero_Vex_uber_pink												Pink
+Hero_Vex_uber_purple											Purple
+
+// END - Leave this as the last line and do not delete

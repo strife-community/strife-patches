@@ -294,29 +294,19 @@ windows										Windows
 mac_os										Mac
 linux										Linux
 
-// New gear
-new_store_hero_1							Hero_Malph
-new_store_hero_2							Hero_Pal
-new_store_hero_skin_1						Hero_Ace_gear_4
-new_store_hero_skin_2						Hero_Bo_gear_3
-new_store_hero_skin_3						Hero_Ray_gear_2
-new_store_hero_skin_4						Hero_Vermillion_gear_uber
-
-// New dye's not working in new UI?
-new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
-new_store_hero_skin_dye_2					Hero_Hale_gear_uber_blue
-new_store_hero_skin_dye_3					Hero_Hale_gear_uber_green
-new_store_hero_skin_dye_4					Hero_Hale_gear_uber_purple
-new_store_hero_skin_dye_5					Hero_Hale_gear_uber_gold
-new_store_hero_skin_dye_6					Hero_Hale_gear_uber_blood
-
-// Old UI Style
-
-new_store_item_1							Hero_Carter_gear_3
-new_store_item_2							Hero_Rook_gear_4
-new_store_item_3							Hero_Hale_gear_uber
-new_store_item_4							Hero_Hale_gear_3
-new_store_item_5							Hero_Hale_gear_4
+// New gear: None for now, just examples below
+//new_store_hero_1							Hero_Malph
+//new_store_hero_2							Hero_Pal
+//new_store_hero_skin_1						Hero_Ace_gear_4
+//new_store_hero_skin_2						Hero_Bo_gear_3
+//new_store_hero_skin_3						Hero_Ray_gear_2
+//new_store_hero_skin_4						Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2					Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3					Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4					Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5					Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6					Hero_Hale_gear_uber_blood
 
 // Pre-Play
 
@@ -5238,7 +5228,7 @@ news_component_manager_add					Add Component
 news_component_manager_addDialog			Add Component
 news_component_manager_toggle_overlay		Overlay
 news_discord								Join our Discord!
-news_discord_desc                           Connect with the Community
+news_discord_desc							Connect with the Community
 
 //news components
 news_component_stories						Stories
