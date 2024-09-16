@@ -578,22 +578,22 @@ function registerAbilities()
 			end)
 			
 			abilityIcon:RegisterWatchLua('ActiveInventory' .. index, function(widget, trigger)
-
+                
+                widget:SetCallback('onping', function(widget)
+                    if (trigger.remainingCooldownTime > 0) then
+                        Cmd("TeamChat " .. Translate('ability_on_cooldown_remaing', 'value1', math.ceil(trigger.remainingCooldownTime/1000), 'value2', trigger.displayName))
+                    else
+                        Cmd("TeamChat " .. Translate('ability_on_cooldown_ready', 'value2', trigger.displayName))
+                    end
+                end)
+                
 				widget:SetCallback('onclick', function(widget)	
 					local moreInfo = LuaTrigger.GetTrigger('ModifierKeyStatus').moreInfoKey or scoreboardOpen
 					if (trigger.canLevelUp) and (moreInfo) then
 						PlaySound('/ui/sounds/sfx_button_generic.wav')
 						widget:UICmd("LevelUpAbility("..index..")")                       
 					elseif trigger.isActivatable then
-						if (LuaTrigger.GetTrigger('ModifierKeyStatus').alt) then
-							if (trigger.remainingCooldownTime > 0) then
-								Cmd("TeamChat " .. Translate('ability_on_cooldown_remaing', 'value1', math.ceil(trigger.remainingCooldownTime/1000), 'value2', trigger.displayName))
-							else
-								Cmd("TeamChat " .. Translate('ability_on_cooldown_ready', 'value2', trigger.displayName))
-							end
-						else
-							ActivateTool(index)
-						end
+						ActivateTool(index)
 					end	
 				end)
 				
