@@ -136,6 +136,7 @@ general_set_default                                 Als Standard festlegen
 general_addto_fav                                   Zu Favoriten hinzufügen
 general_basic                                       Basis
 general_verified                                    Verifiziert
+general_members								        Mitglieder
 general_afk                                         Abwesend
 general_mode_all_heroes                             Alle Helden
 general_mode_all_pick                               Freie Auswahl
@@ -370,17 +371,17 @@ notification_quest_completion                       Hi Krieger,\n Du hast eine Q
 notification_quest_completion_multi                 Hi Krieger,\n Du hast mehrere Quests abgeschlossen!
 notification_unclaimed_reward                       Hi Krieger,\n Es wartet eine Belohnung auf dich!
 notification_unclaimed_reward_multi                 Hi Krieger,\n Es wartet eine Belohnung auf dich!
-notification_leaver                                 Warnung Deserteur! ^y{value} Strike!^* \n\nDas Abbrechen von Spielen zieht ansteigende Strafen nach sich.
-notification_leavers                                Warnung Deserteur! ^y{value} Strikes!^* \n\nDas Abbrechen von Spielen zieht ansteigende Strafen nach sich.
-notification_leaver_desc                            Warnung Deserteur! ^y{value} Strike!^* \n\nDas Abbrechen von Spielen zieht ansteigende Strafen nach sich.
-notification_leavers_desc                           Warnung Deserteur! ^y{value} Strikes!^* \n\nDas Abbrechen von Spielen zieht ansteigende Strafen nach sich.
+notification_leaver                                 Warnung Deserteur! ^y{value} Strike!^*\n\nDas Abbrechen von Spielen zieht ansteigende Strafen nach sich.
+notification_leavers                                Warnung Deserteur! ^y{value} Strikes!^*\n\nDas Abbrechen von Spielen zieht ansteigende Strafen nach sich.
+notification_leaver_desc                            Warnung Deserteur! ^y{value} Strike!^*\n\nDas Abbrechen von Spielen zieht ansteigende Strafen nach sich.
+notification_leavers_desc                           Warnung Deserteur! ^y{value} Strikes!^*\n\nDas Abbrechen von Spielen zieht ansteigende Strafen nach sich.
 main_button_cancel_update                           Update abbrechen
 main_label_update_calculating                       Ungefähre Dauer des Updates
 main_label_update_downloading                       Update wird heruntergeladen
 main_label_update                                   Update
 main_label_leaver                                   Deserteur!
 main_label_leaver2                                  Deserteur! {value}
-main_label_leaver_long_desc                         Du hast ein Spiel verlassen, bevor es zu Ende war. \nDu musst {value} warten, bis du wieder spielen kannst.
+main_label_leaver_long_desc                         Du hast ein Spiel verlassen, bevor es zu Ende war.\nDu musst {value} warten, bis du wieder spielen kannst.
 main_label_old_version                              Von: ^w{version}
 main_label_new_version                              Auf: ^w{version}
 main_label_update_files                             Verbleibende Dateien: ^w{count} / {total}
@@ -407,7 +408,7 @@ main_simple_easy                                    EINFACH
 main_simple_diff                                    SCHWER
 main_simple_botmatch                                Partie mit Bots
 main_simple_learnmore                               Möchtest du mehr wissen?
-main_simple_learn_msg                               Gib deine E-Mail-Adresse ein für die \n^960Priorität-Beta-Anmeldung^* und \ndie letzten Updates von Strife.
+main_simple_learn_msg                               Gib deine E-Mail-Adresse ein für die\n^960Priorität-Beta-Anmeldung^* und\ndie letzten Updates von Strife.
 main_simple_email_response_1                        ^393Deine E-Mail-Adresse wurde hinzugefügt!
 main_simple_email_response_0                        ^933Versuche es erneut!
 main_simple_load_tip                                ^960Tipp:^* Halte TAB während der Partie für mehr Infos; du kannst diese Informationen anheften um sie immer verfügbar zu haben.
@@ -436,11 +437,11 @@ game_pax_tip_4                                      Kamera sperren
 game_pax_tip_5                                      Du kannst den Laden öffnen/schließen, indem du 'B' drückst.
 game_pax_tip_6                                      Laden der Gegenstände
 
-game_context_tip_0                                  ^960Tipp:^* Kaufe Gegenstände, bevor du die Basis verlässt! \nDrücke ^o'{hotkey1}'^* um den Laden zu öffnen/schließen.
-game_context_tip_1                                  ^960Tipp:^* Stufe Fertigkeiten hoch, bevor du Feinde angreifst! \nKlicke auf \'^oFertigkeiten hochstufen^*\' über der Minikarte.
+game_context_tip_0                                  ^960Tipp:^* Kaufe Gegenstände, bevor du die Basis verlässt!\nDrücke ^o'{hotkey1}'^* um den Laden zu öffnen/schließen.
+game_context_tip_1                                  ^960Tipp:^* Stufe Fertigkeiten hoch, bevor du Feinde angreifst!\nKlicke auf \'^oFertigkeiten hochstufen^*\' über der Minikarte.
 game_context_tip_2                                  ^920Warnung:^* Du wurdest als abwesend markiert. In 2 Minuten wird deine Verbindung getrennt!
 game_context_tip_3                                  ^920Warnung:^* Du wurdest als abwesend markiert. In einer Minute wird deine Verbindung getrennt!
-game_context_tip_4                                  ^920Benachrichtigung:^* Ein Spieler hat das Spiel verlassen, sein Team teilt sich sein verdientes Gold. \nDu kannst jetzt das Spiel ohne Strafe verlassen.
+game_context_tip_4                                  ^920Benachrichtigung:^* Ein Spieler hat das Spiel verlassen, sein Team teilt sich sein verdientes Gold.\nDu kannst jetzt das Spiel ohne Strafe verlassen.
 
 //confirmations.package
 confirm_disconnect_title                            Spiel abbrechen?
@@ -500,7 +501,7 @@ options_cloud_flair_1                               Speichert in die Cloud...
 
 options_keep_these_settings                         Diese Einstellungen behalten?
 options_keep_these_settings_desc                    Deine Einstellungen wurden modifiziert, behalte diese Veränderungen?
-options_keep_these_settings_desc_timed              Deine Einstellungen wurden modifiziert, behalte diese Veränderungen? \n{value}s
+options_keep_these_settings_desc_timed              Deine Einstellungen wurden modifiziert, behalte diese Veränderungen?\n{value}s
 
 options_repair_confirm_head                         Installation reparieren
 options_repair_confirm                              Installation reparieren
@@ -510,6 +511,19 @@ options_reset_opt_confirm                           Alle Optionen zurücksetzen
 options_reset_con_confirm                           Alle Steuerungen zurücksetzen
 options_reset_shop_confirm                          Laden-Hotkeys löschen
 options_reset_confirm_desc                          Bist du sicher?
+
+options_control_presets_SelectTitle			Voreinstellungen
+options_control_presets_info				Stellen Sie Ihre Tastenkombinationen für Kernfunktionen schnell so ein, dass sie zu anderen beliebten Spielen passen.
+options_control_abilities					Nutze Fähigkeiten
+options_control_items						Gegenstände verwenden
+options_control_deliver						Gegenstand liefern
+options_control_pet							Haustierfähigkeit
+options_control_tp							Nach Hause teleportieren
+options_control_shop						Shop öffnen
+options_control_movecam						Kamera bewegen
+options_control_presets_title				Spiel auswählen:
+options_control_presets_1					Strife (Standard)
+options_control_presets_warn				Durch die Auswahl einer Voreinstellung werden mehrere Tastenkombinationen gleichzeitig geändert und möglicherweise zuvor vorgenommene Bindungsänderungen überschrieben.
 
 options_play_notification_sounds                    Hinweistöne abspielen
 options_im_history                                  Chat-Verlauf speichern
@@ -995,7 +1009,7 @@ options_checkbox_cast_indicators                    Reichweite-Indikatoren
 options_checkbox_cast_indicators_tip                Wenn aktiv werden Fertigkeiten Indikatoren anzeigen um das Zielen zu vereinfachen.
 
 options_checkbox_disable_background_effects         Hintergrund-Effekte deaktivieren
-options_checkbox_disable_background_effects_tip     Wenn aktiv werden die Hintergrund-Effekte und Animationen noch geladen weder gezeigt. \n\n(Neustart gefordert)
+options_checkbox_disable_background_effects_tip     Wenn aktiv werden die Hintergrund-Effekte und Animationen noch geladen weder gezeigt.\n\n(Neustart gefordert)
 
 options_current_weather                             Wetterbedingungen
 options_current_weather_tip                         Wenn eine Wetterbedingung ausgewählt ist, wird dieser Effekt im Spiel vorkommen.
@@ -1102,7 +1116,10 @@ options_screen_chat_timestamps_tip                  Wenn aktiv werden Daten im C
 options_checkbox_require_friend_whisper             Nur Freunde können dir eine Nachricht schreiben
 options_checkbox_require_friend_whisper_tip	Wenn dies aktiviert ist, können nur Leute auf deiner Freundeliste dir private Meldungen senden.
 options_checkbox_require_friend_whisper_on          Nur Freunde können dir eine Nachricht schreiben
-options_checkbox_require_friend_whisper_off         Jeder kann dir eine Nachricht  senden
+options_checkbox_require_friend_whisper_off         Jeder kann dir eine Nachricht senden
+
+options_checkbox_require_friend_challenge		Nur Freunde können mich herausfordern
+options_checkbox_require_friend_challenge_tip	Wenn diese Option aktiviert ist, können Ihnen nur Personen auf Ihrer Freundesliste Herausforderungen senden.
 
 options_checkbox_shop_confirm_buyall                Laden- Bestätigung der gekauften Bestandteile
 options_checkbox_shop_confirm_buyall_tip            Falls aktiviert, wirst du aufgefordert den Kauf verschiedener Rezept-Bestandteile beim Schnell-Kauf zu bestätigen.
@@ -1214,14 +1231,14 @@ options_label_resolution                            Auflösung
 options_resolution_tip                              Die Anzahl der horizontal und vertikal am Monitor dargestellten Pixel.
 options_label_color_depth                           Farbtiefe
 options_color_depth_name                            {bit} bit
-options_color_depth_tip                             Die Anzahl der Bits pro Pixel.  Bei einer Einstellung der Farbtiefe auf 16bit erfahren einige der langsameren Systeme einen Leistungsschub.
+options_color_depth_tip                             Die Anzahl der Bits pro Pixel. Bei einer Einstellung der Farbtiefe auf 16bit erfahren einige der langsameren Systeme einen Leistungsschub.
 options_label_refresh_rate                          Bildwiederholrate
 options_refresh_rate_name                           {hz} Hz
-options_tip_refresh_rate                            Wie viele Male pro Sekunde wird der Bildschirm aktualisiert.  Höhere Werte verringern ein Flackern des Bildschirms, werden aber vielleicht nicht von höheren Auflösungen unterstützt.
+options_tip_refresh_rate                            Wie viele Male pro Sekunde wird der Bildschirm aktualisiert. Höhere Werte verringern ein Flackern des Bildschirms, werden aber vielleicht nicht von höheren Auflösungen unterstützt.
 options_label_anti_aliasing                         Anti-Aliasing
 options_label_anti_aliasing_tip                     Anti-Aliasing glättet verschiedene Spielszenen und verleiht dem Bild eine weicheres, realistischeres Aussehen an den Modellkanten. Das Spiel läuft umso langsamer, je mehr Muster verwendet werden.
 options_label_aspect_ratio                          Bildformat
-options_label_aspect_ratio_tip                      Die Relation der horizontalen und vertikalen Bildschirmgröße.  Wähle bei der Verwendung eines LCD-Monitors die systemeigene Einstellung des Monitors, um ein knackiges Bild zu erhalten.
+options_label_aspect_ratio_tip                      Die Relation der horizontalen und vertikalen Bildschirmgröße. Wähle bei der Verwendung eines LCD-Monitors die systemeigene Einstellung des Monitors, um ein knackiges Bild zu erhalten.
 options_option_aspect_ratio_auto                    Automatisch
 options_label_texture_filtering                     Filterung der Texturen
 options_label_texture_filtering_tip                 Glättet die Texturen bei einem Wechsel der Distanz oder des Winkels zur Kamera. Kein Filter hat beträchtliche Geschwindigkeitsvorteile, aber ermöglicht eine Verpixelung. Die anisotrope Filterung arbeitet am genauesten, führt jedoch auf schwächeren Systemen zu Leistungseinbußen.
@@ -1276,9 +1293,9 @@ options_spec_skybox_tip                             Himmel im Zuseher-Modus dars
 options_display_foliage                             Belaubung Anzeigen
 options_foliage_tip_text                            Das Abschalten der Belaubung erhöht die Grafikleistung.
 options_vsync                                       Vertikale Synchronisation
-options_vsync_tip_text                              Falls die Bildfrequenz beständig über der Bildwiederholfrequenz liegt, kann die vertikale Synchronisation die Grafikqualität verbessern.  Die vertikale Synchronisation kann die Bildfrequenz älterer Grafikkarten verringern.
+options_vsync_tip_text                              Falls die Bildfrequenz beständig über der Bildwiederholfrequenz liegt, kann die vertikale Synchronisation die Grafikqualität verbessern. Die vertikale Synchronisation kann die Bildfrequenz älterer Grafikkarten verringern.
 options_checkbox_transparency_aa_label              Transparenz-Antialiasing
-options_checkbox_transparency_aa_desc               Transparenz-Antialiasing ist eine Methode zur Darstellung flüssigerer Texturenkanten - im Gegensatz zu den Kanten der Modelle. Dies verleiht den Texturen ein weicheres Aussehen.  Diese Texturenarten werden meist als Blattwerk verwendet. Das Erhöhen dieser Einstellung glättet einige Texturen auf Kosten der Leistungsfähigkeit.
+options_checkbox_transparency_aa_desc               Transparenz-Antialiasing ist eine Methode zur Darstellung flüssigerer Texturenkanten - im Gegensatz zu den Kanten der Modelle. Dies verleiht den Texturen ein weicheres Aussehen. Diese Texturenarten werden meist als Blattwerk verwendet. Das Erhöhen dieser Einstellung glättet einige Texturen auf Kosten der Leistungsfähigkeit.
 options_dynamic_lights                              Dynamische Beleuchtung
 options_dynamic_lights_tip                          Die dynamische Beleuchtung dient zur Effektsteigerung und für ein besseres Erscheinungsbild des Spiels. Bei einigen Grafikkarten verringert sich jedoch die Leistungsfähigkeit.
 options_button_reset_all                            Alles zurücksetzen
@@ -1468,6 +1485,10 @@ options_label_acti_qab_1_keybind                    Fertigkeit 1 schnell aktivie
 options_label_acti_qab_2_keybind                    Fertigkeit 2 schnell aktivieren
 options_label_acti_qab_3_keybind                    Fertigkeit 3 schnell aktivieren
 options_label_acti_qab_4_keybind                    Fertigkeit 4 schnell aktivieren
+options_label_acti_dab_1_keybind			Fähigkeiten-Selbstanwendung 1
+options_label_acti_dab_2_keybind			Fähigkeiten-Selbstanwendung 2
+options_label_acti_dab_3_keybind			Fähigkeiten-Selbstanwendung 3
+options_label_acti_dab_4_keybind			Fähigkeiten-Selbstanwendung 4
 options_label_acti_extra_ab_1_keybind               Extra-Fertigkeit 1 aktivieren
 options_label_acti_extra_ab_2_keybind               Extra-Fertigkeit 2 aktivieren
 options_label_acti_extra_ab_3_keybind               Extra-Fertigkeit 4 aktivieren
@@ -1562,7 +1583,7 @@ options_checkbox_camera_center_on_respawn           Kamera beim Neustart zentrie
 options_checkbox_camera_center_on_respawn_tip       Wenn aktiv wird deine Kamera automatisch zum Standort deines Helden umgestellt, wenn dein Held neu startet.
 
 options_checkbox_disable_background_effects         Hintergrund-Effekte deaktivieren
-options_checkbox_disable_background_effects_tip     Wenn aktiv werden die Hintergrund-Effekte und Animationen noch geladen weder gezeigt. \n\n(Neustart gefordert)
+options_checkbox_disable_background_effects_tip     Wenn aktiv werden die Hintergrund-Effekte und Animationen noch geladen weder gezeigt.\n\n(Neustart gefordert)
 
 options_current_weather                             Wetterbedingungen
 options_current_weather_tip                         Wenn eine Wetterbedingung ausgewählt ist, wird dieser Effekt im Spiel vorkommen.
@@ -2444,7 +2465,7 @@ game_shop_label_detailedview                        Detaillierte Ansicht
 game_shop_label_yourlevel                           Dein Level:
 game_shop_label_skillpoints                         Fertigkeitspunkte:
 
-game_shop_select_recipe_to_modify                   Wähle ein Rezept aus, um es zu verändern
+game_shop_select_recipe_to_modify                   Wähle ein Rezept zum verändern
 game_shop_drag_item_to_bookmarks                    Ziehe Gegenstände in die Lesezeichen
 game_shop_item_type_1                               Anfangsgegenstände
 game_shop_item_type_2                               Grundgegenstände
@@ -2874,9 +2895,9 @@ postgame_match_recap                                Partie-Zusammenfassung
 postgame_match_quest_log                            Aufgaben-Tracker
 postgame_view_rewards                               Partie-Belohnungen anzeigen
 postgame_exit                                       Partie-Zusammenfassung verlassen
-play_rewards_nowipe_announcement                    ^960Beta Tipp:^* Während Beta, müssen wir den Konto-Fortschritt von Zeit zu Zeit löschen.  \n\nBei diesem Vorgang werden wir dich durch eine Rückerstattung von Ressourcen entschädigen, basierend auf der gespielten Zeit. \n\nWir wertschätzen die Zeit die du in das Spiel investierst und versichern dir, dass sie nicht verloren ist.
+play_rewards_nowipe_announcement                    ^960Beta Tipp:^* Während Beta, müssen wir den Konto-Fortschritt von Zeit zu Zeit löschen.\n\nBei diesem Vorgang werden wir dich durch eine Rückerstattung von Ressourcen entschädigen, basierend auf der gespielten Zeit.\n\nWir wertschätzen die Zeit die du in das Spiel investierst und versichern dir, dass sie nicht verloren ist.
 player_card_paypal_announcement                     Die Zahlung mit Paypal ist jetzt verfügbar!
-nav_crafting_announcement                           Gegenstände können jetzt Verzaubert werden, damit sie mächtiger werden! \n Probier es aus!
+nav_crafting_announcement                           Gegenstände können jetzt Verzaubert werden, damit sie mächtiger werden!\n Probier es aus!
 
 postgame_khanquest_livesleft                        {amount} verbleibende Leben
 postgame_khanquest_lifeleft                         1 verbleibendes Leben
@@ -2924,6 +2945,17 @@ postgame_to_progress                                Geh zu Fortschritt
 postgame_to_scoreboard                              Geh zur Punktetafel
 postgame_to_close                                   Schließe Nachspiel
 postgame_close_postgame                             Schließe Nachspiel
+
+postgame_acct_rating						Konto Bewertung
+
+postgame_upcoming_unlocks_header			Auf Level {value} freigeschaltet
+postgame_upcoming_unlocks_unlocked			FREIGESCHALTET!
+postgame_upcoming_unlocks_remaining_games	Spielen Sie {value} weitere Spiele
+postgame_upcoming_unlocks_remaining_game	Spielen Sie {value} weiteres Spiel
+postgame_upcoming_unlocks_current_level		Aktuelles Level {value}
+
+postgame_elo_victory						Sieg +{value}
+postgame_elo_defeat							Niederlage -{value}
 
 mm_gar_allownonpremium                              3. VIP-Benutzer
 mm_gar_allownonpremium_desc                         Wenn diese Option markiert ist, wirst du nur mit anderen VIP-Benutzern verbunden.
@@ -3856,11 +3888,11 @@ tooltip_value                                       Wert:
 tooltip_type                                        Typ:
 tooltip_range                                       Reichweite:
 tooltip_radius                                      Radius:
-tooltip_channeling_time                             Kanalisierungszeit:  {time} Sekunden
+tooltip_channeling_time                             Kanalisierungszeit: {time} Sekunden
 tooltip_mana_cost                                   Manakosten:
-tooltip_mana_upkeep                                 Mana-Versorgung:  {value} pro Sekunde
+tooltip_mana_upkeep                                 Mana-Versorgung: {value} pro Sekunde
 tooltip_triggered_mana_cost                         Ausgelöste Manakosten:
-tooltip_cooldown                                    Abkühlzeit: {time}  Sekunden
+tooltip_cooldown                                    Abkühlzeit: {time} Sekunden
 tooltip_health                                      Gesundheit:
 tooltip_health_regen                                Gesundheits-Regeneration:
 tooltip_total_experience                            Gesamte Erfahrung:
@@ -4615,6 +4647,11 @@ tooltip_primary_attribute_intelligence              Das Hauptattribut dieses Hel
 
 //ladder.package
 ladder_title                                        Spielerleiter
+ladder_position							Position
+ladder_player							Spielername
+ladder_points							Erreichte Punkte
+ladder_change							Veränderung
+
 ladder_field_acc_games_played                       Gespielte Spiele
 ladder_field_acc_wins                               Gewinne
 ladder_field_acc_losses                             Verluste
@@ -4623,6 +4660,25 @@ ladder_field_acc_concedevotes                       Wahl zugeben
 ladder_field_acc_buybacks                           Rückkäufe
 ladder_field_acc_discos                             Abgänge
 ladder_field_acc_kicked                             Ausstöße
+ladder_show_all								Alle Preise anzeigen
+ladder_prize_info							Jeder Spieler, der 100 Punkte erreicht, gewinnt Preise!
+ladder_prizes_icons							Konto Symbole
+ladder_prizes_gems							Edelstein Pakete
+ladder_prizes_boosts						Konto Boosts
+ladder_prizes_cosmetics						Kosmetische Upgrades
+ladder_prize_250gems						$250 in Edelsteinen
+ladder_prize_50gems							$50 in Edelsteinen
+ladder_prize_25gems							$25 in Edelsteinen
+ladder_prize_5gems							$5 in Edelsteinen
+ladder_prize_perm_boost						Permanenter Kontoboost
+ladder_prize_30d_boost						30-tägiger Kontoboost
+ladder_prize_14d_boost						14-tägiger Kontoboost
+ladder_prize_7d_boost						7-tägiger Kontoboost
+ladder_prize_cosmetics1						Super-Duper-Kosmetik-Paket
+ladder_prize_cosmetics2						Super-Kosmetik-Paket
+ladder_prize_cosmetics3						Kosmetik-Paket
+ladder_prize_cosmetics4						Geheimnisvoller Kosmetik-Gegenstand
+
 // Assuming the below is PSR anyways
 ladder_field_acc_pub_skill                          PSR
 ladder_field_acc_pub_count                          Öffentliche Spiele
@@ -4758,11 +4814,40 @@ social_groups_newIM                                 Neue Nachricht
 social_groups_newIM_msg                             Gib einen Nicknamen ein um ein Gespräch mit einem Spieler zu starten.
 
 //news.package
-news_title                                          Neue Updates
-//_news_discord                                        Join our Discord!
-//_news_discord_desc                                   Connect with the Community
-news_default_splash_label					Arise, chosen!
-news_default_splash_title					Trials of Strife continue!
+news_title                                  Neue Updates
+news_default_splash_label					Erhebe dich, Auserwählte!
+news_default_splash_title					Die Prüfungen von Strife gehen weiter!
+new_hero									Neuer Held
+new_heroes									Neue Helden!
+news_title									Neuigkeiten
+news_matchmaking							Verbesserungen beim Matchmaking
+news_matchmaking_desc						Die Änderungen finden Sie im [S2] Fieldings-Entwicklerblog.
+news_progression_top_heroes					Top-Helden:
+news_progression_ladder_points				Rang Punkte:
+news_quickplay								Jetzt schnell gegen Bots spielen!
+news_quickplay_desc							Bereit zu rumpeln?
+news_quickplay_btn							Schnelles Spiel
+news_quickparty								Matchmaking Party erstellen!
+news_quickparty_desc						Bereit einzusteigen?
+news_quickparty_btn							Party erstellen
+news_component_manager						Komponentenmanager
+news_component_manager_add					Komponente hinzufügen
+news_component_manager_addDialog			Komponente hinzufügen
+news_component_manager_toggle_overlay		Overlay
+news_discord								Tritt dem Discord bei!
+news_discord_desc							Vernetzen Sie sich mit der Community
+
+//news components
+news_component_stories						Geschichten
+news_component_model_panel					Model
+news_component_progression					Fortschritt
+news_component_bot_match					Bot Kampf
+news_component_quick_party					Schnelle Party
+news_compenent_acct_progress				Kontofortschritt
+news_compenent_view_ladder					Spielerrangliste anzeigen
+news_compenent_unlock_progress				Nächste Freischaltungen:
+news_compenent_stats_progress				Spielerstatistiken:
+news_component_won							Siege:^666 {value}
 
 //tournaments.package
 tournament_name                                     Name des Turniers
@@ -5067,6 +5152,12 @@ options_quseactitem3                                Aktivierbaren Gegenstand 3 s
 options_quseactitem4                                Aktivierbaren Gegenstand 4 schnell benutzen
 options_quseactitem5                                Aktivierbaren Gegenstand 5 schnell benutzen
 options_quseactitem6                                Aktivierbaren Gegenstand 6 schnell benutzen
+options_duseactitem1					Selbstanwendung aktivierbarer Gegenstand 1
+options_duseactitem2					Selbstanwendung aktivierbarer Gegenstand 2
+options_duseactitem3					Selbstanwendung aktivierbarer Gegenstand 3
+options_duseactitem4					Selbstanwendung aktivierbarer Gegenstand 4
+options_duseactitem5					Selbstanwendung aktivierbarer Gegenstand 5
+options_duseactitem6					Selbstanwendung aktivierbarer Gegenstand 6
 options_deliveritems                                Gegenstände liefern
 options_teleporthome                                Nach Hause teleportieren
 options_basicactions                                Bewegung/Grundaktionen
@@ -5452,6 +5543,8 @@ general_twitch_streams                              Streams
 general_watch                                       Ansehen
 general_crafting                                    Herstellen
 general_craft                                       Herstellen
+general_news						                Neuigkeiten
+general_home						                Startseite
 general_recraft                                     Erneut Herstellen
 general_quests                                      Questen
 general_play_strife                                 Spiel Strife
@@ -5492,7 +5585,7 @@ watch_no_howto                                      Schau später noch mal für 
 watch_downloading                                   Herunterladen...
 watch_disabled                                      Deaktiviert
 watch_watch_replay                                  Wiederholung ansehen
-watch_download                                      Download
+watch_download                                      Herunterladen
 watch_compatizing                                   Berechne...
 watch_make_compatible                               Kompatibel machen
 watch_no_version                                    Keine Version
@@ -5596,6 +5689,17 @@ deathrecap_show                                     Erholung vom Tode zeigen
 dialog_confirm_purchase                             Kauf bestätigen
 dialog_product_name                                 Produktname
 
+dialog_update_09_title				Experimentelles Dharkwave-Update
+dialog_update_09_info1				Mit diesem experimentellen Update bringt Strife mehr Änderungen als je zuvor. Das bedeutet, dass wir Ihr Feedback und Ihre Fehlerberichte BRAUCHEN, um sicherzustellen, dass alles so schnell und genau wie möglich behoben wird. Wir planen, diesen Patch in den Tagen nach seiner Veröffentlichung fortlaufend zu aktualisieren, um sicherzustellen, dass die Fehler und Probleme schnell behoben werden und Ihr Erlebnis so großartig wie möglich ist.
+dialog_update_09_info2				Es wurden so viele Dinge geändert, dass es sich wie ein völlig neues Strife anfühlen wird, und zwar auf die bestmögliche Art und Weise. Dennoch sind noch einige wichtige Features im Spiel enthalten, darunter Regeneration außerhalb des Kampfes, persönliche Kuriere, Cindara und Krytos, Observatorien, Haustiere und Herstellen.
+
+steam_welcome_join					Nehmen Sie an den Prüfungen von Strife teil!
+steam_welcome_details				Willkommen Steam-Benutzer! Bevor Sie mit dem Spielen beginnen, teilen Sie uns mit, ob Sie bereits Strife spielen und Ihre beiden Konten miteinander verknüpfen möchten.
+steam_link_title					Ich spiele bereits Strife und möchte eine Verknüpfung zu meinem Steam-Konto herstellen.
+steam_link_btn						Konto verknüpfen
+steam_new_info						Ich habe kein bestehendes Konto, erstelle ein neues.
+steam_new_btn						Neues Konto
+
 // Crafting
 
 crafting_sillygoose                                 Du besitzt schon diesen Gegenstand
@@ -5620,7 +5724,7 @@ crafting_unlock_rare                                Seltsam entsperren!
 crafting_unlock_legendary                           Legendär entsperren!
 crafting_insufficient                               Wert der Bestandteile hinzufügen!
 crafting_insufficient_short                         Bestandteile hinzufügen!
-crafting_insufficient_desc                          Du brauchst noch ^922{value}^* Wert der Bestandteile um diesen Gegenstand zu fertigen \nDie Zahl auf jedem Bestandteil stellen seine Wert dar.
+crafting_insufficient_desc                          Du brauchst noch ^922{value}^* Wert der Bestandteile um diesen Gegenstand zu fertigen\nDie Zahl auf jedem Bestandteil stellen seine Wert dar.
 crafting_optimal                                    Optimal
 crafting_optimal_desc                               Du hast das optimale Gleichgewicht zwischen Bestandteilekosten und Profit für dieses Rezept erreicht.
 crafting_sufficient                                 Akzeptierbar
@@ -5640,7 +5744,7 @@ crafting_component_value                            Wert des Gegenstandes
 
 crafting_too_many_components                        Wert des Gegestandes entfernen!
 crafting_too_many_components_short                  Bestandteile entfernen!
-crafting_too_many_components_desc                   Du brauchst noch ^922{value}^* Wert der Bestandteile um diesen Gegenstand zu fertigen \nDie Zahl auf jedem Bestandteil stellen seine Wert dar.
+crafting_too_many_components_desc                   Du brauchst noch ^922{value}^* Wert der Bestandteile um diesen Gegenstand zu fertigen\nDie Zahl auf jedem Bestandteil stellen seine Wert dar.
 
 crafting_selectrecipe                               Rezept auswählen
 crafting_selectrecipe_tip                           Um mit dem Fertigen anzufangen musst du zuerst ein Rezept wählen. Du kannst dann Bestandteile ersetzen und es fertigen für eine Chance, erhöhte Wirksamkeit und Bonus-Eigenschaften zu bekommen.
@@ -5651,6 +5755,10 @@ crafting_drag_out_to_salvage                        Ziehe hier um Rezept zu berg
 crafting_bonus_Rare_description                     Verzaubere um Bonus zu entsperren.
 crafting_bonus_Legendary_description                Verzaubere um Bonus zu entsperren.
 
+crafting_menu_seals_unlock_available	            Freischaltung verfügbar
+crafting_menu_seals_unlock_unavailable
+crafting_menu_essence_up_to_items	                Bis zu {value} Gegenstände
+crafting_menu_essence_no_items		                {value} mehr benötigt
 crafting_have_a_lot_of_ore                          Überströmendes Elixier!
 crafting_have_a_lot_of_essence                      Überströmendes Elixier!
 crafting_enchant_available                          Bereit zum Verzauben
@@ -5673,6 +5781,7 @@ crafting_action_choose_imbuement                    Verzaubern
 crafting_action_choose_recipe_proceed               Rezept auswählen
 crafting_action_choose_components_proceed           Bestandteile bestätigen
 crafting_action_choose_imbuement_proceed            Zauber bestätigen
+crafting_action_choose_purchase_proceed		        Gegenstand fertigstellen!
 
 crafting_action_error_no_slots                      Kein Platz verfügbar!
 crafting_action_error_busy                          Wird verarbeitet…
@@ -6026,6 +6135,9 @@ corral_triggered                                    Ausgelöste Fertigkeit
 corral_active                                       Aktive Fertigkeit
 corral_petevolution                                 Entwicklung des Haustieres
 corral_passive_or                                   oder
+corral_locked_account_level_pet			            Gesperrt – Spiele spielen, um es freizuschalten!
+corral_locked_pet						            Gesperrtes Haustier
+corral_unlocked_pet						            {value} ist freigeschaltet!
 
 // Gear Set / Color choices (game lobby)
 gamelobby_Gear_error0                               (Kein Fehler?)
@@ -6256,9 +6368,9 @@ shop_item_compare_stat_healthMax                    Gesundheit:
 shop_item_compare_stat_healthRegen                  Gesundheits-Regeneration:
 shop_item_compare_stat_baseAttackSpeed              Angriffsgeschwindigkeit:
 shop_item_compare_stat_attackSpeed                  Angriffsgeschwindigkeit:
-shop_item_compare_stat_power_tip                    Erhöht die Effektivität von Fertigkeiten und Angriffen auf  ^950{value}%^*.
-shop_item_compare_stat_armor_tip                    Erhöht die effektive Gesundheit gegen Angriffsschaden auf  ^c{value}%^*.
-shop_item_compare_stat_magicArmor_tip               Erhöht die effektive Gesundheit gegen magsichen Schaden auf  ^c{value}%^*.
+shop_item_compare_stat_power_tip                    Erhöht die Effektivität von Fertigkeiten und Angriffen auf ^950{value}%^*.
+shop_item_compare_stat_armor_tip                    Erhöht die effektive Gesundheit gegen Angriffsschaden auf ^c{value}%^*.
+shop_item_compare_stat_magicArmor_tip               Erhöht die effektive Gesundheit gegen magsichen Schaden auf ^c{value}%^*.
 shop_item_compare_stat_manaMax_tip                  Erhöhrt den Vorrat deines gesamten Manas
 shop_item_compare_stat_manaRegen_tip                Stellt ^c{value}^* Mana pro Sekunde wieder her.
 shop_item_compare_stat_healthMax_tip                Erhöht die gesamte Gesundheit
@@ -6290,7 +6402,7 @@ game_shop_category_crafted_tip                      Diese Kategorie enthält Rez
 game_shop_category_crafted                          Hergestellte Gegenstände
 game_shop_category_crafted+itembuild_tip            Diese Kategorie enthält die momentan ausgewählten, empfohlenen Gegenstände und Rezepte die du hergestellt und mit in die Partie genommen hast.\\n\\nGegenstände können im Hauptmenü hergestellt weden und in der Spiel-Lobby vor der Partie ausgesucht werden.
 game_shop_category_components                       Bestandteile
-game_shop_category_components_tip                   Diese Kategorie enthält die Grund-Bestandteile, die in den Rezepten verwendet  werden.
+game_shop_category_components_tip                   Diese Kategorie enthält die Grund-Bestandteile, die in den Rezepten verwendet werden.
 game_shop_category_ability2                         Fertigkeit
 
 game_shop_filters                                   Filter immer anzeigen
@@ -6309,6 +6421,11 @@ game_shop_label_manaregen                           MP Regeneration
 game_shop_label_utility                             Nützliches
 game_shop_label_boots                               Stiefel
 game_shop_label_crafted                             Hergestellt
+
+ranked_ladder_header					Rangliste der Spieler
+ranked_ladder_header_desc				Wie Sie im Vergleich zu den 100 besten Strife-Spielern abschneiden.
+ranked_ladder_days_remaining			Verbleibende Tage
+ranked_ladder_season_prizes				Saisonpreise
 
 // Player Profile
 player_profile_match                                Partie:
@@ -6384,10 +6501,21 @@ profile_fun_fact_bossKills                          Die meisten Boss-Kills
 profile_fun_fact_buildingKills                      Die meisten Gebäude-Kills
 profile_fun_fact_heroDamage                         Die meisten von Helden verursachte Schäden
 profile_fun_fact_creepKills                         Die meisten Zänker-Kills
+profile_fun_fact_bossDamage				Durchschnittlicher Bossschaden
+profile_fun_fact_buildingKills			Durchschnittliche Gebäudekills
+profile_fun_fact_heroDamage				Durchschnittlicher Heldenschaden
+profile_fun_fact_creepKills				Durchschnittliche Nicht-Helden-Kills
+profile_fun_fact_creepDamage			Durchschnittlicher Nicht-Helden-Schaden
+profile_fun_fact_buildingDamage			Durchschnittlicher Gebäudeschaden
+profile_fun_fact_goldSpent				Durchschnittlich ausgegebenes Gold
+profile_fun_fact_goldEarned				Durchschnittlich verdientes Gold
+profile_fun_fact_actions				Durchschnittliche Aktionen
+profile_fun_fact_games					Gespielte Spiele
+profile_fun_fact_deaths					Durchschnittliche Tode
 
 profile_fun_fact_gpm_desc                           Das meiste GPM war {value} mit {hero}
-profile_fun_fact_kills_desc                         Dein höchster Helden-Punktestand war  {value} als {hero}
-profile_fun_fact_assists_desc                       Dein höchster Unterstützung-Punktestand war  {value} als {hero}
+profile_fun_fact_kills_desc                         Dein höchster Helden-Punktestand war {value} als {hero}
+profile_fun_fact_assists_desc                       Dein höchster Unterstützung-Punktestand war {value} als {hero}
 profile_fun_fact_winner_desc                        Die höchste Gewinnrate ist {value} mit {hero}
 profile_fun_fact_killstreak_desc                    Dein längster Todschlag war {value} als {hero}
 profile_fun_fact_apm_desc                           Deine höchste UPM war {value} als {hero}
@@ -6395,7 +6523,14 @@ profile_fun_fact_bossKills_desc                     Dein höchster Boss-Punktest
 profile_fun_fact_buildingKills_desc                 Dein höchster Gebäude-Punktestand war {value} als {hero}
 profile_fun_fact_heroDamage_desc                    Dein größter Helden-Schaden war {value} als {hero}
 profile_fun_fact_creepKills_desc                    Dein höchster Zänker-Punktestand war {value} als {hero}
-
+profile_fun_fact_bossDamage_desc		Dein durchschnittliche Bossschaden, war {value}, als {hero}
+profile_fun_fact_creepDamage_desc		Dein durchschnittliche Nicht-Helden-Schaden, war {value}, als {hero}
+profile_fun_fact_buildingDamage_desc	Dein durchschnittliche Gebäudeschaden, war {value}, als {hero}
+profile_fun_fact_goldSpent_desc			Deine durchschnittlichen Gold Ausgaben waren {value} als {hero}
+profile_fun_fact_goldEarned_desc		Deine durchschnittlichen Gold Einnahmen waren {value} als {hero}
+profile_fun_fact_actions_desc			Du hast durchschnittlichen {value} Aktionals {hero} ausgeübt
+profile_fun_fact_games_desc				Du hast {value} Spiele als {hero} gespielt
+profile_fun_fact_deaths_desc			Du bist {value} mal im durchschnitt als {hero} gestorben
 
 achievements_gamequests                             Spielaufgaben
 achievements_gamequests_info                        Erhalte Belohnungen indem du Strife spielst. Viele Aufgaben können wiederholt werden, komm also zurück für mehr!
@@ -6438,9 +6573,14 @@ cloud_save_fail                                     Nicht Synchronisiert
 stat_name_total_kills                               Gesamte Kills
 stat_name_total_deaths                              Gesamte Tode
 stat_name_total_assists                             Gesamte Unterstützungen
-stat_name_total_wins                                Gewinne
+stat_name_total_wins                                Gewinne Insgesammt
 stat_name_total_win_x                               {value} Gewinn
 stat_name_total_wins_x                              {value} Gewinne
+stat_name_ladder_rank_x				Ranglistenplatz: {value}
+stat_name_ladder_rank_x_grey		Ranglistenplatz: ^666{value}
+stat_name_ladder_rank_points_x		Ranglistenplatz: {value} ({value2} Punkte)
+stat_name_ladder_points_x			Ranglistenpunkte: {value}
+stat_name_ladder_points_x_grey		Ranglistenpunkte: ^666{value}
 stat_name_hero_wins_x                               Gewinne: {value}
 stat_name_hero_wins_next_star_x                     Nächster Stern In: {value}
 stat_name_hero_mastered                             Held beherrscht!
@@ -7129,7 +7269,7 @@ tutorial3_chatMessage11Sender                       LexiKhan
 tutorial3_hint1                                     Startgold
 tutorial3_hint1Desc                                 Einkaufstipp
 tutorial3_hint1MoreInfo                             Startgold
-tutorial3_hint1MoreInfo_body                        Jeder Spieler fängt mit 1000 Gold an. Wähle einen billigen Gegenstand aus deinen empfohlenen Gegenständen aus und kauf einige seiner Bestandteile. \n\nDenk daran, du kannst deinen Laden öffnen, indem du auf 'B' oder dein Gold klickst
+tutorial3_hint1MoreInfo_body                        Jeder Spieler fängt mit 1000 Gold an. Wähle einen billigen Gegenstand aus deinen empfohlenen Gegenständen aus und kauf einige seiner Bestandteile.\n\nDenk daran, du kannst deinen Laden öffnen, indem du auf 'B' oder dein Gold klickst
 
 tutorial3_hint2                                     Haustiere
 tutorial3_hint2Desc                                 Aktive Fertigkeiten
@@ -7147,7 +7287,7 @@ tutorial3_hint4Desc                                 Teamziel
 tutorial3_hint5                                     Neutrale Monster
 tutorial3_hint5Desc                                 Kartenfunktion
 tutorial3_hint5MoreInfo                             Neutrale Monster
-tutorial3_hint5MoreInfo_body                        Neutrale Monster können von beiden Teams besiegt werden und sind eine gute Weise zusätzliches Gold und Erfahrung zu bekommen. Deine Minikarte zeigt den Standort jedes neutralen Lagers. \n\nGrün-Einfache Neutrale\n\nGelb – Harte Neutrale\n\nOrange – Baldir (erfordert 2-3 Helden) \n\nRot – Cindara (erfordert 4-5 Helden)
+tutorial3_hint5MoreInfo_body                        Neutrale Monster können von beiden Teams besiegt werden und sind eine gute Weise zusätzliches Gold und Erfahrung zu bekommen. Deine Minikarte zeigt den Standort jedes neutralen Lagers.\n\nGrün-Einfache Neutrale\n\nGelb – Harte Neutrale\n\nOrange – Baldir (erfordert 2-3 Helden)\n\nRot – Cindara (erfordert 4-5 Helden)
 
 tutorial3_hint6                                     Observatorium
 tutorial3_hint6Desc                                 Kartenfunktion
@@ -7160,7 +7300,7 @@ tutorial3_hint7Desc                                 Teamziel
 tutorial3_hint8                                     Generatoren
 tutorial3_hint8Desc                                 Teamziel
 tutorial3_hint8MoreInfo                             Generatoren
-tutorial3_hint8MoreInfo_body                        Bei Zerstörung eines feindlichen Generators gewinnt jeder Spieler eine riesige Menge Gold! \n\nZusätzlich schädigt jeder zerstörte Generator die Crux und entfernt eine ihrer Angriffsmodule! Je mehr Generatoren du tötest, desto schwächer wird die Crux!
+tutorial3_hint8MoreInfo_body                        Bei Zerstörung eines feindlichen Generators gewinnt jeder Spieler eine riesige Menge Gold!\n\nZusätzlich schädigt jeder zerstörte Generator die Crux und entfernt eine ihrer Angriffsmodule! Je mehr Generatoren du tötest, desto schwächer wird die Crux!
 
 tutorial3_hint9                                     Gegenstände kaufen!
 tutorial3_hint9Desc                                 Einkaufstipp
@@ -7180,7 +7320,7 @@ tutorial3_hint11MoreInfo_body                       Du hast Krytos freigeschalte
 tutorial3_hint12                                    Stiefel
 tutorial3_hint12Desc                                Gegenstandsystem
 tutorial3_hint12MoreInfo                            Stiefel
-tutorial3_hint12MoreInfo_body                       In Strife kann jeder Held nur einen Stiefelgegenstand kaufen und verbessern. Jede Verbesserung ist auf ihre Weise stark – wähle die geeignetste für dich aus! \n\nWarte nicht zu lange, um Stiefel zu kaufen und verbessern- verbesserte Stiefel sind sehr kräftig!
+tutorial3_hint12MoreInfo_body                       In Strife kann jeder Held nur einen Stiefelgegenstand kaufen und verbessern. Jede Verbesserung ist auf ihre Weise stark – wähle die geeignetste für dich aus!\n\nWarte nicht zu lange, um Stiefel zu kaufen und verbessern- verbesserte Stiefel sind sehr kräftig!
 
 
 
@@ -7407,6 +7547,9 @@ general_commodity_texture_food						/ui/main/shared/textures/commodity_seal.tga
 general_commodity_shard                             Münzen
 general_commodity_shard_x                           {value} Münzen
 general_commodity_texture_shard						/ui/main/shared/textures/commodity_seal.tga
+general_commodity_rankpoints				        Rang Punkte
+general_commodity_rankpoints_x				        {value} Rang Punkte
+general_commodity_rankpoints_x_single		        {value} Rang Punkt
 
 // -------------------- QUESTS --------------------
 
@@ -7425,6 +7568,8 @@ quest_reward_label_petlevel_x                       Haustier-Lvl {value}
 quest_reward_label_pvp                              PvP freigeschaltet!
 quest_reward_label_ranked                           Rang-Spiel freigeschaltet!
 quest_reward_colon                                  Belohnung:
+
+quest_reward_spe_act1					            Konto Symbol
 
 // Quest define hardcoded
 
@@ -7717,11 +7862,11 @@ new_player_experience_intro_02_length				15000
 new_player_experience_intro_03                      Gut gemeistert. Jeder unserer Auserwählten brüstet sich mit zahlreichen Fertigkeiten und Lebenserfahrung. Um die Stärke eines Kämpfers zu verstehen, muss man man zuerst seine Reise verstehen. Betrachte Caprice, ein Pirat aus Lyrie ...
 new_player_experience_intro_03_length				17500
 
-new_player_experience_rescue_01                     Wie du siehst, hierher zu kommen ... vor allem wenn du nicht eingeladen bist, kann schwierig sein.   Allerdings warten noch viel größere Herausforderungen auf dich.  Die Arena ruft dich. Es gibt jedoch noch viel zu lernen, bevor du dich ins Getümmel stürzen kannst.
+new_player_experience_rescue_01                     Wie du siehst, hierher zu kommen ... vor allem wenn du nicht eingeladen bist, kann schwierig sein. Allerdings warten noch viel größere Herausforderungen auf dich. Die Arena ruft dich. Es gibt jedoch noch viel zu lernen, bevor du dich ins Getümmel stürzen kannst.
 new_player_experience_rescue_01_length				17000
-new_player_experience_rescue_02                     Leider musst du mit deiner Einführung etwas warten. Ich brauche zuerst deine Hilfe bei etwas anderem.  Auros ist gestern losgezogen um sich über die Unruhen im Randgebiet von Strife zu informieren und wir müssen noch auf ihre Rückmeldung warten.
+new_player_experience_rescue_02                     Leider musst du mit deiner Einführung etwas warten. Ich brauche zuerst deine Hilfe bei etwas anderem. Auros ist gestern losgezogen um sich über die Unruhen im Randgebiet von Strife zu informieren und wir müssen noch auf ihre Rückmeldung warten.
 new_player_experience_rescue_02_length				15000
-new_player_experience_rescue_03                     Es scheint, als wäre sie vom Alchemisten entführt worden ... ein gefährlicher Feind.  Wir müssen sofort los um ihr zu helfen.  Rücken wir aus!
+new_player_experience_rescue_03                     Es scheint, als wäre sie vom Alchemisten entführt worden ... ein gefährlicher Feind. Wir müssen sofort los um ihr zu helfen. Rücken wir aus!
 new_player_experience_rescue_03_length				10500
 
 new_player_experience_postrescue_01                 Gute Arbeit da draußen! Bevor wir weitermachen können, müssen wir erst ein Konto erstellen.
@@ -7730,19 +7875,19 @@ new_player_experience_postrescue_02                 Auros wartet mit einer Beloh
 new_player_experience_postrescue_02_length			5000 
 new_player_experience_choosepet_01                  Danke für deine Hilfe und willkommen zu den Proben von Strife.
 new_player_experience_choosepet_01_length			4500
-new_player_experience_choosepet_02                  So wie die Orakel uns die Wächter bereitstellten, sollten wir unseren Helden Tiere als Wegbegleiter geben.  Diese Haustiere werden immer stärker und helfen dir im Kampf.
+new_player_experience_choosepet_02                  So wie die Orakel uns die Wächter bereitstellten, sollten wir unseren Helden Tiere als Wegbegleiter geben. Diese Haustiere werden immer stärker und helfen dir im Kampf.
 new_player_experience_choosepet_02_length			12000
 new_player_experience_choosepet_03                  Um Tiere zu bekommen, muss ein Held mit Münzen aus den Proben bezahlen. Angesichts deiner Taten werde ich dich dir sofort ein Haustier schenken. Entscheide weise, da jedes Tier dir auf eine andere Weise helfen kann.
 new_player_experience_choosepet_03_length			13000
 new_player_experience_choosepet_04                  Gute Entscheidung, lass uns mit den Proben fortfahren.
 new_player_experience_choosepet_04_length			4000
-new_player_experience_firstmatch_01                 Wir sind bereit die Proben zu beginnen.  Ich werde dich bei deinem ersten Kampf begleiten, damit du die Arena kennenlernst.
+new_player_experience_firstmatch_01                 Wir sind bereit die Proben zu beginnen. Ich werde dich bei deinem ersten Kampf begleiten, damit du die Arena kennenlernst.
 new_player_experience_firstmatch_01_length			8000
 // create account
 new_player_experience_addfriend_01                  Um mit LexiKhan zu spielen, musst du ihn vorher zu deiner Freundeliste hinzufügen.
 new_player_experience_addfriend_02                  Jetzt musst du LexiKhan zu deiner Gruppe hinzufügen.
 new_player_experience_choosehero_01                 Du musst zuerst einen Helden auswählen, bevor du die Arena betrittst.
-new_player_experience_selectpet_01                  Hier kannst du dein Haustier auswählen, um dir im Kampf zu helfen.  Du hast zurzeit nur ein Tier zur Auswahl.
+new_player_experience_selectpet_01                  Hier kannst du dein Haustier auswählen, um dir im Kampf zu helfen. Du hast zurzeit nur ein Tier zur Auswahl.
 new_player_experience_choosegear_01                 Du kannst hier für deinen Helden verschiedene Rüstungen und Farben auswählen.
 new_player_experience_startmatch_01                 Wenn du bereit bist zu beginnen, drücke den Knopf 'Partie Starten' um fortzusetzen.
 new_player_experience_rewards_01                    Ah, du hat einen angemessenen Sieg errungen. Dafür schenke ich dir eine meiner Preis-Truhen. Wähle weise! Du kannst vielleicht nur eine öffnen.
@@ -7751,7 +7896,7 @@ new_player_experience_rewards_03                    Im Namen der Orakel! Du hast
 
 new_player_experience_feedpet_01                    Ich sehe, du hast einiges an Erfahrung gesammelt. Sobald du mehr Erfahrungen machst, werden auch deine Haustiere in ein höheres Level gestuft und dadurch im Kampf stärker.
 new_player_experience_feedpet_01_length				12000
-new_player_experience_feedpet_02                    Falls du weitere Haustiere erwerben willst, kannst du mir eines mit Münzen, die du in der Arena verdienst oder mit Juwelen, abkaufen.  Die neuen Haustiere starten sofort vom gleichen Level, auf dem sich auch deine anderen Tiere befinden.
+new_player_experience_feedpet_02                    Falls du weitere Haustiere erwerben willst, kannst du mir eines mit Münzen, die du in der Arena verdienst oder mit Juwelen, abkaufen. Die neuen Haustiere starten sofort vom gleichen Level, auf dem sich auch deine anderen Tiere befinden.
 new_player_experience_feedpet_02_length				12000
 
 mew_player_experience_craftitem_01                  Willkommen in der Schmiede, mein Held! Wies aussieht bist du bereit dein erstes Gegenstände-Rezept zu zaubern.
@@ -7769,7 +7914,7 @@ mew_player_experience_craftitem_01e_length_2 		3000
 // Do not adjust
 mew_player_experience_craftitem_01e_length_3 		2500
 
-mew_player_experience_craftitem_01f                 Die von dir gewählten Bestandteile werden die Attribute eines Gegenstandes verändern.  Füge diesem Gegenstand ein bisschen Gesundheits- und Manaregeneration hinzu.
+mew_player_experience_craftitem_01f                 Die von dir gewählten Bestandteile werden die Attribute eines Gegenstandes verändern. Füge diesem Gegenstand ein bisschen Gesundheits- und Manaregeneration hinzu.
 mew_player_experience_craftitem_01f_length			11500
 mew_player_experience_craftitem_01g                 Sehr gut, lass uns jetzt zaubern.
 mew_player_experience_craftitem_01g_length			3500
@@ -8143,7 +8288,7 @@ bastact1_cinematic_final23 								Bastion
 bastact1_cinematic_executioner4_body					Lass mich allein ...
 unlock_crafting_title							Handwerk freigeschaltet!
 bastact1_cinematic_courtyard11 							Rook
-ranked_rating_explaination			Du hast momentan Rang {rank} in de {division}-Liga. \n\nGewinne Rangspiele per Matchmaking, um deine Bewertung zu verbessern!
+ranked_rating_explaination			Du hast momentan Rang {rank} in de {division}-Liga.\n\nGewinne Rangspiele per Matchmaking, um deine Bewertung zu verbessern!
 create_acc_country_netherlands_sm	Karibische Niederlande
 load_feature_label_4						Kaufe Gegenstände außerhalb der Basis und lasse sie dir liefern.
 bastact2_enterRuins2 									Tinder
@@ -8284,6 +8429,13 @@ TTV_EC_WEBAPI_RESULT_NO_AUTHTOKEN	Anmeldung gescheitert – Benutzername und Pas
 bastact1_Executioner_Chase_body							Du kommst nicht so leicht davon. Bogenschützen, zielen!
 ranked_division_provisional			Provisorisch
 options_label_focus_toggle_keybind			Fokusmodus
+
+px_enableApex					Apex aktivieren
+options_apex_tip_text				^960Neustart erforderlich^* Durch die Aktivierung sind erweiterte Partikeleffekte möglich.
+options_apex_tip_text_disabled	Für diese Option ist DirectX11 als Grafiktreiber erforderlich. Dies ist derzeit nur unter Windows verfügbar.
+options_simple_apex_a			Erweiterte Partikeleffekte.
+options_simple_apex_b			^rKann die Leistung erheblich beeinträchtigen.\n^*Neustart erforderlich.
+
 options_d11_hair_tip_text		^960Erfordert Neustart^* Wenn dies aktiviert ist, wird die physikalische Simulation feiner Fäden wir Haare und Pelz ermöglicht.
 party_finder_current_custom					Bilde dein Team
 bastact1_cinematic_final17 								Scharfrichter
@@ -8435,7 +8587,7 @@ ranked_play_what_leagues			Welche Ligen gibt es?
 bastact1_cinematic_executioner9							Bastion
 bastact1_cinematic_courtyard13 							Rook
 pet_skin_name_unlock						Diese Skin freischalten?
-new_player_experience_skipallnpe_desc		Wir empfehlen, dass selbst erfahrene Spieler die Einführung durchspielen, da wir eine für Strife spezielle Spielmechanik vorstellen. \n\nDu kannst die Intro jederzeit wieder vom Übungsabschnitt des Optionsmenüs aus aufrufen. \n\nWirklich überspringen?
+new_player_experience_skipallnpe_desc		Wir empfehlen, dass selbst erfahrene Spieler die Einführung durchspielen, da wir eine für Strife spezielle Spielmechanik vorstellen.\n\nDu kannst die Intro jederzeit wieder vom Übungsabschnitt des Optionsmenüs aus aufrufen.\n\nWirklich überspringen?
 bastact1_dialogue1 										Rook
 partystatus_queue_name_khanquest	Khanquest
 main_prompt_spectate_will_leave_queue_desc	Wenn du diesem Spieler zuschaust. wirst du aus der Warteschlange und deiner jetzigen Gruppe entfernt. Willst du das wirklich?
@@ -8473,6 +8625,16 @@ bastact1_cinematic_guardhouse13_body					Der Zidek-Stein. Eine Prophezeiung, die
 bastact1_cinematic_greathall8 							Rook
 bastact1_cinematic_courtyard4 							Scharfrichter
 options_label_focus_toggle_keybind_tooltip	Gedrückt: Rechtsklick wird die Direktbewegung, Zielfähigkeiten können nur Helden markieren
+options_label_self_cast						Selbstanwendung
+options_label_self_cast_tooltip				Wirkt die Fähigkeit sofort auf sich selbst, während er am Boden ist
+options_label_user_best_courier 			Courier verwenden
+options_label_user_best_courier_tip 		Bewirkt, dass der Kurier Ihre Artikel aus Ihrem Lager holt und Ihnen so schnell wie möglich zustellt.
+options_label_dacti_inven_1_keybind			Selbstanwendung Inventar 1
+options_label_dacti_inven_2_keybind			Selbstanwendung Inventar 2
+options_label_dacti_inven_3_keybind			Selbstanwendung Inventar 3
+options_label_dacti_inven_4_keybind			Selbstanwendung Inventar 4
+options_label_dacti_inven_5_keybind			Selbstanwendung Inventar 5
+options_label_dacti_inven_6_keybind			Selbstanwendung Inventar 6
 bastact2_enterRuins1 									Tinder
 bastact1_spiderguard1 									Unteroffizier William
 twitch_create_choose_an_image		Grafik wählen
@@ -8649,4 +8811,23 @@ game_region_PH2								Philippinen, Nebenzeit
 adaptive_training_feature_desc_prompt_newbie_checklist			In unserer Anleitung finden Anfänger Tipps und Tricks!
 game_region_ID2								Indonesien, Nebenzeit
 adaptive_training_feature_desc_prompt_newbie_checklist_url		http://www.strife.com/gettingstarted/
+
+pre_play_select_tutorial					Tutorial auswählen
+pre_play_select_arena						Arena Modus auswählen
+pre_play_select_custom						Benutzerdefiniertes Spiel auswählen
+pre_play_switch_game_type					Spieltyp wechseln
+pre_play_pvp								Standard
+pre_play_pve								Gegen Bots
+pre_play_ranked								Ranked
+pre_play_scrim								Gelege
+pre_play_khan								Khanquest
+pre_play_khanquest							Khanquest
+pre_play_cs									Counter-Strife
+pre_play_pvp_desc							Spielen Sie ein Matchmaking-Spiel gegen andere Spieler
+pre_play_pve_desc							Spielen Sie ein Matchmaking-Spiel mit anderen Spielern gegen die KI
+pre_play_ranked_desc						Kämpfe gegen andere Spieler, um deinen Rang zu verbessern
+pre_play_scrim_desc							Fordern Sie andere vorgefertigte Teams zu einem 5-gegen-5-Kampf heraus
+pre_play_khan_desc							Treten Sie gegen andere Teams an, um Preise zu gewinnen
+pre_play_cs_desc							Treten Sie gegeneinander an, um ein Portal zu öffnen oder das andere Team aufzuhalten
+
 // End #do not delete this line

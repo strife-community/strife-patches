@@ -493,12 +493,12 @@ Ability_Vex1_description_simple                                            Schwi
 
 // Ability_Vex2
 Ability_Vex2_name                                                          Suchende von Vorbis
-Ability_Vex2_description                                                   Aktiviere um drei umliegenden Feinden  ^o$damage$ Magieschaden^* in 6 Sekunden anzurichten. Kann bis zu 70% Bonus-Schaden anrichten, wenn es ein einziges Ziel gibt.
+Ability_Vex2_description                                                   Aktiviere um drei umliegenden Feinden ^o$damage$ Magieschaden^* in 6 Sekunden anzurichten. Kann bis zu 70% Bonus-Schaden anrichten, wenn es ein einziges Ziel gibt.
 Ability_Vex2_description_simple                                            fügt umliegenden Feinden für einige Zeit Schaden zu
 
 // Ability_Vex3
 Ability_Vex3_name                                                          Macht-Nichts-Schild
-Ability_Vex3_description									Markiere einen Verbündeten, um alle Betäubungs-/Lähmeffekte zu beseitigen und einen ^o$shield$ Schild^* zu gewähren, der 2 Sekunden lang 70 % Widerstand gegen Betäubungs-/Lähmeffekte verleiht.
+Ability_Vex3_description									               Markiere einen Verbündeten, um alle Betäubungs-/Lähmeffekte zu beseitigen und einen ^o$shield$ Schild^* zu gewähren, der 2 Sekunden lang 70 % Widerstand gegen Betäubungs-/Lähmeffekte verleiht.
 Ability_Vex3_description_simple                                            reduziert und wehrt Betäubungen/ Verlangsamungen ab
 
 // State_Vex_Ability3
@@ -510,7 +510,7 @@ State_Vex_Ability3_name_FRAME_effect
 
 // Ability_Vex4
 Ability_Vex4_name                                                          Orbitaler Fall
-Ability_Vex4_description                                                   Ziele auf eine Stelle um zu teleportieren, richte ^o$damage$ Magieschaden^* an und betäubt für 1 Sekunde. \n\n2.0 Sekunden. Beim Schaden Nehmen wird die Fertigkeit 5 Sekunden zur Abkühlung gelassen.
+Ability_Vex4_description                                                   Ziele auf eine Stelle um zu teleportieren, richte ^o$damage$ Magieschaden^* an und betäubt für 1 Sekunde.\n\n2.0 Sekunden. Beim Schaden Nehmen wird die Fertigkeit 5 Sekunden zur Abkühlung gelassen.
 Ability_Vex4_description_simple                                            globales Teleportieren mit Schaden und Betäubung
 
 State_Vex_Ability4_Self_name                                               Teleportiert ...
@@ -567,7 +567,7 @@ Ability_Ray3_description_simple                                            stär
 
 // Ability_Ray4
 Ability_Ray4_name                                                          Todesstrahl
-Ability_Ray4_description                                                   Ziele auf eine Richtung um nach einer kurzen Weile einen Laser zu schießen. Der Laser richtet Feinden auf der Linie ^o$damage$ Magieschaden^* an. Schaden senken 15 % für jeden getroffenen feindlichen Helden.
+Ability_Ray4_description                                                   Ziele auf eine Richtung um nach einer kurzen Weile einen Laser zu schießen. Der Laser richtet Feinden auf der Linie ^o$damage$ Magieschaden^* an. Schaden senken 15% für jeden getroffenen feindlichen Helden.
 Ability_Ray4_description_simple                                            kurz verspätete Schaden in einer Linie
 
 // Hero_Ray
@@ -586,7 +586,7 @@ Ability_Claudessa1_description_simple                                      Schad
 
 // Ability_Claudessa2
 Ability_Claudessa2_name                                                    Schuppenschild
-Ability_Claudessa2_description										Gewährt passiv $armor$ % Rüstung und Zauberrüstung.\n\nMarkiere einen Verbündeten, um ^o$heal$^* Gesundheitspunkte zu heilen und ihm deinen Schild zu geben.
+Ability_Claudessa2_description										       Gewährt passiv $armor$% Rüstung und Zauberrüstung.\n\nMarkiere einen Verbündeten, um ^o$heal$^* Gesundheitspunkte zu heilen und ihm deinen Schild zu geben.
 Ability_Claudessa2_description_simple                                      Ziel heilen und Schaden senken
 
 // State_Claudessa_Ability2
@@ -624,7 +624,7 @@ State_Claudessa_Ability4_name_FRAME_effect
 Hero_Claudessa_name                                                        Claudessa
 Hero_Claudessa_role                                                        Tank-Stützt
 Hero_Claudessa_description                                                 Spezialisiert auf Stütze von Verbündeten und Schwächung von Feinden .
-Hero_Claudessa_lore													Claudessa war die erste Frau, die Mitglied der Ritter von Claudus in Gael wurde. Dieser Ritterorden war stolz darauf, die erste Verteidigungslinie gegen Drachenangriffe zu bieten (ein seltener aber schrecklicher Vorfall im nördlichen Gael). Beim Töten eines Drachens verlor sie ihre Hand, und jetzt dient die magische Drachenklaue auf einem Stab als ihre Primärwaffe.
+Hero_Claudessa_lore													       Claudessa war die erste Frau, die Mitglied der Ritter von Claudus in Gael wurde. Dieser Ritterorden war stolz darauf, die erste Verteidigungslinie gegen Drachenangriffe zu bieten (ein seltener aber schrecklicher Vorfall im nördlichen Gael). Beim Töten eines Drachens verlor sie ihre Hand, und jetzt dient die magische Drachenklaue auf einem Stab als ihre Primärwaffe.
 
 
 
@@ -662,24 +662,24 @@ Hero_Vermillion_lore                                                       Vermi
 
 // Ability_Trixie1
 Ability_Trixie1_name                                                       Topfschuss
-Ability_Trixie1_description									Ziele auf eine Stelle, um den Kessel zu werfen, der ^o$damage$ Zauberschaden^* anrichtet und verlangsamt.  Der Kessel wird 2 Mal aufhüpfen. \n\nMehrfach getroffene Helden erleiden bei weiteren Treffern 60 % Schaden.
+Ability_Trixie1_description									               Ziele auf eine Stelle, um den Kessel zu werfen, der ^o$damage$ Zauberschaden^* anrichtet und verlangsamt.  Der Kessel wird 2 Mal aufhüpfen.\n\nMehrfach getroffene Helden erleiden bei weiteren Treffern 60% Schaden.
 Ability_Trixie1_description_simple                                         Schaden des Gebietes des Hüpfens und Verlangsamung
 
 
 // Ability_Trixie2
 Ability_Trixie2_name                                                       Fassrolle
-Ability_Trixie2_description                                                Ziele auf eine Richtung um Flächenschaden anzurichten, alle Verlangsamungen zu entfernen und einen ^o$shield$ Schild für 4 Sekunden zu schenken. \n\nDu kannst diese Fertigkeit nutzen, während Ätherstrahl aktiv ist.
+Ability_Trixie2_description                                                Ziele auf eine Richtung um Flächenschaden anzurichten, alle Verlangsamungen zu entfernen und einen ^o$shield$ Schild für 4 Sekunden zu schenken.\n\nDu kannst diese Fertigkeit nutzen, während Ätherstrahl aktiv ist.
 Ability_Trixie2_description_simple                                         Mobilität und Schild
 
 
 // Ability_Trixie3
 Ability_Trixie3_name                                                       Ätherstrahl
-Ability_Trixie3_description									Wähle eine Richtung, um einen mächtigen Strahl abzufeuern.  Der Strahl wirkt sich auf den ersten getroffenen Feind aus und übt 5 Sekunden lang ^o$damage$ Zauberschaden/Sek.^* aus.  \n\nFeinde in der Nähe des Ziel erleiden 40 % Schaden.
+Ability_Trixie3_description									               Wähle eine Richtung, um einen mächtigen Strahl abzufeuern. Der Strahl wirkt sich auf den ersten getroffenen Feind aus und übt 5 Sekunden lang ^o$damage$ Zauberschaden/Sek.^* aus.\n\nFeinde in der Nähe des Ziel erleiden 40 % Schaden.
 Ability_Trixie3_description_simple
 
 // Ability_Trixie4
 Ability_Trixie4_name                                                       Quakenfluch
-Ability_Trixie4_description									Ziele auf eine Stelle, um alle Feinde $duration$ Sekunden lang in Frösche zu verwandeln und sie um 35 % zu verlangsamen. \n\nFrösche können weder angreifen noch Fähigkeiten verwenden.
+Ability_Trixie4_description									               Ziele auf eine Stelle, um alle Feinde $duration$ Sekunden lang in Frösche zu verwandeln und sie um 35 % zu verlangsamen.\n\nFrösche können weder angreifen noch Fähigkeiten verwenden.
 Ability_Trixie4_description_simple
 
 // State_Trixie_Ability4
@@ -694,7 +694,7 @@ State_Trixie_Ability4_name_FRAME_effect
 Hero_Trixie_name                                                           Trixie
 Hero_Trixie_description                                                    Held spezialisiert auf Magieschaden in langer Reichweite
 Hero_Trixie_role                                                           Held spezialisiert auf Magieschaden in langer Reichweite
-Hero_Trixie_lore 											Trixie, wurde in einen Hexenzirkel geboren, der in die westlichen Sümpfe von Lyrie geflohen war, um der Verfolgung durch die osirische Marine zu entgehen. Schon von Geburt an zeigte sie eine außergewöhnliche magische Begabung. Aber ihre traditionelle Ausbildung endete leider, als ein Überraschungsangriff der osirischen Marine dazu führte, dass der Unterschlupf des Hexenzirkels in Brand geriet und alle Mitglieder darin gefangen waren. Trixie, die mit Zaubersprüchen experimentierte, die für sie viel zu fortgeschritten waren, entkam diesem schrecklichen Schicksal, indem sie auf einem Besen namens Tempest davonflog, den ihre Mutter als Spielzeug für sie gemacht hatte. Trixie war allein, verzweifelt und verängstigt, als sie einem Rafink-Schützen begegnete, der sich im Dschungel versteckte. Da beide die Besatzer aus Gael hassten, wurden sie zu Freunden. Der Rafink lehrte ihr die Fähigkeiten, die ihr später den Titel „schnellster Zauberstab des westlichen Sumpfes“ einbrachten und ihren Weg zu den Prüfungen von Strife ebneten.
+Hero_Trixie_lore 											               Trixie, wurde in einen Hexenzirkel geboren, der in die westlichen Sümpfe von Lyrie geflohen war, um der Verfolgung durch die osirische Marine zu entgehen. Schon von Geburt an zeigte sie eine außergewöhnliche magische Begabung. Aber ihre traditionelle Ausbildung endete leider, als ein Überraschungsangriff der osirischen Marine dazu führte, dass der Unterschlupf des Hexenzirkels in Brand geriet und alle Mitglieder darin gefangen waren. Trixie, die mit Zaubersprüchen experimentierte, die für sie viel zu fortgeschritten waren, entkam diesem schrecklichen Schicksal, indem sie auf einem Besen namens Tempest davonflog, den ihre Mutter als Spielzeug für sie gemacht hatte. Trixie war allein, verzweifelt und verängstigt, als sie einem Rafink-Schützen begegnete, der sich im Dschungel versteckte. Da beide die Besatzer aus Gael hassten, wurden sie zu Freunden. Der Rafink lehrte ihr die Fähigkeiten, die ihr später den Titel „schnellster Zauberstab des westlichen Sumpfes“ einbrachten und ihren Weg zu den Prüfungen von Strife ebneten.
 
 // Ability_Caprice1
 Ability_Caprice1_name                                                      Feuerlager
@@ -733,7 +733,7 @@ Hero_Caprice_lore                                                          Capri
 
 // Ability_CapriceTutorial1
 Ability_CapriceTutorial1_name                                              Feuerlager
-Ability_CapriceTutorial1_description_simple								Wähle eine Richtung, um ^o$damage$ Zauberschaden^* in einer Linie auszuüben.  Nach einer kurzen Verzögerung explodiert diese Linie und übt den halben Schaden aus.
+Ability_CapriceTutorial1_description_simple								   Wähle eine Richtung, um ^o$damage$ Zauberschaden^* in einer Linie auszuüben.  Nach einer kurzen Verzögerung explodiert diese Linie und übt den halben Schaden aus.
 
 // Gadget_Tutorial_Observatory
 Gadget_Tutorial_Observatory_name                                           Observatorium
@@ -765,7 +765,7 @@ Hero_CapriceTutorial_role
 
 // Ability_CapriceTutorial1
 Ability_CapriceTutorialB1_name                                             Feuerlager
-Ability_CapriceTutorialB1_description									Wähle eine Richtung, um ^o$damage$ Zauberschaden^* in einer Linie auszuüben.  Nach einer kurzen Verzögerung explodiert diese Linie und übt den halben Schaden aus.
+Ability_CapriceTutorialB1_description									   Wähle eine Richtung, um ^o$damage$ Zauberschaden^* in einer Linie auszuüben.  Nach einer kurzen Verzögerung explodiert diese Linie und übt den halben Schaden aus.
 
 
 // Ability_CapriceTutorial2
@@ -800,33 +800,54 @@ Tutorial_General_name                                                      Milit
 
 
 
-// Ability_Bo1
-Ability_Bo1_name                                                           Bo-Wurf
-Ability_Bo1_description                                                    Ziele auf eine Richtung um ^o$damage$ Magieschaden^* anzurichten und Verlangsamung zu verursachen. Die Waffe wird zurückkommen und Feinden wieder auf der Rückkehr schädigen.
-Ability_Bo1_description_simple                                             Boomerang richtet Schaden in einer Linie an und verlangsamt
-
-
-// Ability_Bo2
-Ability_Bo2_name                                                           Innere Rage
-Ability_Bo2_description                                                    BietetBo 75 Bonus-Bewegungsgeschwindigkeit und 15% Schaden-Reduktion. Nach 4 Sekunden richtet umliegenden Feinden ^o$damage$ Magieschaden^* an und bet[aubt sie $stun$ Sekunden.
-Ability_Bo2_description_simple                                             Verspätete Schäden und Betäubung um dich
-
-
-// Ability_Bo3
-Ability_Bo3_name                                                           Totem der Ruhe
-Ability_Bo3_description                                                    Aktiviere um Totem herbeizurufen. Totem heilt umliegende verbündete Helden um $percent_regen$% Max Gesundheit/Sek.
-Ability_Bo3_description_simple                                             Schafft einen Heilkreis
-
-// Ability_Bo4
-Ability_Bo4_name                                                           Stierstoß
-Ability_Bo4_description                                                    Ziele auf eine Richtung um in dieser Richtung zu stürmen. Alle Einheiten, die auf dem Pfad betroffen werden, nehmen ^o$damage$ Magieschaden^* und werden zum Bos Ziel gezogen.\n\nBeim Stoß einer Wand nehmen alle Feinde 75% zusätzliche Schäden und werden 1 Sekunde betäubt.
-Ability_Bo4_description_simple
-
 // Hero_Bo
 Hero_Bo_name                                                               Bo
 Hero_Bo_description                                                        Aggresiver Panzer, sehr gut in Ganking
 Hero_Bo_role
 Hero_Bo_lore                                                               Bo kommt aus einer alten Rasse Langhörne, die Ryu-Bo heißt. Lange her sahen sie sie den Irrtum ihrer Brutalität und explosiver Läune und dachten viele Jahre lang über innigen und äußeren Frieden und Ordnung nach. Als einer der wenigen Krieger, der aus der jetzt sanften Rasse stammt, betrat Bo die Proben um anderen beizubringen, wie man inneren Frieden haben kann inmittten großartiger Umstände. Aber die Raserei der Proben hat oft sein Bestes rausgekriegt und diesen Friedenlehrer in ein rachendes Inferno umgewandelt, das nur Verwüstung hinter ihm lässt!
+// Ability_Bo1
+Ability_Bo1_name                                                           Bo-Wurf
+Ability_Bo1_description                                                    Ziele auf eine Richtung um ^o$damage$ Magieschaden^* anzurichten und Verlangsamung zu verursachen. Die Waffe wird zurückkommen und Feinden wieder auf der Rückkehr schädigen.
+Ability_Bo1_description_simple                                             Boomerang richtet Schaden in einer Linie an und verlangsamt
+// Ability_Bo2
+Ability_Bo2_name                                                           Innere Rage
+Ability_Bo2_description                                                    BietetBo 75 Bonus-Bewegungsgeschwindigkeit und 15% Schaden-Reduktion. Nach 4 Sekunden richtet umliegenden Feinden ^o$damage$ Magieschaden^* an und bet[aubt sie $stun$ Sekunden.
+Ability_Bo2_description_simple                                             Verspätete Schäden und Betäubung um dich
+// Ability_Bo3
+Ability_Bo3_name                                                           Totem der Ruhe
+Ability_Bo3_description                                                    Aktiviere um Totem herbeizurufen. Totem heilt umliegende verbündete Helden um $percent_regen$% Max Gesundheit/Sek.
+Ability_Bo3_description_simple                                             Schafft einen Heilkreis
+State_Bo_Ability3_Regen_Tooltip_name							           Totem der Ruhe
+State_Bo_Ability3_Regen_description								           Du wirst durch Bos Totem geheilt.
+State_Bo_Ability3_Regen_description_simple						           Du wirst durch Bos Totem geheilt.
+State_Bo_Ability3_Regen_name									           Totem der Ruhe
+State_Bo_Ability3_Regen_FRAME_effect
+// Ability_Bo4
+Ability_Bo4_name                                                           Stierstoß
+Ability_Bo4_description                                                    Ziele auf eine Richtung um in dieser Richtung zu stürmen. Alle Einheiten, die auf dem Pfad betroffen werden, nehmen ^o$damage$ Magieschaden^* und werden zum Bos Ziel gezogen.\n\nBeim Stoß einer Wand nehmen alle Feinde 75% zusätzliche Schäden und werden 1 Sekunde betäubt.
+Ability_Bo4_description_simple
+
+
+// Hero_Buford
+Hero_Buford_name												            Buford
+Hero_Buford_description											            Lebt im Bayou und nutzt Käfer als Waffen.
+Hero_Buford_role												            Held spezialisiert auf Angriffsschaden in langer Reichweite
+// Ability_Buford1
+Ability_Buford1_name											            Giftschnecke
+Ability_Buford1_description										            Ziele auf eine Stelle um eine Wolke aus giftigen Dämpfen zu erzeugen. Die Dämpfe verlangsamen alle Feinde um $slow$% und verringern ihren Widerstand um $resistance$. Wenn giftige Dämpfe von Feuerschnecke entzündet werden, explodieren sie und verursachen ^o$damage_explode$ magischen Schaden^*.\n\n^444Toxische Munition^*\nAngriffe verursachen $damage$ Bonusschaden. Es kann nur eine Munition aktiv sein.
+Ability_Buford1_description_simple								            AOE-Verlangsamung und erhöhter Angriffsschaden
+// Ability_Buford2
+Ability_Buford2_name											            Feuerschnecke
+Ability_Buford2_description										            Ziele auf eine Stelle um eine Feuerspur zu erzeugen. Feinde erleiden ^o$damage$ magischen Schaden^* pro Sekunde.\n\n^444Flammenmunition^*\nAngriffe fügen Einheiten in einem $radius$-Einheitsradius $splash$% Fläschenschaden zu. Es kann nur eine Munition aktiv sein.
+Ability_Buford2_description_simple								            Schaden auf einer Linie und Fläschenschaden
+// Ability_Buford3
+Ability_Buford3_name											            Blutegel
+Ability_Buford3_description										            Wirf Blutegel auf eine Stelle, welche sich dann am nächstgelegenen Feind festsetzen und in 3 Wellen ^o$damage$ Gesundheit^* stehlen.\n\n^444Blutegel Munition^*\nAngriffe erhalten $lifesteal$% Lebensraub. Es kann nur eine Munition aktiv sein.
+Ability_Buford3_description_simple								            Lebensegel und Angriffe erhalten Lebensraub
+// Ability_Buford4
+Ability_Buford4_name											            Das Buford Spezial
+Ability_Buford4_description										            Ziele auf einen Feind, um nach einer Kanalisierung von 2/1,75/1,5 Sekunden einen Käfig zu starten, der $percent_maxhp$% der maximalen Gesundheit des Ziels als Schaden verursacht und den Feind für $duration$ Sekunden gefangen hält. Die Gesundheit des Käfigs entspricht 1/3 der von Bufords.
+Ability_Buford4_description_simple								            Scharfschütze mit hoher Reichweite und Käfig
 
 
 // Ability_Bastion1
@@ -877,7 +898,7 @@ Hero_Bastion_lore                                                          Basti
 
 // Ability_Fetterstone1
 Ability_Fetterstone1_name                                                  Kristallschuss
-Ability_Fetterstone1_description								Wähle eine Richtung, um den Kristall zu feuern.  Nachdem er einen Feind trifft, explodiert der Kristall. Dadurch erzeugt er ^o$damage$ Zauberschaden^*, verlangsamt Gegner etwas und reduziert die Rüstung um $armorreduce$.
+Ability_Fetterstone1_description								           Wähle eine Richtung, um den Kristall zu feuern.  Nachdem er einen Feind trifft, explodiert der Kristall. Dadurch erzeugt er ^o$damage$ Zauberschaden^*, verlangsamt Gegner etwas und reduziert die Rüstung um $armorreduce$.
 Ability_Fetterstone1_description_simple                                    Schwieriger-Schuss-Schaden, Langsam- und Rüstungsreduktion
 
 // State_Fetterstone_Ability1
@@ -887,13 +908,13 @@ State_Fetterstone_Ability1_name                                            Krist
 
 // Ability_Fetterstone2
 Ability_Fetterstone2_name                                                  Splitterschild
-Ability_Fetterstone2_description								Aktiviert einen Schild mit $shield_percent$ % deiner maximalen Gesundheit.  Wenn der Schild 3 Sekunden überlebt, explodiert er und verursacht ^o$damage$ Zauberschaden^* am nähesten feindlichen Helden.
+Ability_Fetterstone2_description								           Aktiviert einen Schild mit $shield_percent$% deiner maximalen Gesundheit.  Wenn der Schild 3 Sekunden überlebt, explodiert er und verursacht ^o$damage$ Zauberschaden^* am nähesten feindlichen Helden.
 Ability_Fetterstone2_description_simple                                    Schild und Schaden
 
 
 // Ability_Fetterstone3
 Ability_Fetterstone3_name                                                  Hungrig nach Macht
-Ability_Fetterstone3_description                                           Deine Grundangriffe stehlen passiv $power_steal$% Kraft aus deinem feindlichen Helden, die bis zu drei mal aufgestapelt wird. \n\nGibt passiv $power$ Kraft
+Ability_Fetterstone3_description                                           Deine Grundangriffe stehlen passiv $power_steal$% Kraft aus deinem feindlichen Helden, die bis zu drei mal aufgestapelt wird.\n\nGibt passiv $power$ Kraft
 Ability_Fetterstone3_description_simple                                    Kraft stehlen, passive Kraft
 
 // State_Fetterstone_Ability3
@@ -916,7 +937,7 @@ State_Fetterstone_Ability4_name                                            Explo
 Hero_Fetterstone_name                                                      Fetterstone
 Hero_Fetterstone_description                                               Held spezialisiert auf hybride Angriffe und Verzaubungen
 Hero_Fetterstone_role                                                      Reichweite-Angriffsschaden
-Hero_Fetterstone_lore 											Lorne war ein Bergbauzwerg in den Edelsteinminen von Fetterstone Mountain im Norden Gaels, in dem als Dwarf Rock bezeichneten Gebirge. Er war ein einfacher Bergarbeiter, der sich nie nach Abenteuern oder einem Leben außerhalb der Minen sehnte. Aber seine Schwäche waren die Edelsteine, und oft wollte er viel, viel mehr davon besitzen.\n\nAn einem schicksalhaften Tag betrat Lorne eine kleine Höhle in der Mine und sah etwas glitzern. Er grub zwei mysteriöse, mit funkelnden Edelsteinen besetzte Waffen aus. Erstaunlicherweise flüsterten sie Lorne telepathisch zu. „Nimm uns. Wir gehören dir. Das ist dein Schicksal.“ Die Edelsteine zogen ihn unwiderstehlich an. Lorne nahm die Waffen, die Glimmer und Glint hießen, und verließ die Mine.\n\nWenige Wochen später gab es im nördlichen Gael Gerüchte über einen Zwergenschützen mit mystischen Kräften. Es hieß, dass dieser Schütze sich Fetterstone nannte, nach der Mine in Dwarf Rock. Angeblich sollte er alle, die er als Bösewichte betrachtete, hinrichten. Manche hielten ihn für eine verwunschene Seele unter dem Einfluss eines bösen Geistes, und sie sagten, dass seine magischen Waffen ihn unterjochten.
+Hero_Fetterstone_lore 											           Lorne war ein Bergbauzwerg in den Edelsteinminen von Fetterstone Mountain im Norden Gaels, in dem als Dwarf Rock bezeichneten Gebirge. Er war ein einfacher Bergarbeiter, der sich nie nach Abenteuern oder einem Leben außerhalb der Minen sehnte. Aber seine Schwäche waren die Edelsteine, und oft wollte er viel, viel mehr davon besitzen.\n\nAn einem schicksalhaften Tag betrat Lorne eine kleine Höhle in der Mine und sah etwas glitzern. Er grub zwei mysteriöse, mit funkelnden Edelsteinen besetzte Waffen aus. Erstaunlicherweise flüsterten sie Lorne telepathisch zu. „Nimm uns. Wir gehören dir. Das ist dein Schicksal.“ Die Edelsteine zogen ihn unwiderstehlich an. Lorne nahm die Waffen, die Glimmer und Glint hießen, und verließ die Mine.\n\nWenige Wochen später gab es im nördlichen Gael Gerüchte über einen Zwergenschützen mit mystischen Kräften. Es hieß, dass dieser Schütze sich Fetterstone nannte, nach der Mine in Dwarf Rock. Angeblich sollte er alle, die er als Bösewichte betrachtete, hinrichten. Manche hielten ihn für eine verwunschene Seele unter dem Einfluss eines bösen Geistes, und sie sagten, dass seine magischen Waffen ihn unterjochten.
 
 // Ability_Rook1
 Ability_Rook1_name                                                         Enterhaken
@@ -981,13 +1002,13 @@ Ability_Blazer4_description_simple                                         Tarnu
 Hero_Blazer_name                                                           Blazer
 Hero_Blazer_description                                                    Arglistiger Magie/Angriffsschaden Helden-Hybrid
 Hero_Blazer_role
-Hero_Blazer_lore												Blaise Starpixie war eine Raumelfe und flog durch die Raumzonen um Nestra, wo sie sich um die Ätherwinde des Weltalls kümmerte. Eines Tages wurde sie im Schwanz eines vorbeifliegenden Kometen gefangen, und das eisige Gas verletzte ihre Haut und beschädigte ihre Flügel schwer. Sie schwebte lange erschöpft herum, fast bewusstlos und ohne eine Möglichkeit, sich zu erholen. Schließlich entdeckten einige Weltraumarbeiter ihren fast leblosen Körper und erbarmten sich ihrer. Sie brachten Ersatzteile nahe gelegener Weltraum-Docks und Schlachtschiffe an ihr an, um ihr Leben zu erhalten.\n\nUnd es gelang ihnen! Aber die Magie in Blaise verband sich mit der Computertechnologie und der aggressiven KI der Waffenkomponenten ihres neuen Raumanzugs. So entstand eine mechanische Raumelfe namens Blazer! Jetzt kämpft Blazer in den Prüfungen für die Zukunft von Strife.
+Hero_Blazer_lore												           Blaise Starpixie war eine Raumelfe und flog durch die Raumzonen um Nestra, wo sie sich um die Ätherwinde des Weltalls kümmerte. Eines Tages wurde sie im Schwanz eines vorbeifliegenden Kometen gefangen, und das eisige Gas verletzte ihre Haut und beschädigte ihre Flügel schwer. Sie schwebte lange erschöpft herum, fast bewusstlos und ohne eine Möglichkeit, sich zu erholen. Schließlich entdeckten einige Weltraumarbeiter ihren fast leblosen Körper und erbarmten sich ihrer. Sie brachten Ersatzteile nahe gelegener Weltraum-Docks und Schlachtschiffe an ihr an, um ihr Leben zu erhalten.\n\nUnd es gelang ihnen! Aber die Magie in Blaise verband sich mit der Computertechnologie und der aggressiven KI der Waffenkomponenten ihres neuen Raumanzugs. So entstand eine mechanische Raumelfe namens Blazer! Jetzt kämpft Blazer in den Prüfungen für die Zukunft von Strife.
 
 
 
 // Ability_Hale1
 Ability_Hale1_name                                                         Schwungschlag
-Ability_Hale1_description										Spurte mit zwei Schwüngen nach vorn.  Jeder Schwung erzeugt ^o$damage$ Zauberschaden^*.\n\nMehrere Treffer an Ziel erzeugen 75 % Schaden.\n\nFähigkeit wird aufgeladen, wenn feindlicher Held in Nähe stirbt.
+Ability_Hale1_description										           Spurte mit zwei Schwüngen nach vorn.  Jeder Schwung erzeugt ^o$damage$ Zauberschaden^*.\n\nMehrere Treffer an Ziel erzeugen 75 % Schaden.\n\nFähigkeit wird aufgeladen, wenn feindlicher Held in Nähe stirbt.
 Ability_Hale1_description_simple                                           schleudern und schaden
 
 // Ability_Hale2
@@ -1002,7 +1023,7 @@ Ability_Hale3_description_simple                                           bufft
 
 // Ability_Hale4
 Ability_Hale4_name                                                         Erdbeben
-Ability_Hale4_description										Aktivieren, um an Feinden in der Nähe ^o$damage$ Zauberschaden^* zu wirken und sie $stun$ Sekunden lang zu lähmen.
+Ability_Hale4_description										           Aktivieren, um an Feinden in der Nähe ^o$damage$ Zauberschaden^* zu wirken und sie $stun$ Sekunden lang zu lähmen.
 Ability_Hale4_description_simple                                           schädigt und betäubt nahegelegene Feinde
 
 // Hero_Hale
@@ -1018,7 +1039,7 @@ Ability_Shank1_description_simple                                          Verla
 
 // Ability_Shank2
 Ability_Shank2_name                                                        Ausbruch
-Ability_Shank2_description                                                 Verbündeten in Zielrichtung wird ein Anschub von Bewegungsgeschw. verliehen. Eine schwindende $taperingslow$%  Bewegungsverlangsamung wirkt auf Feinde ein.
+Ability_Shank2_description                                                 Verbündeten in Zielrichtung wird ein Anschub von Bewegungsgeschw. verliehen. Eine schwindende $taperingslow$% Bewegungsverlangsamung wirkt auf Feinde ein.
 Ability_Shank2_description_simple                                          Geschwindigkeitboost und Debuff entl. einer Linie
 
 // State_Shank_Ability2
@@ -1045,7 +1066,7 @@ Ability_Shank4_description_simple                                          weitr
 Hero_Shank_name                                                            Shank
 Hero_Shank_description                                                     Nahkampf Held mit großem Einsatz und einem Haken
 Hero_Shank_role
-Hero_Shank_lore													Shank war sehr einsam. Er wanderte durch die Hügel von Strife und wurde allmählich langsam. Aufgrund seiner irrsinigen Ausbrüche und seines verrückten Verhaltens fiel er den vier Städten von Strife lästig, und man versuchte oft, ihn einzusperren. Aber irgendwie erschuf er einen Zauberschlüssel (manche sagen, durch übernatürliche Mittel, die ihm sein Wahnsinn enthüllte) und entkam stets seinen Bewachern. Er verwandelte seine Kugelfessel in einen primitiven Verbündeten namens „Clunk“ und setzte seinen Amoklauf fort. Shank verwendete seinen Zauberschlüssel dazu, durch die Tore der Strife-Arena zu gelangen, und jetzt kämpft er in den Prüfungen. Anscheinend hat er sonst wenig zu tun.
+Hero_Shank_lore													           Shank war sehr einsam. Er wanderte durch die Hügel von Strife und wurde allmählich langsam. Aufgrund seiner irrsinigen Ausbrüche und seines verrückten Verhaltens fiel er den vier Städten von Strife lästig, und man versuchte oft, ihn einzusperren. Aber irgendwie erschuf er einen Zauberschlüssel (manche sagen, durch übernatürliche Mittel, die ihm sein Wahnsinn enthüllte) und entkam stets seinen Bewachern. Er verwandelte seine Kugelfessel in einen primitiven Verbündeten namens „Clunk“ und setzte seinen Amoklauf fort. Shank verwendete seinen Zauberschlüssel dazu, durch die Tore der Strife-Arena zu gelangen, und jetzt kämpft er in den Prüfungen. Anscheinend hat er sonst wenig zu tun.
 
 
 
@@ -1096,7 +1117,7 @@ Ability_Ace2_description_simple                                            Sprun
 
 // Ability_Ace3
 Ability_Ace3_name                                                          Frostschaden
-Ability_Ace3_description										Aktivieren, um $number_of_icicles$ Eiszapfen zu erzeugen, die eintreffende Schadenseffekte um $damage_reduction$ % reduzieren.\n\nWenn ein Eiszapfen von einem Feind beschädigt wird, wird es zerstört, wirkt ^o$damage$ Zauberschaden^* und verlangsamt den Angreifer um $slow$ %.
+Ability_Ace3_description										           Aktivieren, um $number_of_icicles$ Eiszapfen zu erzeugen, die eintreffende Schadenseffekte um $damage_reduction$% reduzieren.\n\nWenn ein Eiszapfen von einem Feind beschädigt wird, wird es zerstört, wirkt ^o$damage$ Zauberschaden^* und verlangsamt den Angreifer um $slow$%.
 Ability_Ace3_description_simple                                            verlangsamt und schädigt Angreifer
 
 
@@ -1122,7 +1143,7 @@ Ability_Harrower1_description_simple                                       Hopse
 
 // Ability_Harrower2
 Ability_Harrower2_name                                                     Geistergehilfe
-Ability_Harrower2_description                                              Aktivieren, um einen Wolfsgeist zu beschwören, der den nächstgelegenen Feind attackiert. Beim Aufprall verursacht der Wolf ^o$damage$^* Magischen Schaden und verursacht eine 25% Verlangsamung. \n\nDanach greift der Wolf willkürlich Feinde in der Nähe an und führt $numattacks$ weitere Angriffe aus. Diese darauf folgenden Angriffe verursachen 45% Schaden.
+Ability_Harrower2_description                                              Aktivieren, um einen Wolfsgeist zu beschwören, der den nächstgelegenen Feind attackiert. Beim Aufprall verursacht der Wolf ^o$damage$^* Magischen Schaden und verursacht eine 25% Verlangsamung.\n\nDanach greift der Wolf willkürlich Feinde in der Nähe an und führt $numattacks$ weitere Angriffe aus. Diese darauf folgenden Angriffe verursachen 45% Schaden.
 Ability_Harrower2_description_simple                                       Schaden und Verlangsamung naher Helden
 
 // Ability_Harrower3
@@ -1130,13 +1151,13 @@ Ability_Harrower3_name                                                     Fest 
 Ability_Harrower3_description                                              Angriffe aktivieren Fest der Wunden. Verbündete, die diesem Ziel Schaden zufügen, verursachen $damage_increase$% zusätzlichen Schaden und werden um $percentdamagehealed$% des verursachten Schdens geheilt.
 Ability_Harrower3_description_simple                                       Team Lebensraub und Schadensverstärkung
 
-State_Harrower_Ability3_name									Wundenweide
+State_Harrower_Ability3_name									           Wundenweide
 State_Harrower_Ability3_description                                        Harrower hat Fest der Wunden aktiviert. Jede Art von Schaden den du erleidest wird verstärkt und die Feinde, die ihn verursachen, werden geheilt.
 
 
 // Ability_Harrower4
 Ability_Harrower4_name                                                     Grendlefang
-Ability_Harrower4_description									Aktivieren, um in den Nahkampf überzugehen und $maxhp$ Bonusgesundheit und einen Temposchub zu erhalten.\n\nIn dieser Form, verstümmelt jeder vierte Angriff, bewirkt $percent_bonus_damage$ % Bonussschaden und verlangsamt den Gegner (der erste Angriff verstümmelt immer).
+Ability_Harrower4_description									           Aktivieren, um in den Nahkampf überzugehen und $maxhp$ Bonusgesundheit und einen Temposchub zu erhalten.\n\nIn dieser Form, verstümmelt jeder vierte Angriff, bewirkt $percent_bonus_damage$% Bonussschaden und verlangsamt den Gegner (der erste Angriff verstümmelt immer).
 Ability_Harrower4_description:harrower_melee                               Aktivieren, um wieder Fernkampf-Gestalt anzunehmen, wobei Grendlefangs Boni verloren gehen.
 Ability_Harrower4_description_simple                                       Wechsel zwischen Nahkampf- und Fernkampf-Gestalt
 
@@ -1144,7 +1165,7 @@ Ability_Harrower4_description_simple                                       Wechs
 
 // Hero_Harrower
 Hero_Harrower_name                                                         Harrower
-Hero_Harrower_description											Körperlicher Schadensverursacher, verwandelt
+Hero_Harrower_description											       Körperlicher Schadensverursacher, verwandelt
 Hero_Harrower_role                                                         Verursacht physischen Schaden
 Hero_Harrower_lore                                                         Ace kommt aus Tempra, wo er seine Stärke und seine zweifelhafte Berühmtheit im Kampf mit den wilden Bestien der eisigen Berge erlangte. In seiner Heimatstadt ist er eine lebende Legende (doch nirgends so sehr wie in seinem eigen Kopf). Mit seinem anmaßenden Verhalten und seinen knallharten Eisenfäusten hat er sich als “Stolz von Tempra” einen Ruf gemacht. Jetzt kämpft er bei den Proben und hofft seiner Sammlung weitere Trophäen hinzufügen zu können
 
@@ -1152,7 +1173,7 @@ Hero_Harrower_lore                                                         Ace k
 
 // Ability_CapriceTutorial1
 Ability_CapriceTutorial1_name                                              Feuerlager
-Ability_CapriceTutorial1_description_simple								Wähle eine Richtung, um ^o$damage$ Zauberschaden^* in einer Linie auszuüben.  Nach einer kurzen Verzögerung explodiert diese Linie und übt den halben Schaden aus.
+Ability_CapriceTutorial1_description_simple								   Wähle eine Richtung, um ^o$damage$ Zauberschaden^* in einer Linie auszuüben.  Nach einer kurzen Verzögerung explodiert diese Linie und übt den halben Schaden aus.
 Ability_CapriceTutorial1_description                                       In eine Richtung zielen, um ^o$damage$ Magischen Schaden^* entlang einer Linie zu verursachen. Nach 1.3 Sek. folgt eine Explosion, die halben Schaden verursacht.
 
 
@@ -1175,8 +1196,8 @@ State_CapriceTutorial_Ability3_name_FRAME_effect
 
 // Ability_CapriceTutorial4
 Ability_CapriceTutorial4_name                                              Schnellzug
-Ability_CapriceTutorial4_description_simple                                Auf Gebiet zielen, um dorthin zu springen und ^o$damage$ Magischen Schaden^*  am nächstgelegenen Feind zu verursachen.
-Ability_CapriceTutorial4_description                                       Auf Gebiet zielen, um dorthin zu springen und ^o$damage$ Magischen Schaden^*  am nächstgelegenen Feind zu verursachen.
+Ability_CapriceTutorial4_description_simple                                Auf Gebiet zielen, um dorthin zu springen und ^o$damage$ Magischen Schaden^* am nächstgelegenen Feind zu verursachen.
+Ability_CapriceTutorial4_description                                       Auf Gebiet zielen, um dorthin zu springen und ^o$damage$ Magischen Schaden^* am nächstgelegenen Feind zu verursachen.
 
 
 // Hero_CapriceTutorial
@@ -1186,8 +1207,8 @@ Hero_CapriceTutorial_role
 
 // Ability_Magebane1
 Ability_Magebane1_name                                                     Mages Fluch
-Ability_Magebane1_description                                              Ziele auf einen Feind, um dich auf ihn zu stürzen und ^o$damage$ Magischen Schaden^* zu verursachen.\n\nMarkiert passiv nahe Feinde für 2 Sekunden, nachdem sie eine Fähigkeit einsetzen. Beim Treffen von markieten Zielen werden ^o30% Extraschaden^* und eine  ^o1.5-sekündige Betäubung^* verursacht.
-Ability_Magebane1_description_simple                                       Ziele auf einen Feind, um dich auf ihn zu stürzen und ^o$damage$ Magischen Schaden^* zu verursachen.\n\nMarkiert passiv nahe Feinde für 2 Sekunden, nachdem sie eine Fähigkeit einsetzen. Beim Treffen von markieten Zielen werden ^o30% Extraschaden^* und eine  ^o1.5-sekündige Betäubung^* verursacht.
+Ability_Magebane1_description                                              Ziele auf einen Feind, um dich auf ihn zu stürzen und ^o$damage$ Magischen Schaden^* zu verursachen.\n\nMarkiert passiv nahe Feinde für 2 Sekunden, nachdem sie eine Fähigkeit einsetzen. Beim Treffen von markieten Zielen werden ^o30% Extraschaden^* und eine ^o1.5-sekündige Betäubung^* verursacht.
+Ability_Magebane1_description_simple                                       Ziele auf einen Feind, um dich auf ihn zu stürzen und ^o$damage$ Magischen Schaden^* zu verursachen.\n\nMarkiert passiv nahe Feinde für 2 Sekunden, nachdem sie eine Fähigkeit einsetzen. Beim Treffen von markieten Zielen werden ^o30% Extraschaden^* und eine ^o1.5-sekündige Betäubung^* verursacht.
 
 // Ability_Magebane2
 Ability_Magebane2_name                                                     Zaubertrinker
@@ -1234,7 +1255,7 @@ State_Ladytinder_Ability3_name_FRAME_effect
 
 // Ability_Ladytinder4
 Ability_Ladytinder4_name                                                   Naturgewalt
-Ability_Ladytinder4_description									Ziele auf eine Position, um Petals zu beschwören.  Petals hat 60 % der Gesundheit von Lady Tinder, wirkt ^o$damage$ Angriffsschaden^*, und kann sich nicht bewegen.
+Ability_Ladytinder4_description									           Ziele auf eine Position, um Petals zu beschwören.  Petals hat 60% der Gesundheit von Lady Tinder, wirkt ^o$damage$ Angriffsschaden^*, und kann sich nicht bewegen.
 Ability_Ladytinder4_description_simple                                     Erschafft eine Pflanze die angreift
 
 // Hero_Ladytinder
@@ -1262,7 +1283,7 @@ Ability_Malady2_description_simple                                         Gebie
 
 // Ability_Malady3
 Ability_Malady3_name                                                       Goldenes Tor
-Ability_Malady3_description										Auf Stelle zielen und zielen, um 4 Sekunden lang Mauer zu erzeugen. Feinde können Mauer nicht durchdringen.  Verbündete gehen durch Mauer und werden schneller.
+Ability_Malady3_description										           Auf Stelle zielen und zielen, um 4 Sekunden lang Mauer zu erzeugen. Feinde können Mauer nicht durchdringen.  Verbündete gehen durch Mauer und werden schneller.
 Ability_Malady3_description_simple                                         erschafft eine unpassierbare Mauer
 
 // Ability_Malady4
@@ -1378,13 +1399,13 @@ Item_Relic_description_simple                                              27 Kr
 
 // Manaregen1
 Item_Manaregen1_name                                                       Klarheitsscherbe
-Item_Manaregen1_description										1,2 Mana/Sek.
-Item_Manaregen1_description_simple								1,2 Mana/Sek.
+Item_Manaregen1_description										           1,2 Mana/Sek.
+Item_Manaregen1_description_simple								           1,2 Mana/Sek.
 
 // Manaregen2
 Item_Manaregen2_name                                                       Klarheitsstein
-Item_Manaregen2_description										2,3 Mana/Sek.
-Item_Manaregen2_description_simple								2,3 Mana/Sek.
+Item_Manaregen2_description										           2,3 Mana/Sek.
+Item_Manaregen2_description_simple								           2,3 Mana/Sek.
 
 // Mender
 Item_Mender_name                                                           Vitalitätsscherbe
@@ -1472,12 +1493,12 @@ Item_DemonEdge_Empower_3_description                                       Erhö
 
 // PendantofDefiance
 Item_PendantofDefiance_name                                                Dämpfender Mantel
-Item_PendantofDefiance_description                                         Erhöht magische Rüstung um $armor$ und Gesundheit um $hp$.
+Item_PendantofDefiance_description                                         Erhöht magische Rüstung um $resistance$ und Gesundheit um $hp$.
 Item_PendantofDefiance_description_simple                                  Gibt magische Rüstung und Gesundheit
 Item_PendantofDefiance_bonusdescription                                    Erhöht magische Rüstung und Gesundheit um $common_increase$%.
 Item_PendantofDefiance_legendaryname                                       Teuflisch
 Item_PendantofDefiance_legendarydescription                                Für je 2% verlorener Gesundheit gibt $mana$ Mana
-Item_PendantofDefiance_Empower_1_name							Masochismus
+Item_PendantofDefiance_Empower_1_name							           Masochismus
 Item_PendantofDefiance_Empower_1_description                               Für je 2% verlorener Gesundheit gibt $manareturn_enchant$ Mana
 Item_PendantofDefiance_Empower_2_name                                      Widerstand
 Item_PendantofDefiance_Empower_2_description                               Erhöht magische Rüstung um $magicarmor_enchant$.
@@ -1486,9 +1507,9 @@ Item_PendantofDefiance_Empower_3_description                               Erhö
 
 // Item_ShamanHeaddress
 Item_ShamanHeaddress_name                                                  Wächterhelm
-Item_ShamanHeaddress_description                                           Erhöht magische Rüstung um $armor$. Du bekommst $magicheal$% Magieschaden allmählich wieder.
+Item_ShamanHeaddress_description                                           Erhöht magische Rüstung um $resistance$. Du bekommst $magicheal$% Magieschaden allmählich wieder.
 Item_ShamanHeaddress_description_simple                                    Gibt magische Rüstung und Gesundheit. Gibt ein Teil des genommenen Magieschadens wieder
-Item_ShamanHeaddress_bonusdescription                                      Erhöht die magische Rüstung und Heilung um $armor$. $magicheal$%.
+Item_ShamanHeaddress_bonusdescription                                      Erhöht die magische Rüstung und Heilung um $resistance$. $magicheal$%.
 Item_ShamanHeaddress_legendaryname                                         Verzweiflung
 Item_ShamanHeaddress_legendarydescription                                  Erhöht magische Rüstung um $magicarmor_enchant$ bei 20% oder niedrieger Gesundheit.
 Item_ShamanHeaddress_Empower_1_name                                        Verzweiflung
@@ -1498,13 +1519,13 @@ Item_ShamanHeaddress_Empower_2_description                                 Erhö
 
 // Item_Kingsmail
 Item_Kingsmail_name                                                        Goldener Beschützer
-Item_Kingsmail_description                                                 Erhöht Rüstung um $armor$ und gibt $hp_regen$ Gesundheit/Sek.
+Item_Kingsmail_description                                                 Erhöht Rüstung um $mitigation$ und gibt $hp_regen$ Gesundheit/Sek.
 Item_Kingsmail_description_simple                                          Gibt Rüstung und erholt Gesundheit
 Item_Kingsmail_bonusdescription                                            Erhöht die gegebene Rüstung um $common_increase$%.
 Item_Kingsmail_legendaryname                                               Anpassung
-Item_Kingsmail_legendarydescription                                        Erhöht Rüstung um $armor_legendary$ für 3 Sekunden, bis du angegriffen wirst. Stapelt bis zu 4mal auf.
+Item_Kingsmail_legendarydescription                                        Erhöht Rüstung um $armor_legendary$ für 3 Sekunden, bis du angegriffen wirst. Bis zu 4 mal stapelbar.
 Item_Kingsmail_Empower_1_name                                              Anpassung
-Item_Kingsmail_Empower_1_description                                       Erhöht Rüstung um $armor_enchant$ für $armor_duration_enchant$ Sekunden, bis du angegriffen wirst. Stapelt bis zu $stack_enchant$ mal.
+Item_Kingsmail_Empower_1_description                                       Erhöht Rüstung um $mitigation_enchant$ für $mitigation_duration_enchant$ Sekunden, bis du angegriffen wirst. Stapelt bis zu $stack_enchant$ mal.
 Item_Kingsmail_Empower_2_name                                              Restauration
 Item_Kingsmail_Empower_2_description                                       Gibt $healthregen_percent_enchant$% erhöhte Gesundheit/Sek.
 Item_Kingsmail_Empower_3_name                                              Fokus
@@ -1526,7 +1547,7 @@ Item_ResilientVest_Empower_3_description                                   Block
 
 // Item_Shardplate
 Item_Shardplate_name                                                       Eisgeschmiedete Platte
-Item_Shardplate_description                                                Erhöht Rüstung um $armor$. Die Angriffsgeschwinidgkeitangreifender Feinde wird um $attackspeedslow$% verlangsamt.
+Item_Shardplate_description                                                Erhöht Rüstung um $resistance$. Die Angriffsgeschwinidgkeitangreifender Feinde wird um $attackspeedslow$% verlangsamt.
 Item_Shardplate_description_simple                                         Erhöht bedeutend Rüstung. Die Angriffsgeschwinidgkeit aller Angreifer wird gesenkt.
 Item_Shardplate_bonusdescription                                           Erhöht Rüstung und die vermittelte Verlangsamung um $common_increase$%.
 Item_Shardplate_legendaryname                                              Wächter
@@ -1538,7 +1559,7 @@ Item_Shardplate_Empower_2_description                                      Gibt 
 
 // Item_Buckler
 Item_Buckler_name                                                          Silberner Beschützer
-Item_Buckler_description                                                   $armor$ Rüstung. Senkt Angriffsschaden von Helden um $deflection_melee$ ($deflection$ für Helden in Reichweite)
+Item_Buckler_description                                                   $resistance$ Rüstung. Senkt Angriffsschaden von Helden um $deflection_melee$ ($deflection$ für Helden in Reichweite)
 Item_Buckler_description_simple                                            Gibt Rüstung und lenkt Angriffschaden von Helden ab
 Item_Buckler_bonusdescription                                              Erhöht Reduktion der ankommenden Angriffsschaden um $common_increase$%.
 Item_Buckler_legendaryname                                                 Wiederherstellung
@@ -1670,7 +1691,7 @@ Item_MaxManaPower_Empower_3_description                                    Regen
 
 // Giants Visage
 Item_GiantsVisage_name                                                     Riesengesicht
-Item_GiantsVisage_description                                              "+$armor$ Rüstung und magische Rüstung\nGibt so viel Kraft wie $power$% deiner max. Gesundheit.
+Item_GiantsVisage_description                                              +$resistance$ Rüstung und magische Rüstung\nGibt so viel Kraft wie $power$% deiner max. Gesundheit.
 Item_GiantsVisage_description_simple                                       Gewährt Bonus-Kraft und Manaregeneration abhängig davon, wie viel Gesundheit du hast.
 Item_GiantsVisage_bonusdescription                                         Erhöht das Gewinn von Kraft um $common_increase$%.
 Item_GiantsVisage_legendaryname
@@ -1679,8 +1700,8 @@ Item_GiantsVisage_Empower_1_name                                           Konst
 Item_GiantsVisage_Empower_1_description                                    Erhöht max. Gesundheit um $hp_enchant$%.
 Item_GiantsVisage_Empower_2_name                                           Wiederherstellung
 Item_GiantsVisage_Empower_2_description                                    Gibt so viel Gesundheit/Sek. wie $regen_enchant$% deiner max. Gesundheit.
-Item_GiantsVisage_Empower_3_name								Macht
-Item_GiantsVisage_Empower_3_description							Erhöht Stärkebonus auf $power_enchant$ % deiner maximalen Gesundheit.
+Item_GiantsVisage_Empower_3_name								           Macht
+Item_GiantsVisage_Empower_3_description							           Erhöht Stärkebonus auf $power_enchant$% deiner maximalen Gesundheit.
 
 
 // ScalingPower
@@ -1691,7 +1712,7 @@ Item_ScalingPower_bonusdescription                                         Erhö
 Item_ScalingPower_legendaryname                                            Ladung
 Item_ScalingPower_legendarydescription                                     Erhöht bei max. Ladungen Kraft um $power_legendary$.
 Item_ScalingPower_Empower_1_name                                           Ruhm
-Item_ScalingPower_Empower_1_description							Das Töten von Cindara oder Baldir bietet nun zwei Aufladungen.
+Item_ScalingPower_Empower_1_description							           Das Töten von Cindara oder Baldir bietet nun zwei Aufladungen.
 Item_ScalingPower_Empower_2_name                                           Kraft
 Item_ScalingPower_Empower_2_description                                    Gibt $power_enchant$ Kraft.
 Item_ScalingPower_Empower_3_name                                           Ewigkeit
@@ -1713,7 +1734,7 @@ Item_EnduringHelm_Empower_3_description                                    Senkt
 
 // Elderstone
 Item_ElderStone_name                                                       Älterstein
-Item_ElderStone_description                                                "+$hp$ max. Gesundheit, +$mp$ Mana. \n\nJede Minute gibt zusätzliche $hp_gain$ max Gesundheit und $mp_gain$ Mana. Bis zu 10 Minuten beschränkt.
+Item_ElderStone_description                                                "+$hp$ max. Gesundheit, +$mp$ Mana.\n\nJede Minute gibt zusätzliche $hp_gain$ max Gesundheit und $mp_gain$ Mana. Bis zu 10 Minuten beschränkt.
 Item_ElderStone_description_simple                                         Gibt progressiv zusätzliche Gesundheit und Mana.
 Item_ElderStone_bonusdescription                                           Erhöht Gesundheit um $common_increase$%.
 Item_ElderStone_legendaryname                                              Schwer
@@ -1729,7 +1750,7 @@ Item_ElderStone_Empower_4_description                                      Senk 
 
 // CrusaderShield
 Item_CrusaderShield_name                                                   Haube des Kapitäns
-Item_CrusaderShield_description									+$armor$ Rüstung\nVerleiht $armor_aura$ Zauberrüstung an verbündete Nahkämpfer in der Nähe und reduziert Schäden durch Türme um $armor_aura$ %.
+Item_CrusaderShield_description									           +$resistenz$ Widerstand\n+$mitigation$ Mitigation\nReduziert den von Türmen erlittenen Schaden um $tower_buff$% und den Flächenschaden aller in der Nähe befindlichen Zänker um $splash_buff$%.
 Item_CrusaderShield_description_simple                                     Gibt dir Rüstung und ein Verteidigungsbonus an umliegende verbündete Zänker.
 Item_CrusaderShield_bonusdescription                                       Erhöht Rüstung um $common_increase$%.
 Item_CrusaderShield_legendaryname                                          Gerecht
@@ -1737,21 +1758,23 @@ Item_CrusaderShield_legendarydescription                                   Angri
 Item_CrusaderShield_Empower_1_name                                         Autorität
 Item_CrusaderShield_Empower_1_description                                  Angriffsgeschwinidgkeit umliegender verbündeter Zänker wird auch um $attackspeed_enchant$%. erhöht.
 Item_CrusaderShield_Empower_2_name                                         Erhaltung
-Item_CrusaderShield_Empower_2_description						Steigert Zauberrüstung an verbündeten Nahkämpfern um $aura_boost_enchant$.
+Item_CrusaderShield_Empower_2_description						           Fügt verbündeten Kämpfern Regeneration mit $aura_boost_enchant$ Gesundheit/Sek. hinzu.
 Item_CrusaderShield_Empower_3_name                                         Fokus
-Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$ Rüstung\nSteigert Zauberrüstung an verbündeten Nahkämpfern um $sacrifice_enchant$ und Turmschaden-Reduzierung um $tower_reduction_enchant$%.
+Item_CrusaderShield_Empower_3_description						           -$sacrifice_enchant$ Widerstand. Erhöht die Schadensreduzierung des Zänker-Turms auf $tower_reduction_enchant$%.
 
 // Item_StoneSkin
 Item_StoneSkin_name                                                        Steinhaut
-Item_StoneSkin_description                                                 ^o+$damage$ Angriffsschaden^* \nAktivieren um für 6 Sekunden allen eingehenden Schaden um $damage_scale$% und alle CC-Effekte um $ccreduction$% zu reduzieren.
-Item_StoneSkin_description_simple                                          Erteilt ^oAngriffsschaden^*. Aktivieren um den eingehenden Schaden und alle CC-Effekte zu reduzieren.
+Item_StoneSkin_description                                                 ^o+$damage$ Angriffsschaden^*\n\n^091Aktivieren: Erhalte 8 Sekunden lang $resistance$ Widerstand.^*
+Item_StoneSkin_description_simple                                          Gewährt ^oAngriffsschaden^*\n^091Aktivieren: Erhalten Sie für eine Dauer massiven Widerstand.^*
 Item_StoneSkin_bonusdescription
 Item_StoneSkin_legendaryname
 Item_StoneSkin_legendarydescription
 Item_StoneSkin_Empower_1_name                                              Eifer
 Item_StoneSkin_Empower_1_description                                       Senkt Abkühlzeiten um $cooldown_enchant$ Sekunden
 Item_StoneSkin_Empower_2_name                                              Regeneration
-Item_StoneSkin_Empower_2_description                                       Gewährt $healthregen_enchant$ Gesundheit/Sek. aber entfernt  $attack_enchant$ Angriffsschaden.
+Item_StoneSkin_Empower_2_description                                       Gewährt $healthregen_enchant$ Gesundheit/Sek. aber entfernt $attack_enchant$ Angriffsschaden.
+Item_StoneSkin_Empower_3_name									           Widerstand
+Item_StoneSkin_Empower_3_description							           Gewährt $resistance_enchant$% zusätzlichen Widerstand.
 
 // DesperationsEdge
 Item_DesperationsEdge_name                                                 Kristallines Messer
@@ -1771,11 +1794,11 @@ Item_DesperationsEdge_Empower_4_description                                Gewä
 
 // Riftshards
 Item_Riftshards_name                                                       Wundensplitter
-Item_Riftshards_description                                                ^o+$attack_damage$ Angriffsschaden^*. Gewährt eine $critchance$% Möglichkeit, 2x Schaden bei einem Angriff anzurichten.
+Item_Riftshards_description                                                ^o+$attack_damage$ Angriffsschaden^*.\nGewährt eine $critchance$% Möglichkeit, 2x Schaden bei einem Angriff anzurichten.
 Item_Riftshards_description_simple                                         Gewährt ^oAngriffschaden^* und eine Möglichkeit, 2x Schaden anzurichten
 Item_Riftshards_bonusdescription                                           Erhöht die kritische Möglichkeit und Wert des Schadens um $common_increase$%.
 Item_Riftshards_legendaryname                                              Vernichtend
-Item_Riftshards_legendarydescription                                       Beim Angriff der Feinde wird ihre Rüstung um $armor$ für 3 Sekunden gesenkt.
+Item_Riftshards_legendarydescription                                       Beim Angriff der Feinde wird ihre Rüstung um $resistance$ für 3 Sekunden gesenkt.
 Item_Riftshards_Empower_1_name                                             Ruine
 Item_Riftshards_Empower_1_description                                      Beim Angriff der Feinde wird ihre Rüstung um $reducearmor_enchant$ für $reducearmor_duration_enchant$ Sekunden gesenkt. Nicht aufstapelbar.
 Item_Riftshards_Empower_2_name                                             Glück
@@ -1810,7 +1833,7 @@ Item_ASBoots_description_simple                                            Gewä
 // HealthBoots
 Item_HealthBoots_name                                                      Trägheitsstiefel
 Item_HealthBoots_description                                               65 Bewegungsgeschwindigkeit, +250 Gesundheit\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
-Item_HealthBoots_description_simple                                        Gewährt Bewegungsgeschwindigkeit  und Gesundheit. Aktiviere um alle Betäubungen und Verlangsamungen von dir zu entfernem
+Item_HealthBoots_description_simple                                        Gewährt Bewegungsgeschwindigkeit und Gesundheit. Aktiviere um alle Betäubungen und Verlangsamungen von dir zu entfernem
 
 // RuneBoots
 Item_RuneBoots_name                                                        Runenstiefel
@@ -1819,22 +1842,22 @@ Item_RuneBoots_description_simple                                          Gewä
 
 // PowerBoots
 Item_PowerBoots_name                                                       Kraftstiefel
-Item_PowerBoots_description                                                65 Bewegungseschwindigkeit, \n+20 Kraft
+Item_PowerBoots_description                                                65 Bewegungseschwindigkeit,\n+20 Kraft
 Item_PowerBoots_description_simple                                         Gewährt Bewegungsgeschwindigkeit und Kraft.
 
 // WarpBoots
 Item_WarpBoots_name                                                        Teleportstiefel
 Item_WarpBoots_description                                                 85 Bewegungsgeschwindigkeit\nZiele auf eine Stelle um dahin zu stürmen.
-Item_WarpBoots_description_simple                                          85 Bewegungsgeschwindigkeit \nZiele auf eine Stelle um dahin zu stürmen.
+Item_WarpBoots_description_simple                                          85 Bewegungsgeschwindigkeit\nZiele auf eine Stelle um dahin zu stürmen.
 
 // TeleportBoots
 Item_TeleportBoots_name                                                    Teleportstiefel
-Item_TeleportBoots_description                                             85 Bewegungsgeschwindigkeit \nZiele auf eine verbündete Einheit oder Gebäude um dahin zu teleportieren. Nach Aktivierung gewinne 80 Bewegungsseschwindigkeit  für 3 Sekunden.
+Item_TeleportBoots_description                                             85 Bewegungsgeschwindigkeit\nZiele auf eine verbündete Einheit oder Gebäude um dahin zu teleportieren. Nach Aktivierung gewinne 80 Bewegungsseschwindigkeit  für 3 Sekunden.
 Item_TeleportBoots_description_simple                                      Gewährt Bewegungsgeschwindigkeit. Aktiviere um zu einer verbündeten Einheit zu teleportieren
 
 // HealthElixir
 Item_HealthElixir_name                                                     Gesundheitselixier
-Item_HealthElixir_description									Heilt im Verlauf von 10 Sekunden 350 Gesundheit. Durch Erleiden von Schaden wird der Effekt gebannt.
+Item_HealthElixir_description									           Heilt im Verlauf von 10 Sekunden 350 Gesundheit. Durch Erleiden von Schaden wird der Effekt gebannt.
 Item_HealthElixir_description_simple                                       Größes Heilelixier. Schadennahme annulliert Wirkung.
 
 // State_HealthElixir
@@ -1861,13 +1884,13 @@ Item_RejuvenationElixir_description_simple                                 Heilt
 
 // Indestructible
 Item_Indestructible_name                                                   Unsterblicher Blick
-Item_Indestructible_description                                            Gewährt $hp$ Gesundheit.\n\nGibt $regen_outofcombat$% deiner max. Gesundheit pro Sekunde, wenn du nicht kämpfst.
-Item_Indestructible_description_simple                                     Gewährt viel Gesundheit. Verbesert Regeneration aus dem Kampf.
-Item_Indestructible_bonusdescription                                       Erhöht Gesundheit und Regeneration um $common_increase$%.
+Item_Indestructible_description                                            Gewährt $hp$% zusätzliches maximales Leben.\n\n^091Beim Tod wirst du mit $percent_hp$% Leben und Mana wiederbelebt.^*
+Item_Indestructible_description_simple                                     Gewährt enorme Gesundheit und wird bei Tod wiederbelebt
+Item_Indestructible_bonusdescription                                       Erhöht die durch $common_increase$% bereitgestellte Gesundheit und Regeneration.
 Item_Indestructible_Empower_1_name                                         Verzweiflung
 Item_Indestructible_Empower_1_description                                  Erhöht Gesundheit/Sek. um $hpregen_mult$% bei 20% oder niedriger Gesundheit.
-Item_Indestructible_Empower_2_name                                         Ermächtigen 2
-Item_Indestructible_Empower_2_description                                  ?
+Item_Indestructible_Empower_2_name                                         Widerstandsfähigkeit
+Item_Indestructible_Empower_2_description                                  Erhöht die Gesundheit und das Mana der Wiederbelebung um $percent_enchant$% und erhöht gleichzeitig die Abklingzeit um $cooldown_enchant$ Sekunde.
 Item_Indestructible_Empower_3_name                                         Schnelligkeit
 Item_Indestructible_Empower_3_description                                  Bewährt $movespeed$ Bewegungsgeschwindigkeit bei voller Gesundheit.
 
@@ -1889,7 +1912,7 @@ Item_Stormspirit_Empower_3_description                                     Gewä
 
 // Item_Frostfield
 Item_FrostfieldPlate_name                                                  Immerwintercharm
-Item_FrostfieldPlate_description                                           "+$armor$ Rüstung und magische Rüstung\n\nAktiviere um umliegende Feinde zu verlangsamen und ihnenl ^o$damage$ Magieschaden^* anzurichten.
+Item_FrostfieldPlate_description                                           "+$resistance$ Rüstung und magische Rüstung\n\nAktiviere um umliegende Feinde zu verlangsamen und ihnenl ^o$damage$ Magieschaden^* anzurichten.
 Item_FrostfieldPlate_description_simple                                    Gewährt Rüstung und magische Rüstung. Aktiviere um umliegende Feinde zu verlangsamen und zu schädigen.
 Item_FrostfieldPlate_IMPACT_effect                                         Der Frostring erweitert sich bis zu 500 Radius, verursacht graduelle Verlangsamung für 4 Sekunden und richte $damage$ Magieschaden an.
 Item_FrostfieldPlate_bonusdescription                                      Erhöht Schaden und Rüstung um $common_increase$%
@@ -1920,9 +1943,9 @@ Item_RingOfSorcery_Empower_4_description                                   Bei A
 
 // Item_Mask_Of_Madman
 Item_Mask_Of_Madman_name                                                   Berserkermaske
-Item_Mask_Of_Madman_description                                            $vamp$% Angriff-Lebensraub. \n\nAktiviere um Angriffsgeschwindigkeit um $attackspeed$ und Bewegungseschwindigkeit $movespeed$ für 6 Sekunden zu erhöhen. Erhöht genommenen Schaden um 20% wenn aktiv.
-Item_Mask_Of_Madman_description_simple                                     Aktiviere um Angriffs- und Bewegungsgeschwindigkeit  zu erhöhen aber nimm mehr Schaden.
-Item_Mask_Of_Madman_bonusdescription                                       Erhöht Schaden und Bewegunggeschwindigkeit  um $common_increase$%.
+Item_Mask_Of_Madman_description                                            $vamp$% Angriff-Lebensraub.\n\n^091Aktiviere um Angriffsgeschwindigkeit um $attackspeed$ und Bewegungseschwindigkeit $movespeed$ für 6 Sekunden zu erhöhen. Erhöht genommenen Schaden um 15% wenn aktiv.^*
+Item_Mask_Of_Madman_description_simple                                     Gewährt Lebensraub\n^091Aktivieren: Angriffsgeschwindigkeit und Bewegungsgeschwindigkeit erhöht – aber der Schaden nimmt zu.^*
+Item_Mask_Of_Madman_bonusdescription                                       Erhöht Schaden und Bewegunggeschwindigkeit um $common_increase$%.
 Item_Mask_Of_Madman_legendaryname                                          Spannkraft
 Item_Mask_Of_Madman_legendarydescription                                   Senkt Strafe des Prozentes der genommenen Schäden um $scale$.
 Item_Mask_Of_Madman_Empower_1_name                                         Spannkraft
@@ -1935,7 +1958,7 @@ Item_Mask_Of_Madman_Empower_3_description                                  Abkü
 // Item_Lasthit
 Item_Lasthit_name                                                          Axt werfen
 Item_Lasthit_description                                                   Aktiviere um einer Nicht-Helden-Einheit 1.2x Angriffsschaden anzurichten. Erhöht deine Angriffsschaden gegen Nicht-Helden-Einheiten um $damage$%.
-Item_Lasthit_description_simple                                            Gewährt Bonus-Angriffsscahden gegen Nicht-Helden-Einheiten. \nAktiviere um Nicht-Helden-Einheiten zu shcädigen.
+Item_Lasthit_description_simple                                            Gewährt Bonus-Angriffsscahden gegen Nicht-Helden-Einheiten.\nAktiviere um Nicht-Helden-Einheiten zu shcädigen.
 Item_Lasthit_bonusdescription                                              Senkt Abkühlzeit um $cooldown$ Sekunden.
 Item_Lasthit_legendaryname                                                 Wohlhabend
 Item_Lasthit_legendarydescription                                          Eine Einheit mit Axt werfen abzuschießen gewährt zusätzliches $gold$ Gold.
@@ -1966,7 +1989,7 @@ Item_HealingScepter_Empower_3_description                                  Heilt
 
 // InfernoBrand
 Item_InfernoBrand_name                                                     Teufelmarke
-Item_InfernoBrand_description                                              "+$armor$ Rüstung und magische Rüstung\nRichtet Feinden in einem $radius$ Radius passiv ^o$damage$ Magieschaden/Sek,^* an.
+Item_InfernoBrand_description                                              +$resistance$ Rüstung und magische Rüstung\nRichtet Feinden in einem $radius$ Radius passiv ^o$damage$ Magieschaden/Sek,^* an.
 Item_InfernoBrand_description_simple                                       Gewährt Rüstung und magische Rüstung. Richtet umliegenden Feinden passiv Schaden an.
 Item_InfernoBrand_bonusdescription                                         Erhöht Schaden und Rüstung um $common_increase$%.
 Item_InfernoBrand_legendaryname                                            Strahlend
@@ -1982,7 +2005,7 @@ Item_InfernoBrand_Empower_4_description                                    Erhö
 
 // Codex
 Item_Codex_name                                                            Pyrostab
-Item_Codex_description                                                     Aktiviere um einem Ziel ^o$damage$ Magieschaden^ anzurichten.
+Item_Codex_description                                                     Aktiviere um einem Ziel ^o$damage$ Magieschaden^* anzurichten.
 Item_Codex_description_simple                                              Aktiviere um einem Ziel Magieschaden anzurichten.
 Item_Codex_bonusdescription                                                Erhöht Schaden vom Pyrostab um $common_increase$%.
 Item_Codex_legendaryname                                                   Kill Stehlen
@@ -2016,7 +2039,7 @@ State_Hellflower_name_FRAME_effect
 
 // Energizer
 Item_Energizer_name                                                        Windstoß
-Item_Energizer_description                                                 Gibt $movespeed$ Bewegungsgeschw. \n\n Aktivieren um benachbarten Verbündeten für 4 Sekunden 100 Bewegungsgeschw. zu geben.
+Item_Energizer_description                                                 Gibt $movespeed$ Bewegungsgeschw.\n\n Aktivieren um benachbarten Verbündeten für 4 Sekunden 100 Bewegungsgeschw. zu geben.
 Item_Energizer_description_simple                                          Gibt etwas Bewegungsgeschw. und kann aktiviert werden um benachbarten Verbündeten einen Anschub von Bewegungsgeschw. verleihen.
 Item_Energizer_bonusdescription                                            Verkürzt die Abkühlzeit des Windstoß um $common_increas$%
 Item_Energizer_legendaryname                                               Hartnäckig
@@ -2046,7 +2069,7 @@ Item_Supercharger_legendarydescription                                     Verle
 Item_Supercharger_Empower_1_name                                           Macht
 Item_Supercharger_Empower_1_description                                    Verleiht dir $powerpercent_enchant$% Extrakraft.
 Item_Supercharger_Empower_2_name                                           Ermächtigen 2
-Item_Supercharger_Empower_2_description                                    Verlängert die Abkühlzeit um $cooldown_enchant$%, aber verleiht dir  $bonus$ Extrakraft
+Item_Supercharger_Empower_2_description                                    Verlängert die Abkühlzeit um $cooldown_enchant$%, aber verleiht dir $bonus$ Extrakraft
 Item_Supercharger_Empower_3_name                                           Fokus
 Item_Supercharger_Empower_3_description                                    Erhöhrt die Kraft um $power_enchant$ aber stellt nicht länger Mana wieder her.
 
@@ -2108,17 +2131,17 @@ Item_Soulstealer_Empower_3_description                                     Verle
 
 // Slayer
 Item_Slayer_name                                                           Betäubende Laterne
-Item_Slayer_description                                                    +$attackspeed$ Angriffsgeschwindigkeit\n Jedes Mal, wenn du einen Gegner angreifst wird ihre Kraft umd $power_reduction$5 verringert. Kann 3 Mal gestapelt werden.
-Item_Slayer_description_simple                                             Erhöht deine Angriffsgeschwindigkeit. Angriffe auf Gegner verringern deren Kraft.
-Item_Slayer_bonusdescription                                               Erhöht deine Angriffsgeschwindigkeit. Die Kraft des Gegenstands wird um $common_increase$% verringert.
+Item_Slayer_description                                                    +$health$ Gesundheit\nWenn du einem Feind dreimal Schaden zufügst, wird seine Kraft um $power_reduction$% verringert. Dauert 6 Sekunden.
+Item_Slayer_description_simple                                             Reduziert die gegnerische Kraft nach 3 Angriffen.
+Item_Slayer_bonusdescription                                               Erhöht die Kraftreduzierung des Gegenstands um $common_increase$%.
 Item_Slayer_legendaryname                                                  Ruine
 Item_Slayer_legendarydescription                                           Wenn du 3 Stacks hast, nimmt der Gegner $amp_legendary$% mehr Schaden.
 Item_Slayer_Empower_1_name                                                 Ruine
-Item_Slayer_Empower_1_description                                          Wenn du 3 Stacks hast, nimmt der Gegner $damage_enchant$% mehr Schaden.
+Item_Slayer_Empower_1_description                                          Geschwächte Ziele erleiden außerdem um $damage_enchant$% erhöhten Schaden.
 Item_Slayer_Empower_2_name                                                 Zeitalter
-Item_Slayer_Empower_2_description                                          Erhöht das Maximum des Stapels auf $charges_enchant$.
-Item_Slayer_Empower_3_name                                                 Ermächtigen 3
-Item_Slayer_Empower_3_description                                          Verleiht $power_enchant$ Kraft, verringert aber deine Angriffsgeschwindigkeit. Kann nicht gestapelt werden und verringert die Kraft um $powerreduction_enchant$%.
+Item_Slayer_Empower_2_description                                          Erhöht die Dauer um $duration_enchant$ Sekunden.
+Item_Slayer_Empower_3_name                                                 Fokus
+Item_Slayer_Empower_3_description                                          Erhöht die Kraftreduzierung auf $powerreduction_enchant$%.
 
 // Vampiric Blade
 Item_VampiricBlade_name                                                    Vampirischer Dolch
@@ -2166,7 +2189,7 @@ Item_Mana_Shield_Empower_3_description                                     Erhö
 
 // Item_Shieldbreaker
 Item_Shieldbreaker_name                                                    Zerschmetternde Keule
-Item_Shieldbreaker_description                                             ^o+$attack_damage$ Angriffsschaden^*. Basis-Attacken ignorieren $armor$% der feindlichen Rüstung.
+Item_Shieldbreaker_description                                             ^o+$attack_damage$ Angriffsschaden^*.\nBasis-Attacken ignorieren $resistance$% der feindlichen Rüstung.
 Item_Shieldbreaker_description_simple                                      Bietet ^oAngriffsschaden^*. Basis-Attacken ignorieren einen Prozentsatz der Rüstung der Feinde.
 Item_Shieldbreaker_bonusdescription                                        Erhöht die Rüstungsreduktion um $common_increase$%.
 Item_Shieldbreaker_legendaryname                                           Teilung
@@ -2180,7 +2203,7 @@ Item_Shieldbreaker_Empower_3_description                                   Gewä
 
 // Item_Malevolence
 Item_Malevolence_name                                                      Grimoire
-Item_Malevolence_description                                               +$power$ Kraft\nZaubersprüche ignorieren $armor$% magische Rüstung.
+Item_Malevolence_description                                               +$power$ Kraft\nZaubersprüche ignorieren $resistance$% magische Rüstung.
 Item_Malevolence_description_simple                                        Verleiht Kraft. Deine Fertigkeiten ignorieren einen Teil der magsichen Rüstung deiner Gegners.
 Item_Malevolence_bonusdescription                                          Reduziert die magische Rüstung und erhöht die Kraft des Zauberspruchs um $common_increase$%.
 Item_Malevolence_legendaryname                                             Energiereich
@@ -2207,6 +2230,16 @@ Item_BarrierToken_Empower_3_name                                           Einfa
 Item_BarrierToken_Empower_3_description                                    Gewährt keine $magicarmor_enchant$ Magische Rüstung mehr.
 
 
+// Item_OraclesTrinket
+Item_OraclesTrinket_name										           Schmuckstück des Orakels
+Item_OraclesTrinket_description									           +$resistance$ Widerstand\n\n^091Aktivieren: Entfernt alle Betäubungen/Verlangsamungen/Debuffs und sorgt für 2 Sekunden lang für 50% Betäubungs-/Verlangsamungsreduzierung.\n\nWenn die Massenkontrolle erfolgreich entfernt wird, heilen Sie um^* ^o$heal$^* ^091Gesundheit.^*
+Item_OraclesTrinket_description_simple							           Gewährt Widerstand\n^091Aktivieren: Betäubung/Verlangsamungsentfernung und Selbstheilung^*
+Item_OraclesTrinket_Empower_1_name								           Konzentration
+Item_OraclesTrinket_Empower_1_description						           Das erfolgreiche Entfernen der Massenkontrolle stellt auch $mana_enchant$ Mana wieder her.
+Item_OraclesTrinket_Empower_2_name								           Schutz
+Item_OraclesTrinket_Empower_2_description						           Reinigt alle Verbündeten im Umkreis von 500.
+
+
 // Item_Marchers
 Item_Marchers_name                                                         Stiefel
 Item_Marchers_description                                                  35 Bewegungsgeschwindigkeit
@@ -2219,13 +2252,13 @@ Item_Marchers_shop_categories                                              Besta
 
 // Item_Sheepstick
 Item_SheepStick_name                                                       Hexbane
-Item_SheepStick_description                                                Gewährt $hp$ Health.\n\n Wenn aktiviert, wird Verklärt für 3.5 Sekunden beim Zielen angewendet. Verklärte Feinde können dadurch weder angreifen noch ihre Fertigkeiten nutzen.
-Item_SheepStick_description_simple                                         Setzt Angriffe und Fertigkeiten eines Feindes für 3.5 Sekunden außer Kraft.
+Item_SheepStick_description                                                ^091Aktivieren: Wendet Verklärt 2,5 Sekunden lang auf das Ziel an.\n\nVerwandelte Feinde können weder angreifen noch Fähigkeiten nutzen.^*
+Item_SheepStick_description_simple                                         ^091Aktivieren: Einen Feind kurzzeitig außer Gefecht setzen.^*
 Item_SheepStick_effect_header                                              Verklärter Effekt
-Item_SheepStick_shop_flavor                                                Wenige schamanische Utensilien sind so zermürbend wie die Totems von Kuldra: lebende, sprechende, sich windende Stäbe die Weisheit, Stärke und Geschwindigkeit gewähren sowie ihren Meistern helfen die versteckten Manaflüsse anzuzapfen um ihre Kraft schneller wieder herzustellen. Trotz dieser umfangreichen Vorteile sind die meisten Menschen unwillig diese Heidenmittel  zu führen.
+Item_SheepStick_shop_flavor                                                Wenige schamanische Utensilien sind so zermürbend wie die Totems von Kuldra: lebende, sprechende, sich windende Stäbe die Weisheit, Stärke und Geschwindigkeit gewähren sowie ihren Meistern helfen die versteckten Manaflüsse anzuzapfen um ihre Kraft schneller wieder herzustellen. Trotz dieser umfangreichen Vorteile sind die meisten Menschen unwillig diese Heidenmittel zu führen.
 Item_SheepStick_bonusdescription                                           Veringert die Abkühlung um $cooldown$ Sekunden.
 Item_SheepStick_legendaryname                                              Schmerzhaft
-Item_SheepStick_legendarydescription                                       Schwächt die Rüstung und Magische Rüstung des Ziels durch $armor$ für eine Zeitdauer.
+Item_SheepStick_legendarydescription                                       Schwächt die Rüstung und Magische Rüstung des Ziels durch $resistance$ für eine Zeitdauer.
 Item_SheepStick_IMPACT_effect                                              Wendet Verklärt an, um für 2.5 Sekunden zu zielen.
 Item_SheepStick_Empower_1_name                                             Ermächtigen 1
 Item_SheepStick_Empower_1_description                                      Schwächt die Rüstung und Magische Rüstung des Ziels durch $armor_enchant$ für eine Zeitdauer.
@@ -2239,7 +2272,7 @@ Item_Orb_Of_Revelation_name                                                Das A
 Item_Orb_Of_Revelation_description                                         +$mana$ Mana\n Ziele auf ein Gebiet um es für 6 Sekunden zu zeigen.
 Item_Orb_Of_Revelation_description_simple                                  Verleiht Mana und die Fertigkeit ein Gebietzu zeigen.
 Item_Orb_Of_Revelation_effect_header                                       Verklärte Effekte
-Item_Orb_Of_Revelation_shop_flavor                                         Wenige schamanische Utensilien sind so zermürbend wie die Totems von Kuldra: lebende, sprechende, sich windende Stäbe die Weisheit, Stärke und Geschwindigkeit gewähren sowie ihren Meistern helfen die versteckten Manaflüsse anzuzapfen um ihre Kraft schneller wieder herzustellen. Trotz dieser umfangreichen Vorteile sind die meisten Menschen unwillig diese Heidenmittel  zu führen.
+Item_Orb_Of_Revelation_shop_flavor                                         Wenige schamanische Utensilien sind so zermürbend wie die Totems von Kuldra: lebende, sprechende, sich windende Stäbe die Weisheit, Stärke und Geschwindigkeit gewähren sowie ihren Meistern helfen die versteckten Manaflüsse anzuzapfen um ihre Kraft schneller wieder herzustellen. Trotz dieser umfangreichen Vorteile sind die meisten Menschen unwillig diese Heidenmittel zu führen.
 Item_Orb_Of_Revelation_bonusdescription                                    Verkürzt die Abkühlzeit um $cooldown$ Sekunden.
 Item_Orb_Of_Revelation_legendaryname                                       Verlangsamung
 Item_Orb_Of_Revelation_legendarydescription                                Verleiht dem Auge des Sehers eine $legendary$% Verlangsamung für Gegner in dem Gebiet für 3 Sekunden.
@@ -2249,7 +2282,6 @@ Item_Orb_Of_Revelation_Empower_2_name                                      Ermä
 Item_Orb_Of_Revelation_Empower_2_description                               Enthüllte Feinde bleiben für mindestens $reveal_enchant$ Sekunden sichtbar.
 Item_Orb_Of_Revelation_Empower_3_name                                      Fleiß
 Item_Orb_Of_Revelation_Empower_3_description                               Verkürzt die Abkühlzeit um $cooldown_enchant$ Sekunden.
-
 // State_Orb_Of_Revelation_Reveal
 State_Orb_Of_Revelation_Reveal_Tooltip_name                                Offenbarung
 State_Orb_Of_Revelation_Reveal_description_simple                          Du wirst durch das Auge des Sehers dem Feind enthüllt.
@@ -2258,7 +2290,7 @@ State_Orb_Of_Revelation_Reveal_name_FRAME_effect
 
 // Item_Frostbrand
 Item_Frostbrand_name                                                       Frostprisma
-Item_Frostbrand_description                                                ^o+$damage$ Attack Damage^*.\nAngriff verwendet $slow$% Bewegungsverlangsamung für das Ziel.  Hält 2,5 Sekunden.
+Item_Frostbrand_description                                                ^o+$damage$ Attack Damage^*.\nAngriff verwendet $slow$% Bewegungsverlangsamung für das Ziel. Hält 2,0 Sekunden.\nVerlangsamung ist für Fernangreifer weniger stark.
 Item_Frostbrand_description_simple                                         Verleiht ^oAttack Damage^* und deine Angriffe verlangsamen den Gegner.
 Item_Frostbrand_effect_header                                              Frosteffekt
 Item_Frostbrand_tooltip_flavor                                             Selbst nach eine Stunde im Feuer, ist es immer noch kalt.
@@ -2268,7 +2300,7 @@ Item_Frostbrand_bonusdescription                                           Erhö
 Item_Frostbrand_legendaryname                                              Schnelligkeit
 Item_Frostbrand_legendarydescription                                       Erhöht bei einem Treffer die Bewegungsgeschw. einers Helden für 3 Sekunden.
 Item_Frostbrand_Empower_1_name                                             Schnelligkeit
-Item_Frostbrand_Empower_1_description                                      ^o+$damage$ Angriffsschaden^*.\nAngriffe  $slow$% Bewegungsverlangsamung für das Ziel.  Hält 2,5 Sekunden.
+Item_Frostbrand_Empower_1_description                                      ^o+$damage$ Angriffsschaden^*.\nAngriffe $slow$% Bewegungsverlangsamung für das Ziel. Hält 2,5 Sekunden.
 Item_Frostbrand_Empower_2_name                                             Erschöpfung
 Item_Frostbrand_Empower_2_description                                      Angriffe verlangsamen die Angriffsgeschwindigkeit des Gegners um $attackspeed_enchant$.
 Item_Frostbrand_Empower_3_name                                             Fokus
@@ -2276,6 +2308,44 @@ Item_Frostbrand_Empower_3_description                                      Erhö
 
 // State_Frostbrand
 State_Frostbrand_name                                                      Abgekühlt
+State_FrostbrandRanged_name										           Abgekühlt
+
+
+// Item_Eye_Of_Tempra
+Item_Eye_Of_Tempra_name											           Auge von Tempra
+Item_Eye_Of_Tempra_description									           +$cd_reduction$% Abklingzeitverringerung\n+$regen$ Mana/Sek.\n\n^091Aktivieren: Wirf eine unpassierbare gefrorene Kugel auf den Zielort. Alles darin ist gefroren und kann keinen Schaden erleiden.^*
+Item_Eye_Of_Tempra_description_simple							           Gewährt Abklingzeitverringerung und Manaregeneration.\n^091Aktivieren: Wirf eine gefrorene Kugel auf den Zielort.
+Item_Eye_Of_Tempra_Empower_1_name								           Trennung
+Item_Eye_Of_Tempra_Empower_1_description						           Durch die Aktivierung wird „Auge des Tempras“ sofort auf dich selbst gewirkt. Wirkungsbereich um 100 erhöht.
+Item_Eye_Of_Tempra_Empower_2_name
+Item_Eye_Of_Tempra_Empower_2_description
+Item_Eye_Of_Tempra_Empower_3_name
+Item_Eye_Of_Tempra_Empower_3_description
+// State_Eye_Of_Tempra
+State_Eye_Of_Tempra_name										           Gefroren
+State_Eye_Of_TempraRanged_name									           Gefroren
+
+// Item_Dark_Bargain
+Item_Dark_Bargain_name											           Dunkles Schnäppchen
+Item_Dark_Bargain_description									           ^o+$damage$ Angriffsschaden^*\n\n^091Aktivieren: Geben Sie 500 Gold aus, um ^o+$perm_bonus$ Angriffsschaden dauerhaft und ^o+$bonus$ Angriffsschaden^* ^091vorübergehend für 8 Sekunden zu erhalten. Keine Abklingzeit. Stapelbar.^*
+Item_Dark_Bargain_description_simple							           Bonus ^oAngriffsschaden^*.\n^091Aktivieren: Gold gegen mehr ^oAngriffsschaden eintauschen.^*
+Item_Dark_Bargain_Empower_1_name								           Fleiß
+Item_Dark_Bargain_Empower_1_description							           Erhöht die Dauer des Bonusschadens um $duration_enchant$ Sekunden.
+Item_Dark_Bargain_Empower_2_name								           Zurückhaltung
+Item_Dark_Bargain_Empower_2_description							           Reduziert die Aktivierungskosten um $gold_enchant$. Der Angriffsschadensbonus wird ^o+$perm_bonus$ dauerhaft und ^o+$bonus$ vorübergehend.
+Item_Dark_Bargain_Empower_3_name
+Item_Dark_Bargain_Empower_3_description
+
+// Item_Unstable_Shard
+Item_Unstable_Shard_name										           Instabiler Splitter
+Item_Unstable_Shard_description									           Jeder Kill/jede Unterstützung gewährt eine Reduzierung der aktuellen Abklingzeiten um $cd_lower$%.\n\n^091Aktivieren: Regeneriert sofort 1000 Mana. Erhalte 9 Sekunden lang +500 maximales Mana und 75% Abklingzeitverringerung.\n\nBei Ablauf erleidest du 1.500 reinen Schaden und eine Mini-Betäubung, während du Feinden in der Nähe in einem Wirkungsbereich von 250, 250 reinen Schaden zufügst.^*
+Item_Unstable_Shard_description_simple							           Kills und Assists reduzieren die aktuellen Abklingzeiten.\n^091Aktivieren: Abklingzeitverringerung erhalten, dann explodieren.^*
+Item_Unstable_Shard_Empower_1_name								           Gier
+Item_Unstable_Shard_Empower_1_description						           Erhalte bei Aktivierung eine Abklingzeitverringerung von 90%, erleide aber bei Ablauf +750 zusätzlichen reinen Schaden.
+Item_Unstable_Shard_Empower_2_name								           Weisheit
+Item_Unstable_Shard_Empower_2_description						           Frischt alle Fähigkeiten auf. Tötet Sie bei Ablauf, unabhängig von Ihrer Unverwundbarkeit.
+Item_Unstable_Shard_Empower_3_name
+Item_Unstable_Shard_Empower_3_description
 
 
 //
@@ -2304,9 +2374,9 @@ Ability_Luster_Passive2_3_description                                      Gewä
 Ability_Luster_TriggeredPassive_1_name                                     Gier ist Gut
 Ability_Luster_TriggeredPassive_2_name                                     Gier ist Gut
 Ability_Luster_TriggeredPassive_3_name                                     Gier ist Gut
-Ability_Luster_TriggeredPassive_1_description                              Wenn du bei einem tödlichen Schlag verfehlst, trifft Luster für dich.  ^c$cooldown$ Sekunden Abkühlzeit^*
-Ability_Luster_TriggeredPassive_2_description                              Wenn du bei einem tödlichen Schlag verfehlst, trifft Luster für dich.  ^c$cooldown$ Sekunden Abkühlzeit^*
-Ability_Luster_TriggeredPassive_3_description                              Wenn du bei einem tödlichen Schlag verfehlst, trifft Luster für dich.  ^c$cooldown$ Sekunden Abkühlzeit^*
+Ability_Luster_TriggeredPassive_1_description                              Wenn du bei einem tödlichen Schlag verfehlst, trifft Luster für dich. ^c$cooldown$ Sekunden Abkühlzeit^*
+Ability_Luster_TriggeredPassive_2_description                              Wenn du bei einem tödlichen Schlag verfehlst, trifft Luster für dich. ^c$cooldown$ Sekunden Abkühlzeit^*
+Ability_Luster_TriggeredPassive_3_description                              Wenn du bei einem tödlichen Schlag verfehlst, trifft Luster für dich. ^c$cooldown$ Sekunden Abkühlzeit^*
 Ability_Luster_TriggeredPassive_1_description_simple                       Trifft gelegentlich Kills von Zänkern für dich.
 Ability_Luster_TriggeredPassive_2_description_simple                       Trifft gelegentlich Kills von Zänkern für dich.
 Ability_Luster_TriggeredPassive_3_description_simple                       Trifft gelegentlich Kills von Zänkern für dich.
@@ -2396,16 +2466,27 @@ Ability_Bounder_Ult_1_description_simple                                   Aktiv
 Ability_Bounder_Ult_2_description_simple                                   Aktivieren um in eine Richtung zu sprinten.
 Ability_Bounder_Ult_3_description_simple                                   Aktivieren um in eine Richtung zu sprinten.
 
+// Fiki
+Ability_Fiki_Passive_name										           Ablenkung
+Ability_Fiki_Passive_description								           Reduziert den eingehenden Nicht-Helden Schaden um 11–32 (skaliert mit der Heldenstufe).
+Ability_Fiki_Passive_description_simple							           Reduziert eingehenden Nicht-Helden Schaden.
+Ability_Fiki_TriggeredPassive_name								           Verjüngen
+Ability_Fiki_TriggeredPassive_description						           Wenn der Held weniger als 75% HP hat, heilt er sich um 55–125 (skaliert mit der Heldenstufe).\n\n^c40 Zweite Abklingzeit.^*
+Ability_Fiki_TriggeredPassive_description_simple				           Heilt den Helden, wenn er weniger als 75% HP hat.
+Ability_Fiki_Ult_name											           Spott
+Ability_Fiki_Ult_description									           Zielen Sie auf einen feindlichen Nicht-Helden, damit Fiki 15 Sekunden lang Feinde mit einem Wirkungsbereich von 450 verspottet.\n\nFiki hat 2000–9000 Gesundheit (skaliert mit der Heldenstufe) und erhält 10x Bonusschaden durch Türme.\n\n^c90 Sekunden Abklingzeit.^ *
+Ability_Fiki_Ult_description_simple								           Aktivieren um Feinde in einem kleinen Wirkungsbereich zu verspotten.
+
 // Ganker
 Ability_Ganker_Passive_1_name                                              Auf der Pirsch
 Ability_Ganker_Passive_2_name                                              Auf der Pirsch
 Ability_Ganker_Passive_3_name                                              Auf der Pirsch
-Ability_Ganker_Passive_1_description                                       Erhöht deine Bewegungsgeschw. um $ooc_movespeed$%, solange du nicht im Kampf bist.
-Ability_Ganker_Passive_2_description                                       Erhöht deine Bewegungsgeschw. um $ooc_movespeed$%, solange du nicht im Kampf bist.
-Ability_Ganker_Passive_3_description                                       Erhöht deine Bewegungsgeschw. um $ooc_movespeed$%, solange du nicht im Kampf bist.
-Ability_Ganker_Passive_1_description_simple                                Erhöht deine Bewegungsgeschw. solange du nicht im Kampf bist.
-Ability_Ganker_Passive_2_description_simple                                Erhöht deine Bewegungsgeschw. solange du nicht im Kampf bist.
-Ability_Ganker_Passive_3_description_simple                                Erhöht deine Bewegungsgeschw. solange du nicht im Kampf bist.
+Ability_Ganker_Passive_1_description                                       Erhöht deine Bewegungsgeschwindigkeit um $ooc_movespeed$%, solange du nicht im Kampf bist.
+Ability_Ganker_Passive_2_description                                       Erhöht deine Bewegungsgeschwindigkeit um $ooc_movespeed$%, solange du nicht im Kampf bist.
+Ability_Ganker_Passive_3_description                                       Erhöht deine Bewegungsgeschwindigkeit um $ooc_movespeed$%, solange du nicht im Kampf bist.
+Ability_Ganker_Passive_1_description_simple                                Erhöhte Bewegungsgeschwindigkeit außerhalb des Kampfes.
+Ability_Ganker_Passive_2_description_simple                                Erhöhte Bewegungsgeschwindigkeit außerhalb des Kampfes.
+Ability_Ganker_Passive_3_description_simple                                Erhöhte Bewegungsgeschwindigkeit außerhalb des Kampfes.
 Ability_Ganker_TriggeredPassive_1_name                                     Kopfgeld
 Ability_Ganker_TriggeredPassive_2_name                                     Kopfgeld
 Ability_Ganker_TriggeredPassive_3_name                                     Kopfgeld
@@ -2418,9 +2499,9 @@ Ability_Ganker_TriggeredPassive_3_description_simple                       Gibt 
 Ability_Ganker_Ult_1_name                                                  Schattenpirscher
 Ability_Ganker_Ult_2_name                                                  Schattenpirscher
 Ability_Ganker_Ult_3_name                                                  Schattenpirscher
-Ability_Ganker_Ult_1_description                                           Ziele auf einen Gegner um nach einiger Zeit $damage$ Schaden  auszuteilen und Sicht zu verleihen. $cooldown$ Sekunden Abkühlzeit.
-Ability_Ganker_Ult_2_description                                           Ziele auf einen Gegner um nach einiger Zeit $damage$ Schaden  auszuteilen und Sicht zu verleihen. ^c$cooldown$ Sekunden Abkühlzeit^*.
-Ability_Ganker_Ult_3_description                                           Ziele auf einen Gegner um ^cnach einiger Zeit $damage$ Schaden^*  auszuteilen und Sicht zu verleihen. $cooldown$ Sekunden Abkühlzeit.
+Ability_Ganker_Ult_1_description                                           Ziele auf einen Gegner um nach einiger Zeit $damage$ Schaden auszuteilen und Sicht zu verleihen. $cooldown$ Sekunden Abkühlzeit.
+Ability_Ganker_Ult_2_description                                           Ziele auf einen Gegner um nach einiger Zeit $damage$ Schaden auszuteilen und Sicht zu verleihen. ^c$cooldown$ Sekunden Abkühlzeit^*.
+Ability_Ganker_Ult_3_description                                           Ziele auf einen Gegner um ^cnach einiger Zeit $damage$ Schaden^* auszuteilen und Sicht zu verleihen. $cooldown$ Sekunden Abkühlzeit.
 Ability_Ganker_Ult_1_description_simple                                    Teilt dem Gegner nach einiger Zeit Schaden aus und verleiht Sicht.
 Ability_Ganker_Ult_2_description_simple                                    Teilt dem Gegner nach einiger Zeit Schaden aus und verleiht Sicht.
 Ability_Ganker_Ult_3_description_simple                                    Teilt dem Gegner nach einiger Zeit Schaden aus und verleiht Sicht.
@@ -2454,12 +2535,12 @@ Ability_Pusher_TriggeredPassive_3_description_simple                       Gibt 
 Ability_Pusher_Ult_1_name                                                  Promotion
 Ability_Pusher_Ult_2_name                                                  Promotion
 Ability_Pusher_Ult_3_name                                                  Promotion
-Ability_Pusher_Ult_1_description							Markiere einen verbündeten Nahkämpfer, um ihm und zwei in der Nähe befindlichen Nahkämpfern $attackspeed$ Bonus-Angriffstempo und $health$ Gesundheit zu verleihen (skaliert je nach Helden-Level).  $cooldown$ Sekunde Abklingzeit.
-Ability_Pusher_Ult_2_description							Markiere einen verbündeten Nahkämpfer, um ihm und zwei in der Nähe befindlichen Nahkämpfern $attackspeed$ Bonus-Angriffstempo und $health$ Gesundheit zu verleihen (skaliert je nach Helden-Level).  ^c$cooldown$ Sekunde Abklingzeit^*.
-Ability_Pusher_Ult_3_description							Markiere einen verbündeten Nahkämpfer, um ihm und zwei in der Nähe befindlichen Nahkämpfern ^c$attackspeed$ Bonus-Angriffstempo und $health$ Gesundheit zu verleihen^* (skaliert je nach Helden-Level).  $cooldown$ Sekunde Abklingzeit.
-Ability_Pusher_Ult_1_description_simple						Stärkungszauber für verbündete Nahkämpfer
-Ability_Pusher_Ult_2_description_simple						Stärkungszauber für verbündete Nahkämpfer
-Ability_Pusher_Ult_3_description_simple						Stärkungszauber für verbündete Nahkämpfer
+Ability_Pusher_Ult_1_description							               Markiere einen verbündeten Nahkämpfer, um ihm und zwei in der Nähe befindlichen Nahkämpfern $attackspeed$ Bonus-Angriffstempo und $health$ Gesundheit zu verleihen (skaliert je nach Helden-Level).  $cooldown$ Sekunde Abklingzeit.
+Ability_Pusher_Ult_2_description							               Markiere einen verbündeten Nahkämpfer, um ihm und zwei in der Nähe befindlichen Nahkämpfern $attackspeed$ Bonus-Angriffstempo und $health$ Gesundheit zu verleihen (skaliert je nach Helden-Level).  ^c$cooldown$ Sekunde Abklingzeit^*.
+Ability_Pusher_Ult_3_description							               Markiere einen verbündeten Nahkämpfer, um ihm und zwei in der Nähe befindlichen Nahkämpfern ^c$attackspeed$ Bonus-Angriffstempo und $health$ Gesundheit zu verleihen^* (skaliert je nach Helden-Level).  $cooldown$ Sekunde Abklingzeit.
+Ability_Pusher_Ult_1_description_simple						               Stärkungszauber für verbündete Nahkämpfer
+Ability_Pusher_Ult_2_description_simple						               Stärkungszauber für verbündete Nahkämpfer
+Ability_Pusher_Ult_3_description_simple						               Stärkungszauber für verbündete Nahkämpfer
 
 
 // Pincer
@@ -2493,12 +2574,12 @@ Ability_Pincer_TriggeredPassive_3_description_simple                       Pince
 Ability_Pincer_Ult_1_name                                                  Durchbruch
 Ability_Pincer_Ult_2_name                                                  Durchbruch
 Ability_Pincer_Ult_3_name                                                  Durchbruch
-Ability_Pincer_Ult_1_description								Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50 % zu reduzieren.  $cooldown$ Sekunde Abklingzeit.
-Ability_Pincer_Ult_2_description								Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50 % zu reduzieren.  ^c$cooldown$ Sekunde Abklingzeit^*.
-Ability_Pincer_Ult_3_description								Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50 % zu reduzieren.  ^c$cooldown$ Sekunde Abklingzeit^*.
-Ability_Pincer_Ult_1_description_simple							Beseitigt Betäubungs-/Lähmeffekte
-Ability_Pincer_Ult_2_description_simple							Beseitigt Betäubungs-/Lähmeffekte
-Ability_Pincer_Ult_3_description_simple							Beseitigt Betäubungs-/Lähmeffekte
+Ability_Pincer_Ult_1_description								           Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.  $cooldown$ Sekunde Abklingzeit.
+Ability_Pincer_Ult_2_description								           Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.  ^c$cooldown$ Sekunde Abklingzeit^*.
+Ability_Pincer_Ult_3_description								           Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.  ^c$cooldown$ Sekunde Abklingzeit^*.
+Ability_Pincer_Ult_1_description_simple							           Beseitigt Betäubungs-/Lähmeffekte
+Ability_Pincer_Ult_2_description_simple							           Beseitigt Betäubungs-/Lähmeffekte
+Ability_Pincer_Ult_3_description_simple							           Beseitigt Betäubungs-/Lähmeffekte
 
 // Tortus
 Ability_Tortus_Passive_1_name                                              Vitalität
@@ -2537,6 +2618,21 @@ Ability_Tortus_Ult_3_description                                           Aktiv
 Ability_Tortus_Ult_1_description_simple                                    Aktiviere zur Gesundheitsregenerierung
 Ability_Tortus_Ult_2_description_simple                                    Aktiviere zur Gesundheitsregenerierung
 Ability_Tortus_Ult_3_description_simple                                    Aktiviere zur Gesundheitsregenerierung
+
+// Zen (Owl)
+Ability_Owl_Passive_name										           Weisheit
+Ability_Owl_Passive_description									           Erhöht die Abkühlzeit-Reduktion um 13%.
+Ability_Owl_Passive_description_simple							           Erhöht die Abkühlzeit-Reduktion.
+Ability_Owl_TriggeredPassive_name								           Revitalisieren
+Ability_Owl_TriggeredPassive_description						           Verhindert, dass du beim nächsten Kampfeintritt 5 Sekunden lang die Regeneration außerhalb des Kampfes verlierst.\n\n^c12 Sekunden Abklingzeit^*.
+Ability_Owl_TriggeredPassive_description_simple					           Ermöglicht den Kampfbeginn, ohne die OoC-Regeneration zu verlieren.
+Ability_Owl_Ult_name											           Wissen
+Ability_Owl_Ult_description										           Zielen Sie auf eine Position mit einer Reichweite von bis zu 3500, um sie auszukundschaften.\n\nErhält Sicht und deckt Feinde mit mit einem Wirkungsbereich von 700 für 8 Sekunden auf.\n\n^c35 Sekunden Abklingzeit^*.
+Ability_Owl_Ult_description_simple								           Aktivieren um das Zielgebiet auf der Karte und Feinde aufzudecken.
+State_Owl_NoEnterCombat_Tooltip_name							           Revitalisieren
+State_Owl_NoEnterCombat_description								           Zen verhindert, dass du die Regeneration außerhalb des Kampfes verlierst.
+State_Owl_NoEnterCombat_description_simple						           Zen verhindert, dass du die Regeneration außerhalb des Kampfes verlierst.
+State_Owl_NoEnterCombat_name									           Revitalisieren
 
 // Mystik
 Ability_Mystik_Passive_1_name                                              Zauber-Handwerk
@@ -2619,6 +2715,35 @@ State_Razer_Invis_Tooltip_name                                             List
 State_Razer_Invis_description_simple                                       Du kannst von Feinden nicht gesehen werden.
 State_Razer_Invis_name                                                     List
 State_Razer_Invis_name_FRAME_effect
+
+// Tink (Tinker)
+Ability_Tinker_Passive_1_name									           Erweiterte Reparaturen
+Ability_Tinker_Passive_2_name									           Erweiterte Reparaturen
+Ability_Tinker_Passive_3_name									           Erweiterte Reparaturen
+Ability_Tinker_Passive_1_description							           Erhöht die Regeneration außerhalb des Kampfes um 3 Gesundheit und 1,5 Mana/Sek.
+Ability_Tinker_Passive_2_description							           Erhöht die Regeneration außerhalb des Kampfes um 3 Gesundheit und 1,5 Mana/Sek.
+Ability_Tinker_Passive_3_description							           Erhöht die Regeneration außerhalb des Kampfes um 3 Gesundheit und 1,5 Mana/Sek.
+Ability_Tinker_Passive_1_description_simple						           Erhöht die Regeneration außerhalb des Kampfes.
+Ability_Tinker_Passive_2_description_simple						           Erhöht die Regeneration außerhalb des Kampfes.
+Ability_Tinker_Passive_3_description_simple						           Erhöht die Regeneration außerhalb des Kampfes.
+Ability_Tinker_TriggeredPassive_1_name							           Bereit für den Aufprall
+Ability_Tinker_TriggeredPassive_2_name							           Bereit für den Aufprall
+Ability_Tinker_TriggeredPassive_3_name							           Bereit für den Aufprall
+Ability_Tinker_TriggeredPassive_1_description					           Bei Betäubung oder Verlangsamung erhalten Sie 3 Sekunden lang 50% Betäubungs-/Verlangsamungsreduzierung.\n\n^c25 Sekunden Abklingzeit^*.
+Ability_Tinker_TriggeredPassive_2_description					           Bei Betäubung oder Verlangsamung erhalten Sie 3 Sekunden lang 50% Betäubungs-/Verlangsamungsreduzierung.\n\n^c25 Sekunden Abklingzeit^*.
+Ability_Tinker_TriggeredPassive_3_description					           Bei Betäubung oder Verlangsamung erhalten Sie 3 Sekunden lang 50% Betäubungs-/Verlangsamungsreduzierung.\n\n^c25 Sekunden Abklingzeit^*.
+Ability_Tinker_TriggeredPassive_1_description_simple			           Reduziert Betäubungs- und Verlangsamungseffekte.
+Ability_Tinker_TriggeredPassive_2_description_simple			           Reduziert Betäubungs- und Verlangsamungseffekte.
+Ability_Tinker_TriggeredPassive_3_description_simple			           Reduziert Betäubungs- und Verlangsamungseffekte.
+Ability_Tinker_Ult_1_name										           Verbessert die Verteidigung
+Ability_Tinker_Ult_2_name										           Verbessert die Verteidigung
+Ability_Tinker_Ult_3_name										           Verbessert die Verteidigung
+Ability_Tinker_Ult_1_description								           Gewähre einem verbündeten Turm 8 Angriffe lang +50% Schaden, +100 Widerstand und +100% Flächenschaden gegen feindliche Nahkämpfer.\n\nVom Turm erzielte Kills werden dir gutgeschrieben.\n\n^c115 zweite Abklingzeit^*.
+Ability_Tinker_Ult_2_description								           Gewähre einem verbündeten Turm 8 Angriffe lang +50% Schaden, +100 Widerstand und +100% Flächenschaden gegen feindliche Nahkämpfer.\n\nVom Turm erzielte Kills werden dir gutgeschrieben.\n\n^c115 zweite Abklingzeit^*.
+Ability_Tinker_Ult_3_description								           Gewähre einem verbündeten Turm 8 Angriffe lang +50% Schaden, +100 Widerstand und +100% Flächenschaden gegen feindliche Nahkämpfer.\n\nVom Turm erzielte Kills werden dir gutgeschrieben.\n\n^c115 zweite Abklingzeit^*.
+Ability_Tinker_Ult_1_description_simple							           Aktivieren, um verbündete Türme zu stärken.
+Ability_Tinker_Ult_2_description_simple							           Aktivieren, um verbündete Türme zu stärken.
+Ability_Tinker_Ult_3_description_simple							           Aktivieren, um verbündete Türme zu stärken.
 
 // State_ShopAccess_Main
 State_ShopAccess_Main_name                                                 Basis-Laden
@@ -2787,7 +2912,7 @@ Familiar_Mystik_description                                                Mysti
 
 //Familiar Pincer
 Familiar_Pincer_name                                                       Pincer
-Familiar_Pincer_description										Pincer steigert Widerstand gegen Bedrohung und Betäubungs-/Lähmeffekte.
+Familiar_Pincer_description										           Pincer steigert Widerstand gegen Bedrohung und Betäubungs-/Lähmeffekte.
 
 //Familiar Luster
 Familiar_Luster_name                                                       Luster
@@ -2797,6 +2922,10 @@ Familiar_Luster_description                                                Luste
 Familiar_Tortus_name                                                       Tortus
 Familiar_Tortus_description                                                Tortus verstärkt die Überlebensfähigkeit.
 
+//Familiar Tinker
+Familiar_Tinker_name											           Tink
+Familiar_Tinker_description										           Tink stärkt die Verteidigungsfähigkeiten.
+
 //Familiar Bounder
 Familiar_Bounder_name                                                      Bounder
 Familiar_Bounder_description                                               Bounder verstärkt die Mobilität.
@@ -2804,6 +2933,11 @@ Familiar_Bounder_description                                               Bound
 //Familiar Ganker
 Familiar_Ganker_name                                                       Fitz
 Familiar_Ganker_description                                                Zeichnet sich durch das Ganken von feindlichen Helden aus.
+
+//Familiar Fiki
+Familiar_Fiki_name												           Fiki
+Familiar_Fiki_description										           Fiki steigert die Fähigkeiten der Nicht-Heldeneinheiten.
+
 //Familiar Razer
 Familiar_Razer_name                                                        Razer
 Familiar_Razer_description                                                 Razer verstärkt Angriffskapazitäten.
@@ -2811,6 +2945,10 @@ Familiar_Razer_description                                                 Razer
 //Familiar Topps
 Familiar_Topps_name                                                        Topps
 Familiar_Topps_description                                                 Topps verstärkt Angriffskapazitäten aus nächster Nähe.
+
+//Familiar Zen / Owl
+Familiar_Owl_name												           Zen
+Familiar_Owl_description										           Zen zeichnet sich durch das Aufspüren von Feinden aus.
 
 
 ///////////////////////////////////////////////////////
@@ -2945,7 +3083,7 @@ Hero_Carter_Hero_Carter_green                                              Grün
 Hero_Carter_Hero_Carter_offwhite                                           Grauweiß
 Hero_Carter_Hero_Carter_red                                                Rot
 Hero_Carter_Hero_Carter_yellow                                             Gelb
-Hero_Carter_gear_1												Schmelze
+Hero_Carter_gear_1												           Schmelze
 Hero_Carter_gear_1_black
 Hero_Carter_gear_1_blue                                                    Blau
 Hero_Carter_gear_1_green                                                   Grün
@@ -2959,7 +3097,7 @@ Hero_Carter_gear_2_blue                                                    Blau
 Hero_Carter_gear_2_offwhite                                                Grauweiß
 Hero_Carter_gear_2_purple                                                  Violett
 Hero_Carter_gear_2_yellow                                                  Gelb
-Hero_Carter_uber												Rennfans
+Hero_Carter_uber												           Rennfans
 Hero_Carter_uber_black                                                     Schwarz
 Hero_Carter_uber_blue                                                      Blau
 Hero_Carter_uber_green                                                     Grün
@@ -2974,21 +3112,21 @@ Hero_Vermillion_Hero_Vermillion_orange                                     Orang
 Hero_Vermillion_Hero_Vermillion_pink                                       Rosa
 Hero_Vermillion_Hero_Vermillion_red                                        Rot
 Hero_Vermillion_Hero_Vermillion_redwhiteblue                               Rot, Weiß und Blau
-Hero_Vermillion_gear_1											Blinder Passagier
+Hero_Vermillion_gear_1											           Blinder Passagier
 Hero_Vermillion_gear_1_black                                               Schwarz
 Hero_Vermillion_gear_1_blue                                                Blau
 Hero_Vermillion_gear_1_red                                                 Rot
 Hero_Vermillion_gear_1_irish                                               Irisch
 Hero_Vermillion_gear_1_tan                                                 Hellbraun
 Hero_Vermillion_gear_1_violet                                              Violett
-Hero_Vermillion_gear_2											Apokalypse
+Hero_Vermillion_gear_2											           Apokalypse
 Hero_Vermillion_gear_2_blue                                                Blau
 Hero_Vermillion_gear_2_brown                                               Braun
 Hero_Vermillion_gear_2_gray                                                Grau
 Hero_Vermillion_gear_2_red                                                 Rot
 Hero_Vermillion_gear_2_teal                                                Blaugrün
 Hero_Vermillion_gear_2_purple                                              Violett
-Hero_Vermillion_uber											Eiserne Ratte
+Hero_Vermillion_uber											           Eiserne Ratte
 Hero_Vermillion_uber_black                                                 Schwarz
 Hero_Vermillion_uber_blue                                                  Blau
 Hero_Vermillion_uber_green                                                 Grün
@@ -3003,21 +3141,21 @@ Hero_Rook_Hero_Rook_blue                                                   Blau
 Hero_Rook_Hero_Rook_green                                                  Grün
 Hero_Rook_Hero_Rook_red                                                    Rot
 Hero_Rook_Hero_Rook_pink                                                   Rosa
-Hero_Rook_gear_1												Barde
+Hero_Rook_gear_1												           Barde
 Hero_Rook_gear_1_blue                                                      Blau
 Hero_Rook_gear_1_gold                                                      Gold
 Hero_Rook_gear_1_green                                                     Grün
 Hero_Rook_gear_1_opera                                                     Oper
 Hero_Rook_gear_1_pink                                                      Rosa
 Hero_Rook_gear_1_orange                                                    Orange
-Hero_Rook_gear_2												Beobachter
+Hero_Rook_gear_2												           Beobachter
 Hero_Rook_gear_2_brown                                                     Braun
 Hero_Rook_gear_2_black                                                     Schwarz
 Hero_Rook_gear_2_blue                                                      Blau
 Hero_Rook_gear_2_green                                                     Grün
 Hero_Rook_gear_2_red                                                       Rot
 Hero_Rook_gear_2_pink                                                      Rosa
-Hero_Rook_uber													Uralter Wächter
+Hero_Rook_uber													           Uralter Wächter
 Hero_Rook_uber_black                                                       Schwarz
 Hero_Rook_uber_ruby                                                        Rubinrot
 Hero_Rook_uber_emerald                                                     Smaragdgrün
@@ -3033,21 +3171,21 @@ Hero_Minerva_Hero_Minerva_green                                            Grün
 Hero_Minerva_Hero_Minerva_orange                                           Orange
 Hero_Minerva_Hero_Minerva_pink                                             Rosa
 Hero_Minerva_Hero_Minerva_red                                              Rot
-Hero_Minerva_gear_1												Strom
+Hero_Minerva_gear_1												           Strom
 Hero_Minerva_gear_1_black                                                  Schwarz
 Hero_Minerva_gear_1_blue                                                   Blau
 Hero_Minerva_gear_1_green                                                  Grün
 Hero_Minerva_gear_1_orange                                                 Orange
 Hero_Minerva_gear_1_pink                                                   Rosa
 Hero_Minerva_gear_1_red                                                    Rot
-Hero_Minerva_gear_2												Prisma
+Hero_Minerva_gear_2												           Prisma
 Hero_Minerva_gear_2_gold                                                   Gold
 Hero_Minerva_gear_2_gray                                                   Schwarz
 Hero_Minerva_gear_2_green                                                  Grün
 Hero_Minerva_gear_2_purple                                                 Violett
 Hero_Minerva_gear_2_red                                                    Red
 Hero_Minerva_gear_2_orange                                                 Orange
-Hero_Minerva_uber												Metallbeschlagen
+Hero_Minerva_uber												           Metallbeschlagen
 Hero_Minerva_uber_black                                                    Black
 Hero_Minerva_uber_green                                                    Green
 Hero_Minerva_uber_orange                                                   Orange
@@ -3063,7 +3201,7 @@ Hero_Ace_Hero_Ace_green                                                    Grün
 Hero_Ace_Hero_Ace_orange                                                   Orange
 Hero_Ace_Hero_Ace_pink                                                     Rosa
 Hero_Ace_Hero_Ace_red                                                      Rot
-Hero_Ace_gear_1													Westländer
+Hero_Ace_gear_1													           Westländer
 Hero_Ace_gear_1_black                                                      Schwarz
 Hero_Ace_gear_1_blue                                                       Blau
 Hero_Ace_gear_1_green                                                      Grün
@@ -3076,7 +3214,7 @@ Hero_Ace_gear_2_green                                                      Grün
 Hero_Ace_gear_2_orange                                                     Orange
 Hero_Ace_gear_2_pink                                                       Rosa
 Hero_Ace_gear_2_red                                                        Rot
-Hero_Ace_uber													Eroberer
+Hero_Ace_uber													           Eroberer
 Hero_Ace_uber_black                                                        Schwarz
 Hero_Ace_uber_aqua                                                         Türkis
 Hero_Ace_uber_green                                                        Grün
@@ -3093,7 +3231,7 @@ Hero_Bastion_Hero_Bastion_gold                                             Gold
 Hero_Bastion_Hero_Bastion_green                                            Grün
 Hero_Bastion_Hero_Bastion_pink                                             Rosa
 Hero_Bastion_Hero_Bastion_red                                              Rot
-Hero_Bastion_gear_1												Turnier
+Hero_Bastion_gear_1												           Turnier
 Hero_Bastion_gear_1_black                                                  Schwarz
 Hero_Bastion_gear_1_blue                                                   Blau
 Hero_Bastion_gear_1_green                                                  Grün
@@ -3107,7 +3245,7 @@ Hero_Bastion_gear_2_green                                                  Grün
 Hero_Bastion_gear_2_purple                                                 Violett
 Hero_Bastion_gear_2_red                                                    Rot
 Hero_Bastion_gear_2_yellow                                                 Gelb
-Hero_Bastion_uber												Kind der Morgendämmerung
+Hero_Bastion_uber												           Kind der Morgendämmerung
 Hero_Bastion_uber_black                                                    Schwarz
 Hero_Bastion_uber_blue                                                     Blau
 Hero_Bastion_uber_yellow                                                   Gold
@@ -3130,7 +3268,7 @@ Hero_Ladytinder_gear_1_maroon                                              Weinr
 Hero_Ladytinder_gear_1_pink                                                Rosa
 Hero_Ladytinder_gear_1_red                                                 Rot
 Hero_Ladytinder_gear_1_yellow                                              Gelb
-Hero_Ladytinder_gear_2											Kinoko
+Hero_Ladytinder_gear_2											           Kinoko
 Hero_Ladytinder_gear_2_black                                               Schwarz
 Hero_Ladytinder_gear_2_blue                                                Blau
 Hero_Ladytinder_gear_2_orange                                              Orange
@@ -3152,21 +3290,21 @@ Hero_Caprice_Hero_Caprice_green                                            Grün
 Hero_Caprice_Hero_Caprice_orange                                           Orange
 Hero_Caprice_Hero_Caprice_pink                                             Rosa
 Hero_Caprice_Hero_Caprice_purple                                           Violett
-Hero_Caprice_gear_1										  		Archäologe
+Hero_Caprice_gear_1										  		           Archäologe
 Hero_Caprice_gear_1_aqua                                                   Türkis
 Hero_Caprice_gear_1_black                                                  Schwarz
 Hero_Caprice_gear_1_blue                                                   Blau
 Hero_Caprice_gear_1_green                                                  Grün
 Hero_Caprice_gear_1_pink                                                   Rosa
 Hero_Caprice_gear_1_red                                                    Rot
-Hero_Caprice_gear_2												Bandit
+Hero_Caprice_gear_2												           Bandit
 Hero_Caprice_gear_2_aqua                                                   Türkis
 Hero_Caprice_gear_2_black                                                  Schwarz
 Hero_Caprice_gear_2_blue                                                   Blau
 Hero_Caprice_gear_2_green                                                  Grün
 Hero_Caprice_gear_2_pink                                                   Rosa
 Hero_Caprice_gear_2_red                                                    Rot
-Hero_Caprice_uber										        Admiral
+Hero_Caprice_uber										                   Admiral
 Hero_Caprice_uber_orange                                                   Orange
 Hero_Caprice_uber_black                                                    Schwarz
 Hero_Caprice_uber_blue                                                     Blau
@@ -3181,7 +3319,7 @@ Hero_Malady_Hero_Malady_green                                              Grün
 Hero_Malady_Hero_Malady_red                                                Rot
 Hero_Malady_Hero_Malady_pink                                               Rosa
 Hero_Malady_Hero_Malady_limegreen                                          Limettengrün
-Hero_Malady_gear_1												Kartenkönigin
+Hero_Malady_gear_1												           Kartenkönigin
 Hero_Malady_gear_1_violet                                                  Violett
 Hero_Malady_gear_1_black                                                   Schwarz
 Hero_Malady_gear_1_blue                                                    Blau
@@ -3195,7 +3333,7 @@ Hero_Malady_gear_2_blue                                                    Blau
 Hero_Malady_gear_2_green                                                   Grün
 Hero_Malady_gear_2_pink                                                    Rosa
 Hero_Malady_gear_2_red                                                     Rot
-Hero_Malady_uber												Königsrüstung
+Hero_Malady_uber												           Königsrüstung
 Hero_Malady_uber_black                                                     Schwarz
 Hero_Malady_uber_blue                                                      Blau
 Hero_Malady_uber_green                                                     Grün
@@ -3224,7 +3362,7 @@ Hero_Moxie_gear_2_blue                                                     Blau
 Hero_Moxie_gear_2_green                                                    Grün
 Hero_Moxie_gear_2_purple                                                   Violett
 Hero_Moxie_gear_2_red                                                      Rot
-Hero_Moxie_uber													Zukunft
+Hero_Moxie_uber													           Zukunft
 Hero_Moxie_uber_black                                                      Schwarz
 Hero_Moxie_uber_green                                                      Grün
 Hero_Moxie_uber_nyan                                                       Toaster Pastry
@@ -3239,7 +3377,7 @@ Hero_Vex_Hero_Vex_classic                                                  Klass
 Hero_Vex_Hero_Vex_red                                                      Rot
 Hero_Vex_Hero_Vex_pink                                                     Rosa
 Hero_Vex_Hero_Vex_blue                                                     Blau
-Hero_Vex_gear_1													Bio-Anzug
+Hero_Vex_gear_1													           Bio-Anzug
 Hero_Vex_gear_1_black                                                      Schwarz
 Hero_Vex_gear_1_blue                                                       Blau
 Hero_Vex_gear_1_green                                                      Grün
@@ -3328,68 +3466,68 @@ Hero_Hale_Hero_Hale_gear_1_gold                                            gold
 Hero_Hale_Hero_Hale_gear_1_purple                                          violett
 Hero_Hale_Hero_Hale_gear_1_blue                                            blau
 
-State_Ganker_Ult_2_Tooltip_name								Schleichschatten
-State_Harrower_Ability3_description_simple						Harrower hat „Wundenweide“ gewirkt, so dass dein durch Feinde zugefügter Schaden gesteigert wird und alle dich angreifenden Feinde geheilt werden.
-Familiar_Pusher_description										Sehr gut beim Vorstoß und der Belagerung der feindlichen Basis
-State_Ganker_Ult_3_name										Schleichschatten
-State_Ganker_Ult_2_description_simple						Fitz schadet dir und enthüllt dich.
-State_Ganker_Ult_2_name										Schleichschatten
-State_Ganker_Ult_2_description								Fitz schadet dir und enthüllt dich.
-State_Ganker_Ult_3_description								Fitz schadet dir und enthüllt dich.
+State_Ganker_Ult_2_Tooltip_name											   Schleichschatten
+State_Harrower_Ability3_description_simple						           Harrower hat „Wundenweide“ gewirkt, so dass dein durch Feinde zugefügter Schaden gesteigert wird und alle dich angreifenden Feinde geheilt werden.
+Familiar_Pusher_description										           Sehr gut beim Vorstoß und der Belagerung der feindlichen Basis
+State_Ganker_Ult_3_name											           Schleichschatten
+State_Ganker_Ult_2_description_simple							           Fitz schadet dir und enthüllt dich.
+State_Ganker_Ult_2_name											           Schleichschatten
+State_Ganker_Ult_2_description									           Fitz schadet dir und enthüllt dich.
+State_Ganker_Ult_3_description									           Fitz schadet dir und enthüllt dich.
 State_Ganker_Ult_3_name_FRAME_effect
-Familiar_Pusher_name											Plünderer
-State_Ganker_Ult_3_Tooltip_name								Schleichschatten
-State_Ganker_Ult_3_description_simple						Fitz schadet dir und enthüllt dich.
-Ability_Bastion1Bastact1_1_name											Schlag
-Ability_Bastion1Bastact1_2_name											Rolle
-Hero_Hale_gear_1												Exil
-Hero_Rook_Bastact1_name										Rook
-Ability_Rook4_Bastact1_description										Starte eine Krähe in Richtung Ziel, die den ersten Feind, den sie trifft, betäubt und schädigt.\n\nWirkt bis zu ^o$damage$ Zauberschaden^* und betäubt bis zu 3,5 Sekunden lang, je nach zurückgelegter Strecke.
-Ability_Bastion1Bastact1_4_name											Aufheben und werfen
-Hero_Ray_uber													Mechanischer Morgen
-State_Rook_Ability3_Enemy_Bastact1_name									Krähenschwarm
-Ability_Bastion1Bastact1_3_name											Rook-Vogel
-Hero_Hale_gear_2												Kenar-Ahdam
-Hero_Bo_gear_1													Wächter
-Ability_Bastion1Bastact1_4_description									Leuchtende Objekte aufheben. Erneut aktivieren, um Objekte auf Zielposition zu werfen.
+Familiar_Pusher_name											           Plünderer
+State_Ganker_Ult_3_Tooltip_name									           Schleichschatten
+State_Ganker_Ult_3_description_simple							           Fitz schadet dir und enthüllt dich.
+Ability_Bastion1Bastact1_1_name											   Schlag
+Ability_Bastion1Bastact1_2_name											   Rolle
+Hero_Hale_gear_1												           Exil
+Hero_Rook_Bastact1_name											           Rook
+Ability_Rook4_Bastact1_description										   Starte eine Krähe in Richtung Ziel, die den ersten Feind, den sie trifft, betäubt und schädigt.\n\nWirkt bis zu ^o$damage$ Zauberschaden^* und betäubt bis zu 3,5 Sekunden lang, je nach zurückgelegter Strecke.
+Ability_Bastion1Bastact1_4_name											   Aufheben und werfen
+Hero_Ray_uber													           Mechanischer Morgen
+State_Rook_Ability3_Enemy_Bastact1_name									   Krähenschwarm
+Ability_Bastion1Bastact1_3_name											   Rook-Vogel
+Hero_Hale_gear_2												           Kenar-Ahdam
+Hero_Bo_gear_1													           Wächter
+Ability_Bastion1Bastact1_4_description									   Leuchtende Objekte aufheben. Erneut aktivieren, um Objekte auf Zielposition zu werfen.
 Hero_Rook_Bastact1_description
-State_Rook_Ability3_Enemy_Bastact1_description_simple					Du erleidest mehr Schaden durch Rook.
-Ability_Bastion1Bastact1_1_description_simple							Gebietsschaden vor Bastion.
-Ability_Rook4_Bastact1_name												Erlösung
-Ability_Rook1_Bastact1_description_simple								Linienschaden, für Spurt erneut aktivieren
-Hero_Fetterstone_gear_1											Lorne
-Ability_Rook2_Bastact1_name												Verstecken und suchen
-State_Rook_Ability2_Bastact1_name										Verstecken und suchen ...
-Hero_Trixie_gear_1												Roter Reiter
-Ability_Rook3_Bastact1_description_simple								zwei Angriffe nach Verwendung von Fähigkeiten
+State_Rook_Ability3_Enemy_Bastact1_description_simple					   Du erleidest mehr Schaden durch Rook.
+Ability_Bastion1Bastact1_1_description_simple							   Gebietsschaden vor Bastion.
+Ability_Rook4_Bastact1_name												   Erlösung
+Ability_Rook1_Bastact1_description_simple								   Linienschaden, für Spurt erneut aktivieren
+Hero_Fetterstone_gear_1											           Lorne
+Ability_Rook2_Bastact1_name												   Verstecken und suchen
+State_Rook_Ability2_Bastact1_name										   Verstecken und suchen ...
+Hero_Trixie_gear_1												           Roter Reiter
+Ability_Rook3_Bastact1_description_simple								   zwei Angriffe nach Verwendung von Fähigkeiten
 Hero_Bastion1Bastact1_description
-Ability_Bastion1Bastact1_2_description_simple							Kurze Ausweichrolle.
-Hero_Claudessa_gear_1											Feuergeschmiedet
-Hero_Bo_uber													Zeremoniell
-Ability_Bastion1Bastact1_3_description									Markiere einen Feind, damit Rooks Vögel ihn angreifen, ihn eine kurze Weile lähmen und einen geringen Schaden über Zeit anrichten.
-Ability_Bastion1Bastact1_2_description									Eine kurze Rolle, mit der Bastion angreifenden Feinden schnell ausweicht.
-Hero_Vex_uber_purple											Lila
-Ability_Bastion1Bastact1_3_description_simple							Lähmt Feinde und wirkt Schaden über Zeit.
-Hero_Bastion1Bastact1_name												Bastion
+Ability_Bastion1Bastact1_2_description_simple							   Kurze Ausweichrolle.
+Hero_Claudessa_gear_1											           Feuergeschmiedet
+Hero_Bo_uber													           Zeremoniell
+Ability_Bastion1Bastact1_3_description									   Markiere einen Feind, damit Rooks Vögel ihn angreifen, ihn eine kurze Weile lähmen und einen geringen Schaden über Zeit anrichten.
+Ability_Bastion1Bastact1_2_description									   Eine kurze Rolle, mit der Bastion angreifenden Feinden schnell ausweicht.
+Hero_Vex_uber_purple											           Lila
+Ability_Bastion1Bastact1_3_description_simple							   Lähmt Feinde und wirkt Schaden über Zeit.
+Hero_Bastion1Bastact1_name												   Bastion
 Hero_Bastion1Bastact1_role
-Ability_Rook3_Bastact1_description										^rPassive Fähigkeit^*\nVerursacht passiv aufeinander folgende Angriffe auf ein Ziel, um gestapelten ^o$damage$ Bonus-Angriffsschaden zu bewirken^*.  Bis zu 5 Mal stapelbar.\n\nDie Aktivierung der Fähigkeiten gewährt einen Angriffstemposchub für die nächsten zwei Angriffe.
-Ability_Rook1_Bastact1_description										Wähle eine Richtung, um den Haken abzufeuern, der Feinden ^o$damage$ Zauberschaden^* zufügt.\n\nErneut aktivieren, um Rook an den Aufschlagspunkt zu ziehen.
-Ability_Rook2_Bastact1_description										Kanalisieren, um bis zu 1,5 Sekunden lang unverwundbar zu werden.\n\nNach Abschluss wirkt dies bis zu ^o$damage$ Zauberschaden^* auf den nähesten Feind, je nach Kanalisierungsdauer.
-State_Rook_Ability3_Enemy_Bastact1_Tooltip_name							Krähenschwarm
-Hero_Hale_uber													Dunkle Umarmung
-Ability_Rook3_Bastact1_name												Krähenschwarm
-Ability_Rook2_Bastact1_description_simple								Unverwundbarkeit, dann Schaden an Feind in der Nähe
-Hero_Ray_gear_2													Egon
-Ability_Rook1_Bastact1_name												Enterhaken
-Ability_Bastion1Bastact1_4_description_simple							Hebe Gegenstände auf und werfe sie.
-Ability_Bastion1Bastact1_1_description									Bastion greift den nächsten Feind an und wirkt Schaden in einem Gebiet vor ihm.
+Ability_Rook3_Bastact1_description										   ^rPassive Fähigkeit^*\nVerursacht passiv aufeinander folgende Angriffe auf ein Ziel, um gestapelten ^o$damage$ Bonus-Angriffsschaden zu bewirken^*.  Bis zu 5 Mal stapelbar.\n\nDie Aktivierung der Fähigkeiten gewährt einen Angriffstemposchub für die nächsten zwei Angriffe.
+Ability_Rook1_Bastact1_description										   Wähle eine Richtung, um den Haken abzufeuern, der Feinden ^o$damage$ Zauberschaden^* zufügt.\n\nErneut aktivieren, um Rook an den Aufschlagspunkt zu ziehen.
+Ability_Rook2_Bastact1_description										   Kanalisieren, um bis zu 1,5 Sekunden lang unverwundbar zu werden.\n\nNach Abschluss wirkt dies bis zu ^o$damage$ Zauberschaden^* auf den nähesten Feind, je nach Kanalisierungsdauer.
+State_Rook_Ability3_Enemy_Bastact1_Tooltip_name							   Krähenschwarm
+Hero_Hale_uber													           Dunkle Umarmung
+Ability_Rook3_Bastact1_name												   Krähenschwarm
+Ability_Rook2_Bastact1_description_simple								   Unverwundbarkeit, dann Schaden an Feind in der Nähe
+Hero_Ray_gear_2													           Egon
+Ability_Rook1_Bastact1_name												   Enterhaken
+Ability_Bastion1Bastact1_4_description_simple							   Hebe Gegenstände auf und werfe sie.
+Ability_Bastion1Bastact1_1_description									   Bastion greift den nächsten Feind an und wirkt Schaden in einem Gebiet vor ihm.
 Hero_Rook_Bastact1_role
-Ability_Rook4_Bastact1_description_simple								globaler Schaden und Betäubungs-Spezialschuss
-Hero_Rook_gear_4_hunter											Jäger
-Hero_Rook_gear_4_pink											Rosa
-Hero_Rook_gear_4												Morgenbringer
-Hero_Rook_gear_4_red											Rot
-Hero_Rook_gear_4_Black											Schwarz
-Hero_Rook_gear_4_Legion											Legion
-Hero_Rook_gear_4_green											Grün
+Ability_Rook4_Bastact1_description_simple								   globaler Schaden und Betäubungs-Spezialschuss
+Hero_Rook_gear_4_hunter											           Jäger
+Hero_Rook_gear_4_pink											           Rosa
+Hero_Rook_gear_4												           Morgenbringer
+Hero_Rook_gear_4_red											           Rot
+Hero_Rook_gear_4_Black											           Schwarz
+Hero_Rook_gear_4_Legion											           Legion
+Hero_Rook_gear_4_green											           Grün
 // END - Leave this as the last line and do not deletee
