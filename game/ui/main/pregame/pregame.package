@@ -27,7 +27,7 @@
 			<frame texture="/ui/shared/frames/squareglow.tga" style="infoFrameShadow"  noclick="1"  />
 			<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame"  noclick="1"  />
 			<frame texture="/ui/elements:thick" style="infoFrameBorder"  noclick="1"  />
-			<panel texture="/ui/shared/frames/rounded_bg_solid.tga" x="4s" width="48s" height="48s" valign="center" noclick="1" >
+			<panel name="main_pregame_skill_{index}_container" texture="/ui/shared/frames/rounded_bg_solid.tga" x="4s" width="48s" height="48s" valign="center" noclick="1" >
 				<image name="main_pregame_skill_{index}_image" texture="" noclick="1" />
 				<frame texture="/ui/elements:rounded_corner_white" style="infoFrameCorners" noclick="1"  />
 				<frame texture="/ui/elements:thick" style="infoFrameBorder" noclick="1"  />
