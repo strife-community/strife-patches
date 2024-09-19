@@ -457,7 +457,7 @@ local function WatchRegister(object)
 					if (streamTable[2]) and (not Empty(streamTable[2])) then
 						local conceptArtPath = '/ui/main/shared/concept_art/'
 						conceptArtPath = conceptArtPath .. string.lower(streamTable[1]) .. '_default.jpg'
-						local url = "https://www.youtube.com/embed/".. tostring(streamTable[2]) .. "?autohide=1&amp;autoplay=1&amp;controls=2&amp;fs=0&amp;modestbranding=1&amp;rel=0&amp;showinfo=0"
+						local url = "https://proxy.playstrife.gg/youtube/".. tostring(streamTable[2])
 						listbox:AddTemplateListItem(
 							'watch_howto_item_template',
 							url,
