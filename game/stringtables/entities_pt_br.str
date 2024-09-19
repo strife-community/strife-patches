@@ -1883,7 +1883,7 @@ Item_GiantsVisage_Empower_3_description							Aumenta o bônus de Poder em $powe
 
 
 // ScalingPower
-Item_ScalingPower_name											Foice do comedor
+Item_ScalingPower_name											Foice do ceifador
 Item_ScalingPower_description									Cada eliminação/assistência concede um bônus permanente de $power_scale$ de poder e $health_scale$ de vida. Ao alcançar a carga máxima (10), concede um bônus de 10 de velocidade de movimento.
 Item_ScalingPower_description_simple							Concede vida e poder para cada eliminação de herói ou assistência.
 Item_ScalingPower_bonusdescription								Aumenta o poder e vida base e o poder e vida máximos em $common_increase$%.
