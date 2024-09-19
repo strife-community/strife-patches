@@ -33,7 +33,7 @@
 >
 	<!--Tooltip Only-->
 	<constant name="damage" value="70,100,130,160" adjustment="ability" />
-	<constant name="stun" value="1" adjustment="none" />
+	<constant name="stun" value="1" adjustment="none" noshowintooltip="true" />
 
 	<onimpact>
 		<spawnunit name="Gadget_JinShe_Ability1" count="1" target="source_position" pushentity="true" offsetspace="source_entity" offset="0 -100 0" />
