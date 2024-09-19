@@ -36,7 +36,7 @@ mainUI.Pregame.heroRoleTable 		= {}
 local heroWidgets 			= {}
 local petWidgets 			= {}
 local numGridColumns 		= 9
-local isGridView 			= false
+local isGridView 			= true
 local minHeroRoleValue 		= 3
 local lastRole 				= 0
 local maxHeroListWidth 		= -1
@@ -1274,6 +1274,7 @@ local function toggleGridView(justUpdate)
 		yPos = '0s'
 		updateHeroSlider(0, true)
 	end
+
 	main_pregame_hero_select_container:SlideX(xPos, 125)
 	main_pregame_hero_select_container:SlideY(yPos, 125)
 	thread = libThread.threadFunc(function()
@@ -1436,6 +1437,7 @@ main_pregame_sleeper:RegisterWatchLua('HeroSelectHeroList0', function(widget, tr
 			applyHeroFilter(0)
 			teamComposition1:Trigger()
 			teamComposition2:Trigger()
+			toggleGridView(true)
 		end)
 	end
 end, false, nil, 'isValid')
