@@ -1906,7 +1906,7 @@ readyButtonCheck = function()
 				while(true) do
 					local currentStatus = getReadyButtonStatus()
 					if( currentStatus == readyStatus.UNREADY) then 
-						local currentQueue = getQueue()
+						local currentQueue = LuaTrigger.GetTrigger('PartyStatus').queue
 						local queuePlayerCount = 0
 						local queueInfo = Chat_Web_Requests:GetQueueInfo()
 						for _,queue in pairs(queueInfo) do
@@ -1916,7 +1916,6 @@ readyButtonCheck = function()
 								end				
 							end
 						end
-						println("Currently queueing in queue " .. currentQueue .. ": " .. queuePlayerCount)
 						local countText = (currentQueue=='pvp' and queuePlayerCount < 5) and "< 5" or tostring(queuePlayerCount)
 						GetWidget('main_pregame_queue_size_label'):SetText(Translate('pregame_queue_size') .. " " .. countText)
 						wait(5000)
