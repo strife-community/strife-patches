@@ -1445,6 +1445,10 @@ local function newPlayerExperienceRegister(object)
 		genericEvent.register(newPlayerExperience_script, 'crafting_itemCrafted', function()
 			if NewPlayerExperience.trigger.craftingIntroProgress == 0 and NewPlayerExperience.trigger.craftingIntroStep == 7 then
 				newPlayerExperienceCraftingStep(8)
+			
+			--pad if something went wrong and we crafted an item without being in the crafting tutorial, skip the tutorial
+			elseif NewPlayerExperience.trigger.craftingIntroProgress == 0 then
+				newPlayerExperienceCraftingStep(0,1)
 			end
 		end)
 	end
