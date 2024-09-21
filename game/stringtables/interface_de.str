@@ -5515,24 +5515,31 @@ watch_filter_dl                                     Zeige nur die Heruntergelade
 watch_filter_dl_tip                                 Begrenze die Liste auf Partien, die heruntergeladen wurden.
 
 watch_hero_howto_link_1 Hero_Ace|CXImgSlP8gc
-watch_hero_howto_link_2 Hero_Bastion|PZ8qgfl-IUg
-watch_hero_howto_link_3 Hero_Bo|XTEXOQqMZ4o
+watch_hero_howto_link_2 Hero_Bastion|nRHCfYnTurA
+watch_hero_howto_link_3 Hero_Bo|0X0TjStXNdc
 watch_hero_howto_link_4 Hero_Blazer|
-watch_hero_howto_link_5 Hero_Caprice|Hp2vbEu0-O0
+watch_hero_howto_link_5 Hero_Caprice|fkrnJfuOWBw
 watch_hero_howto_link_6 Hero_Claudessa|
-watch_hero_howto_link_7 Hero_Carter|WGMbicVutSA
+watch_hero_howto_link_7 Hero_Carter|ZcPWvpYdivM
 watch_hero_howto_link_8 Hero_Fetterstone|
-watch_hero_howto_link_9 Hero_Hale|UxnklMMD6PA
-watch_hero_howto_link_10 Hero_Lady_Tinder|4QM8cvSYU_
-watch_hero_howto_link_11 Hero_Malady|zwu5TD4Ov3I
-watch_hero_howto_link_12 Hero_Minerva|dzylbx0TYfM
-watch_hero_howto_link_13 Hero_Moxie|PISbIsZ8b_U
-watch_hero_howto_link_14 Hero_Ray|s6_L7I30l0w
-watch_hero_howto_link_15 Hero_Rook|loRTE7h-Bs4
-watch_hero_howto_link_16 Hero_Shank|
-watch_hero_howto_link_17 Hero_Trixie|
-watch_hero_howto_link_18 Hero_Vermillion|xS7UNoyTIgE
-watch_hero_howto_link_19 Hero_Vex|Wqod3t_b42U
+watch_hero_howto_link_9 Hero_GoKong|KXne8f1DP6U
+watch_hero_howto_link_10 Hero_Hale|WnQGPIwh0wM
+watch_hero_howto_link_11 Hero_JinShe|d-wp5Yl4HvY
+watch_hero_howto_link_12 Hero_Lady_Tinder|8LmjluNqQb0
+watch_hero_howto_link_13 Hero_Nikolai|1urg7eVPdMw
+watch_hero_howto_link_14 Hero_Malady|rV9f8aI5MIc
+watch_hero_howto_link_15 Hero_Minerva|
+watch_hero_howto_link_16 Hero_Moxie|S5yNgxrFDKI
+watch_hero_howto_link_17 Hero_Ray|U3RbUAhc-A0
+watch_hero_howto_link_18 Hero_Rook|c-B7Yr-Gy-E
+watch_hero_howto_link_19 Hero_Shank|
+watch_hero_howto_link_20 Hero_Trixie|
+watch_hero_howto_link_21 Hero_Vermillion|WpOaZ1-uNH4
+watch_hero_howto_link_22 Hero_Vex|YkqC0xNKJso
+watch_hero_howto_link_23 Hero_Zaku|1qZcfxar6Fg
+watch_hero_howto_link_24 Hero_Bandito|PlRaPtK4E8g
+watch_hero_howto_link_25 Hero_Iah|HSP8dNmdrbQ
+watch_hero_howto_link_26 Hero_Chester|wosbubv-KCo
 
 // Twitch
 twitch_streams_label                                Twitch Live Streams

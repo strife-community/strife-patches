@@ -36,7 +36,7 @@ mainUI.Pregame.heroRoleTable 		= {}
 local heroWidgets 			= {}
 local petWidgets 			= {}
 local numGridColumns 		= 9
-local isGridView 			= false
+local isGridView 			= true
 local minHeroRoleValue 		= 3
 local lastRole 				= 0
 local maxHeroListWidth 		= -1
@@ -722,6 +722,16 @@ local function populateAbilities(hero)
 				interface:GetWidget("main_pregame_skill_"..n.."_key_container"):SetVisible(n == 0)
 				interface:GetWidget("main_pregame_skill_"..n.."_key"):SetText(GetKeybindButton('Game', 'ActivateTool', 18) or '')
 			end
+
+			for n = 0, 3 do
+				interface:GetWidget("main_pregame_skill_template"..n):SetHeight('74s')
+				interface:GetWidget("main_pregame_skill_"..n.."_container"):SetHeight('60s')
+				interface:GetWidget("main_pregame_skill_"..n.."_container"):SetWidth('60s')
+				interface:GetWidget("main_pregame_skill_"..n.."_name"):SetX('70s')
+				interface:GetWidget("main_pregame_skill_"..n.."_desc"):SetX('70s')
+				interface:GetWidget("main_pregame_skill_"..n.."_desc"):SetWidth("-76s")
+			end
+
 			interface:GetWidget('main_pregame_skill_template3'):SetVisible(false)
 			GetWidget('main_pregame_stats_tab'):FadeOut(125)
 		else
@@ -732,18 +742,28 @@ local function populateAbilities(hero)
 				interface:GetWidget("main_pregame_skill_"..n.."_key"):SetText(GetKeybindButton('Game', 'ActivateTool', n) or '')
 				interface:GetWidget("main_pregame_skill_"..n.."_key_container"):SetVisible(string.find(trigger['ability'..n..'Description'], "%^444Passive Skill") ~= 1)
 			end
+
 			for n = 0, 3 do
 				interface:GetWidget("main_pregame_detailed_skill_"..n.."_image"):SetTexture(trigger['ability'..n..'IconPath'])
 				interface:GetWidget("main_pregame_detailed_skill_"..n.."_name"):SetText(trigger['ability'..n..'DisplayName'])
 				interface:GetWidget("main_pregame_detailed_skill_"..n.."_desc"):SetText(string.gsub(trigger['ability'..n..'Description'], '\n\n', '\n'))
 				interface:GetWidget("main_pregame_detailed_skill_"..n.."_key"):SetText(GetKeybindButton('Game', 'ActivateTool', n) or '')
 				interface:GetWidget("main_pregame_detailed_skill_"..n.."_key_container"):SetVisible(string.find(trigger['ability'..n..'Description'], "%^444Passive Skill") ~= 1)
-			end			
+			end
+			
+			for n = 0, 3 do
+				interface:GetWidget("main_pregame_skill_template"..n):SetHeight('56s')
+				interface:GetWidget("main_pregame_skill_"..n.."_container"):SetHeight('48s')
+				interface:GetWidget("main_pregame_skill_"..n.."_container"):SetWidth('48s')
+				interface:GetWidget("main_pregame_skill_"..n.."_name"):SetX('58s')
+				interface:GetWidget("main_pregame_skill_"..n.."_desc"):SetX('58s')
+				interface:GetWidget("main_pregame_skill_"..n.."_desc"):SetWidth("-64s")
+			end
+
 			interface:GetWidget('main_pregame_skill_template3'):SetVisible(true)
 			GetWidget('main_pregame_stats_tab'):FadeIn(125)
 			GetWidget('main_pregame_detailed_skills_container'):FadeIn(125)
 		end
-		
 		main_pregame_skills_container:FadeIn(125)
 	end
 end
@@ -1254,6 +1274,7 @@ local function toggleGridView(justUpdate)
 		yPos = '0s'
 		updateHeroSlider(0, true)
 	end
+
 	main_pregame_hero_select_container:SlideX(xPos, 125)
 	main_pregame_hero_select_container:SlideY(yPos, 125)
 	thread = libThread.threadFunc(function()
@@ -1416,6 +1437,7 @@ main_pregame_sleeper:RegisterWatchLua('HeroSelectHeroList0', function(widget, tr
 			applyHeroFilter(0)
 			teamComposition1:Trigger()
 			teamComposition2:Trigger()
+			toggleGridView(true)
 		end)
 	end
 end, false, nil, 'isValid')
@@ -1884,7 +1906,7 @@ readyButtonCheck = function()
 				while(true) do
 					local currentStatus = getReadyButtonStatus()
 					if( currentStatus == readyStatus.UNREADY) then 
-						local currentQueue = getQueue()
+						local currentQueue = LuaTrigger.GetTrigger('PartyStatus').queue
 						local queuePlayerCount = 0
 						local queueInfo = Chat_Web_Requests:GetQueueInfo()
 						for _,queue in pairs(queueInfo) do
@@ -1894,7 +1916,6 @@ readyButtonCheck = function()
 								end				
 							end
 						end
-						println("Currently queueing in queue " .. currentQueue .. ": " .. queuePlayerCount)
 						local countText = (currentQueue=='pvp' and queuePlayerCount < 5) and "< 5" or tostring(queuePlayerCount)
 						GetWidget('main_pregame_queue_size_label'):SetText(Translate('pregame_queue_size') .. " " .. countText)
 						wait(5000)
