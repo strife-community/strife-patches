@@ -27,7 +27,7 @@
 			<frame texture="/ui/shared/frames/squareglow.tga" style="infoFrameShadow"  noclick="1"  />
 			<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="infoFrame"  noclick="1"  />
 			<frame texture="/ui/elements:thick" style="infoFrameBorder"  noclick="1"  />
-			<panel texture="/ui/shared/frames/rounded_bg_solid.tga" x="4s" width="48s" height="48s" valign="center" noclick="1" >
+			<panel name="main_pregame_skill_{index}_container" texture="/ui/shared/frames/rounded_bg_solid.tga" x="4s" width="48s" height="48s" valign="center" noclick="1" >
 				<image name="main_pregame_skill_{index}_image" texture="" noclick="1" />
 				<frame texture="/ui/elements:rounded_corner_white" style="infoFrameCorners" noclick="1"  />
 				<frame texture="/ui/elements:thick" style="infoFrameBorder" noclick="1"  />
@@ -379,7 +379,7 @@
 			<panel y="5s" valign="bottom" height="220s">
 				<panel name="main_pregame_hero_select_container_grad" valign="top" height="45s" texture="/ui/main/shared/textures/grad_vert.tga" color="0 0 0 0.4" noclick="1" />
 
-				<panel name="main_pregame_hero_select_container" noclick="1">
+				<panel name="main_pregame_hero_select_container" noclick="1" x="298s" y="345s" width="755s" height="950s">
 					<!-- center -->
 					<frame texture="/ui/shared/frames/bevel_top_blue.tga" y="45s" height="-45s" borderthickness="5s" color="1 1 1 1">
 						<panel valign="bottom" height="50%" texture="/ui/main/shared/textures/grad_vert.tga" color="0 0 0 0.4" noclick="1" />
