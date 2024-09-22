@@ -517,7 +517,7 @@ main_label_login_status_waiting				Logging in, please wait...
 main_label_login_status_success				You are now logged in.
 main_label_login_status_failed				Login failed: {reason}
 main_button_create_account					Create Account
-main_button_need_login					1	Login To Play Online
+main_button_need_login						Login To Play Online
 main_button_play_online						Play Online
 main_button_local_game						Local Game
 main_button_options							Options
@@ -4389,7 +4389,7 @@ tooltip_sort_magi_armor_msg					Click here to sort the hero list by Magic Armor.
 tooltip_sort_mitigation						Sort by Mitigation
 tooltip_sort_mitigation_msg					Click here to sort by Mitigation.
 tooltip_sort_resistance						Sort by Resistance
-tooltip_sort_mitigation_msg					Click here to sort by Mitigation.
+tooltip_sort_resistance_msg					Click here to sort by Resistance.
 tooltip_sort_movement						Sort by Movement Speed
 tooltip_sort_movement_msg					Click here to sort the hero list by Movement Speed.
 tooltip_sort_dps							Sort by Average Power Per Second
