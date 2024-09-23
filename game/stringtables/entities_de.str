@@ -12,8 +12,8 @@ EffectType_StatusDisable
 EffectType_StatusStealth
 EffectType_Push														Offensive
 EffectType_Splash													Flächenschaden
-EffectType_DOT
-EffectType_Buff
+EffectType_DOT														Zeitschaden
+EffectType_Buff														Buffs
 EffectType_Returned
 EffectType_CrowdControl												CC-Effekt
 
