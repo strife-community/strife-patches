@@ -21,8 +21,8 @@
 	heroselectflavorannouncement="sounds/voice/vo_selecthero_2.wav"
 	confirmmovesound="sounds/voice/vo_move_%.wav"
 	confirmattacksound="sounds/voice/vo_attack_%.wav"
-	nomanasound="sounds/voice/vo_cooldown.wav"
-	cooldownsound="sounds/voice/vo_move_8.wav"
+	nomanasound="sounds/voice/vo_oom.wav"
+	cooldownsound="sounds/voice/vo_cooldown.wav"
 	streaksound="sounds/voice/vo_ck_2.wav,sounds/voice/vo_ck_3.wav,sounds/voice/vo_ck_4.wav,sounds/voice/vo_ck_5.wav"
 	
 	creepkillannouncement=""
@@ -71,6 +71,10 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+    abilityreadyannouncement="sounds/voice/vo_ping_attack.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom.wav"
 	
 	revealrange="700"
 	revealtype="hero"
