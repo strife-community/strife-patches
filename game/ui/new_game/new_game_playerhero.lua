@@ -581,11 +581,7 @@ function registerAbilities()
                 
                 widget:SetCallback('onping', function(widget)
                     if (trigger.isActivatable) then
-                        if (trigger.remainingCooldownTime > 0) then
-                            Cmd("TeamChat " .. Translate('ability_on_cooldown_remaing', 'value1', math.ceil(trigger.remainingCooldownTime/1000), 'value2', trigger.displayName))
-                        else
-                            Cmd("TeamChat " .. Translate('ability_on_cooldown_ready', 'value2', trigger.displayName))
-                        end
+                        HeroAnnouncementParam('ability_status', index)
                     end
                 end)
                 

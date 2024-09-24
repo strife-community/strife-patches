@@ -404,6 +404,9 @@ hero_announce_together						Stick together!
 hero_announce_watch_out						Watch Out!
 hero_announce_well							I'm heading to our well.
 hero_announce_well_played					Well played.
+hero_announce_ability_ready                 ^980{abi_name} ({abi_key})^* is ^gready^*!
+hero_announce_ability_cooldown              ^980{abi_name} ({abi_key})^* on cooldown for ^r{value1}s^*!
+hero_announce_ability_no_mana               Need ^c{value1}^* mana for ^980{abi_name} ({abi_key})^*!
 
 //hero specific announcement text, replace hero_ with Hero_Name_
 Hero_Ace_announce_well_played				Good Job!
