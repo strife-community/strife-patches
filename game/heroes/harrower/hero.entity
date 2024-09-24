@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Harrower"
+
+	showinpractice="true"
+	team="final"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	mapicon="circle_icon.tga"
+	cutouticon="icon_full.tga"
+
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	
+	heroselectannouncement="sounds/hunter/voice/vo_selecthero_1.wav"
+	heroselectflavorannouncement="sounds/hunter/voice/vo_selecthero_2.wav"
+	confirmmovesound="sounds/hunter/voice/vo_move_%.wav"
+	confirmattacksound="sounds/hunter/voice/vo_attack_%.wav"
+	nomanasound="sounds/hunter/voice/vo_oom_%.wav"
+	cooldownsound="sounds/hunter/voice/vo_cooldown_%.wav"
+	streaksound="sounds/hunter/voice/vo_ck_2.wav,sounds/hunter/voice/vo_ck_3.wav,sounds/hunter/voice/vo_ck_4.wav,sounds/hunter/voice/vo_ck_5.wav"
+	
+	creepkillannouncement="sounds/hunter/voice/vo_lasthit_1.wav,sounds/hunter/voice/vo_lasthit_2.wav,sounds/hunter/voice/vo_lasthit_3.wav"
+	herokillfrequentannouncement="sounds/hunter/voice/vo_herokill_%.wav"
+	herokillinfrequentannouncement="sounds/hunter/voice/vo_sporadickill_%.wav"
+	herolevelultannouncement="sounds/hunter/voice/vo_levelup_1.wav,sounds/hunter/voice/vo_levelup_2.wav,sounds/hunter/voice/vo_levelup_3.wav"
+	creepdamageannouncement="sounds/hunter/voice/vo_creepdamage_%.wav"
+	toweraggroannouncement="sounds/hunter/voice/vo_towerdamage.wav"
+	deathannouncement=""
+	respawnannouncement="sounds/hunter/voice/vo_spawn_%.wav"
+	itemacquireannouncement=""
+	itempurchaseannouncement="sounds/hunter/voice/vo_itempurchase_%.wav"
+	lowhealthannouncement="sounds/hunter/voice/vo_lowhealth_%.wav"
+	abilityflavorannouncement="sounds/hunter/voice/vo_ability_1.wav,sounds/hunter/voice/vo_ability_2.wav,sounds/hunter/voice/vo_ability_3.wav,sounds/hunter/voice/vo_ability_4.wav"
+		
+	assistannouncement="sounds/hunter/voice/vo_ping_assist.wav"
+	attackannouncement="sounds/hunter/voice/vo_ping_attack.wav"
+	attackcruxannouncement="sounds/hunter/voice/vo_ping_attack_crux.wav"
+	attackenemyannouncement="sounds/hunter/voice/vo_ping_attack_enemy.wav"	
+	attackgeneratorannouncement="sounds/hunter/voice/vo_ping_attack_generator.wav"
+	attacktowerannouncement="sounds/hunter/voice/vo_ping_attack_tower.wav"
+	backannouncement="sounds/hunter/voice/vo_ping_back.wav"
+	carebottomannouncement="sounds/hunter/voice/vo_ping_careful_bottom.wav"
+	caremiddleannouncement="sounds/hunter/voice/vo_ping_careful_mid.wav"
+	caretopannouncement="sounds/hunter/voice/vo_ping_careful_top.wav"
+	defendcruxannouncement="sounds/hunter/voice/vo_ping_defend_crux.wav"
+	defendgeneratorannouncement="sounds/hunter/voice/vo_ping_defend_generator.wav"
+	defendtowerannouncement="sounds/hunter/voice/vo_ping_defend_tower.wav"
+	farmannouncement="sounds/hunter/voice/vo_ping_farm.wav"
+	helpannouncement="sounds/hunter/voice/vo_ping_help.wav"
+	helpbottomannouncement="sounds/hunter/voice/vo_ping_help_bottom.wav"
+	helpmiddleannouncement="sounds/hunter/voice/vo_ping_help_mid.wav"
+	helptopannouncement="sounds/hunter/voice/vo_ping_help_top.wav"
+	krytosannouncement="sounds/hunter/voice/vo_ping_krytos.wav"
+	missingannouncement="sounds/hunter/voice/vo_ping_missing.wav"
+	missingbottomannouncement="sounds/hunter/voice/vo_ping_missing_bottom.wav"		
+	missingmiddleannouncement="sounds/hunter/voice/vo_ping_missing_mid.wav"
+	missingtopannouncement="sounds/hunter/voice/vo_ping_missing_top.wav"
+	onmywayannouncement="sounds/hunter/voice/vo_ping_omw.wav"
+	onmywaybottomannouncement="sounds/hunter/voice/vo_ping_omw_bottom.wav"
+	onmywaymiddleannouncement="sounds/hunter/voice/vo_ping_omw_mid.wav"
+	onmywaytopannouncement="sounds/hunter/voice/vo_ping_omw_top.wav"
+	pushannouncement="sounds/hunter/voice/vo_ping_push.wav"
+	thanksannouncement="sounds/hunter/voice/vo_ping_thanks.wav"
+	togetherannouncement="sounds/hunter/voice/vo_ping_together.wav"
+	watchoutannouncement="sounds/hunter/voice/vo_ping_watchout.wav"
+	wellannouncement="sounds/hunter/voice/vo_ping_well.wav"
+	wellplayedannouncement="sounds/hunter/voice/vo_ping_wellplayed.wav"
+	
+	preglobalscale="1.4"
+	modelscale="1.1"
+	effectscale="1.05"
+	
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="52"
+	targetoffset="0 0 92"
+	searchradius="105"
+	minsearchradius="65"
+	searchheight="125"
+
+	category="magic muc"
+	difficulty="1"
+	
+	movespeed="325"
+	turnrate="900"
+	turnsmoothing="0.01"
+	
+	rolesurvival="3"
+	rolecrowdcontrol="1"
+	rolephysicaldamage="4"
+	rolemagicdamage="1"
+	roleutility="1"
+
+	maxhealth="783,837,891,945,998,1053,1106,1159,1214,1267,1320,1375,1428,1482,1536"
+	maxhealthperlevel="0"
+	healthregen="1.8,1.92,2.04,2.16,2.28,2.4,2.52,2.64,2.76,2.88,3,3.12,3.24,3.36,3.48"
+	healthproportionregen="0"
+
+	unitcriticalmultiplier="1.0"
+	
+	maxmana="320"
+	maxmanaperlevel="15"
+	manaregen="1.89,1.92,1.96,2.00,2.04,2.08,2.12,2.16,2.20,2.24,2.27,2.31,2.35,2.39,2.43"
+	manaproportionregen="0.0"
+
+	resistance="10"
+
+	inventory0="Ability_Harrower1"
+	inventory1="Ability_Harrower2"
+	inventory2="Ability_Harrower3"
+	inventory3="Ability_Harrower4"
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+	inventory8="Ability_HomecomingStone_Home"
+	inventory9=""
+	inventory10="Ability_WardSwitch"
+	inventory11="Ability_AutomatedCourier"
+
+
+	power="130"
+	attackduration="500"
+	attackactiontime="250"
+	attackcooldown="1100"
+	attackdamagemin="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
+	attackdamageminperlevel="0"
+	attackdamagemax="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
+	attackdamagemaxperlevel="0"
+	attacknumanims="2"
+	attackoffset="35 170 115"
+	attackprojectile="Projectile_HarrowerAttack"
+	attackrange="500"
+	attackstarteffect="effects/attack_start_hunter.effect"
+	attackactioneffect="effects/attack_hunter.effect"
+	attackimpacteffect=""
+	critimpacteffect="/shared/effects/crit_impact.effect"
+	attacktype="ranged"
+	attackdamagetype="AttackDamage"
+	combattype="Hero"
+
+	aggrorange="600"
+	sightrangeday="1500"
+	sightrangenight="1500"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="0"
+	strengthperlevel="0"
+	agility="0"
+	agilityperlevel="0"
+	intelligence="0"
+	intelligenceperlevel="0"
+	
+	previewpassiveeffect="effects/preview.effect"
+	previewmodel="preview.mdf"
+	previewpos="15 0 -110"
+	previewangles="39 0 0"
+	previewscale="1.11"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -100"
+	storeangles="33 0 0"
+	storescale="1.3"
+	
+	occlusionstealthtype="occlusion"
+	occlusionfadeineffect="/shared/effects/fade_in.effect"
+	occlusionfadeouteffect="/shared/effects/fade_out.effect"
+
+	defaultfamiliar="Familiar_Razer"
+	
+	
+	itembuild="Harrower"
+	levelbuild="1,2,3,1,1,4,1,3,3,3,4,2,2,2,4"
+>
+	<modifier key="counterstrife" modpriority="1" healthregen="0" manaregen="0" inventory8="" inventory9="Ability_SpawnInvulnerability" inventory10="" inventory11="" dropitemsondeath="true" movespeed="500" sightrangeday="1000" sightrangenight="1000" />
+	
+	<modifier key="shop_access_dead" condition="!alive" modpriority="100" exclusive="true" shopaccess="Shop_Utility Shop_Basic Shop_Boots Shop_Consumables Shop_MagicDefense Shop_PhysicalDefense Shop_VitalBoosters Shop_Artifacts Shop_Offense Shop_Crafted" stashaccess="true" />	
+	
+
+	<modifier key="harrower_morph" modpriority="100"
+	
+		attackimpacteffect="ability_04/effects/morph_impact.effect"
+	
+		preglobalscale="1.4"
+		modelscale="1.25"
+		effectscale="1.05"
+		attacknumanims="3"
+		
+		
+		model="ability_04/morph/model.mdf"
+		attackprojectile=""
+		attackrange="160"
+		attacktype="melee"
+		attackanim="attack_%"
+
+		distancetocleartargetsfrombrain="400"
+			
+		confirmmovesound="sounds/beast/voice/vo_%.wav"
+		confirmattacksound="sounds/beast/voice/vo_tense_%.wav"
+		nomanasound="sounds/beast/voice/vo_%.wav"
+		cooldownsound="sounds/beast/voice/vo_%.wav"
+		creepkillannouncement=""
+		herokillfrequentannouncement="sounds/beast/voice/vo_tense_%.wav"
+		herokillinfrequentannouncement="sounds/beast/voice/vo_tense_%.wav"
+		herolevelultannouncement=""
+		creepdamageannouncement="sounds/beast/voice/vo_tense_%.wav"
+		toweraggroannouncement="sounds/beast/voice/vo_tense_%.wav"
+		deathannouncement=""
+		respawnannouncement=""
+		itemacquireannouncement=""
+		itempurchaseannouncement=""
+		lowhealthannouncement="sounds/beast/voice/vo_tense_%.wav"
+		abilityflavorannouncement=""
+
+		attackstarteffect="effects/attack_start_beast.effect"
+		attackactioneffect="effects/attack_beast.effect"
+	>
+	</modifier>
+	
+	<modifier key="no_aggro" modpriority="100" defaultbehavior="hold" />
+	
+
+	
+</hero>

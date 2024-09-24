@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Claudessa"
+
+	showinpractice="true"
+	team="final"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	mapicon="icon_circle.tga"
+	cutouticon="icon_full.tga"
+	
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound=""
+	selectedflavorsound=""
+
+	
+
+
+	heroselectannouncement="sounds/voice/vo_selecthero_1.wav"
+	heroselectflavorannouncement="sounds/voice/vo_selecthero_2.wav"
+	confirmmovesound="sounds/voice/vo_move_%.wav"
+	confirmattacksound="sounds/voice/vo_attack_%.wav"
+	nomanasound="sounds/voice/vo_oom.wav"
+	cooldownsound="sounds/voice/vo_cooldown.wav"
+	streaksound="sounds/voice/vo_ck_2.wav,sounds/voice/vo_ck_3.wav,sounds/voice/vo_ck_4.wav,sounds/voice/vo_ck_5.wav"
+	
+	creepkillannouncement="sounds/voice/vo_lasthit_1.wav,sounds/voice/vo_lasthit_2.wav,sounds/voice/vo_lasthit_3.wav"
+	herokillfrequentannouncement="sounds/voice/vo_herokill_%.wav"
+	herokillinfrequentannouncement="sounds/voice/vo_sporadickill_%.wav"
+	herolevelultannouncement="sounds/voice/vo_levelup_1.wav,sounds/voice/vo_levelup_2.wav,sounds/voice/vo_levelup_3.wav"
+	creepdamageannouncement="sounds/voice/vo_creepdamage.wav"
+	toweraggroannouncement="sounds/voice/vo_towerdamage.wav"
+	deathannouncement=""
+	respawnannouncement="sounds/voice/vo_spawn_%.wav"
+	itemacquireannouncement=""
+	itempurchaseannouncement="sounds/voice/vo_itempurchase_%.wav"
+	lowhealthannouncement="sounds/voice/vo_lowhealth_%.wav"
+	abilityflavorannouncement="sounds/voice/vo_ability_1.wav,sounds/voice/vo_ability_2.wav,sounds/voice/vo_ability_3.wav,sounds/voice/vo_ability_4.wav"
+		
+	assistannouncement="sounds/voice/vo_ping_assist.wav"
+	attackannouncement="sounds/voice/vo_ping_attack.wav"
+	attackcruxannouncement="sounds/voice/vo_ping_attack_crux.wav"
+	attackenemyannouncement="sounds/voice/vo_ping_attack_enemy.wav"	
+	attackgeneratorannouncement="sounds/voice/vo_ping_attack_generator.wav"
+	attacktowerannouncement="sounds/voice/vo_ping_attack_tower.wav"
+	backannouncement="sounds/voice/vo_ping_back.wav"
+	carebottomannouncement="sounds/voice/vo_ping_careful_bottom.wav"
+	caremiddleannouncement="sounds/voice/vo_ping_careful_mid.wav"
+	caretopannouncement="sounds/voice/vo_ping_careful_top.wav"
+	defendcruxannouncement="sounds/voice/vo_ping_defend_crux.wav"
+	defendgeneratorannouncement="sounds/voice/vo_ping_defend_generator.wav"
+	defendtowerannouncement="sounds/voice/vo_ping_defend_tower.wav"
+	farmannouncement="sounds/voice/vo_ping_farm.wav"
+	helpannouncement="sounds/voice/vo_ping_help.wav"
+	helpbottomannouncement="sounds/voice/vo_ping_help_bottom.wav"
+	helpmiddleannouncement="sounds/voice/vo_ping_help_mid.wav"
+	helptopannouncement="sounds/voice/vo_ping_help_top.wav"
+	krytosannouncement="sounds/voice/vo_ping_krytos.wav"
+	missingannouncement="sounds/voice/vo_ping_missing.wav"
+	missingbottomannouncement="sounds/voice/vo_ping_missing_bottom.wav"		
+	missingmiddleannouncement="sounds/voice/vo_ping_missing_mid.wav"
+	missingtopannouncement="sounds/voice/vo_ping_missing_top.wav"
+	onmywayannouncement="sounds/voice/vo_ping_omw.wav"
+	onmywaybottomannouncement="sounds/voice/vo_ping_omw_bottom.wav"
+	onmywaymiddleannouncement="sounds/voice/vo_ping_omw_mid.wav"
+	onmywaytopannouncement="sounds/voice/vo_ping_omw_top.wav"
+	pushannouncement="sounds/voice/vo_ping_push.wav"
+	thanksannouncement="sounds/voice/vo_ping_thanks.wav"
+	togetherannouncement="sounds/voice/vo_ping_together.wav"
+	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
+	wellannouncement="sounds/voice/vo_ping_well.wav"
+	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+	
+	preglobalscale="1.9"
+	modelscale="1.1"
+	effectscale="1.075"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 54"
+	searchradius="105"
+	minsearchradius="65"
+	searchheight="125"
+
+	revealrange="700"
+	revealtype="hero"
+
+	category="cc tank"
+	difficulty="3"
+	movespeed="350"
+	turnrate="900"
+	turnsmoothing="0.01"
+	
+	maxhealth="920,988,1055,1123,1190,1258,1326,1393,1461,1528,1596,1664,1730,1797,1865"
+	maxhealthperlevel="0"
+	healthregen="3.08,3.3,3.52,3.74,3.96,4.18,4.4,4.62,4.84,5.06,5.28,5.5,5.72,5.94,6.16"
+	healthproportionregen="0"
+	
+	unitcriticalmultiplier="1.0"
+	
+	maxmana="320"
+	maxmanaperlevel="15"
+	manaregen="1.89,1.92,1.96,2.00,2.04,2.08,2.12,2.16,2.20,2.24,2.27,2.31,2.35,2.39,2.43"
+	manaproportionregen="0.0"
+
+	resistance="10"
+
+	inventory0="Ability_Claudessa1"
+	inventory1="Ability_Claudessa2"
+	inventory2="Ability_Claudessa3"
+	inventory3="Ability_Claudessa4"
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+	inventory8="Ability_HomecomingStone_Home"
+	inventory9=""
+	inventory10="Ability_WardSwitch"
+	inventory11="Ability_AutomatedCourier"
+
+
+	power="130"
+	attackduration="400"
+	attackactiontime="350"
+	attackcooldown="1100"
+	attackdamagemin="63,65.93,68.86,71.79,74.71,77.64,80.57,83.5,86.43,89.36,92.29,95.21,98.14,101.07,104"
+	attackdamageminperlevel="0"
+	attackdamagemax="63,65.93,68.86,71.79,74.71,77.64,80.57,83.5,86.43,89.36,92.29,95.21,98.14,101.07,104"
+	attackdamagemaxperlevel="0"
+	attacknumanims="2"
+	attackoffset="0 30 100"
+	attackprojectile=""
+	attackrange="180"
+	attackstarteffect="effects/attack_start.effect"
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	critimpacteffect="/shared/effects/crit_impact.effect"
+	attacktype="melee"
+	attackdamagetype="AttackDamage"
+	combattype="Hero"
+
+	aggrorange="600"
+	sightrangeday="1500"
+	sightrangenight="1500"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="0"
+	strengthperlevel="0"
+	agility="0"
+	agilityperlevel="0"
+	intelligence="0"
+	intelligenceperlevel="0"
+	
+	previewpassiveeffect="effects/preview.effect"
+	previewmodel="preview.mdf"
+	previewpos="20 0 -110"
+	previewangles="39 0 0"
+	previewscale="1.51"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -100"
+	storeangles="33 0 0"
+	storescale="1.3"
+
+	rolesurvival="4"
+	rolecrowdcontrol="0"
+	rolephysicaldamage="0"
+	rolemagicdamage="3"
+	roleutility="4"
+
+	infoheight="250"
+	
+	occlusionstealthtype="occlusion"
+	occlusionfadeineffect="/shared/effects/fade_in.effect"
+	occlusionfadeouteffect="/shared/effects/fade_out.effect"
+
+	defaultfamiliar="Familiar_Topps"
+	itembuild="Claudessa"
+	levelbuild="1,3,2,2,2,4,2,3,3,3,4,1,1,1,4"
+	
+	
+	corpsetime="1000"
+	corpsefadetime="3000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+	<modifier key="counterstrife" modpriority="1" healthregen="0" manaregen="0" inventory8="" inventory9="Ability_SpawnInvulnerability" inventory10="" inventory11="" dropitemsondeath="true" movespeed="550" sightrangeday="1000" sightrangenight="1000" />
+	<modifier key="shield" modpriority="110" model="model2.mdf" passiveeffect="effects/body.effect" />
+	<modifier key="shield_gear1" modpriority="110" model="gear_1/model2.mdf" passiveeffect="effects/body.effect" />
+	<modifier key="voidkeyactive" modpriority="100" passiveeffect="" />
+	<modifier key="shop_access_dead" condition="!alive" modpriority="100" exclusive="true" shopaccess="Shop_Utility Shop_Basic Shop_Boots Shop_Consumables Shop_MagicDefense Shop_PhysicalDefense Shop_VitalBoosters Shop_Artifacts Shop_Offense Shop_Crafted" stashaccess="true" />
+	<modifier key="no_aggro" modpriority="100" defaultbehavior="hold" />
+	<modifier key="gear_1" modpriority="1" altavatar="true" icon2="gear_1/icon.tga" portrait="gear_1/icon.tga" model="gear_1/model.mdf" previewmodel="gear_1/preview.mdf" storemodel="gear_1/preview.mdf" />
+
+	
+
+</hero>
