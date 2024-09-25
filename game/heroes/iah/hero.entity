@@ -71,6 +71,10 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+    abilityreadyannouncement="sounds/voice/vo_ping_attack.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown_%.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom_%.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom_%.wav"
 	
 	revealrange="700"
 	revealtype="hero"

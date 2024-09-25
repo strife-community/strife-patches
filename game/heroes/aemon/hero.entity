@@ -23,8 +23,8 @@
 	heroselectflavorannouncement="sounds/voice/vo_selecthero_2.wav"
 	confirmmovesound="sounds/voice/vo_move_%.wav"
 	confirmattacksound="sounds/voice/vo_attack_%.wav"
-	nomanasound="sounds/voice/vo_oom.wav"
-	cooldownsound="sounds/voice/vo_cooldown.wav"
+	nomanasound="sounds/voice/vo_oom_%.wav"
+	cooldownsound="sounds/voice/vo_cooldown_%.wav"
 	streaksound="sounds/voice/vo_ck_2.wav,sounds/voice/vo_ck_3.wav,sounds/voice/vo_ck_4.wav,sounds/voice/vo_ck_5.wav"
 	
 	creepkillannouncement="sounds/voice/vo_lasthit_1.wav,sounds/voice/vo_lasthit_2.wav,sounds/voice/vo_lasthit_3.wav"
@@ -73,6 +73,10 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+    abilityreadyannouncement="sounds/voice/vo_ping_attack.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown_%.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom_%.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom_%.wav"
 	
 	preglobalscale="1.4"
 	modelscale="1.21"
