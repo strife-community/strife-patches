@@ -73,9 +73,9 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
-    abilityreadyannouncement="sounds/voice/vo_sporadickill_1.wav"
+    abilityreadyannouncement="sounds/voice/vo_sporadickill_2.wav"
     abilitycooldownannouncement="sounds/voice/vo_cooldown_%.wav"
-    abilitynomanaannouncement="sounds/voice/vo_oom_%.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom_2.wav"
     abilitycooldownnomanaannouncement="sounds/voice/vo_oom_%.wav"
 	
 	preglobalscale="1.9"
