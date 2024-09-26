@@ -942,6 +942,7 @@ local function inventoryRegisterButtonSimple(object, index, isItem, isPrimary, s
 	local button = object:GetWidget('gameInventory'..index..suffix..'Button')
 	local icon = object:GetWidget('gameInventory'..index..suffix..'Icon')
 	local gloss = object:GetWidget('gameInventory'..index..suffix..'Gloss')
+    local inventoryInfo = LuaTrigger.GetTrigger('ActiveInventory'..index)
 	
 	local buttonInfo = libButton2.register(
 		{
@@ -952,10 +953,21 @@ local function inventoryRegisterButtonSimple(object, index, isItem, isPrimary, s
 			}
 		}, 'abilityButtonPrimary'
 	)
+    
+    if (
+        (index <= 3) or                     -- hero abilities
+        (index == 18) or                    -- pet active ability
+        ((index >= 96) and (index <= 102))  -- boots and items
+    ) then
+        button:SetCallback('onping', function(widget)
+            if (inventoryInfo.isActivatable) then
+                HeroAnnouncementParam('ability_status', index)
+            end
+        end)
+    end
 	
 	button:SetCallback('onclick', function(widget)
 		if isItem and LuaTrigger.GetTrigger('ModifierKeyStatus').moreInfoKey then
-			local inventoryInfo = LuaTrigger.GetTrigger('ActiveInventory'..index)
 			local isRecipeCompleted = inventoryInfo.isRecipeCompleted
 			local shopActive = LuaTrigger.GetTrigger('ShopActive').isActive
 			if (not isRecipeCompleted) and compNameToFilterName[inventoryInfo.entity] then
@@ -997,19 +1009,10 @@ local function inventoryRegisterButtonSimple(object, index, isItem, isPrimary, s
 		else
 
 			local levelUpGroupTrigger 		= GetTrigger('gameInventory'..index..'LevelUpButtonVis')
-			local activeInventoryTrigger 	= LuaTrigger.GetTrigger('ActiveInventory'..index)
 
 			if isPrimary and (levelUpGroupTrigger['ModifierKeyStatus'].moreInfoKey) and (levelUpGroupTrigger['ActiveUnit'].availablePoints > 0) and (levelUpGroupTrigger['ActiveInventory'..index].canLevelUp) then
 				PlaySound('/ui/sounds/ui_level_ability.wav', 0.3)
 				widget:UICmd("LevelUpAbility("..index..")")					
-			elseif isPrimary and LuaTrigger.GetTrigger('ModifierKeyStatus').alt and (activeInventoryTrigger.level > 0) then 
-
-				if (activeInventoryTrigger.remainingCooldownTime > 0) then
-					Cmd("TeamChat " .. Translate('ability_on_cooldown_remaing', 'value1', math.ceil(activeInventoryTrigger.remainingCooldownTime/1000), 'value2', activeInventoryTrigger.displayName))
-				else
-					Cmd("TeamChat " .. Translate('ability_on_cooldown_ready', 'value2', activeInventoryTrigger.displayName))
-				end
-			
 			else
 				ActivateTool(index)
 				if isItem then
