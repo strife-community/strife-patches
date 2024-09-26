@@ -411,6 +411,7 @@ hero_announce_ability_cooldown_no_mana      ^980{abi_name} ({abi_key})^* on cool
 
 //hero specific announcement text, replace hero_ with Hero_Name_
 Hero_Ace_announce_well_played				Good Job!
+Hero_Zaku_announce_well_played				Good, good!
 //-----------------------------------------------------------------------------
 
 

@@ -70,7 +70,11 @@
 	togetherannouncement="sounds/voice/vo_ping_together.wav"
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
-	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+	wellplayedannouncement="sounds/voice/vo_good.wav"
+    abilityreadyannouncement="sounds/voice/vo_attack_3.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown_%.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom_%.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom_%.wav"
 	
 	preglobalscale="1.4"
 	modelscale="1.15"
