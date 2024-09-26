@@ -321,6 +321,14 @@ function registerInventory()
 		-- register the button 
 		inventoryButton:RegisterWatchLua('ActiveInventory' .. index, function(widget, trigger)
 			local isActivatable = trigger.isActivatable and trigger.exists
+            
+            if (not isConsumable) then
+                widget:SetCallback('onping', function(widget)
+                    if (trigger.isActivatable) then
+                        HeroAnnouncementParam('ability_status', index)
+                    end
+                end)
+            end
 
 			widget:SetCallback('onclick', function(widget)
 				if LuaTrigger.GetTrigger('ModifierKeyStatus').moreInfoKey then

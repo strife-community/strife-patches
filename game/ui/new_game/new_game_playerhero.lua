@@ -550,6 +550,12 @@ function registerAbilities()
 		if index == petActiveIndex then
 			abilityIcon:RegisterWatchLua('ActiveInventory' .. index, function(widget, trigger)
 				if trigger.isActivatable then
+                    widget:SetCallback('onping', function(widget)
+                        if (trigger.isActivatable) then
+                            HeroAnnouncementParam('ability_status', index)
+                        end
+                    end)
+                
 					widget:SetCallback('onclick', function(widget)
 						ActivateTool(index)
 					end)
