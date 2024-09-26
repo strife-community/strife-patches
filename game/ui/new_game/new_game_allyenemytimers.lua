@@ -116,6 +116,15 @@ function registerGameTimers()
 					simpleTipGrowYUpdate(true, '/npcs/Baldir_2/icon.tga', Translate('tutorial3_hint4'), Translate('tutorial3_tip10_body'), libGeneral.HtoP(32))
 				end
 			end)
+            
+            -- TODO: implement boss pings. Events 'boss_status' already exist in executable
+            -- widget:SetCallback('onping', function(widget)
+				-- if bossPrefix == cindaraTimerPrefix then
+					-- HeroAnnouncementParam("boss_status", 0)
+				-- else
+					-- HeroAnnouncementParam("boss_status", 1)
+				-- end
+			-- end)
 		end)
 		
 		bossPanel:SetCallback('onmouseout', function(widget)
