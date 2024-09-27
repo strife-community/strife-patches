@@ -954,6 +954,7 @@ local function inventoryRegisterButtonSimple(object, index, isItem, isPrimary, s
 		}, 'abilityButtonPrimary'
 	)
     
+    -- Setting 'onping' event for hero abilities, pet ability and items
     if (
         (index <= 3) or                     -- hero abilities
         (index == 18) or                    -- pet active ability

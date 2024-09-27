@@ -322,6 +322,7 @@ function registerInventory()
 		inventoryButton:RegisterWatchLua('ActiveInventory' .. index, function(widget, trigger)
 			local isActivatable = trigger.isActivatable and trigger.exists
             
+            -- Setiing 'onping' event for non-consumable active items
             if (not isConsumable) then
                 widget:SetCallback('onping', function(widget)
                     if (trigger.isActivatable) then

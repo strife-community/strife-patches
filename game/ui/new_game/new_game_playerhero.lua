@@ -549,6 +549,7 @@ function registerAbilities()
 
 		if index == petActiveIndex then
 			abilityIcon:RegisterWatchLua('ActiveInventory' .. index, function(widget, trigger)
+                -- Creating 'onping' event for active abilities
 				if trigger.isActivatable then
                     widget:SetCallback('onping', function(widget)
                         if (trigger.isActivatable) then
@@ -585,17 +586,18 @@ function registerAbilities()
 			
 			abilityIcon:RegisterWatchLua('ActiveInventory' .. index, function(widget, trigger)
                 
+                -- Setting 'onping event' for active abilities
                 widget:SetCallback('onping', function(widget)
                     if (trigger.isActivatable) then
                         HeroAnnouncementParam('ability_status', index)
                     end
                 end)
                 
-				widget:SetCallback('onclick', function(widget)	
+				widget:SetCallback('onclick', function(widget)
 					local moreInfo = LuaTrigger.GetTrigger('ModifierKeyStatus').moreInfoKey or scoreboardOpen
 					if (trigger.canLevelUp) and (moreInfo) then
 						PlaySound('/ui/sounds/sfx_button_generic.wav')
-						widget:UICmd("LevelUpAbility("..index..")")                       
+						widget:UICmd("LevelUpAbility("..index..")")
 					elseif trigger.isActivatable then
 						ActivateTool(index)
 					end	
