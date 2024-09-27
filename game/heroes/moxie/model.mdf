@@ -56,12 +56,14 @@
 		<reference mesh="10k_kitty"		material="material_neon.material" />
 		<reference mesh="3k_kitty"		material="material_neon.material" />
 		<reference mesh="1k_kitty"		material="material_neon.material" />
+        <furreference mesh="10k_kitty" 	material="hair/fur_neon.material" />
 	</skin>
 	
 		<skin name="flash">
 		<reference mesh="10k_kitty"		material="material_flash.material" />
 		<reference mesh="3k_kitty"		material="material_flash.material" />
 		<reference mesh="1k_kitty"		material="material_flash.material" />
+        <furreference mesh="10k_kitty" 	material="hair/fur_flash.material" />
 	</skin>
 	
 	

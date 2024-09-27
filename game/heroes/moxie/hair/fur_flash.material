@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters shader="/shared/shaders/fur.shader" vDiffuseColor="1.0 1.0 1.0" fSpecularLevel="0.1" fGlossiness="25.0" fOpacity="1" fReflect="0.25">
+		<define name="g_hairConstantBuffer"/>
+	</parameters>
+	<phase name="shadow" cull="back" blend="none">
+		<sampler name="diffuse0" texture="../color_flash.tga" repeat_u="true" repeat_v="true" />
+		<sampler name="diffuse1" texture="../color_flash.tga" repeat_u="true" repeat_v="true" />
+	</phase>
+	<phase name="color" cull="back" blend="none">
+		<sampler name="diffuse0" texture="../color_flash.tga" repeat_u="true" repeat_v="true" />
+		<sampler name="diffuse1" texture="../color_flash.tga" repeat_u="true" repeat_v="true" />
+	</phase> 
+	<phase name="fade" cull="back" colorwrite="false" alphawrite="false" depthwrite="true" blend="none">
+		<sampler name="diffuse0" texture="../color_flash.tga" repeat_u="true" repeat_v="true" />
+		<sampler name="diffuse1" texture="../color_flash.tga" repeat_u="true" repeat_v="true" />
+		<multipass cull="back" blend="translucent">
+			<sampler name="diffuse0" texture="../color_flash.tga" repeat_u="true" repeat_v="true" />
+			<sampler name="diffuse1" texture="../color_flash.tga" repeat_u="true" repeat_v="true" />
+		</multipass>
+	</phase>
+</material>
