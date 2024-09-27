@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>	
+		
+	<template name="playScreenOption">
+		<panel name="playScreenOption{id}Parent" group="playScreenOptionParents" width="{optionWidth=244s}" height="100%" sticky="1" stickytoinvis="0" visible="{visible=1}"
+			onmouseoverlua="
+				GetWidget('playScreenOption{id}Frame'):SetColor('#081f27')
+				GetWidget('playScreenOption{id}Frame'):SetBorderColor('#081f27')
+				GetWidget('playScreenOption{id}IconGlow'):FadeIn(250)
+				GetWidget('playScreenOption{id}CurrentBar'):FadeIn(250)
+			"
+			onmouseoutlua="
+				GetWidget('playScreenOption{id}Frame'):SetColor('#040c0f')
+				GetWidget('playScreenOption{id}Frame'):SetBorderColor('#040c0f')
+				GetWidget('playScreenOption{id}IconGlow'):FadeOut(100)
+				GetWidget('playScreenOption{id}CurrentBar'):FadeOut(100)
+			"
+		>			
+			<frame name="playScreenOption{id}Frame" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="6s" color="#040c0f" bordercolor="#040c0f" noclick="1"/>
+			<frame texture="/ui/elements:thick" borderthickness="6s" bordercolor="0 0 0 .7" noclick="1"/>
+			
+			<panel name="playScreenOption{id}CurrentBar" noclick="1" visible="0">
+				<image texture="/ui/main/play/textures/mode_highlight.tga" y="-1s" align="center" valign="bottom" width="92%" height="90s" color="#30cdff33" noclick="1" />
+				<image texture="/ui/main/play/textures/mode_bar.tga" y="18s" width="+180s" height="6s" valign="bottom" align="center" />
+			</panel>
+			
+			<panel name="playScreenOption{id}IconContainer" noclick="1">				
+				<image name="playScreenOption{id}Icon" texture="/ui/main/play/textures/{artTexture}.tga" align="center" valign="center" noclick="1" width="{artSize}@" height="{artSize}%" y="{artY}" x="{artX}" color="1 1 1 1" />
+				<image name="playScreenOption{id}IconGlow" texture="/ui/main/play/textures/{artTexture}_glow.tga" align="center" valign="center" width="{artSize}@" height="{artSize}%" y="{artY}" x="{artX}" noclick="1" visible="0" />
+			</panel>
+			
+			<label y="153s" style="labelBase" font="maindyn_36" textalign="center" content="{title}" noclick="1" />
+			<label y="195s" width="-20s" align="center" style="labelBase" color="#a5c6cf" outlinecolor="#072128" font="subdyn_15" textalign="center" wrap="1" lineheight="18s" content="{details}" noclick="1" />
+			
+			<!-- Locked -->
+			<panel name="playScreenOptionBtn{id}_lock" color=".06 .06 .06 .65" visible="{locked=0}">
+				<image texture="/ui/main/shared/textures/circular.tga" y="-32s" align="center" valign="center" width="110s" height="110s" color="#02eaff" />
+				<image texture="/ui/main/pregame/textures/locked.tga" y="-32s" align="center" valign="center" width="64s" height="64s" />
+			</panel>
+			
+			<!-- Soon -->
+			<panel 
+                name="playScreenOptionBtn{id}_comingsoon"
+                color=".06 .06 .06 .65"
+                visible="{soon=0}"
+                onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('scrim_finder_comingsoon_feature_locked'), Translate('scrim_finder_comingsoon_feature_locked_desc'), 320)"
+                onmouseoutlua="simpleTipGrowYUpdate(false)"
+			>
+				<image texture="/ui/main/shared/textures/circular.tga" y="-36s" align="center" valign="center" width="110s" height="110s" color="#02eaff" noclick="1"/>
+				<image texture="/ui/main/shared/textures/clock.tga" y="-36s" align="center" valign="center" width="60s" height="60s" noclick="1"/>
+			</panel>
+			
+			<!-- More Info -->
+			<image
+				name="playScreenOption{id}_moreinfo"
+				texture="/ui/shared/textures/question_mark.tga" rendermode="grayscale" color=".9 .9 .9 .35"
+				x="-8s" y="9s" width="28s" height="28s" align="right"
+				visible="{moreinfo=0}"
+				onmouseoverlua="
+					self:SetRenderMode('normal')
+					self:SetColor('1 1 1 1')
+				"
+				onmouseoutlua="
+					self:SetRenderMode('grayscale')
+					self:SetColor('.9 .9 .9 .35')
+				"
+			/>			
+		</panel>
+	</template>
+	
+	<template name="playScreenTypeSwitcher">
+		<panel name="playScreenTypeSwitcher{id}Parent" width="180s" height="100%" sticky="true" stickytoinvis="false" visible="{visible=1}"
+			onmouseoverlua="
+				GetWidget('playScreenTypeSwitcher{id}Frame'):SetColor('#0b2730')
+				GetWidget('playScreenTypeSwitcher{id}Frame'):SetBorderColor('#0b2730')
+				GetWidget('playScreenTypeSwitcher{id}CurrentBar'):FadeIn(250)
+			"
+			onmouseoutlua="
+				GetWidget('playScreenTypeSwitcher{id}Frame'):SetColor('#040c0f')
+				GetWidget('playScreenTypeSwitcher{id}Frame'):SetBorderColor('#040c0f')
+				GetWidget('playScreenTypeSwitcher{id}CurrentBar'):FadeOut(100)
+			"
+			onclicklua="
+				{onclicklua}
+			"
+		>
+		
+			<frame name="playScreenTypeSwitcher{id}Frame" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="6s" color="#040c0f" bordercolor="#040c0f" noclick="1"/>
+			<frame texture="/ui/elements:thick" borderthickness="6s" bordercolor="0 0 0 .7" noclick="1"/>				
+			<panel name="playScreenTypeSwitcher{id}CurrentBar" noclick="1" visible="0">
+				<image texture="/ui/main/play/textures/mode_highlight.tga" y="-1s" align="center" valign="bottom" width="92%" height="50s" color="#30cdff33" noclick="1" />
+				<image texture="/ui/main/play/textures/mode_bar.tga" y="6s" width="+130s" height="4s" valign="bottom" align="center" />
+			</panel>				
+			<label style="labelBase" color="#a5c6cf" outlinecolor="#072128" font="maindyn_20" content="{label}" textalign="center" textvalign="center" noclick="1" />
+		
+		</panel>
+	</template>	
+	
+	
+	<panel name="select_mode" visible="0" >
+		<!-- Artwork and Screen Edge Fades - this keeps it consistant with the new news screen -->
+		<image width="200s" align="right" hflip="1" texture="/ui/main/shared/textures/grad_horz.tga" color="0.02 0.04 0.05 0.8" noclick="1" />
+		<image width="400s" align="left" texture="/ui/main/shared/textures/grad_horz.tga" color="0.02 0.04 0.05 0.8" noclick="1" />
+		
+		<panel name="main_artwork_container" align="right" valign="center" height="1024s" width="1024s" noclick="1" visible="0" >
+			<image x="310s" texture="/ui/main/shared/textures/circular.tga" color="#639dde82" noclick="1" />
+			<image name="main_news_splash_image_1" texture="$invis" noclick="1" />
+		</panel>
+		
+		<image height="200s" valign="bottom" texture="/ui/main/shared/textures/grad_vert.tga" color="0.02 0.04 0.05 0.8" noclick="1" />
+		
+		<panel y="-10s" height="268s" width="+20s" align="center" valign="center" color="0 0 0 0.6" noclick="1">
+			<image texture="/ui/shared/frames/squareglow_b.tga" valign="bottom" y="10s" height="10s" color="0 0 0 .4" noclick="1" />
+			<frame color="invisible" borderthickness="1s" bordercolor="0 0 0 .7" noclick="1" />		
+			
+			<!-- Tutorial Modes -->
+			<panel name="playScreenModesTutorials" noclick="1" visible="1" x="-100%" >			
+				<label y="-48s" style="labelBase" color="#b6d0e0" font="maindyn_30" textalign="center" content="pre_play_select_tutorial" noclick="1" />
+				<panel grow="1" regrow="1" growinvis="0" height="250s" align="center" valign="center" float="right" padding="8s" x="-8s">
+					<instance name="playScreenOption" id="7" optionWidth="300s" artTexture="gamemode_tutorial" artSize="100" artY="-15%" artX="0" title="pre_play_option_1_SP_1_btn" details="pre_play_option_1_SP_1_info" visible="1" />
+					<instance name="playScreenOption" id="8" optionWidth="300s" artTexture="gamemode_tutorial" artSize="100" artY="-15%" artX="0" title="pre_play_option_1_SP_2_btn" details="pre_play_option_1_SP_2_info" visible="1" />
+					<instance name="playScreenOption" id="9" optionWidth="300s" artTexture="gamemode_tutorial" artSize="100" artY="-15%" artX="0" title="pre_play_option_1_SP_3_btn" details="pre_play_option_1_SP_3_info" visible="1" />
+				</panel>
+			</panel>
+			
+			<!-- Arena Modes -->
+			<panel name="playScreenModesArena" noclick="1" visible="1" x="0" >
+				<label y="-48s" style="labelBase" color="#b6d0e0" font="maindyn_30" textalign="center" content="pre_play_select_arena" noclick="1" />
+				<panel grow="1" regrow="1" growinvis="0" height="250s" align="center" valign="center" float="right" padding="8s" x="-8s">
+					<instance name="playScreenOption" id="1" artTexture="gamemode_std" artSize="100" artY="-16%" artX="0" title="pre_play_pvp" details="pre_play_pvp_desc" moreinfo="1" visible="1" />
+					<instance name="playScreenOption" id="2" artTexture="gamemode_bots" artSize="100" artY="-16%" artX="0" title="pre_play_pve" details="pre_play_pve_desc" visible="1" />
+					<instance name="playScreenOption" id="3" artTexture="gamemode_ranked" artSize="100" artY="-16%" artX="0" title="pre_play_ranked" details="pre_play_ranked_desc" moreinfo="1" visible="1" />
+					<instance name="playScreenOption" id="4" artTexture="gamemode_scrim" artSize="100" artY="-16%" artX="0" title="pre_play_scrim" details="pre_play_scrim_desc" soon="1" visible="1" />
+					<instance name="playScreenOption" id="5" artTexture="gamemode_kq" artSize="100" artY="-16%" artX="0" title="pre_play_khan" details="pre_play_khan_desc" moreinfo="1" visible="1" />
+				</panel>
+			</panel>
+			
+			<!-- Custom Modes -->
+			<panel name="playScreenModesCustom" noclick="1" visible="1" x="100%" >			
+				<label y="-48s" style="labelBase" color="#b6d0e0" font="maindyn_30" textalign="center" content="pre_play_select_custom" noclick="1" />
+				<panel grow="1" regrow="1" growinvis="0" height="250s" align="center" valign="center" float="right" padding="8s" x="-8s">
+					<instance name="playScreenOption" id="10" optionWidth="300s" artTexture="gamemode_custom" artSize="100" artY="-16%" artX="0" title="pre_play_option_3_CM_0_btn" details="pre_play_option_3_CM_0_info" visible="1" />
+					<instance name="playScreenOption" id="11" optionWidth="300s" artTexture="gamemode_practice" artSize="94" artY="-17%" artX="0" title="pre_play_option_1_SP_4_btn" details="pre_play_option_1_SP_4_info" visible="1" />
+				</panel>
+			</panel>
+			
+		</panel>
+
+		<panel y="-100s" height="66s" valign="bottom" noclick="1">			
+			<label y="-48s" style="labelBase" color="#b6d0e0" font="maindyn_30" textalign="center" content="pre_play_switch_game_type" noclick="1" />			
+			<panel x="-5s" grow="1" regrow="1" growinvis="0" height="100%" align="center" float="right" padding="5s" noclick="1">				
+				<instance name="playScreenTypeSwitcher" id="0" label="pre_play_tutorials" onclicklua="GetWidget('playScreenModesTutorials'):SlideX('0%', 300); GetWidget('playScreenModesArena'):SlideX('100%', 300); GetWidget('playScreenModesCustom'):SlideX('100%', 300)" />
+				<instance name="playScreenTypeSwitcher" id="1" label="pre_play_arena_modes" onclicklua="GetWidget('playScreenModesTutorials'):SlideX('-100%', 300); GetWidget('playScreenModesArena'):SlideX('0%', 300); GetWidget('playScreenModesCustom'):SlideX('100%', 300)"/>
+				<instance name="playScreenTypeSwitcher" id="2" label="pre_play_custom_games" onclicklua="GetWidget('playScreenModesTutorials'):SlideX('-100%', 300); GetWidget('playScreenModesArena'):SlideX('-100%', 300); GetWidget('playScreenModesCustom'):SlideX('0%', 300)"/>
+				<instance name="playScreenTypeSwitcher" id="3" label="pre_play_adventure" onclicklua="GetWidget('select_mode_spe_splash'):FadeIn(500)"/>				
+			</panel>			
+		</panel>
+
+	</panel>
+	
+	<lua file="select_mode2.lua"/>
+	
+</package>

@@ -294,29 +294,19 @@ windows										Windows
 mac_os										Mac
 linux										Linux
 
-// New gear
-new_store_hero_1							Hero_Malph
-new_store_hero_2							Hero_Pal
-new_store_hero_skin_1						Hero_Ace_gear_4
-new_store_hero_skin_2						Hero_Bo_gear_3
-new_store_hero_skin_3						Hero_Ray_gear_2
-new_store_hero_skin_4						Hero_Vermillion_gear_uber
-
-// New dye's not working in new UI?
-new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
-new_store_hero_skin_dye_2					Hero_Hale_gear_uber_blue
-new_store_hero_skin_dye_3					Hero_Hale_gear_uber_green
-new_store_hero_skin_dye_4					Hero_Hale_gear_uber_purple
-new_store_hero_skin_dye_5					Hero_Hale_gear_uber_gold
-new_store_hero_skin_dye_6					Hero_Hale_gear_uber_blood
-
-// Old UI Style
-
-new_store_item_1							Hero_Carter_gear_3
-new_store_item_2							Hero_Rook_gear_4
-new_store_item_3							Hero_Hale_gear_uber
-new_store_item_4							Hero_Hale_gear_3
-new_store_item_5							Hero_Hale_gear_4
+// New gear: None for now, just examples below
+//new_store_hero_1							Hero_Malph
+//new_store_hero_2							Hero_Pal
+//new_store_hero_skin_1						Hero_Ace_gear_4
+//new_store_hero_skin_2						Hero_Bo_gear_3
+//new_store_hero_skin_3						Hero_Ray_gear_2
+//new_store_hero_skin_4						Hero_Vermillion_gear_uber
+//new_store_hero_skin_dye_1					Hero_Hale_gear_uber_black
+//new_store_hero_skin_dye_2					Hero_Hale_gear_uber_blue
+//new_store_hero_skin_dye_3					Hero_Hale_gear_uber_green
+//new_store_hero_skin_dye_4					Hero_Hale_gear_uber_purple
+//new_store_hero_skin_dye_5					Hero_Hale_gear_uber_gold
+//new_store_hero_skin_dye_6					Hero_Hale_gear_uber_blood
 
 // Pre-Play
 
@@ -527,7 +517,7 @@ main_label_login_status_waiting				Logging in, please wait...
 main_label_login_status_success				You are now logged in.
 main_label_login_status_failed				Login failed: {reason}
 main_button_create_account					Create Account
-main_button_need_login					1	Login To Play Online
+main_button_need_login						Login To Play Online
 main_button_play_online						Play Online
 main_button_local_game						Local Game
 main_button_options							Options
@@ -4399,7 +4389,7 @@ tooltip_sort_magi_armor_msg					Click here to sort the hero list by Magic Armor.
 tooltip_sort_mitigation						Sort by Mitigation
 tooltip_sort_mitigation_msg					Click here to sort by Mitigation.
 tooltip_sort_resistance						Sort by Resistance
-tooltip_sort_mitigation_msg					Click here to sort by Mitigation.
+tooltip_sort_resistance_msg					Click here to sort by Resistance.
 tooltip_sort_movement						Sort by Movement Speed
 tooltip_sort_movement_msg					Click here to sort the hero list by Movement Speed.
 tooltip_sort_dps							Sort by Average Power Per Second
@@ -5238,7 +5228,7 @@ news_component_manager_add					Add Component
 news_component_manager_addDialog			Add Component
 news_component_manager_toggle_overlay		Overlay
 news_discord								Join our Discord!
-news_discord_desc                           Connect with the Community
+news_discord_desc							Connect with the Community
 
 //news components
 news_component_stories						Stories
@@ -6321,27 +6311,27 @@ watch_filter_dl						Show Only Downloaded
 watch_filter_dl_tip					Limit list to match replays that have been downloaded.
 
 watch_hero_howto_link_1 Hero_Ace|CXImgSlP8gc
-watch_hero_howto_link_2 Hero_Bastion|PZ8qgfl-IUg
-watch_hero_howto_link_3 Hero_Bo|XTEXOQqMZ4o
+watch_hero_howto_link_2 Hero_Bastion|nRHCfYnTurA
+watch_hero_howto_link_3 Hero_Bo|0X0TjStXNdc
 watch_hero_howto_link_4 Hero_Blazer|
-watch_hero_howto_link_5 Hero_Caprice|Hp2vbEu0-O0
+watch_hero_howto_link_5 Hero_Caprice|fkrnJfuOWBw
 watch_hero_howto_link_6 Hero_Claudessa|
-watch_hero_howto_link_7 Hero_Carter|WGMbicVutSA
+watch_hero_howto_link_7 Hero_Carter|ZcPWvpYdivM
 watch_hero_howto_link_8 Hero_Fetterstone|
 watch_hero_howto_link_9 Hero_GoKong|KXne8f1DP6U
-watch_hero_howto_link_10 Hero_Hale|UxnklMMD6PA
+watch_hero_howto_link_10 Hero_Hale|WnQGPIwh0wM
 watch_hero_howto_link_11 Hero_JinShe|d-wp5Yl4HvY
-watch_hero_howto_link_12 Hero_Lady_Tinder|4QM8cvSYU_k
+watch_hero_howto_link_12 Hero_Lady_Tinder|8LmjluNqQb0
 watch_hero_howto_link_13 Hero_Nikolai|1urg7eVPdMw
-watch_hero_howto_link_14 Hero_Malady|zwu5TD4Ov3I
-watch_hero_howto_link_15 Hero_Minerva|dzylbx0TYfM
-watch_hero_howto_link_16 Hero_Moxie|PISbIsZ8b_U
-watch_hero_howto_link_17 Hero_Ray|s6_L7I30l0w
-watch_hero_howto_link_18 Hero_Rook|loRTE7h-Bs4
+watch_hero_howto_link_14 Hero_Malady|rV9f8aI5MIc
+watch_hero_howto_link_15 Hero_Minerva|
+watch_hero_howto_link_16 Hero_Moxie|S5yNgxrFDKI
+watch_hero_howto_link_17 Hero_Ray|U3RbUAhc-A0
+watch_hero_howto_link_18 Hero_Rook|c-B7Yr-Gy-E
 watch_hero_howto_link_19 Hero_Shank|
 watch_hero_howto_link_20 Hero_Trixie|
-watch_hero_howto_link_21 Hero_Vermillion|xS7UNoyTIgE
-watch_hero_howto_link_22 Hero_Vex|Wqod3t_b42U
+watch_hero_howto_link_21 Hero_Vermillion|WpOaZ1-uNH4
+watch_hero_howto_link_22 Hero_Vex|YkqC0xNKJso
 watch_hero_howto_link_23 Hero_Zaku|1qZcfxar6Fg
 watch_hero_howto_link_24 Hero_Bandito|PlRaPtK4E8g
 watch_hero_howto_link_25 Hero_Iah|HSP8dNmdrbQ

@@ -2433,8 +2433,8 @@ Item_Soulstealer_Empower_3_description							Grants $resistance_enchant$ Resista
 // Slayer
 Item_Slayer_name												Numbing Lantern
 Item_Slayer_description											+$health$ Health\nWhen you harm an enemy 3 times, their Power is lowered by $power_reduction$%. Lasts 6 seconds.
-Item_Slayer_description_simple									Grants Attack Speed. Reduces enemy Power after 3 attacks.
-Item_Slayer_bonusdescription									Increases the attack speed power reduction of the item by $common_increase$%.
+Item_Slayer_description_simple									Increases Health. Reduces enemy Power after 3 attacks.
+Item_Slayer_bonusdescription									Increases power reduction of the item by $common_increase$%.
 Item_Slayer_legendaryname										Ruin
 Item_Slayer_legendarydescription								When at 3 stacks, the target takes $amp_legendary$% increased damage.
 Item_Slayer_Empower_1_name										Ruin

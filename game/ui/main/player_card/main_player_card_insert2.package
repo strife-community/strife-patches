@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+
+	<panel name="main_header_player_card" visible="0" x="5s" y="5s" width="277s" height="70s" align="left" noclick="1"><!-- Player Card -->	
+
+		<panel width="70s" height="70s" noclick="0"
+			onclicklua="
+				local triggerPanelStatus = LuaTrigger.GetTrigger('mainPanelStatus')
+				if (triggerPanelStatus.main == 23) then
+					triggerPanelStatus.main = 101
+				else
+					triggerPanelStatus.main = 23
+				end
+				triggerPanelStatus:Trigger(false)	
+			"
+			onrightclicklua="
+				ContextMenuTrigger.selectedUserIdentID = GetIdentID()
+				ContextMenuTrigger.selectedUserIsLocalClient = true
+				ContextMenuTrigger.needToApprove = false
+				ContextMenuTrigger.contextMenuArea = 3	
+				local triggerPanelStatus = LuaTrigger.GetTrigger('mainPanelStatus')
+				triggerPanelStatus.selectedUserIdentID = GetIdentID()
+				triggerPanelStatus:Trigger(false)
+				ContextMenuTrigger:Trigger(true)
+			"		
+			onmouseoverlua="
+				self:GetWidget('main_header_player_card_icon'):Scale('-6%', '-6@', 125)
+				self:GetWidget('main_header_player_card_level_ring'):FadeIn(125)
+				self:GetWidget('playerCardClanName_parent'):SlideX('84s', 125)
+				self:GetWidget('main_header_player_card_status_parent'):SlideY('88s', 125)
+				self:GetWidget('player_card_gems'):SlideX('86s', 125)
+			"			
+			onmouseoutlua="
+				self:GetWidget('main_header_player_card_icon'):Scale('100%', '100@', 125)
+				self:GetWidget('main_header_player_card_level_ring'):FadeOut(125)
+				
+				self:GetWidget('playerCardClanName_parent'):SlideX('78s', 125)
+				self:GetWidget('main_header_player_card_status_parent'):SlideY('80s', 125)
+				self:GetWidget('player_card_gems'):SlideX('80s', 125)
+			"
+		>		
+			<!-- Lvl Ring -->
+			<panel name="main_header_player_card_level_ring" width="+10s" height="+10s" align="center" valign="center" noclick="1" visible="0">
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="10s" color="#24073c" noclick="1"/>
+				<piegraph name="main_header_player_card_level_ring_pie" start="-90" end="270" square="1" color="#890bf3" noclick="true" value=".45" align="center" valign="center" height="-8s" width="-8s" />		
+				<frame texture="/ui/shared/frames/border_double.tga" borderthickness="10s" bordercolor="#081116" color="invisible" noclick="1"/>
+			</panel>
+			
+			<image name="main_header_player_card_icon" valign="center" align="center" visible="0" texture="/ui/shared/textures/account_icons/default.tga" noclick="1" /><!-- User Icon -->			
+			<image name="main_header_player_card_icon_anim" visible="0" texture="/ui/shared/textures/account_icons/default.tga" noclick="1" /><!-- User Icon -->			
+			 <panel name="main_header_player_card_mastery_parent" visible="0" noclick="1" >				
+				<image name="main_header_player_card_mastery_icon" texture="/ui/shared/textures/star.tga" noclick="1" />			
+			 </panel>
+
+		</panel>
+		
+		<!-- Username / Clan -->
+		<panel name="playerCardClanName_parent" grow="true" growinvis="1" regrow="true" height="24s" y="-2s" x="78s"
+			onclicklua="
+				local triggerPanelStatus = LuaTrigger.GetTrigger('mainPanelStatus')
+				if (triggerPanelStatus.main == 23) then
+					triggerPanelStatus.main = 101
+				else
+					triggerPanelStatus.main = 23
+				end
+				triggerPanelStatus:Trigger(false)			
+			"
+			onrightclicklua="
+				ContextMenuTrigger.selectedUserIdentID = GetIdentID()
+				ContextMenuTrigger.selectedUserIsLocalClient = true
+				ContextMenuTrigger.needToApprove = false
+				ContextMenuTrigger.contextMenuArea = 3	
+				local triggerPanelStatus = LuaTrigger.GetTrigger('mainPanelStatus')
+				triggerPanelStatus.selectedUserIdentID = GetIdentID()
+				triggerPanelStatus:Trigger(false)
+				ContextMenuTrigger:Trigger(true)					
+			"
+		>
+			<label name="mainPlayerCardUsername" noclick="1" fitx="1" fity="1" font="maindyn_26" style="labelBase" color="1 1 1 1" content=""/>
+			<panel name="playerCard_extra_parent" noclick="1" grow="1" regrow="1" growinvis="1" >
+				<label name="playerCard_extra_label_1" visible="0" noclick="1" y="28s" fity="1" fitx="1" font="subdyn_13" style="labelBase" color=".9 .9 .9 1" content=""/>
+				<label name="playerCard_extra_label_2" visible="0" noclick="1" y="28s" fity="1" fitx="1" font="subdyn_13" style="labelBase" color=".9 .9 .9 1" content=""/>
+				<label name="playerCard_extra_label_3" visible="0" noclick="1" y="28s" fity="1" fitx="1" font="subdyn_13" style="labelBase" color=".9 .9 .9 1" content=""/>
+				<label name="playerCard_extra_label_5" visible="0" noclick="1" y="28s" fity="1" fitx="1" font="subdyn_13" style="labelBase" color=".9 .9 .9 1" content=""/>
+				<panel name="playerCard_extra_label_4_parent" noclick="1" visible="1" y="28s" grow="1" regrow="1" float="right" padding="2s">
+					<panel width="19s" height="19s" noclick="1" >
+						<image name="playerCard_extra_label_4_image_2" noclick="1"  texture="" color="1 1 1 1" />			
+					</panel>				
+					<label name="playerCard_extra_label_4" noclick="1" fitx="1" valign="center" fity="1" font="subdyn_13" style="labelBase" color=".9 .9 .9 1" content=""/>
+				</panel>
+			</panel>
+		</panel>
+
+		<panel name="player_card_tray" x="80s" y="49s" noclick="1" float="right" padding="0s">
+			
+			<panel name="player_card_gems" height="23s" grow="1" regrow="1" growinvis="0" visible="0" sticky="1" stickytoinvis="0" float="right" padding="4s" >
+				
+				<panel noclick="1" x="-5s" grow="1" regrow="1" growinvis="0" height="20s" float="right" padding="3s">
+					
+					<panel noclick="1" width="20s" height="20s" sticky="1" stickytoinvis="0">
+						<modelpanel name="player_card_gems_effect_behind" x="-46s" visible="0" width="180s" height="80s" align="left" valign="center" noclick="1"
+							effect="effects/red_energy_behind.effect"
+							sunaltitude="-25"
+							suncolor="1 1 1"
+							ambientcolor="1 1 1"
+							cameranear="0.01"
+							model="/shared/models/invis.mdf" depthclear="true" depthcompress="false" lookat="false" modelpos="0 -200 0" modelangles="8 0 0" anim="idle" rotation="0" modelscale="1.0"	
+						/>
+						
+						<image x="0" name="player_card_gems_icon" texture="/ui/main/shared/textures/gem.tga" width="20s" height="20s" noclick="1" />
+						
+						<modelpanel name="player_card_gems_effect" x="-51s" visible="0" width="180s" height="80s" align="left" valign="center" noclick="1"
+							effect="effects/red_energy.effect"
+							sunaltitude="-25"
+							suncolor="1 1 1"
+							ambientcolor="1 1 1"
+							cameranear="0.01"
+							model="/shared/models/invis.mdf" depthclear="true" depthcompress="false" lookat="false" modelpos="0 -200 0" modelangles="8 0 0" anim="idle" rotation="0" modelscale="1.0"	
+						/>
+					</panel>
+					<label name="player_card_gems_label" textvalign="center" fitx="0" fity="1" style="labelBase" color="#d53b38" font="maindyn_18" content="--" sticky="1" stickytoinvis="0" noclick="1"/>
+
+				</panel>
+			</panel>
+		
+			<panel name="player_card_commodities" height="23s" grow="1" regrow="1" growinvis="0" visible="1" sticky="1" stickytoinvis="0" float="right" padding="4s" noclick="1">
+				
+				<panel noclick="1" x="-5s" grow="1" regrow="1" growinvis="0" height="20s" float="right" padding="3s">
+
+					<panel width="20s" sticky="1" stickytoinvis="0" noclick="1">
+						<image x="0" texture="/ui/main/shared/textures/commodity_essence.tga" width="20s" height="20s" noclick="1"/>
+					</panel>
+					<label name="player_card_essence_label" width="10s" textvalign="center" style="labelBase" color="#ffcc33" font="maindyn_18" content="--" sticky="1" stickytoinvis="0" noclick="1"/>
+					
+					
+					<panel width="20s" sticky="1" stickytoinvis="0" noclick="1">
+						<image x="0" texture="/ui/main/shared/textures/commodity_seal.tga" width="20s" height="20s" noclick="1"/>
+					</panel>
+					<label name="player_card_seal_label" width="10s" textvalign="center" style="labelBase" color="#ccbaff" font="maindyn_18" content="--" sticky="1" stickytoinvis="0" noclick="1"/>
+				</panel>
+			</panel>		
+		
+		</panel>
+		
+		<panel name="player_card_purchase_bonus" visible="0" y="-25s" x="-5s" height="32s" width="32s" noclick="0">
+			<!-- Boost On -->
+            <!-- Disabled, since microtransactions are not avaliable -->
+			<panel name="player_card_purchase_bonus_boost" noclick="1" visible="0" height="24s" width="24s" rotation="0" y="29s" x="140s">						
+				<image name="player_card_purchase_bonus_boost_icon" texture="/ui/main/shared/textures/acct_boost_on.tga" noclick="1" color="1 1 1 1" />						
+				<modelpanel name="player_card_purchase_bonus_boost_fx" visible="0" height="100%" width="100%"
+					noclick="true"
+					model="/shared/models/invis.mdf"
+					effect="/ui/main/shared/effects/boost_rocket_flames.effect"
+					camerapos="0 0 0"
+					cameraangles="0 45 0"
+					camerafov="72"
+					depthclear="true"
+					depthcompress="true"
+				/>						
+			</panel>
+		</panel>
+		
+		<panel name="player_card_purchase_bonus_bubble" noclick="1" x="18s" y="10s" visible="0" >
+			<panel visible="1" width="174s" height="48s" noclick="0" 
+				onclicklua="HideWidget('player_card_purchase_bonus_bubble')"
+				onrightclicklua=""
+				onloadlua=""
+			>
+				<frame texture="/ui/main/shared/frames/speech_tl_nip.tga" borderthickness="18s" bordercolor="1 1 1 1"  noclick="1" />			
+				<label name="player_card_purchase_bonus_bubble_bubble_label" content="player_card_boost_none_whyuno" y="-1s" textvalign="center" textalign="center" style="labelBase" font="maindyn_16" noclick="1" />
+			</panel>						
+		</panel>
+		
+		<panel name="player_card_bonuses" x="2s" y="24s" align="right" height="23s" grow="1" regrow="1" growinvis="0" visible="1" sticky="1" stickytoinvis="0" float="right" padding="7s" noclick="1">
+			<panel name="player_card_bonus_pets" width="23s" visible="0" sticky="1" stickytoinvis="0" noclick="0">
+				<image y="-4s" texture="/ui/main/shared/textures/boosted_pets.tga" width="100%" height="100@" noclick="1" />
+			</panel>
+			<panel name="player_card_bonus_xp" width="23s" visible="0" sticky="1" stickytoinvis="0" noclick="0">
+				<image y="-4s" texture="/ui/main/shared/textures/acct_boost_on.tga" width="100%" height="100@" noclick="1" />
+				<image texture="/ui/main/shared/textures/rectangle_shadow.tga" y="1s" valign="bottom" align="center" height="12s" width="+6s" color="0 0 0 5" noclick="1" />
+				<label name="player_card_bonus_xp_label" y="2s" textvalign="bottom" textalign="center" style="labelBase" color="#ff952f" font="subdyn_10" content="+50%" noclick="1"/>			
+			</panel>			
+			<panel name="player_card_bonus_commodity" width="23s" visible="0" sticky="1" stickytoinvis="0" noclick="0">
+				<image y="-4s" texture="/ui/main/shared/textures/quest_chest.tga" width="100%" height="100@" noclick="1" />
+				<image texture="/ui/main/shared/textures/rectangle_shadow.tga" y="1s" valign="bottom" align="center" height="12s" width="+6s" color="0 0 0 .5" noclick="1" />
+				<label name="player_card_bonus_commodity_label" y="2s" textvalign="bottom" textalign="center" style="labelBase" color="#ff952f" font="subdyn_10" content="+50%" noclick="1"/>	
+			</panel>			
+			
+			<label name="player_card_bonus_summary_label" textvalign="center" visible="0" fitx="1" fity="1" style="labelBase" color="#d53b38" font="maindyn_24" content="" noclick="1"/>
+		</panel>
+		
+		<!-- Status Box -->
+		<panel name="main_header_player_card_status_parent" x="0" y="78s" height="26s" width="156s" passivechildren="0" visible="0">
+			<instance name="simple_combobox_lightweight" id="player_card_status_dropdown" comboboxName="player_card_status_dropdown" texture="$invis" color="invisible" color1="invisible" maxlistheight="7"
+				itemheight="24s"
+				onloadlua="
+					self:AddTemplateListItem('simpleDropdownItemIcon', 'online', 'label', 'general_online', 'iconcolor',  '0 1 0')
+					self:AddTemplateListItem('simpleDropdownItemIcon', 'ready', 'label', 'general_ready_to_play', 'iconcolor', '0 1 1')
+					self:AddTemplateListItem('simpleDropdownItemIcon', 'afk', 'label', 'general_afk', 'iconcolor',  '1 1 0')
+					self:AddTemplateListItem('simpleDropdownItemIcon', 'dnd', 'label', 'general_dnd', 'iconcolor',  '1 0 0')
+					self:SetSelectedItemByValue('online', true)
+					--
+					self:AddTemplateListItem('simpleDropdownItemIcon', 'ingame', 'label', 'general_ingame', 'iconcolor',  '1 0 0')
+					self:AddTemplateListItem('simpleDropdownItemIcon', 'spectating', 'label', 'general_spectating', 'iconcolor',  '1 0 0')
+					self:AddTemplateListItem('simpleDropdownItemIcon', 'mentoring', 'label', 'general_mentoring', 'iconcolor',  '1 0 0')					
+				"
+			/>
+		</panel>
+		
+		<!-- Account Controls, visible only when viewing player profile page -->
+		<panel visible="1" noclick="1">
+			<!-- Open Icon Picker -->
+			<panel name="playerProfileIconContainer" visible="0" x="-12s" y="40s" width="35s" height="28s">
+				<image name="playerProfileIconContainerIcon" y="-9s" x="-3s" noclick="1" width="50s" height="50s" texture="/ui/main/pregame/textures/mode.tga" />
+			</panel>
+		</panel>
+
+	</panel>
+</package>

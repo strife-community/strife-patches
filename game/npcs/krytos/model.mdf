@@ -7,12 +7,12 @@
 		<reference mesh="model_high" material="material.material" />		
 	</skin>
 	
-	<skin name="pink">		
+	<skin name="black">		
 		<reference mesh="model_high" material="material_black.material"/>	
 	</skin>	
 	
 	<!-- Pink Update -->
-	<skin name="default">		
+	<skin name="pink">		
 		<reference mesh="model_high" material="material_pink.material"/>	
 	</skin>	
 
