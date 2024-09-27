@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+
+	<fur mesh="10k_kitty" apxfile="hair/kat.apx" material="hair/fur.material" />
+	
+	<skin name="spooky">
+		<reference mesh="10k_kitty"		material="material_spooky.material" />
+		<reference mesh="3k_kitty"		material="material_spooky.material" />
+		<reference mesh="1k_kitty"		material="material_spooky.material" />
+		<furreference mesh="10k_kitty" 	material="hair/fur_spooky.material" />
+	</skin>
+	
+	<skin name="black">
+		<reference mesh="10k_kitty"		material="material_black.material" />
+		<reference mesh="3k_kitty"		material="material_black.material" />
+		<reference mesh="1k_kitty"		material="material_black.material" />
+		<furreference mesh="10k_kitty" 	material="hair/fur_black.material" />
+	</skin>
+	
+	<skin name="green">
+		<reference mesh="10k_kitty"		material="material_green.material" />
+		<reference mesh="3k_kitty"		material="material_green.material" />
+		<reference mesh="1k_kitty"		material="material_green.material" />
+		<furreference mesh="10k_kitty" 	material="hair/fur_green.material" />
+	</skin>
+	
+	<skin name="nyan">
+		<reference mesh="10k_kitty"		material="material_nyan.material" />
+		<reference mesh="3k_kitty"		material="material_nyan.material" />
+		<reference mesh="1k_kitty"		material="material_nyan.material" />
+		<furreference mesh="10k_kitty" 	material="hair/fur_nyan.material" />
+	</skin>
+	
+	<skin name="orange">
+		<reference mesh="10k_kitty"		material="material_orange.material" />
+		<reference mesh="3k_kitty"		material="material_orange.material" />
+		<reference mesh="1k_kitty"		material="material_orange.material" />
+		<furreference mesh="10k_kitty" 	material="hair/fur_orange.material" />
+	</skin>
+	
+	<skin name="pink">
+		<reference mesh="10k_kitty"		material="material_pink.material" />
+		<reference mesh="3k_kitty"		material="material_pink.material" />
+		<reference mesh="1k_kitty"		material="material_pink.material" />
+		<furreference mesh="10k_kitty" 	material="hair/fur_pink.material" />
+	</skin>
+	
+	<skin name="white">
+		<reference mesh="10k_kitty"		material="material_white.material" />
+		<reference mesh="3k_kitty"		material="material_white.material" />
+		<reference mesh="1k_kitty"		material="material_white.material" />
+		<furreference mesh="10k_kitty" 	material="hair/fur_white.material" />
+	</skin>
+	
+	<skin name="neon">
+		<reference mesh="10k_kitty"		material="material_neon.material" />
+		<reference mesh="3k_kitty"		material="material_neon.material" />
+		<reference mesh="1k_kitty"		material="material_neon.material" />
+	</skin>
+	
+		<skin name="flash">
+		<reference mesh="10k_kitty"		material="material_flash.material" />
+		<reference mesh="3k_kitty"		material="material_flash.material" />
+		<reference mesh="1k_kitty"		material="material_flash.material" />
+	</skin>
+	
+	
+	<anim name="idle"  clip="clips/default_1.clip" loop="true" blendtime="500" />
+	 
+	<anim name="item_1" clip="clips/item_1.clip"/>
+	
+	<anim name="item_self_1" clip="clips/item_self_1.clip"/>
+	
+	<anim name="item_channel_1" clip="clips/item_channel_1.clip" loop="true"/>
+
+	<anim name="bored_1" clip="clips/bored_1.clip"/> 
+	
+	<anim name="spawn_1" clip="clips/spawn_1.clip">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/voice/vo_%.wav 400 2500 .70"/>
+	</anim>
+	
+	<anim name="emote_1" clip="clips/emote_1.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="PlayStreamLinear sounds/voice/vo_emote_1.wav 1000 2500 .70"/>
+	</anim>
+	
+
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" fps="30">
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="5" cmd="PlaySoundLinear sounds/sfx_foley_1.wav 500 2000 .1"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="PlaySoundLinear sounds/sfx_foley_2.wav 500 2000 .1"/>
+		<frameevent frame="29" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="32" cmd="PlaySoundLinear sounds/sfx_foley_3.wav 500 2000 .1"/>
+		<frameevent frame="42" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="45" cmd="PlaySoundLinear sounds/sfx_foley_4.wav 500 2000 .1"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1">
+	<frameevent frame="2" cmd="StartEffect effects/death/death.effect"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="40" />
+		
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="40" />
+
+	<anim name="ability_1" clip="clips/ability_1.clip" blendtime="0" />
+	
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" />
+	
+	<anim name="ability_3" clip="clips/item_channel_1" loop="true" loopbackframe="-1" fps="30"/>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip"  fps="40" />
+
+	<anim name="stunned_1" clip="clips/stunned_1.clip" loop="true"/>
+	
+	<anim name="port_in" clip="clips/port_in.clip"/>
+	
+	<anim name="port_out" clip="clips/port_out.clip"/>
+	
+	<anim name="upvote_1" clip="clips/upvote_1.clip"/>
+
+	<anim name="placeholder" clip="clips/bored_1.clip" fps="60">
+		<frameevent frame="1" cmd="StartEffect effects/preview.effect 1"/>
+		<endevent cmd="StopEffect 1"/>	
+	</anim>	
+
+</model>
