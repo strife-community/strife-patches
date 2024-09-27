@@ -1,0 +1,468 @@
+deny								{killer_color}{killer}^* sacrifício {victim_color}{victim}^*!
+kill0								{killer_color}{killer}^* humilhou {victim_color}{victim}^* e ganhou ^y{gold}^* de ouro!!
+kill1								{killer_color}{killer}^* humilhou {victim_color}{victim}^* e ganhou ^y{gold}^* de ouro!! Assistência: {assist0_color}{assist0}
+kill2								{killer_color}{killer}^* humilhou {victim_color}{victim}^* e ganhou ^y{gold}^* de ouro!! Assistências: {assist0_color}{assist0}^*{assist1_color}{assist1}
+kill3								{killer_color}{killer}^* humilhou {victim_color}{victim}^* e ganhou ^y{gold}^* de ouro!! Assistências: {assist0_color}{assist0}^*, {assist1_color}{assist1}^*, {assist2_color}{assist2}
+kill4								{killer_color}{killer}^* humilhou {victim_color}{victim}^* e ganhou ^y{gold}^* de ouro!! Assistências: {assist0_color}{assist0}^*, {assist1_color}{assist1}^*, {assist2_color}{assist2}^*, {assist3_color}{assist3}
+first_kill							{killer_color}{killer}^* tem ^rsede de sangue^*! (^y{gold}^* de ouro!)
+first_kill_team						{killer_color}{killer}^* tem ^rsede de sangue^*! (^y{gold}^* de ouro é dividido!)
+killstreak0							{killer_color}{killer}^* é um ^082assassino em série^*!
+killstreak1							{killer_color}{killer}^* é um ^204guerreiro insuperável^*!
+killstreak2							{killer_color}{killer}^* é ^808lendário^*!
+killstreak3							{killer_color}{killer}^* está em um ^840massacre^*!
+killstreak4							{killer_color}{killer}^* é um ^440selvagem^*!!
+killstreak5							{killer_color}{killer}^* está ^848dominando^*!
+killstreak6							{killer_color}{killer}^* é um ^800CAMPEÃO DE NEWERTH^*!!!
+killstreak7							{killer_color}{killer}^* está fazendo um ^840BANHO DE SANGUE^*! Matem-no!
+killstreak8							{killer_color}{killer}^* é ^860IMORTAL^*!!
+
+streakend0							{killer} acabou com a onda de ^082assassino em série^* de {victim} por ^y{gold}^* de ouro!!
+streakend1							{killer} acabou com a onda de ^204guerreiro insuperável^* de {victim} por ^y{gold}^* de ouro!!
+streakend2							{killer} acabou com a onda de ^808lendário^* de {victim} por ^y{gold}^* de ouro!!
+streakend3							{killer} acabou com a onda de ^840massacre^* de {victim} por ^y{gold}^* de ouro!!
+streakend4							{killer} acabou com a onda de ^440selvagem^* de {victim} por ^y{gold}^* de ouro!!
+streakend5							{killer} acabou com a onda de ^848dominação^* de {victim} por ^y{gold}^* de ouro!!
+streakend6							{killer} acabou com a onda de ^800CAMPEÃO DE NEWERTH^* de {victim} por ^y{gold}^* de ouro!!
+streakend7							{killer} acabou com a onda de ^840BANHO DE SANGUE^* de {victim} por ^y{gold}^* de ouro!!
+streakend8							{killer} acabou com a onda de ^860IMORTAL^* de {victim} por ^y{gold}^* de ouro!!
+
+multikill0							{killer} acabou de fazer uma ^008eliminação dupla^*!
+multikill1							{killer} acabou de fazer uma ^084eliminação tripla^*!
+multikill2							{killer} acabou de fazer uma ^084eliminação quádrupla^*!
+multikill3							{killer} ^084ANIQUILOU^* os oponentes!!!
+
+killtower							{killer} destruiu uma torre. Um bônus de ^y{gold}^* de ouro foi concedido aos {reward}!
+denytower							{player} ^444negou^* uma torre!
+killmeleerax						O quartel de ^724combate corpo a corpo^* de {victim} foi destruído, as unidades de ^724combate corpo a corpo^* de {killer} nessa rota aparecerão mais fortes agora.
+killrangedrax						O quartel de ^266combate de longo alcance^* de {victim} foi destruído, as unidades de ^266combate de longo alcance^* de {killer} nessa rota aparecerão mais fortes agora.
+killcourier							O entregador dos {victim} foi morto por {killer}!
+boughtwalkingcourier				{player_color}{player}^* comprou um entregador terrestre.
+boughtflyingcourier					{player_color}{player}^* comprou um entregador voador.
+ping_target							{player_color}{player_name} ({player_hero_name})^*: {mode}{unit_team_color}{unit_name}^* agora!
+
+teamkillstreak0						Alguém está HUMILHANDO!!!
+teamkillstreak1						^rA Legião^* está ^rHUMILHANDO!!!^*
+teamkillstreak2						^170Os Infernais^* estão ^170HUMILHANDO!!!^*
+
+teamwipe							{team} foi completamente destruído!!! 
+
+teamkill							{killer} humilhou {victim}!! ^y{gold}^* de ouro é dividido.
+
+neutralkill							{victim} foi morto por criaturas neutras.
+kongorkill							{victim} foi morto pelo Kongor.
+
+suicide								{victim} se matou!
+
+kill								{victim} morreu.
+
+teamkilltower						{killer} destruiu uma torre. Um bônus de ^y{gold}^* de ouro foi concedido aos {killer}!
+teamdenytower						{denier} ^444negou^* uma torre!
+
+killkongor							{killer} aniquilou Kongor. {reward} recebem um bônus de ^y{gold}^* de ouro!
+teamkillkongor						{killer} aniquilaram Kongor. {killer} recebem um bônus de ^y{gold}^* de ouro!
+
+share0								{player} não está mais compartilhando o controle das unidades com você.
+share1								{player} está compartilhando o controle das unidades com você.
+share2								{player} está compartilhando o controle do entregador com você.
+share3								{player} está compartilhando o controle das unidades com você.
+
+powerup								{player} escolheu ^r{powerup}^*
+
+creepupgrade						As criaturas ficaram mais fortes...
+megacreeps							{killer} destruiu todas as unidades de produção de estruturas de {victim}. {killer} tem megacriaturas agora.
+
+smackdown							{victim} foi ESPANCADO por {killer}!
+humiliation							{killer} HUMILHOU {victim}!
+rival								{killer} está ^rHUMILHANDO^* {victim} totalmente!
+payback								{killer} ^rVINGOU-SE^* de {victim}!
+
+client_connected					{player_color}{player}^* conectou-se.
+client_reconnected					{player_color}{player}^* reconectou-se. (Tempo de reconexão restante: {time})
+client_disconnected					{player_color}{player}^* desconectou.
+client_timedout						{player_color}{player}^* expirou.
+client_terminated					{player_color}{player}^* foi eliminado. O herói dele foi removido e as mercadorias foram distribuídas à equipe.
+
+hero_pick							{player_color}{player}^* selecionou ^885{hero_name}^*.
+hero_pick_blind						{player_color}{player}^* selecionou um herói.
+hero_random							{player_color}{player}^* escolheu ^885{hero_name}^* aleatoriamente.
+hero_random_blind					{player_color}{player}^* escolheu um herói aleatoriamente.
+hero_repick							{player_color}{player}^* está escolhendo novamente. ^885{hero_name}^* agora está disponível.
+hero_repick_blind					{player_color}{player}^* está escolhendo novamente.
+hero_swap							{player_color}{player}^* trocou de herói com {player2_color}{player2}^*.
+hero_swap_request					{player_color}{player}^* solicitou trocar de herói com você.
+hero_ban							{player_color}{player}^* ^rbaniu^* ^885{hero_name}^*.
+hero_ban_random						O destino ^rbaniu^* ^885{hero_name}^*.
+
+game_phase_banning					Iniciar ^rfase de banimento^*.
+game_phase_picking					Iniciar ^rfase de seleção^*.
+game_turn_ban						Agora é a vez de {player_color}{player}^* ^rbanir^*.
+game_turn_picking					Agora é a vez de {player_color}{player}^* ^rescolher^*.
+
+player_ready						{player_color}{player}^* ^grecarregado^*.
+player_unready						{player_color}{player}^* ^rnão está mais pronto^*.
+
+player_boughtback					{player_color}{player}^* pagou para renascer e voltou à fonte.
+player_boughtback2					{player_color}{player}^* pagou para renascer e voltou à fonte. Pagamentos para renascer realizados: {buybacks_used}/{buybacks_remaining}.
+
+error_all_buybacks_used				Não é possível pagar para renascer novamente.
+
+error_target_invulnerable			O alvo está invulnerável.
+error_not_ready						{tool} ainda não está pronto.
+error_low_mana						Mana insuficiente para usar {tool}.
+error_no_proxy						Nenhum substituto disponível para {tool}.
+error_not_unit_ability				Mire em uma unidade para usar esta habilidade.
+error_not_unit_item					Mire em uma unidade para usar este item.
+error_not_unit						Mire em uma unidade.
+error_invalid_target				Alvo inválido.
+
+chat_all							^269[TODOS] {color}{player} ({hero}): ^*{message}
+chat_roll							^190[ROLAR]^* {color}{message}
+chat_emote							^839[ANIMAR]^* {color}{message}
+chat_team							^y[EQUIPE] {color}{player} ({hero}): ^*{message}
+chat_all_lobby						^269[TODOS] {color}{player}: ^*{message}
+chat_roll_lobby						^190[ROLAR]^* {color}{message}
+chat_emote_lobby					^839[ANIMAR]^* {color}{message}
+chat_team_lobby						^y[EQUIPE] {color}{player}: ^*{message}
+server_message						^188[SERVIDOR] ^yMensagem do servidor: {message}
+
+error_item_unavailable				{item} não está disponível nesse local.
+error_low_gold_item					Você não pode comprar o item {item}.
+error_low_gold_recipe				Você não pode comprar o item {item}.
+error_low_gold_buy_all				Você não tem dinheiro suficiente para pagar o item {item}.
+error_not_owned_to_stash_xfer		Você não possui esse item.
+
+str_bonus							{value} Força
+str_bonus_per_level					{value_per_level} Força por nível
+str_bonus_per_charge				{value_per_charge} de força por carga
+agi_bonus							{value} Agilidade
+agi_bonus_per_level					{value_per_level} Agilidade por nível
+agi_bonus_per_charge				{value_per_charge} de agilidade por carga
+agi_bonus_percharge					{value_per_charge} de agilidade por carga
+int_bonus							{value} Inteligência
+int_bonus_per_level					{value_per_level} Inteligência por nível
+int_bonus_per_charge				{value_per_charge} de inteligência por carga
+int_bonus_percharge				{value_per_charge} de inteligência por carga
+max_health_bonus					{value} de vida máxima
+max_health_mult_bonus				{value}% de vida máxima
+max_mana_bonus						{value} Mana máxima
+max_mana_mult_bonus					{value}% Mana máxima
+base_damage_mult_bonus				{value}% de poder base
+damage_mult_bonus					{value}% de poder
+damage_bonus						{value} Potência
+damage_bonus_per_charge				{value} de poder por carga
+move_speed_bonus					{value} Velocidade de Movimento
+move_speed_mult_bonus				{value}% Velocidade de Movimento
+move_speed_mult_bonus_per_charge	{value}% de velocidade de movimento por carga
+slow_resistance_bonus				{value}% de resistência à redução de velocidade
+move_speed_slow_bonus				{value}% de redução de movimento
+move_speed_slow_bonus_per_charge	{value}% de redução de movimento por carga
+attack_speed_bonus					{value} Velocidade de ataque
+attack_speed_bonus_per_charge		{value} de velocidade de ataque por carga
+attack_speed_mult_bonus				{value}% Velocidade de ataque
+attack_speed_slow_bonus				{value}% de redução de velocidade de ataque
+cast_speed_bonus					{value} Velocidade de lançamento
+cooldown_speed_bonus				{value} de velocidade de tempo de recarga
+reduced_cooldowns_bonus				{value}% de redução tempo de recarga
+increased_cooldowns_bonus			{value}% de aumento de tempo de recarga
+armor_bonus							{value} Armadura
+armor_bonus_per_charge				{value} de armadura por carga
+magic_armor_bonus					{value} Resistência a Habilidade
+magic_armor_bonus_per_charge		{value} de resistência a habilidades por carga
+health_regen_percent_bonus			{value}% de vida por segundo
+health_regen_bonus					{value} Recuperação de Energia
+health_regen_mult_bonus				{value}% Recuperação de Energia
+mana_regen_percent_bonus			{value}% de mana por segundo
+mana_regen_bonus					{value} Regeneração de Mana
+mana_regen_mult_bonus				{value}% Regeneração de Mana
+deflection_bonus					{value1}% de chance de bloquear {value2} de dano de ataque
+evasion_bonus						{value}% de evasão
+ranged_evasion_bonus				{value}% de evasão de longa distância
+melee_evasion_bonus					{value}% de evasão corpo a corpo
+miss_chance_bonus					{value}% de chance de erro
+lifesteal_bonus						{value}% de roubo de vida
+critical_bonus						{value1}% de chance de causar {value2}x de acerto crítico
+incoming_damage_mult_bonus			{value}% de poder obtido
+debuff_duration_mult_bonus			{value}% de durações de penalidade
+heal_mult_bonus						{value}% de cura recebida
+stunned_bonus						Atordoado
+stunned_immunity_bonus				Imunidade a atordoamento
+silenced_bonus						Silenciado
+silenced_immunity_bonus				Imunidade a silenciamento
+perplexed_bonus						Confuso
+perplexed_immunity_bonus			Imunidade a confusão
+disarmed_bonus						Desarmado
+disarmed_immunity_bonus				Imunidade a desarmamento
+immobilized_bonus					Imobilizado
+immobilized_immunity_bonus			Imunidade a imobilização
+restrained_bonus					Restrito
+restrained_immunity_bonus			Imunidade a restrição
+revealed_bonus						Revelado
+reveal_bonus						{value} de alcance de revelação
+stealth_bonus						Furtividade com {value} tempo de esmaecimento
+unitwalking_bonus					Movimentação em unidades
+treewalking_bonus					Movimentação em árvores
+cliffwalking_bonus					Movimentação em inclinações
+buildingwalking_bonus				Movimentação em construções
+immunity_bonus						Imunidade a {type}
+invulnerable_bonus					Invulnerável
+dispel_on_damage_bonus				Anulado ao receber dano
+dispel_on_action_bonus				Anulado ao realizar ação
+truestrike_bonus					Golpe real
+health_regen_reduction_bonus		{value}% de redução de regeneração de vida
+mana_regen_reduction_bonus			{value}% de redução de regeneração de mana
+sighted_bonus						Avistado
+
+script_on_attack					Ao atacar
+script_on_attack_impact				No impacto de ataque
+script_on_attacked_pre_impact		Ao ser atacado
+script_on_attacked_post_impact		Ao ser atacado
+script_on_activate_pre_impact		Ao ativar
+script_on_activate_impact			Ao ativar
+script_on_ability_impact			Ao ativar habilidade
+script_on_damage					Ao causar poder
+script_on_damaged					Ao receber poder
+script_on_kill						Ao eliminar
+script_on_killed					Ao morrer
+
+action_toggle						Alternar
+action_no_target					Nenhum alvo
+action_target_position				Posição do alvo
+action_target_unit					Unidade do alvo
+action_target_global				Global
+action_target_self					Em si
+action_facing						Em direção a
+action_self_position				Posição própria
+action_attack						Ataque
+action_attack_toggle				Alternação de ataque
+action_target_dual					Alvo duplo
+action_target_dual_position			Alvo duplo
+action_target_vector				Vetor do alvo
+
+ability_levelup_max					^gNível máximo^*
+ability_levelup_available			^yClique para aumentar o nível desta habilidade^*
+ability_levelup_unavailable			^rRequisitos não atendidos^*
+
+aura_range_global					Global
+
+item_recipe							{name} Receita
+
+activate_ability					Clique para ativar essa habilidade
+activate_item						Clique para ativar esse item
+activate_item_no_share				^rDesativado - Pertencente a {name}
+activate_item_no_share_ownerless	^rDesabilitado
+activate_item_borrowed				^gEmprestado de {name}
+activate_passive					^gEssa habilidade é passiva
+
+attribute_strength					Força
+attribute_agility					Agilidade
+attribute_intelligence				Inteligência
+
+attribute_damage_bonus				{value} Potência
+attribute_health_bonus				{value} de vida máxima
+attribute_health_regen_bonus		{value} Recuperação de Energia
+attribute_attack_speed_bonus		{value} Velocidade de ataque
+attribute_armor_bonus				{value} Armadura
+attribute_mana_bonus				{value} Mana máxima
+attribute_mana_regen_bonus			{value} Regeneração de Mana
+
+auto_assemble						Automático
+
+shop_action_view_recipe				^yClique para ^195VISUALIZAR^* essa receita
+shop_action_view_item				^yClique para ^195VISUALIZAR^* esse item
+shop_action_auto_assemble			^yEsse item é montado automaticamente
+shop_action_already_purchased		^gEsse item já tem um dono
+shop_action_cannot_shop				^rEssa unidade não pode carregar itens
+shop_action_cannot_afford_item		^rDinheiro insuficiente para comprar este item
+shop_action_cannot_afford_recipe	^rDinheiro insuficiente para comprar esta receita
+shop_action_purchase_item			^yClique para ^195COMPRAR^* esse item
+shop_action_purchase_item_stash		^yClique para ^195GUARDAR^* esse item
+shop_action_purchase_recipe			^yClique para ^195COMPRAR^* essa receita
+shop_action_unavailable				^rIndisponível nesse local
+
+vote_called						{color}{player}^* iniciou uma votação: {vote}
+vote_called_concede				{color}{player}^* iniciou uma votação para a equipe {team_color}{team}^* permitir.
+vote_called_remake				{color}{player}^* iniciou uma votação para refazer a partida.
+vote_called_kick				{color}{player}^* iniciou uma votação para expulsar {target_color}{target}^*.
+vote_called_kick_afk			{color}{player}^* iniciou uma votação para expulsar {target_color}{target}^* por ficar ausente.
+vote_called_pause				{color}{player}^* iniciou uma votação para pausar o jogo.
+vote_passed						Votação aprovada.
+vote_failed						Votação reprovada.
+
+team_concede					{color}{team}^* admitiu a derrota. As estatísticas do resto da partida não serão gravadas e todos podem sair sem sofrer penalidade.
+game_abandoned					Seus companheiros de equipe abandonaram você. A partida continuará, mas agora você pode sair sem aumentar a porcentagem de desertor.
+afk_warning						Há riscos de você ser considerado como ausente. Vá para a batalha!
+afk_message						Você foi considerado como ausente e pode ser expulso.
+
+lobby_connect					{color}{player}^* está conectando.
+lobby_kick						{color}{player}^* foi expulso pelo host.
+lobby_disconnect				{color}{player}^* desconectou-se.
+lobby_balance					O host equilibrou as equipes.
+lobby_force_swap				O host trocou {slot2_color}{slot2}^* e {slot1_color}{slot1}^*.
+lobby_countdown_cancel			A contagem regressiva da partida foi cancelada.
+lobby_lock						O host bloqueou o espaço {slot_color}{slot}^*.
+lobby_unlock					O host desbloqueou o espaço {slot_color}{slot}^*.
+lobby_assign_host				{slot_color}{player}^* foi atribuído como o novo host.
+lobby_assign_spectator			O host atribuiu {slot_color}{player}^* como espectador.
+lobby_assign_referee			O host atribuiu {slot_color}{player}^* como juiz.
+lobby_assign_first_ban				O host atribuiu o primeiro banimento da equipe {team_color}{team}^*.
+
+game_info_practice				Treino
+nosolo							É preciso ter um oponente para iniciar o jogo. Inicie um jogo de ^ytreino^* se quiser jogar sozinho.
+warn_nomods					{slot_color}{player}^* está usando arquivos modificados e poderá apenas assistir ao jogo.
+nomods						Não foi possível iniciar o jogo. {slot_color}{player}^* está usando arquivos modificados e deve assistir ou desativar TODAS as modificações (interface, textura etc.) antes de poder jogar nesse torneio com regras.
+game_unpause					{name} retomou o jogo, a partida continuará em 5 segundos.
+player_ping					Ping de {slot_color}{player}^*: {ping}ms
+player_ping_no_players				Nenhum jogador para calcular o ping.
+team_ping					Média de ping da equipe {team_color}{team_name}^*: {ping}ms
+
+chat_server_name				Servidor
+chat_bot_name					Bot
+
+//-----------------------------------------------------------------------------
+// Weather
+//-----------------------------------------------------------------------------
+game_weather_					Nenhum
+
+// "rain.effect" => "game_weather_rain"
+game_weather_rain				Chuva
+
+// "snow.effect" => "game_weather_snow"
+game_weather_snow				Neve
+
+// "snow_storm.effect" => "game_weather_snow_storm"
+game_weather_snow_storm				Nevasca
+
+// Add new weather effects here
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// Regions
+//-----------------------------------------------------------------------------
+game_region_				Nenhum
+game_region_graveyard		Cemitério
+game_region_jungle			Selva
+game_region_caves			Cavernas
+game_region_swamp			Pântano
+game_region_toplane			Pista superior
+game_region_midlane			Pista do meio
+game_region_bottomlane		Pista inferior
+game_region_topkeeper		Baldir
+game_region_bottomkeeper	Cindara
+
+game_region_bottom_lane_names		inferior,inf,i,direita,d
+game_region_middle_lane_names		central,cen,c
+game_region_top_lane_names			superior,supe,s,esquerda,e
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// Announcements
+//-----------------------------------------------------------------------------
+hero_announce_assist						Solicitando Assistência
+hero_announce_attack						Atacar!
+hero_announce_attack_crux					Ataquem o Crux inimigo!
+hero_announce_attack_enemy					Ataquem ^r{target_unit_name}!
+hero_announce_attack_generator				Ataquem o gerador inimigo!
+hero_announce_attack_tower					Ataquem a torre inimiga!
+hero_announce_back							Recuar!
+hero_announce_care_bottom					Cuidado, Rota Inferior!
+hero_announce_care_middle					Cuidado, Rota Central!
+hero_announce_care_top						Cuidado, Rota Superior!
+hero_announce_defend_crux					Defendam nosso Crux!
+hero_announce_defend_generator				Defendam nosso gerador!
+hero_announce_defend_tower					Defendam nossa torre!
+hero_announce_farm							Espalhem-se e treinem!
+hero_announce_help							Preciso de Ajuda!
+hero_announce_help_bottom					Socorro, Rota Inferior!
+hero_announce_help_middle					Socorro, Rota Central!
+hero_announce_help_top						Socorro, Rota Superior!
+hero_announce_krytos						Libertem Krytos!
+hero_announce_missing						Sem Visão do Inimigo!
+hero_announce_missing_bottom				Inimigo Ausente na Rota Inferior!
+hero_announce_missing_middle				Inimigo Ausente na Rota Central!
+hero_announce_missing_top					Inimigo Ausente na Rota Superior!
+hero_announce_on_my_way						Estou a Caminho!
+hero_announce_on_my_way_bottom				A Caminho, Rota Inferior!
+hero_announce_on_my_way_middle				A Caminho, Rota Central!
+hero_announce_on_my_way_top					A Caminho, Rota Superior!
+hero_announce_push							Avance essa rota!
+hero_announce_thanks						Obrigado.
+hero_announce_together						Fiquem juntos!
+hero_announce_watch_out						Cuidado!
+hero_announce_well							Estou indo para o nosso poço.
+hero_announce_well_played					Mandou bem.
+
+//hero specific announcement text, replace hero_ with Hero_Name_
+Hero_Ace_announce_well_played				Bom trabalho!
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// Chat Commands
+//-----------------------------------------------------------------------------
+chat_command_invalid_format					Formato de comando inválido. Formato correto:
+chat_command_invalid_format_multi			Formato de comando inválido. O formato correto é um dos seguintes:
+chat_command_invalid_command				Comando inválido. Digite /help para obter uma lista de comandos.
+
+chat_command_help							help,h,?
+chat_command_help_info						Exibe uma lista de comandos básicos
+chat_command_helpmore						helpmore
+chat_command_helpmore_info					Exibe uma lista de comandos avançados
+
+chat_command_reply							reply,r
+chat_command_reply_params					{Message}
+chat_command_reply_param_0					Nenhuma mensagem especificada
+chat_command_reply_info						Responde à última mensagem enviada (exibe o nome de usuário destinatário)
+chat_command_whisper						whisper,w,t,tell,msg
+chat_command_whisper_params					"Nome do Jogador” {Message}
+chat_command_whisper_param_0				Nome do jogador não encontrado: ^r
+chat_command_whisper_param_1				Nenhuma mensagem especificada
+chat_command_whisper_info					Mensagem privada para usuário, abre bate-papo novo se realizado no cliente
+chat_command_missing						ausente,aus,sv
+chat_command_missing_info					Solicita a linha de voz do herói para o herói desaparecido e realiza ping
+chat_command_missing_bottom					Inimigos desaparecidos na rota inferior!
+chat_command_missing_middle					Inimigos desaparecidos na rota central!
+chat_command_missing_top					Inimigos desaparecidos na rota superior!
+chat_command_missing_bottom_lane_names		inferior,inf,i,direita,d
+chat_command_missing_middle_lane_names		central,cen,c
+chat_command_missing_top_lane_names			superior,supe,s,esquerda,e
+chat_command_quickcast						quickcast,q
+chat_command_quickcast_info					Alterna lançamento rápido global
+chat_command_quickcast_changed				Alternou o lançamento rápido global para {value}
+
+//Admin commands
+chat_command_gameinfo						gameinfo,gi
+chat_command_gameinfo_info					Exibe o IP do servidor e o ID da partida (somente administrador)
+chat_command_server							server,connections
+chat_command_server_info					Exibe as informações do servidor conectado (somente administrador)
+chat_command_gameall						all,allchat,a
+chat_command_gameall_params					{Message}
+chat_command_gameall_info					Envia uma mensagem a todos os usuários conectados ao jogo (somente administrador)
+chat_command_ping							ping
+chat_command_ping_info						Exibe o ping (somente administrador)
+chat_command_ping_ping						Ping: {value}
+chat_command_servercommand					servercommand,command,cmd,cvar,setcvar,remote,remoteconsole
+chat_command_servercommand_params			"linha de comando"
+
+//chat_command_emote							emote,e
+//chat_command_emote_info						Orders an emote command
+//chat_command_stats							stats
+//chat_command_stats_info						Toggleable. Reverses role of tab
+//chat_command_follow							follow,f
+//chat_command_follow_info					Follows selected player in game
+
+//chat_command_baldir							baldir,baldy,bb
+//chat_command_baldir_info					Prompts hero voice line to attack Baldir
+//chat_command_cindara						cindara,cindy,cc
+//chat_command_cindara_info					Prompts hero voice line to attack Cindara
+//chat_command_getback						getback,b
+//chat_command_getback_info					Prompts hero voice line to tell other players to get back
+//chat_command_surrender						surrender,ff
+//chat_command_surrender_info					Starts surrender vote, or whatever we end up using (if we do)
+//chat_command_pause							pause
+//chat_command_pause_info						Toggleable. Pauses or unpauses the game
+//
+
+
+
+// END

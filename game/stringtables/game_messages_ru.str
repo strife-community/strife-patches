@@ -1,0 +1,512 @@
+deny								{killer_color}{killer}^* добивает {victim_color}{victim}^*!
+kill0								{killer_color}{killer}^* наносит удар! {victim_color}{victim}^* погибает! Получено золотых: ^y{gold}^*.
+kill1								{killer_color}{killer}^* наносит удар! {victim_color}{victim}^* погибает! Получено золотых: ^y{gold}^*. При поддержке: {assist0_color}{assist0}.
+kill2								{killer_color}{killer}^* наносит удар! {victim_color}{victim}^* погибает! Получено золотых: ^y{gold}^*. При поддержке: {assist0_color}{assist0}^*, {assist1_color}{assist1}.
+kill3								{killer_color}{killer}^* наносит удар! {victim_color}{victim}^* погибает! Получено золотых: ^y{gold}^*. При поддержке: {assist0_color}{assist0}^*, {assist1_color}{assist1}, {assist2_color}{assist2}
+kill4								{killer_color}{killer}^* наносит удар! {victim_color}{victim}^* погибает! Получено золотых: ^y{gold}^*. При поддержке: {assist0_color}{assist0}^*, {assist1_color}{assist1}, {assist2_color}{assist2}, {assist3_color}{assist3}
+first_kill							{killer_color}{killer}^* в ^rярости^*! (^y+{gold}^* зол.)
+first_kill_team						{killer_color}{killer}^* впадает в ^rbярость^*! (^y+{gold}^* зол. игрокам команды)
+killstreak0							{killer_color}{killer}^* — ^082серийный убийца^*!
+killstreak1							{killer_color}{killer}^* — ^204свирепый хищник^*!
+killstreak2							{killer_color}{killer}^* — ^808жнец^*!
+killstreak3							{killer_color}{killer}^* в ^840неукротимой ярости^*!
+killstreak4							{killer_color}{killer}^* — ^440варвар^*!
+killstreak5							{killer_color}{killer}^* — ^848каратель^*!
+killstreak6							{killer_color}{killer}^* — ^800палач^*!
+killstreak7							{killer_color}{killer}^* устраивает ^840кровавую баню^*! Спасайтесь кто может!
+killstreak8							{killer_color}{killer}^* — это ^860сама Смерть^*!
+
+streakend0							{killer} побеждает ^082серийного убийцу^*! {victim} погибает. Награда: ^y{gold}^* зол.
+streakend1							{killer} убивает ^204свирепого хищника^*! {victim} погибает. Награда: ^y{gold}^* зол.
+streakend2							{killer} убивает ^808жнеца^*! {victim} погибает. Награда: ^y{gold}^* зол.
+streakend3							{killer} одолевает ^840неукротимую ярость^*! {victim} погибает. Награда: ^y{gold}^* зол.
+streakend4							{killer} побеждает ^440варвара^*! {victim} погибает. Награда: ^y{gold}^* зол.
+streakend5							{killer} уничтожает ^848карателя^*! {victim} погибает. Награда: ^y{gold}^* зол.
+streakend6							{killer} убивает ^800палача*! {victim} погибает. Награда: ^y{gold}^* зол.
+streakend7							{killer} наносит удар и останавливает ^840кровавую баню^*! {victim} погибает. Награда: ^y{gold}^* зол.
+streakend8							{killer} убивает ^860саму Смерть^* — {victim}. Награда: ^y{gold}^* зол.
+
+multikill0							{killer} убивает ^008двоих подряд^*!
+multikill1							{killer} забирает ^008троих подряд^*!
+multikill2							{killer} убивает ^008четверых подряд^*!
+multikill3							{killer} ^084истребляет^* команду противника!
+
+twitch_highlight_name2				{killer} сделал Двойное Убийство!
+twitch_highlight_description2		{killer} сделал Двойное Убийство за {killerhero}!
+twitch_highlight_jsontags2			 ["{killer}", "Double Kill", "{killerhero}", "Strife", "Double"]
+twitch_highlight_name3				{killer} сделал Тройное Убийство!
+twitch_highlight_description3		{killer} сделал Тройное Убийство за {killerhero}!
+twitch_highlight_jsontags3			 ["{killer}", "Triple Kill", "{killerhero}", "Strife", "Triple"]
+twitch_highlight_name4				{killer} сделал Четверное Убийство!
+twitch_highlight_description4		{killer} сделал Четверное Убийство за {killerhero}!
+twitch_highlight_jsontags4			 ["{killer}", "Quad Kill", "{killerhero}", "Strife", "Quad"]
+twitch_highlight_name5				{killer} уничтожил всех противников!!!
+twitch_highlight_description5		{killer} уничтожил всех противников за {killerhero}!
+twitch_highlight_jsontags5			 ["{killer}", "Annihilation", "{killerhero}", "Strife"]
+
+killtower							{killer} разрушает башню. Награда: {reward} и ^y{gold}^* зол.
+denytower							{player} ^444разрушает^* собственную башню!
+killmeleerax						{victim} теряет ^724пехотные^* казармы! Разрушитель: {killer}. ^724пехота^* на этой линии получает бонус к силе.
+killrangedrax						{victim} теряет ^266стрелковые^* казармы! Разрушитель: {killer} ^266стрелки^*  на этой линии получает бонус к силе.
+killcourier							{victim} теряет курьера. Убийца: {killer}!
+boughtwalkingcourier				{player_color}{player}^* вызывает курьера.
+boughtflyingcourier					{player_color}{player}^* вызывает воздушного курьера.
+ping_target							{player_color}{player_name} ({player_hero_name})^*: становится {mode}{unit_team_color}{unit_name}^*!
+
+teamkillstreak0						Someone is OWNING!!!
+teamkillstreak1						^rЛегион^* ^rпобеждает!^*
+teamkillstreak2						^170The Hellbourne^* ^170побеждает!^*
+
+teamwipe							Команда {team} уничтожена! 
+
+teamkill							{killer} наносит удар, {victim} погибает. Награда: ^y{gold}^* золотых всем игрокам команды.
+
+neutralkill							{victim} погибает от рук нейтральных войск.
+kongorkill							{victim} погибает от рук конгора.
+
+suicide								{victim} совершает самоубийство!
+
+kill								{victim} умирает.
+
+teamkilltower						{killer} разрушает башню и получает ^y{gold}^* золотых!
+teamdenytower						{denier} ^444добивает^* башню!
+
+killkongor							{killer} побеждает конгора. Награда: {reward} и ^y{gold}^* зол.
+teamkillkongor						{killer} побеждает конгора. {killer} получает ^y{gold}^* зол.
+
+share0								{player} разрешает вам управлять принадлежащими ему войсками.
+share1								{player} разрешает вам управлять принадлежащими ему войсками.
+share2								{player} разрешает вам управлять принадлежащим ему курьером.
+share3								{player} разрешает вам управлять принадлежащими ему войсками.
+
+powerup								{player} получает ^r{powerup}^*
+
+creepupgrade						Войска становятся сильнее...
+megacreeps							{killer} разрушает все казармы принадлежавшие {victim}. Войска {killer} получают бонус.
+
+smackdown							{victim} пал от рук {killer}!
+humiliation							{killer} смеется над {victim}!
+rival								{killer} полностью ^уничтожил^* игрока {victim}!
+payback								{killer} ^rмстит^* игроку {victim}!
+
+client_connected					{player_color}{player}^* в игре.
+client_reconnected					{player_color}{player}^* снова в игре. Можно отключиться еще {time} раз(а).
+client_disconnected					{player_color}{player}^* - обрыв соединения.
+client_timedout						{player_color}{player}^* - время ожидания соединения превышено.
+client_terminated					{player_color}{player}^* исключается из игры. Ресурсы будут распределены между участниками команды.
+
+hero_pick							{player_color}{player}^* выбирает героя: ^885{hero_name}^*.
+hero_pick_blind						{player_color}{player}^* выбирает героя.
+hero_random							{player_color}{player}^* получает случайного героя: ^885{hero_name}^*.
+hero_random_blind					{player_color}{player}^* использует случайный выбор героя.
+hero_repick							{player_color}{player}^* меняет свой выбор. Доступен для выбора герой: ^885{hero_name}^*.
+hero_repick_blind					{player_color}{player}^* меняет выбор.
+hero_swap							{player_color}{player}^* совершает обмен героями с игроком {player2_color}{player2}^*.
+hero_swap_request					{player_color}{player}^* предлагает обменяться героями.
+hero_ban							{player_color}{player}^* ^rзапрещает использовать^* героя ^885{hero_name}^*.
+hero_ban_random						По воле судьбы ^rзапрещен выбор^* следующего героя: ^885{hero_name}^*.
+
+game_phase_banning					^rЗапрет героев^*.
+game_phase_picking					^rВыбор героев^*.
+game_turn_ban						{player_color}{player}^* ^rзапрещает пользоваться^* героями.
+game_turn_picking					{player_color}{player}^* ^rвыбирает^* героя.
+
+player_ready						{player_color}{player}^* ^наготове^*.
+player_unready						{player_color}{player}^*: ^rнет готовности^*.
+
+player_boughtback					{player_color}{player}^* оплачивает возрождение.
+player_boughtback2					{player_color}{player}^* оплачивает возрождение. Расходы: {buybacks_used}/{buybacks_remaining}.
+
+error_all_buybacks_used				У вас недостаточно денег.
+
+error_target_invulnerable			Цель неуязвима.
+error_not_ready						{tool}: не готово.
+error_low_mana						{tool}: не хватает маны для использования.
+error_no_proxy						Не хватает прокси, чтобы использовать {tool}.
+error_not_unit_ability				Выберите цель, чтобы использовать умение.
+error_not_unit_item					Выберите цель, чтобы использовать предмет.
+error_not_unit						Выберите цель.
+error_invalid_target				Неверная цель.
+
+chat_all							^269[ОБЩИЙ] {color}{player} ({hero}): ^*{message}
+chat_roll							^190[ВЫБОР]^* {color}{message}
+chat_emote							^839[ЭМОЦИИ]^* {color}{message}
+chat_team							^y[КОМАНДА] {color}{player} ({hero}): ^*{message}
+chat_all_lobby						^269[ОБЩИЙ] {color}{player}: ^*{message}
+chat_roll_lobby						^190[ВЫБОР]^* {color}{message}
+chat_emote_lobby					^839[ЭМОЦИИ]^* {color}{message}
+chat_team_lobby						^y[КОМАНДА] {color}{player}: ^*{message}
+server_message						^188[СЕРВЕР] ^yСистемное сообщение: {message}
+
+error_item_unavailable				{item} нельзя использовать в этой местности.
+error_low_gold_item					{item}: недостаточно средств для покупки.
+error_low_gold_recipe				Недостаточно средств для покупки рецепта {item}.
+error_low_gold_buy_all				Недостаточно средств для покупки ингредиентов для предмета {item}.
+error_not_owned_to_stash_xfer		У вас нет такого предмета.
+
+str_bonus							+{value} к стойкости
+str_bonus_per_level					+{value_per_level} к стойкости за уровень
+str_bonus_per_charge				+{value_per_charge} к стойкости за заряд
+agi_bonus							+{value} к ловкости
+agi_bonus_per_level					+{value_per_level} к ловкости за уровень
+agi_bonus_per_charge				+{value_per_charge} к ловкости за заряд
+agi_bonus_percharge					+{value_per_charge} к ловкости за заряд
+int_bonus							+{value} к интеллекту
+int_bonus_per_level					+{value_per_level} к интеллекту за уровень
+int_bonus_per_charge				+{value_per_level} к интеллекту за заряд
+int_bonus_percharge				+{value_per_level} к интеллекту за заряд
+max_health_bonus					+{value} к максимальному запасу здоровья
+max_health_mult_bonus				+{value}% к максимальному запасу здоровья
+max_mana_bonus						+{value} к максимальному запасу маны
+max_mana_mult_bonus					+{value}% к максимальному запасу маны
+base_damage_mult_bonus				+{value}% к базовой силе
+damage_mult_bonus					+{value}% к силе
+damage_bonus						+{value} к силе
+damage_bonus_per_charge				+{value} к силе за заряд
+move_speed_bonus					+{value} к скорости передвижения
+move_speed_mult_bonus				+{value}% к скорости передвижения
+move_speed_mult_bonus_per_charge	+{value}% к скорости передвижения за заряд
+slow_resistance_bonus				+{value}% к сопротивлению замедлению
+move_speed_slow_bonus				+{value}% к замедлению
+move_speed_slow_bonus_per_charge	+{value}% к замедлению за заряд
+attack_speed_bonus					+{value} к скорости атаки
+attack_speed_bonus_per_charge		+{value} к скорости атаки за заряд
+attack_speed_mult_bonus				+{value}% к скорости атаки
+attack_speed_slow_bonus				{value}% штраф к скорости атаки
+cast_speed_bonus					+{value} к скорости чтения заклинаний
+cooldown_speed_bonus				+{value} к скорости восстановления
+reduced_cooldowns_bonus				Сокращает время восстановления на {value}%.
+increased_cooldowns_bonus			Увеличивает время восстановления на {value}%.
+armor_bonus							+{value} к защите
+armor_bonus_per_charge				+{value} к защите за заряд
+magic_armor_bonus					+{value} к сопротивляемости умениям
+magic_armor_bonus_per_charge		+{value} к сопротивляемости умениям за заряд
+health_regen_percent_bonus			+{value}% здоровья в секунду
+health_regen_bonus					+{value} к восстановлению здоровья
+health_regen_mult_bonus				+{value}% к восстановлению здоровья
+mana_regen_percent_bonus			+{value}% к восстановлению маны
+mana_regen_bonus					+{value} к восстановлению маны
+mana_regen_mult_bonus				+{value}% к восстановлению маны
+deflection_bonus					{value1}% шанс заблокировать атаку силой {value2}
+evasion_bonus						{value}% уклонения
+ranged_evasion_bonus				{value}%  дистанционное оружие
+melee_evasion_bonus					{value}% оружие ближнего боя
+miss_chance_bonus					{value}% к вероятности промаха
+lifesteal_bonus						{value}% похищения жизни
+critical_bonus						{value1}% шанс нанести {value2}x критических удара
+incoming_damage_mult_bonus			{value}% похищения силы
+debuff_duration_mult_bonus			+{value}% к продолжительности негативных эффектов
+heal_mult_bonus						{value}% эффект от лечения 
+stunned_bonus						Оглушение
+stunned_immunity_bonus				Неуязвимость к оглушению
+silenced_bonus						Немота
+silenced_immunity_bonus				Неуязвимость к немоте
+perplexed_bonus						Замешательство
+perplexed_immunity_bonus			Неуязвимость к замешательству
+disarmed_bonus						Разоружение
+disarmed_immunity_bonus				Неуязвимость к разоружению
+immobilized_bonus					Паралич
+immobilized_immunity_bonus			Неуязвимость к параличу
+restrained_bonus					Путы
+restrained_immunity_bonus			Неуязвимость к путам
+revealed_bonus						В поле зрения
+reveal_bonus						Дальность обзора: {value}
+stealth_bonus						Скрытность со временем срабатывания {value} сек.
+unitwalking_bonus					Войска
+treewalking_bonus					Деревья
+cliffwalking_bonus					Скалы
+buildingwalking_bonus				Строения
+immunity_bonus						Неуязвимость: {type}
+invulnerable_bonus					Неуязвимость
+dispel_on_damage_bonus				Рассеивается при получении урона
+dispel_on_action_bonus				Рассеивается во время действия
+truestrike_bonus					Точный удар
+health_regen_reduction_bonus		{value}% штраф к восстановлению здоровья
+mana_regen_reduction_bonus			{value}% штраф к восстановлению маны
+sighted_bonus						Обнаружен
+
+script_on_attack					При атаке
+script_on_attack_impact				После атаки
+script_on_attacked_pre_impact		На цели
+script_on_attacked_post_impact		На цели
+script_on_activate_pre_impact		При активации
+script_on_activate_impact			При активации
+script_on_ability_impact			При использовании умения
+script_on_damage					Нанесение урона
+script_on_damaged					Получение урона
+script_on_kill						При убийстве
+script_on_killed					При гибели
+
+action_toggle						Включено
+action_no_target					Нет цели
+action_target_position				Позиция цели
+action_target_unit					Вражеские войска
+action_target_global				Общий
+action_target_self					На себя
+action_facing						В направлении взгляда
+action_self_position				Вокруг
+action_attack						Атака
+action_attack_toggle				Базовая атака
+action_target_dual					Две цели
+action_target_dual_position			Две цели
+action_target_vector				Направление движения цели
+
+ability_levelup_max					^gМакс. уровень^*
+ability_levelup_available			^yНажмите, чтобы повысить уровень^*
+ability_levelup_unavailable			^rНедоступно^*
+
+aura_range_global					Глобально
+
+item_recipe							Рецепт «{name}»
+
+activate_ability					Нажмите, чтобы использовать умение
+activate_item						Нажмите, чтобы использовать предмет
+activate_item_no_share				^rНедоступно. Владелец: {name}.
+activate_item_no_share_ownerless	^rНедоступно.
+activate_item_borrowed				^gПозаимствовано у игрока {name}.
+activate_passive					^gПассивное умение
+
+attribute_strength					Стойкость
+attribute_agility					Ловкость
+attribute_intelligence				Интеллект
+
+attribute_damage_bonus				+{value} к силе
+attribute_health_bonus				+{value} к максимальному запасу здоровья
+attribute_health_regen_bonus		+{value} к восстановлению здоровья
+attribute_attack_speed_bonus		+{value} к скорости атаки
+attribute_armor_bonus				+{value} к защите
+attribute_mana_bonus				+{value} к максимальному запасу маны
+attribute_mana_regen_bonus			+{value} к восстановлению маны
+
+auto_assemble						Авто
+
+shop_action_view_recipe				^yНажмите, чтобы ^195посмотреть^* рецепт.
+shop_action_view_item				^yНажмите, чтобы ^195посмотреть^* предмет.
+shop_action_auto_assemble			^yПредмет собирается автоматически
+shop_action_already_purchased		^gУ вас уже есть этот предмет.
+shop_action_cannot_shop				^rЭтот объект не может использовать предметы.
+shop_action_cannot_afford_item		^rНедостаточно денег для покупки предмета.
+shop_action_cannot_afford_recipe	^rНедостаточно денег для покупки рецепта.
+shop_action_purchase_item			^yНажмите, чтобы ^195купить^* предмет.
+shop_action_purchase_item_stash		^yНажмите, чтобы ^195запасти^* предмет
+shop_action_purchase_recipe			^yНажмите, чтобы ^195купить^* рецепт.
+shop_action_unavailable				^rНедоступно в этом месте.
+
+vote_called						{color}{player}^* начинает голосование: {vote}
+vote_called_concede				{color}{player}^* начинает голосование о присуждении поражения команде {team_color}{team}^*.
+vote_called_remake				{color}{player}^* начинает голосование о проведении повторного матча.
+vote_called_kick				{color}{player}^* начинает голосование об исключении игрока {target_color}{target}^*.
+vote_called_kick_afk			{color}{player}^* начинает голосование об исключении игрока {target_color}{target}^* за неучастие в игре.
+vote_called_pause				{color}{player}^* начинает голосование о перерыве.
+vote_passed						Голосование завершено.
+vote_failed						Голосование отменяется.
+
+team_concede					{color}{team}^* признает поражение. Дальнейшие действия игроков учитывать не будут. Матч может быть покинут без штрафов.
+game_abandoned					Игроки покинули матч. Матч будет продолжаться, но вы можете покинуть бой без получения штрафа за бегство.
+afk_warning						Вас могут отметить как не участвующего в сражении игрока. Сражайтесь!
+afk_message						Вы отмечены как игрок не участвующий и игре и можете быть исключены из игры.
+
+lobby_connect					{color}{player}^* входит в игру.
+lobby_kick						{color}{player}^* исключается хозяином зала.
+lobby_disconnect				{color}{player}^* отключился.
+lobby_balance					Хозяин игры уравнивает команды.
+lobby_force_swap				Создатель матча меняет местами {slot1_color}{slot1}^* и {slot2_color}{slot2}^*.
+lobby_countdown_cancel			Обратный отсчет прекращен.
+lobby_lock						Создатель матча запретил использовать ячейку {slot_color}{slot}^*.
+lobby_unlock					Создатель матча разрешил использовать ячейку  {slot_color}{slot}^*.
+lobby_assign_host				{slot_color}{player}^* становится хозяином зала.
+lobby_assign_spectator			Создатель матча включил режим зрителя для игрока: {slot_color}{player}^*.
+lobby_assign_referee			Создатель матча назначил игрока {slot_color}{player}^* судьей.
+lobby_assign_first_ban				Создатель матча оштрафовал команду {team_color}{team}^*.
+
+game_info_practice				Тренировка
+nosolo							Для игры требуется соперник. Используйте режим ^yтренировки^*, чтобы играть в одиночку.
+warn_nomods					{slot_color}{player}^* использует модифицированный клиент. Доступен только режим зрителя.
+nomods						Невозможно начать игру. {slot_color}{player}^* использует модифицированные файлы и может быть только зрителем, либо обязан отключить все модификации (интерфейс, текстуры и т.п.) для игры в данном режиме.
+game_unpause					{name} снял игру с паузы, матч продолжится через 5 секунд.
+player_ping					{slot_color}{player}^* пинг: {ping}ms
+player_ping_no_players				Не выбран игрок для использования команды ping.
+team_ping					{team_color}{team_name}^* значение ping: {ping}ms
+
+chat_server_name				Сервер
+chat_bot_name					Бот
+
+//-----------------------------------------------------------------------------
+// Weather
+//-----------------------------------------------------------------------------
+game_weather_					Нет
+
+// "rain.effect" => "game_weather_rain"
+game_weather_rain				Дождь
+
+// "snow.effect" => "game_weather_snow"
+game_weather_snow				Снег
+
+// "snow_storm.effect" => "game_weather_snow_storm"
+game_weather_snow_storm				Буран
+
+// Add new weather effects here
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// Regions
+//-----------------------------------------------------------------------------
+game_region_				Нет
+game_region_graveyard		Кладбище
+game_region_jungle			Джунгли
+game_region_caves			Рудники
+game_region_swamp			Болото
+game_region_toplane			Верхняя линия
+game_region_midlane			Средняя линия
+game_region_bottomlane		Нижняя линия
+game_region_topkeeper		Балдир
+game_region_bottomkeeper	Синдара
+
+game_region_bottom_lane_names		bottom,bot,b,right,r,нижний,нижняя,низ,н,правый,правая,п
+game_region_middle_lane_names		middle,mid,m,средний,средняя,центр,сред,ц,с
+game_region_top_lane_names			top,t,left,l,верхний,верхняя,верх,в,левый,левая,л
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// Announcements
+//-----------------------------------------------------------------------------
+hero_announce_assist						Мне нужна поддержка!
+hero_announce_attack						В атаку!
+hero_announce_attack_crux					Атакуйте Средоточие!
+hero_announce_attack_enemy					Атакуйте ^r{target_unit_name}!
+hero_announce_attack_generator				Атакуйте генератор!
+hero_announce_attack_tower					Атакуйте башню!
+hero_announce_back							Отступайте!
+hero_announce_care_bottom					На нижней линии, осторожно!
+hero_announce_care_middle					На средней линии, осторожно!
+hero_announce_care_top						На верхней линии, осторожно!
+hero_announce_defend_crux					Защищайте Средоточие!
+hero_announce_defend_generator				Защищайте генератор!
+hero_announce_defend_tower					Защищайте башню!
+hero_announce_farm							Расходимся, качаемся!
+hero_announce_help							Нужна помощь!
+hero_announce_help_bottom					Помогите на нижней линии!
+hero_announce_help_middle					Помогите на средней линии!
+hero_announce_help_top						Помогите на верхней линии!
+hero_announce_krytos						Освобождайте Крайтоса!
+hero_announce_missing						Враг ушёл!
+hero_announce_missing_bottom				Враг ушёл с нижней линии!
+hero_announce_missing_middle				Враг ушёл со средней линии!
+hero_announce_missing_top					Враг ушёл с верхней линии!
+hero_announce_on_my_way						Уже иду!
+hero_announce_on_my_way_bottom				Иду на нижнюю линию!
+hero_announce_on_my_way_middle				Иду на среднюю линию!
+hero_announce_on_my_way_top					Иду на верхнюю линию!
+hero_announce_push							Атакуйте врага на этой линии!
+hero_announce_thanks						Спасибо.
+hero_announce_together						Держитесь вместе!
+hero_announce_watch_out						Осторожно!
+hero_announce_well							Я возвращаюсь к фонтану.
+hero_announce_well_played					Неплохо сыграно.
+
+//hero specific announcement text, replace hero_ with Hero_Name_
+Hero_Ace_announce_well_played				Отличная работа!
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// Chat Commands
+//-----------------------------------------------------------------------------
+chat_command_invalid_format					Недопустимый формат команды. Правильный формат следующий:
+chat_command_invalid_format_multi			Команда введена некорректно. Варианты корректного ввода:
+chat_command_invalid_command				Несуществующая команда. Для вывода списка команд наберите /help.
+
+chat_command_help							help,h,?
+chat_command_help_info						Вывод списка основных команд
+chat_command_helpmore						helpmore
+chat_command_helpmore_info					Вывод расширенного списка команд
+
+chat_command_reply							reply,r
+chat_command_reply_params					{Message}
+chat_command_reply_param_0					Введите сообщение
+chat_command_reply_info						Ответ на последнее входящее сообщение (показывает имя пользователя)
+chat_command_whisper						whisper,w,t,tell,msg
+chat_command_whisper_params					"Player Name" {Message}
+chat_command_whisper_param_0				Не найден игрок: ^r
+chat_command_whisper_param_1				Введите сообщение
+chat_command_whisper_info					Личное сообщение. Открывает новый чат, при использовании в клиенте
+chat_command_missing						missing,miss,mia,ss
+chat_command_missing_info					Воспроизвести сообщение об отсутствие противника на линии
+chat_command_missing_bottom					Враг ушёл с нижней линии!
+chat_command_missing_middle					Враг ушёл с центральной линии!
+chat_command_missing_top					Враг ушёл с верней линии!
+chat_command_missing_bottom_lane_names		bottom,bot,b,right,r
+chat_command_missing_middle_lane_names		middle,mid,m
+chat_command_missing_top_lane_names			top,t,left,l
+chat_command_quickcast						quickcast,q
+chat_command_quickcast_info					Включает или выключает быстрое использование способностей и предметов
+chat_command_quickcast_changed				Switched global quick cast to {value}
+
+//Hero Lines
+chat_command_assist							assist
+chat_command_assist_info					Воспроизводит сообщение, что вам нужна помощь
+chat_command_back							back,b
+chat_command_back_info						Воспроизводитсообщение, что стоит отступить
+chat_command_careful						careful,care,c
+chat_command_careful_info					Воспроизводит сообщение, что стоит быть осторожным
+chat_command_farm							farm,rice,gold,money,levelup,experience
+chat_command_farm_info						Воспроизводит сообщение, что стоит разделиться и фармить
+chat_command_helpme							helpme,!
+chat_command_helpme_info					Воспроизводит сообщение, что вам нужна помощь
+chat_command_krytos							krytos,cindara,cindy,kry,cin,cc
+chat_command_krytos_info					Воспроизводит сообщение, что стоит сразить Синдару и освободить Крайтоса
+chat_command_missing						missing,miss,mia,ss
+chat_command_missing_info					Воспроизводит сообщение об отсутствующем противнике
+chat_command_onmyway						onmyway,omw
+chat_command_onmyway_info					Воспроизводит сообщение, что вы уже в пути
+chat_command_push							push
+chat_command_push_info						Воспроизводит сообщение, что стоит пушить
+chat_command_thankyou						thankyou,thanks,ty
+chat_command_thankyou_info					Воспроизводит сообщение благодарности
+chat_command_together						together,groupup
+chat_command_together_info					Воспроизводит сообщение, что стоит собраться вместе
+chat_command_watchout						watchout,groupup
+chat_command_watchout_info					Воспроизводит сообщение, что стоит быть осторожным
+chat_command_well							well,home,backing
+chat_command_well_info						Воспроизводит сообщение, что вы возвращаетесь к фонтану
+chat_command_wellplayed						wellplayed,wp,goodjob,gj,nice,gg
+chat_command_wellplayed_info				Воспроизводит сообщение, что ваша команда неплохо справляется
+
+
+//Admin commands
+chat_command_gameinfo						gameinfo,gi
+chat_command_gameinfo_info					Показывает IP-адрес сервера и ID матча (только для администратора).
+chat_command_server							server,connections
+chat_command_server_info					Показывает информацию об активном сервере (только для администратора).
+chat_command_gameall						all,allchat,a
+chat_command_gameall_params					{Message}
+chat_command_gameall_info					Сообщение для всех пользователей в игре (только для администратора).
+chat_command_ping							ping
+chat_command_ping_info						Выводит время отклика сервера (только для администратора)
+chat_command_ping_ping						Пинг: {value}
+chat_command_servercommand					servercommand,command,cmd,cvar,setcvar,remote,remoteconsole
+chat_command_servercommand_params			"command line"
+
+//chat_command_emote							emote,e
+//chat_command_emote_info						Воспроизводит анимацию персонажа
+//chat_command_stats							stats
+//chat_command_stats_info						Включает и выключает таблицу результатов
+//chat_command_follow							follow,f
+//chat_command_follow_info					Следовать за указанным игроком в игре
+
+//chat_command_baldir							baldir,baldy,bb
+//chat_command_baldir_info					Сообщает команде, что стоит сразить Балдира
+//chat_command_cindara						cindara,cindy,cc
+//chat_command_cindara_info					Сообщает команде, что стоит сразить Синдару и освободить Крайтоса
+//chat_command_getback						getback,b
+//chat_command_getback_info					Сообщает команде, что стоит отступить
+//chat_command_surrender						surrender,ff
+//chat_command_surrender_info					Начинает голосование на сдачу матча (или что там будет...)
+//chat_command_pause							pause
+//chat_command_pause_info						Останавливает или возобновляет матч
+//
+
+
+
+// END

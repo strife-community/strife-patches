@@ -1,0 +1,469 @@
+deny								{killer_color}{killer}^* ได้ลบล้าง {victim_color}{victim}^* ทิ้ง!
+kill0								{killer_color}{killer}^* ได้สังหาร {victim_color}{victim}^* ได้รับรางวัล ^y{gold}^* โบนัส gold!!
+kill1								{killer_color}{killer}^* ได้สังหาร {victim_color}{victim}^* ได้รับรางวัล ^y{gold}^* gold!! โดยมี: {assist0_color}{assist0} ให้การช่วยเหลือ
+kill2			{killer_color}{killer}^* ได้สังหาร {victim_color}{victim}^* ได้รับรางวัล ^y{gold}^* gold!! โดยมี: {assist0_color}assist0}^*, {assist1_color}{assist1} ให้การช่วยเหลือ
+kill3	{killer_color}{killer}^* ได้สังหาร {victim_color}{victim}^* ได้รับรางวัล ^y{gold}^* gold!! โดยมี: {assist0_color}{assist0}^*, {assist1_color}{assist1}^*, {assist2_color}{assist2} ให้การช่วยเหลือ
+kill4	{killer_color}{killer}^* ได้สังหาร {victim_color}{victim}^* ได้รับรางวัล ^y{gold}^* gold!! โดยมี: {assist0_color}{assist0}^*, {assist1_color}{assist1}^*, {assist2_color}{assist2}^*, {assist3_color}{assist3} ให้การช่วยเหลือ
+first_kill							{killer_color}{killer}^* ได้รับ ^rbloodlust^*! (^y+{gold}^* gold!)
+first_kill_team						{killer_color}{killer}^* ได้รับ ^rbloodlust^*! (^y+{gold}^* gold ได้ถูกแจกจ่าย!)
+killstreak0							{killer_color}{killer}^* ได้รับฉายา ^082serial killer^*!
+killstreak1							{killer_color}{killer}^* ได้รับฉายา ^204ultimate warrior^*!
+killstreak2							{killer_color}{killer}^* ได้รับฉายา ^808legendary^*!
+killstreak3							{killer_color}{killer}^* ได้รับฉายา ^840onslaught^*!
+killstreak4							{killer_color}{killer}^* ได้รับฉายา ^440savage sick^*!!
+killstreak5							{killer_color}{killer}^* ได้รับฉายา ^848dominating^*!!
+killstreak6							{killer_color}{killer}^* ได้รับฉายา ^800CHAMPION OF NEWERTH^*!!!
+killstreak7							{killer_color}{killer}^* ได้รับฉายา ^840BLOODBATH^*! Someone KILL HIM!
+killstreak8							{killer_color}{killer}^* ได้รับฉายา ^860IMMORTAL^*!!
+
+streakend0							{killer} ได้จบฉายา ^082serial killer ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+streakend1							{killer} ได้จบฉายา ^204ultimate warrior ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+streakend2							{killer} ได้จบฉายา ^808legendary ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+streakend3							{killer} ได้จบฉายา ^840onslaught ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+streakend4							{killer} ได้จบฉายา ^440savage sick ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+streakend5							{killer} ได้จบฉายา ^848domination ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+streakend6							{killer} ได้จบฉายา ^800CHAMPION OF NEWERTH ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+streakend7							{killer} ได้จบฉายา ^840BLOODBATH ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+streakend8							{killer} ได้จบฉายา ^860IMMORTAL ^* ของ {victim} ได้รับค่าหัว ^y{gold}^* gold!!
+
+multikill0							{killer} ได้สังหารระดับ ^008Double Kill^*!
+multikill1							{killer} ได้สังหารระดับ ^084Triple Kill^*!!!
+multikill2							{killer} ได้สังหารระดับ ^084Quad Kill^*!!!
+multikill3							{killer} ได้สังหารระดับ ^084ANNIHILATED^* ศัตรูทุกตัว!!!
+
+killtower							{killer} ได้ทำลายป้อมปราการ {reward} ได้รับ ^y{gold}^* โบนัส gold!
+denytower							{player} ได้ทำการ^444ลบล้าง^*หอคอยป้องกันของตัวเอง!
+killmeleerax						ฝั่ง {victim} ได้ถูกทำลายค่ายทหาร^724ระยะประชิด^* ฝั่ง {killer} ค่ายทหาร^724ระยะประชิด^*ในช่องทางนั้นได้รับสมุนที่แข็งแกร่งขึ้น
+killrangedrax						ฝั่ง {victim} ได้ถูกทำลายค่ายทหาร^266ยิงสนับสนุน^* ฝั่ง {killer} ค่ายทหาร^266ยิงสนับสนุน^*ในช่องทางนั้นได้รับสมุนที่แข็งแกร่งขึ้น 
+killcourier							ยูนิตขนส่งของ {victim} ได้ถูกทำลาย โดย {killer}!
+boughtwalkingcourier				{player_color}{player}^* ได้ทำการซื้อยูนิตส่งของ
+boughtflyingcourier					{player_color}{player}^* ได้ทำการซื้อยูนิตส่งของที่บินได้
+ping_target							{player_color}{player_name} ({player_hero_name})^*: {mode}{unit_team_color}{unit_name}^* เดี๋ยวนี้!
+
+teamkillstreak0						ใครบางคน กำลังได้เปรียบ !!!
+teamkillstreak1						^rThe Legion^* กำลัง ^rได้เปรียบ!!!^*
+teamkillstreak2						^170The Hellbourne^* กำลัง ^170ได้เปรียบ!!!^*
+
+teamwipe							{team} แตกพ่ายอย่างสิ้นเชิง!!! 
+
+teamkill							{killer}ได้สังหาร {victim} ได้รับรางวัล ^y{gold}^*
+
+neutralkill							{victim} ได้ถูกสังหารโดย ครีปป่า
+kongorkill							{victim} ได้ถูกสังหารโดย Kongor
+
+suicide								{victim} ได้ปลิดชีวิตตัวเองทิ้ง
+
+kill								{victim} ได้ถูกสังหาร
+
+teamkilltower						 {killer} ได้ทำลายหอคอย {killer}ได้รับรางวัล ^y{gold}^* โบนัส gold !
+teamdenytower						{denier}  ^444ได้ทำการลบล้าง^* หอคอย!
+
+killkongor							{killer} ได้รับรางวัล {reward}  ^y{gold}^* โบนัส gold!
+teamkillkongor						ฝั่ง {killer}ได้ทำการสังหาร {killer} ได้รับรางวัล ^y{gold}^* โบนัส gold!
+
+share0								{player} ไม่ได้ทำการแชร์ยูนิตให้กับคุณอีกต่อไป
+share1								{player} ได้ทำการแชร์ยูนิตให้กับคุณ
+share2								{player} ได้ทำการแชร์ยูนิตขนส่งให้กับคุณ
+share3								{player} ได้ทำการแชร์ยูนิตให้กับคุณ
+
+powerup								{player} ได้เก็บรูน ^r{powerup}^*
+
+creepupgrade							เหล่าลูกสมุนแข่งแกร่งขึ้น
+megacreeps							ฝั่ง {killer} ได้ทำลายสิ่งก่อสร้างหลักทั้งหมดของ{victim}ส่งผลให้ฝั่ง {killer} ได้รับลูกสมุนขั้นสุดยอด Creeps.
+
+smackdown							{victim} ได้ถูก SMACKED DOWN โดย {killer}!
+humiliation							{killer} ได้ทำให้ {victim} อับอาย ขายหน้า!
+rival								{killer} ได้ ^rเอาชนะ^* {victim} อย่างสิ้นเชิง !
+payback								{killer} ได้ทำการ ^rแก้แค้น^* {victim}!
+
+
+client_connected					{player_color}{player}^* ได้ทำการเชื่อมต่อ
+client_reconnected					{player_color}{player}^* ได้ทำการเชื่อมต่อเข้ามาอีกครั้ง (Remaining disconnection time: {time})
+client_disconnected					{player_color}{player}^* หลุดออกจากเกม
+client_timedout						{player_color}{player}^* ขาดการเชื่อมต่อ
+client_terminated					{player_color}{player}^* ได้ถูกกำจัดออกจากเกม ไอเทมและเงินรางวัลของเขาจะถูกแบ่งให้กับทีม
+
+hero_pick							{player_color}{player}^* ได้ทำการเลือก^885{hero_name}^*
+hero_pick_blind						{player_color}{player}^* ได้ทำการสุ่มฮีโร่
+hero_random							{player_color}{player}^* ได้ทำการสุ่ม ^885{hero_name}^*
+hero_random_blind					{player_color}{player}^* ได้ทำการสุ่มฮีโร่
+hero_repick							{player_color}{player}^*กำลังเลือกฮีโร่ใหม่ ^885{hero_name}^* สามารถเลือกได้แล้ว
+hero_repick_blind					{player_color}{player}^*กำลังเลือกฮีโร่ใหม่
+hero_swap							{player_color}{player}^* ได้ทำการสลับ ฮีโร่กับ {player2_color}{player2}^*
+hero_swap_request					{player_color}{player}^* ได้เสนอให้ทำการสลับฮีโร่กับเขา
+hero_ban							{player_color}{player}^* ได้ทำการ ^rแบน^* ^885{hero_name}^*
+hero_ban_random						โชคชะตาได้ทำการ ^rแบน^* ^885{hero_name}^*
+
+game_phase_banning					^rช่วงเวลาการแบน^* ได้เริ่มขึ้นแล้ว
+game_phase_picking					 ^rช่วงเวลาการเลือก^* ได้เริ่มขึ้นแล้ว
+game_turn_ban						 ได้เวลา {player_color}{player}^*ทำการ^rแบน^*
+game_turn_picking					ได้เวลา{player_color}{player}^*ทำการ ^rเลือก^*
+
+player_ready						{player_color}{player}^* ได้เข้าสู่สถานะการ  ^gเตรียมพร้อม^*
+player_unready						{player_color}{player}^*  ^rยังไม่ได้ทำการเตรียมพร้อม^*
+
+player_boughtback					{player_color}{player}^* ได้ทำการซื้อเกิดและกลับมาเล่นอีกครั้ง
+player_boughtback2					{player_color}{player}^* ได้ทำการซื้อเกิดและกลับมาเล่นอีกครั้ง {buybacks_used}/{buybacks_remaining} การซื้อเกิด
+
+error_all_buybacks_used				คุณไม่สามารถทำการซื้อเกิดได้อีก
+
+error_target_invulnerable			เป้าหมายไม่สามารถถูกทำลายได้
+error_not_ready						{tool} ยังไม่พร้อมที่จะใช้งาน
+error_low_mana						มานาน้อยเกินไปที่จะใช้ {tool}
+error_no_proxy						No available proxy for {tool}.
+error_not_unit_ability				ต้องทำการโจมตีเป้าหมายโดยใช้ความสามารถนี้
+error_not_unit_item					ต้องทำการโจมตีเป้าหมายโดยใช้ไอเทมนี้
+error_not_unit						ต้องทำการโจมตีเป้าหมายนี้
+error_invalid_target				นี่ไม่ใช่เป้าหมายที่ถูกต้อง
+
+chat_all							^269[ALL] {color}{player} ({hero}): ^*{message}
+chat_roll							^190[ROLL]^* {color}{message}
+chat_emote							^839[EMOTE]^* {color}{message}
+chat_team							^y[TEAM] {color}{player} ({hero}): ^*{message}
+chat_all_lobby						^269[ALL] {color}{player}: ^*{message}
+chat_roll_lobby						^190[ROLL]^* {color}{message}
+chat_emote_lobby					^839[EMOTE]^* {color}{message}
+chat_team_lobby						^y[TEAM] {color}{player}: ^*{message}
+server_message						^188[SERVER] ^yServer Message: {message}
+
+error_item_unavailable				ไม่สามารถซื้อ {item} นี้ได้ในตำแหน่งนี้
+error_low_gold_item					คุณไม่สามารถซื้อ {item} นี้ได้
+error_low_gold_recipe				คุณไม่สามารถซื้อ {item} นี้ได้
+error_low_gold_buy_all				คุณไม่สามารถซื้อ {item} ทั้งหมดนี้ได้
+error_not_owned_to_stash_xfer			คุณไม่ได้เป็นเจ้าของไอเทมชิ้นนี้
+
+str_bonus							{value} Strength
+str_bonus_per_level					{value_per_level} Strength per level
+str_bonus_per_charge				{value_per_charge} Strength per charge
+agi_bonus							{value} Agility
+agi_bonus_per_level					{value_per_level} Agility per level
+agi_bonus_per_charge				{value_per_charge} Agility per charge
+agi_bonus_percharge					{value_per_charge} Agility per charge
+int_bonus							{value} Intelligence
+int_bonus_per_level					{value_per_level} Intelligence per level
+int_bonus_per_charge				{value_per_charge} Intelligence per charge
+int_bonus_percharge				{value_per_charge} Intelligence per charge
+max_health_bonus					{value} Max Health
+max_health_mult_bonus				{value}% Max Health
+max_mana_bonus						{value} Max Mana
+max_mana_mult_bonus					{value}% Max Mana
+base_damage_mult_bonus				{value}% Base Power
+damage_mult_bonus					{value}% Power
+damage_bonus						{value} Power
+damage_bonus_per_charge				{value} Power per charge
+move_speed_bonus					{value} Movement Speed
+move_speed_mult_bonus				{value}% Movement Speed
+move_speed_mult_bonus_per_charge	{value}% Movement Speed per charge
+slow_resistance_bonus				{value}% Slow Resistance
+move_speed_slow_bonus				{value}% Movement Slow
+move_speed_slow_bonus_per_charge	{value}% Movement Slow per charge
+attack_speed_bonus					{value} Attack Speed
+attack_speed_bonus_per_charge		{value} Attack Speed per charge
+attack_speed_mult_bonus				{value}% Attack Speed
+attack_speed_slow_bonus				{value}% Attack Slow
+cast_speed_bonus					{value} Cast Speed
+cooldown_speed_bonus				{value} Cooldown Speed
+reduced_cooldowns_bonus				{value}% Reduced Cooldowns
+increased_cooldowns_bonus			{value}% Increased Cooldowns
+armor_bonus							{value} Armor
+armor_bonus_per_charge				{value} Armor per charge
+magic_armor_bonus					{value} Ability Resistance
+magic_armor_bonus_per_charge		{value} Ability Resistance per charge
+health_regen_percent_bonus			{value}% Health per second
+health_regen_bonus					{value} Health Regeneration
+health_regen_mult_bonus				{value}% Health Regeneration
+mana_regen_percent_bonus			{value}% Mana per second
+mana_regen_bonus					{value} Mana Regeneration
+mana_regen_mult_bonus				{value}% Mana Regeneration
+deflection_bonus					{value1}% chance to block {value2} attack damage
+evasion_bonus						{value}% Evasion
+ranged_evasion_bonus				{value}% Ranged Evasion
+melee_evasion_bonus					{value}% Melee Evasion
+miss_chance_bonus					{value}% Miss Chance
+lifesteal_bonus						{value}% Lifesteal
+critical_bonus						{value1}% chance for {value2}x Critical Strike
+incoming_damage_mult_bonus			{value}% Power taken
+debuff_duration_mult_bonus			{value}% Debuff durations
+heal_mult_bonus						{value}% Healing received
+stunned_bonus						Stunned
+stunned_immunity_bonus				Stun immunity
+silenced_bonus						Silenced
+silenced_immunity_bonus				Silence immunity
+perplexed_bonus						Perplexed
+perplexed_immunity_bonus			Perplex immunity
+disarmed_bonus						Disarmed
+disarmed_immunity_bonus				Disarm immunity
+immobilized_bonus					Immobilized
+immobilized_immunity_bonus			Immobilize immunity
+restrained_bonus					Restrained
+restrained_immunity_bonus			Restrain immunity
+revealed_bonus						Revealed
+reveal_bonus						{value} Reveal Range
+stealth_bonus						Stealth with {value} second fade time
+unitwalking_bonus					Unitwalking
+treewalking_bonus					Treewalking
+cliffwalking_bonus					Cliffwalking
+buildingwalking_bonus				Buildingwalking
+immunity_bonus						{type} Immunity
+invulnerable_bonus					Invulnerable
+dispel_on_damage_bonus				Dispel on damage
+dispel_on_action_bonus				Dispel on action
+truestrike_bonus					True Strike
+health_regen_reduction_bonus		{value}% Reduced Health Regeneration
+mana_regen_reduction_bonus			{value}% Reduced Mana Regeneration
+sighted_bonus						Sighted
+
+script_on_attack					On Attack
+script_on_attack_impact				On Attack Impact
+script_on_attacked_pre_impact		On Attacked
+script_on_attacked_post_impact		On Attacked
+script_on_activate_pre_impact		On Activation
+script_on_activate_impact			On Activation
+script_on_ability_impact			On Ability Activation
+script_on_damage					On Deal Power
+script_on_damaged					On Powered
+script_on_kill						On Kill
+script_on_killed					On Killed
+
+action_toggle						Toggle
+action_no_target					No Target
+action_target_position				Target Position
+action_target_unit					Target Unit
+action_target_global				Global
+action_target_self					Self
+action_facing						Facing
+action_self_position				Self Position
+action_attack						Attack
+action_attack_toggle				Attack Toggle
+action_target_dual					Target Dual
+action_target_dual_position			Target Dual
+action_target_vector				Target Vector
+
+ability_levelup_max					^gMaximum level^*
+ability_levelup_available			^yClick to level-up this ability^*
+ability_levelup_unavailable			^rRequirements not met^*
+
+aura_range_global					Global
+
+item_recipe							{name} Recipe
+
+activate_ability					Click to activate this ability
+activate_item						Click to activate this item
+activate_item_no_share				^rDisabled - Owned by {name}
+activate_item_no_share_ownerless	^rDisabled
+activate_item_borrowed				^gBorrowing from {name}
+activate_passive					^gThis ability is passive
+
+attribute_strength					Strength
+attribute_agility					Agility
+attribute_intelligence				Intelligence
+
+attribute_damage_bonus				{value} Power
+attribute_health_bonus				{value} Max Health
+attribute_health_regen_bonus		{value} Health Regeneration
+attribute_attack_speed_bonus		{value} Attack Speed
+attribute_armor_bonus				{value} Armor
+attribute_mana_bonus				{value} Max Mana
+attribute_mana_regen_bonus			{value} Mana Regeneration
+
+auto_assemble						Auto
+
+shop_action_view_recipe				^yClick to ^195VIEW^* this recipe
+shop_action_view_item				^yClick to ^195VIEW^* this item
+shop_action_auto_assemble			^yThis item auto-assembles
+shop_action_already_purchased		^gThis item is already owned
+shop_action_cannot_shop				^rThis unit cannot carry items
+shop_action_cannot_afford_item		^rCannot afford this item
+shop_action_cannot_afford_recipe	^rCannot afford this recipe
+shop_action_purchase_item			^yClick to ^195PURCHASE^* this item
+shop_action_purchase_item_stash		^yClick to ^195STASH^* this item
+shop_action_purchase_recipe			^yClick to ^195PURCHASE^* this recipe
+shop_action_unavailable				^rUnavailable at this location
+
+vote_called						{color}{player}^* ได้เรียกร้องให้ทำการโหวต: {vote}
+vote_called_concede				{color}{player}^* ได้เรียกร้องให้ทำการโหวตเพื่อที่จะให้ {team_color}{team}^* ทำการยอมแพ้
+vote_called_remake				{color}{player}^* ได้เรียกร้องให้ทำการโหวตเพื่อที่จะเริ่มเกมใหม่
+vote_called_kick				{color}{player}^* ได้เรียกร้องให้ทำการโหวตเพื่อที่จะเตะ {target_color}{target}^*
+vote_called_kick_afk			{color}{player}^* ได้เรียกร้องให้ทำการโหวตเพื่อที่จะเตะ ผู้เล่น{target_color}{target}^* ที่ไม่อยู่หน้าจอ
+vote_called_pause				{color}{player}^* ได้เรียกร้องให้ทำการโหวตเพื่อที่จะหยุดเกม
+vote_passed						การโหวตประสบความสำเร็จ
+vote_failed						การโหวตล้มเหลว
+
+team_concede					{color}{team}^* ได้ทำการยอมแพ้ สถิติของเกมนี้จะไม่ถูกบันทึกและทุกคนสามารถออกจากห้องได้โดยไม่ถูกลงโทษ
+game_abandoned					ทีมของคุณได้ทำการขับไล่คุณออกจากเกม แต่เกมจะดำเนินต่อไป และคุณสามารถออกจากห้องได้โดยไม่หัก%
+afk_warning						คุณอยู่ในสถานะเสี่ยงต่อการถูกขับไล่  ออกไปสู้ ซะ!
+afk_message						คุณอยู่ในสถานะเสี่ยงต่อการถูกขับไล่ เนื่องจาก เพิกเฉย ต่อการเล่น
+
+lobby_connect					{color}{player}^* กำลังเชื่อมต่อ
+lobby_kick						{color}{player}^* ได้ถูกขับไล่ออกจากเกม
+lobby_disconnect				{color}{player}^* ได้ขาดการเชื่อมต่อกับเซิร์ฟเวอร์
+lobby_balance					เจ้าของห้องได้ทำการปรับสมดุลของทีม
+lobby_force_swap				เจ้าของห้องได้ทำการสลับ {slot1_color}{slot1}^* และ {slot2_color}{slot2}^*
+lobby_countdown_cancel			การนับถอยหลังได้ถูกยกเลิก
+lobby_lock						เจ้าของห้องได้ทำการล็อคสล็อต {slot_color}{slot}^* 
+lobby_unlock					เจ้าของห้องได้ทำการปลดล็อคสล็อต {slot_color}{slot}^* 
+lobby_assign_host				{slot_color}{player}^* ได้ถูกแต่งตั้งให้เป็นเจ้าของห้องคนใหม่
+lobby_assign_spectator			เจ้าของห้องได้มอบหมายให้ {slot_color}{player}^* เป็นผู้สังเกตุการณ์
+lobby_assign_referee			เจ้าของห้องได้มอยหมายให้ {slot_color}{player}^* เป็นกรรมการ
+lobby_assign_first_ban				เจ้าของห้องได้มอบหมายให้ทีม {team_color}{team}^*ได้ทำการแบนก่อน
+
+game_info_practice				ฝึกซ้อม
+nosolo							คุณต้องมีผู้เล่นฝั่งตรงข้ามถึงจะเริ่มเกมได้  กดเริ่ม ^yฝึกซ้อม^* ถ้าคุณต้องการที่จะเล่นคนเดียว
+warn_nomods					{slot_color}{player}^* กำลังใช้โปรแกรมช่วยเล่น จึงสามารถเข้าเล่นได้แค่ โหมดผู้ชมเท่านั้น
+nomods						{slot_color}{player}^* กำลังใช้โปรแกรมช่วยเล่น ต้องทำการปิดโปรแกรมก่อนเข้าเล่นเกมนี้ที่ใช้กฏการแข่งขันแบบทัวร์นาเม้นท์ 
+game_unpause					{name}  ยกเลิกการหยุดเกมและจะทำการเล่นต่อภายใน 5 วินาที
+player_ping					{slot_color}{player}^* ค่าปิง: {ping}ms
+player_ping_no_players				ไม่มีผู้เล่นให้เช็คค่าปิง
+team_ping					{team_color}{team_name}^* ค่าปิงเฉลี่ย: {ping}ms
+
+chat_server_name				Server
+chat_bot_name					Bot
+
+//-----------------------------------------------------------------------------
+// Weather
+//-----------------------------------------------------------------------------
+game_weather_					None
+
+// "rain.effect" => "game_weather_rain"
+game_weather_rain				Rain
+
+// "snow.effect" => "game_weather_snow"
+game_weather_snow				Snow
+
+// "snow_storm.effect" => "game_weather_snow_storm"
+game_weather_snow_storm				Snow Storm
+
+// Add new weather effects here
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// Regions
+//-----------------------------------------------------------------------------
+game_region_				None
+game_region_graveyard		Graveyard
+game_region_jungle			Jungle
+game_region_caves			Caves
+game_region_swamp			Swamp
+game_region_toplane			Top Lane
+game_region_midlane			Middle Lane
+game_region_bottomlane		Bottom Lane
+game_region_topkeeper		Baldir
+game_region_bottomkeeper	Cindara
+
+game_region_bottom_lane_names		bottom,bot,b,right,r
+game_region_middle_lane_names		middle,mid,m
+game_region_top_lane_names			top,t,left,l
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// Announcements
+//-----------------------------------------------------------------------------
+hero_announce_assist						ต้องการความช่วยเหลือ
+hero_announce_attack						โจมตี!
+hero_announce_attack_crux					โจมตี crux ของศัตรู!
+hero_announce_attack_enemy					โจมตี ^r{target_unit_name}!
+hero_announce_attack_generator				โจมตีเครื่องกำเนิดพลังงานของศัตรู!
+hero_announce_attack_tower					โจมตีป้อมของศัตรู!
+hero_announce_back							ถอย!
+hero_announce_care_bottom					ระวังล่าง!
+hero_announce_care_middle					ระวังกลาง!
+hero_announce_care_top						ระวังบน!
+hero_announce_defend_crux					ป้องกัน Crux!
+hero_announce_defend_generator				ป้องกันเครื่องกำเนิดพลังงาน!
+hero_announce_defend_tower					รักษาป้อม!
+hero_announce_farm							แยกกันไปฟาร์มก่อน!
+hero_announce_help							มาช่วยกันตรงนี้ที!
+hero_announce_help_bottom					มาช่วยเลนล่างที!
+hero_announce_help_middle					มาช่วยเลนกลางที!
+hero_announce_help_top						มาช่วยเลนบนที!
+hero_announce_krytos						ปลดปล่อย Krytos!
+hero_announce_missing						ศัตรูหายไป!
+hero_announce_missing_bottom				ศัตรูเลนล่างหาย!
+hero_announce_missing_middle				ศัตรูเลนกลางหาย!
+hero_announce_missing_top					ศัตรูเลนบนหาย!
+hero_announce_on_my_way						กำลังไป!
+hero_announce_on_my_way_bottom				กำลังไปเลนล่าง!
+hero_announce_on_my_way_middle				กำลังไปเลนกลาง!
+hero_announce_on_my_way_top					กำลังไปเลนบน!
+hero_announce_push							ดันเลน!
+hero_announce_thanks						ขอบคุณ
+hero_announce_together						อยู่ด้วยกัน!
+hero_announce_watch_out						ระวัง!
+hero_announce_well							กำลังกลับบ่อน้ำ
+hero_announce_well_played					Well played.
+
+//hero specific announcement text, replace hero_ with Hero_Name_
+Hero_Ace_announce_well_played				Good Job!
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// Chat Commands
+//-----------------------------------------------------------------------------
+chat_command_invalid_format					Invalid command format. Proper format is:
+chat_command_invalid_format_multi			Invalid command format. Proper format is one of:
+chat_command_invalid_command				Invalid command. Type /help for a list of commands.
+
+chat_command_help							help,h,?
+chat_command_help_info						แสดงคำสั่งพื้นฐาน
+chat_command_helpmore						helpmore
+chat_command_helpmore_info					แสดงคำสั่งขั้นสูง
+
+chat_command_reply							reply,r
+chat_command_reply_params					{Message}
+chat_command_reply_param_0					กรุณาใส่ข้อความ
+chat_command_reply_info						ตอบข้อความล่าสุด (แสดงผู้เล่นล่าสุด)
+chat_command_whisper						whisper,w,t,tell,msg
+chat_command_whisper_params					"Player Name" {Message}
+chat_command_whisper_param_0				Player Name Not Found: ^r
+chat_command_whisper_param_1				กรุณาใส่ข้อความ
+chat_command_whisper_info					Private message to user, opens new chat if done in client
+chat_command_missing						missing,miss,mia,ss
+chat_command_missing_info					Prompts hero voice line for missing hero and ping
+chat_command_missing_bottom					Enemies Missing Bottom!
+chat_command_missing_middle					Enemies Missing Middle!
+chat_command_missing_top					Enemies Missing Top!
+chat_command_missing_bottom_lane_names		bottom,bot,b,right,r
+chat_command_missing_middle_lane_names		middle,mid,m
+chat_command_missing_top_lane_names			top,t,left,l
+chat_command_quickcast						quickcast,q
+chat_command_quickcast_info					Toggles global quick cast
+chat_command_quickcast_changed				Switched global quick cast to {value}
+
+//Admin commands
+chat_command_gameinfo						gameinfo,gi
+chat_command_gameinfo_info					Displays server IP and match ID (Admin only)
+chat_command_server							server,connections
+chat_command_server_info					Displays connected server info (Admin only)
+chat_command_gameall						all,allchat,a
+chat_command_gameall_params					{Message}
+chat_command_gameall_info					Messages all connected users to game (Admin only)
+chat_command_ping							ping
+chat_command_ping_info						Displays your ping (Admin only)
+chat_command_ping_ping						Ping: {value}
+chat_command_servercommand					servercommand,command,cmd,cvar,setcvar,remote,remoteconsole
+chat_command_servercommand_params			"command line"
+
+//chat_command_emote							emote,e
+//chat_command_emote_info						Orders an emote command
+//chat_command_stats							stats
+//chat_command_stats_info						Toggleable. Reverses role of tab
+//chat_command_follow							follow,f
+//chat_command_follow_info					Follows selected player in game
+
+//chat_command_baldir							baldir,baldy,bb
+//chat_command_baldir_info					Prompts hero voice line to attack Baldir
+//chat_command_cindara						cindara,cindy,cc
+//chat_command_cindara_info					Prompts hero voice line to attack Cindara
+//chat_command_getback						getback,b
+//chat_command_getback_info					Prompts hero voice line to tell other players to get back
+//chat_command_surrender						surrender,ff
+//chat_command_surrender_info					Starts surrender vote, or whatever we end up using (if we do)
+//chat_command_pause							pause
+//chat_command_pause_info						Toggleable. Pauses or unpauses the game
+//
+
+
+
+// END

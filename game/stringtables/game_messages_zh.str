@@ -1,0 +1,513 @@
+deny								{killer_color}{killer}^* denied {victim_color}{victim}^*!
+kill0								{killer_color}{killer}^*打败了{victim_color}{victim}^*并赢得了^y{gold}^*金币奖励!!
+kill1								{killer_color}{killer}^*打败了{victim_color}{victim}^*并赢得了^y{gold}^*金币奖励!! 助攻: {assist0_color}{assist0}
+kill2								{killer_color}{killer}^*打败了{victim_color}{victim}^*并赢得了^y{gold}^*金币奖励!! 助攻: {assist0_color}{assist0}^*, {assist1_color}{assist1}
+kill3								{killer_color}{killer}^*打败了{victim_color}{victim}^*并赢得了^y{gold}^*金币奖励!! 助攻: {assist0_color}{assist0}^*, {assist1_color}{assist1}^*, {assist2_color}{assist2}
+kill4								{killer_color}{killer}^*打败了{victim_color}{victim}^*并赢得了^y{gold}^*金币奖励!! 助攻: {assist0_color}{assist0}^*, {assist1_color}{assist1}^*, {assist2_color}{assist2}^*, {assist3_color}{assist3}
+first_kill							{killer_color}{killer}^*拿到^r一血^*! (^y+{gold}^* gold!)
+first_kill_team						{killer_color}{killer}^*拿到^r一血^*! (^y+{gold}^* gold is split!)
+killstreak0							{killer_color}{killer}^*是个^082连环杀手^*!
+killstreak1							{killer_color}{killer}^*是一个^204终极战士^*!
+killstreak2							{killer_color}{killer}^*是一个 ^808传奇^*!
+killstreak3							{killer_color}{killer}^*正在^840突袭猛攻^*!
+killstreak4							{killer_color}{killer}^* is ^440savage sick^*!!
+killstreak5							{killer_color}{killer}^*已^848主宰比赛了^*!!
+killstreak6							{killer_color}{killer}^* 是 ^800NEWERTH的冠军^*!!!
+killstreak7							{killer_color}{killer}^*正在 ^840大杀特杀^*!   有人杀了他！     {killer_color}{killer}^*
+killstreak8							{killer_color}{killer}^*^860已超神了^*!!     {killer_color}{killer}是^860
+
+streakend0							     {killer}刚结束了{victim}的^082大杀特杀^*并得到了 ^y{gold}^*金币！
+streakend1							{victim}的^204终极战士^*身份被{killer}终结了。同时{killer}还得到^y{gold}^*金币奖励！
+streakend2							{killer}刚终结了{victim}的 ^808传奇^*并得到 ^y{gold}^*金币奖励!!
+streakend3							{killer}刚杀死了^840突袭猛攻^*的{victim}，并得到^y{gold}^*金币奖励!!
+streakend4							{killer} has just ended {victim}'s ^440savage sick^* streak for ^y{gold}^* gold!!
+streakend5							848主宰比赛的^*{victim}被{killer}终结了^，并得到了^y{gold}^*金币奖励!!
+streakend6							{killer}刚杀死了^800NEWERTH的冠军^*{victim}，并得到了^y{gold}^*金币!!   
+streakend7							 {killer}刚终结了{victim}的杀戮行为并得到了^y{gold}^*金币奖励！！
+streakend8							^860超神的^*{victim}被{killer}终结了， {killer}同时得到^y{gold}^*金币奖励!! 
+
+multikill0							    {killer}完成了^008双杀^*! 
+multikill1							    {killer}完成了^084三杀^*!!!
+multikill2							    {killer}完成了^084四杀^*!!!
+multikill3							   {killer}^084消灭了^*他的对手！！！
+
+twitch_highlight_name2				{killer} got a Double Kill!
+twitch_highlight_description2		{killer} got a Double Kill as {killerhero}!
+twitch_highlight_jsontags2			 ["{killer}", "Double Kill", "{killerhero}", "Strife", "Double"]
+twitch_highlight_name3				{killer} got a Triple Kill!
+twitch_highlight_description3		{killer} got a Triple Kill as {killerhero}!
+twitch_highlight_jsontags3			 ["{killer}", "Triple Kill", "{killerhero}", "Strife", "Triple"]
+twitch_highlight_name4				{killer} got a Quad Kill!
+twitch_highlight_description4		{killer} got a Quad Kill as {killerhero}!
+twitch_highlight_jsontags4			 ["{killer}", "Quad Kill", "{killerhero}", "Strife", "Quad"]
+twitch_highlight_name5				{killer} got a ANNIHILATED his opponents!!!
+twitch_highlight_description5		{killer} got an Annihilation as {killerhero}!
+twitch_highlight_jsontags5			 ["{killer}", "Annihilation", "{killerhero}", "Strife"]
+
+killtower							 {killer}摧毁了敌方的防御塔。 得到^y{gold}^*金币奖励！
+denytower							{player}^444补塔^*成功!   {player}
+killmeleerax						   {victim}的^724近程^*兵营已被摧毁，{killer}在这条兵线上的的^724近程^*单位现在将变得更强大。
+killrangedrax						  {victim}的^266远程^*兵营已被摧毁，{killer}在这条兵线上的^266远程^*单位都将变得更强大。
+killcourier							  {victim}'s的信使被{killer}杀了！
+boughtwalkingcourier				  player_color}{player}^*购买了一个普通信使。
+boughtflyingcourier					 player_color}{player}^*购买了一个飞行信使。
+ping_target							{player_color}{player_name} ({player_hero_name})^*: {mode}{unit_team_color}{unit_name}^*现在!  
+
+teamkillstreak0						有玩家正在主宰比赛!!!
+teamkillstreak1						^rThe Legion^*在^r主导比赛!!!^*
+teamkillstreak2						^170The Hellbourne^*在^170主导比赛!!!^*   
+
+teamwipe							   {team}已被完全消灭了！！！
+
+teamkill							{killer}打败了{victim}，得到的^y{gold}^*金币与队友平分了。  
+
+neutralkill							  {victim}被野怪杀死了。
+kongorkill							  {victim}被Kongor击杀了。
+
+suicide								  {victim}自杀了！
+
+kill								 {victim}已经死了.
+
+teamkilltower						  {killer}已摧毁了对方的一座防御塔并得到了^y{gold}^*金币奖励！
+teamdenytower						{denier}成功^444补塔^*!   
+
+killkongor							 {reward} are awarded ^y{gold}^* bonus gold!    {killer}杀死了Kongor. 
+teamkillkongor						  {killer}杀死了Kongor. {killer}得到^y{gold}^*金币奖励！
+
+share0								{player}不再与你分享对他们单位的控制权了。
+share1								{player}正在和你分享对他们单位的控制权。
+share2								{player}正在和你分享对他们信使的控制权。
+share3								{player}正在和你分享对他们单位的控制权。
+
+powerup								  {player}已回血了^r{powerup}^*。
+
+creepupgrade						    小兵变得越来越强大。
+megacreeps							  {killer}已摧毁了{victim}所有的建筑物。现在{killer}已有超级小兵了。
+
+smackdown							   {victim}已被{killer}击杀了！
+humiliation							{killer}刚才侮辱了{victim}!   
+rival								{killer} is completely ^rOWNING^* {victim}!    
+payback								{killer} has gained ^rPAYBACK^* against {victim}!   
+
+client_connected					    {player_color}{player}^*已连接。
+client_reconnected					     {player_color}{player}^*已重新连接了。   (Remaining disconnection time: {time})
+client_disconnected					{player_color}{player}^* 断开连接了。
+client_timedout						{player_color}{player}^* 连接超时。
+client_terminated					{player_color}{player}^* 终止游戏。已取消他们的英雄选择并且将他们的所有物分配给了他们的团队。 
+
+hero_pick						   {player_color}{player}^*已选择了^885{hero_name}^*。
+hero_pick_blind						 {player_color}{player}^*已选了一个英雄。
+hero_random							 {player_color}{player}^*已随机挑选了^885{hero_name}^*。
+hero_random_blind					{player_color}{player}^*已随机挑选了一个英雄。
+hero_repick						    {player_color}{player}^*正在重新选择英雄。^885{hero_name}^*可再供选择了。
+hero_repick_blind					{player_color}{player}^*正在重新选择英雄。
+hero_swap							{player_color}{player}^*与{player2_color}{player2}^*交换了选择的英雄。
+hero_swap_request					{player_color}{player}^* 想与你交换已选择的英雄。   
+hero_ban							{player_color}{player}^*已^r禁选^* ^885{hero_name}^*.
+hero_ban_random						系统随机 ^r禁选了^* ^885{hero_name}^*.  
+
+game_phase_banning					  开始进入^r禁选英雄阶段^*。
+game_phase_picking					开始进入^r英雄选择阶段^*。
+game_turn_ban					     现在轮到{player_color}{player}^*来^r禁选英雄^*。
+game_turn_picking					 现在轮到{player_color}{player}^*来^r选择英雄^*。
+
+player_ready						 {player_color}{player}^*已^g准备好^*。
+player_unready						{player_color}{player}^*^r还未准备好^*.   
+
+player_boughtback					  {player_color}{player}^*使用了回购并在池边重生了。
+player_boughtback2					{player_color}{player}^*使用了回购并在池边重生了。 {buybacks_used}/{buybacks_remaining}使用了的回购次数。
+
+error_all_buybacks_used				你没有可使用的回购次数了。 
+
+error_target_invulnerable			     目标是无敌的。
+error_not_ready						     {tool}还不能使用。   
+error_low_mana						   mana不足，无法使用{tool}。
+error_no_proxy						    没有可代替{tool}的物品。
+error_not_unit_ability				   必须将此技能对准一个单位。
+error_not_unit_item					  必须将此物品对准一个单位。
+error_not_unit				          必须对准一个单位。
+error_invalid_target				   这是无效目标。
+
+chat_all							^269[ALL] {color}{player} ({hero}): ^*{message}
+chat_roll							^190[ROLL]^* {color}{message}
+chat_emote							^839[EMOTE]^* {color}{message}  
+chat_team							^y[TEAM] {color}{player} ({hero}): ^*{message}
+chat_all_lobby						^269[ALL] {color}{player}: ^*{message}
+chat_roll_lobby						^190[ROLL]^* {color}{message}
+chat_emote_lobby					^839[EMOTE]^* {color}{message}
+chat_team_lobby						^y[TEAM] {color}{player}: ^*{message}
+server_message						^188[SERVER] ^y服务器消息: {message}
+
+error_item_unavailable				此地不能使用{item}。 
+error_low_gold_item					金币不足，你还不能购买{item}。
+error_low_gold_recipe				金币不足，你还不能购买{item}。
+error_low_gold_buy_all				金币不足，你还不能购买{item}的所有配件。
+error_not_owned_to_stash_xfer		你还未拥有这个物品。
+
+str_bonus							{value}力量值
+str_bonus_per_level					{value_per_level}每个等级的力量值
+str_bonus_per_charge				{value_per_charge}每次攻击的力量值
+agi_bonus							{value}敏捷度值
+agi_bonus_per_level					{value_per_level}每个等级的敏捷度
+agi_bonus_per_charge				{value_per_charge}每次攻击的敏捷度
+agi_bonus_percharge					{value_per_charge}每次攻击的敏捷度
+int_bonus							{value}智力值
+int_bonus_per_level					{value_per_level}每个等级的智力值
+int_bonus_per_charge				{value_per_charge}每次攻击的智力值
+int_bonus_percharge				    {value_per_charge}每次攻击的智力值
+max_health_bonus					{value}最大生命值
+max_health_mult_bonus				{value}%最大生命值
+max_mana_bonus						{value}最大Mana值
+max_mana_mult_bonus					{value}%最大Mana值
+base_damage_mult_bonus				{value}%基础能量
+damage_mult_bonus					{value}%能量
+damage_bonus						{value}能量
+damage_bonus_per_charge				{value}每次攻击的能量
+move_speed_bonus					{value}移动速度
+move_speed_mult_bonus				{value}%移动速度
+move_speed_mult_bonus_per_charge	{value}%每次攻击的移动速度
+slow_resistance_bonus				{value}% 缓速抗性    
+move_speed_slow_bonus				移动减速{value}%
+move_speed_slow_bonus_per_charge	每次攻击移动速度减慢{value}%
+attack_speed_bonus					{value}攻击速度
+attack_speed_bonus_per_charge		{value}每次攻击的攻击速度
+attack_speed_mult_bonus				{value}%攻击速度
+attack_speed_slow_bonus				{value}%攻击速度减慢
+cast_speed_bonus					{value}施法速度
+cooldown_speed_bonus				{value}冷却速度
+reduced_cooldowns_bonus				{value}%减少了的冷却时间
+increased_cooldowns_bonus			{value}%增加了的冷却时间
+armor_bonus							{value}护甲值
+armor_bonus_per_charge				{value}每次攻击的护甲值
+magic_armor_bonus					{value}法系抵抗
+magic_armor_bonus_per_charge		{value}每次攻击的法系抵抗
+health_regen_percent_bonus			{value}%生命值/每秒
+health_regen_bonus					{value}生命值恢复
+health_regen_mult_bonus				{value}%生命值恢复
+mana_regen_percent_bonus			{value}%Mana/每秒
+mana_regen_bonus					{value}Mana恢复
+mana_regen_mult_bonus				{value}%Mana恢复
+deflection_bonus					{value1}%挡住物理伤害的几率    {value2}
+evasion_bonus						{value}%闪避
+ranged_evasion_bonus				{value}%远程闪避
+melee_evasion_bonus					{value}%近程闪避
+miss_chance_bonus					{value}% Miss Chance
+lifesteal_bonus						{value}%生命偷取
+critical_bonus						{value1}%关键攻击的几率    {value2}x
+incoming_damage_mult_bonus			受到{value}%攻击力
+debuff_duration_mult_bonus			{value}%减益效果持续时间
+heal_mult_bonus						得到{value}%的治愈值。
+stunned_bonus						被晕眩
+stunned_immunity_bonus				免疫晕眩
+silenced_bonus						被沉默
+silenced_immunity_bonus				免疫沉默
+perplexed_bonus						被迷惑
+perplexed_immunity_bonus			免疫迷惑效果
+disarmed_bonus						被解除缴械
+disarmed_immunity_bonus				解除缴械并免疫
+immobilized_bonus					被固定
+immobilized_immunity_bonus			免疫固定效果
+restrained_bonus					被抑制
+restrained_immunity_bonus			免疫抑制
+revealed_bonus						显示的
+reveal_bonus						{value}显示范围
+stealth_bonus						有{value}第二次时间限制的隐身效果
+unitwalking_bonus					在单位中行走
+treewalking_bonus					在树木上前进
+cliffwalking_bonus					在悬崖上行走
+buildingwalking_bonus				在建筑上行走
+immunity_bonus						{type}免疫
+invulnerable_bonus					无敌的
+dispel_on_damage_bonus				消除伤害
+dispel_on_action_bonus				消除作用效果
+truestrike_bonus					实际攻击
+health_regen_reduction_bonus		减少{value}%生命值恢复
+mana_regen_reduction_bonus			减少{value}%Mana值恢复
+sighted_bonus						有视野的
+
+script_on_attack					攻击时
+script_on_attack_impact				攻击时的影响
+script_on_attacked_pre_impact		攻击前效果
+script_on_attacked_post_impact		攻击后效果
+script_on_activate_pre_impact		激活前效果
+script_on_activate_impact			激活后效果
+script_on_ability_impact			技能激活
+script_on_damage					造成的攻击力
+script_on_damaged					受到的攻击
+script_on_kill						杀戮时
+script_on_killed					被杀死
+
+action_toggle						切换
+action_no_target					无目标
+action_target_position				目标所在位置
+action_target_unit					目标单位
+action_target_global				全体的
+action_target_self					自己
+action_facing						面向
+action_self_position				自己当下的位置
+action_attack						攻击
+action_attack_toggle				攻击切换
+action_target_dual					双重目标
+action_target_dual_position			双重目标
+action_target_vector				目标矢量
+
+ability_levelup_max					^g最高等级^*
+ability_levelup_available			^y点击升级此技能^*
+ability_levelup_unavailable			^r还未达到升级的要求^*
+
+aura_range_global					全屏
+
+item_recipe							处方{name}
+
+activate_ability					点击激活此技能
+activate_item						点击激活此物品
+activate_item_no_share				^r无法使用-{name}拥有了。
+activate_item_no_share_ownerless	^r无法使用
+activate_item_borrowed				^g从{name}处借得
+activate_passive					^g这是一个被动技能。
+
+attribute_strength					力量
+attribute_agility					敏捷
+attribute_intelligence				智力
+
+attribute_damage_bonus				{value}能量
+attribute_health_bonus				{value}最大生命值
+attribute_health_regen_bonus		{value}生命值恢复
+attribute_attack_speed_bonus		{value}攻击速度
+attribute_armor_bonus				{value}盔甲
+attribute_mana_bonus				{value}最大Mana值
+attribute_mana_regen_bonus			{value}Mana值恢复
+
+auto_assemble						自动
+
+shop_action_view_recipe				^y点击^195查看^*这个处方
+shop_action_view_item				^y点击^195查看^*这个处方
+shop_action_auto_assemble			^y此物品可以自动组装
+shop_action_already_purchased		     ^g已购买了此物品
+shop_action_cannot_shop				    ^r这个装置不能搬运物品
+shop_action_cannot_afford_item		      ^r缺少金币，无法购买此物品
+shop_action_cannot_afford_recipe	^r缺少金币，无法购买这个处方
+shop_action_purchase_item			   点击^195购买^*此物品
+shop_action_purchase_item_stash		^y点击^195STASH^*此物品
+shop_action_purchase_recipe			^y点击^195购买^*这个处方
+shop_action_unavailable				^r此处无法打开使用
+
+vote_called						     {color}{player}^*发起投票: {vote}
+vote_called_concede				  {color}{player}^*发起{team_color}{team}^*投降的投票。
+vote_called_remake				   {color}{player}^*发起投票重新比赛。
+vote_called_kick				     {color}{player}^*发起投票，将{target_color}{target}^*踢出比赛。
+vote_called_kick_afk			  因{target_color}{target}^*离开时间太长，{color}{player}^*发起投票，将其踢出比赛。
+vote_called_pause				  {color}{player}^*发起投票，申请暂停比赛。
+vote_passed						     投票通过。
+vote_failed						    投票失败。
+
+team_concede					{color}{team}^*已经投降了。比赛剩余部分的数据不会再被记录，现在离开游戏是不会受到任何惩罚的。
+game_abandoned					你被队友遗弃了，比赛将会继续。你可以直接退出比赛而不受到任何惩罚。
+afk_warning						 以你现在的状态，有可能会被标记为挂机。快开始战斗！
+afk_message						  现在你的状态被标记为“暂时离开”，那么你有可能会被踢出游戏。
+
+lobby_connect					   {color}{player}^*正在连接。
+lobby_kick						 {color}{player}^*已被房主踢出房间了。 
+lobby_disconnect				   {color}{player}^*已断开连接了。
+lobby_balance					   房主已使队伍间的战斗力保持平衡了。
+lobby_force_swap				  房主将{slot1_color}{slot1}^*和{slot2_color}{slot2}^*进行了调换。
+lobby_countdown_cancel			  取消游戏的倒数计时系统。
+lobby_lock						 房主锁定了{slot_color}{slot}^*槽。
+lobby_unlock					  房主将{slot_color}{slot}^*槽解锁了。
+lobby_assign_host				  {slot_color}{player}^*被指定为新的房间主人。
+lobby_assign_spectator			  房主指定{slot_color}{player}^*为旁观者。
+lobby_assign_referee			 房主指定{slot_color}{player}^*为裁判员。
+lobby_assign_first_ban				房主已选定了{team_color}{team}^*队伍里的第一个禁选英雄。
+
+game_info_practice				练习模式
+nosolo						要想进行对战游戏必须要有其他玩家才可以。如果你想单人开始比赛，选择^y练习模式^*。
+warn_nomods					因为{slot_color}{player}^*使用的是被篡改后的客户端，他只能观看比赛。 
+nomods						 无法开始游戏。 {slot_color}{player}^*在使用篡改后的客户端。在被允许参加带有此联赛规则的比赛前必须先观看比赛且禁用所有模块(interface, texture, etc)。
+game_unpause					  {name}选择了继续游戏，比赛将在5秒钟后继续开始。 
+player_ping					{slot_color}{player}^* ping速度: {ping}ms
+player_ping_no_players				没有玩家出现时延.
+team_ping					{team_color}{team_name}^* 平均ping速度: {ping}ms
+
+chat_server_name			服务器
+chat_bot_name				电脑
+
+//-----------------------------------------------------------------------------
+// Weather
+//-----------------------------------------------------------------------------
+game_weather_					无
+
+// "rain.effect" => "game_weather_rain"
+game_weather_rain				下雨
+
+// "snow.effect" => "game_weather_snow"
+game_weather_snow				下雨
+
+// "snow_storm.effect" => "game_weather_snow_storm"
+game_weather_snow_storm				暴风雪
+
+// Add new weather effects here
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// Regions
+//-----------------------------------------------------------------------------
+game_region_				无
+game_region_graveyard	    墓地
+game_region_jungle			丛林
+game_region_caves			洞穴
+game_region_swamp			沼泽
+game_region_toplane			上路
+game_region_midlane			中路
+game_region_bottomlane			下路
+game_region_topkeeper			上路守卫者
+game_region_bottomkeeper		下路守卫者
+
+game_region_bottom_lane_names		下路
+game_region_middle_lane_names		中路
+game_region_top_lane_names			上路
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// Announcements
+//-----------------------------------------------------------------------------
+hero_announce_assist						请求协助 
+hero_announce_attack						攻击！
+hero_announce_attack_crux					攻击敌方基地！
+hero_announce_attack_enemy					攻击^r{target_unit_name}!
+hero_announce_attack_generator				攻击敌方发电装置!
+hero_announce_attack_tower					攻击敌方防御塔！
+hero_announce_back							退后！
+hero_announce_care_bottom					下路小心！
+hero_announce_care_middle					中路小心!
+hero_announce_care_top						上路小心!
+hero_announce_defend_crux					守护基地!
+hero_announce_defend_generator				守护发电装置!
+hero_announce_defend_tower					守护防御塔!
+hero_announce_farm							补刀、刷怪!
+hero_announce_help							请求帮助!
+hero_announce_help_bottom					下路请求帮助!
+hero_announce_help_middle					中路请求帮助!
+hero_announce_help_top						上路请求帮助!
+hero_announce_krytos						释放托斯！
+hero_announce_missing						敌人消失！
+hero_announce_missing_bottom				下路敌人消失！
+hero_announce_missing_middle				中路敌人消失！
+hero_announce_missing_top					上路敌人消失！
+hero_announce_on_my_way						在路上！
+hero_announce_on_my_way_bottom				去往下路！
+hero_announce_on_my_way_middle				去往中路！
+hero_announce_on_my_way_top					去往上路！
+hero_announce_push							推线！ 
+hero_announce_thanks						感谢。
+hero_announce_together						团！
+hero_announce_watch_out						小心！
+hero_announce_well							我方向着胜利前进。
+hero_announce_well_played					漂亮！
+
+//hero specific announcement text, replace hero_ with Hero_Name_
+Hero_Ace_announce_well_played				干的漂亮！
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// Chat Commands
+//-----------------------------------------------------------------------------
+chat_command_invalid_format					指令格式无效。正确格式为：
+chat_command_invalid_format_multi			指令格式无效。正确格式之一为：
+chat_command_invalid_command				指令格式无效。输入/查看命令列表。
+
+chat_command_help							帮助
+chat_command_help_info						显示基础指令列表 
+chat_command_helpmore						更多帮助
+chat_command_helpmore_info					显示高级指令列表  
+
+chat_command_reply							回复
+chat_command_reply_params					{Message}
+chat_command_reply_param_0					无指定收信人 
+chat_command_reply_info						回复至最后一个发信息的玩家  (显示被回复人的用户名)
+chat_command_whisper						私聊
+chat_command_whisper_params					"玩家名字" {Message}
+chat_command_whisper_param_0				未找到该玩家: ^r
+chat_command_whisper_param_1				无指定收信人 
+chat_command_whisper_info					私信至用户，完成后打开新聊天框 
+chat_command_missing						消失
+chat_command_missing_info					敌人英雄消失时，发出提示声音 
+chat_command_missing_bottom					下路敌人消失 
+chat_command_missing_middle					中路敌人消失
+chat_command_missing_top					上路敌人消失
+chat_command_missing_bottom_lane_names		下路
+chat_command_missing_middle_lane_names		中路
+chat_command_missing_top_lane_names			上路
+chat_command_quickcast						快捷施法
+chat_command_quickcast_info					开启快捷施法功能
+chat_command_quickcast_changed				将快捷施法键更换成{value}
+
+//Hero Lines
+chat_command_assist							请求协助
+chat_command_assist_info					发出信息，请求协助 
+chat_command_back							退后
+chat_command_back_info						提醒队友退后 
+chat_command_careful						小心行事
+chat_command_careful_info					提醒队友，小心行事
+chat_command_farm							补兵
+chat_command_farm_info						提醒队友，线上补兵 
+chat_command_helpme							救我！
+chat_command_helpme_info					发出信心求救！
+chat_command_krytos							托斯
+chat_command_krytos_info					发出信息，击杀辛德拉、施放托斯
+chat_command_missing						敌人消失
+chat_command_missing_info					提醒队友，敌人英雄消失 
+chat_command_onmyway						在路上
+chat_command_onmyway_info					发出信息，已经在路上
+chat_command_push							推线
+chat_command_push_info						提醒队友推线 
+chat_command_thankyou						谢谢帮忙
+chat_command_thankyou_info					感谢队友
+chat_command_together						集中
+chat_command_together_info					发出信息，队友集中
+chat_command_watchout						小心
+chat_command_watchout_info					提醒队友小心行事 
+chat_command_well							回城
+chat_command_well_info						提醒队友，自己正在回城 
+chat_command_wellplayed						赞赏队友
+chat_command_wellplayed_info				发出信息，赞赏队友 
+
+
+//Admin commands
+chat_command_gameinfo						游戏信息
+chat_command_gameinfo_info					显示服务器IP和比赛ID 
+chat_command_server							服务器,连接
+chat_command_server_info					显示连接的服务器信息
+chat_command_gameall						全部聊天
+chat_command_gameall_params					{Message}
+chat_command_gameall_info					向所有在线用户发送消息
+chat_command_ping							ping
+chat_command_ping_info						展示你的ping(Admin only)
+chat_command_ping_ping						Ping: {value}
+chat_command_servercommand					服务器命令
+chat_command_servercommand_params			"命令行"
+
+//chat_command_emote							表情
+//chat_command_emote_info						发表情命令  
+//chat_command_stats							数据
+//chat_command_stats_info						使用TAB键可切换数据
+//chat_command_follow							关注
+//chat_command_follow_info					关注已选玩家 
+
+//chat_command_baldir							巴蒂尔
+//chat_command_baldir_info					打开攻击巴蒂尔的英雄的声音 
+//chat_command_cindara						辛德拉
+//chat_command_cindara_info					打开攻击辛德拉的英雄的声音
+//chat_command_getback						退回
+//chat_command_getback_info					发出警报，告诫玩家退后 
+//chat_command_surrender						投降
+//chat_command_surrender_info					发起投降投票，或以其他方式结束游戏
+//chat_command_pause							暂停
+//chat_command_pause_info						可切换，暂停或解除暂停 
+//
+
+
+
+// END
+
