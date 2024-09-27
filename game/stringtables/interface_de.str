@@ -2685,9 +2685,6 @@ game_alt_couriers_purchase									Diesen Kurier kaufen
 game_alt_couriers_lock										Kurier sperren
 game_alt_couriers_unlock									Kurrier freischalten
 
-ability_on_cooldown_remaing									^980{value2}^* auf Abkühlzeit für ^r{value1}s^*!
-ability_on_cooldown_ready									^980{value2}^* ist ^geizig^*!
-
 // game_chat.package
 gamechat_button_send_message								Nachricht senden
 gamechat_tip_hit_z_history									^y*Tipp:^* Drücke auf "Z", um den Chat-Verlauf anzuzeigen.

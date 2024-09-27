@@ -2578,9 +2578,6 @@ game_alt_couriers_purchase                                            Comprar es
 game_alt_couriers_lock                                                Bloquear mensajero
 game_alt_couriers_unlock                                              Desbloquear mensajero
 
-ability_on_cooldown_remaing                                           ^980{value2}^* recargando por ^r{value1}s^*!
-ability_on_cooldown_ready                                             ^980{value2}^* está ^glisto^*!
-
 // game_chat.package
 gamechat_button_send_message                                          Enviar mensaje
 gamechat_tip_hit_z_history                                            ^y*Consejo:^* Presiona "Z" para abrir el historial de chat

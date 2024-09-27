@@ -404,9 +404,30 @@ hero_announce_together						Держитесь вместе!
 hero_announce_watch_out						Осторожно!
 hero_announce_well							Я возвращаюсь к фонтану.
 hero_announce_well_played					Неплохо сыграно.
+hero_announce_ability_ready                 Способность ^980{abi_name}{abi_type}^* ^gготова^*!
+hero_announce_ability_cooldown              Способность ^980{abi_name}{abi_type}^* на перезарядке ещё ^r{value1} с.^*!
+hero_announce_ability_no_mana               Способность ^980{abi_name}{abi_type}^* требует ещё ^c{value1}^* маны!
+hero_announce_ability_cooldown_no_mana      Способность ^980{abi_name}{abi_type}^* на перезарядке ещё ^r{value1} с.^* и требует ещё ^c{value2}^* маны!
+hero_announce_boss_timer                    ^980{boss_name}^* возродится через ^r{time} с.^*!
+hero_announce_boss_ready                    ^980{boss_name}^* ^готов к бою^*!
 
 //hero specific announcement text, replace hero_ with Hero_Name_
 Hero_Ace_announce_well_played				Отличная работа!
+Hero_Zaku_announce_well_played				Хорошо, хорошо!
+
+//ability announcement type, printed in 'hero_announce_ability_' as 'abi_type' parameter:
+// 0-3 hero abilities, 18 - pet active, 96 - boots, 97-102 - items, 103-104 - consumables
+hero_announcer_ability_type_0 (Q)
+hero_announcer_ability_type_1 (W)
+hero_announcer_ability_type_2 (E)
+hero_announcer_ability_type_3 (R)
+hero_announcer_ability_type_18 (Питомец)
+hero_announcer_ability_type_97 (Предмет)
+hero_announcer_ability_type_98 (Предмет)
+hero_announcer_ability_type_99 (Предмет)
+hero_announcer_ability_type_100 (Предмет)
+hero_announcer_ability_type_101 (Предмет)
+hero_announcer_ability_type_102 (Предмет)
 //-----------------------------------------------------------------------------
 
 

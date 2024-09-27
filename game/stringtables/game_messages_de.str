@@ -448,6 +448,7 @@ hero_announce_attack_enemy					Greife ^r{target_unit_name} an!
 hero_announce_assist						Bitte um Hilfe
 hero_announce_well_played					Gut gespielt.
 Hero_Ace_announce_well_played				Gute Arbeit!
+//Hero_Zaku_announce_well_played			Good, good!
 hero_announce_help_bottom					Hilf mir, Unten!
 hero_announce_on_my_way_middle				Auf dem Weg, Mitte!
 hero_announce_well							Ich gehe zu unserem Brunnen.
@@ -484,4 +485,25 @@ chat_command_back_info						Fordert dein Team zum Rückzug auf
 chat_command_careful						vorsichtig,vors,v
 chat_command_well							Brunnen,daheim,zurück
 hero_announce_back							Zurück!
+//hero_announce_ability_ready               ^980{abi_name}{abi_type}^* is ^gready^*!
+//hero_announce_ability_cooldown            ^980{abi_name}{abi_type}^* on cooldown for ^r{value1}s^*!
+//hero_announce_ability_no_mana             ^980{abi_name}{abi_type}^* requires ^c{value1}^* more mana!
+//hero_announce_ability_cooldown_no_mana    ^980{abi_name}{abi_type}^* on cooldown for ^r{value1}s^* and requires ^c{value2}^* more mana!
+//hero_announce_boss_timer                  ^980{boss_name}^* respawns in ^r{time}s^*!
+//hero_announce_boss_ready                  ^980{boss_name}^* is ^gready to fight^*!
+
+//ability announcement type, printed in 'hero_announce_ability_' as 'abi_type' parameter:
+// 0-3 hero abilities, 18 - pet active, 96 - boots, 97-102 - items, 103-104 - consumables
+//hero_announcer_ability_type_0 (Q)
+//hero_announcer_ability_type_1 (W)
+//hero_announcer_ability_type_2 (E)
+//hero_announcer_ability_type_3 (R)
+//hero_announcer_ability_type_18 (Pet)
+//hero_announcer_ability_type_97 (Item)
+//hero_announcer_ability_type_98 (Item)
+//hero_announcer_ability_type_99 (Item)
+//hero_announcer_ability_type_100 (Item)
+//hero_announcer_ability_type_101 (Item)
+//hero_announcer_ability_type_102 (Item)
+
 // END
