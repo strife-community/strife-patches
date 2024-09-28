@@ -81,10 +81,11 @@ local function ProgressionRegister()
 		
 		local function GetExperienceToNextLevel(currentLevel, currentExperience)
 			if (mainUI.progressionData.accountValues.accountLevelTable[currentLevel + 1]) and (mainUI.progressionData.accountValues.accountLevelTable[currentLevel]) then
-				local experienceToNextLevel 		= mainUI.progressionData.accountValues.accountLevelTable[currentLevel + 1] - mainUI.progressionData.accountValues.accountLevelTable[currentLevel]
-				local currentExperienceToNextLevel 	= currentExperience - mainUI.progressionData.accountValues.accountLevelTable[currentLevel]
-				local percentToNextLevel = currentExperienceToNextLevel / experienceToNextLevel
-				return experienceToNextLevel, percentToNextLevel
+				local fullExperienceToNextLevel 		= mainUI.progressionData.accountValues.accountLevelTable[currentLevel + 1] - mainUI.progressionData.accountValues.accountLevelTable[currentLevel]
+				local currentExperienceFromNextLevel 	= currentExperience - mainUI.progressionData.accountValues.accountLevelTable[currentLevel]
+                local experienceToNextLevel = fullExperienceToNextLevel - currentExperienceFromNextLevel
+				local percentToNextLevel = currentExperienceFromNextLevel / fullExperienceToNextLevel
+                return experienceToNextLevel, percentToNextLevel
 			else
 				return 0, 0
 			end
