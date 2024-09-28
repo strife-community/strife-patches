@@ -362,20 +362,26 @@
 					<label name="main_accountprogress_currentlevel" y="-24s" color="#88c1c5" align="center" valign="bottom" fitx="1" outline="1" outlinecolor="#0b1a1b" font="maindyn_16" content="postgame_upcoming_unlocks_current_level" fity="1" noclick="1" />
 				</frame>
 			
-				<instance
-					name="main_accountprogress_container_tab" id="0" label="news_compenent_stats_progress" x="205s"
-					onmouseoverlua="GetWidget('main_accountprogress_container_tab0hover'):FadeIn(125)"
-					onmouseoutlua="GetWidget('main_accountprogress_container_tab0hover'):FadeOut(125)"					
-					onclicklua="mainUI.news.SelectAccountProgressionTabByIndex(2, 125)"
-				/>
-				
-				<instance
-					name="main_accountprogress_container_tab" id="1" label="news_compenent_unlock_progress" x="0s"
+            
+                <instance
+					name="main_accountprogress_container_tab" id="0" label="news_compenent_unlock_progress" x="0s"
 					fontColor="#88c1c5"
 					isCurrent="1"						
 					onclicklua="mainUI.news.SelectAccountProgressionTabByIndex(1, 125)"
 				/>	
-				
+                
+                <!--Disabled tab, since ladder is not implemented-->
+                <instance
+					name="main_accountprogress_container_tab" id="1" label="news_compenent_stats_progress" x="205s"
+					onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('scrim_finder_comingsoon_feature_locked'), Translate('scrim_finder_comingsoon_feature_locked_desc'), 320) GetWidget('main_accountprogress_container_tab0hover'):FadeIn(125)"
+					onmouseoutlua="simpleTipGrowYUpdate(false) GetWidget('main_accountprogress_container_tab0hover'):FadeOut(125)"					
+				/>
+				<!--instance
+					name="main_accountprogress_container_tab" id="1" label="news_compenent_stats_progress" x="205s"
+					onmouseoverlua="GetWidget('main_accountprogress_container_tab0hover'):FadeIn(125)"
+					onmouseoutlua="GetWidget('main_accountprogress_container_tab0hover'):FadeOut(125)"					
+					onclicklua="mainUI.news.SelectAccountProgressionTabByIndex(1, 125)"
+				/-->
 
 				
 			</panel>
