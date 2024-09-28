@@ -231,10 +231,12 @@ local function setUpAccountProgressionSection()
 			fadeWidget(ladderPointsText, ladderPoints)
 			fadeWidget(viewLadderBtn, ladderPoints)
 
-			screens['main_accountprogress_visiblility_handler_elo'] = true
+            -- Removed ladder tab from map for swapping until ladder is implemented
+			--screens['main_accountprogress_visiblility_handler_elo'] = true
 		else
 			GetWidget('main_accountprogress_visiblility_handler_elo'):FadeOut(125)
-			screens['main_accountprogress_visiblility_handler_elo'] = nil
+            -- Removed ladder tab from map for swapping until ladder is implemented
+			--screens['main_accountprogress_visiblility_handler_elo'] = nil
 		end
 		checkSwap()
 
