@@ -9,9 +9,6 @@
 
 			<!-- Passive -->
 			<template name="m_passive" parentmodel="true" parentskeleton="true" directionalspace="local">
-				<simpleemitter speed="2" angle="50" timenudge="2000" bone="_bone_centerofchest" spawnrate="10" minparticlelife="2000" maxparticlelife="2500" gravity="2" drag=".08" depthbias="-40" offsetsphere="25 25 25" material="/shared/effects/materials/phantom_black.material" turn="true" directionalspace="local" particledirectionalspace="local">
-					<particle maxangle="360" minanglespeed="-116" maxanglespeed="116" color="0 0 0" startalpha="0.5" midalpha="0.51" endalpha="0" startsize="0" endsize="80" endstickiness="0" turn="true"/>
-				</simpleemitter>
 				<template name="trails" parentmodel="true" parentskeleton="true" directionalspace="local">
 					<trailemitter bone="{bone}" timenudge="2000" spawnrate="{spawnrate}" startminparticlelife="{life}" startmaxparticlelife="{life}" gravity="15" drag=".1" endminparticlelife="1" endmaxparticlelife="1" texpostime="{life}" texposscale="0" texstretchscale="1" speed="1" position="{position}" material="/shared/effects/materials/arrow_trail_blend.material" inheritvelocity=".25" limitinheritvelocity="500" turn="true">
 						<particle startcolor="0 0 0" endcolor="0 0 0" startsize="30" midsize="15" endsize="2" startalpha=".35" endalpha="0" turn="true"/>
