@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+<definitions>
+
+<!-- 0 -->
+<particlesystem name="system0" space="entity" scale="1">
+
+	
+
+			<!-- Passive -->
+			<template name="m_passive" parentmodel="true" parentskeleton="true" directionalspace="local">
+				<simpleemitter speed="2" angle="50" timenudge="2000" bone="_bone_centerofchest" spawnrate="10" minparticlelife="2000" maxparticlelife="2500" gravity="2" drag=".08" depthbias="-40" offsetsphere="25 25 25" material="/shared/effects/materials/phantom_black.material" turn="true" directionalspace="local" particledirectionalspace="local">
+					<particle maxangle="360" minanglespeed="-116" maxanglespeed="116" color="0 0 0" startalpha="0.5" midalpha="0.51" endalpha="0" startsize="0" endsize="80" endstickiness="0" turn="true"/>
+				</simpleemitter>
+				<template name="trails" parentmodel="true" parentskeleton="true" directionalspace="local">
+					<trailemitter bone="{bone}" timenudge="2000" spawnrate="{spawnrate}" startminparticlelife="{life}" startmaxparticlelife="{life}" gravity="15" drag=".1" endminparticlelife="1" endmaxparticlelife="1" texpostime="{life}" texposscale="0" texstretchscale="1" speed="1" position="{position}" material="/shared/effects/materials/arrow_trail_blend.material" inheritvelocity=".25" limitinheritvelocity="500" turn="true">
+						<particle startcolor="0 0 0" endcolor="0 0 0" startsize="30" midsize="15" endsize="2" startalpha=".35" endalpha="0" turn="true"/>
+					</trailemitter>
+				</template>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="_bone_righthand"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="_bone_lefthand"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 L Foot"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 R Foot"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 R Clavicle"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 L Clavicle"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 R Forearm"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 L Forearm"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 R Upperarm"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 L Upperarm"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="Bip01 Spine3"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="_bone_leftfoot"/>
+				<instance name="trails" spawnrate="30" life="200" position="0 0 0" bone="_bone_rightfoot"/>
+				<template name="flashes" parentmodel="true" parentskeleton="true" directionalspace="local">
+					<simpleemitter bone="{zbone}" timenudge="2000" spawnrate="60" minparticlelife="250" maxparticlelife="250" minspeed="0" maxspeed="0" position="0 0 0" material="/shared/effects/smaterials/cartoon_smack_white_add.material" directionalspace="local" particledirectionalspace="local" depthbias="25" minangle="0" maxangle="1" direction="0 0 1">
+						<particle minangle="0" maxangle="360" anchor="1" startcolor="0 .05 .05" midcolor="0 .05 .05" endcolor="0 0 0" midcolorpos=".75" startalpha="1" midalpha="1" endalpha="0" startscale="10" minendscale="18" maxendscale="35" lockup="true" lockright="true"/>
+					</simpleemitter>
+				</template>
+				<instance name="flashes" zbone="_bone_fx_tip" zstartscale="25" zendscale="75" zoffset="25" zdepthbias="50"/>
+				<instance name="flashes" zbone="_bone_tail05" zstartscale="25" zendscale="75" zoffset="25" zdepthbias="50"/>
+				<instance name="flashes" zbone="_bone_tail04" zstartscale="25" zendscale="75" zoffset="25" zdepthbias="50"/>
+				<instance name="flashes" zbone="_bone_tail03" zstartscale="25" zendscale="75" zoffset="25" zdepthbias="50"/>
+				<instance name="flashes" zbone="_bone_tail02" zstartscale="25" zendscale="75" zoffset="25" zdepthbias="50"/>
+				<template name="flashes" parentmodel="true" parentskeleton="true" directionalspace="local">
+					<billboard timenudge="2000" expirelife="250" bone="{zbone}" material="/shared/effects/smaterials/whitedot.material" scale="0.3" depthbias="-75" startcolor=".12 .065 .2" endcolor="0 0 0"/>
+					<billboard timenudge="2000" life="1300" bone="{zbone}" material="/shared/effects/smaterials/whitedot.material" scale=".4" depthbias="-50" startcolor="0" midcolor=".1 .035 .07" endcolor="0" loop="true" directionalspace="local" lockup="1" lockright="1" pitch="80"/>
+				</template>
+				<instance name="flashes" zbone="_bone_fx_tip" zstartscale="25" zendscale="75" zoffset="25" zdepthbias="50"/>
+				<simpleemitter timenudge="2000" position="0 0 -20" spawnrate="50" bone="_bone_centerofchest" minparticlelife="1300" maxparticlelife="1600" material="/shared/effects/smaterials/snowy_smoke.material" offsetsphere="30 30 50" direction="0 1 0" depthbias="0" turn="true" directionalspace="local" particledirectionalspace="local">
+					<particle startcolor="1.2 .65 2" endcolor="0 0 0" startalpha="0" midalpha=".2" endalpha="0" midalphapos=".25" minangle="0" maxangle="360" minstartsize="40" maxstartsize="100" minendsize="0" maxendsize="0" minanglespeed="-60" maxanglespeed="60" turn="true"/>
+				</simpleemitter>
+				<billboard bone="{bone}" timenudge="2000" material="/shared/effects/smaterials/flare.material" startcolor="0 1 1" endcolor="0 0 0" size="5" position="0 0 0" startalpha="1" endalpha="0" depthbias="-100"/>
+				<billboard bone="{bone}" timenudge="2000" material="/shared/effects/smaterials/flare.material" startcolor="0 .4 .4" endcolor="0 0 0" size="60" position="0 0 0" startalpha="1" endalpha="0" depthbias="-100"/>
+				<simpleemitter timenudge="2000" position="0 0 0" spawnrate="220" bone="_bone_fx_tip" minparticlelife="100" maxparticlelife="700" material="/shared/effects/smaterials/snowy_smoke.material" offsetsphere="0 0 0" direction="0 1 0" depthbias="50" turn="true" directionalspace="local" particledirectionalspace="local">
+					<particle startcolor="0 .4 .4" endcolor="0 0 0" startalpha="0" midalpha=".2" endalpha="0" midalphapos=".25" minangle="0" maxangle="360" minstartsize="10" maxstartsize="99" minendsize="0" maxendsize="0" minanglespeed="-60" maxanglespeed="60" turn="true"/>
+				</simpleemitter>
+				<light bone="{bone}" timenudge="2000" expirelife="250" position="0 0 35" color="0 2 3" falloffstart="0" falloffend="100"/>
+			</template>
+		
+
+			<!-- Passive 2 -->
+			<template name="m_sparkles" parentmodel="true" parentskeleton="true" directionalspace="local">
+				<simpleemitter bone="_bone_centerofchest" spawnrate="20" particlelife="1000" offsetsphere="0 0 0" position="0 0 0" direction="0 -1 0" directionalspace="local" particledirectionalspace="local">
+					<particle turn="true" directionalspace="local" particledirectionalspace="local">
+						<billboard spawnrate="500" count="1" minlife="1000" maxlife="1000" position="0 0 0" material="/shared/effects/materials/whitedot.material" directionalspace="local" yaw="180" roll="180" lockup="true" lockright="true" minwidth="30" maxwidth="60" pitch="90" startcolor=".25 0 .35" midcolor="0 .25 .5" endcolor="0 0 0" minheight="100" maxheight="360"/>
+					</particle>
+				</simpleemitter>
+				<simpleemitter particlelife="2000" spawnrate="40" offsetsphere="45 45 90" position="0 0 90" minangle="0" maxangle="0" direction="0 1 0" minspeed="0" maxspeed="0" directionalspace="local" particledirectionalspace="local">
+					<particle turn="true" directionalspace="local" particledirectionalspace="local">
+						<billboard position="0 0 0" material="/shared/effects/smaterials/whitesquare.material" minlife="400" maxlife="850" size="15" startcolor="0 .25 .5" midcolor="0 .25 .5" endcolor="0 0 0" midcolorpos=".25" minstartscale="1.5" maxstartscale="3" endscale="0" directionalspace="local" lockright="1" lockup="1" pitch="90" depthbias="-25"/>
+					</particle>
+				</simpleemitter>
+			</template>
+	
+
+
+
+			<instance name="m_passive" bone="_bone_weaponattach"/>
+
+			<!-- Orb -->
+			<template name="orb" parentmodel="true" parentskeleton="true" directionalspace="local">
+				<model model="/shared/effects/models/legion_death_rig/model.mdf" anim="idle" directionalspace="local" bone="{ibone}" scale="{iscale}" delay="{idelay}" life="{ilife}" position="{ipos}" loop="false">
+					<simpleemitter bone="{zbone}" spawnrate="75" minparticlelife="400" maxparticlelife="500" angle="10" speed="30" material="/shared/effects/smaterials/cartoon_smack_white_add.material" depthbias="-50" offsetsphere="25 25 25" directionalspace="local" particledirectionalspace="local">
+						<particle startcolor=".2 0 1" midcolor=".2 0 1" endcolor="0" startsize="25" endsize="125" maxangle="360" minendscale="2" maxendscale="4" endstickiness="0"/>
+					</simpleemitter>
+					<simpleemitter bone="{zbone}" spawnrate="50" minparticlelife="300" maxparticlelife="500" angle="10" speed="30" material="/shared/effects/smaterials/whitedot.material" depthbias="-50" offsetsphere="40" directionalspace="local" particledirectionalspace="local">
+						<particle startcolor=".35" endcolor="0" startsize="60" endsize="100" maxangle="360"/>
+					</simpleemitter>
+					<simpleemitter bone="{zbone}" count="1" spawnrate="2000" particlelife="2000" directionalspace="local" particledirectionalspace="local">
+						<particle>
+							<simpleemitter bone="{zbone}" count="20" spawnrate="80" particlelife="1000" minspeed="600" maxspeed="800" inheritvelocity="0.2" offsetsphere="25 25 25" directionalspace="local" particledirectionalspace="local">
+								<particle>
+									<trailemitter life="250" spawnrate="65" startminparticlelife="100" startmaxparticlelife="200" offsetsphere="15 15 15" endminparticlelife="1" endmaxparticlelife="1" texpostime="200" texposscale="0" texstretchscale="1" position="0 0 0" material="/shared/effects/smaterials/whitedot.material" directionalspace="local" particledirectionalspace="local">
+										<particle startcolor=".65" midcolor=".7 .35 1" endcolor="0 0 0" midcolorpos=".75" startsize="33" endsize="0"/>
+									</trailemitter>
+								</particle>
+							</simpleemitter>
+						</particle>
+					</simpleemitter>
+					<simpleemitter bone="{zbone}" spawnrate="3" particlelife="2000" directionalspace="local" particledirectionalspace="local">
+						<particle>
+							<simpleemitter bone="{zbone}" count="10" spawnrate="80" particlelife="1000" minspeed="750" maxspeed="1000" inheritvelocity="0.2" offsetsphere="25 25 25" directionalspace="local" particledirectionalspace="local">
+								<particle>
+									<trailemitter life="250" spawnrate="65" startminparticlelife="150" startmaxparticlelife="150" offsetsphere="15 15 15" endminparticlelife="1" endmaxparticlelife="1" texpostime="250" texposscale="0" texstretchscale="1" position="0 0 0" material="/shared/effects/smaterials/whitedot.material" directionalspace="local" particledirectionalspace="local">
+										<particle startcolor=".65" midcolor=".7 .35 1" endcolor="0 0 0" midcolorpos=".75" startsize="33" endsize="0"/>
+									</trailemitter>
+								</particle>
+							</simpleemitter>
+						</particle>
+					</simpleemitter>
+				</model>
+			</template>
+
+			<instance name="orb" ibone="_bone_fx_tip" iscale="0.35" idelay="2200" ilife="600" ipos="0 0 0" zbone="_boneSpinner"/>
+			<sound delay="300" volume="0.47" linearfalloff="true" falloffstart="1700" falloffend="4500" sample="sounds/v_%.wav" channel="90042"/>	
+			<sound delay="2200" volume="0.25" linearfalloff="true" falloffstart="1500" falloffend="2500" sample="sounds/tail_cast.wav" channel="90042"/>	
+			
+				
+
+
+
+
+
+</particlesystem>
+
+</definitions>
+<thread>
+<!-- Order -->
+<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+<waitfordeath instance="instance0"/>
+</thread>
+</effect>
