@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_JinShe_Ability1_Damage"
+	
+	passiveeffect=""
+	ishidden="true"
+>
+	<oninflict>
+        <getconstant name="damage" adjustmentsource="this_entity" />
+		<damage effecttype="Magic Splash" amount="1" b="result" op="mult"/>
+	</oninflict>
+</state>
