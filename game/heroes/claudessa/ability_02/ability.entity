@@ -29,7 +29,7 @@
 
 >
 	<constant name="heal" value="100,135,170,205" adjustment="power_support" />
-	<constant name="resistance" value="3,6,9,12" adjustment="none" />
+	<constant name="resistance" value="6,9,12,15" adjustment="none" />
 
 	<onlearn>
 		<expirestate name="State_Claudessa_Ability2_NoPassive" target="source_entity" />

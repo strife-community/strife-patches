@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<getconstant name="resistance" adjustmentsource="this_entity" />
 <state
 	name="State_Claudessa_Ability2_NoPassive"
 	
@@ -10,7 +11,7 @@
 	effecttype="StatusBuff"
 	allowtransfer="true"
 
-	resistance="6,9,12,15"
+	resistance="result"
 
 	modifierkey="shield"
 
