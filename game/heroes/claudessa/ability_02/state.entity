@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Claudessa_Ability2"
+	
+	icon="icon.tga"
+
+	passiveeffect="effects/state_shields.effect"
+
+	
+	effecttype="StatusBuff Assist"
+	allowtransfer="true"
+
+	resistance="6,9,12,15"
+
+>
+
+</state>
+ 

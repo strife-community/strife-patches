@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Claudessa_Ability2_NoPassive"
+	
+	icon="icon.tga"
+
+	passiveeffect=""
+
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	resistance="6,9,12,15"
+
+	modifierkey="shield"
+
+>
+
+	<modifier key="gear_1" modpriority="1"
+		modifierkey="shield_gear1"
+	>
+	</modifier>
+</state>
+ 
