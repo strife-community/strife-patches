@@ -73,10 +73,12 @@ local lastSkinPath
 local lastModelPath
 
 -- Skin Selection
-local selectedSkin 		= 0
-local selectedAvatarDye = {}
-local selectedPetSkin 	= 1
-local skinWidgets 		= {}
+local g_SkinSelection = {
+	selectedSkin 		= 0,
+	selectedAvatarDye = {},
+	selectedPetSkin 	= 1,
+	skinWidgets 		= {}
+}
 local loadLastValidCosmeticConfig
 
 ---------------------------
@@ -1038,29 +1040,18 @@ end
 local destroyPetWidgets
 local populatePetList
 
--- local popularHeroList = { 1, 2 }
--- local function IsHeroPopular(hero_Index)
-    -- for n, value in ipairs(popularHeroList) do
-        -- if (value == hero_Index) then
-            -- return 1
-        -- end
-    -- end
+local popularHeroList = {1, 2}
+local function IsHeroPopular(hero_Index)
+    for n, value in ipairs(popularHeroList) do
+        if (value == hero_Index) then
+            return 1
+        end
+    end
     
-    -- return 0
--- end
+    return 0
+end
 
 local function populateHeroList()
-    local popularHeroList = { 1, 2 }
-    local function IsHeroPopular(hero_Index)
-        for n, value in ipairs(popularHeroList) do
-            if (value == hero_Index) then
-                return 1
-            end
-        end
-        
-        return 0
-    end
-
 	if (#main_pregame_heros_container:GetChildren() > 0) then return end
 	main_pregame_heros_container:ClearChildren()
 	local tileWidth = getMeasurementFromString(main_pregame_heros_container, '90s')
@@ -1561,7 +1552,7 @@ local function refreshAfterPurchase()
 	main_pregame_customization_ready:SetEnabled(1)
 	purchaseInfo = {}
 	local dye = selectedDye
-	local skin = selectedSkin
+	local skin = g_SkinSelection.selectedSkin
 	populateSkins()
 	selectSkin(skin)
 	selectDye(dye)
@@ -1569,10 +1560,10 @@ local function refreshAfterPurchase()
 	initPetSkins()
 end
 
-local function purchasePetSkin(selectedPet, selectedPetSkin)
+local function purchasePetSkin(selectedPet, locSelectedPetSkin)
 	println('^o^: Purchase Pet Skin From Prematch')
 	println('selectedPet ' .. selectedPet)
-	println('selectedPetSkin ' .. selectedPetSkin)
+	println('locSelectedPetSkin ' .. locSelectedPetSkin)
 	local petInfo 				= 	LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)
 	
 	main_pregame_customization_ready:SetEnabled(0)
@@ -1584,7 +1575,7 @@ local function purchasePetSkin(selectedPet, selectedPetSkin)
 						mainUI.savedRemotely 													= mainUI.savedRemotely 									or {}
 						mainUI.savedRemotely.petBuilds 											= mainUI.savedRemotely.petBuilds 						or {}
 						mainUI.savedRemotely.petBuilds[petInfo.entityName]						= mainUI.savedRemotely.petBuilds[petInfo.entityName] 	or {}
-						mainUI.savedRemotely.petBuilds[petInfo.entityName].default_petSkin 		= petInfo['skinName' .. selectedPetSkin]
+						mainUI.savedRemotely.petBuilds[petInfo.entityName].default_petSkin 		= petInfo['skinName' .. locSelectedPetSkin]
 						mainUI.savedRemotely.petBuilds[petInfo.entityName].default_petSkinIndex	= selectedPetSkinIndex
 						SaveState()								
 					
@@ -1598,28 +1589,28 @@ local function purchasePetSkin(selectedPet, selectedPetSkin)
 				main_pregame_customization_ready:UnregisterWatchLua('GameClientRequestsUnlockPetSkin')
 			end
 	end)
-	Corral.PurchasePetSkin(petInfo.entityName, petInfo['skinName' .. selectedPetSkin])
-	println("Corral.PurchasePetSkin(" .. petInfo.entityName ..", "..petInfo['skinName' .. selectedPetSkin]..")")
+	Corral.PurchasePetSkin(petInfo.entityName, petInfo['skinName' .. locSelectedPetSkin])
+	println("Corral.PurchasePetSkin(" .. petInfo.entityName ..", "..petInfo['skinName' .. locSelectedPetSkin]..")")
 end
 
-local function promptToPurchasePetSkin(selectedPet, selectedPetSkin)
+local function promptToPurchasePetSkin(selectedPet, locSelectedPetSkin)
 	local petInfo 				= 	LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)
 	if (petInfo) then	
 		spendGemsShow(
 			function()
-				purchasePetSkin(selectedPet, selectedPetSkin)
+				purchasePetSkin(selectedPet, locSelectedPetSkin)
 				main_pregame_pet_selection_container:SetVisible(false)
 			end,
 			Translate('pet_skin_name_unlock'), 
-			TranslateOrNil('pet_skin_name_' .. petInfo.entityName .. '_' .. petInfo['skinName' .. selectedPetSkin]) or GetEntityDisplayName(petInfo.entityName),
-			petInfo['skinCost' .. selectedPetSkin], 
+			TranslateOrNil('pet_skin_name_' .. petInfo.entityName .. '_' .. petInfo['skinName' .. locSelectedPetSkin]) or GetEntityDisplayName(petInfo.entityName),
+			petInfo['skinCost' .. locSelectedPetSkin], 
 			function() loadLastValidCosmeticConfig() main_pregame_pet_selection_container:SetVisible(false) end
 		)	
 	end
 end
 
 local function purchaseSkin(postFunction, hero, name)
-	local skinTrigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..selectedSkin)
+	local skinTrigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..g_SkinSelection.selectedSkin)
 	main_pregame_customization_ready:SetEnabled(0)
 	main_pregame_customization_ready:UnregisterWatchLua('GameClientRequestsUnlockGearSet')
 	main_pregame_customization_ready:RegisterWatchLua('GameClientRequestsUnlockGearSet', function(widget, requestStatusTrigger)
@@ -1769,7 +1760,7 @@ local function updatePetPreviewPurchaseButton()
 	if (purchaseInfo.purchasingPetSkin) then
 		label:SetText(Translate('hallofheroes_unlock'))
 		button:SetCallback('onclick', function() 
-			purchasePetSkin(selectedPet, selectedPetSkin)
+			purchasePetSkin(selectedPet, g_SkinSelection.selectedPetSkin)
 		end)
 	else
 		label:SetText(Translate('general_select'))
@@ -1849,15 +1840,15 @@ readyButtonCheck = function()
 		wait(1) -- wait for triggers to update
 		local heroTrigger = LuaTrigger.GetTrigger('HeroSelectHeroList'..selectedHero)
 		local petTrigger = LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)
-		local skinTrigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..selectedSkin)
+		local skinTrigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..g_SkinSelection.selectedSkin)
 		local dyeTrigger = LuaTrigger.GetTrigger('HeroSelectHeroGearSkin'..selectedDye)
 
 		local heroOk = heroTrigger and heroTrigger.canSelect
-		local petOk = petTrigger and petTrigger.selectable and petTrigger['skinOwned'..selectedPetSkin]
+		local petOk = petTrigger and petTrigger.selectable and petTrigger['skinOwned'..g_SkinSelection.selectedPetSkin]
 		local skinOk = skinTrigger and skinTrigger.canSelect
 		local dyeOk = dyeTrigger and dyeTrigger.canSelect
 		
-		--println(tostring(selectedHero)..' '..tostring(selectedPet)..' '..tostring(selectedSkin)..' '..tostring(selectedDye))
+		--println(tostring(selectedHero)..' '..tostring(selectedPet)..' '..tostring(g_SkinSelection.selectedSkin)..' '..tostring(selectedDye))
 		--println(tostring(heroOk)..' '..tostring(petOk)..' '..tostring(skinOk)..' '..tostring(dyeOk))
 		
 		main_pregame_customization_ready:SetEnabled((heroOk and petOk) or false)
@@ -1896,7 +1887,7 @@ readyButtonCheck = function()
 		end
 		if (skinOk) and (dyeOk) and (not petOk) and petTrigger then
 			purchaseInfo.gemTotal = petTrigger.gemCost
-			purchaseInfo.purchaseString = TranslateOrNil('pet_skin_name_' .. petTrigger.entityName .. '_' .. petTrigger['skinName' .. selectedPetSkin]) or GetEntityDisplayName(petTrigger.entityName)
+			purchaseInfo.purchaseString = TranslateOrNil('pet_skin_name_' .. petTrigger.entityName .. '_' .. petTrigger['skinName' .. g_SkinSelection.selectedPetSkin]) or GetEntityDisplayName(petTrigger.entityName)
 			purchaseInfo.title = 'pet_skin_name_unlock_short'
 		end		
 		
@@ -1960,7 +1951,7 @@ main_pregame_customization_readyLabel:RegisterWatchLua('PartyStatus', function(w
 end, false, nil, 'inQueue', 'isLocalPlayerReady')
 
 local function readyUp()
-	local skinTrigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..selectedSkin)
+	local skinTrigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..g_SkinSelection.selectedSkin)
 	local dyeTrigger = LuaTrigger.GetTrigger('HeroSelectHeroGearSkin'..selectedDye)
 	libThread.threadFunc(function()
 		--PlaySound('/ui/sounds/parties/sfx_ready_self.wav')
@@ -1970,7 +1961,7 @@ local function readyUp()
 		end
 		SelectHero(LuaTrigger.GetTrigger('HeroSelectHeroList'..selectedHero).entityName)
 		local petTrigger = LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)
-		SpawnFamiliar(petTrigger.entityName, petTrigger['skinName'..(selectedPetSkin)])
+		SpawnFamiliar(petTrigger.entityName, petTrigger['skinName'..(g_SkinSelection.selectedPetSkin)])
 		SelectAvatar(skinTrigger.parentHero, skinTrigger.name)
 		SelectSkin(skinTrigger.parentHero, skinTrigger.name, dyeTrigger.name)
 		Corral.SelectPetSlot(selectedPet)
@@ -2022,7 +2013,7 @@ local function SetModel(widget, modelPath)
 end
 
 local function DisplayDyePreviewModel(skin, dye, specialEdition)
-	local skin = skin or selectedSkin
+	local skin = skin or g_SkinSelection.selectedSkin
 	local cost = {}
 	local rentalCost = {}
 	local rentalActive = false
@@ -2125,19 +2116,19 @@ local function showDye(dye)
 end
 selectDye = function(dye, dontColor, isClick)
 	dye = clamp(dye, 0, numDyes)
-	selectedAvatarDye[selectedSkin] = dye
+	g_SkinSelection.selectedAvatarDye[g_SkinSelection.selectedSkin] = dye
 	local dyeTrigger 		= LuaTrigger.GetTrigger('HeroSelectHeroGearSkin' .. dye)
-	local widget = interface:GetWidget('pregame_skin_'..selectedSkin..'_dye_color')
+	local widget = interface:GetWidget('pregame_skin_'..g_SkinSelection.selectedSkin..'_dye_color')
 	if widget and not dontColor then widget:SetColor(dyeTrigger.color1) end
 	selectedDye = dye
-	SelectSkin(dyeTrigger.parentHero, LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..selectedSkin).name, dyeTrigger.name)
+	SelectSkin(dyeTrigger.parentHero, LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..g_SkinSelection.selectedSkin).name, dyeTrigger.name)
 	readyButtonCheck()
 	showSelectedDye()
 	
 	if (dyeTrigger.canSelect) then
 		if not dontColor and isClick then
 			mainUI.savedRemotely.heroBuilds[heroEntityName]['lastDyes'] = mainUI.savedRemotely.heroBuilds[heroEntityName]['lastDyes'] or {}
-			mainUI.savedRemotely.heroBuilds[heroEntityName]['lastDyes'][selectedSkin] = {selectedDye, dyeTrigger.color1}
+			mainUI.savedRemotely.heroBuilds[heroEntityName]['lastDyes'][g_SkinSelection.selectedSkin] = {selectedDye, dyeTrigger.color1}
 			SaveState()
 			if (GetCvarBool('ui_newUISounds')) then PlaySound('/ui/sounds/launcher/sfx_hero_dye.wav') end
 		end
@@ -2148,7 +2139,7 @@ end
 
 local function populateDyes()
 	local tileWidth = getMeasurementFromString(main_pregame_customization_die_container, '48s')
-	local skinTrigger = LuaTrigger.GetTrigger("HeroSelectHeroAltAvatarList"..selectedSkin)
+	local skinTrigger = LuaTrigger.GetTrigger("HeroSelectHeroAltAvatarList"..g_SkinSelection.selectedSkin)
 	local dyeWidgets = createWidgetArrayFromTriggerSet(
 		main_pregame_customization_die_container, 'pregame_dye_template', 'HeroSelectHeroGearSkin', 
 		function(n, trigger) return trigger.name ~= "" end,
@@ -2189,11 +2180,11 @@ showSkin = function (skin)
 	end)
 end
 selectSkin = function(skin, isClick)
-	skin = clamp(skin, 0, #skinWidgets)
-	selectedSkin = skin
-	showSkin(selectedSkin)
-	local trigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..selectedSkin)
-	selectedDye = (trigger.canSelect and selectedAvatarDye[selectedSkin]) or 0
+	skin = clamp(skin, 0, #g_SkinSelection.skinWidgets)
+	g_SkinSelection.selectedSkin = skin
+	showSkin(g_SkinSelection.selectedSkin)
+	local trigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..g_SkinSelection.selectedSkin)
+	selectedDye = (trigger.canSelect and g_SkinSelection.selectedAvatarDye[g_SkinSelection.selectedSkin]) or 0
 	readyButtonCheck()
 	SelectSkin(trigger.parentHero, trigger.name, 'default')
 	local postfix = (trigger.name == trigger.parentHero) and 'default' or trigger.name
@@ -2201,7 +2192,7 @@ selectSkin = function(skin, isClick)
 	if (trigger.canSelect and isClick) then
 		lastValidSkin = skin
 		mainUI.savedRemotely.heroBuilds[heroEntityName] = mainUI.savedRemotely.heroBuilds[heroEntityName] or {}
-		mainUI.savedRemotely.heroBuilds[heroEntityName].defaultGear = selectedSkin
+		mainUI.savedRemotely.heroBuilds[heroEntityName].defaultGear = g_SkinSelection.selectedSkin
 		SaveState()
 		if (GetCvarBool('ui_newUISounds')) then PlaySound('/ui/sounds/launcher/sfx_hero_gearset.wav') end
 	end
@@ -2212,7 +2203,7 @@ selectSkin = function(skin, isClick)
 	end)
 	
 	main_pregame_dye_selection_previous:SetVisible(skin > 0)
-	main_pregame_dye_selection_next:SetVisible(skin < #skinWidgets)
+	main_pregame_dye_selection_next:SetVisible(skin < #g_SkinSelection.skinWidgets)
 end
 
 local function openDyeSelection(skin, dye, specialEdition)
@@ -2220,16 +2211,16 @@ local function openDyeSelection(skin, dye, specialEdition)
 	libThread.threadFunc(function()
 		wait(2)
 		if (GetCvarBool('ui_newUISounds')) then PlaySound('/ui/sounds/launcher/sfx_hero_dye_open.wav') end
-		DisplayDyePreviewModel(skin, selectedAvatarDye[selectedSkin], specialEdition)
+		DisplayDyePreviewModel(skin, g_SkinSelection.selectedAvatarDye[g_SkinSelection.selectedSkin], specialEdition)
 		main_pregame_dye_selection_container:SetVisible(true)
 	end)
 end
 
 main_pregame_dye_selection_previous:SetCallback('onclick', function(widget)
-	openDyeSelection(selectedSkin - 1)
+	openDyeSelection(g_SkinSelection.selectedSkin - 1)
 end)
 main_pregame_dye_selection_next:SetCallback('onclick', function(widget)
-	openDyeSelection(selectedSkin + 1)
+	openDyeSelection(g_SkinSelection.selectedSkin + 1)
 end)
 
 main_pregame_dye_selection_container:SetCallback('onhide', function(widget)
@@ -2249,7 +2240,7 @@ end)
 populateSkins = function()
 	main_pregame_customization_skin_container:ClearChildren()
 	if LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList0').parentHero == heroEntityName then
-		skinWidgets = createWidgetArrayFromTriggerSet(
+		g_SkinSelection.skinWidgets = createWidgetArrayFromTriggerSet(
 			main_pregame_customization_skin_container, 'pregame_skin_template', 'HeroSelectHeroAltAvatarList', 
 			function(n, trigger) return trigger.name ~= "" end,
 			function(n, trigger) 
@@ -2272,11 +2263,11 @@ populateSkins = function()
 					end 
 				end, 
 				onmouseover = function(n, trigger) showSkin(n) end, 
-				onmouseout = function(n, trigger) showSkin(selectedSkin) end,
+				onmouseout = function(n, trigger) showSkin(g_SkinSelection.selectedSkin) end,
 			}
 		)
 		
-		for n, _ in pairs(skinWidgets) do
+		for n, _ in pairs(g_SkinSelection.skinWidgets) do
 			
 			interface:GetWidget('pregame_skin_'..n..'_clicker'):SetCallback('onclick', function(widget)
 				local trigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..n)
@@ -2289,21 +2280,21 @@ populateSkins = function()
 				 showSkin(n)
 			end)
 			interface:GetWidget('pregame_skin_'..n..'_clicker'):SetCallback('onmouseout', function(widget)
-				showSkin(selectedSkin)
+				showSkin(g_SkinSelection.selectedSkin)
 			end)
 			
 			interface:GetWidget('pregame_skin_'..n..'_dye'):SetCallback('onmouseover', function(widget)
 				 showSkin(n)
 			end)
 			interface:GetWidget('pregame_skin_'..n..'_dye'):SetCallback('onmouseout', function(widget)
-				showSkin(selectedSkin)
+				showSkin(g_SkinSelection.selectedSkin)
 			end)			
 			
 			interface:GetWidget('pregame_skin_'..n..'_dye2'):SetCallback('onmouseover', function(widget)
 				 showSkin(n)
 			end)
 			interface:GetWidget('pregame_skin_'..n..'_dye2'):SetCallback('onmouseout', function(widget)
-				showSkin(selectedSkin)
+				showSkin(g_SkinSelection.selectedSkin)
 			end)			
 			
 			interface:GetWidget('pregame_skin_'..n..'_dye'):SetCallback('onclick', function(widget)
@@ -2312,11 +2303,11 @@ populateSkins = function()
 			interface:GetWidget('pregame_skin_'..n..'_dye2'):SetCallback('onclick', function(widget)
 				openDyeSelection(n)
 			end)
-			FindChildrenClickCallbacks(skinWidgets[n])
-			skinWidgets[n]:PushToBack()
+			FindChildrenClickCallbacks(g_SkinSelection.skinWidgets[n])
+			g_SkinSelection.skinWidgets[n]:PushToBack()
 		end
-		if (#skinWidgets > 1 and skinWidgets[0]) then
-			skinWidgets[0]:BringToFront()
+		if (#g_SkinSelection.skinWidgets > 1 and g_SkinSelection.skinWidgets[0]) then
+			g_SkinSelection.skinWidgets[0]:BringToFront()
 		end
 	end
 end
@@ -2338,7 +2329,7 @@ end, 'skinUpdate')
 ---------------------------
 
 local function DisplayPetPreviewModel(pet, skin)
-	local skin = skin or selectedPetSkin
+	local skin = skin or g_SkinSelection.selectedPetSkin
 	local pet = pet or selectedPet
 	local cost = {}
 	if (skin) then
@@ -2379,19 +2370,19 @@ local function showPetSkin(petSkin)
 end
 
 selectPetSkin = function(petSkin, isUserClick, preview)
-	selectedPetSkin = petSkin
-	showPetSkin(selectedPetSkin)
+	g_SkinSelection.selectedPetSkin = petSkin
+	showPetSkin(g_SkinSelection.selectedPetSkin)
 	local petTrigger = LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)
-	SpawnFamiliar(petTrigger.entityName, petTrigger['skinName'..(selectedPetSkin)])
+	SpawnFamiliar(petTrigger.entityName, petTrigger['skinName'..(g_SkinSelection.selectedPetSkin)])
 	readyButtonCheck()
-	if (LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)['skinOwned'..(selectedPetSkin)] and not preview) then
+	if (LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)['skinOwned'..(g_SkinSelection.selectedPetSkin)] and not preview) then
 		lastValidPetSkin = petSkin
 		mainUI.savedRemotely = mainUI.savedRemotely or {}
 		mainUI.savedRemotely.petLastSkins = mainUI.savedRemotely.petLastSkins or {}
-		mainUI.savedRemotely.petLastSkins[petTrigger.entityName] = selectedPetSkin
+		mainUI.savedRemotely.petLastSkins[petTrigger.entityName] = g_SkinSelection.selectedPetSkin
 		SaveState()	
 	elseif (isUserClick) then
-		DisplayPetPreviewModel(selectedPet, selectedPetSkin)
+		DisplayPetPreviewModel(selectedPet, g_SkinSelection.selectedPetSkin)
 		main_pregame_pet_selection_container:SetVisible(true)
 		if (GetCvarBool('ui_newUISounds')) then PlaySound('/ui/sounds/launcher/sfx_pet_skin_select.wav') end
 	end
@@ -2400,16 +2391,16 @@ selectPetSkin = function(petSkin, isUserClick, preview)
 end
 
 main_pregame_pet_selection_previous:SetCallback('onclick', function(widget)
-	if (selectedPetSkin == 1) then
+	if (g_SkinSelection.selectedPetSkin == 1) then
 		selectPetSkin(2, true, true)
-	elseif (selectedPetSkin == 3) then
+	elseif (g_SkinSelection.selectedPetSkin == 3) then
 		selectPetSkin(1, true, true)
 	end
 end)
 main_pregame_pet_selection_next:SetCallback('onclick', function(widget)
-	if (selectedPetSkin == 2) then
+	if (g_SkinSelection.selectedPetSkin == 2) then
 		selectPetSkin(1, true, true)
-	elseif (selectedPetSkin == 1) then
+	elseif (g_SkinSelection.selectedPetSkin == 1) then
 		selectPetSkin(3, true, true)
 	end
 end)
@@ -2430,7 +2421,7 @@ for n = 1, 3 do
 		showPetSkin(n)
 	end)
 	interface:GetWidget("pregame_pet_skin_"..n):SetCallback('onmouseout', function(widget)
-		showPetSkin(selectedPetSkin)
+		showPetSkin(g_SkinSelection.selectedPetSkin)
 	end)
 end
 FindChildrenClickCallbacks(interface:GetWidget("main_pregame_customization_pet_skin_container"))
@@ -2452,19 +2443,19 @@ end)
 
 
 loadLastValidCosmeticConfig = function()
-	if (selectedSkin == lastValidSkin) then
+	if (g_SkinSelection.selectedSkin == lastValidSkin) then
 		if (selectedDye == lastValidDye) then
 		
-		elseif (lastValidDye) and (selectedSkin) and (interface:GetWidget('pregame_skin_'..selectedSkin..'_dye_color')) then
+		elseif (lastValidDye) and (g_SkinSelection.selectedSkin) and (interface:GetWidget('pregame_skin_'..g_SkinSelection.selectedSkin..'_dye_color')) then
 			local dyeTrigger 		= LuaTrigger.GetTrigger('HeroSelectHeroGearSkin' .. lastValidDye)
 			if (dyeTrigger) then
-				interface:GetWidget('pregame_skin_'..selectedSkin..'_dye_color'):SetColor(dyeTrigger.color1)	
+				interface:GetWidget('pregame_skin_'..g_SkinSelection.selectedSkin..'_dye_color'):SetColor(dyeTrigger.color1)	
 			end
 		end
 	else
 		local dyeTrigger 		= LuaTrigger.GetTrigger('HeroSelectHeroGearSkin0')
-		if (dyeTrigger) and (selectedSkin) and (interface:GetWidget('pregame_skin_'..selectedSkin..'_dye_color')) then 
-			interface:GetWidget('pregame_skin_'..selectedSkin..'_dye_color'):SetColor(dyeTrigger.color1)	
+		if (dyeTrigger) and (g_SkinSelection.selectedSkin) and (interface:GetWidget('pregame_skin_'..g_SkinSelection.selectedSkin..'_dye_color')) then 
+			interface:GetWidget('pregame_skin_'..g_SkinSelection.selectedSkin..'_dye_color'):SetColor(dyeTrigger.color1)	
 		end
 	end
 	
@@ -2525,11 +2516,11 @@ loadHeroPrefs = function()
 		return -- Not loaded database/triggers
 	end
 	-- Load dye settings
-	selectedAvatarDye = {}
+	g_SkinSelection.selectedAvatarDye = {}
 	local savedPrefs = mainUI.savedRemotely.heroBuilds[heroEntityName]
 	if (savedPrefs and savedPrefs['lastDyes']) then
 		for k, v in pairs(savedPrefs['lastDyes']) do
-			selectedAvatarDye[tonumber(k)] = v[1]
+			g_SkinSelection.selectedAvatarDye[tonumber(k)] = v[1]
 		end
 	end
 	
@@ -2677,8 +2668,8 @@ widget.main_pregame_ready_container:RegisterWatchLua("PartyStatus", function(wid
 		wait(1)
 		if (LuaTrigger.GetTrigger('PartyStatus').inQueue and LuaTrigger.GetTrigger('HeroSelectMode').mode ~= 'captains') then
 			mainUI.Pregame.inQueue = true
-			if (selectedPet) and (selectedPet >= 0) and (selectedPetSkin) then
-				GetWidget('main_pregame_ready_pet'):SetTexture(LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)['skinIcon'..(selectedPetSkin)])
+			if (selectedPet) and (selectedPet >= 0) and (g_SkinSelection.selectedPetSkin) then
+				GetWidget('main_pregame_ready_pet'):SetTexture(LuaTrigger.GetTrigger('HeroSelectFamiliarList'..selectedPet)['skinIcon'..(g_SkinSelection.selectedPetSkin)])
 			end
 			GetWidget('main_pregame_ready_gearset'):SetTexture(string.gsub(LuaTrigger.GetTrigger('HeroSelectLocalPlayerInfo').heroSelectPreview, 'heroselect', 'gearicon'))
 			if (selectedDye) then
@@ -2729,8 +2720,8 @@ createSimpleButton('main_pregame_ready_start_over_button', 'main_pregame_ready_s
 	if (GetCvarBool('ui_newUISounds')) then PlaySound('/ui/sounds/launcher/sfx_unready.wav') end
 	actuallySelectedHero = false
 	actuallySelectedPet = false
-	selectedSkin = 0
-	selectedPetSkin = 1
+	g_SkinSelection.selectedSkin = 0
+	g_SkinSelection.selectedPetSkin = 1
 	state = 1
 	petSelection = false
 	refreshBreadcrumbs()
@@ -2890,8 +2881,8 @@ function InitSelectionTriggers() -- These should be what are made into a trigger
 	selectedHero = -1
 	selectedPet = -1
 	setSelectedToFirstSelectablePet()
-	selectedSkin = 0
-	selectedPetSkin = 1
+	g_SkinSelection.selectedSkin = 0
+	g_SkinSelection.selectedPetSkin = 1
 	state = 1
 	petSelection = false
 	initSelectionTriggersThread = libThread.threadFunc(function()
