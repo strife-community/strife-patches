@@ -1,0 +1,2083 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="game" scenewidth="100%" sceneheight="100%" luatable="1" onloadlua="LoadState()">
+	<!--
+	===========================	
+	Includes / Triggers
+	===========================
+	-->	
+	<lua file="/ui/new_game/cvars_game.lua"/>
+	<lua file="/ui/game/triggers/triggers_game.lua"/>
+	
+	<trigger name="mapWidgetVis_minimap_show"/>
+	<trigger name="mapWidgetVis_minimap_hide"/>
+	
+	<!--<lua file="/ui/_scripts/web_requests.lua"/>-->
+
+	<trigger name="goldReportVis"/>
+	<trigger name="gameToggleMenu"/>
+	<trigger name="gameToggleScoreboard"/>
+
+	<!-- Widget visibility controls, specifically for maps -->
+	<trigger name="mapWidgetVis_abilityBarPet_show"/>
+	<trigger name="mapWidgetVis_abilityBarPet_hide"/>
+
+	<trigger name="mapWidgetVis_pushBar_show"/>
+	<trigger name="mapWidgetVis_heroInfos_show"/>
+	<trigger name="mapWidgetVis_shopItemList_show"/>
+	<trigger name="mapWidgetVis_courierButton_show"/>
+	<trigger name="mapWidgetVis_portHomeButton_show"/>
+	<trigger name="mapWidgetVis_shopQuickSlots_show"/>
+	<trigger name="mapWidgetVis_abilityPanel_show"/>
+	<trigger name="mapWidgetVis_arcadeText_show"/>
+	<trigger name="mapWidgetVis_kills_show"/>
+	<trigger name="mapWidgetVis_tdm_show"/>
+	<trigger name="mapWidgetVis_inventory_show"/>
+
+	<trigger name="mapWidgetVis_pushBar_hide"/>
+	<trigger name="mapWidgetVis_heroInfos_hide"/>
+	<trigger name="mapWidgetVis_shopItemList_hide"/>
+	<trigger name="mapWidgetVis_courierButton_hide"/>
+	<trigger name="mapWidgetVis_portHomeButton_hide"/>
+	<trigger name="mapWidgetVis_shopQuickSlots_hide"/>
+	<trigger name="mapWidgetVis_abilityPanel_hide"/>
+	<trigger name="mapWidgetVis_arcadeText_hide"/>
+	<trigger name="mapWidgetVis_kills_hide"/>
+	<trigger name="mapWidgetVis_tdm_hide"/>
+	<trigger name="mapWidgetVis_inventory_hide"/>
+
+	<trigger name="mapWidgetVis_shopClickable_enable"/>
+	<trigger name="mapWidgetVis_shopClickable_disable"/>
+	
+	<trigger name="mapWidgetVis_shopBootsGlow_enable"/>
+	<trigger name="mapWidgetVis_shopBootsGlow_disable"/>
+	
+	<trigger name="mapWidgetVis_buildControls_enable"/>
+	<trigger name="mapWidgetVis_buildControls_disable"/>
+	
+	<trigger name="mapWidgetVis_shopRightClick_enable"/>
+	<trigger name="mapWidgetVis_shopRightClick_disable"/>
+	
+	<trigger name="mapWidgetVis_canToggleShop_enable"/>
+	<trigger name="mapWidgetVis_canToggleShop_disable"/>
+
+	<trigger name="inventoryTipSimpleShow"/>
+	<trigger name="inventoryTipSimpleHide"/>
+
+	<trigger name="itemTipShow"/>
+	<trigger name="itemTipHide"/>
+
+	<trigger name="gameShowSkills"/>
+	<trigger name="gamePurchaseCurrentValidBookmark"/>
+	<trigger name="gameShowChatWheel"/>
+	
+	<!-- Show chat history (these are hardcoded for now) -->
+	<trigger name="chatHistoryVisible"/>
+
+	<!--
+	===========================	
+	Styles
+	===========================
+	-->
+	<!-- Core Styles -->
+	<childinterface file="/ui/game/shared/game_styles.interface"/>
+	
+	<style name="gameIcon"					  width="2.2h"    height="2.2h" />
+	<style name="gameMagnifier"				  width="2h"      height="2h"	align="left"   valign="bottom" x="-0.1h" y="0.1h"  noclick="1" texture="/ui/elements:magnifying_glass" />
+	<style name="gameCrafted"												align="left"   valign="top"	   x="-0.3h" y="-0.3h" noclick="1" texture="/ui/shared/textures/itemtype_crafted.tga" 				style="gameIcon" />
+	<style name="gameOnCourier" 			  								align="left"   valign="bottom" x="0.1h"  y="0.1h"  noclick="1" texture="/ui/shared/shop/textures/shop_hoverIcon_courier.tga" 	style="gameIcon" />
+	<style name="gameRecently"			  									align="right"  valign="bottom" x="0.1h"  y="-0.1h" noclick="1" texture="/ui/shared/textures/pack.tga" 							style="gameIcon" />
+	
+	<style name="gameCraftedBorder"			  width="-0.6h"   height="-0.6h" align="center" valign="center" 				   noclick="1" texture="/ui/elements:rounded_bg_white" borderthickness="0.3h" color="invisible" bordercolor="#9a0fb4"/>
+	
+	<style name="generalFrameBG"																							   noclick="1" color="#292929"   borderthickness="0.2h" />
+	<style name="generalFrameBorder"																						   noclick="1" color="invisible" borderthickness="0.2h" bordercolor="#515151" />
+	<style name="generalShadow" 			  width="+2h" 	  height="+2h"  align="center" valign="center" 					   noclick="1" color="invisible" borderthickness="1.5h" bordercolor="0 0 0 0.7" texture="/ui/elements:squareglow" />
+	
+	<style name="gameCooldownSquare"		      																			   noclick="1" square="1" value="0" texture="/ui/shared/textures/cooldown_border.tga" start="270" end="-90" />
+	<style name="gameMinimapGoldContainer" 	  width="75@" 	  height="75%" 				   valign="center" 					   noclick="1" />
+	
+	<style name="gameVerticalBarBase"  		  width="100%"    height="100%"	align="right"  valign="top"				 y="0.5h"  noclick="1" />
+	<style name="gameVerticalBarBlank"  	  width="95%"     height="98%"	align="center" valign="center" x="0.1h"			   noclick="1" color="#202825" />
+	<style name="gameVerticalBar"	 						  height="50%"				   valign="bottom"					   noclick="1" color="#00d8ff" />
+	
+	<style name="gameHorizontalBarBase"  	  width="100%"    height="100%"	align="left"   valign="top"				 		   noclick="1" />
+	<style name="gameHorizontalBarBlank"  	  width="90%"     height="100%"	align="center" valign="top"    			y="0.2h"   noclick="1" color="#202825" />
+	<style name="gameHorizontalBar"	 		  width="50%"					align="left"									   noclick="1" color="#00d8ff" />
+	
+	<style name="gameManaTimerContainer"	  width="65%"     height="25%"  align="center" valign="bottom" 		     y="-10%"  noclick="1" color="#333333" texture="/ui/elements:rounded_bg_white" borderthickness="0.35h" passivechildren="1" visible="0"/>
+	
+	<!-- Ally/Enemy Events -->
+	<style name="gameAllyEventContainers"	  width="50%"	  height="5h"   align="left"				 x="-7h"			   noclick="1" />
+	<style name="gameEnemyEventContainers"	  width="50%"	  height="5h"   align="right"				 x="7h"			       noclick="1" />
+	<style name="playerDisconnectIcon" 		  width="80%" 	  height="80@"  align="center" valign="center" 					   noclick="1" texture="/ui/elements:disconnect" />
+	<style name="playerLoadIcon"  			  width="60%" 	  height="60@"  align="center" valign="center" 					   noclick="1" texture="/ui/elements:icon_loading" />
+	<style name="playerDeadIcon" 		 	  width="42%" 	  height="42@"  valign="bottom"  			 x="-15%" 	 y="18%"   noclick="1" texture="/ui/game/unit_frames/textures/dead.tga" />
+	
+	<!-- Timers -->
+	<style name="gameTimersContainers"		  width="8h"	  height="8h"   align="center"									   noclick="1" />
+	<style name="gameTimer"													align="center"							 y="-0.1h" noclick="1" color="#a0c1c7" font="maindyn_14" fitx="1" textvalign="center" outline="1" outlinecolor="black" />
+	
+	<!-- Target/Player Stats Styles-->
+	<style name="gameTargetHero_level"		  width="50@" 	  height="50%" 								 x="-15%"    y="-5%"   noclick="1" texture="/ui/shared/textures/decal_level.tga" />
+	<style name="gameTargetStatBar"			  width="80%" 	  height="95%"  align="center" valign="top" 			 y="-5%"   noclick="1" />
+	<style name="gameNeutralStatBar"		  width="80%" 	  height="40%"  align="center" valign="bottom" 			 y="-20%"  noclick="1" />
+	
+	<style name="gameTargetStatsContainers"   width="16.5h"   height="26.45h"  			   									   noclick="1" />
+	<style name="gameNeutralStatsContainers"  width="16.5h"   height="14h"  			   									   noclick="1" />
+	<style name="gamePlayerStatsContainers"   width="16.5h"   height="18h" 					  		 	  					   noclick="1" />
+	
+	<style name="gameStat_textBig"																							   			   font="maindyn_16" fitx="1" fity="1" textvalign="center" outline="1" outlinecolor="black" />
+	<style name="gameTargetStat_name"						  				align="center"												   color="#ea2323"   style="gameStat_textBig"/>
+	<style name="gameNeutralStat_name"						  height="30%"	align="center"												   color="#ea2323"   style="gameStat_textBig"/>
+	<style name="gameStat_kills"													  										   			   color="#ffffff"   style="gameStat_textBig"/>
+	<style name="gameStat_assists"													  											   		   color="#b4cdd1"   style="gameStat_textBig"/>
+	<style name="gameStat_deaths"													  											   		   color="#ea2323"   style="gameStat_textBig"/>
+	<style name="gameStat_dash"													  										   				   color="#19384e"   style="gameStat_textBig"/>
+	
+	<style name="gamePlayerStat_gold"													  									   noclick="1" font="maindyn_18" fitx="1" textvalign="center" outline="1" outlinecolor="black" color="#ffa800" />
+	<style name="gameStatDifference"		  width="80%"	  height="80@"  align="left" 	valign="top" 	x="-0.3h" y="-0.3h" noclick="1" />
+	
+	<style name="gameStat_textSM" 																		    x="4.5h"		   noclick="1" font="maindyn_12" fitx="1" textvalign="center" outline="1" outlinecolor="black" />
+	<style name="gameStat_icon" 		  	  width="80@"	  height="80%"  align="left"    valign="center" x="2h"			   noclick="1" />
+	<style name="gameStatPower_icon"  													  									  	   		   color="#ffee5f"   texture="/ui/game/shared/textures/herostat_power.tga" style="gameStat_icon"/>
+	<style name="gameStatPower_text" 													  									 	  		   color="#ffee5f"   style="gameStat_textSM"/>
+	<style name="gameStatAttackSpeed_icon"  													  									  	   color="#809ca1"   texture="/ui/game/shared/textures/herostat_dps.tga" style="gameStat_icon" />
+	<style name="gameStatAttackSpeed_text" 													  							  		 		   color="#809ca1"   style="gameStat_textSM" />
+	<style name="gameStatAbilityDamage_icon"  													  									  	   color="#00e9db"   texture="/ui/game/shared/textures/herostat_dps.tga" style="gameStat_icon" />
+	<style name="gameStatAbilityDamage_text" 													  								   		   color="#00e9db"   style="gameStat_textSM" />
+	<style name="gameStatAttackDamage_icon"  													  									  	   color="#809ca1"   texture="/ui/game/shared/textures/herostat_power.tga" style="gameStat_icon" />
+	<style name="gameStatAttackDamage_text" 													  								   		   color="#809ca1"   style="gameStat_textSM" />
+	<style name="gameStatArmor_icon"  													  											  	   color="#fe7285"   texture="/ui/game/shared/textures/herostat_armor.tga" style="gameStat_icon" />
+	<style name="gameStatArmor_text" 													  										   		   color="#fe7285"   style="gameStat_textSM" />
+	<style name="gameStatMitigation_icon"  													  										  	   color="#fe7285"   texture="/ui/game/shared/textures/herostat_armor.tga" style="gameStat_icon" />
+	<style name="gameStatMitigation_text" 													  									   		   color="#fe7285"   style="gameStat_textSM" />
+	<style name="gameStatMovementSpeed_icon"  													  									  	   color="#809ca1"   texture="/ui/shared/textures/itemtype_boots.tga" style="gameStat_icon" />
+	<style name="gameStatMovementSpeed_text" 													  								   		   color="#809ca1"   style="gameStat_textSM" />
+	<style name="gameStatMagicArmor_icon"  													  										  	   color="#af8fff"   texture="/ui/game/shared/textures/herostat_magicarmor.tga" style="gameStat_icon" />
+	<style name="gameStatMagicArmor_text" 													  									   		   color="#af8fff"   style="gameStat_textSM" />
+	<style name="gameStatResistance_icon"  													  										  	   color="#af8fff"   texture="/ui/game/shared/textures/herostat_magicarmor.tga" style="gameStat_icon" />
+	<style name="gameStatResistance_text" 													  									   		   color="#af8fff"   style="gameStat_textSM" />
+	<style name="gameStatGPM_icon"  		  width="60@"	  height="60%"  align="left"    valign="center" x="2h"			   noclick="1" 				     texture="/ui/shared/textures/gold_coins.tga" />
+	<style name="gameStatGPM_text" 													  											   		   color="#809ca1"   style="gameStat_textSM" />
+	
+	<!-- Inventory Styles -->
+	<style name="gameInventoryAnimation"		 			  height="15h"					valign="bottom" x="16.5h" y="-1h"  noclick="1" />
+	<style name="gameInventoryContainers"		 			  								valign="bottom" 				   noclick="1" float="right"   padding="0.6h" grow="1" regrow="1" growinvis="0" />
+	<style name="gameInventoryColumn"		  												valign="bottom" 				   noclick="1" float="bottom"  padding="0.6h" grow="1" regrow="1" growinvis="0" />
+	<style name="gameInventoryColumn_SM"	  width="4.05h" 														  y="-0.6h"			   style="gameInventoryColumn" />
+	<style name="gameInventoryColumn_LG169"	  width="100%" 															  y="-0.6h"			   style="gameInventoryColumn" />
+	<style name="gameInventoryColumn_LG54"	  width="100%" 															  y="-0.6h"			   style="gameInventoryColumn" />
+	<style name="gameItemIconContainer" 	 																			       noclick="1" hmargin="0.4h"  vmargin="0.4h" />
+	
+	<style name="gameItemBase" 				  width="70@" 	  height="70%"  align="center"  valign="center" 				   noclick="1" color="1 1 1 0.05" />
+	
+	<style name="gameCharges"												align="center"				   x="-0.1h" y="-0.1h" noclick="1" color="#ffffff" font="maindyn_10" fitx="1" textvalign="center" outline="1" outlinecolor="0 0 0 0.5"/>
+	
+	<!-- Health/Mana Styles -->
+	<style name="gameHealthContainers"		  width="17h"     height="18h"					valign="bottom"			  		   noclick="1" />
+	<style name="gameManaContainers"		  width="17h"     height="18h"					valign="bottom"			  		   noclick="1" />
+	
+	<style name="gameOrb"					  width="67@"     height="67%"  			    valign="bottom" 		   		   noclick="1" texture="/ui/shared/textures/orb_container.tga" />
+	<style name="gameOrbHealth"												align="right" 							  	  		  	   	   style="gameOrb"/>
+	<style name="gameOrbMana"												align="left"  							  	  		  	   	   style="gameOrb"/>
+	
+	<style name="gameOrbFill"				  width="9.5h"    height="9.5h" align="center"  valign="bottom" 		 y="-0.4h" noclick="1" />
+	<style name="gameOrbHealthFill"											   											  	  		  	   texture="/ui/shared/textures/orb_fill_health.tga" style="gameOrbFill" />
+	<style name="gameOrbManaFill"											 											  	  		  	   texture="/ui/shared/textures/orb_fill_mana.tga" style="gameOrbFill"/>
+	
+	<style name="gameOrbFillEffect"			  width="11h"     height="11h"  align="center"  valign="bottom"          y="0.4h"  noclick="1" />
+	<style name="gameOrbHealthFillEffect"																								   effect="/ui/_effects/new_interface/liquid_gold.effect" style="gameOrbFillEffect" />
+	<style name="gameOrbManaFillEffect"																									   effect="/ui/_effects/new_interface/liquid_blue.effect" style="gameOrbFillEffect" />
+	
+	<style name="gameOrbEdgeEffect"  						  height="7h"   align="center"  valign="top" 			 y="-3.7h" noclick="1" />
+	<style name="gameOrbHealthEdgeEffect" 																								   texture="/ui/shared/textures/orb_edge_health.tga" style="gameOrbEdgeEffect"/>
+	<style name="gameOrbManaEdgeEffect" 																								   texture="/ui/shared/textures/orb_edge_mana.tga" style="gameOrbEdgeEffect"/>
+	
+	<style name="gameOrbSheen" 												align="center"  valign="center"					   noclick="1" texture="/ui/shared/textures/orb_sheen.tga"/>
+	
+	<style name="gameOrbGrass" 				  width="2.5h"    height="2.5h" 			    valign="bottom"			 y="-3h"   noclick="1" texture="/ui/shared/textures/grass.tga" />
+	<style name="gameOrbHealthGrass"										align="left"				  x="-0.5h"					 	   style="gameOrbGrass" />
+	<style name="gameOrbManaGrass"											align="right"				  x="0.5h"					 	   hflip="1" style="gameOrbGrass" />
+	
+	<style name="gameOrbGrass2" 			  width="4.5h"    height="4.5h" 			    valign="bottom"		 			   noclick="1" texture="/ui/shared/textures/grass.tga" />
+	<style name="gameOrbHealthGrass2"										align="right"				  x="1h"					 	   hflip="1" style="gameOrbGrass2" />
+	<style name="gameOrbManaGrass2"											align="left"				  x="-1h"					 	   style="gameOrbGrass2" />
+	
+	<style name="gameOrbSign"				  width="70@"     height="35%"  			   	valign="bottom" 		   		   noclick="1" texture="/ui/shared/textures/decal_sign.tga"/>
+	<style name="gameOrbHealthSign"											align="left"   							 	  		  	   	   hflip="1" style="gameOrbSign" />
+	<style name="gameOrbManaSign"											align="right" 							 	  		  	   	   hflip="1" style="gameOrbSign" />
+	
+	<style name="gameOrbTextContainer"						  height="68%"  align="center"  valign="center" 				   noclick="1" float="right" padding="0.2h" grow="1" regrow="1" />
+	<style name="gameOrbHealthTextContainer"															  x="0.5h" y="0.1h"	 			   style="gameOrbTextContainer" />
+	<style name="gameOrbManaTextContainer"																  x="0.5h"			 			   style="gameOrbTextContainer" />
+	
+	<style name="gameOrbText"				  height="100%"   																   noclick="1" fitx="1" textvalign="bottom" outline="1" outlinecolor="black" />
+	<style name="gameOrbHealthTotal"		  																							   color="#af8300" font="maindyn_10" style="gameOrbText" />
+	<style name="gameOrbManaTotal"			  																							   color="#007892" font="maindyn_10" style="gameOrbText" />	
+	<style name="gameOrbHealthCurrent"		  																							   color="#f5f121" font="maindyn_14" style="gameOrbText" />
+	<style name="gameOrbManaCurrent"		  																							   color="#4cf1f7" font="maindyn_14" style="gameOrbText" />
+	
+	<!-- Spell Effect Styles -->
+	<style name="gameSpellContainers"					  											       x="3h"			   noclick="1" float="right"   padding="0.3h"/>
+	
+	<!-- XP Styles -->
+	<style name="gameXPContainers"						      height="4.14h"												   noclick="1" />
+	
+	<style name="gameXPLeft" 		 		   width="6h" 	  height="80%"				   valign="center" x="-1.5h"   		   noclick="1" />
+	<style name="gameXPLeftDecal" 			   width="300@"   height="140%" align="center" valign="center" 					   noclick="1" texture="/ui/shared/textures/xp_bar_l.tga" />
+	<style name="gameXPTextContainer" 						  height="100%" align="center" valign="center" x="-0.3h" y="0h" noclick="1" float="right" padding="0.4h" grow="1" regrow="1"/>
+	<style name="gameLevelText"				  				  height="100%"   												   noclick="1" fitx="1" textvalign="center" outline="1" />
+	<style name="gameLevelTotal"		  																							       font="maindyn_11" style="gameLevelText" />
+	<style name="gameLevelCurrent"			  																							   font="maindyn_14" style="gameLevelText" />
+	
+	<style name="gameXPFillContainer" 		   width="100%"   height="70%" 				   valign="center" 					   noclick="1" texture="/ui/shared/textures/xp_bar_c.tga" float="right"/>
+	<style name="gameXPFill"								  height="100%" 			   valign="center"  x="0h"  y="0h"	   noclick="1" clip="1" />
+	<style name="gameXPEnd"					   width="100@"   height="100%"  												   noclick="1" visible="1" sticky="1" />
+	
+	<style name="gameXPFillDecal"			   width="50h"    height="100%" align="left"   valign="center" 					   noclick="1" texture="/ui/shared/textures/xp_bar_fill.tga" />
+	<style name="gameXPFillDecal_glowEnd" 	   width="100@"   height="100%" 								x="-50%"		   noclick="1" texture="/ui/shared/textures/xp_bar_end.tga" />
+	<style name="gameXPFillGained_glowEnd" 	   width="100@"   height="100%" 								x="-50%"		   noclick="1" texture="/ui/shared/textures/xp_bar_gained_end.tga" />
+	
+	<style name="gameXPMax"					   width="10h"    height="100%" align="center" valign="center" 	x="-2h"	y="-0.5h" noclick="1" />
+	
+	<style name="gameXPRight" 				   width="3h" 	  height="80%"				   valign="center" 			   		   noclick="1" />	
+	<style name="gameXPRightDecal"			   width="130@"   height="130%" align="center" valign="center" 					   noclick="1"  texture="/ui/shared/textures/xp_bar_r.tga" />  
+	
+	<!-- Ability Styles -->
+	<style name="gameAbilityContainers"		 			      height="9.54h"			   									   noclick="1" float="right"   padding="0.8h"   grow="1" regrow="1" />
+	<style name="gameAbilityIconContainer" 	 																			       noclick="1" hmargin="0.2h"  vmargin="0.2h" />
+	<style name="gameAbilityInfoContainer"				      height="60%"  align="center" valign="bottom" x="-0.2h" y="-0.5h" noclick="1" float="right"   padding="0.2h"   grow="1" regrow="1" />
+	
+	<style name="gameAbilityRecharge_base"	   width="100%"   height="6h"	align="right"  valign="top"				 y="0.5h"  noclick="1" />
+	<style name="gameAbilityRecharge_inside"   width="100%"   height="90%"	align="left"   valign="center" x="0.2h"			   noclick="1" color="#202825" />
+	<style name="gameAbilityRecharge_fill"	 				  height="50%"				   valign="bottom"					   noclick="1" color="#00d8ff" />
+	
+	<style name="gameAbilityManaTimerContainer" width="65%"   height="25%"  align="center" valign="bottom" 		     y="-10%"  noclick="1" color="#333333" texture="/ui/elements:rounded_bg_white" borderthickness="0.35h" passivechildren="1" visible="0"/>
+	
+	<style name="gameAbilityIconTick_none"	   width="1.2h"   																   noclick="1" />
+	<style name="gameAbilityIconTick_complete" 				   																   noclick="1" />
+	
+	<style name="gameAbilityLevel_none"		   width="0.5h"   height="100%" 												   noclick="1" color="#000000" borderthickness="0.2h"  	 texture="/ui/elements:rounded_bg_white" />
+	<style name="gameAbilityLevel_leveled"	   width="100%"   height="100%" 												   noclick="1" color="#35e1fe" borderthickness="0.2h"  	 texture="/ui/elements:rounded_bg_white" visible="0"/>
+	
+	<!-- Minimap Styles-->
+	<style name="gameMinimapContainers" 	   width="27h"    height="27h"  align="right"  valign="bottom" x="1.7h"  y="1.4h"  noclick="1" />
+	<style name="gameMinimapHeader" 		   width="100%"   height="25@"  align="right" 				   x="0" 	 y="-4.3h" noclick="1" />
+	<style name="gameMinimapButtonContainer" 			      height="100%" align="right"  valign="center" x="-2.5h" y="0h"    noclick="1" float="right"   padding="0.6h"   grow="1" />
+	<style name="gameMinimapInset" 			 													 	       x="-0.1h" y="-0.1h" noclick="1" hmargin="0.9h"  vmargin="0.9h" />
+	
+	<!-- Scoreboard Styles -->
+	<style name="gameScoareboardContainer"	   width="90h"    height="55h"  align="center" valign="top"				 y="12%"   noclick="1" />
+	
+	<style name="gameBannerAlly"																							   noclick="1" color="#00cd20" />
+	<style name="gameBannerEnemy"																							   noclick="1" color="#a10101" />
+	<style name="gameBannerLogo"			   width="80%"	  height="80@"  align="center" valign="center"			 y="-2%"   noclick="1" color="1 1 1 0.3" />	
+	<style name="gameBannerTeam"																					 y="20%"   noclick="1" textalign="center" fity="1" font="maindyn_11" />
+	<style name="gameBannerTeamAlly"																									   color="#002306" style="gameBannerTeam" />
+	<style name="gameBannerTeamEnemy"																									   color="#150000" style="gameBannerTeam" />
+	
+	<style name="gameBannerTeamName" 																				 y="25%"   noclick="1" textalign="center" fity="1" font="maindyn_24" outline="1"/>
+	<style name="gameBannerTeamNameAlly"																								   color="#6df47a" outlinecolor="#00430b" style="gameBannerTeamName"/>
+	<style name="gameBannerTeamNameEnemy"																								   color="#fc8888" outlinecolor="#380000" style="gameBannerTeamName"/>
+	
+	<style name="gameBannerKills"																					 y="47%"   noclick="1" color="#ffa800" textalign="center" fity="1" font="maindyn_36" outline="1" outlinecolor="0.42 0.27 0 0.5"/>
+	<style name="gameBannerTotalKills"																				 y="68%"   noclick="1" color="#ffa800" textalign="center" fity="1" font="maindyn_11" outline="1" outlinecolor="0.42 0.27 0 0.4"/>
+	
+	<style name="gameScoreboard"			   width="-1.6h"  height="10%"  align="center"									   noclick="0" />
+	<style name="gameScoreboardRow"			   									   											   noclick="1" float="right" />
+	<style name="gameScoreboardRow_hover"	   width="100%"   height="100%" 												   noclick="1" texture="/ui/shared/textures/scoreboard_highlight01.tga" visible="0"/>
+	<style name="gameScoreboardRowAlly_hover"																							   color="0 1 0 0.5" style="gameScoreboardRow_hover" />
+	<style name="gameScoreboardRowEnemy_hover"																							   color="1 0 0 0.5" style="gameScoreboardRow_hover" />
+	
+	<style name="gameScoreboardText"																						   noclick="1" outline="1" outlinecolor="0 0 0 0.8" font="maindyn_12" textvalign="center" />
+	<style name="gameScoreboardTextSM"																						   noclick="1" outline="1" outlinecolor="0 0 0 0.4" font="maindyn_9" fity="1" textalign="left" />
+	<style name="gameScoreboardPlayerTextSM"																					  		   color="#f0e5a7" style="gameScoreboardTextSM" />
+	<style name="gameScoreboardAllyTextSM"																					  			   color="#a7f0ae" style="gameScoreboardTextSM" />
+	<style name="gameScoreboardEnemyTextSM"																					   			   color="#f0a7a7" style="gameScoreboardTextSM" />
+	
+	<style name="gameScoreboardHero"		   width="90@" 	  height="90%"  align="center" valign="center" 					   noclick="1" />
+	<style name="gameScoreboardPet"			   width="70@" 	  height="70%"  align="center" valign="center" 					   noclick="1" />
+	<style name="gameScoreboardItem"		   width="85@" 	  height="85%"  align="center" valign="center" 					   noclick="1" />
+	
+	<!-- Scoreboard Hero Border -->
+	<style name="gameScoreboardBorder"																					   	   noclick="1" color="invisible" borderthickness="0.2h" />
+	<style name="gameScoreboardBorderPlayer"																				   			   bordercolor="#484916" style="gameScoreboardBorder" />
+	<style name="gameScoreboardBorderAlly"																					   			   bordercolor="#164916" style="gameScoreboardBorder" />
+	<style name="gameScoreboardBorderEnemy"																					   			   bordercolor="#491616" style="gameScoreboardBorder" />
+	
+	<style name="gameScoreboardVOID"		   width="70@" 	  height="70%"  align="center" valign="center" 					   noclick="1" visible="0" /> 
+	<style name="gameScoreboardSpeaker"		   																				   			   texture="/ui/shared/textures/megaphone.tga" style="gameScoreboardVOID" /> 
+	<style name="gameScoreboardMute"		   					 															   			   texture="/ui/shared/textures/kick_up.tga" style="gameScoreboardVOID" /> 
+	
+	<style name="gameScoreboardGlow" 		   width="95@"    height="95%"  align="center" valign="center" 					   noclick="1" texture="/ui/shared/textures/inside_glow.tga" visible="0"/>
+	<style name="gameScoreboardGlowPlayer" 																								   color="#ffb400" style="gameScoreboardGlow" />
+	<style name="gameScoreboardGlowAlly" 																								   color="#00ce0a" style="gameScoreboardGlow" />
+	<style name="gameScoreboardGlowEnemy" 																								   color="#ce0000" style="gameScoreboardGlow" />
+	
+	<!--
+	===========================	
+	Templates
+	===========================
+	-->		
+	<!-- Core Templates -->	
+	<include file="/ui/shared/templates_elements_simple.package"/>
+	
+	<template name="ToolTip">
+		<panel noclick="1" name="TipChannelOffset" valign="bottom">
+			<panel name="{id}_tooltip" align="center" valign="bottom" width="40h" grow="1" regrow="1" noclick="1" passivechildren="1" y="-17h" visible="0">
+				<panel>
+					<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.75h" color="0 0 0 0.5" x="0.35h" y="0.35h"/>
+					<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.75h" color="#151515"/>
+					<frame texture="/ui/elements:roundframe" borderthickness="0.75h" color="#292929"/>
+				</panel>
+				<panel grow="1" regrow="1" growinvis="0" width="-1h" align="center" float="bottom" padding="0.5h">
+					<panel height="0" sticky="1" stickytoinvis="0"/>
+					<panel height="3h" sticky="1" stickytoinvis="0" >
+						<panel width="100@" height="100%">
+							<image name="{id}_tipIcon" texture="/heroes/legionnaire/icon.tga"/>
+							<frame texture="/ui/elements:rounded_corner_white" borderthickness="0.75h"  color="#151515"/>
+							<frame texture="/ui/elements:roundframe" borderthickness="0.75h" color="black"/>
+						</panel>
+						<label name="{id}_tipName" x="115@" textvalign="center" color="#FFCC00" font="maindyn_16" shadow="1" content="abilitytip_name" shadowoffset="2"/>
+						<panel align="right" height="100%" grow="1">
+							<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#0B0B0B"/>
+							<frame texture="/ui/elements:roundframe" borderthickness="0.5h" color="black"/>
+							<panel>
+								<frame texture="/ui/elements:roundframe" borderthickness="0.5h" color="#1A1A1A" width="+2" height="+2" align="center" valign="center"/>
+							</panel>
+							<panel grow="1" regrow="1" float="right" height="100%">
+								<label name="{id}_tipValue" textvalign="center" fitx="1" fitxpadding="1h" textalign="center" font="maindyn_14" shadow="1" style="whiteTextColor" content="115"/>
+							</panel>
+						</panel>
+					</panel>
+					<panel width="100%" grow="1" regrow="1" sticky="1" stickytoinvis="0" >
+						<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#0B0B0B"/>
+						<frame texture="/ui/elements:roundframe" borderthickness="0.5h" color="black"/>
+						<panel>
+							<frame texture="/ui/elements:roundframe" borderthickness="0.5h" color="#1A1A1A" width="+2" height="+2" align="center" valign="center"/>
+						</panel>
+						<label name="{id}_tipDescription" align="center" width="-1h" textvalign="center" fity="1" fitypadding="1h" wrap="1" font="subdyn_10" style="whiteTextColor" shadow="1" content="temp_abilitytip_desc"/>
+					</panel>
+					<panel height="0" sticky="1" stickytoinvis="0"/>
+					<panel height="0"/>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="key">
+		<panel name="{id}" group="{group}" y="{y}" x="{x}" width="{width=3h}" height="{height=3h}" align="{align=left}" valign="{valign=top}" color="invisible" interactive="0" visible="{visible=1}">
+			<panel name="{id}Body" align="center" valign="center" noclick="1">
+				<frame name="{id}Backer" texture="/ui/elements:key" borderthickness="0.8h" noclick="1"/>
+				<frame name="{id}Highlight" style="gameInventoryKeyHighlight"/>
+				<label name="{id}Label" font="{font=maindyn_10}" textalign="center" textvalign="bottom" outline="1" outlinecolor="#DDDDDD" x="{labelXOffset}" y="{labelYOffset=-0.3h}" color="#333333" content="{keybind}" noclick="1"
+					onshowlua="{onrefreshlua}"
+					onrefreshlua="{onrefreshlua}"
+					oneventlua="{oneventlua}"
+				/>
+			</panel>
+			
+			<button name="{id}ButtonTip" hmargin="5@" vmargin="5%" noclick="0" interactive="0" color="invisible"/>
+			<button name="{id}Button" hmargin="5@" vmargin="5%" noclick="0" interactive="0" color="invisible"
+				onloadlua="libButton2.initializeButton(self, '{id}', 'key')"
+			/>
+			<panel name="{id}Disabled" align="center" valign="center" noclick="1" visible="0">
+				<frame texture="/ui/elements:key" borderthickness="0.8h" color="0.5 0.5 0.5" noclick="1"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="simpleButtonKey">
+		<panel name="{id}Container" width="{width=100%}" height="{height=100%}" x="{x}" y="{y}" visible="{visible=1}" align="{align}" valign="{valign}" onloadlua="{onloadlua}" noclick="1" sticky="{sticky}" stickytoinvis="{stickytoinvis=1}" interactive="{interactive=0}">
+			<button color="invisible" visible="{visible=1}" name="{id}" interactive="0"
+				onloadlua="libButton2.initializeButton(self, '{id}', 'standardButton2')"
+			/>
+			
+			<panel name="{id}Body" align="center" valign="center" noclick="1" passivechildren="1">
+				<frame name="{id}Background" texture="/ui/shared/frames/stnd_btn_up.tga" borderthickness="{borderthickness=0.6h}"/>
+				<label name="{id}Label" width="-90@" height="100%" x="{labelX}" y="{labelY=-0.2h}" textalign="center" textvalign="center" style="labelBase" font="{font=maindyn_10}" color="{labelcolor=white}" content="{label=temp_button}"/>
+			</panel>
+			
+			<instance id="{id}Key" name="key" align="right" width="90@" height="85%" valign="center" x="-0.35h"
+				font="{keyFont=maindyn_10}"
+				onrefreshlua="{onrefreshlua}"
+				oneventlua="{onrefreshlua}"
+			/>
+		</panel>
+	</template>
+	
+	<template name="framed_mini_button_state">
+		<image texture="/ui/shared/textures/mini_button_stone.jpg" align="center" valign="center" noclick="1" color="{color}"/>
+		<image name="{id}_icon{type}" texture="{texture}" width="90%" height="90%" align="center" valign="center" noclick="1" />
+		
+		<!-- Cooldown - here so that it appears under the borders -->
+		<piegraph name="{id}CooldownPie{type}" style="inventoryCooldownPie" />
+		
+		<image texture="/ui/shared/textures/mini_button_stone.tga" align="center" valign="center" noclick="1" color="{color}"/>
+	</template>
+	
+	<template name="framed_mini_button">
+		<panel width="{width=3h}" height="{height=3h}" x="{x}" y="{y}" align="{align}" valign="{valign}" color="invisible" interactive="0" noclick="0">
+			<button name="{id}" color="invisible" interactive="0" noclick="0" onmouseoverlua="{onmouseoverlua}" onmouseoutlua="{onmouseoutlua}">
+				<widgetstate statename="up">
+					<instance name="framed_mini_button_state" id="{id}" type="Up" texture="{texture}" color="0.8 0.8 0.8 1" />
+				</widgetstate>
+				<widgetstate statename="over">
+					<instance name="framed_mini_button_state" id="{id}" type="Over" texture="{texture}" color="1 1 1 1" />
+					<image name="{id}Gloss" style="abilityGloss" color="1 1 1 0.3" />
+				</widgetstate>
+				<widgetstate statename="down" x="1" y="1">
+					<instance name="framed_mini_button_state" id="{id}" type="Down" texture="{texture}" color="0.6 0.6 0.6 1" />
+				</widgetstate>
+				<panel name="{id}CooldownPie" color="0 0 0 0.65" visible="0" noclick="true"  />
+				<label name="{id}Cooldown" visible="0" style="inventoryCooldownLabel" content="0" font="subdyn_11"/>
+			</button>	
+			
+			<panel visible="{hasHotKey=1}" noclick="1">
+				<instance align="center" name="key" id="{id}MiniButton" group="{tabShow}" width="{keywidth=-0.8h}" height="{keyheight=-0.8h}" y="{keyy=-3.5h}" color="red" visible="{bindShow}" labelYOffset="-0.7h" keybind="{keybind=?}" 
+					font="{keyFont=maindyn_10}"
+					onrefreshlua="{onrefreshlua}"
+					oneventlua="{onrefreshlua}"
+					/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameCooldownSquare">
+		<panel name="gameCooldownSquare{id}" width="3.5h" height="3.5h" noclick="0">
+			<panel name="gameCooldownSquare{id}Animation" align="center" valign="center" noclick="1">
+				<frame texture="/ui/elements:squareglow" width="+1.2h" height="+1.2h" align="center" valign="center" noclick="1" color="invisible" borderthickness="1h" bordercolor="0 0 0 0.5" />
+				<image name="gameCooldownSquare{id}_icon" texture="{texture}" width="94%" height="94@" align="center" valign="center" noclick="1" />
+				<frame texture="/ui/elements:rounded_bg_white" color="invisible" borderthickness="0.3h" bordercolor="#212120" noclick="1"/>
+				<piegraph name="gameCooldownSquare{id}_cooldown" style="gameCooldownSquare" noclick="1" />
+				<label name="gameCooldownSquare{id}_cooldownText" y="0.8h" font="maindyn_12" textalign="center" textvalign="bottom" color="white" outline="1" outlinecolor="black" content="{cooldown=0s}" noclick="1"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="inventoryDisplay">
+		<frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="generalFrameBG" color="#161616"/>
+		<image texture="/ui/shared/textures/itemtype_boots.tga" style="gameItemBase" visible="{isBoot}" color="1 1 1 0.02"/>
+		<image texture="/ui/shared/textures/itemtype_consumable.tga" style="gameItemBase" visible="{isConsumable}" color="1 1 1 0.02"/>
+		<image texture="/ui/shared/textures/itemtype_base.tga" style="gameItemBase" visible="{isStandard}" color="1 1 1 0.02" />
+		<image name="{id}" height="95%" width="95@" align="center" valign="center" noclick="0" visible="0" />
+		<frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="generalFrameBorder" bordercolor="#272727"/>
+		<frame name="{id}CraftedBorder"	style="gameCraftedBorder" width="+0.3h" height="+0.3h" noclick="1" texture="/ui/elements:rounded_bg_white" borderthickness="0.3h"  visible="0" />
+		<image name="{id}CraftedIcon" 				x="-25%" y="-25%"	style="gameCrafted" 						visible="0" />
+	</template>
+	
+	<template name="gameVerticalBar" >
+		<panel name="{prefix}{id}{type}BarContainer" width="{width=1h}" height="{height}" sticky="1" stickytoinvis="0" visible="0">
+			<panel style="gameVerticalBarBase">
+				<panel style="gameVerticalBarBlank">
+					<panel name="{prefix}{id}{type}Bar" style="gameVerticalBar"/>
+				</panel>
+				
+				<frame texture="/ui/shared/frames/rounded_bg_grad.tga" width="{framewidth=+0.4h}" height="{frameheight=+0.4h}" align="left" color="invisible" borderthickness="{borderthickness=0.3h}" bordercolor="#505050" noclick="1" />
+			</panel>
+		</panel>	
+	</template>
+	
+	<template name="iconOverlays">
+		<!-- Low Mana -->
+		<frame name="{prefix}{id}ManaTimerContainer" style="gameManaTimerContainer">
+			<panel style="heroInventoryManaTimerInset">
+				<panel name="{prefix}{id}ManaTimerBar" style="heroInventoryManaTimerBar" />
+				<frame style="heroInventoryManaTimerCorners"/>
+			</panel>
+		</frame>
+		<label name="{prefix}{id}ManaTimerLabel" style="heroInventoryPrimaryManaTimerLabel"/>
+		
+		<!-- Cooldown -->
+		<piegraph name="{prefix}{id}CooldownPie" style="inventoryCooldownPie"  noclick="1"/>
+		<label name="{prefix}{id}Cooldown" style="inventoryCooldownLabel" font="{font=maindyn_16}" content="0s"  noclick="1" />
+		
+		<!-- Gloss -->
+		<image name="{prefix}{id}Gloss" 					style="abilityGloss" 						visible="0"/>
+						
+		<!-- Scroll -->
+		<panel name="gameInventory{id}Scroll" 				style="recipeScrollOverlay" 				visible="0"/>
+			
+		<!-- Effects -->
+		<modelpanel name="{prefix}{id}CanLevel" 			style="levelUpModel"						visible="0" />
+		<modelpanel name="{prefix}{id}AutocastIndicator" 	style="abilityAutocastIndicator" 			visible="0" />
+		<modelpanel name="{prefix}{id}TargetingIndicator" 	style="abilityTargetingIndicator" 			visible="0" />
+		<modelpanel name="{prefix}{id}RefreshEffect" 		style="abilityReadyIndicator" 				visible="0" />
+	</template>
+	
+	<template name="frameOverlays">		
+		<panel name="{prefix}{id}Drop" 						style="heroInventoryBackpackUsableItemDrop" visible="0" />
+		<panel name="{prefix}{id}DragTarget" 				style="heroInventoryBackpackUsableItemDrop" visible="0" />
+		<image name="{prefix}{id}MagnifierMoreInfo" 		style="gameMagnifier" 						visible="0" />
+		<image name="{prefix}{id}Crafted" 					style="gameCrafted" 						visible="0" />
+		<image name="{prefix}{id}OnCourier" 				style="gameOnCourier" 						visible="0" />
+		<image name="{prefix}{id}_bag"						style="gameRecently"						visible="0" />
+	</template>
+	
+	<!-- Ally/Enemy Event Templates -->
+	<template name="gameAllyEvent">
+		<panel name="gameAllyEvent{id}" width="6h" noclick="1">
+			<panel name="gameAllyEvent{id}_animation" noclick="1">
+				<panel y="-0.25h" clip="1" noclick="1" hmargin="0.5h">
+					<image name="gameAllyEvent{id}_icon" rendermode="greyscale" align="center" valign="center" noclick="1" texture=""/>
+					<image name="gameAllyEvent{id}_void" texture="/ui/shared/textures/megaphone.tga" height="60%" width="60@" align="center" valign="center" noclick="1" />
+				</panel>
+				
+				<frame texture="/ui/shared/frames/rounded_bg_grad.tga" height="+3h" valign="bottom" color="invisible" borderthickness="0.5h" bordercolor="#505050" noclick="1">
+					<image texture="/ui/shared/textures/mini_button_corner_bl.tga" y="0.1h" x="-0.1h" height="2h" width="2h" align="left" valign="bottom" noclick="1" />
+					<image texture="/ui/shared/textures/mini_button_corner_br.tga" y="0.1h" x="0.1h" height="2h" width="2h" align="right" valign="bottom" noclick="1" />
+				</frame>
+				
+				<panel y="0.8h" height="40%" align="center" valign="bottom" float="right" padding="0.2h" grow="1" regrow="1" growinvis="0" noclick="1">
+					<image name="gameAllyEvent{id}_disconnect" texture="/ui/shared/textures/disconnect.tga" height="100%" width="100@" valign="bottom" sticky="1" stickytoinvis="0" visible="0" noclick="1"/>
+					<label name="gameAllyEvent{id}_cooldownText" font="maindyn_14" fitx="1" textalign="center" textvalign="bottom" color="white" outline="1" outlinecolor="black" content="{cooldown=0s}" sticky="1" stickytoinvis="0" noclick="1"/>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameEnemyEvent">
+		<panel name="gameEnemyEvent{id}" width="6h" noclick="1">
+			<panel name="gameEnemyEvent{id}_animation" noclick="1">
+				<panel y="-0.25h" clip="1" noclick="1" hmargin="0.5h">
+					<image name="gameEnemyEvent{id}_icon" rendermode="greyscale" align="center" valign="center" noclick="1" texture=""/>
+				</panel>
+				
+				<frame texture="/ui/shared/frames/rounded_bg_grad.tga" height="+3h" valign="bottom" color="invisible" borderthickness="0.5h" bordercolor="#505050" noclick="1">
+					<image texture="/ui/shared/textures/mini_button_corner_bl.tga" y="0.1h" x="-0.1h" height="2h" width="2h" align="left" valign="bottom" noclick="1" />
+					<image texture="/ui/shared/textures/mini_button_corner_br.tga" y="0.1h" x="0.1h" height="2h" width="2h" align="right" valign="bottom" noclick="1" />
+				</frame>
+				
+				<panel y="0.8h" height="40%" align="center" valign="bottom" float="right" padding="0.2h" grow="1" regrow="1" growinvis="0" noclick="1">
+					<image name="gameEnemyEvent{id}_disconnect" texture="/ui/shared/textures/disconnect.tga" height="100%" width="100@" valign="bottom" sticky="1" stickytoinvis="0" visible="0" noclick="1"/>
+					<label name="gameEnemyEvent{id}_cooldownText" font="maindyn_14" fitx="1" textalign="center" textvalign="bottom" color="white" outline="1" outlinecolor="black" content="{cooldown=0s}" sticky="1" stickytoinvis="0" noclick="1"/>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+	
+	<!-- Target/Player Enemy/Ally Stat Templates -->
+	<template name="gameStatDivide">
+		<panel height="0.1h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel width="80%" color="1 1 1 0.04" align="center" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="gamePlayerGold">
+		<panel name="gameHeroGoldContainer" style="gameMinimapGoldContainer" noclick="0"  onclicklua="ToggleShop()"> 			
+			<panel width="70@" height="70%" valign="center" noclick="1" >
+				<image name="gameHeroGoldContainer_static" 
+					width="160%" height="320%" y="-56%" x="-25%" valign="center" noclick="1"
+					texture="/ui/game/shared/gold/gold0000.tga"
+				/>
+				
+				<animatedimage name="gameHeroGoldContainer_anim" 
+					width="160%" height="320%" y="-56%" x="-35%" valign="center" noclick="1" visible="0"
+					fps="30" loop="0"
+					texture="/ui/game/shared/gold/gold.tga"
+					onshow="StartAnim(1);"
+					startframe="1" numframes="63" loopbackframe="-1"
+				/>
+			</panel>	
+		</panel>
+	</template>
+	
+	<template name="gameStatTopTarget">
+		<panel height="22%" noclick="1" >
+			<label name="gameTargetStat_name" style="gameTargetStat_name" content="Teewee" visible="0"/> <!-- Thinking about removing this since people often just assosiate with the hero and not the player name -->
+			
+			<!-- Base Frame -->
+			<panel style="gameTargetStatBar">
+				<frame texture="/ui/elements:rounded_bg_solid" color="0 0 0 1" align="center" valign="center" bordercolor="0 0 0 1" height="+0.4h" width="+0.4h" borderthickness="0.3h" noclick="1"/>
+			</panel>
+
+			<!-- Target Health/Mana -->
+			<panel style="gameTargetStatBar" float="bottom" padding="4%">
+				<panel height="56%" noclick="1">
+					<frame texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.3h" noclick="1" color="#090909" />
+					<frame name="gameTargetStatBarHealth" texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.3h" noclick="1" color="#01d600" />
+					<label name="gameTargetStatBarHealthText" font="maindyn_12" color="white" outline="1" outlinecolor="0 0 0 0.8" content="200" textalign="center" textvalign="center" />
+				</panel>
+				<panel height="41%" noclick="1">
+					<frame texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.2h" noclick="1" color="#090909" />
+					<frame name="gameTargetStatBarMana" texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.2h" noclick="1" color="#0881ca" />
+					<label name="gameTargetStatBarManaText" font="maindyn_10" color="white" outline="1" outlinecolor="0 0 0 0.8" content="200" textalign="center" textvalign="center" />
+				</panel>
+			</panel>
+			
+			<!-- Fade this panel in if the enemy goes into fog or out if they return from fog -->
+			<panel name="gameTarget_inFog" style="gameTargetStatBar" float="bottom" padding="4%" color="black" visible="0">
+				<panel height="56%" noclick="1">
+					<frame texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.3h" noclick="1" color="#090909" />
+				</panel>
+				<panel height="41%" noclick="1">
+					<frame texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.2h" noclick="1" color="#090909" />
+				</panel>
+				
+				<label x="0" y="0" font="maindyn_12" color="#868686" outline="1" outlinecolor="0 0 0 0.8" content="game_stats_in_fog" textalign="center" textvalign="center" />
+			</panel>
+		</panel>
+		
+		<instance name="gameStatDivide" />
+	</template>
+	
+	<template name="gameStatTopPlayer">		
+		<panel height="20%" noclick="1">
+			<!--<instance name="framed_mini_button" id="gameMinimapButtonCourier2" x="1.5h" y="0.1h" height="80%" width="80@" valign="center" hasHotKey="0" /> -->
+			<instance name="key" id="gameMinimapButtonShop" height="75%" width="75@" valign="center" x="1.5h" font="maindyn_14" labelYOffset="-0.5h"/>
+			
+			<panel x="-1.5h" height="100%" align="right" float="right" padding="0.2h" noclick="0" grow="1" regrow="1" onclicklua="ToggleShop()">
+				<label name="gamePlayerStat_gold" style="gamePlayerStat_gold" content="1,360" noclick="1" />
+				<instance name="gamePlayerGold" />
+			</panel>
+			
+			<panel x="-1.5h" height="100%" width="70%" align="right" noclick="1">
+				<modelpanel name="gameHeroGoldContainer_effect" visible="0"
+					noclick="1"
+					model="/shared/models/invis.mdf"
+					onshow="
+						SetEffect('/ui/game/shared/minimap/gold_sparks_gold_label.effect')
+					"
+					onhide="SetEffect('')"
+					cameranear="0"
+					camerafar="3000"
+					camerapos="0 1 0"	
+					height="300@" width="150%" valign="center" align="center"
+				/>	
+			</panel>
+		</panel>
+		
+		<instance name="gameStatDivide" />
+	</template>
+	
+	<template name="gameTargetStatRow">
+		<panel height="33%" float="right" noclick="1">
+			<panel name="gameTargetStat{type}" width="40%" noclick="0">
+				<panel name="gameTargetStat{type}_icon" style="gameStat{type}_icon">
+					<image name="gameStat{type}_difference" style="gameStatDifference" texture="/ui/shared/textures/plus_icon_green.tga"/>
+				</panel>
+				<label name="gameTargetStat{type}_text" style="gameStat{type}_text" content="???"/>
+			</panel>
+			
+			<panel name="gameTargetStat{type2}" width="50%" noclick="0">
+				<panel name="gameTargetStat{type2}_icon" style="gameStat{type2}_icon">
+					<panel name="gameStat{type2}_difference" style="gameStatDifference" texture="/ui/shared/textures/plus_icon_green.tga"/>
+				</panel>
+				<label name="gameTargetStat{type2}_text" style="gameStat{type2}_text" content="???"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gamePlayerStatRow">
+		<panel height="33%" float="right" noclick="1">
+			<panel name="gamePlayerStat{type}" width="40%" noclick="0">
+				<image name="gamePlayerStat{type}_icon" style="gameStat{type}_icon"/>
+				<label name="gamePlayerStat{type}_text" style="gameStat{type}_text" content="???"/>
+			</panel>
+			
+			<panel name="gamePlayerStat{type2}" width="50%" noclick="0">
+				<image name="gamePlayerStat{type2}_icon" style="gameStat{type2}_icon"/>
+				<label name="gamePlayerStat{type2}_text" style="gameStat{type2}_text" content="???"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameStatBottom">
+		<instance name="gameStatDivide" />
+		
+		<panel height="18%" noclick="1" sticky="1" stickytoinvis="0">
+			<panel x="-0.5h" height="100%" align="center" float="right" padding="0.3h" sticky="1" stickytoinvis="0" noclick="1" grow="1" regrow="1" growinvis="0" >
+				<label name="game{type}Stat_kills_text" style="gameStat_kills" sticky="1" stickytoinvis="0"/>
+				<label style="gameStat_dash" content="-" sticky="1" stickytoinvis="0"/>
+				<label name="game{type}Stat_assists_text" style="gameStat_assists" sticky="1" stickytoinvis="0"/>
+				<label style="gameStat_dash" content="-" sticky="1" stickytoinvis="0" visible="{hasAssists}" />
+				<label name="game{type}Stat_deaths_text" style="gameStat_deaths" sticky="1" stickytoinvis="0" visible="{hasAssists}"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameStatContainer">
+		<panel x="{x}" y="1h" float="bottom" padding="0.2h" noclick="1">
+			<instance name="gameStatTop{type}" type="{type}" hasAssists="{hasAssists}" />
+
+			<panel name="game{type}StatPanel" height="46%" float="bottom" noclick="0">				
+				<instance name="game{type}StatRow" type="Power"  		type2="AttackSpeed" />
+				<instance name="game{type}StatRow" type="Mitigation" 		type2="AttackDamage" />
+				<instance name="game{type}StatRow" type="Resistance"	type2="MovementSpeed" />
+			</panel>
+
+			<panel width="100%" height="50%" visible="{showItems=0}">
+				<panel x="3%"  width="27%" height="57%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item2" isStandard="1" />
+					</panel>
+				</panel>
+				<panel x="22%"  width="27%" height="57%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item3" isStandard="1" />
+					</panel>
+				</panel>
+				<panel x="41%" width="27%" height="57%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item4" isStandard="1" />
+					</panel>
+				</panel>
+				<panel x="3%" y="50%" width="27%" height="57%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item5" isStandard="1" />
+					</panel>
+				</panel>
+				<panel x="22%" y="50%" width="27%" height="57%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item6" isStandard="1" />
+					</panel>
+				</panel>
+				<panel x="41%" y="50%" width="27%" height="57%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item7" isStandard="1" />
+					</panel>
+				</panel>
+				<panel x="62%" y="0%" width="34%" height="73%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item1" isBoot="1" />
+					</panel>
+				</panel>
+				<panel x="63%" y="71%" width="18.5%" height="37%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item8" isStandard="1" />
+					</panel>
+				</panel>
+				<panel x="75.5%" y="71%" width="18.5%" height="37%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="game{type}StatRow_item9" isStandard="1" />
+					</panel>
+				</panel>
+			</panel>
+			
+			<instance name="gameStatBottom" type="{type}" hasAssists="{hasAssists}" />
+		</panel>
+	</template>
+	
+	<template name="gameTargetStatTop">
+		<panel name="gameTargetStatTop{id}" noclick="1">
+			<image x="{x}0.5h" y="0.5h" texture="/ui/shared/textures/inside_glow.tga" align="{align}" valign="top" color="0 0 0 0.3" noclick="1"/>
+			<frame texture="/ui/shared/frames/stone.tga" width="+3h" height="+3h" align="{align}" valign="top" color="invisible" borderthickness="2h" bordercolor="0.7 0.7 0.7 1" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="gameStatContainerNeutral">
+		<panel x="{x}" y="1h" height="90%" noclick="1">
+			<label name="gameNeutralStat_name" style="gameNeutralStat_name" content="Teewee" />
+			
+			<!-- Base Frame -->
+			<panel style="gameNeutralStatBar">
+				<frame texture="/ui/elements:rounded_bg_solid" color="0 0 0 1" align="center" valign="center" bordercolor="0 0 0 1" height="+0.4h" width="+0.4h" borderthickness="0.3h" noclick="1"/>
+			</panel>
+
+			<!-- Target Health/Mana -->
+			<panel style="gameNeutralStatBar">
+				<frame texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.3h" noclick="1" color="#090909" />
+				<frame name="gameNeutralStatBarHealth" texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.3h" noclick="1" color="#01d600" />
+				<label name="gameNeutralStatBarHealthText" font="maindyn_12" color="white" outline="1" outlinecolor="0 0 0 0.8" content="200" textalign="center" textvalign="center" />
+			</panel>
+			
+			<!-- Fade this panel in if the enemy goes into fog or out if they return from fog -->
+			<panel style="gameNeutralStatBar" color="black" visible="0">
+				<frame texture="/ui/elements:rounded_bg_solid" align="left" valign="center" borderthickness="0.3h" noclick="1" color="#090909" />
+				<label x="0" y="0" font="maindyn_12" color="#868686" outline="1" outlinecolor="0 0 0 0.8" content="game_stats_in_fog" textalign="center" textvalign="center" />
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameNeutralStatTop">
+		<panel name="gameNeutralStatTop{id}" noclick="1">
+			<image x="{x}0.5h" y="0.5h" texture="/ui/shared/textures/inside_glow.tga" align="{align}" valign="top" color="0 0 0 0.3" noclick="1"/>
+			<frame texture="/ui/shared/frames/stone.tga" width="+3h" height="+3h" align="{align}" valign="top" color="invisible" borderthickness="2h" bordercolor="0.7 0.7 0.7 1" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="gameHeroStatBottom">
+		<panel name="gameHeroStatBottom{id}" noclick="1">
+			<image x="{x2}3.2h" y="-3.1" width="3.2h" height="12.8h" texture="/ui/shared/textures/decal_edge.tga" hflip="{hflip}" align="{align}" valign="bottom" noclick="1"/>
+			<frame style="generalShadow"/>
+			<image x="{x}0.5h" y="0.5h" texture="/ui/shared/textures/background_stone.jpg" align="{align}" valign="top" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="gameHeroStatTop">
+		<panel name="gameHeroStatTop{id}" noclick="1">
+			<image x="{x}0.5h" y="0.5h" texture="/ui/shared/textures/inside_glow.tga" align="{align}" valign="top" color="0 0 0 0.6" noclick="1"/>
+			<frame texture="/ui/shared/frames/stone.tga" width="+3h" height="+3h" align="{align}" valign="top" color="invisible" borderthickness="5h" bordercolor="white" noclick="1">	
+				<image texture="/ui/shared/textures/stone_corner_tl.tga" y="-0.4h" x="{x2}0.2h" height="6h" width="6h" align="{align}" valign="top" noclick="1" hflip="{hflip}" />
+			</frame>
+			<image x="{x2}4h" width="5.5h" height="5.5h" texture="/ui/shared/textures/grass.tga" align="{align}" valign="bottom" hflip="{hflip}" noclick="1"/>
+		</panel>
+	</template>
+	
+	<!-- Inventory Templates -->
+	<template name="charges">
+		<panel name="gameItem{id}_charges" x="-0.4h" y="0.4h" width="1.7h" height="1.7h" align="right" valign="top"  noclick="1">
+			<panel y="-0.4h" x="-0.4h" height="2h" width="2h" noclick="1">
+				<frame texture="/ui/shared/frames/rounded_bg_grad.tga" y="0.1h" x="0.1h" borderthickness="0.3h" color="0 0 0 0.8" bordercolor="0 0 0 0.8" noclick="1" />
+				<frame texture="/ui/shared/frames/rounded_bg_grad.tga" borderthickness="0.3h" color="#545659" bordercolor="#545659" noclick="1"/>
+			</panel>
+			<label name="gameItem{id}_chargesCount" style="gameCharges" content="16" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="gameVerticalBar_itemSM" >
+		<instance name="gameVerticalBar" prefix="{prefix}" id="{id}" type="{type}" borderthickness="0.2h" height="3h" width="0.5h" x="-0.1h"/>
+	</template>
+	
+	<template name="gameVerticalBar_item" >
+		<instance name="gameVerticalBar" prefix="{prefix}" id="{id}" type="{type}" height="5.3h" width="0.8h" x="-0.3h"/>
+	</template>
+	
+	<template name="gameItem">
+		<panel name="gameItem{id}" width="100%" height="100@" align="center" valign="top" visible="{visible=1}" sticky="1" stickytoinvis="0">
+			<frame texture="/ui/elements:squareglow" width="+1.2h" height="+1.2h" align="center" valign="center" noclick="1" color="invisible" borderthickness="1h" bordercolor="0 0 0 0.5" />
+			<frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="generalFrameBG" borderthickness="0.3h"/>
+			<image texture="/ui/shared/textures/itemtype_boots.tga" style="gameItemBase" visible="{isBoot}" />
+			<image texture="/ui/shared/textures/itemtype_consumable.tga" style="gameItemBase" visible="{isConsumable}" />
+			<image texture="/ui/shared/textures/itemtype_base.tga" style="gameItemBase" visible="{isStandard}" />
+			
+			<panel name="gameItem{id}_parent" style="gameItemIconContainer">
+				<button name="gameItem{id}_button" align="center" valign="center" visible="0" interactive="0" cangrab="1" dragexclusive="false">
+					<image name="gameItem{id}_icon"  texture="{texture}"  noclick="1"/>
+				</button>
+				
+				<instance name="iconOverlays" prefix="gameItem" id="{id}" font="{font=maindyn_16}"/>
+			</panel>
+			
+			<instance name="charges" id="{id}" />
+			
+			<image texture="/ui/shared/textures/inside_glow.tga" align="center" valign="center" color="0 0 0 0.3" noclick="1"/>	
+			
+			<frame name="gameItem{id}CraftedBorder"	style="gameCraftedBorder" visible="0" />
+			
+			<frame texture="/ui/shared/frames/border_double.tga" width="-0.6h" height="-0.6h" align="center" valign="center" borderthickness="0.3h" color="invisible" bordercolor="0 0 0 0.8" noclick="1"/>			
+			<frame texture="/ui/shared/frames/rounded_bg_grad.tga" color="invisible" borderthickness="0.4h" bordercolor="#505050" noclick="1">
+				<image texture="/ui/shared/textures/mini_button_corner_tl.tga" y="-0.1h" x="-0.1h" height="{framesize}" width="{framesize}" align="left" valign="top" noclick="1" />
+				<image texture="/ui/shared/textures/mini_button_corner_tr.tga" y="-0.1h" x="0.1h" height="{framesize}" width="{framesize}" align="right" valign="top" noclick="1" />
+				<image texture="/ui/shared/textures/mini_button_corner_bl.tga" y="0.1h" x="-0.1h" height="{framesize}" width="{framesize}" align="left" valign="bottom" noclick="1" />
+				<image texture="/ui/shared/textures/mini_button_corner_br.tga" y="0.1h" x="0.1h" height="{framesize}" width="{framesize}" align="right" valign="bottom" noclick="1" />
+		
+				<instance name="frameOverlays" prefix="gameItem" id="{id}" />
+				<instance name="gameVerticalBar_item{SM}" prefix="gameItem" id="{id}" type="Vertical" />
+				<instance name="gameVerticalBar_item{SM}" prefix="gameItem" id="{id}" type="Timer" />
+				
+				<instance name="key" id="gameItem{id}Key" keybind="{keybind=?}" x="0.3h" y="0.3h" labelYOffset="{labelYOffset=-0.3h}" height="{buttonSize=2h}" width="{buttonSize=2h}" align="right" valign="bottom"/>
+			</frame>
+		</panel>
+	</template>
+	
+	<template name="gameInventoryColumn_SM">
+		<panel style="gameInventoryColumn_SM">
+			<instance name="gameItem" SM="SM" framesize="1.5h" font="maindyn_12" labelYOffset="-0.1h" buttonSize="1.7h" type="boots" 	  id="Boots" 	   isBoot="1"/>
+			<instance name="gameItem" SM="SM" framesize="1.5h" font="maindyn_12" labelYOffset="-0.1h" buttonSize="1.7h" type="consumable" id="Consumable1" isConsumable="1"/>
+			<instance name="gameItem" SM="SM" framesize="1.5h" font="maindyn_12" labelYOffset="-0.1h" buttonSize="1.7h" type="consumable" id="Consumable2" isConsumable="1"/>
+		</panel>
+	</template>
+	
+	<template name="gameInventory169">
+		<panel name="inventory169_column6" group="flippedContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG169" >
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="11" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="12" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+		
+		<panel name="inventory169_column5" group="flippedContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG169">
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="9" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="10" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+		
+		<panel name="inventory169_column4" group="flippedContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG169" >
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="7" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="8" isStandard="1" visible="0"/>
+			</panel>
+		</panel>	
+		
+		<panel width="4.05h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<instance name="gameInventoryColumn_SM" />
+		</panel>
+		
+		<panel name="inventory169_column1" group="standardContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG169" >
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="1" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="2" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+		
+		<panel name="inventory169_column2" group="standardContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG169">
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="3" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="4" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+		
+		<panel name="inventory169_column3" group="standardContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG169" >
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="5" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="6" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameInventory54">
+		<panel group="flippedContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG54" >
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="10" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="11" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="12" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+		
+		<panel group="flippedContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG54" >
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="7" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="8" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="9" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+	
+		<panel width="4.05h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<instance name="gameInventoryColumn_SM" />
+		</panel>
+	
+		<panel group="standardContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG54" >
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="1" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="2" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="3" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+			
+		<panel group="standardContainers" width="6.4h" height="14h" noclick="1" sticky="1" stickytoinvis="0">
+			<panel style="gameInventoryColumn_LG54" >
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="4" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="5" isStandard="1" visible="0"/>
+				<instance name="gameItem" framesize="2h" font="maindyn_16" id="6" isStandard="1" visible="0"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<!-- Health/Mana Templates -->
+	<template name="gameOrbHealthText">
+		<label name="gameOrbHealthCurrent" style="gameOrbHealthCurrent" content="{current=321}"/>
+		<label style="gameOrbHealthTotal" content="/"/>
+		<label name="gameOrbHealthTotal" style="gameOrbHealthTotal" content="{total=500}"/>
+	</template>
+	
+	<template name="gameOrbManaText">
+		<label name="gameOrbManaCurrent" style="gameOrbManaCurrent" content="{current=210}"/>
+		<label style="gameOrbManaTotal" content="/"/>
+		<label name="gameOrbManaTotal" style="gameOrbManaTotal" content="{total=500}"/>
+	</template>
+	
+	<template name="gameFillingOrb">
+		<panel style="gameOrb{type}">
+			<panel width="82%" height="82@" y="0.4h" align="center" valign="center" noclick="1" >
+				<panel group="gameOrb{type}Percent" height="50%" width="11h" align="center" valign="bottom" clip="1" noclick="1" >
+					<image style="gameOrb{type}Fill" color="1 1 1"/>
+					
+					<!-- Clipped Edge Effect -->
+					<modelpanel 
+						name="gameOrb{type}FillEffect"
+						visible="1"
+						style="gameOrb{type}FillEffect"
+						noclick="true"
+						model="/shared/models/invis.mdf"				
+						camerapos="0 0 0"
+						cameraangles="0 0 0"
+						camerafov="83"
+						depthclear="true"
+						depthcompress="true"
+					/>					
+				</panel>			
+				
+				<panel name="gameOrb{type}NoClipPercent" group="gameOrb{type}Percent" align="center" height="50%" valign="bottom" noclick="1">
+					<!-- Non-Clipped Edge Effect -->
+					<image style="gameOrb{type}EdgeEffect" />
+				</panel>
+			</panel>
+			
+			<image style="gameOrbSheen"/>
+			<image style="gameOrb{type}Grass"/>
+			<image style="gameOrb{type}Grass2"/>
+
+		</panel>
+		
+		<panel style="gameOrb{type}Sign">
+			<panel name="gameOrb{type}SignButtonTip" height="60%" width="80%" valign="bottom" align="center" noclick="0" />
+			<panel style="gameOrb{type}TextContainer">
+				<instance name="gameOrb{type}Text"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<!-- XP Templates -->	
+	<template name="gameXPContainer_left">
+		<panel width="3h" noclick="1" align="left">
+			<panel style="gameXPLeft">
+				<image style="gameXPLeftDecal" color="{color}"/>
+				<panel style="gameXPTextContainer">
+					<label style="gameLevelTotal" content="game_scores_label_lvl_caps" color="{color1}" outlinecolor="{outlinecolor1}" />
+					<label name="{levelName}" style="gameLevelCurrent" content="15"  color="{color2}" outlinecolor="{outlinecolor2}"/>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameXPContainer_right">		
+		<panel width="0.1h" noclick="1" align="right">
+			<panel style="gameXPRight">
+				<image style="gameXPRightDecal" color="{color}"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameXPContainer">	
+		<panel x="2h" width="-3.4h" noclick="1" align="center">
+			<panel style="gameXPFillContainer" color="1 1 1 {alpha2}" >
+				<frame style="generalShadow" color="0 0 0 0.3" bordercolor="0 0 0 0.3"/>
+				
+				<panel name="{fillName}_gained" style="gameXPFill" width="{width=0%}" visible="0">
+					<image style="gameXPFillDecal" texture="/ui/shared/textures/xp_bar_gained.tga" color="1 1 1 {alpha2}" />
+				</panel>
+				
+				<panel name="{fillName}_gainedEdge" style="gameXPEnd" visible="0">
+					<!-- anything in this panel will appear at the END of the gained fill bar -->
+					<image style="gameXPFillGained_glowEnd" color="1 1 1 {alpha2}"/>
+				</panel>
+				
+				<panel name="{fillName}" style="gameXPFill" width="{width=0%}" >
+					<image style="gameXPFillDecal" color="1 1 1 {alpha2}" />
+				</panel>
+				
+				<panel style="gameXPEnd">
+					<!-- anything in this panel will appear at the END of the fill bar -->
+					<image style="gameXPFillDecal_glowEnd" color="1 1 1 {alpha2}"/>
+				</panel>
+			</panel>
+			
+			<panel style="gameXPMax" visible="{max}">
+				<image x="-0.5h" y="0.3h" texture="/ui/shared/textures/decal_max.tga" width="2200@" height="550%" align="center" valign="center" noclick="1" />
+				<label style="gameLevelCurrent" align="center" textvalign="center" content="game_scores_label_lvl_max" color="#f55bb2" outlinecolor="black"/>
+			</panel>
+		</panel>
+		
+		<instance name="gameXPContainer_left" levelName="{levelName}" color="1 1 1 {alpha}" color1="0.78 0.1 0.49 {color1alpha}" color2="0.96 0.36 0.7 {color2alpha}" outlinecolor1="0 0 0 {outline1alpha}" outlinecolor2="0 0 0 {outline2alpha}"/>
+		<instance name="gameXPContainer_right" color="1 1 1 {alpha}"/>
+	</template>
+	
+	<!-- Ability Templates -->
+	<template name="gameAbilityTick">
+		<panel name="gameAbility{id}_tick{count}Container" style="gameAbilityIconTick_none" sticky="1" stickytoinvis="1">
+			<image width="175%" height="190@" texture="/ui/shared/textures/pip_base.tga" align="center" valign="bottom" noclick="1" />
+			
+			<panel name="gameAbility{id}_tick{count}" style="gameAbilityIconTick_complete">
+				<image width="175%" height="190@" texture="/ui/shared/textures/pip_active.tga" align="center" valign="bottom" noclick="1" />
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="gameAbilityLevel">
+		<frame style="gameAbilityLevel_none">
+			<image name="gameAbility{id}_leveled" texture="/ui/shared/textures/ability_leveled.tga" width="90@" height="130%" align="center" valign="center" noclick="1"/>
+		</frame>
+	</template>
+	
+	<template name="gameAbilityHeroInfo" >
+		<instance name="gameAbilityLevel" id="{id}_1"/>
+		<instance name="gameAbilityLevel" id="{id}_2"/>
+		<instance name="gameAbilityLevel" id="{id}_3"/>
+		<instance name="gameAbilityLevel" id="{id}_4"/>
+	</template>
+	
+	<template name="gameAbilityPetInfo">
+		<instance name="framed_mini_button" id="gamePetPassiveButton" height="107%" width="107@"
+		
+			onmouseoverlua="
+				gamePetTipShow()
+				UpdateCursor(widget, true, { canLeftClick = true})
+			"
+			
+			onmouseoutlua="
+				gamePetTipHide()
+				UpdateCursor(widget, false, { canLeftClick = true})
+			"
+			
+			/>
+	</template>
+	
+	<template name="gameAbilityTemplate">
+		<panel name="gameAbility{id}_parent" height="100%" float="right" grow="1" regrow="1" growinvis="0">
+			<!-- <instance name="gameVerticalBar" prefix="gameAbility" id="{id}" type="Vertical" height="6h" framewidth="+3h" borderthickness="0.5h"/> -->
+			<instance name="gameVerticalBar" prefix="gameAbility" id="{id}" type="Timer" 	height="6h" framewidth="+3h" borderthickness="0.5h"/>
+
+			<!-- Core Ability Stuff -->
+			<panel width="6.6h" height="100%" reverse="1" sticky="1" stickytoinvis="0">
+				<!-- Top half of the ability with the icon, level up arrow, and ticks -->
+				<panel width="100%" height="100@" align="center" valign="top" noclick="1">
+					<frame style="generalShadow"/>
+					<panel style="gameAbilityIconContainer">
+						<image name="gameAbility{id}_icon" texture="{texture}" align="center" valign="center" noclick="0" />
+						
+						<instance name="iconOverlays" prefix="gameAbility" id="{id}" />
+					</panel>
+					<frame texture="/ui/shared/frames/rounded_bg_grad.tga" color="invisible" borderthickness="0.5h" bordercolor="#505050" noclick="1">
+						<image texture="/ui/shared/textures/mini_button_corner_tl.tga" y="-0.1h" x="-0.1h" height="2.5h" width="2.5h" align="left" valign="top" noclick="1" />
+						<image texture="/ui/shared/textures/mini_button_corner_tr.tga" y="-0.1h" x="0.1h" height="2.5h" width="2.5h" align="right" valign="top" noclick="1" />
+						<image texture="/ui/shared/textures/mini_button_corner_bl.tga" y="0.1h" x="-0.1h" height="2.5h" width="2.5h" align="left" valign="bottom" noclick="1" />
+						<image texture="/ui/shared/textures/mini_button_corner_br.tga" y="0.1h" x="0.1h" height="2.5h" width="2.5h" align="right" valign="bottom" noclick="1" />
+						
+						<panel y="-40%" width="100%" height="2h" valign="top" noclick="1" >
+							<panel width="100%" valign="bottom" float="bottom" grow="1" regrow="1" growinvis="0" noclick="1">
+								<!-- Horizontal Timer Bars  -->			
+								<frame name="gameAbility{id}ChargeBarContainer" height="0.5h" widgth="100%" sticky="1" stickytoinvis="0">
+									<panel style="gameHorizontalBarBase">
+										<panel style="gameVerticalBarBlank">
+											<panel name="gameAbility{id}ChargeBar" style="gameHorizontalBar" />
+										</panel>
+									</panel>
+								</frame>
+
+								<panel name="gameAbility{id}_tickContainer" width="100%" height="0.7h" sticky="1" stickytoinvis="0" noclick="1">
+									<!-- Pips -->
+									<panel y="2h" align="center" float="right" grow="1" regrow="1" growinvis="0" noclick="1" >
+										<instance name="gameAbilityTick" id="{id}" count="1"/> <!-- For testing - we would want this to just populate as needed -->
+										<instance name="gameAbilityTick" id="{id}" count="2"/>
+										<instance name="gameAbilityTick" id="{id}" count="3"/>
+										<instance name="gameAbilityTick" id="{id}" count="4"/>
+										<instance name="gameAbilityTick" id="{id}" count="5"/>
+										<instance name="gameAbilityTick" id="{id}" count="6"/>
+									</panel>
+								</panel>
+							</panel>
+						</panel>
+						
+						<animatedimage name="gameAbility{id}_levelUp" align="center" valign="bottom" height="50%" width="50%" color="1 1 1 .8" texture="/ui/game/shared/textures/lvl_up_arrow/lvl_up.tga" loop="1" fps="30" onshow="StartAnim(1);" noclick="1"/>
+					</frame>
+				</panel>
+				
+				<!-- Bottom half of the ability with the keybind, ability levels, and pet passive -->
+				<panel width="90%" height="3.2h"  align="center" valign="bottom" noclick="1" texture="/ui/shared/textures/decal_base.tga">
+					<panel style="gameAbilityInfoContainer">
+						<instance id="gameAbility{id}" name="key" keybind="{keybind}" font="maindyn_9" height="105%" width="105@"/>
+						<instance name="gameAbility{type}Info" id="{id}" />
+					</panel>
+				</panel>
+			</panel>	
+		</panel>
+	</template>
+	
+	<!-- Minimap Templates -->
+	<template name="gameMinimapBottom">
+		<panel name="gameMinimapBottom{id}" noclick="1">
+			<image x="{x}3.2h" y="-4.5" width="3.2h" height="12.8h" texture="/ui/shared/textures/decal_edge.tga" align="{align}" valign="bottom" noclick="1" hflip="{hflip}"/>
+			<image name="gameMinimapBG" x="{x2}0.5h" y="0.5h" texture="/ui/shared/textures/background_stone.jpg" align="{align2}" valign="top" noclick="1" hflip="{hflip}"/>
+		</panel>
+	</template>
+	
+	<template name="gameMinimapTop">
+		<panel name="gameMinimapTop{id}" noclick="1">
+			<image x="{x2}0.5h" y="0.5h" texture="/ui/shared/textures/inside_glow.tga" align="{align}" valign="top" color="0 0 0 0.6" noclick="1"/>
+			
+			<frame texture="/ui/shared/frames/stone.tga" width="+3h" height="+3h" align="{align}" valign="top" color="invisible" borderthickness="5h" bordercolor="white" noclick="1">	
+				<image texture="/ui/shared/textures/stone_corner_tl.tga" y="-0.4h" x="{x}0.2h" height="6h" width="6h" align="{align}" valign="top" noclick="1" hflip="{hflip}"/>
+				<image texture="/ui/shared/textures/decal_orb.tga" y="-1.5h" x="{x}1.5h" height="5.3h" width="5.3h" align="{align}" valign="top" noclick="1" />
+			</frame>
+			
+			<image x="{x}4h" y="-1.4h" width="5.5h" height="5.5h" texture="/ui/shared/textures/grass.tga" align="{align}" valign="bottom" noclick="1" hflip="{hflip}"/>
+		</panel>
+	</template>
+	
+	<!-- Scoreboard Templates -->
+	<template name="gameScoreboardBaldirMarker">
+		<image texture="/ui/game/scoreboard/textures/bcount_ring_on.tga" x="-1s" y="2s" color="0 0 0 .4" align="center" valign="center" noclick="1" />		
+		<image texture="/npcs/Baldir_2/icon_circle.tga" align="center" valign="center" width="82%" height="82%" color=".9 .9 .9 1" noclick="1" />					
+		<image texture="/npcs/Baldir_2/icon_circle.tga" align="center" valign="center" width="82%" height="82%" rendermode="grayscale" color=".7 .7 .7 .85" noclick="1" />					
+		<image texture="/ui/game/scoreboard/textures/bcount_ring_off.tga" align="center" valign="center" noclick="1" />
+		<label x="-0.1h" y="-0.1h" textalign="center" textvalign="center" font="maindyn_13" color="1 1 1 .6" outline="1" outlinecolor="0 0 0 .4" content="{countdown}" />					
+		<panel name="{markerName}" visible="0">						
+			<image texture="/npcs/Baldir_2/icon_circle.tga" align="center" valign="center" width="82%" height="82%" noclick="1" />
+			<image texture="/ui/game/scoreboard/textures/bcount_ring_on.tga" color="{markerColor}" align="center" valign="center" noclick="1" />
+		</panel>
+	</template>
+	
+	<template name="gameScoreboardBanner">
+		<panel y="{y}" height="40%" noclick="1">			
+			<panel y="{markerY=0.6h}" x="15%" width="74%" height="3.0h" valign="{markerValign}" noclick="1">				
+				<panel y="{markerOffset}" align="left" width="100@" height="100%" noclick="1">					
+					<instance name="gameScoreboardBaldirMarker" markerColor="{markerColor}" countdown="3"	markerName="gameScoreboard{team}BaldirKills1" />
+				</panel>				
+				<panel y="0" align="center" width="100@" height="100%" noclick="1">					
+					<instance name="gameScoreboardBaldirMarker" markerColor="{markerColor}" countdown="2"	markerName="gameScoreboard{team}BaldirKills2" />
+				</panel>				
+				<panel y="{markerOffset}" align="right" width="100@" height="100%" noclick="1">					
+					<instance name="gameScoreboardBaldirMarker" markerColor="{markerColor}" countdown="1"	markerName="gameScoreboard{team}BaldirKills3" />
+				</panel>				
+			</panel>
+			<image texture="/ui/shared/textures/flag_base.tga" noclick="1" />
+			<image texture="/ui/shared/textures/flag_color.tga" style="gameBanner{team}" />			
+			<panel x="0.3h" noclick="1">
+				<image style="gameBannerLogo" texture="/ui/shared/textures/team_logo_{teamName}.tga" />
+				<label style="gameBannerTeam{team}" content="{content}"/>
+				<label name="gameScoreboard{team}TeamName" style="gameBannerTeamName{team}" content="{teamName}"/>
+				
+				<label name="gameScoreboard{team}Score" style="gameBannerKills" content="12"/>
+				<label style="gameBannerTotalKills" content="game_scoreboard_totalKills"/>
+			</panel>
+		</panel>
+	</template>
+			
+	<template name="gameScoreboardHeaderEntry">
+		<panel width="{width}" noclick="1">
+			<label x="{x}" y="0.5h" color="#4f7e87" outline="1" outlinecolor="black" font="maindyn_9" textvalign="center" textalign="{textalign}" content="{content}" noclick="1" />
+		</panel>
+	</template>
+	
+	<template name="gameScoreboardRowBlank">
+		<panel name="gameScoreboardRow{type}" style="gameScoreboard">	
+			<panel name="gameScoreboard{type}Row" style="gameScoreboardRow" color="{color}" texture="{texture}" noclick="0" />			
+			<panel height="0.1h" color="0 0 0 0.2" valign="bottom" noclick="1" />
+		</panel>
+	</template>
+	
+	<template name="gameScoreboardRow"> 
+		<panel name="gameScoreboardRow{type}{id}" style="gameScoreboard">	
+			<panel name="gameScoreboard{type}{id}Row" style="gameScoreboardRow" color="{color}" texture="{texture}" noclick="0">
+				<panel name="gameScoreBoardRow{type}{id}_hover" style="gameScoreboardRow{type}_hover" noclick="1" />
+				
+				<panel y="0" x="0" width="7%"  noclick="1">
+					<panel name="gameScoreboard{type}{id}_heroparent" noclick="0" style="gameScoreboardHero">
+						<frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="generalFrameBG" />	
+						<image name="gameScoreboard{type}{id}_icon" texture="" height="95%" width="95@" align="center" valign="center" noclick="1" />
+						<label name="gameScoreboard{type}{id}_iconlabel"  style="gameScoreboardText" color="white" shadow="black" valign="center" align="center" fitx="1" fity="1"/>
+						<image name="gameScoreboard{type}{id}_speaker" style="gameScoreboardSpeaker" /> <!-- talking -->
+						<image name="gameScoreboard{type}{id}_mute" style="gameScoreboardMute" /> <!-- muted -->
+						<image name="gameScoreboard{type}{id}_glow" style="gameScoreboardGlow{type}" />
+						<frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="gameScoreboardBorder{type}" />
+					</panel>
+				</panel>
+				
+				<panel width="15%" noclick="1">
+					<panel x="1h" valign="center" width="100%" float="bottom" grow="1" regrow="1" noclick="1">
+						<label name="gameScoreboard{type}{id}_name" style="gameScoreboardText" color="white" textalign="left" fity="1"/>
+						<label name="gameScoreboard{type}{id}_hero" style="gameScoreboard{type}TextSM" />
+					</panel>
+				</panel>
+				
+				<panel width="5%"  noclick="1">
+					<panel name="gameScoreboard{type}{id}_muted" noclick="0" >
+						<image texture="/ui/main/friends/textures/icon_mute.tga" height="62%" width="62@" align="center" valign="center" noclick="1" />
+						<image name="gameScoreboard{type}{id}_muted_image" style="gameScoreboardMute" visible="0" height="85%" width="85@" align="center" valign="center" noclick="1" />
+					</panel>
+				</panel>				
+				
+				<panel width="5%" noclick="1">
+					<label name="gameScoreboard{type}{id}_level" x="0.6h" style="gameScoreboardText" color="white" textalign="center" align="left" fitx="1"/>
+				</panel>
+				
+				<panel width="5%"  noclick="1">
+					<panel style="gameScoreboardPet">
+						<frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="generalFrameBG" />	
+						<image name="gameScoreboard{type}{id}_pet" texture="" height="95%" width="95@" align="center" valign="center" noclick="0" />
+						<frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="generalFrameBorder" />
+					</panel>
+				</panel>
+				
+				<panel width="6%" noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item1" isStandard="1" />
+					</panel>
+				</panel>
+				
+				<panel width="6%"  noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item2" isStandard="1" />
+					</panel>
+				</panel>
+				
+				<panel width="6%"  noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item3" isStandard="1" />
+					</panel>
+				</panel>
+				
+				<panel width="6%"  noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item4" isStandard="1" />
+					</panel>
+				</panel>
+				
+				<panel width="6%"  noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item5" isStandard="1" />
+					</panel>
+				</panel>
+				
+				<panel width="6%"  noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item6" isStandard="1" />
+					</panel>
+				</panel>
+				
+				<panel width="6%"  noclick="1">
+					<panel style="gameScoreboardItem">
+						<instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item7" isBoot="1" />
+					</panel>
+				</panel>
+				
+				<panel width="7%"  noclick="1">
+					<label name="gameScoreboard{type}{id}_kills" style="gameScoreboardText" color="white" textalign="center"/>
+				</panel>
+				
+				<panel width="7%"  noclick="1">
+					<label name="gameScoreboard{type}{id}_assists" style="gameScoreboardText" color="#b4cdd1" textalign="center"/>
+				</panel>
+				
+				<panel width="7%"  noclick="1">
+					<label name="gameScoreboard{type}{id}_GPM" style="gameScoreboardText" color="#ffab03" textalign="center"/>
+				</panel>
+			</panel>
+			
+			<panel height="0.1h" color="0 0 0 0.2" valign="bottom" noclick="1" />
+		</panel>
+	</template>
+	
+	<!-- Standard Button -->
+	<template name="standardButtonState_game">
+		<widgetstate statename="{statename=up}" x="{x}" y="{y}">
+			<frame texture="{texture=/ui/shared/frames/stnd_btn_up.tga}" borderthickness="{borderthickness}" color="{color=1 1 1 1}" rendermode="{rendermode}"/>
+			<label x="{labelX=0}" group="{id}_label_group" y="{labelY=-0.2h}" textalign="center" textvalign="center" style="labelBase" font="{font=maindyn_16}" color="{labelcolor=white}" content="{label=temp_button}"/>
+		</widgetstate>
+	</template>
+	<template name="standardButton_game">
+		<button name="{id}" width="{width=100%}" height="{height=100%}" x="{x}" y="{y}" align="{align}" valign="{valign}" passivechildren="true" onloadlua="{onloadlua}" visible="{visible=true}" sticky="{sticky}" stickytoinvis="{stickytoinvis=true}" interactive="{interactive=false}" enabled="{enabled=true}" disabledmouseover="{disabledmouseover=false}" disabledmouseout="{disabledmouseout=false}" noclick="{noclick=false}" color="invisible" onclick="{onclick}" onclicklua="{onclicklua}"	>
+			<instance name="standardButtonState_game" id="{id}" font="{font=maindyn_16}" labelX="{labelX=0}" label="{label=temp_button}" rendermode="{rendermode=normal}" borderthickness="{borderthickness=0.6h}" statename="up"/>
+			<instance name="standardButtonState_game" id="{id}" font="{font=maindyn_16}" labelX="{labelX=0}" label="{label=temp_button}" rendermode="{rendermode=normal}" borderthickness="{borderthickness=0.6h}" texture="/ui/shared/frames/stnd_btn_over.tga" statename="over"/>
+			<instance name="standardButtonState_game" id="{id}" font="{font=maindyn_16}" labelX="{labelX=0}" label="{label=temp_button}" rendermode="{rendermode=normal}" borderthickness="{borderthickness=0.6h}" statename="down" x="1" y="1"/>
+			<instance name="standardButtonState_game" id="{id}" font="{font=maindyn_16}" labelX="{labelX=0}" label="{label=temp_button}" rendermode="grayscale" borderthickness="{borderthickness=0.6h}" color=".8 .8 .8 1" labelcolor="#777777" statename="disabled"/>
+		</button>
+	</template>	
+	
+	<!--
+	===========================	
+	Core Interface
+	===========================
+	-->
+	<!-- Generic object that wont animate to check against if the UI is loaded up or not -->
+	<panel name="gameUILoaded" noclick="1"/>
+	
+	<!-- Edge Effects -->
+	<panel noclick="1" passivechildren="1" visible="0" name="screen_effect_frame_0" align="center" valign="center" width="+2h" height="+2h">
+		<image group="game_warning_frame_group_0" texture="/ui/elements:damage_warning_corner" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_0" texture="/ui/elements:damage_warning_corner" align="right" hflip="1" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_0" texture="/ui/elements:damage_warning_corner" valign="bottom" vflip="1" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_0" texture="/ui/elements:damage_warning_corner" valign="bottom" align="right" hflip="1" vflip="1" rendermode="additive" width="15h" height="15h"/>
+		<panel group="game_warning_frame_group_0" height="15h" hmargin="15h" rendermode="additive" texture="/ui/game/edge_effects/damage_warning_vert.tga" utile="1" onload="SetUScale(GetHeight() # 'p'); SetVScale(GetHeight() # 'p');"/>
+		<panel group="game_warning_frame_group_0" height="15h" hmargin="15h" rendermode="additive" valign="bottom" texture="/ui/game/edge_effects/damage_warning_vert.tga" vflip="1" utile="1" onload="SetUScale(GetHeight() # 'p'); SetVScale(GetHeight() # 'p');"/>
+		<panel group="game_warning_frame_group_0" width="15h" vmargin="15h" rendermode="additive" texture="/ui/game/edge_effects/damage_warning_horiz.tga" vtile="1" onload="SetUScale(GetWidth() # 'p'); SetVScale(GetWidth() # 'p');"/>
+		<panel group="game_warning_frame_group_0" width="15h" vmargin="15h" rendermode="additive" align="right" texture="/ui/game/edge_effects/damage_warning_horiz.tga" hflip="1" vtile="1" onload="SetUScale(GetWidth() # 'p'); SetVScale(GetWidth() # 'p');"/>
+	</panel>
+
+	<panel noclick="1" passivechildren="1" visible="0" name="screen_effect_frame_1" align="center" valign="center" width="+2h" height="+2h">
+		<image group="game_warning_frame_group_1" texture="/ui/elements:damage_warning_corner" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_1" texture="/ui/elements:damage_warning_corner" align="right" hflip="1" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_1" texture="/ui/elements:damage_warning_corner" valign="bottom" vflip="1" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_1" texture="/ui/elements:damage_warning_corner" valign="bottom" align="right" hflip="1" vflip="1" rendermode="additive" width="15h" height="15h"/>
+		<panel group="game_warning_frame_group_1" height="15h" hmargin="15h" rendermode="additive" texture="/ui/game/edge_effects/damage_warning_vert.tga" utile="1" onload="SetUScale(GetHeight() # 'p'); SetVScale(GetHeight() # 'p');"/>
+		<panel group="game_warning_frame_group_1" height="15h" hmargin="15h" rendermode="additive" valign="bottom" texture="/ui/game/edge_effects/damage_warning_vert.tga" vflip="1" utile="1" onload="SetUScale(GetHeight() # 'p'); SetVScale(GetHeight() # 'p');"/>
+		<panel group="game_warning_frame_group_1" width="15h" vmargin="15h" rendermode="additive" texture="/ui/game/edge_effects/damage_warning_horiz.tga" vtile="1" onload="SetUScale(GetWidth() # 'p'); SetVScale(GetWidth() # 'p');"/>
+		<panel group="game_warning_frame_group_1" width="15h" vmargin="15h" rendermode="additive" align="right" texture="/ui/game/edge_effects/damage_warning_horiz.tga" hflip="1" vtile="1" onload="SetUScale(GetWidth() # 'p'); SetVScale(GetWidth() # 'p');"/>
+	</panel>
+
+	<panel noclick="1" passivechildren="1" visible="0" name="screen_effect_frame_2" align="center" valign="center" width="+2h" height="+2h">
+		<image group="game_warning_frame_group_2" texture="/ui/elements:damage_warning_corner" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_2" texture="/ui/elements:damage_warning_corner" align="right" hflip="1" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_2" texture="/ui/elements:damage_warning_corner" valign="bottom" vflip="1" rendermode="additive" width="15h" height="15h"/>
+		<image group="game_warning_frame_group_2" texture="/ui/elements:damage_warning_corner" valign="bottom" align="right" hflip="1" vflip="1" rendermode="additive" width="15h" height="15h"/>
+		<panel group="game_warning_frame_group_2" height="15h" hmargin="15h" rendermode="additive" texture="/ui/game/edge_effects/damage_warning_vert.tga" utile="1" onload="SetUScale(GetHeight() # 'p'); SetVScale(GetHeight() # 'p');"/>
+		<panel group="game_warning_frame_group_2" height="15h" hmargin="15h" rendermode="additive" valign="bottom" texture="/ui/game/edge_effects/damage_warning_vert.tga" vflip="1" utile="1" onload="SetUScale(GetHeight() # 'p'); SetVScale(GetHeight() # 'p');"/>
+		<panel group="game_warning_frame_group_2" width="15h" vmargin="15h" rendermode="additive" texture="/ui/game/edge_effects/damage_warning_horiz.tga" vtile="1" onload="SetUScale(GetWidth() # 'p'); SetVScale(GetWidth() # 'p');"/>
+		<panel group="game_warning_frame_group_2" width="15h" vmargin="15h" rendermode="additive" align="right" texture="/ui/game/edge_effects/damage_warning_horiz.tga" hflip="1" vtile="1" onload="SetUScale(GetWidth() # 'p'); SetVScale(GetWidth() # 'p');"/>
+	</panel>
+	
+	<panel name="game_deathfx" visible="0" noclick="1">
+		<animatedimage color="1 1 1 0.7" align="center" 	valign="top" 	utile="1" uscale="128p" rotation="180" 	texture="/ui/game/edge_effects/deathfx/deathfx_h_2_.tga" 	noclick="1" loop="1" fps="12" onshow="StartAnim(1);" height="12%" width="100%"/>
+		<animatedimage color="1 1 1 0.7" align="center" 	valign="bottom" utile="1" uscale="128p" rotation="0" 	texture="/ui/game/edge_effects/deathfx/deathfx_h_2_.tga" 	noclick="1" loop="1" fps="12" onshow="StartAnim(1);" height="12%" width="100%"/>
+		<animatedimage color="1 1 1 0.7" align="left" 	valign="center" vtile="1" vscale="128p" rotation="180" 	texture="/ui/game/edge_effects/deathfx/deathfx_v_2_.tga" noclick="1" loop="1" fps="12" onshow="StartAnim(1);" height="100%" width="12@"/>
+		<animatedimage color="1 1 1 0.7" align="right" 	valign="center" vtile="1" vscale="128p" rotation="0" 	texture="/ui/game/edge_effects/deathfx/deathfx_v_2_.tga" noclick="1" loop="1" fps="12" onshow="StartAnim(1);" height="100%" width="12@"/>
+	</panel>	
+	
+	<panel name="game_chat_box_popup" color="invisible" noclick="true" visible="false"/>
+	<panel name="game_spectator_chat_box_popup" color="invisible" noclick="true" visible="false"/>	
+	
+	<!-- Ally Events -->
+	<panel group="gameAllyEventContainers" style="gameAllyEventContainers">
+		<panel name="gameAllyEventContainer" height="100%" align="right" float="right" padding="0.4h" noclick="1" grow="1" regrow="1">
+			<instance name="gameAllyEvent" id="1"/><!-- For testing - we would want this to just populate as needed-->
+			<instance name="gameAllyEvent" id="2"/>
+			<instance name="gameAllyEvent" id="3"/>
+			<instance name="gameAllyEvent" id="4"/>
+			<instance name="gameAllyEvent" id="5"/>
+		</panel>
+	</panel>
+	
+	<panel group="gameEnemyEventContainers" style="gameEnemyEventContainers">
+		<panel name="gameEnemyEventContainer" height="100%" align="left" float="right" padding="0.4h" noclick="1" grow="1" regrow="1">
+			<instance name="gameEnemyEvent" id="1"/><!-- For testing - we would want this to just populate as needed-->
+			<instance name="gameEnemyEvent" id="2"/>
+			<instance name="gameEnemyEvent" id="3"/>
+			<instance name="gameEnemyEvent" id="4"/>
+			<instance name="gameEnemyEvent" id="5"/>
+		</panel>
+	</panel>
+	
+	<!-- Timers -->
+	<panel name="gameTimersAnimation" group="gameTimersContainers" style="gameTimersContainers" noclick="1">
+		<panel y="-0.6h" height="3.4h" color="#014352" noclick="1">
+			<frame texture="/ui/elements:squareglow" width="+1.2h" height="+3h" align="center" valign="bottom" noclick="1" color="invisible" borderthickness="1h" bordercolor="0 0 0 0.5" />
+			<frame texture="/ui/shared/frames/rounded_bg_grad.tga" height="+3h" style="generalFrameBG" valign="bottom" borderthickness="0.3h" color="#00191d" noclick="1"/>
+			
+			<label name="gameTimer" style="gameTimer" content="7:00" noclick="1" />
+
+			<frame texture="/ui/shared/frames/stone.tga" height="+3h" valign="bottom" color="invisible" borderthickness="4h" bordercolor="white" noclick="1">
+				<image texture="/ui/shared/textures/stone_corner_bl.tga" y="0.1h" x="-0.2h" height="2.8h" width="2.8h" align="left" valign="bottom" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_br.tga" y="0.1h" x="0.1h" height="2.8h" width="2.8h" align="right" valign="bottom" noclick="1" />
+			</frame>
+		</panel>
+		<panel name="gameBossTimerContainer" y="3.5h" height="100%" align="center" float="right" padding="0.8h" grow="1" regrow="1" noclick="1">
+			<instance name="gameCooldownSquare" id="Baldir" texture="/npcs/Baldir_2/icon.tga" /><!-- For testing - we would want this to just populate as needed-->
+			<instance name="gameCooldownSquare" id="Cindara" texture="/npcs/cindara/icon.tga" />
+		</panel>
+	</panel>
+	
+	<!-- Bottom Left Corner -->
+	<panel name="gameLeftCornerAnimation" x="-0.9h" y="0.5h" width="5h" valign="bottom" float="bottom" noclick="1">
+		<panel name="gameLeftCornerContainer" valign="bottom" float="bottom" grow="1" regrow="1" growinvis="0" noclick="1">
+			<!-- Level Up Prompt -->
+			<panel name="abilityLevelUpButtonPos" width="16h" height="4.5h" noclick="1" sticky="1" stickytoinvis="0">
+				<panel x="0.5h" width="90%" height="3.5h" align="center" valign="top" noclick="1">
+					<frame noclick="1" texture="/ui/elements:squareglow" color="0 0 0 .6" width="+1.4h" height="+1.4h" align="center" valign="center" borderthickness="0.8h"/>
+					<instance name="simpleButtonKey" font="maindyn_14" keyFont="maindyn_20" id="abilitiesLevelUpButton" label="game_btn_levelup2"
+						onrefreshlua="
+							self:SetText(GetKeybindButton('game', 'TriggerToggle', 'gameShowSkills') or '')
+						"
+					/>
+				</panel>
+			</panel>
+			
+			<!-- Lots of GOLD~! -->
+			<panel name="gameEventsGold_parent" noclick="1" passivechildren="1" height="8.0h" width="16h" visible="0" sticky="1" stickytoinvis="0">
+				<panel name="gameEventsGold_offset" noclick="1">
+					<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="0.6h" color="0 0 0 0.6" bordercolor="0 0 0 0.6" x="1.5h" y="0.5h" height="45%" width="80%" valign="center" noclick="1" >
+						<frame texture="/ui/shared/frames/border_double.tga" borderthickness="0.6h" color="invisible" bordercolor="#393939" noclick="1" />
+					</frame>
+					
+					<label name="gameEventsGold_label" x="2.5h" y="-2h" valign="bottom" fity="1" outline="1" font="maindyn_22" color="#ffa800" noclick="1" content="15,000"/>
+					
+					<image name="gameEventsGold_glow" x="10h" y="-0.5h" width="142@" height="142%" valign="center" texture="/ui/game/event_log/textures/goldchest/glow_goldchest.tga" color=".96 .76 .15 .7" rendermode="additive" />
+					<image name="gameEventsGold_staticchest" visible="0"
+						x="11.6h"
+						width="100@" height="100%" noclick="1"
+						texture="/ui/game/event_log/textures/goldchest/goldchest0000.tga"
+					/>		
+					<animatedimage name="gameEventsGold_anichest" 
+						x="11.6h"
+						width="100@" height="100%" noclick="1"
+						fps="4" loop="0" numframes="5"
+						texture="/ui/game/event_log/textures/goldchest/goldchest.tga"
+					/>
+				</panel>
+			</panel>	
+			
+			<!-- Target Ally/Enemy Stats -->
+			<!-- Only display once Target Neutral display is removed -->
+			<panel name="gameTargetStatsContainers" group="gameTargetStatsContainers" style="gameTargetStatsContainers" sticky="1" stickytoinvis="0" visible="0">
+				<!-- Hero icon with a background glow that is green if ally or red if enemy -->
+				<panel width="80%" height="26.1%" valign="top" align="center" noclick="1">
+					<image name="gameTargetHero_effect" height="200%" width="200%" valign="bottom" align="center" texture="/ui/shared/textures/hero_glow.tga" color="1 0 0 1" noclick="1" />
+					
+					<panel height="90%" width="90@" align="center" valign="bottom" noclick="1">
+						<image name="gameTargetHero_icon" texture="" noclick="1" />
+						<panel style="gameTargetHero_level">
+							<label name="gameTargetHero_level" font="maindyn_14" textalign="center" textvalign="center" color="#8ce7fd" content="15" noclick="1"/>
+						</panel>
+					</panel>
+				</panel>
+				
+				<panel group="targetStatOffset" x="-0.3h" y="25%" height="78.3%" noclick="1">
+					<frame style="generalShadow"/>
+					<frame texture="/ui/elements:rounded_bg_white" color="0.01 0.05 0.09 0.8" height="+2h" borderthickness="0.8h" noclick="1"/>
+					
+					<panel height="60%">
+						<instance name="gameStatContainer" type="Target" hasAssists="0" showItems="1" x="0.6h" />
+					</panel>
+					
+					<instance name="gameTargetStatTop" id="Left" x="-" align="right"/>
+					<instance name="gameTargetStatTop" id="Right" x="" align="left"/>
+				</panel>
+			</panel>
+			
+			<!-- Target Neutral Stats -->
+			<!-- Only display once Target Ally/Enemy display is removed -->
+			<panel name="gameNeutralStatsContainers" group="gameNeutralStatsContainers" style="gameNeutralStatsContainers" sticky="1" stickytoinvis="0" visible="0">
+				<!-- Neutral icon with a background glow that is green if ally or red if enemy -->
+				<panel width="80%" height="50%" valign="top" align="center" noclick="1">
+					<image name="gameNeutral_effect" height="200%" width="200%" valign="bottom" align="center" texture="/ui/shared/textures/hero_glow.tga" color="yellow" noclick="1" />
+					
+					<panel height="90%" width="90@" align="center" valign="bottom" noclick="1">
+						<image name="gameNeutral_icon" texture="" noclick="1" /><!-- We may need to make these? Would be like the hero icons, cut-outs -->
+					</panel>
+				</panel>
+				
+				<panel group="targetStatOffset" x="-0.3h" y="49%" height="50%" noclick="1">
+					<frame style="generalShadow"/>
+					<frame texture="/ui/elements:rounded_bg_white" color="0.01 0.05 0.09 0.8" height="+2h" borderthickness="0.8h" noclick="1"/>
+					
+					<instance name="gameStatContainerNeutral" x="0.3h" />
+					
+					<instance name="gameNeutralStatTop" id="Left" x="-" align="right" />
+					<instance name="gameNeutralStatTop" id="Right" x="" align="left" />
+				</panel>
+			</panel>
+			
+			<!-- Player Stats -->
+			<panel name="gamePlayerStatsContainers" group="gamePlayerStatsContainers" style="gamePlayerStatsContainers" sticky="1" stickytoinvis="0">
+				<instance name="gameHeroStatBottom" id="Left" x="-" x2="" align="right" hflip="1"/>
+				<instance name="gameHeroStatBottom" id="Right" x="" x2="-" align="left" hflip="0"/>
+				
+				<instance name="gameStatContainer" type="Player" hasAssists="1" />				
+				
+				<instance name="gameHeroStatTop" id="Left" x="-" x2="" align="right" hflip="1"/>
+				<instance name="gameHeroStatTop" id="Right" x="" x2="-" align="left" hflip="0"/>
+			</panel>
+		</panel>
+	</panel>
+	
+	<!-- Inventory - Appears under the Bottom Left Corner Stuff for Animations -->
+	<panel name="gameInventoryAnimation" style="gameInventoryAnimation">
+		<panel name="gameInventoryContainers" group="gameInventoryContainers" style="gameInventoryContainers">
+			<!-- Load template gameInventoryColumn_SM and gameInventory169 or gameInventory54 here -->
+		</panel>
+	</panel>
+	
+	<!-- Center Interface -->
+	<panel name="gameCenterAnimation" width="10h" align="center" valign="bottom" noclick="1">
+		<panel name="gameCenterContent" height="18h" align="center" valign="bottom" float="right" padding="0.3h" grow="1" regrow="1" noclick="1">
+			<!-- Health -->
+			<panel group="gameHealthContainers" style="gameHealthContainers">
+				<instance name="gameFillingOrb" type="Health"/>
+			</panel>
+			
+			<panel height="18h" valign="bottom" float="bottom" grow="1" regrow="1" noclick="1">
+				<!-- Spell Effects -->
+				<panel height="4.32h" noclick="1">
+					<panel group="gameSpellContainers" style="gameSpellContainers">
+						<instance name="gameCooldownSquare" id="State32" />
+						<instance name="gameCooldownSquare" id="State33" />
+						<instance name="gameCooldownSquare" id="State34" />
+						<instance name="gameCooldownSquare" id="State35" />
+						<instance name="gameCooldownSquare" id="State36" />
+						<instance name="gameCooldownSquare" id="State37" />
+						<instance name="gameCooldownSquare" id="State38" />
+						<instance name="gameCooldownSquare" id="State39" />
+						<instance name="gameCooldownSquare" id="State40" />
+						<instance name="gameCooldownSquare" id="State41" />
+					</panel>
+				</panel>
+				
+				<!-- XP -->
+				<panel name="gameXPContainerParent" group="gameXPContainers" style="gameXPContainers">
+					<panel name="gameXPAnimation" noclick="1" align="center" valign="bottom">
+						<!-- Use this when still leveling -->
+						<panel name="gameXPContainer_leveling" noclick="1" visible="1">
+							<instance name="gameXPContainer" alpha="1" alpha2="1" max="0" fillName="gameXPPercent" levelName="gameLevelCurrent" color1alpha="1" color2alpha="1" outline1alpha="1" outline2alpha="1" />
+						</panel>
+						
+						<!-- Use this when maxed -->
+						<panel name="gameXPContainer_max" noclick="1" visible="0">
+							<instance name="gameXPContainer" alpha="0.5" alpha2="0.2" max="1" width="100%" color1alpha="0.5" color2alpha="0.7" outline1alpha="0.2" outline2alpha="0.3" />
+						</panel>
+					</panel>
+				</panel>
+				
+				<panel name="gameXPContainerSpacer" height="0h" noclick="1"/>
+				
+				<!-- Abilities -->
+				<panel group="gameAbilityContainers" style="gameAbilityContainers">
+					<instance name="gameAbilityTemplate" id="1" type="Hero"/>
+					<instance name="gameAbilityTemplate" id="2" type="Hero"/>
+					<instance name="gameAbilityTemplate" id="3" type="Hero"/>
+					<instance name="gameAbilityTemplate" id="4" type="Hero"/>
+					<instance name="gameAbilityTemplate" id="5" type="Pet"/>
+				</panel>
+			</panel>
+			
+			<!-- Mana -->
+			<panel group="gameManaContainers" style="gameManaContainers">
+				<instance name="gameFillingOrb" type="Mana"/>
+			</panel>
+		</panel>
+	</panel>
+	
+	<!-- Minimap -->
+	<panel name="gameMinimapAnimation" group="gameMinimapContainers" style="gameMinimapContainers">
+		<frame style="generalShadow"/>
+		
+		<panel name="gameMinimapHeader" style="gameMinimapHeader">		
+			<panel name="gameMinimapHeaderButtons" style="gameMinimapButtonContainer">
+				<instance name="framed_mini_button" id="gameMinimapButtonHome" 		width="3.5h" height="3.5h" bindShow="0" tabShow="gameMinimapHotkeys" texture="/ui/shared/textures/mini_button_home.tga" />
+				<instance name="framed_mini_button" id="gameMinimapButtonCourier"   width="3.5h" height="3.5h" bindShow="0" tabShow="gameMinimapHotkeys" texture="/ui/shared/shop/textures/shop_hoverIcon_courier.tga"/>
+				<instance name="framed_mini_button" id="gameMinimapButtonOptions"   width="3.5h" height="3.5h" bindShow="0" tabShow="gameMinimapHotkeys" texture="/ui/shared/textures/mini_button_options.tga"/>
+				<instance name="framed_mini_button" id="gameMinimapButtonPing" 	    width="3.5h" height="3.5h" bindShow="0" tabShow="gameMinimapHotkeys" texture="/ui/shared/textures/mini_button_ping.tga"/>
+			</panel>
+		</panel>
+		
+		<panel name="gameMinimapMenu" y="3.5h" x="-1.7h" noclick="1" >
+			<include file="/ui/new_game/menu/game_menu.package"/>
+		</panel>
+		
+		<instance name="gameMinimapBottom" id="Right" align="left" align2="right" x="-" x2="" hflip="0" />
+		<instance name="gameMinimapBottom" id="Left" align="right" align2="left" x="" x2="-" hflip="1" />
+		
+		<panel style="gameMinimapInset">
+			<map name="gameMinimap" hoversize="0.5" outlinesize="0.09h" texture="!minimap_texture" watch="Minimap" />
+		</panel>
+		
+		<instance name="gameMinimapTop" id="Left" align="right" align2="left" x="" x2="-" hflip="1" />
+		<instance name="gameMinimapTop" id="Right" align="left" align2="right" x="-" x2="" hflip="0" />
+	</panel>
+	
+	<panel name="waitingForPlayersIndicator" align="center" valign="top" width="34h" height="6h" y="16h" noclick="1" passivechildren="0" visible="0">
+		<instance y="0" name="dialogWrapper1" inneralpha="0 0 0 .9" noclick="1" />
+		
+		<frame style="backerPanelShadow0" texture="/ui/elements:rounded_bg_white" borderthickness="0.75h" x="0.25h" y="0.25h" noclick="1"/>
+		<frame style="backerPanelGray3" texture="/ui/elements:rounded_bg_white" borderthickness="0.75h" noclick="1"/>
+		
+		<label textalign="center" textvalign="center" fity="1" y="0.7h" font="maindyn_26" style="labelBase" content="game_waitingforplayers" noclick="1"/>
+		
+	</panel>		
+	
+	<!-- Pause Indicator -->
+	<panel name="gamePausedIndicator" align="center" valign="center" width="28h" height="15h" noclick="1" passivechildren="0" visible="false" >
+		<instance y="0" name="dialogWrapper1" inneralpha="0 0 0 .9" noclick="1" />
+		
+		<frame style="backerPanelShadow0" texture="/ui/elements:rounded_bg_white" borderthickness="0.75h" x="0.25h" y="0.25h" noclick="1"/>
+		<frame style="backerPanelGray3" texture="/ui/elements:rounded_bg_white" borderthickness="0.75h" noclick="1"/>
+		
+		<label textalign="center" textvalign="center" fity="1" y="0.7h" font="maindyn_26" style="labelBase" content="game_paused" noclick="1"/>
+		
+		<frame noclick="1" y="5.5h" width="-4h" align="center" height="2.8h" color="0.4 .4 .4 1" texture="/ui/elements:rounded_bg_white" borderthickness="1h"  >
+			<frame name="gamePausedIndicator_bar" noclick="1" align="right" width="100%" color="0.7 0 0 1" texture="/ui/elements:rounded_bg_white" borderthickness="1h"  
+				onloadlua="
+					self:RegisterWatchLua('PauseTimeInfo', function(widget, trigger)
+						widget:SetWidth((100 * trigger.timeUntilUnpause / (trigger.maxPlayerPause + trigger.maxGeneralPause)) .. '%')
+					end, false, nil)
+				"			
+			>					
+			</frame>				
+		</frame>
+		
+		<instance name="standardButton" y="10.0h"
+			id="gamePausedIndicator_unpause_btn" 
+			height="4.0h" width="-8h" align="center" 
+			label="game_menu_unpause"
+			font="maindyn_22"
+			onclicklua="
+				RequestUnpause()
+				Cmd('ServerUnpause')
+			"
+		/>		
+		
+		<?lua
+			object:GetWidget('gamePausedIndicator_unpause_btn'):RegisterWatchLua('PauseTimeInfo', function(widget, trigger)
+				widget:SetEnabled(trigger.canUnpause)
+			end, false, nil)	
+		?>		
+		
+	</panel>
+
+	<!-- AFK Indicator -->
+	<panel name="afkPausedIndicator" align="center" valign="center" width="40.5h" height="18h" noclick="1" passivechildren="0" visible="0">
+
+		<instance y="0" name="dialogWrapper1" inneralpha="0 0 0 .9" noclick="1" />
+
+		<frame style="backerPanelShadow0" texture="/ui/elements:rounded_bg_white" borderthickness="0.75h" x="0.25h" y="0.25h" noclick="1"/>
+		<frame style="backerPanelGray3" texture="/ui/elements:rounded_bg_white" borderthickness="0.75h" noclick="1"/>
+
+		<label textalign="center" textvalign="center" fity="1" y="0.7h" font="maindyn_26" style="labelBase" content="game_paused" noclick="1"/>
+
+		<label textalign="center" textvalign="center" fity="1" y="6.5h" wrap="1" font="maindyn_14" style="labelBase" content="game_afkpaused" noclick="1"/>
+
+		<instance id="game_afkpause_btn_1" height="4.0h" width="14h" align="left" valign="bottom" x="0.75h" y="-0.75h"
+			name="standardButton_game"
+			label="general_quit"
+			font="maindyn_22"
+			rendermode="grayscale"
+			onclicklua="self:GetWidget('afkPausedIndicator'):SetVisible(0); FinishMatch()"
+		/>
+
+		<instance id="game_afkpause_btn_2" height="4.0h" width="24h" align="right" valign="bottom" x="-0.75h" y="-0.75h"
+			name="standardButton_game"
+			label="general_continuegame"
+			font="maindyn_22"
+			onclicklua="self:GetWidget('afkPausedIndicator'):SetVisible(0) Cmd('ServerUnpause')"
+		/>
+
+	</panel>
+
+	<!-- lanechoice -->
+	<include file="/ui/game/lane_choice/game_lane_choice.package"/>
+
+	<!-- Scoreboard -->
+	<panel name="gameScoreboardContainers" noclick="1">
+		<panel name="gameScoreboardContainer" style="gameScoareboardContainer"  noclick="1">
+			
+			<panel width="14%" noclick="1">
+				<instance name="gameScoreboardBanner" team="Ally"  teamName="glory" content="game_scoreboard_ally"	markerValign="bottom"	markerOffset="0.6h"		markerColor="#05ab1f"					y="3%"/>
+				<instance name="gameScoreboardBanner" team="Enemy" teamName="valor" content="game_scoreboard_enemy"	markerValign="top"		markerOffset="-0.6h"	markerColor="#aa2727"	markerY="-1.4h"	y="59%"/>
+			</panel>
+			
+			<panel height="4.2h" width="14%" valign="center" noclick="1">
+				<label textalign="center" font="maindyn_13" color="#a4c3cb" outline="1" outlinecolor="0 0 0 .6" content="game_scorebaord_baldir_kills" />			
+				<label width="-2h" fity="1" wrap="1" lineheight="1.2h" align="center" valign="bottom" textalign="center" font="maindyn_9" color="#bbc4c7" outline="1" outlinecolor="0 0 0 .4" content="game_scorebaord_to_spawn" />			
+			</panel>
+			
+			<frame width="86.7%" texture="/ui/elements:rounded_bg_white" align="right" float="bottom" color="0 0.07 0.09 0.8" borderthickness="0.8h" noclick="1">
+				<frame style="generalShadow" noclick="1"/>
+				<panel y="0h" x="0h" height="4.2h" color="#00090d" noclick="1">
+					<panel width="-1.6h" align="center" float="right" noclick="1">
+						<instance name="gameScoreboardHeaderEntry" width="8%"  content="game_scoreboard_hero"      textalign="center"/>
+						<instance name="gameScoreboardHeaderEntry" width="19%" content="game_scoreboard_name" />
+						<instance name="gameScoreboardHeaderEntry" width="5%"  content="game_scoreboard_level"     />
+						<instance name="gameScoreboardHeaderEntry" width="5%"  content="game_scoreboard_pet"       textalign="center"/>
+						<instance name="gameScoreboardHeaderEntry" width="42%" content="game_scoreboard_inventory" textalign="center"/>
+						<instance name="gameScoreboardHeaderEntry" width="7%"  content="game_scoreboard_kills"     textalign="center"/>
+						<instance name="gameScoreboardHeaderEntry" width="7%"  content="game_scoreboard_assists"   textalign="center"/>
+						<instance name="gameScoreboardHeaderEntry" width="7%"  content="game_scoreboard_gpm"       textalign="right" x="-1h"/>
+					</panel>
+				</panel>
+				<panel height="-4.8h" noclick="1">
+					<!-- blanks -->
+					<panel noclick="1" float="bottom">
+						<instance name="gameScoreboardRowBlank" type="Player" texture="/ui/shared/textures/scoreboard_highlight01.tga" color="#fff000"/>
+						<instance name="gameScoreboardRowBlank" type="Ally"   color="0 1 0 0.01"/>
+						<instance name="gameScoreboardRowBlank" type="Ally"   color="0 1 0 0.03"/>
+						<instance name="gameScoreboardRowBlank" type="Ally"   color="0 1 0 0.01"/>
+						<instance name="gameScoreboardRowBlank" type="Ally"   color="0 1 0 0.03"/>
+						
+						<instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.03"/>
+						<instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.01"/>
+						<instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.03"/>
+						<instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.01"/>
+						<instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.03"/>
+					</panel>
+						
+					<image texture="/ui/shared/textures/inside_glow.tga" align="right" color="0 0 0 0.6" noclick="1"/>
+					
+					<panel noclick="1" float="bottom">
+						<instance name="gameScoreboardRow" type="Player" id="0" texture="/ui/shared/textures/scoreboard_highlight01.tga" color="#fff000"/>
+						<instance name="gameScoreboardRow" type="Ally"   id="0" color="0 1 0 0.01"/>
+						<instance name="gameScoreboardRow" type="Ally"   id="1" color="0 1 0 0.03"/>
+						<instance name="gameScoreboardRow" type="Ally"   id="2" color="0 1 0 0.01"/>
+						<instance name="gameScoreboardRow" type="Ally"   id="3" color="0 1 0 0.03"/>
+						
+						<instance name="gameScoreboardRow" type="Enemy"  id="0" color="1 0 0 0.03"/>
+						<instance name="gameScoreboardRow" type="Enemy"  id="1" color="1 0 0 0.01"/>
+						<instance name="gameScoreboardRow" type="Enemy"  id="2" color="1 0 0 0.03"/>
+						<instance name="gameScoreboardRow" type="Enemy"  id="3" color="1 0 0 0.01"/>
+						<instance name="gameScoreboardRow" type="Enemy"  id="4" color="1 0 0 0.03"/>
+					</panel>
+				</panel>
+			</frame>
+			
+			<frame width="86.7%" texture="/ui/shared/frames/stone.tga" align="right" color="invisible" borderthickness="5h" bordercolor="white" noclick="1">
+				<image texture="/ui/shared/textures/stone_corner_tl.tga" y="-0.2h" x="-0.2h" height="6h" width="6h" align="left" valign="top" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_tr.tga" y="-0.2h" x="0.2h" height="6h" width="6h" align="right" valign="top" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_bl.tga" y="0.2h" x="-0.2h" height="6h" width="6h" align="left" valign="bottom" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_br.tga" y="0.2h" x="0.2h" height="6h" width="6h" align="right" valign="bottom" noclick="1" />
+				
+				<image texture="/ui/shared/textures/decal_orb.tga" y="-1.3h" x="-1.3h" height="5.3h" width="5.3h" align="left" valign="top" noclick="1" />
+				<image texture="/ui/shared/textures/decal_orb.tga" y="-1.3h" x="1.3h" height="5.3h" width="5.3h" align="right" valign="top" noclick="1" />
+			</frame>
+		</panel>
+	</panel>
+
+
+	<!-- info bars -->
+	<include file="/ui/game/channel_bar/game_channelbar.package"/>
+	<include file="/ui/game/status_bar/game_status_bar.package"/>
+	
+	<!-- Death recap -->	
+	<childinterface file="/ui/game/deathrecap/deathrecap.interface"/>
+
+	<!-- shop & stash -->
+	<childinterface file="/ui/new_game/shop/shop.interface"/>
+	<include file="/ui/new_game/heroinventory/game_heroinventory_stash_backers.package"/>
+	<include file="/ui/new_game/heroinventory/game_heroinventory_stash_icons.package"/>
+	<include file="/ui/new_game/heroinventory/game_heroinventory_stash_cooldowns.package"/>
+	<include file="/ui/new_game/heroinventory/game_heroinventory_stash_overlays.package"/>
+	<include file="/ui/new_game/heroinventory/game_heroinventory_stash_labels.package"/>
+	<include file="/ui/new_game/shop/shop_itemtip.package"/>
+	
+	
+	<!--
+	===========================	
+	Child interfaces and packages
+	Theses might need to spread around 
+	to appropriate places or reordered
+	===========================
+	-->	
+
+	<!--<lua file="/ui/shared/lib_general.lua"/>-->
+
+	<!-- Remote cursor -->
+	<panel name="remote_cursor" width="32" height="32" noclick="1" passivechildren="1" visible="0">
+		<image name="remote_cursor_icon" color="#FFFFFFA0"/>
+	</panel>
+
+	<!-- map effect - pinging i think-->
+	<effectpanel
+		name="effect_panel" noclick="1" camerawidth="100a" cameraheight="100"
+		watch0="MapEffect" ontrigger0="StartEffect(param0, GetMinimapDrawX('gameMinimap', param1) / GetScreenWidth(), GetMinimapDrawY('gameMinimap', 1.0 - param2) / GetScreenHeight(), param3);"
+	/>
+
+	<!-- test interface -->	
+	<childinterface file="/ui/game/test/game_test.interface"/>
+
+	<!-- radial menu -->
+	<include file="/ui/game/radial_selection/game_radialSelection.package" />	
+	<instance name="radial_selection" type="command" max="4"/>
+	<instance name="radial_selection" type="chat" max="8"/>
+
+	<!-- chat -->
+	<childinterface file="/ui/game/chat/game_chat.interface"/>
+	<childinterface file="/ui/shared/slash/slash.interface"/>		
+	
+	<!-- Twitch -->
+	<childinterface file="/ui/shared/twitch/twitch_edit.interface"/>
+	
+	<!-- Arcade Text -->
+	<childinterface file="/ui/new_game/event_log/game_events_2.interface"/>
+	<childinterface file="/ui/game/arcade_text/arcade_text.interface"/>
+	<include file="/ui/main/dev_tools/arcade_events_tester.package"/>
+	
+	<childinterface file="/ui/game/button_binder/button_binder.interface"/>
+
+	<!-- minimap -->
+	<include file="/ui/game/shared/minimap/minimap_unit_tip.package"/>	
+	
+	<!-- item guidance -->
+	<include file="/ui/new_game/item_guidance/game_item_guidance.package"/>	
+	
+	<!-- Options -->
+	<childinterface file="/ui/shared/options/options.interface"/>
+	<include file="/ui/main/control_presets/control_presets.package"/>		
+	
+	<!-- tips -->
+	<include file="/ui/new_game/inventory/inventorytipsimple.package"/>
+	<include file="/ui/game/gold_report/game_tooltip_goldreport.package"/>
+	<include file="/ui/game/item_cursor/game_item_cursor.package"/>
+	<include file="/ui/game/shared/itemtip/itemtip.package"/>
+	<childinterface file="/ui/shared/simpletip_growy.interface"/>
+	<childinterface file="/ui/shared/simpletip_nofloat.interface"/>
+	<childinterface file="/ui/shared/widget_highlight.interface"/>
+	<childinterface file="/ui/new_game/ability/abilitytip.interface"/>
+	<childinterface file="/ui/new_game/ability/pettip.interface"/>
+	<instance name="ToolTip" id="stats"/>
+	<instance name="ToolTip" id="mana"/>
+	<instance name="ToolTip" id="health"/>
+
+	<!-- Hero Tooltip -->
+	<floater name="game_hero_unitframe_tooltip" noclick="true" width="22.0h" height="22.5h" x="21.5" y="-22" passivechildren="true" visible="0" grow="1" regrow="1" growinvis="0" >
+		<frame texture="/ui/elements:rounded_bg_white" borderthickness="1h" color="0 0 0 0.5" x="0.25h" y="0.25h"/>
+		<frame color="#050505" texture="/ui/elements:rounded_bg_white" bordercolor="#050505" borderthickness="1h" noclick="true"/>
+
+
+		<panel width="-1h" height="-1h" align="center" valign="center" noclick="true" float="bottom" padding="0.2h" grow="1" regrow="1" growinvis="0">
+
+			<panel height="4.5h" noclick="true" sticky="1" stickytoinvis="0" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<image name="game_hero_unitframe_tooltip_icon" texture="/heroes/ace/icon.tga" x="15@" width="85@" height="85%" align="left" valign="center" noclick="true"/>
+				<label name="game_hero_unitframe_tooltip_player_label" x="135@" content="temp_game_playername" height="50%" textvalign="center" shadow="true" color="white" outline="1" font="maindyn_16" noclick="true"/>
+				<label name="game_hero_unitframe_tooltip_hero_label" x="135@" content="temp_game_heroname" height="50%" valign="bottom" textvalign="center" shadow="true" outline="1" color="#FFAA11" font="maindyn_14" noclick="true"/>
+			</panel>
+
+			<panel height="0.7h" noclick="true" />
+			
+			<panel name="game_hero_unitframe_tooltip_gpm" height="2.0h" noclick="true" sticky="1" stickytoinvis="0" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label height="100%" y="0%" 		hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="#FFCC00" outline="true" font="maindyn_14" 		content="game_tooltip_gpm" noclick="true"/>
+				<label name="game_hero_unitframe_tooltip_gpm_label" height="100%"  y="0%"  		hmargin="5%" textalign="right" textvalign="center" width="100%" x="0" color="#FFCC00" outline="true" font="maindyn_14" 		content="?" noclick="true"/>
+			</panel>				
+			
+			<panel height="2.0h" noclick="true" sticky="1" stickytoinvis="0" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label height="100%" y="0%" 		hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="0.5 1 0.5" outline="true" font="maindyn_14" 		content="game_tooltip_killassists" noclick="true"/>
+				<label name="game_hero_unitframe_tooltip_kills_label" height="100%"  y="0%"  		hmargin="5%" textalign="right" textvalign="center" width="100%" x="0" color="0.5 1 0.5" outline="true" font="maindyn_14" 		content="?" noclick="true"/>
+			</panel>
+
+			<panel name="game_hero_unitframe_tooltip_deaths" height="2.0h" noclick="true" sticky="1" stickytoinvis="0" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label height="100%" y="0%" 		hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="1 0.2 0.2" outline="true" font="maindyn_14" 		content="game_tooltip_deaths" noclick="true"/>
+				<label name="game_hero_unitframe_tooltip_deaths_label" height="100%"  y="0%"  		hmargin="5%" textalign="right" textvalign="center" width="100%" x="0" color="1 0.2 0.2" outline="true" font="maindyn_14" 		content="?" noclick="true"/>
+			</panel>			
+
+			<panel height="2.0h" noclick="true" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label name="gameSelfPower2" height="100%" hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="orange" outline="true" font="maindyn_14" 		content="game_tooltip_power" noclick="true"/>
+				<label name="gameSelfPower" height="100%" hmargin="5%" textalign="right" textvalign="center" width="100%" x="0" color="orange" outline="true" font="maindyn_14" 		content="?" noclick="true"/>
+			</panel>
+
+			<panel height="2.0h" noclick="true" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label height="100%" hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="white" outline="true" font="maindyn_14" 			content="game_tooltip_dps" noclick="true"/>
+				<label name="gameSelfDPS" 	height="100%" hmargin	="5%" textalign="right" textvalign="center" width="100%" x="0" color="white" outline="true" font="maindyn_14" 		content="?" noclick="true"/>
+			</panel>
+
+			<panel height="2.0h" noclick="true" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label height="100%" hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="white" outline="true" font="maindyn_14" 			content="game_tooltip_as" noclick="true"/>
+				<label name="gameSelfAS" 	height="100%" hmargin	="5%" textalign="right" textvalign="center" width="100%" x="0" color="white" outline="true" font="maindyn_14" 		content="?" noclick="true"/>
+			</panel>			
+			
+			<panel height="2.0h" noclick="true" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label height="100%" hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="0 1 1 1" outline="true" font="maindyn_14" 			content="game_tooltip_attackdamage" noclick="true"/>
+				<label name="game_hero_unitframe_tooltip_attackdamage_label" 	height="100%" hmargin	="5%" textalign="right" textvalign="center" width="100%" x="0" color="0 1 1 1" outline="true" font="maindyn_14" 		content="?" noclick="true"/>
+			</panel>
+			
+			<panel height="2.0h" noclick="true" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label name="gameSelfMitigation2" height="100%" hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="1 0.5 0.5 1" outline="true" font="maindyn_14" 		content="game_tooltip_mitigation" noclick="true"/>
+				<label name="gameSelfMitigation" height="100%" hmargin="5%" textalign="right" textvalign="center" width="100%" x="0" color="1 0.5 0.5 1" outline="true" font="maindyn_14" 		content="?" noclick="true"/>
+			</panel>
+
+			<panel height="2.0h" noclick="true" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label name="gameSelfResistance2" height="100%" hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="0.5 0.5 1 1" outline="true" font="maindyn_14"  		content="game_tooltip_resistance" noclick="true"/>
+				<label name="gameSelfResistance" height="100%" hmargin="5%" textalign="right" textvalign="center" width="100%" x="0" color="0.5 0.5 1 1" outline="true" font="maindyn_14"  		content="?" noclick="true"/>
+			</panel>
+
+			<panel height="2.0h" noclick="true" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+				<label name="gameSelfMoveSpeed2" height="100%" hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="1 1 .5 1" outline="true" font="maindyn_14"  		content="game_tooltip_movespeed" noclick="true"/>
+				<label name="gameSelfMoveSpeed" height="100%" hmargin="5%" textalign="right" textvalign="center" width="100%" x="0" color="1 1 .5 1" outline="true" font="maindyn_14"  		content="?" noclick="true"/>
+			</panel>			
+			
+			<panel height="0.7h" noclick="true" />
+
+		</panel>
+	</floater>	
+	
+	<panel name="npeScriptWidget" color="invisible" noclick="1"/>
+	
+	<panel name="gameDragLayer" noclick="1" color="invisible"/>
+	
+	<!--
+	===========================	
+	Lua files
+	===========================
+	-->	
+	<!-- core -->	
+	<lua file="/ui/shared/lib_number.lua"/>
+	<lua file="/ui/shared/global_drag2.lua"/>
+
+	<lua file="/ui/shared/styles.lua"/>
+	
+	<!-- shop and stash -->
+	<lua file="/ui/new_game/shop/shop.lua"/>
+	<lua file="/ui/new_game/heroinventory/heroinventory_stash.lua"/>
+	<!-- <lua file="/ui/game/heroinventory/heroinventory_state.lua"/> -->
+	
+	<!-- radial menu-->
+	<lua file="/ui/game/radial_selection/radialSelection.lua" />	
+	<lua file="/ui/game/radial_command/radial_command.lua" />	
+	<lua file="/ui/game/radial_chat/radial_chat.lua" />
+	
+	<!-- info bars -->
+	<lua file="/ui/game/channel_bar/channelbar.lua"/>
+	<lua file="/ui/game/status_bar/status_bar.lua"/>
+	
+	<!-- minimap -->
+	<lua file="/ui/game/shared/minimap/minimap.lua"/>
+	<lua file="/ui/game/shared/minimap/minimap_unit_tip.lua"/>
+	
+	<!-- lanechoice -->
+	<lua file="/ui/game/lane_choice/lanechoice.lua"/>
+	
+	<!-- Remote cursor -->
+	<lua file="/ui/game/remote_cursor/remote_cursor.lua"/>
+	
+	<!-- Arcade Text -->
+	<lua file="/ui/new_game/event_log/events_2.lua"/>
+	
+	<lua file="/ui/shared/database.lua"/>
+
+	<lua file="/ui/new_game/item_guidance/item_guidance.lua"/>
+
+	<childinterface file="/ui/shared/scoreboard_templates.interface"/>	
+	
+	<include file="/ui/game/karma/karma_vote.package"/>
+	<include file="/ui/game/scoreboard/scoreboard.package"/>
+	
+	<lua file="/ui/game/karma/karma_vote.lua"/>
+	<lua file="/ui/game/scoreboard/scoreboard.lua"/>
+
+	<!-- dialog --> 
+	<include file="/ui/game/dialog/dialog.package"/>	
+	
+	<lua file="/ui/new_game/levelup/leveluppanel2.lua"/>
+	<lua file="/ui/game/gold_report/goldreport.lua"/>
+	<lua file="/ui/new_game/inventory/inventorytipsimple.lua"/>
+	<lua file="/ui/game/shared/itemtip/itemtip.lua"/>
+	<lua file="/ui/game/item_cursor/itemcursor.lua"/>
+
+	<lua file="/ui_dev/window_controller.lua"/>
+
+	<!-- new_game  -->
+	<lua file="/ui/new_game/new_game_animations.lua" />
+	<lua file="/ui/new_game/new_game_common.lua" />
+	<lua file="/ui/new_game/new_game_allyEnemyTimers.lua" />
+	<lua file="/ui/new_game/new_game_playerhero.lua" />
+	<lua file="/ui/new_game/new_game_inventory.lua" />
+	<lua file="/ui/new_game/new_game_herotargetstats.lua" />
+	<lua file="/ui/new_game/new_game_minimapheader.lua" />
+	<lua file="/ui/new_game/new_game_radialWheels.lua" />
+	<lua file="/ui/new_game/new_game_scoreboard.lua" />
+	<lua file="/ui/new_game/new_game_screeneffects.lua" />
+	<lua file="/ui/new_game/inventory.lua" />
+	<lua file="/ui/new_game/new_game.lua" />
+
+	<!-- Stuff that we need to execute once all other lua is loaded -->
+	<lua file="/ui/new_game/triggers_game_init.lua"/>
+
+	<lua file="/ui/shared/database.lua"/>
+	<panel name="npeScriptWidget" color="invisible" noclick="true"/>
+	<lua file="/ui/main/new_player_experience/new_player_experience_lib.lua"/>
+
+	<!-- Game analytics for SPE -->
+	<lua file="/ui/shared/lib_progress.lua"/>
+	<lua file="/ui/shared/lib_gameanalytics.lua"/>	
+	
+	<!-- This blacks out the screen for a brief moment -->
+	<panel noclick="1" color="black" onshowlua="self:Sleep(500, function() self:FadeOut(500) end)" />
+</interface>
