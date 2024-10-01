@@ -1040,18 +1040,52 @@ end
 local destroyPetWidgets
 local populatePetList
 
-local popularHeroList = {1, 2}
-local function IsHeroPopular(hero_Index)
-    for n, value in ipairs(popularHeroList) do
-        if (value == hero_Index) then
+local popularHeroList = 
+{
+    m_Array = {},
+    
+    DoesArrayContain = function (self, arraySearch, elementToFind)
+        for _, value in ipairs(arraySearch) do
+            if (value == elementToFind) then
+                return true
+            end
+        end
+        return false
+    end,
+
+    IsHeroPopular = function (self, hero_Name)
+        if (self:DoesArrayContain(self.m_Array, hero_Name)) then
             return 1
         end
+        return 0
+    end,
+
+    Refresh = function(self)
+        self.m_Array = {}
+        local foundHeroes = {}
+        local queueInfo = Chat_Web_Requests:GetQueueInfo()
+        local currentQueue = LuaTrigger.GetTrigger('PartyStatus').queue
+        for _,queue in pairs(queueInfo) do
+            if(queue["queue"] == currentQueue) then
+                for _,party in pairs(queue["parties"]) do
+                    for _,member in pairs(party["members"]) do 
+                        local hero = member["hero"]
+                        if (not self:DoesArrayContain(self.m_Array, hero)) then 
+                            if (self:DoesArrayContain(foundHeroes, hero)) then
+                                self.m_Array[#self.m_Array + 1] = hero
+                            else
+                                foundHeroes[#foundHeroes + 1] = hero
+                            end
+                        end 
+                    end
+                end	
+            end
+        end
     end
-    
-    return 0
-end
+}
 
 local function populateHeroList()
+    popularHeroList:Refresh()
 	if (#main_pregame_heros_container:GetChildren() > 0) then return end
 	main_pregame_heros_container:ClearChildren()
 	local tileWidth = getMeasurementFromString(main_pregame_heros_container, '90s')
@@ -1063,7 +1097,7 @@ local function populateHeroList()
 			local heroBacking = getHeroBacking(trigger)
 			local whoPicked = WhoPickedThatHero(trigger)
 			return {
-				'HeroName', trigger.displayName, 
+				'HeroName', trigger.displayName,
 				'icon', trigger.iconPath, 
 				'index', n, 
 				'frameTexture', heroBacking,
@@ -1072,7 +1106,7 @@ local function populateHeroList()
 				'pickedBy', (whoPicked and whoPicked.playerName) or '',
 				'isNew', tostring(isNewHero(trigger.entityName)),
 				'x', n*tileWidth,
-                'isPopular', IsHeroPopular(n)
+                'isPopular', popularHeroList:IsHeroPopular(trigger.entityName)
 			} end,
 		true,
 		{
