@@ -1868,8 +1868,6 @@
 	<childinterface file="/ui/new_game/event_log/game_events_2.interface"/>
 	<childinterface file="/ui/game/arcade_text/arcade_text.interface"/>
 	<include file="/ui/main/dev_tools/arcade_events_tester.package"/>
-	
-	<childinterface file="/ui/game/button_binder/button_binder.interface"/>
 
 	<!-- minimap -->
 	<include file="/ui/game/shared/minimap/minimap_unit_tip.package"/>	
@@ -1879,7 +1877,8 @@
 	
 	<!-- Options -->
 	<childinterface file="/ui/shared/options/options.interface"/>
-	<include file="/ui/main/control_presets/control_presets.package"/>		
+	<include file="/ui/main/control_presets/control_presets.package"/>
+    <childinterface file="/ui/game/button_binder/button_binder.interface"/>
 	
 	<!-- tips -->
 	<include file="/ui/new_game/inventory/inventorytipsimple.package"/>
