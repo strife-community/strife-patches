@@ -1038,9 +1038,29 @@ end
 local destroyPetWidgets
 local populatePetList
 
---local hero
+-- local popularHeroList = { 1, 2 }
+-- local function IsHeroPopular(hero_Index)
+    -- for n, value in ipairs(popularHeroList) do
+        -- if (value == hero_Index) then
+            -- return 1
+        -- end
+    -- end
+    
+    -- return 0
+-- end
 
 local function populateHeroList()
+    local popularHeroList = { 1, 2 }
+    local function IsHeroPopular(hero_Index)
+        for n, value in ipairs(popularHeroList) do
+            if (value == hero_Index) then
+                return 1
+            end
+        end
+        
+        return 0
+    end
+
 	if (#main_pregame_heros_container:GetChildren() > 0) then return end
 	main_pregame_heros_container:ClearChildren()
 	local tileWidth = getMeasurementFromString(main_pregame_heros_container, '90s')
@@ -1051,7 +1071,6 @@ local function populateHeroList()
 			mainUI.Pregame.heroRoleTable[n] = {trigger.heroRoleCC, trigger.heroRoleMagDamage, trigger.heroRolePhysDamage, trigger.heroRoleSurvival, trigger.heroRoleUtility}
 			local heroBacking = getHeroBacking(trigger)
 			local whoPicked = WhoPickedThatHero(trigger)
-            --local isPopular = IsHeroPopular(trigger.displayName)
 			return {
 				'HeroName', trigger.displayName, 
 				'icon', trigger.iconPath, 
@@ -1062,7 +1081,7 @@ local function populateHeroList()
 				'pickedBy', (whoPicked and whoPicked.playerName) or '',
 				'isNew', tostring(isNewHero(trigger.entityName)),
 				'x', n*tileWidth,
-                'isPopular', '0'
+                'isPopular', IsHeroPopular(n)
 			} end,
 		true,
 		{
