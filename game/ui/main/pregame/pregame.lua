@@ -1038,6 +1038,8 @@ end
 local destroyPetWidgets
 local populatePetList
 
+--local hero
+
 local function populateHeroList()
 	if (#main_pregame_heros_container:GetChildren() > 0) then return end
 	main_pregame_heros_container:ClearChildren()
@@ -1049,6 +1051,7 @@ local function populateHeroList()
 			mainUI.Pregame.heroRoleTable[n] = {trigger.heroRoleCC, trigger.heroRoleMagDamage, trigger.heroRolePhysDamage, trigger.heroRoleSurvival, trigger.heroRoleUtility}
 			local heroBacking = getHeroBacking(trigger)
 			local whoPicked = WhoPickedThatHero(trigger)
+            --local isPopular = IsHeroPopular(trigger.displayName)
 			return {
 				'HeroName', trigger.displayName, 
 				'icon', trigger.iconPath, 
@@ -1058,7 +1061,8 @@ local function populateHeroList()
 				'pickedVisible', tostring(not trigger.canSelect),
 				'pickedBy', (whoPicked and whoPicked.playerName) or '',
 				'isNew', tostring(isNewHero(trigger.entityName)),
-				'x', n*tileWidth
+				'x', n*tileWidth,
+                'isPopular', '0'
 			} end,
 		true,
 		{
