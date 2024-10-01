@@ -6587,8 +6587,8 @@ mana_regen_comp												Manaregeneration
 crafted_item_bonus_analog									Übliches Bonus
 crafted_item_bonus_rare										Seltsames Bonus
 crafted_item_bonus_legendary								Legendäres Bonus
-crafted_item_name_rare										{itemname} von {rarebonus}
-crafted_item_name_legendary									{legendarybonus} {itemname} von {rarebonus}
+crafted_item_name_rare										{itemname} mit {rarebonus}
+crafted_item_name_legendary									{legendarybonus} {itemname} mit {rarebonus}
 
 crafting_enchant_disabled_needitem							Keine gefertigten Gegenstände
 crafting_enchant_disabled_needitem_desc						Verzaubung ist nicht verfügbar, bis du mindestens einen gefertigten Gegenstand hast.
