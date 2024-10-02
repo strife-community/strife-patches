@@ -1053,36 +1053,13 @@ local popularHeroList =
         return false
     end,
 
-    IsHeroPopular = function (self, hero_Name)
-        if (self:DoesArrayContain(self.m_Array, hero_Name)) then
-            return 1
-        end
-        return 0
-    end,
-
-    Update_Hero_List = function(self)
-        -- local widget_Name_List = {}
-        -- for n = 0, #heroWidgets do
-        --     if (heroWidgets[n] ~= randomWidget) then
-        --         local cur_Hero = LuaTrigger.GetTrigger('HeroSelectHeroList'..n)
-        --         local hero_Name = cur_Hero.entityName
-        --         if (self:DoesArrayContain(self.m_Array, hero_Name)) then
-        --             widget_Name_List[#widget_Name_List + 1] = n
-        --         end
-        --     end
-        -- end
-        -- println("INDEXES: "..table.concat(widget_Name_List, ", "))
-        -- groupfcall('main_pregame_hero_popular_icon_group', function(_, widget) 
-        --     println("TEST: "..widget.id)
-        --     widget:SetVisible(widget_Name_List, widget.id)
-        -- end)
-
+    Update_Hero_List = function(self, popularHeroes)
         for n = 0, #heroWidgets do
             if (heroWidgets[n] ~= randomWidget) then
                 local cur_Hero = LuaTrigger.GetTrigger('HeroSelectHeroList'..n)
                 local icon_Widget = interface:GetWidget('main_pregame_popular_hero_icon_'..n)
                 local hero_Name = cur_Hero.entityName
-                if (self:DoesArrayContain(self.m_Array, hero_Name)) then
+                if (self:DoesArrayContain(popularHeroes, hero_Name)) then
                     icon_Widget:SetVisible(true)
                 else
                     icon_Widget:SetVisible(false)
@@ -1092,7 +1069,7 @@ local popularHeroList =
     end,
 
     RefreshList = function(self)
-        self.m_Array = {}
+        local popularHeroes = {}
         local foundHeroes = {}
         local queueInfo = Chat_Web_Requests:GetQueueInfo()
         local currentQueue = LuaTrigger.GetTrigger('PartyStatus').queue
@@ -1101,9 +1078,9 @@ local popularHeroList =
                 for _,party in pairs(queue["parties"]) do
                     for _,member in pairs(party["members"]) do 
                         local hero = member["hero"]
-                        if (not self:DoesArrayContain(self.m_Array, hero)) then 
+                        if (not self:DoesArrayContain(popularHeroes, hero)) then 
                             if (self:DoesArrayContain(foundHeroes, hero)) then
-                                self.m_Array[#self.m_Array + 1] = hero
+                                popularHeroes[#popularHeroes + 1] = hero
                             else
                                 foundHeroes[#foundHeroes + 1] = hero
                             end
@@ -1113,19 +1090,20 @@ local popularHeroList =
                 break
             end
         end
-        println("POPULAR: "..table.concat(self.m_Array))
-        self:Update_Hero_List()
+        self:Update_Hero_List(popularHeroes)
     end,
 
     isThreadRunning = false,
+    doStopThread = false,
 
     ThreadRefresh = function(self)
         if (self.isThreadRunning) then
             return
         end
         self.isThreadRunning = true
+        self.doStopThread = false
         libThread.threadFunc(function()
-            while(state == 1) do -- 1 = hero, 2 = pet, 3 = customize
+            while ((not self.doStopThread) and (state == 1)) do -- 1 = hero, 2 = pet, 3 = customize
                 self:RefreshList()
                 wait(5000)
             end
@@ -1156,8 +1134,7 @@ local function populateHeroList()
 				'pickedVisible', tostring(not trigger.canSelect),
 				'pickedBy', (whoPicked and whoPicked.playerName) or '',
 				'isNew', tostring(isNewHero(trigger.entityName)),
-				'x', n*tileWidth,
-                'isPopular', 0 -- Will be filled with thread
+				'x', n*tileWidth
 			} end,
 		true,
 		{
@@ -1168,6 +1145,7 @@ local function populateHeroList()
 			onmousewheeldown = function(n, trigger) updateHeroSlider( wheelScrollSpeed, nil, true) end,
 		}
 	)
+    popularHeroList:RefreshList()
 	
 	local function checkPicked(n)
 		-- Check if spectating
@@ -2808,8 +2786,7 @@ createSimpleButton('main_pregame_ready_start_over_button', 'main_pregame_ready_s
 	g_SkinSelection.selectedSkin = 0
 	g_SkinSelection.selectedPetSkin = 1
 	state = 1
-    popularHeroList:ThreadRefresh()
-	petSelection = false
+    petSelection = false
 	refreshBreadcrumbs()
 	applyHeroFilter()
 	showSelected()
@@ -2995,7 +2972,7 @@ end
 -- ================================================================
 
 local function leaveParty() -- Leaves current party/lobby
-	if isLobby then
+    if isLobby then
 		ChatClient.LeaveGame()
 	else
 		Party.LeaveParty()
@@ -3254,6 +3231,7 @@ local function hidePregame()
 		--wait(styles_mainSwapAnimationDuration)
 		main_pregame_container:FadeOut(styles_mainSwapAnimationDuration)
 	--end)
+    popularHeroList.doStopThread = true
 end
 
 -- ================================================================
@@ -3337,6 +3315,8 @@ local function showPregame()
 		end
 
 	end)
+
+    popularHeroList:ThreadRefresh()
 end
 
 
