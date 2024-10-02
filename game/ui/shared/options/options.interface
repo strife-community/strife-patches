@@ -1,0 +1,2785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="options_new" luatable="true"
+	hotkey="ESC" onhotkey="DoEvent()" oneventlua="Strife_Options.LeaveOptionsScreen()"
+>
+
+	<childinterface file="/ui/main/shared/main_styles.interface"/>
+
+	<include file="/ui/shared/templates_elements_simple.package"/>
+
+	<lua file="options.lua"/>
+	<include file="options_templates.package"/>
+
+	<panel name="game_options" y="0" color="0 0 0 .7"  visible="0" noclick="1"
+		onshowlua="Strife_Options:OnShow()"
+		onloadlua="	self:Sleep(1, function() Strife_Options:Register(self) end)"
+	>
+
+		<panel width="118h" height="94h" valign="center" align="center" noclick="1" >
+
+			<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="1.4h" color=".08 .08 .08 1"/>
+			<frame texture="/ui/shared/frames/border_double.tga" borderthickness="1.4h" style="doubleFrame" color="invisible"/>
+
+
+			<panel height="-4.0h" width="-4.0h" align="center" valign="center" noclick="true">
+				<panel x="25h" width="-25h" noclick="1" >
+
+					<frame texture="/ui/shared/frames/std_btn_inset.tga" borderthickness="0.8h" bordercolor=".8 .8 .8 1" color=".7 .7 .7 1" />
+
+					<panel name="options_main_holder" clip="1" y="1.2h" width="-4.0h" height="-7h" align="center" valign="top" padding="0.5h" noclick="1">
+
+						<!-- Display -->
+						<panel name="options_main_category1" group="options_grow_panel_parent" width="100%" float="bottom" padding="1.0h" noclick="1" visible="0" reverse="true">
+
+							<instance name="optionH1" label="options_display_opts" />
+
+							<!-- Graphics -->
+							<instance name="options_subcategory_header" cat="1" id="1" label="options_button_graphics" visible="false" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+
+								<!-- Graphics Scene Slider -->
+								<panel group="options_grow_panel_child" noclick="1">
+
+									<panel group="options_grow_panel_child" width="-2.0h" align="center" float="bottom" padding="0.5h" noclick="true">
+
+										<!-- Model Preview Land -->
+										<panel y="-4h" height="40.0h" noclick="1" passivechildren="1">
+
+											<panel noclick="1" onshowlua="Strife_Options:PopulateSlider()">
+												<splashimage name="ui_options_preview_ultra" noclick="1" visible="0" image="" bgcolor="black" view="clip"
+													onshowlua="self:SetImage('/ui/shared/options/textures/graphics_ultra.jpg')"
+													onhidelua="self:SetImage('')"
+												/>												
+												<splashimage name="ui_options_preview_high" noclick="1" visible="0" image="" bgcolor="black" view="clip"
+													onshowlua="self:SetImage('/ui/shared/options/textures/graphics_high.jpg')"
+													onhidelua="self:SetImage('')"
+												/>
+												<splashimage name="ui_options_preview_med" noclick="1" visible="0" image="" bgcolor="black" view="clip"
+													onshowlua="self:SetImage('/ui/shared/options/textures/graphics_med.jpg')"
+													onhidelua="self:SetImage('')"
+												/>
+												<splashimage name="ui_options_preview_low" noclick="1" visible="0" image="" bgcolor="black" view="clip"
+													onshowlua="self:SetImage('/ui/shared/options/textures/graphics_low.jpg')"
+													onhidelua="self:SetImage('')"
+												/>
+											</panel>
+
+											<frame color="invisible" borderthickness="2" bordercolor="0 0 0 1" noclick="true"/>
+											<frame color="invisible" borderthickness="1" bordercolor=".2 .2 .2 1" noclick="true"/>
+										</panel>
+
+										<panel height="0.5h" noclick="true" />
+
+										<panel height="4.0h" noclick="true">
+
+											<panel height="2.6h" width="-0.5h" align="left" noclick="true">
+
+												<panel x="2.5%" width="2" group="options_grow_panel_child" height="2.6h" noclick="true">
+													<panel width="2" height="32%" align="center" noclick="true">
+														<panel width="1" color=".15 .15 .15 1" align="left" noclick="true" />
+														<panel width="1" color=".2 .2 .2 1" align="right" noclick="true" />
+													</panel>
+													<panel  width="2" height="32%" align="center" valign="bottom" noclick="true">
+														<panel width="1" color=".15 .15 .15 1" align="left" noclick="true" />
+														<panel width="1" color=".2 .2 .2 1" align="right" noclick="true" />
+													</panel>
+												</panel>
+												
+												<panel x="34.0%" width="2" group="options_grow_panel_child" height="2.6h" noclick="true">
+													<panel width="2" height="32%" align="center" noclick="true">
+														<panel width="1" color=".15 .15 .15 1" align="left" noclick="true" />
+														<panel width="1" color=".2 .2 .2 1" align="right" noclick="true" />
+													</panel>
+													<panel  width="2" height="32%" align="center" valign="bottom" noclick="true">
+														<panel width="1" color=".15 .15 .15 1" align="left" noclick="true" />
+														<panel width="1" color=".2 .2 .2 1" align="right" noclick="true" />
+													</panel>
+												</panel>
+												
+												<panel x="65.0%" width="2" group="options_grow_panel_child" height="2.6h" noclick="true">
+													<panel width="2" height="32%" align="center" noclick="true">
+														<panel width="1" color=".15 .15 .15 1" align="left" noclick="true" />
+														<panel width="1" color=".2 .2 .2 1" align="right" noclick="true" />
+													</panel>
+													<panel  width="2" height="32%" align="center" valign="bottom" noclick="true">
+														<panel width="1" color=".15 .15 .15 1" align="left" noclick="true" />
+														<panel width="1" color=".2 .2 .2 1" align="right" noclick="true" />
+													</panel>
+												</panel>												
+												
+												<panel x="96.25%" width="2" group="options_grow_panel_child" height="2.6h" noclick="true">
+													<panel width="2" height="32%" align="center" noclick="true">
+														<panel width="1" color=".15 .15 .15 1" align="left" noclick="true" />
+														<panel width="1" color=".2 .2 .2 1" align="right" noclick="true" />
+													</panel>
+													<panel  width="2" height="32%" align="center" valign="bottom" noclick="true">
+														<panel width="1" color=".15 .15 .15 1" align="left" noclick="true" />
+														<panel width="1" color=".2 .2 .2 1" align="right" noclick="true" />
+													</panel>
+												</panel>
+
+												<label y="2.8h" x="2.5%" width="-5%" font="maindyn_16" fitx="1" color="1 1 1 1" shadow="true" content="options_low" noclick="true" />
+												<label y="2.8h" x="-15.5%" width="-5%" font="maindyn_16" fitx="1" align="center" color="1 1 1 1" shadow="true" content="options_medium" noclick="true" />
+												<label y="2.8h" x="+15.5%" width="-5%" font="maindyn_16" fitx="1" align="center" color="1 1 1 1" shadow="true" content="options_high" noclick="true" />
+												<label y="2.8h" x="-2.5%" width="-5%" font="maindyn_16" fitx="1" align="right" color="1 1 1 1" shadow="true" content="options_ultra" noclick="true" />
+
+												<slider
+													name="optn_graphics_slider"
+													width="-2.0h" align="center"
+													slotwidth="-1%" slotheight="0.3h"
+													slotcolor=".15 .15 .15 1"
+													handlewidth="100@" handleheight="100%"
+													handlecolor="1 1 1 1"
+													minvalue="1" maxvalue="4"
+													step="1"
+													texture="/ui/shared/textures/slider.tga"
+													onselect="PlaySound('/shared/sounds/ui/button_over_02.wav');"
+													onchange="DoEvent(5);"
+													onevent5="PlaySound('/shared/sounds/ui/button_slide_01.wav');"
+													onevent5lua="Strife_Options:GraphicsSlideFunction(self:GetValue())"
+													oninstantiatelua="
+
+													"
+												/>
+
+											</panel>
+										</panel>
+
+										<panel height="2.0h" noclick="1" />
+
+										<instance name="standardButton" id="option_gfx_slider_apply" height="4.5h" width="24h" align="right" font="maindyn_20" label="options_button_apply"  borderthickness=".8h"
+											onclicklua="
+												Strife_Options.ApplySettings()
+												-- mainOptionsApply
+												-- PlaySound('/path_to/filename.wav')
+											"
+											onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+										/>
+
+									</panel>
+
+								</panel>
+
+								<panel group="options_grow_panel_child" y="49h" float="bottom" padding="1.2h" noclick="1">
+									<label fity="true" wrap="true" style="h2" content="options_graphicslvl_set" noclick="1" />
+									<label fity="true" wrap="true" style="labelBase" font="maindyn_18" content="options_graphicslvl_txt1" noclick="1" />
+									<label fity="true" wrap="true" style="labelBase" font="maindyn_18" color=".8 .8 .8 1" content="options_graphicslvl_txt2" noclick="1" />
+								</panel>
+
+							</panel>
+
+							<!-- Video -->
+							<instance name="options_subcategory_header" cat="1" id="2" label="options_submen_video" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel y="1.0h" group="options_grow_panel_child" width="49%" align="left" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Game Window mode -->
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="2"
+										cvar="options_window_mode"
+										title="options_header_display_mode"
+										maxlistheight="5"
+										tip_name="options_header_display_mode" tip_text1="options_header_display_mode_desc"
+										oneventlua="
+											self:Clear()
+											self:AddTemplateListItem('simpleDropdownItem', '1', 'label', 'options_checkbox_full_screen_mode');
+											self:AddTemplateListItem('simpleDropdownItem', '2', 'label', 'options_checkbox_borderless_window');
+											self:AddTemplateListItem('simpleDropdownItem', '3', 'label', 'options_checkbox_windowed');
+											self:SetSelectedItemByValue(GetCvarString('options_window_mode') or '1', false);
+										"
+										oninstantiatelua="self:DoEvent()"
+									/>
+
+									<if condition="StringEquals(host_os,'windows')">
+										<!-- Frame Queuing -->
+										<instance name="option_checkbox_v3"
+											category="1" subcategory="2"
+											cvar="options_framequeuing"
+											title="options_checkbox_frame_queuing"
+											tip_name="options_checkbox_frame_queuing" tip_text1="options_frame_queuing_tip"
+											sub_text1="options_simple_framequeue_a"
+											sub_text3="options_simple_framequeue_b"
+											sub_text2=""
+										/>
+									</if>
+
+									<!-- Vsync -->
+									<instance name="option_checkbox_v3"
+										category="1" subcategory="2"
+										cvar="options_vsync"
+										title="options_vsync"
+										tip_name="options_vsync" tip_text1="options_vsync_tip_text"
+										sub_text1="options_simple_vsync_a"
+										sub_text3="options_simple_vsync_b"
+										sub_text2=""
+									/>
+
+									<!-- Refresh Rate -->
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="2"
+										cvar="vid_refreshRate"
+										title="options_label_refresh_rate"
+										maxlistheight="5"
+										tip_name="options_label_refresh_rate" tip_text1="options_tip_refresh_rate"
+										oneventlua="
+											self:Clear()
+											local indexTable = {}
+											for i,v in pairs(GetRefreshRates()) do
+												table.insert(indexTable, {i, v})
+											end
+											table.sort(indexTable, function(a,b) return ( (string.lower(a[1]) &#60; string.lower(b[1])) ) end)
+											for i,v in pairsByKeys(indexTable) do
+												self:AddTemplateListItem('simpleDropdownItem', v[2], 'label', Translate('options_refresh_rate_name', 'hz', v[1]))
+											end
+											self:SetSelectedItemByValue(GetCvarString('vid_refreshRate'), false)
+										"
+										oninstantiatelua="self:DoEvent()"
+									/>
+
+									<!-- Aspect Ratio -->
+									<!-- TODO : vid_aspect not yet implemented
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="2"
+										cvar="vid_aspect"
+										title="options_label_aspect_ratio"
+										maxlistheight="3"
+										tip_name="options_label_aspect_ratio" tip_text1="options_label_aspect_ratio_tip"
+										oneventlua="
+											self:Clear()
+											local indexTable = {}
+											for i,v in pairs(GetAspectModes()) do
+												table.insert(indexTable, {i, v})
+											end
+											table.sort(indexTable, function(a,b) return ( (string.lower(a[1]) &#60; string.lower(b[1])) ) end)
+											for i,v in pairsByKeys(indexTable) do
+												self:AddTemplateListItem('simpleDropdownItem', v[1], 'label', v[2])
+											end
+											if (not GetCvarString('vid_aspect', true)) or Empty(GetCvarString('vid_aspect')) then
+												self:SetSelectedItemByValue('1', false)
+											else
+												self:SetSelectedItemByValue(GetCvarString('vid_aspect', true) or '1', false)
+											end
+										"
+										oninstantiatelua="self:DoEvent()"
+									/>
+									-->
+
+								</panel>
+								<panel y="1.0h" group="options_grow_panel_child" width="49%" align="right" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<if condition="StringEquals(host_os,'linux')||StringEquals(host_os,'macos')">
+										<!-- Driver -->
+										<instance name="option_dropdown_v3"
+											category="1" subcategory="2"
+											cvar="host_videoDriver"
+											title="options_label_vid_quality"
+											maxlistheight="5"
+											tip_name="options_label_vid_quality" tip_text1="options_video_drivers_tip"
+											oneventlua="
+												self:Clear()
+												self:AddTemplateListItem('simpleDropdownItem', 'vid_gl', 'label', 'OpenGL');
+												self:SetSelectedItemByValue(GetCvarString('host_videoDriver'), false)
+											"
+											oninstantiatelua="self:DoEvent()"
+										/>
+
+										<!-- Display -->
+										<instance name="option_dropdown_v3"
+											category="1" subcategory="2"
+											cvar="vid_display"
+											title="options_label_display"
+											maxlistheight="5"
+											tip_name="options_label_display" tip_text1="options_display_tip"
+											data="AddDisplays"
+											populate="ClearItems()"
+										/>
+
+										<!-- Resolution -->
+										<instance name="option_dropdown_v3"
+											category="1" subcategory="2"
+											cvar="vid_resolution"
+											title="options_label_resolution"
+											maxlistheight="5"
+											tip_name="options_label_resolution" tip_text1="options_resolution_tip"
+											sub_text1="options_simple_res_a"
+											sub_text3="options_simple_reducesigperf"
+											oneventlua="
+												self:Clear()
+												local indexTable = {}
+												for i,v in pairs(GetResolutions()) do
+													table.insert(indexTable, {i, v})
+												end
+												table.sort(indexTable, function(a,b) 
+													local a2 = tonumber(string.match(a[2], '(%d+),'))
+													local b2 = tonumber(string.match(b[2], '(%d+),'))
+													if (a2) and (b2) then
+														return ( (a2 &#60; b2) )
+													elseif (a2) then
+														return true
+													else
+														return false
+													end
+												end)
+												for i,v in pairsByKeys(indexTable) do
+													self:AddTemplateListItem('simpleDropdownItem', v[2], 'label', v[1])
+												end
+												self:SetSelectedItemByValue(GetCvarString('vid_resolution', true) or 'Automatic', false)
+											"
+											oninstantiatelua="self:DoEvent()"
+										/>
+									</if>
+
+									<if condition="StringEquals(host_os,'windows')">
+										<!-- Driver -->
+										<instance name="option_dropdown_v3"
+											category="1" subcategory="2"
+											cvar="host_videoDriver"
+											title="options_label_vid_quality"
+											maxlistheight="5"
+											tip_name="options_label_vid_quality" tip_text1="options_video_drivers_tip"
+											oneventlua="
+												self:Clear()
+												self:AddTemplateListItem('simpleDropdownItem', 'vid_d11', 'label', 'DirectX 11');
+												self:AddTemplateListItem('simpleDropdownItem', 'vid_d9', 'label', 'DirectX 9');
+												self:SetSelectedItemByValue(GetCvarString('host_videoDriver'), false)
+											"
+											oninstantiatelua="self:DoEvent()"
+										/>
+
+										<!-- Resolution -->
+										<instance name="option_dropdown_v3"
+											category="1" subcategory="2"
+											cvar="vid_resolution"
+											title="options_label_resolution"
+											maxlistheight="5"
+											tip_name="options_label_resolution" tip_text1="options_resolution_tip"
+											sub_text1="options_simple_res_a"
+											sub_text3="options_simple_reducesigperf"
+											oneventlua="
+												self:Clear()
+												local indexTable = {}
+												for i,v in pairs(GetResolutions()) do
+													table.insert(indexTable, {i, v})
+												end
+												table.sort(indexTable, function(a,b) 
+													local a2 = tonumber(string.match(a[2], '(%d+),'))
+													local b2 = tonumber(string.match(b[2], '(%d+),'))
+													if (a2) and (b2) then
+														return ( (a2 &#60; b2) )
+													elseif (a2) then
+														return true
+													else
+														return false
+													end
+												end)
+												for i,v in pairsByKeys(indexTable) do
+													self:AddTemplateListItem('simpleDropdownItem', v[2], 'label', v[1])
+												end
+												self:SetSelectedItemByValue(GetCvarString('vid_resolution', true) or 'Automatic', false)
+											"
+											oninstantiatelua="self:DoEvent()"
+										/>
+									</if>
+
+									<if condition="StringEquals(host_os,'windows')||StringEquals(host_os,'macos')">
+										<!-- Color Depth -->
+										<!-- disabled
+										<instance name="option_dropdown_v3"
+											category="1" subcategory="2"
+											cvar="vid_bpp"
+											title="options_label_color_depth"
+											maxlistheight="5"
+											tip_name="options_label_color_depth" tip_text1="options_color_depth_tip"
+											sub_text1="options_simple_depth_a"
+											sub_text2=""
+											sub_text3="options_simple_depth_b"
+											oneventlua="
+													self:Clear()
+													local indexTable = {}
+													for i,v in pairs(GetColorDepths()) do
+														table.insert(indexTable, {i, v})
+													end
+													table.sort(indexTable, function(a,b) return ( (string.lower(a[1]) &#60; string.lower(b[1])) ) end)
+													for i,v in pairsByKeys(indexTable) do
+														self:AddTemplateListItem('simpleDropdownItem', v[2], 'label', Translate('options_color_depth_name', 'bit', v[2]))
+													end
+													self:SetSelectedItemByValue(GetCvarString('vid_bpp', true) or 'Automatic', false)
+												"
+											oninstantiatelua="self:DoEvent()"
+										/>
+										-->
+									</if>
+
+								</panel>
+							</panel>
+
+							<!-- Advanced Options -->
+							<instance name="options_subcategory_header" cat="1" id="3" label="mainlobby_label_more" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel y="1.0h" group="options_grow_panel_child" width="49%" align="left" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Anti-Aliasing -->
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="3"
+										cvar="vid_antialiasing"
+										title="options_label_anti_aliasing"
+										maxlistheight="5"
+										tip_name="options_label_anti_aliasing" tip_text1="options_label_anti_aliasing_tip"
+										sub_text1="options_simple_aa_a"
+										sub_text3="options_simple_reducesigperf"
+										sub_text2=""
+										oneventlua="
+												self:Clear()
+												local indexTable = {}
+												for i,v in pairs(GetAntiAliasingModes()) do
+													table.insert(indexTable, {i, v})
+												end
+												table.sort(indexTable, function(a,b) return ( (string.lower(a[1]) &#60; string.lower(b[1])) ) end)
+												for i,v in pairsByKeys(indexTable) do
+													self:AddTemplateListItem('simpleDropdownItem', v[2], 'label', v[1])
+												end
+												self:SetSelectedItemByValue(GetCvarString('vid_antialiasing', true) or 'Automatic', false)
+											"
+										oninstantiatelua="self:DoEvent()"
+									/>
+
+									<!-- Model Quality -->
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="3"
+										cvar="model_quality"
+										title="options_label_model_quality"
+										maxlistheight="3"
+										tip_name="options_label_model_quality" tip_text1="options_model_quality_tip"
+										sub_text3="options_simple_morememperf"
+										oneventlua="
+											self:Clear()
+											self:AddTemplateListItem('simpleDropdownItem', 'low', 'label', 'options_low');
+											self:AddTemplateListItem('simpleDropdownItem', 'med', 'label', 'options_medium');
+											self:AddTemplateListItem('simpleDropdownItem', 'high', 'label', 'options_high');
+											self:SetSelectedItemByValue(GetCvarString('model_quality'), false);
+										"
+										oninstantiatelua="self:DoEvent()"
+									/>
+
+									<!-- Texture Size -->
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="3"
+										cvar="vid_textureDownsize"
+										title="options_label_texture_size"
+										maxlistheight="3"
+										tip_name="options_label_texture_size" tip_text1="options_texture_size_tip"
+										sub_text3="options_simple_morememperf"
+										oneventlua="
+											self:Clear()
+											self:AddTemplateListItem('simpleDropdownItem', '2', 'label', 'options_low');
+											self:AddTemplateListItem('simpleDropdownItem', '1', 'label', 'options_medium');
+											self:AddTemplateListItem('simpleDropdownItem', '0', 'label', 'options_high');
+											self:SetSelectedItemByValue(GetCvarString('vid_textureDownsize'), false);
+										"
+										oninstantiatelua="self:DoEvent()"
+									/>
+
+									<!-- Texture Filtering -->
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="2"
+										cvar="vid_textureFiltering"
+										title="options_label_texture_filtering"
+										maxlistheight="4"
+										tip_name="options_label_texture_filtering" tip_text1="options_label_texture_filtering_tip"
+										sub_text1="options_simple_textfilter_a"
+										sub_text3="options_simple_reducesigperf"
+										sub_text2=""
+										oneventlua="
+												self:Clear()
+												local indexTable = {}
+												for i,v in pairs(GetTextureFilteringModes()) do
+													table.insert(indexTable, {i, v})
+												end
+												table.sort(indexTable, function(a,b) return ( (string.lower(a[2]) &#60; string.lower(b[2])) ) end)
+												for i,v in pairsByKeys(indexTable) do
+													self:AddTemplateListItem('simpleDropdownItem', v[2], 'label', v[1])
+												end
+												self:SetSelectedItemByValue(GetCvarString('vid_textureFiltering', true) or 'Automatic', false)
+											"
+										oninstantiatelua="self:DoEvent()"
+									/>
+
+									 
+									<!-- Post Processing -->
+									<instance name="option_checkbox_v3"
+										category="1" subcategory="3"
+										cvar="vid_postEffects"
+										title="options_post_processing"
+										tip_name="options_post_processing" tip_text1="options_post_processing_tip"
+
+										sub_text1="options_simple_refrac_a"
+										sub_text3="options_simple_mayreduceperf"
+									/>
+
+								</panel>
+
+								<panel y="1.0h" group="options_grow_panel_child" width="49%" align="right" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Shader Quality -->
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="3"
+										cvar="options_shaderQuality"
+										title="options_shader_quality"
+										maxlistheight="3"
+										tip_name="options_shader_quality" tip_text1="options_shader_quality_tip"
+										onchange="temp_gfxslider_int = 5;"
+										sub_text1="options_simple_shader_a"
+										sub_text3="options_simple_mayreduceperf"
+										oneventlua="
+											self:Clear()
+											self:AddTemplateListItem('simpleDropdownItem', '3', 'label', 'options_low');
+											self:AddTemplateListItem('simpleDropdownItem', '2', 'label', 'options_medium');
+											self:AddTemplateListItem('simpleDropdownItem', '1', 'label', 'options_high');
+											self:SetSelectedItemByValue(GetCvarString('options_shader_quality'), false);
+										"
+										oninstantiatelua="self:DoEvent()"
+									/>
+
+									<!-- Shadow Quality -->
+									<instance name="option_dropdown_v3"
+										category="1" subcategory="3"
+										cvar="options_shadowQuality"
+										title="options_shadow_quality"
+										maxlistheight="5"
+										tip_name="options_shadow_quality" tip_text1="options_shadow_quality_tip"
+										sub_text3="options_simple_mayreduceperf"
+										oneventlua="
+											self:Clear()
+											self:AddTemplateListItem('simpleDropdownItem', '3', 'label', 'options_low');
+											self:AddTemplateListItem('simpleDropdownItem', '2', 'label', 'options_medium');
+											self:AddTemplateListItem('simpleDropdownItem', '1', 'label', 'options_high');
+											self:SetSelectedItemByValue(GetCvarString('options_shadowQuality'), false);
+										"
+										oninstantiatelua="self:DoEvent()"
+									/>
+
+									<!-- Reflections
+									<instance name="option_checkbox_v3"
+										category="1" subcategory="3"
+										cvar="vid_reflections"
+										title="options_reflections"
+										tip_name="options_reflections" tip_text1="options_reflections_tip"
+
+										sub_text1="options_simple_reflection_a"
+										sub_text3="options_simple_reducesigperf"
+									/>
+									 -->
+
+									<!-- Dynamic Lights
+									<instance name="option_checkbox_v3"
+										category="1" subcategory="3"
+										cvar="vid_dynamicLights"
+										title="options_dynamic_lights"
+										tip_name="options_dynamic_lights" tip_text1="options_dynamic_lights_tip"
+										sub_text1="options_simple_dynlight_a"
+										sub_text3="options_simple_mayreduceperf"
+										sub_text2=""
+									/>
+									 -->
+
+									<!-- Scene Buffer  -->
+									<instance name="option_checkbox_v3"
+										category="1" subcategory="3"
+										cvar="vid_sceneBuffer"
+										title="options_refraction"
+										tip_name="options_refraction" tip_text1="options_refraction_tip"
+										sub_text1=""
+										sub_text3=""
+									/>
+									 
+									<!-- Physx -->
+									<instance name="option_checkbox_v3"
+										category="1" subcategory="2"
+										cvar="px_enable"
+										title="px_enable"
+										tip_name="px_enable" tip_text1="options_px_tip_text"
+										sub_text1="options_simple_px_a"
+										sub_text3="options_simple_px_b"
+										sub_text2=""
+									/>									 
+
+									<!-- Physx APEX -->
+									<instance name="option_checkbox_v3"
+										category="1" subcategory="2"
+										cvar="px_enableApex"
+										title="px_enableApex"
+										tip_name="px_enableApex" tip_text1="options_apex_tip_text"
+										sub_text1="options_simple_apex_a"
+										sub_text3="options_simple_apex_b"
+										sub_text2=""
+										enableconditionfunction="(GetCvarString('host_videoDriver') == 'vid_d11')"
+									/>
+									
+									<!-- Hair/Furr -->
+									<instance name="option_checkbox_v3"
+										category="1" subcategory="2"
+										cvar="d11_hair"
+										title="d11_hair"
+										tip_name="d11_hair" tip_text1="options_d11_hair_tip_text"
+										sub_text1="options_simple_d11_hair_a"
+										sub_text3="options_simple_d11_hair_b"
+										sub_text2=""
+										enableconditionfunction="(GetCvarString('host_videoDriver') == 'vid_d11')"
+									/>
+
+								</panel>
+
+							</panel>
+
+						</panel>
+
+						<!-- Sound -->
+						<panel name="options_main_category2" group="options_grow_panel_parent" width="100%" float="bottom" padding="1.0h" noclick="1" visible="0" reverse="true">
+
+							<instance name="optionH1" label="options_header_sound_options" />
+							<!-- Volume -->
+							<instance name="options_subcategory_header" cat="2" id="1" label="options_submen_vol" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel y="1.0h" group="options_grow_panel_child" width="49%" align="left" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Mute Sounds -->
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="1"
+										cvar="sound_mute"
+										title="options_checkbox_sound_mute"
+									/>
+
+									<!-- Mute Announceer -->
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="1"
+										cvar="cg_muteAnnouncerVoice"
+										title="options_checkbox_mute_announcer"
+										tip_name="options_checkbox_mute_announcer" tip_text1="options_checkbox_mute_announcer_tip"
+									/>
+
+									<!-- Launcher Music -->
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="1"
+										cvar=""
+										registeroption="false"
+										nameid="launcher_music"
+										title="options_checkbox_launcher_music"
+										tip_name="options_checkbox_launcher_music" tip_text1="options_checkbox_launcher_music_tip"
+									/>
+
+									<!-- Mute Music -->
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="1"
+										cvar="sound_muteMusic"
+										title="options_checkbox_sound_muteMusic"
+										tip_name="options_checkbox_sound_muteMusic" tip_text1="options_checkbox_sound_muteMusic_tip"
+									/>
+
+									<!-- Mute Menu Narration -->
+									<!--
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="1"
+										cvar="ui_newUISounds"
+										title="options_checkbox_sound_enableUIAnnounce"
+										tip_name="options_checkbox_sound_enableUIAnnounce" tip_text1="options_checkbox_sound_enableUIAnnounce_tip"
+									/>
+									-->
+
+									<!-- Friend Online/Ingame Status Notification Sounds -->
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="1"
+										cvar="_ui_friendNotificationSound"
+										title="options_enable_friend_notification_sounds"
+										tip_name="options_enable_friend_notification_sounds" tip_text1="options_enable_friend_notification_sounds_tip"
+										sub_text2="options_enable_friend_notification_sounds_tip"
+									/>
+
+									<!-- Unit Reactions -->
+									<!-- tip_name="options_checkbox_unit_reactions" tip_text1="options_unit_reactions_tip" -->
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="1"
+										cvar="cg_unitVoiceResponses"
+										title="options_checkbox_unit_reactions"
+										sub_text2="options_simple_unitreact"
+									/>
+
+									<!-- Reaction Delay -->
+									<instance name="option_slider_integer_v3"
+										category="2" subcategory="1"
+										intWidth="7.0h" sliderWidth="-7.2h"
+										cvar="cg_unitVoiceResponsesDelay"
+										round_var="true"
+										percent="false"
+										maxvalue="15000" step="500"
+										title="options_unit_voice_reaction_delay"
+										tip_name="options_unit_voice_reaction_delay" tip_text1="options_unit_voice_reaction_tip"
+										sub_text2="options_simple_reactdelay"
+									/>
+
+								</panel>
+
+								<panel y="1.0h" group="options_grow_panel_child" width="49%" align="right" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Master Volume -->
+									<instance name="option_slider_integer_v3"
+										category="2" subcategory="1"
+										cvar="sound_masterVolume"
+										title="options_label_master_volume"
+										percent="true"
+										round_var="false"
+									/>
+
+									<!-- Interface Volume -->
+									<instance name="option_slider_integer_v3"
+										category="2" subcategory="1"
+										cvar="sound_interfaceVolume"
+										title="options_label_interface_volume"
+										tip_name="options_label_interface_volume" tip_text1="options_interface_volume_tip"
+										percent="true"
+										round_var="false"
+									/>
+
+									<!-- Music Volume -->
+									<instance name="option_slider_integer_v3"
+										category="2" subcategory="1"
+										cvar="sound_musicVolume"
+										title="options_label_music_volume"
+										tip_name="options_label_music_volume" tip_text1="options_label_music_volume_tip"
+										percent="true"
+										round_var="false"
+									/>
+
+									<!-- SoundFX Volume -->
+									<instance name="option_slider_integer_v3"
+										category="2" subcategory="1"
+										cvar="sound_sfxVolume"
+										title="options_label_sound_effects"
+										tip_name="options_label_sound_effects" tip_text1="options_sound_effects_tip"
+										percent="true"
+										round_var="false"
+									/>
+
+								</panel>
+
+
+							</panel>
+
+							<!-- Sound -->
+							<instance name="options_subcategory_header" cat="2" id="2" label="options_button_sound" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel y="1.0h" group="options_grow_panel_child" width="38.5%" align="left" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Sound Quality -->
+									<instance name="option_dropdown_v3"
+										category="2" subcategory="2"
+										cvar="options_soundQuality"
+										title="options_label_sound_quality"
+										maxlistheight="3"
+										tip_name="options_label_sound_quality" tip_text1="options_sound_quality_tip"
+										sub_text3="options_simple_morememperf"
+										oninstantiatelua="
+											self:Clear()
+											self:AddTemplateListItem('simpleDropdownItem', '3', 'label', 'options_very_low');
+											self:AddTemplateListItem('simpleDropdownItem', '2', 'label', 'options_low');
+											self:AddTemplateListItem('simpleDropdownItem', '1', 'label', 'options_normal');
+											self:SetSelectedItemByValue(GetCvarString('options_soundQuality'), false)
+										"
+									/>
+
+									<!-- Sound Channels -->
+									<!-- tip_name="options_label_sound_channels" tip_text1="options_sound_channels_tip" -->
+									<instance name="option_slider_integer_v3"
+										category="2" subcategory="2"
+										cvar="sound_numChannels"
+										round_var="true"
+										percent="false"
+										minvalue="32" maxvalue="256"
+										title="options_label_sound_channels"
+										sub_text1="options_simple_soundchannels"
+										sub_text3="options_simple_morememperf"
+									/>
+
+								</panel>
+
+								<panel y="1.0h" group="options_grow_panel_child" width="60.0%" align="right" float="bottom" padding="0.8h" noclick="1" reverse="true">
+									<!-- Disable All Sounds -->
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="2"
+										cvar="sound_disable"
+										onclick="Cmd('SetSave sound_disable ' # options_sound_disable);"
+										title="options_checkbox_disable_all_sounds"
+										tip_name="options_checkbox_disable_all_sounds" tip_text1="options_disable_all_sounds_tip"
+									/>
+
+									<!-- Playback Driver -->
+									<instance name="option_dropdown_v3"
+										category="2" subcategory="2"
+										cvar="sound_playbackDriver"
+										title="options_label_playback_driver"
+										maxlistheight="5"
+										tip_name="options_label_playback_driver" tip_text1="options_playback_driver_tip"
+										oneventlua="
+												self:Clear()
+												self:AddTemplateListItem('simpleDropdownItem', '0', 'label', Translate('options_default_device'))
+												for i,v in ipairs(GetSoundPlaybackDrivers()) do
+													self:AddTemplateListItem('simpleDropdownItem', v[1], 'label', v[2])
+												end
+												self:SetSelectedItemByValue(GetCvarString('sound_playbackDriver', true) or '0', false)
+											"
+										oninstantiatelua="
+											self:DoEvent()
+											self:UnregisterWatchLua('SoundDriverListChanged')
+											self:RegisterWatchLua('SoundDriverListChanged', function(self)
+												self:DoEvent()
+											end)
+										"
+									/>
+
+								</panel>
+
+							</panel>
+
+							<!-- Voice -->
+							<instance name="options_subcategory_header" cat="2" id="3" label="options_button_voice" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1" >
+								<scrollbox
+									 noclick="true"
+									processonlyscroll="1"
+									onload="SetClipAreaToChild();"
+									scrolltexture="/ui/shared/textures/slider.tga"
+									scrollbaroffset="0h" scrollbarsize="3h" handlewidth="3h" handleheight="12h" vscrollbar="1" exteriorscrollbars="false"
+									hscrollbar="0" align="left"
+									horizontal="false"
+									float="bottom" sticky="true" stickytoinvis="false" padding="1.8h" width="-3h"
+								>
+									<panel group="options_grow_panel_child" width="100%" align="left" grow="1" regrow="1" growinvis="0" float="bottom" padding="0.8h" noclick="1" reverse="true">
+										<panel group="options_grow_panel_child" y="0.5h" width="49%" align="left" grow="1" regrow="1" growinvis="0" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+											<!-- Disable Voice Chat
+											<instance name="option_checkbox_v3"
+												category="2" subcategory="3"
+												cvar="voice_disabled"
+												title="options_checkbox_disable_voice_chat"
+												tip_name="options_checkbox_disable_voice_chat" tip_text1="options_disable_voice_chat_tip"
+											/>
+											 -->
+
+											<!-- Mic Volume
+											<if condition="StringEquals(host_os,'windows')">
+												<instance name="option_slider_integer_v3"
+													category="2" subcategory="3"
+													cvar="voice_micVolume"
+													title="options_label_microphone_volume"
+													tip_name="options_label_microphone_volume" tip_text1="options_mic_volume_tip"
+												/>
+											</if>
+											 -->
+
+											<!-- Voice micGain
+											<if condition="StringEquals(host_os,'linux')||StringEquals(host_os,'macos')">
+												<instance name="option_slider_integer_v3"
+													category="2" subcategory="3"
+													cvar="voice_micGainDB"
+													percent="false"
+													minvalue="-20.0" maxvalue="20.0"
+													step="0.1"
+													title="options_label_microphone_gain"
+													tip_name="options_label_microphone_gain" tip_text1="options_mic_gain_tip"
+												/>
+											</if>
+											 -->
+
+											<!-- Voice Chat Volume -->
+											<instance name="option_slider_integer_v3"
+												category="2" subcategory="3"
+												cvar="voice_volume"
+												title="options_label_voice_chat_volume"
+												tip_name="options_label_voice_chat_volume" tip_text1="options_voice_chat_volume_tip"
+											/>
+
+											<!-- Auto Sound Dampen -->
+											<instance name="option_slider_integer_v3"
+												category="2" subcategory="3"
+												cvar="voice_audioDampen"
+												title="options_label_auto_sound_dampen"
+												tip_name="options_label_auto_sound_dampen" tip_text1="options_auto_dampen_tip"
+												sub_text2="options_simple_dampen"
+											/>
+
+										</panel>
+
+										<panel y="0.5h" group="options_grow_panel_child" width="49%" align="right" grow="1" regrow="1" growinvis="0" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+											<!-- Mic Boost
+											<if condition="StringEquals(host_os,'windows')">
+												<instance name="option_checkbox_v3"
+													category="2" subcategory="3"
+													cvar="voice_micBoost"
+													title="options_checkbox_mic_boost"
+													tip_name="options_checkbox_mic_boost" tip_text1="options_mic_boost_tip"
+												/>
+											</if>
+											 -->
+
+											<!-- PTT
+											<instance name="option_checkbox_v3"
+												category="2" subcategory="3"
+												cvar="voice_pushToTalk"
+												onclick="if(voice_pushToTalk, ShowOnly('ptt_true'), ShowOnly('ptt_false'));"
+												title="options_checkbox_push_to_talk"
+												tip_name="options_checkbox_push_to_talk" tip_text1="options_push_to_talk_enable_tip"
+												sub_text2="options_simple_ptt"
+											/>
+											 -->
+
+											<!-- Mic on sensitivity
+											<instance name="option_slider_integer_v3"
+												category="2" subcategory="3"
+												cvar="voice_micOnLevel"
+												minvalue="0" maxvalue="100"
+												title="options_label_mic_on_sensitivity"
+												tip_name="options_label_mic_on_sensitivity" tip_text1="options_mic_on_sensitivity_tip"
+												round_var="true"
+												percent="false"
+											/>
+											 -->
+
+											<!-- Mic Off Time
+											<instance name="option_slider_integer_v3"
+												category="2" subcategory="3"
+												cvar="voice_micOnTime"
+												minvalue="0" maxvalue="2000"
+												title="options_label_mic_off_time"
+												tip_name="options_label_mic_off_time" tip_text1="options_mic_off_time_tip"
+												round_var="true"
+												percent="false"
+											/>
+											 -->
+
+											<instance name="option_dropdown_v3"
+												category="2" subcategory="3"
+												cvar="voice_recordingDriver"
+												title="options_label_recording_driver"
+												maxlistheight="5"
+												tip_name="options_label_recording_driver" tip_text1="options_recording_drive_tip"
+												oninstantiatelua="
+													self:DoEvent()
+													self:UnregisterWatchLua('VoiceDriverListChanged')
+													self:RegisterWatchLua('VoiceDriverListChanged', function(self)
+														self:DoEvent()
+													end)
+												"
+												oneventlua="
+														self:Clear()
+														if (not VoiceClient) or (not VoiceClient.GetRecordingDrivers) then
+															return
+														end
+														local foundMatch = false
+														for i,v in ipairs(VoiceClient.GetRecordingDrivers()) do
+															self:AddTemplateListItem('simpleDropdownItem', v[1], 'label', v[2])
+															if GetCvarString('voice_recordingDriver', true) and (GetCvarString('voice_recordingDriver', true) == v) then
+																self:SetSelectedItemByValue(GetCvarString('voice_recordingDriver'))
+																foundMatch = true
+															end
+														end
+														if (not foundMatch) then
+															self:SetSelectedItemByIndex(0)
+														end
+													"
+											/>
+
+											<!-- Playback Driver
+											<instance name="option_dropdown_v3"
+												category="2" subcategory="3"
+												cvar="voice_playbackDriver"
+												title="options_label_playback_driver"
+												maxlistheight="5"
+												tip_name="options_label_playback_driver" tip_text1="options_playback_driver_tip"
+												oninstantiatelua="
+													self:DoEvent()
+													self:RegisterWatchLua('VoiceDriverListChanged', function(self)
+														self:DoEvent()
+													end)
+												"
+												oneventlua="
+														self:Clear()
+														if (not VoiceClient) or (not VoiceClient.GetPlaybackDrivers) then
+															return
+														end
+														self:AddTemplateListItem('simpleDropdownItem', '0', 'label', Translate('options_default_device'))
+														local foundMatch = false
+														for i,v in ipairs(VoiceClient.GetPlaybackDrivers()) do
+															self:AddTemplateListItem('simpleDropdownItem', v[1], 'label', v[2])
+															if GetCvarString('voice_playbackDriver', true) and (GetCvarString('voice_playbackDriver', true) == v) then
+																self:SetSelectedItemByValue(GetCvarString('voice_playbackDriver'))
+																foundMatch = true
+															end
+														end
+														if (not foundMatch) then
+															self:SetSelectedItemByIndex(0)
+														end
+													"
+											/>
+											 -->
+
+										</panel>
+
+									</panel>
+
+									<instance name="option_checkbox_v3"
+										category="2" subcategory="3"
+										cvar="voice_voiceActivation"
+										title="options_checkbox_voice_activation"
+										tip_name="options_checkbox_voice_activation" tip_text1="options_checkbox_voice_activation_tip"
+									/>
+
+									<panel name="options_voice_activation_ptt" group="options_grow_panel_child" width="100%" align="left" sticky="1" stickytoinvis="0" grow="1" regrow="1" growinvis="0" float="bottom" padding="0.8h" noclick="1" reverse="true"
+										onloadlua="
+											self:UnregisterWatchLua('optionsTrigger')
+											self:RegisterWatchLua('optionsTrigger', function(widget, trigger)
+												if Strife_Options.newSettings and Strife_Options.newSettings['voice_voiceActivation'] ~= nil then
+													widget:SetVisible(not Strife_Options.newSettings['voice_voiceActivation'].value)
+												else
+													widget:SetVisible(not GetCvarBool('voice_voiceActivation'))
+												end
+											end, false, nil, 'updateVisuals')
+											self:SetVisible(not GetCvarBool('voice_voiceActivation'))
+											"
+									>
+
+										<panel group="options_grow_panel_child" grow="1" regrow="1" growinvis="0" width="100%" align="left" float="bottom" padding="0.8h" noclick="1" reverse="true">
+											<instance name="simpleKeybindNoItem" height="4h" label="options_label_push_to_talk_keybind" table="game" action="VoicePushToTalk"/>
+										</panel>
+
+									</panel>
+
+									<panel name="options_voice_activation_va" group="options_grow_panel_child" width="100%" visible="0" align="left" sticky="1" stickytoinvis="0" grow="1" regrow="1" growinvis="0" float="bottom" padding="0.8h" noclick="1" reverse="true"
+										onloadlua="
+											self:UnregisterWatchLua('optionsTrigger')
+											self:RegisterWatchLua('optionsTrigger', function(widget, trigger)
+												if Strife_Options.newSettings and Strife_Options.newSettings['voice_voiceActivation'] ~= nil then
+													widget:SetVisible(Strife_Options.newSettings['voice_voiceActivation'].value)
+												else
+													widget:SetVisible(GetCvarBool('voice_voiceActivation'))
+												end
+											end)
+											self:SetVisible(GetCvarBool('voice_voiceActivation'))
+										"
+									>
+
+										<!-- Test Mic Activation Level -->
+										<panel group="options_grow_panel_child" grow="1" regrow="1" growinvis="0" width="100%" align="center" height="11.6h" noclick="1" onhide="HideWidget('Mvoice_test_stop'); ShowWidget('Mvoice_test_start'); HideWidget('Mvoice_test_stop2'); ShowWidget('Mvoice_test_start2');" onhidelua="VoiceClient.StopTest()">
+											<frame texture="/ui/shared/frames/togglebox.tga" borderthickness="1.3h" noclick="true" color="#4ab4ff" />
+
+											<panel height="6.0h" valign="top" noclick="1">
+												<panel width="-1.6h" height="-1.4h" valign="center" align="center" noclick="1">
+													<label y="-0.2h" style="h2" font="maindyn_20" textvalign="center" fitx="true" fitxpadding=".5h" noclick="1" content="options_label_set_vamic_level" />
+
+													<panel x="23h" width="-26h" height="2.6h" valign="center" noclick="true"
+														name="voice_activationStartLevel_parent"
+														onloadlua="
+															Strife_Options.RegisterOption('option_slider_integer_v3', '2', '3', 'voice_activationStartLevel', 'options_label_microphone_va', '', '', '', '', 'options_label_microphone_va', 'options_mic_va_tip', '', '', '', '', '', '', '', '', '', '', '', '', '', '20.0', '','', '', '', '', '', '', '', '', '', '', '', '{precision=0}', '{numerictype=int}', 'false', 'true', 'dyn_12', '', '', '', '', 'false', '', '', '', '-20.0')
+															self:Sleep(1, function()
+																Strife_Options:RegisterSlider(self, 'voice_activationStartLevel', '', '', '2', 'int', 'true', 'false')
+															end)
+														"
+													>
+														<panel width="6h" noclick="true">
+															<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="0.5h" color=".1 .1 .1 1" noclick="true" />
+															<frame texture="/ui/shared/frames/border_double.tga" bordercolor=".2 .2 .2 1" color="invisible" borderthickness="0.5h" noclick="true" />
+															<label name="voice_activationStartLevel_value_label" textvalign="center" textalign="center" font="maindyn_18" color="1 1 1 1" shadow="true" noclick="1" />
+														</panel>
+														<slider
+															name="voice_activationStartLevel_slider"
+															width="-6.2h"
+															align="right"
+															cvar="voice_activationStartLevel"
+															slotwidth="-1%" slotheight="0.1h"
+															slotcolor="#51647b"
+															handlewidth="90@" handleheight="90%"
+															handlecolor="1 1 1 1"
+															minvalue="0" maxvalue="1.0"
+															step="0.05"
+															texture="/ui/shared/textures/slider.tga"
+															onselect="PlaySound('/shared/sounds/ui/button_over_02.wav');"
+															onmouseoverlua="Strife_Options:HoverScroller()"
+															onslidelua="
+																self:GetWidget('text_mic_level_nubbin_2'):SetX( (GetCvarNumber('voice_activationStartLevel')*100)  .. '%' )
+															"
+														/>
+
+													</panel>
+
+													<instance name="tip_mark" tip_id="" width="2.3h" height="2.3h" valign="center" align="right" visible="0"
+														oninstantiatelua="self:SetVisible(not Empty(('{tip_text1=}')))"
+														onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('options_label_set_vamic_level'), Translate('options_label_set_vamic_level_top'), 300)"
+														onmouseoutlua="simpleTipGrowYUpdate(false, nil, Translate('options_label_set_vamic_level'), Translate('options_label_set_vamic_level_top'), 300)"
+													/>
+												</panel>
+											</panel>
+
+											<panel height="6.0h" valign="bottom" noclick="1">
+												<panel width="-1.6h" height="-1.4h" valign="center" align="center" noclick="1">
+													<panel width="-2.6h" height="100%" valign="center" align="left" noclick="1">
+														<label y="-0.2h" style="h2" font="maindyn_20" textvalign="center" fitx="true" fitxpadding=".5h" noclick="1">options_label_test_va_level</label>
+
+														<instance name="standardButton" id="Mvoice_test_start2" x="23h" height="3.6h" width="14h" valign="center" font="maindyn_18" label="options_button_begin_test"  borderthickness=".8h" onclicklua="VoiceClient.StartTest(true) self:GetWidget('Mvoice_test_start'):SetVisible(0) self:GetWidget('Mvoice_test_stop2'):SetVisible(1) self:SetVisible(0)" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"/>
+														<instance name="standardButton" id="Mvoice_test_stop2" x="23h" visible="false" height="3.6h" width="14h" valign="center" font="maindyn_18" label="options_button_stop_test"  borderthickness=".8h" onclicklua="VoiceClient.StopTest() self:GetWidget('Mvoice_test_start'):SetVisible(1) self:GetWidget('Mvoice_test_start2'):SetVisible(1) self:SetVisible(0)" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"/>
+
+														<panel x="-10@" width="-48%" height="100%" align="right" noclick="1">
+															<panel height="-1.0h" valign="center" noclick="1">
+																<!-- Full Meter - SetWidth of 'text_mic_level_bar' from 0% to 100% inverse to value  -->
+																<panel width="-0.5h" height="-0.4h" align="center" valign="center" noclick="0" >
+																	<panel name="text_mic_level_bar_1_1" width="50%" align="left" color="#FF0000" noclick="0"/>
+																</panel>
+																<frame texture="/ui/shared/frames/border_double.tga" borderthickness="0.6h" bordercolor="#51647b" color="invisible"/>
+																<!-- Poker Nubbin - SetX of 'text_mic_level_nubbin' from 0% to 100% -->
+																<panel width="92.0%" noclick="1" visible="1" >
+																	<image name="text_mic_level_nubbin_2" texture="/ui/shared/textures/bar_nubbin.tga" x="74%" height="140%" width="140@" valign="center" noclick="1"/>
+																</panel>
+															</panel>
+														</panel>
+													</panel>
+													<instance name="tip_mark" tip_id="" width="2.3h" height="2.3h" valign="center" align="right" visible="0"
+														oninstantiatelua="self:SetVisible(not Empty(('{tip_text1=}')))"
+														onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('options_label_set_vamic_level'), Translate('options_label_set_vamic_level_top'), 300)"
+														onmouseoutlua="simpleTipGrowYUpdate(false, nil, Translate('options_label_set_vamic_level'), Translate('options_label_set_vamic_level_top'), 300)"
+													/>
+												</panel>
+											</panel>
+										</panel>
+									</panel>
+
+									<panel group="options_grow_panel_child" width="100%" visible="1" align="left" sticky="1" stickytoinvis="0" grow="1" regrow="1" growinvis="0" float="bottom" padding="0.8h" noclick="1" reverse="true" >
+										<!-- Test Mic Level -->
+										<panel group="options_grow_panel_child" grow="1" regrow="1" growinvis="0" width="100%" align="center" height="11.6h" noclick="1" onhide="HideWidget('Mvoice_test_stop2'); ShowWidget('Mvoice_test_start2'); HideWidget('Mvoice_test_stop'); ShowWidget('Mvoice_test_start');" onhidelua="VoiceClient.StopTest()">
+											<frame texture="/ui/shared/frames/togglebox.tga" borderthickness="1.3h" noclick="true" color="#4ab4ff" />
+
+											<panel height="6.0h" valign="top" noclick="1">
+												<panel width="-1.6h" height="-1.4h" valign="center" align="center" noclick="1">
+													<label y="-0.2h" style="h2" font="maindyn_20" textvalign="center" fitx="true" fitxpadding=".5h" noclick="1" content="options_label_set_mic_level" />
+
+													<panel x="23h" width="-26h" height="2.6h" valign="center" noclick="true"
+														name="voice_micGainDB_parent"
+														onloadlua="
+															Strife_Options.RegisterOption('option_slider_integer_v3', '2', '3', 'voice_micGainDB', 'options_label_microphone_gain', '', '', '', '', 'options_label_microphone_gain', 'options_mic_gain_tip', '', '', '', '', '', '', '', '', '', '', '', '', '', '20.0', '','', '', '', '', '', '', '', '', '', '', '', '{precision=0}', '{numerictype=int}', 'false', 'true', 'dyn_12', '', '', '', '', 'false', '', '', '', '-20.0')
+															self:Sleep(1, function()
+																Strife_Options:RegisterSlider(self, 'voice_micGainDB', '', '', '0', 'int', 'false', 'true')
+															end)
+														"
+													>
+														<panel width="6h" noclick="true">
+															<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="0.5h" color=".1 .1 .1 1" noclick="true" />
+															<frame texture="/ui/shared/frames/border_double.tga" bordercolor=".2 .2 .2 1" color="invisible" borderthickness="0.5h" noclick="true" />
+															<label name="voice_micGainDB_value_label" textvalign="center" textalign="center" font="maindyn_18" color="1 1 1 1" shadow="true" noclick="1" />
+														</panel>
+														<slider
+															name="voice_micGainDB_slider"
+															width="-6.2h"
+															align="right"
+															cvar="voice_micGainDB"
+															slotwidth="-1%" slotheight="0.1h"
+															slotcolor="#51647b"
+															handlewidth="90@" handleheight="90%"
+															handlecolor="1 1 1 1"
+															minvalue="-20.0" maxvalue="20.0"
+															step="1"
+															texture="/ui/shared/textures/slider.tga"
+															onselect="PlaySound('/shared/sounds/ui/button_over_02.wav');"
+															onmouseoverlua="Strife_Options:HoverScroller()"
+														/>
+
+													</panel>
+
+													<instance name="tip_mark" tip_id="" width="2.3h" height="2.3h" valign="center" align="right" visible="0"
+														oninstantiatelua="self:SetVisible(not Empty(('{tip_text1=}')))"
+														onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('options_label_set_mic_level'), Translate('options_label_set_mic_level_top'), 300)"
+														onmouseoutlua="simpleTipGrowYUpdate(false, nil, Translate('options_label_set_mic_level'), Translate('options_label_set_mic_level_top'), 300)"
+													/>
+												</panel>
+											</panel>
+
+											<panel height="6.0h" valign="bottom" noclick="1">
+												<panel width="-1.6h" height="-1.4h" valign="center" align="center" noclick="1">
+													<panel width="-2.6h" height="100%" valign="center" align="left" noclick="1">
+														<label y="-0.2h" style="h2" font="maindyn_20" textvalign="center" fitx="true" fitxpadding=".5h" noclick="1">options_label_test_mic_level</label>
+
+														<instance name="standardButton" id="Mvoice_test_start" x="23h" height="3.6h" width="14h" valign="center" font="maindyn_18" label="options_button_begin_test"  borderthickness=".8h" onclicklua="VoiceClient.StartTest() self:GetWidget('Mvoice_test_start2'):SetVisible(0) self:GetWidget('Mvoice_test_stop'):SetVisible(1) self:SetVisible(0)" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"/>
+														<instance name="standardButton" id="Mvoice_test_stop" x="23h" visible="false" height="3.6h" width="14h" valign="center" font="maindyn_18" label="options_button_stop_test"  borderthickness=".8h" onclicklua="VoiceClient.StopTest() self:GetWidget('Mvoice_test_start2'):SetVisible(1) self:GetWidget('Mvoice_test_start'):SetVisible(1) self:SetVisible(0)" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"/>
+
+														<panel x="-10@" width="-48%" height="100%" align="right" noclick="1">
+															<panel height="-1.0h" valign="center" noclick="1">
+																<!-- Colors -->
+																<panel width="-0.5h" height="-0.4h" align="center" valign="center" float="right" reverse="1" noclick="1">
+																	<panel width="25%" noclick="1"><!-- Bad Low -->
+																		<panel align="left" color="#ccde0a" noclick="1" />
+																		<image texture="/ui/shared/textures/meter_grad.tga" x="120@" width="120@" height="100%" align="right" color="#ccde0a" noclick="1" />
+																	</panel>
+																	<panel width="40%" noclick="1"><!-- Gooood -->
+																		<panel align="left" color="#18d901" noclick="1" />
+																		<image texture="/ui/shared/textures/meter_grad.tga" x="40@" width="40@" height="100%" align="right" color="#18d901" noclick="1" />
+																	</panel>
+																	<panel width="35%" noclick="1"><!-- Bad High -->
+																		<panel align="left" color="#870808" noclick="1" />
+																	</panel>
+																</panel>
+																<!-- Full Meter - SetWidth of 'text_mic_level_bar' from 0% to 100% inverse to value  -->
+																<panel width="-0.5h" height="-0.4h" align="center" valign="center" noclick="0" >
+																	<panel name="text_mic_level_bar_1" width="50%" align="right" color="0 0 0 .85" noclick="0"/>
+																	<panel name="text_mic_level_bar_2" width="50%" align="right" color="0 0 0 .45" noclick="0"/>
+																</panel>
+																<frame texture="/ui/shared/frames/border_double.tga" borderthickness="0.6h" bordercolor="#51647b" color="invisible"/>
+																<!-- Poker Nubbin - SetX of 'text_mic_level_nubbin' from 0% to 100% -->
+																<panel width="92.0%" noclick="1" visible="0" >
+																	<image name="text_mic_level_nubbin" texture="/ui/shared/textures/bar_nubbin.tga" x="74%" height="140%" width="140@" valign="center" noclick="1"/>
+																</panel>
+															</panel>
+														</panel>
+													</panel>
+													<instance name="tip_mark" tip_id="" width="2.3h" height="2.3h" valign="center" align="right" visible="0"
+														oninstantiatelua="self:SetVisible(not Empty(('{tip_text1=}')))"
+														onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('options_label_test_mic_level'), Translate('options_test_mic_level_tip'), 300)"
+														onmouseoutlua="simpleTipGrowYUpdate(false, nil, Translate('options_label_test_mic_level'), Translate('options_test_mic_level_tip'), 300)"
+													/>
+												</panel>
+											</panel>
+										</panel>
+									</panel>
+
+								</scrollbox>
+							</panel>
+
+						</panel>
+
+						<!-- Troubleshooting
+						<panel name="options_main_category3" group="options_grow_panel_parent" width="100%" float="bottom" padding="1.0h" noclick="1" visible="0" reverse="true">
+
+							<instance name="optionH1" label="options_troubleshooting" />
+
+							<instance name="options_subcategory_header" cat="3" id="1" label="general_repair_install" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel group="options_grow_panel_child" width="-22.0h" align="left" float="bottom" padding="0.6h" noclick="1" reverse="true">
+									<label fity="true" wrap="true" font="maindyn_14" color=".8 .8 .8 1" shadow="true" content="options_trouble_repair_info" />
+								</panel>
+								<panel group="options_grow_panel_child" width="22.0h" align="right" float="bottom" padding="0.6h" noclick="1" reverse="true">
+									<instance name="standardButton" id="options_std_btn_7" height="2.6h" width="16h" valign="center" align="center" font="maindyn_14" label="general_repair_install"  borderthickness=".8h" onclick="Trigger('TriggerDialogBox', 'options_repair_confirm_head', 'options_button_ok', 'general_cancel', 'Cmd(\'RestartAndRepair\')', '', 'options_repair_confirm', 'options_repair_confirm_desc')" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+									/>
+								</panel>
+							</panel>
+
+							<instance name="options_subcategory_header" cat="3" id="2" label="options_submen_faq" />
+							<panel group="options_grow_panel_child" width="100%" float="bottom" padding="1.5h" noclick="1">
+								<panel name="options_faq_support_url"
+									onclick="Echo(ui_support_url); CopyToClipboard(ui_support_url);" noclick="0"
+									onshow="SetHeight(GetStringWrapHeight('dyn_12', Translate('options_trouble_faq_intro', 'value', ui_support_url), GetWidth()));"
+								>
+									<label noclick="1" wrap="true" font="maindyn_14" color=".8 .8 .8 1" shadow="true" content="options_trouble_faq_intro" onshow="SetText(Translate('options_trouble_faq_intro', 'value', ui_support_url));" />
+								</panel>
+
+								<panel group="options_grow_panel_child" width="96%" align="center" float="bottom" padding="1.5h" noclick="1" reverse="true">
+
+									<instance name="options_faq_entry" id="1"
+										question="options_trouble_faq1_q"
+										answer="options_trouble_faq1_a"
+										passvalue1="ui_hon_url"
+									/>
+
+									<instance name="options_faq_entry" id="2"
+										question="options_trouble_faq3_q"
+										answer="options_trouble_faq3_a"
+										answer2="options_trouble_faq3_a2"
+										answer3="options_trouble_faq3_a3"
+										answer4=""
+									/>
+
+									<instance name="options_faq_entry" id="3"
+										question="options_trouble_faq4_q"
+										answer="options_trouble_faq4_a"
+										answer2="options_trouble_faq4_a2"
+										answer3="options_trouble_faq4_a3"
+									/>
+
+									<instance name="options_faq_entry" id="4"
+										question="options_trouble_faq5_q"
+										answer="options_trouble_faq5_a"
+										answer2="options_trouble_faq5_a2"
+									/>
+
+									<instance name="options_faq_entry" id="5"
+										question="options_trouble_faq6_q"
+										answer="options_trouble_faq6_a"
+										answer2="options_trouble_faq6_a2"
+										answer3="options_trouble_faq6_a3"
+									/>
+
+									<instance name="options_faq_entry" id="6"
+										question="options_trouble_faq7_q"
+										answer="options_trouble_faq7_a"
+									/>
+
+								</panel>
+							</panel>
+
+
+						</panel>
+						 -->
+
+						<!-- Interface -->
+						<panel name="options_main_category3" group="options_grow_panel_parent" width="100%" float="bottom" padding="0.8h" noclick="1" visible="0" reverse="true">
+							<instance name="optionH1" label="options_interface_opts" />
+
+							<!-- Gameplay -->
+							<panel  group="options_grow_panel_child" width="100%" noclick="1" float="bottom" sticky="true" stickytoinvis="false">
+								<scrollbox
+									 noclick="true"
+									processonlyscroll="1"
+									onload="SetClipAreaToChild();"
+									scrolltexture="/ui/shared/textures/slider.tga"
+									scrollbaroffset="0h" scrollbarsize="3h" handlewidth="3h" handleheight="12h" vscrollbar="1" exteriorscrollbars="false"
+									hscrollbar="0"
+									horizontal="false"
+									float="bottom" sticky="true" stickytoinvis="false"
+									height="-3.8h"
+								>
+									<panel color="invisible" width="-4h" grow="true" regrow="true" growinvis="true">
+										<panel group="options_grow_panel_child" width="53%" align="left" float="bottom" padding="0.8h" noclick="1" reverse="true" grow="true">
+
+											<!-- Enable new YY in-game UI -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="cg_newHotnessUI"
+												title="options_yy_ingame_ui"
+												tip_name="options_yy_ingame_ui" tip_text1="options_yy_ingame_ui_tip"
+												sub_text2="options_yy_ingame_ui_tip"
+											/>
+											
+											<!-- Enable dbl Activate Abils -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="cg_cmdrDoubleActivate"
+												title="options_double_activate_abilities"
+												tip_name="options_double_activate_abilities" tip_text1="options_double_activate_abilities_tip"
+												sub_text2="options_simple_dblactivate"
+											/>
+
+											<!-- Center cam on respawn -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="cg_cameraCenterOnRespawn"
+												title="options_checkbox_camera_center_on_respawn"
+												tip_name="options_checkbox_camera_center_on_respawn" tip_text1="options_checkbox_camera_center_on_respawn_tip"
+											/>
+
+											<!-- Swap Minimap -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="ui_swapMinimap"
+												title="options_enable_minimap_swap"
+												tip_name="options_enable_minimap_swap" tip_text1="options_enable_minimap_swap_tip"
+												sub_text2="options_enable_minimap_swap_tip"
+											/>
+
+											<!-- Minimap Right Click -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="cg_enableMinimapRightclick"
+												title="options_enable_minimap_rightclick"
+												tip_name="options_enable_minimap_rightclick" tip_text1="options_enable_minimap_rightclick_tip"
+												sub_text2="options_enable_minimap_rightclick_tip"
+											/>
+
+											<!-- Screen Feedback -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_game_screenFeedbackVis"
+												title="options_enable_screen_feedback"
+												tip_name="options_enable_screen_feedback" tip_text1="options_enable_screen_feedback_tip"
+												sub_text2="options_enable_screen_feedback_tip"
+											/>
+
+											<!-- Nameplate Health Lerping -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_game_healthLerping"
+												title="options_enable_health_lerping"
+												tip_name="options_enable_health_lerping" tip_text1="options_enable_health_lerping_tip"
+												sub_text2="options_enable_health_lerping_tip"
+											/>
+
+											<!-- Nameplate Always Show Level -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_game_always_show_hero_levels_new"
+												title="options_always_show_hero_levels"
+												tip_name="options_always_show_hero_levels" tip_text1="options_always_show_hero_levels_tip"
+												sub_text2="options_always_show_hero_levels_tip"
+											/>
+
+											<!-- Nameplate Always Show Name -->
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_game_always_show_hero_names_new"
+												title="options_always_show_hero_names"
+												tip_name="options_always_show_hero_names" tip_text1="options_always_show_hero_names_tip"
+												sub_text2="options_always_show_hero_names_tip"
+											/>
+
+										</panel>
+
+										<panel group="options_grow_panel_child" width="45%" align="right" float="bottom" padding="0.8h" noclick="1" reverse="true" grow="true">
+
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_heroInfoVis"
+												title="options_pin_unit_frames"
+												tip_name="options_pin_unit_frames" tip_text1="options_pin_unit_frames_tip"
+												sub_text2="options_pin_unit_frames_tip"
+											/>
+
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_heroVitalsVis"
+												title="options_pin_hero_vitals"
+												tip_name="options_pin_hero_vitals" tip_text1="options_pin_hero_vitals_tip"
+												sub_text2="options_pin_hero_vitals_tip"
+											/>
+
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_backpackVis"
+												title="options_pin_inventory"
+												tip_name="options_pin_inventory" tip_text1="options_pin_inventory_tip"
+												sub_text2="options_pin_inventory_tip"
+											/>
+
+
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_pushOrbVis"
+												title="options_pin_push_orb"
+												tip_name="options_pin_push_orb" tip_text1="options_pin_push_orb_tip"
+												sub_text2="options_pin_push_orb_tip"
+											/>										>
+
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_expWheelVis"
+												title="options_pin_exp_wheel"
+												tip_name="options_pin_exp_wheel" tip_text1="options_pin_exp_wheel_tip"
+												sub_text2="options_pin_exp_wheel_tip"
+											/>
+
+											<instance name="option_checkbox_v3"
+												category="4" subcategory="1"
+												cvar="_bossTimerVis"
+												title="options_pin_boss_timer"
+												tip_name="options_pin_boss_timer" tip_text1="options_pin_boss_timer_tip"
+												sub_text2="options_pin_boss_timer_tip"
+											/>
+
+										</panel>
+										<panel y="3h" height="3h" valign="bottom"/>
+									</panel>
+
+								</scrollbox>
+							</panel>
+
+							<!-- Colors -->
+							<instance name="options_subcategory_header" cat="3" id="2" label="options_submen_colors" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel y="1.0h" group="options_grow_panel_child" width="100%" align="left" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Begin color selections -->
+									<panel group="options_grow_panel_child" width="-4h" align="left" float="bottom" padding="2h" noclick="1" reverse="true" >
+										<panel height = "30s">
+											<instance name="options_subcategory_header" cat="3" id="1" label="options_customcolorsselection" />
+										</panel>
+										<instance name="option_colorPicker"
+											category="4" subcategory="1"
+											cvar="cg_allyHealthColor"
+											title="options_select_ally_health_colors"
+											tip_name="options_select_ally_health_colors" tip_text1="options_select_ally_health_colors_tip"
+											sub_text="options_simple_setallyhcolors"
+											default="0 1 0 0.75"
+										/>
+										<instance name="option_colorPicker"
+											category="4" subcategory="1"
+											cvar="cg_enemyHealthColor"
+											title="options_select_enemy_health_colors"
+											tip_name="options_select_enemy_health_colors" tip_text1="options_select_enemy_health_colors_tip"
+											sub_text="options_simple_setenemyhcolors"
+											default="1 0 0 0.75"
+										/>
+										<instance name="option_colorPicker"
+											category="4" subcategory="1"
+											cvar="cg_selfHealthColor"
+											title="options_select_self_health_colors"
+											tip_name="options_select_self_health_colors" tip_text1="options_select_self_health_colors_tip"
+											sub_text="options_simple_setselfhcolors"
+											default="1 1 0 0.75"
+										/>
+										<instance name="option_colorPicker"
+											category="4" subcategory="1"
+											cvar="cg_neutralHealthColor"
+											title="options_select_neutral_health_colors"
+											tip_name="options_select_neutral_health_colors" tip_text1="options_select_neutral_health_colors_tip"
+											sub_text="options_simple_setneuthcolors"
+											default="0.823 0 1 0.75"
+										/>
+									</panel>
+
+								</panel>
+							</panel>
+
+							<!-- Chat -->
+							<instance name="options_subcategory_header" cat="3" id="3" label="options_submen_social" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel y="1.0h" group="options_grow_panel_child" width="49%" align="left" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Profanity Filter -->
+									<instance name="option_checkbox_v3"
+										category="4" subcategory="2"
+										cvar="cg_censorChat"
+										title="options_checkbox_censor_chat"
+										tip_name="options_checkbox_censor_chat" tip_text1="options_screen_censor_chat_tip"
+									/>
+
+									<!-- Friends Only Whispers -->
+									<instance name="option_checkbox_v3"
+										category="4" subcategory="2"
+										cvar="ui_whisperRequiresFriendship"
+										title="options_checkbox_require_friend_whisper"
+										tip_name="options_checkbox_require_friend_whisper" tip_text1="options_checkbox_require_friend_whisper_tip"
+									/>
+
+									<!-- Chat Timestamps -->
+									<instance name="option_checkbox_v3"
+										category="4" subcategory="2"
+										cvar="cg_chatTimestamps"
+										title="options_checkbox_chat_timestamps"
+										tip_name="options_checkbox_chat_timestamps" tip_text1="options_screen_chat_timestamps_tip"
+									/>
+
+								</panel>
+								<panel y="1.0h" group="options_grow_panel_child" width="49%" align="right" float="bottom" padding="0.8h" noclick="1" reverse="true">
+
+									<!-- Friends Only Challenge -->
+									<instance name="option_checkbox_v3"
+										category="4" subcategory="2"
+										cvar="ui_challengeRequiresFriendship"
+										title="options_checkbox_require_friend_challenge"
+										tip_name="options_checkbox_require_friend_challenge" tip_text1="options_checkbox_require_friend_challenge_tip"
+									/>
+							
+
+								</panel>
+							</panel>
+
+						</panel>
+
+						<!-- Controls -->
+						<panel name="options_main_category4" group="options_grow_panel_parent" width="100%" float="bottom" padding="0.8h" noclick="1" visible="0" reverse="true">
+
+							<instance name="optionH1" label="options_button_controls" />
+							<!-- Camera/Scrolling -->
+							<instance name="options_subcategory_header" cat="4" id="1" label="options_submen_cam" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel group="options_grow_panel_child" y="1.0h" width="49%" align="left" float="bottom" padding="1.0h" noclick="1" reverse="true">
+
+									<instance name="option_checkbox_v3"
+										cvar="cam_invertMouseDrag"
+										category="5" subcategory="1"
+										title="options_checkbox_invert_mousedrag"
+										tip_name="options_checkbox_invert_mousedrag"
+										tip_text1="options_checkbox_invert_mousedrag_tip"
+									/>
+
+									<!-- Scroll Speed -->
+									<!-- tip_name="options_label_scroll_speed" tip_text1="options_camera_scroll_speed_tip" -->
+									<instance name="option_slider_integer_v3"
+										category="5" subcategory="1"
+										cvar="cam_scrollspeed"
+										round_var="true"
+										percent="false"
+										minvalue="100" maxvalue="6000" step="100"
+										intWidth="7.0h" sliderWidth="-7.2h"
+										title="options_label_scroll_speed"
+										sub_text2="options_simple_scrollspeed"
+									/>
+
+									<!-- Edge Scroll -->
+									<!-- tip_name="options_checkbox_screen_edge_scroll" tip_text1="options_screen_edge_scroll_tip" -->
+									<instance name="option_checkbox_v3"
+										category="5" subcategory="1"
+										cvar="cam_edgeScroll"
+										title="options_checkbox_screen_edge_scroll"
+										sub_text2="options_simple_scrolledge"
+									/>
+
+									<instance name="option_slider_integer_v3"
+										category="5" subcategory="1"
+										cvar="cam_edgeScrollPixelLeniencyX"
+										round_var="true"
+										percent="false"
+										minvalue="0" maxvalue="50" step="2"
+										intWidth="7.0h" sliderWidth="-7.2h"
+										title="options_label_edge_scroll_pixel_leniency_x"
+										sub_text2="options_label_edge_scroll_pixel_leniency_x_subtext"
+									/>
+
+									<instance name="option_slider_integer_v3"
+										category="5" subcategory="1"
+										cvar="cam_edgeScrollPixelLeniencyY"
+										round_var="true"
+										percent="false"
+										minvalue="0" maxvalue="50" step="2"
+										intWidth="7.0h" sliderWidth="-7.2h"
+										title="options_label_edge_scroll_pixel_leniency_y"
+										sub_text2="options_label_edge_scroll_pixel_leniency_y_subtext"
+									/>
+
+								</panel>
+								<panel group="options_grow_panel_child" y="1.0h" width="49%" align="right" float="bottom" padding="1.0h" noclick="1" reverse="true">
+
+									<!-- Constrain Cursor -->
+									<!-- tip_name="options_checkbox_constrain_cursor" tip_text1="options_constrain_cursor_tip" -->
+									<instance name="option_checkbox_v3"
+										category="5" subcategory="1"
+										cvar="cg_constrainCursor"
+										title="options_checkbox_constrain_cursor"
+										sub_text2="options_simple_constraincur"
+									/>
+
+									<!-- Lock Camera -->
+									<!-- tip_name="options_checkbox_camera_lock" tip_text1="options_screen_camera_lock_tip" -->
+									<instance name="option_checkbox_v3"
+										category="5" subcategory="1"
+										cvar="Cam_mode"
+										title="options_checkbox_camera_lock"
+										sub_text2="options_simple_lockcam"
+										onValue="2"
+										offValue="0"
+									/>
+
+								</panel>
+
+							</panel>
+
+							<!-- Keybindings -->
+							<instance name="options_subcategory_header" cat="4" id="2" label="options_submen_keybindings" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+
+								<panel y="1.5h" height="3.6h" width="100%" noclick="true" float="right" padding="2.0h">
+									<instance
+										name="standardButton" id="optionsButtonBinderDefault" width="32h" font="maindyn_18" label="options_button_default_binds" borderthickness=".8h"
+										onclicklua=""
+										onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+									/>
+									<instance
+										name="standardButton" id="optionsButtonBinderClear" width="28h" font="maindyn_18" label="options_button_clear_binds" borderthickness=".8h"
+										onclicklua=""
+										onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+									/>
+									<instance
+										name="standardButton" id="optionsButtonControlPresets" width="20h" font="maindyn_18" label="options_control_presets_SelectTitle" borderthickness=".8h"
+										onclicklua=""
+										onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+										enabled="1"
+									/>
+								</panel>
+
+								<panel group="options_grow_panel_child" y="7.5h" width="100%" height="-23h" align="left" float="bottom" padding="0.6h" noclick="1" reverse="true">
+									<panel height="2.4h" width="-1.8h" align="center" noclick="true">
+										<panel x="-1h" width="38h" align="right" noclick="true">
+											<label width="50%" align="left" textalign="center" textvalign="center" style="labelBase" font="maindyn_18" color="#37b2d9" content="options_yellow_label_primary" noclick="true" />
+											<label width="50%" align="right" textalign="center" textvalign="center" style="labelBase" font="maindyn_18" color="#37b2d9" content="options_yellow_label_secondary" noclick="true" />
+										</panel>
+									</panel>
+									<listbox
+										width="-0.4h" align="center"
+										itemwidth="-3h" itemheight="3.4h" hoverselect="false" scrollbarsize="3h"
+										scrolltexture="/ui/shared/textures/slider.tga" handleheight="6h" handlewidth="3h"
+										color="invisible" select="false" hscrollbar="0" horizontal="false"
+									>
+										<instance name="simpleKeybindHeader" label="options_heroabilities" />
+										<instance name="simpleKeybind" label="options_label_acti_ab_1_keybind" table="game" action="ActivateTool" param="0" />
+										<instance name="simpleKeybind" label="options_label_acti_ab_2_keybind" table="game" action="ActivateTool" param="1" />
+										<instance name="simpleKeybind" label="options_label_acti_ab_3_keybind" table="game" action="ActivateTool" param="2" />
+										<instance name="simpleKeybind" label="options_label_acti_ab_4_keybind" table="game" action="ActivateTool" param="3" />
+
+										<instance name="simpleKeybind" action="TriggerToggle" param="gameShowSkills" label="options_openskills" table="game" />
+										<instance name="simpleKeybind" label="options_label_levelup_ab_1_keybind" table="game" action="LevelupAbility" param="0" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_levelup_ab_2_keybind" table="game" action="LevelupAbility" param="1" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_levelup_ab_3_keybind" table="game" action="LevelupAbility" param="2" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_levelup_ab_4_keybind" table="game" action="LevelupAbility" param="3" impulse="true" />
+
+										<instance name="simpleKeybind" label="options_deliveritems" table="game" action="ActivateTool" param="11" />
+										<instance name="simpleKeybind" label="options_teleporthome" table="game" action="ActivateTool" param="8" />
+
+										<instance name="simpleKeybind" label="options_usefamiliar" table="game" action="ActivateTool" param="18" />
+
+										<instance name="simpleKeybind" label="options_plantBomb" table="game" action="TriggerToggle" param="dropBombBind" />
+
+										<instance name="simpleKeybindHeader" label="options_activatableitems" />
+										<instance name="simpleKeybind" label="options_useactitem1" table="game" action="ActivateUsableItem" param="1" />
+										<instance name="simpleKeybind" label="options_useactitem2" table="game" action="ActivateUsableItem" param="2" />
+										<instance name="simpleKeybind" label="options_useactitem3" table="game" action="ActivateUsableItem" param="3" />
+										<instance name="simpleKeybind" label="options_useactitem4" table="game" action="ActivateUsableItem" param="4" />
+										<instance name="simpleKeybind" label="options_useactitem5" table="game" action="ActivateUsableItem" param="5" />
+										<instance name="simpleKeybind" label="options_useactitem6" table="game" action="ActivateUsableItem" param="6" />
+										<instance name="simpleKeybind" label="options_useboots" table="game" action="ActivateTool" param="96" />
+										<instance name="simpleKeybind" label="options_consumable1" table="game" action="ActivateTool" param="103" />
+										<instance name="simpleKeybind" label="options_consumable2" table="game" action="ActivateTool" param="104" />
+
+										<instance name="simpleKeybindHeader" label="options_basicactions" />
+										<instance name="simpleKeybind" label="options_label_select_hero_keybind" table="game" action="SelectHero" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_attack_keybind" table="game" action="OrderAttack" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_stop_keybind" table="game" action="OrderCancelAndHold" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_emote_keybind" table="game" action="OrderEmote" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_minimap_ping_keybind" table="ui" action="Ping" />
+
+										<instance name="simpleKeybindHeader" label="options_camera" />
+
+										<instance name="simpleKeybind" label="options_label_move_forward_keybind" table="game" action="MoveForward" />
+										<instance name="simpleKeybind" label="options_label_move_left_keybind" table="game" action="MoveLeft" />
+										<instance name="simpleKeybind" label="options_label_move_back_keybind" table="game" action="MoveBack" />
+										<instance name="simpleKeybind" label="options_label_move_right_keybind" table="game" action="MoveRight" />
+										<instance name="simpleKeybind" label="options_label_camera_drag_keybind" table="game" action="CameraDrag" />
+										<instance name="simpleKeybind" label="options_label_center_screen_keybind" table="game" action="Center"/>
+										<instance name="simpleKeybind" label="options_label_toggle_locked_cam_keybind" table="game" action="ToggleLockedCam" impulse="true" />
+
+										<instance name="simpleKeybindHeader" label="options_misc" />
+
+										<instance name="simpleKeybind" label="options_label_open_shop_keybind" table="game" action="ToggleShop" impulse="true" />
+										<instance name="simpleKeybind" action="TriggerToggle" param="gamePurchaseCurrentValidBookmark" label="options_purchaseRecentValidbookmark" table="game" />
+										<instance name="simpleKeybind" label="options_label_chat_team_keybind" table="game" action="ChatTeam" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_show_chat_keybind" table="game" action="ShowChat" />
+										<instance name="simpleKeybind" action="TriggerToggle" param="gameShowMoreInfo" label="options_expandui" table="game" />
+										<instance name="simpleKeybind" action="TriggerToggle" param="gameToggleScoreboard" label="options_showscoreboard" table="game" />
+										<instance name="simpleKeybind" action="TriggerToggle" param="gameShowChatWheel" label="options_chatwheel" table="game" />
+
+									</listbox>
+								</panel>
+
+
+							</panel>
+
+							<!-- Keybindings 2 -->
+							<instance name="options_subcategory_header" cat="4" id="3" label="options_submen_keybindings_adv" />
+							<panel group="options_grow_panel_child" width="100%" noclick="1">
+								<panel y="1.0h" height="3h" noclick="true">
+									<panel width="49%">
+										<instance name="option_checkbox_v3"
+											cvar="cg_globalQuickCast"
+											category="5" subcategory="2"
+											title="options_checkbox_global_quickcast"
+											tip_name="options_checkbox_global_quickcast"
+											tip_text1="options_checkbox_global_quickcast_tip"
+										/>
+									</panel>
+
+									<panel width="49%" align="right">
+										<instance name="option_checkbox_v3"
+											cvar="cg_instantCast"
+											category="5" subcategory="2"
+											title="options_checkbox_instant_quickcast"
+											tip_name="options_checkbox_instant_quickcast"
+											tip_text1="options_checkbox_instant_quickcast_tip"
+										/>
+									</panel>
+
+								</panel>
+								<panel y="7.0h" height="3h" noclick="true">
+									<panel width="49%">
+										<instance name="option_checkbox_v3"
+											cvar="cg_attackMovePrimary"
+											category="5" subcategory="2"
+											title="options_checkbox_attack_move_primary"
+											tip_name="options_checkbox_attack_move_primary"
+											tip_text1="options_checkbox_attack_move_primary_tip"
+										/>
+									</panel>
+								</panel>
+
+								<panel group="options_grow_panel_child" y="14.9h" width="100%" height="-23h" align="left" float="bottom" padding="0.6h" noclick="1" reverse="true">
+									<panel height="2.4h" width="-1.8h" align="center" noclick="true">
+										<panel x="-1h" width="38h" align="right" noclick="true">
+											<label width="50%" align="left" textalign="center" textvalign="center" style="labelBase" font="maindyn_18" color="#37b2d9" content="options_yellow_label_primary" noclick="true" />
+											<label width="50%" align="right" textalign="center" textvalign="center" style="labelBase" font="maindyn_18" color="#37b2d9" content="options_yellow_label_secondary" noclick="true" />
+										</panel>
+									</panel>
+									<listbox
+										width="-0.4h" align="center"
+										itemwidth="-3h" itemheight="3.4h" hoverselect="false" scrollbarsize="3h"
+										scrolltexture="/ui/shared/textures/slider.tga" handleheight="6h" handlewidth="3h"
+										color="invisible" select="false" hscrollbar="0" horizontal="false"
+									>
+										<instance name="simpleKeybindHeader" label="options_heroabilities" />
+										<instance name="simpleKeybind" label="options_label_acti_qab_1_keybind" table="game" action="QuickActivateTool" param="0" />
+										<instance name="simpleKeybind" label="options_label_acti_qab_2_keybind" table="game" action="QuickActivateTool" param="1" />
+										<instance name="simpleKeybind" label="options_label_acti_qab_3_keybind" table="game" action="QuickActivateTool" param="2" />
+										<instance name="simpleKeybind" label="options_label_acti_qab_4_keybind" table="game" action="QuickActivateTool" param="3" />
+										<instance name="simpleKeybind" label="options_label_acti_dab_1_keybind" table="game" action="DoubleActivateTool" param="0" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_acti_dab_2_keybind" table="game" action="DoubleActivateTool" param="1" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_acti_dab_3_keybind" table="game" action="DoubleActivateTool" param="2" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_acti_dab_4_keybind" table="game" action="DoubleActivateTool" param="3" impulse="true" />
+
+										<instance name="simpleKeybind" label="options_qusefamiliar" table="game" action="QuickActivateTool" param="18" />
+
+										<instance name="simpleKeybindHeader" label="options_activatableitems" />
+										<instance name="simpleKeybind" label="options_quseactitem1" table="game" action="QuickActivateUsableItem" param="1" />
+										<instance name="simpleKeybind" label="options_quseactitem2" table="game" action="QuickActivateUsableItem" param="2" />
+										<instance name="simpleKeybind" label="options_quseactitem3" table="game" action="QuickActivateUsableItem" param="3" />
+										<instance name="simpleKeybind" label="options_quseactitem4" table="game" action="QuickActivateUsableItem" param="4" />
+										<instance name="simpleKeybind" label="options_quseactitem5" table="game" action="QuickActivateUsableItem" param="5" />
+										<instance name="simpleKeybind" label="options_quseactitem6" table="game" action="QuickActivateUsableItem" param="6" />
+										<instance name="simpleKeybind" label="options_quseboots"	table="game" action="QuickActivateTool" param="96" />
+										<instance name="simpleKeybind" label="options_duseactitem1" table="game" action="DoubleActivateUsableItem" param="1" impulse="true" />
+										<instance name="simpleKeybind" label="options_duseactitem2" table="game" action="DoubleActivateUsableItem" param="2" impulse="true" />
+										<instance name="simpleKeybind" label="options_duseactitem3" table="game" action="DoubleActivateUsableItem" param="3" impulse="true" />
+										<instance name="simpleKeybind" label="options_duseactitem4" table="game" action="DoubleActivateUsableItem" param="4" impulse="true" />
+										<instance name="simpleKeybind" label="options_duseactitem5" table="game" action="DoubleActivateUsableItem" param="5" impulse="true" />
+										<instance name="simpleKeybind" label="options_duseactitem6" table="game" action="DoubleActivateUsableItem" param="6" impulse="true" />
+
+										<instance name="simpleKeybindHeader" label="options_itemsperslot" />
+										<instance name="simpleKeybind" label="options_label_acti_inven_1_keybind" table="game" action="ActivateTool" param="97" />
+										<instance name="simpleKeybind" label="options_label_acti_inven_2_keybind" table="game" action="ActivateTool" param="98" />
+										<instance name="simpleKeybind" label="options_label_acti_inven_3_keybind" table="game" action="ActivateTool" param="99" />
+										<instance name="simpleKeybind" label="options_label_acti_inven_4_keybind" table="game" action="ActivateTool" param="100" />
+										<instance name="simpleKeybind" label="options_label_acti_inven_5_keybind" table="game" action="ActivateTool" param="101" />
+										<instance name="simpleKeybind" label="options_label_acti_inven_6_keybind" table="game" action="ActivateTool" param="102" />
+										<instance name="simpleKeybind" label="options_label_dacti_inven_1_keybind" table="game" action="DoubleActivateTool" param="97"  impulse="true" />
+										<instance name="simpleKeybind" label="options_label_dacti_inven_2_keybind" table="game" action="DoubleActivateTool" param="98"  impulse="true" />
+										<instance name="simpleKeybind" label="options_label_dacti_inven_3_keybind" table="game" action="DoubleActivateTool" param="99"  impulse="true" />
+										<instance name="simpleKeybind" label="options_label_dacti_inven_4_keybind" table="game" action="DoubleActivateTool" param="100" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_dacti_inven_5_keybind" table="game" action="DoubleActivateTool" param="101" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_dacti_inven_6_keybind" table="game" action="DoubleActivateTool" param="102" impulse="true" />
+
+										<instance name="simpleKeybindHeader" label="options_basicactions" />
+										<instance name="simpleKeybind" label="options_label_quick_attack" table="game" action="OrderQuickAttack" usetip="true" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_focus_toggle_keybind" table="game" action="CommanderFocusToggle" usetip="true" />
+										<instance name="simpleKeybind" label="options_label_self_cast" table="game" action="DoubleActivateModifier" usetip="true" />
+
+										<instance name="simpleKeybindHeader" label="options_syscontrols" />
+										<instance name="simpleKeybind" label="options_label_shift_keybind" table="game" action="CommanderModifierShift" usetip="true" />
+										<instance name="simpleKeybind" label="options_label_ctrl_keybind" table="game" action="CommanderModifierCtrl" usetip="true" />
+										<instance name="simpleKeybind" label="general_cancel" table="game" action="Cancel" />
+										<instance name="simpleKeybind" label="options_label_mute_music_keybind" table="game" action="ToggleCvar" param="sound_muteMusic" impulse="true" />
+										<instance name="simpleKeybind" label="options_label_mute_sound_keybind" table="game" action="ToggleMute" impulse="true" />
+
+										<!-- <instance name="simpleKeybind" label="options_label_mute_sound_keybind" table="game" action="ToggleCvar" param="sound_mute" impulse="true" /> -->
+
+										<instance name="simpleKeybindHeader" label="options_spectator" />
+										<instance name="simpleKeybind" action="TriggerToggle" param="SpecCinematicMode" label="options_label_toggle_cinematic_mode" table="spectator" />
+
+									</listbox>
+								</panel>
+							</panel>
+						</panel>
+
+						<!-- Search -->
+						<!-- if the category index on this is changed the script needs to be tweaked -->
+						<panel name="options_main_category5" regrow="1" grow="true" width="100%" float="bottom" padding="1.0h" noclick="1" visible="0" >
+
+							<instance name="options_subcategory_header" cat="5" id="1" label="general_search" />
+
+							<panel y="18.0h" height="60.0h" noclick="1">
+								<panel name="options_search_insertion_point" noclick="1" height="0" grow="1" regrow="1" growinvis="0" width="100%" float="bottom" padding="0.4h" />
+								<panel name="options_search_insertion_point_cover" height="100%" width="100%" color="0 0 0 0" visible="1" >
+									<animatedimage name="options_search_cover_throb" y="-3.0h" width="10h" height="10h" texture="/ui/shared/throb/throb.tga" noclick="true" loop="1" fps="30" onshow="StartAnim(1);" visible="0" align="center" valign="center" />
+									<label name="options_search_cover_label" height="5h" width="66%" align="center" valign="top" textalign="center" textvalign="center" style="labelBase" font="maindyn_22" content="" noclick="1"/>
+								</panel>
+							</panel>
+
+							<panel y="8h" x="0" noclick="1" align="center" color="invisible" width="40h" height="5.0h" >
+								<panel height="5.0h" width="100%" valign="center" y="0" noclick="true">
+									<panel width="100%" align="center" noclick="true">
+										<instance name="dialogWrapper2"/>
+										<frame texture="/ui/shared/frames/text_input.tga" borderthickness="0.4h" noclick="true"/>
+										<textbox
+											name="options_search_input"
+											hmargin="1.0h" vmargin="0.4h"
+											maxlength="45"
+											textalign="center" textvalign="center"
+											y="0.4h"
+											font="maindyn_22"
+											textcolor="0 0 0 1"
+											color="invisible"
+											onload=""
+											onshow="SetFocus(false);"
+											onenter="
+												SetFocus(false);
+											"
+											onesc="
+												EraseInputLine();
+												SetFocus(false);
+												HideWidget('sp_footer_bot');
+											"
+											onchangelua="
+												Strife_Options.SearchOptionsInput( self:GetValue() )
+											"
+											onchange="
+												if(!StringEmpty(''#this),
+													Call('options_search_input_cover', 'SetVisible(0)')
+												);"
+											onfocus="
+												if(!StringEmpty(''#this),
+													Call('options_search_input_cover', 'SetVisible(0)')
+												);
+											"
+											onlosefocus="
+												if(StringEmpty(''#this),
+													Call('options_search_input_cover', 'SetVisible(1)')
+												);
+											"
+											onhide="
+												EraseInputLine();
+												Call('options_search_input_cover', 'SetVisible(1)');
+											"
+										/>
+										<label name="options_search_input_cover" x="0.8h" y="-0.2h" width="-0.5h" height="-0.4h" valign="center" align="center" textvalign="center" font="maindyn_22" color="0 0 0 1" content="options_search_terms" noclick="1"  />
+									</panel>
+								</panel>
+							</panel>
+						</panel>
+
+						<panel name="options_main_category8" regrow="1" grow="true" width="100%" float="bottom" padding="1.8h" noclick="1" visible="0" >
+							<instance name="optionH1" label="options_submen_practice" />
+							<instance name="options_subcategory_header" cat="8" id="1" label="options_submen_practice" />
+							<panel noclick="1" height="6.0h" />
+							<instance name="standardButton" id="options_practice_startgame_btn_01" height="9h" align="center" width="40h" valign="top" rendermode="normal" font="maindyn_26" label="main_simple_play_tutorial4"  borderthickness="1.2h"
+								onclicklua="
+									GenericDialogAutoSize(
+										'main_simple_play_tutorial4', 'main_simple_play_tutorial4_desc', '', 'general_play', 'general_cancel',
+											function()
+												PlaySound('/ui/sounds/sfx_ui_creategame_2.wav')
+												Strife_Options.LeaveOptionsScreen()
+												libThread.threadFunc(function()
+													LeaveGameLobby()
+													Party.LeaveParty()
+													wait(styles_mainSwapAnimationDuration)
+													StartGame('practice', Translate('game_name_default_practice'), 'map:strife nolobby:true fillbots:false finalheroesonly:false')
+												end)
+											end,
+											function()
+												PlaySound('/ui/sounds/sfx_ui_back.wav')
+											end
+									)
+								"
+								onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+								onloadlua="
+									self:UnregisterWatchLua('GamePhase')
+									self:RegisterWatchLua('GamePhase', function(widget, trigger)
+										widget:SetEnabled(trigger.gamePhase == 0)
+									end)
+								"
+							/>
+
+							<instance name="standardButton" id="options_practice_startgame_btn_02" height="9h" align="center" width="40h" valign="top" rendermode="normal" font="maindyn_26" label="main_simple_play_tutorial"  borderthickness="1.2h"
+								onclicklua="
+									GenericDialogAutoSize(
+										'main_simple_play_tutorial', 'main_simple_play_tutorial_desc', '', 'general_play', 'general_cancel',
+											function()
+												PlaySound('/ui/sounds/sfx_ui_creategame_2.wav')
+												Strife_Options.LeaveOptionsScreen()
+												libThread.threadFunc(function()
+													LeaveGameLobby()
+													Party.LeaveParty()
+													local triggerNPE = LuaTrigger.GetTrigger('newPlayerExperience')
+
+													triggerNPE:Trigger(false)
+													wait(styles_mainSwapAnimationDuration)
+													ManagedSetLoadingInterface('loading_npe_1')
+													StartGame('tutorial', Translate('game_name_default_tutorial'), 'map:tutorial nolobby:true')
+												end)
+											end,
+											function()
+												PlaySound('/ui/sounds/sfx_ui_back.wav')
+											end
+									)
+								"
+								onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+								onloadlua="
+									self:UnregisterWatchLua('GamePhase')
+									self:RegisterWatchLua('GamePhase', function(widget, trigger)
+										widget:SetEnabled(trigger.gamePhase == 0)
+									end)
+								"
+							/>
+
+							<instance name="standardButton" id="options_practice_startgame_btn_03" height="9h" align="center" width="40h" valign="top" rendermode="normal" font="maindyn_26" label="main_simple_play_tutorial2"  borderthickness="1.2h"
+								onclicklua="
+									GenericDialogAutoSize(
+										'main_simple_play_tutorial2', 'main_simple_play_tutorial2_desc', '', 'general_play', 'general_cancel',
+											function()
+												PlaySound('/ui/sounds/sfx_ui_creategame_2.wav')
+												Strife_Options.LeaveOptionsScreen()
+												libThread.threadFunc(function()
+													LeaveGameLobby()
+													Party.LeaveParty()
+													local triggerNPE = LuaTrigger.GetTrigger('newPlayerExperience')
+
+													triggerNPE:Trigger(false)
+													wait(styles_mainSwapAnimationDuration)
+													ManagedSetLoadingInterface('loading_npe_2')
+													StartGame('tutorial', Translate('game_name_default_tutorial'), 'map:tutorial_2 nolobby:true')
+												end)
+											end,
+											function()
+												PlaySound('/ui/sounds/sfx_ui_back.wav')
+											end
+									)
+								"
+								onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+								onloadlua="
+									self:UnregisterWatchLua('GamePhase')
+									self:RegisterWatchLua('GamePhase', function(widget, trigger)
+										widget:SetEnabled(trigger.gamePhase == 0)
+									end)
+								"
+							/>
+
+							<instance name="standardButton" id="options_practice_startgame_btn_04" height="9h" align="center" width="40h" valign="top" rendermode="normal" font="maindyn_26" label="main_simple_play_tutorial3"  borderthickness="1.2h"
+								onclicklua="
+									GenericDialogAutoSize(
+										'main_simple_play_tutorial3', 'main_simple_play_tutorial3_desc', '', 'general_play', 'general_cancel',
+											function()
+												PlaySound('/ui/sounds/sfx_ui_creategame_2.wav')
+												Strife_Options.LeaveOptionsScreen()
+												libThread.threadFunc(function()
+													queuedTut3SkipLobby = true
+													LeaveGameLobby()
+													Party.LeaveParty()
+													local triggerNPE = LuaTrigger.GetTrigger('newPlayerExperience')
+
+													triggerNPE:Trigger(false)
+													wait(styles_mainSwapAnimationDuration)
+													StartGame('practice', Translate('game_name_default_practice'), 'map:tutorial_3')
+												end)
+											end,
+											function()
+												PlaySound('/ui/sounds/sfx_ui_back.wav')
+											end
+									)
+								"
+								onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+								onloadlua="
+									self:UnregisterWatchLua('GamePhase')
+									self:RegisterWatchLua('GamePhase', function(widget, trigger)
+										widget:SetEnabled(trigger.gamePhase == 0)
+										if trigger.gamePhase == 1 and queuedTut3SkipLobby then
+											queuedTut3SkipLobby = false
+											RequestBotFill()
+											RequestBotDifficulty('tutorial3')
+											Lobby.isFilledWithBots = true
+											RequestMatchStart()
+										end
+									end)
+								"
+							/>
+
+						</panel>
+
+						<panel name="options_main_category7" regrow="1" grow="true" width="100%" float="bottom" padding="1.8h" noclick="1" visible="0" >
+							<instance name="optionH1" label="options_submen_matchmaking" />
+							<instance name="options_subcategory_header" cat="7" id="1" label="options_submen_matchmaking" />
+							<panel noclick="1" height="0.5h" />
+							
+							<label height="4.0h" style="h1" font="maindyn_20" content="options_mm_lang_pref" noclick="1" />
+							
+							<panel y="20h" grow="1" width="45%" align="left" float="bottom" padding="10s">
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_en"
+									category="7" subcategory="1"
+									title="lang_en"
+									tip_name="lang_en"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>
+
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_zh"
+									category="7" subcategory="1"
+									title="lang_zh"
+									tip_name="lang_zh"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>								
+								
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_fr"
+									category="7" subcategory="1"
+									title="lang_fr"
+									tip_name="lang_fr"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>	
+
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_de"
+									category="7" subcategory="1"
+									title="lang_de"
+									tip_name="lang_de"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>	
+								
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_pt_br"
+									category="7" subcategory="1"
+									title="lang_pt_br"
+									tip_name="lang_pt_br"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>									
+								
+							</panel>
+							<panel y="20h" grow="1" width="45%" align="left" x="50%" float="bottom" padding="10s">
+
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_es"
+									category="7" subcategory="1"
+									title="lang_es"
+									tip_name="lang_es"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>	
+
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_ru"
+									category="7" subcategory="1"
+									title="lang_ru"
+									tip_name="lang_ru"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>								
+								
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_th"
+									category="7" subcategory="1"
+									title="lang_th"
+									tip_name="lang_th"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>								
+								
+								<instance name="option_checkbox_lua"
+									table="luaOptions"
+									field="mm_lang_preference_vi"
+									category="7" subcategory="1"
+									title="lang_vi"
+									tip_name="lang_vi"
+									tip_text1="options_mm_lang_pref_desc"
+									default="true"
+								/>	
+							</panel>
+						</panel>						
+						
+						<panel name="options_main_category6" width="100%" noclick="1" visible="0" float="bottom">
+							<panel float="bottom" padding="1.0h" noclick="1">
+								<instance name="optionH1" label="options_submen_support" />
+								<instance name="options_subcategory_header" cat="6" id="1" label="options_submen_faq" />
+							</panel>
+
+
+							<panel name="options_main_answer_listbox_parent" y="18.0h" float="bottom" padding="1.0h" width="100%" height="-18.1h" noclick="1">
+								<!-- FAQ Answers -->
+								<!-- QUESTION 01 -->
+								<panel name="options_main_question01" float="bottom" width="100%" padding="1.0h" regrow="1" grow="1" sticky="1" stickytoinvis="0" noclick="1" visible="0">
+									<panel height="2.0h" noclick="1">
+										<frame height="1" color=".2 .2 .2 1" valign="center" noclick="1" />
+									</panel>
+
+									<label height="4.0h" style="h1" font="maindyn_20" content="options_label_faq_answertitle01" noclick="1" />
+
+									<panel width="90%" align="center" regrow="1" grow="1" noclick="1">
+										<frame y="0.0h" x="0.0h" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="1.4h" color="0.08 0.08 0.08 1"/>
+										<panel float="bottom" padding="2.0h" width="95%" align="center" regrow="1" grow="true" noclick="1">
+											<panel height="0.01h"></panel>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer01_pt01" />
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer01_pt02"/>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer01_pt03"/>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer01_pt04"/>
+											<panel height="0.01h"></panel>
+										</panel>
+									</panel>
+								</panel>
+
+								<!-- QUESTION 02 -->
+								<panel name="options_main_question02" float="bottom" width="100%" padding="1.0h" regrow="1" grow="1" noclick="1" sticky="1" stickytoinvis="0" visible="0">
+									<panel height="2.0h" noclick="1">
+										<frame height="1" color=".2 .2 .2 1" valign="center" noclick="1" />
+									</panel>
+
+									<label height="4.0h" style="h1" font="maindyn_20" content="options_label_faq_answertitle02" noclick="1" />
+
+									<panel width="90%" align="center" regrow="1" grow="1" noclick="1">
+										<frame y="0.0h" x="0.0h" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="1.4h" color="0.08 0.08 0.08 1"/>
+										<panel float="bottom" padding="2.0h" width="95%" align="center" regrow="1" grow="true" noclick="1">
+											<panel height="0.01h"></panel>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer02_pt01" />
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer02_pt02"/>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer02_pt03"/>
+											<panel height="0.01h"></panel>
+										</panel>
+									</panel>
+								</panel>
+
+								<!-- QUESTION 03 -->
+								<panel name="options_main_question03" float="bottom" width="100%" padding="1.0h" regrow="1" grow="1" sticky="1" stickytoinvis="0" noclick="1" visible="0">
+									<panel height="2.0h" noclick="1">
+										<frame height="1" color=".2 .2 .2 1" valign="center" noclick="1" />
+									</panel>
+
+									<label height="4.0h" style="h1" font="maindyn_20" content="options_label_faq_answertitle03" noclick="1" />
+
+									<panel width="90%" align="center" regrow="1" grow="1" noclick="1">
+										<frame y="0.0h" x="0.0h" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="1.4h" color="0.08 0.08 0.08 1"/>
+										<panel float="bottom" padding="2.0h" width="95%" align="center" regrow="1" grow="true" noclick="1">
+											<panel height="0.01h"></panel>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer03_pt01" />
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer03_pt02"/>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer03_pt03"/>
+											<panel height="0.01h"></panel>
+										</panel>
+									</panel>
+								</panel>
+
+								<!-- QUESTION 04 -->
+								<panel name="options_main_question04" float="bottom" width="100%" padding="1.0h" regrow="1" grow="1" sticky="1" stickytoinvis="0" noclick="1" visible="0">
+									<panel height="2.0h" noclick="1">
+										<frame height="1" color=".2 .2 .2 1" valign="center" noclick="1" />
+									</panel>
+
+									<label height="4.0h" style="h1" font="maindyn_20" content="options_label_faq_answertitle04" noclick="1" />
+
+									<panel width="90%" align="center" regrow="1" grow="1" noclick="1">
+										<frame y="0.0h" x="0.0h" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="1.4h" color="0.08 0.08 0.08 1"/>
+										<panel float="bottom" padding="2.0h" width="95%" align="center" regrow="1" grow="true" noclick="1">
+											<panel height="0.01h"></panel>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer04_pt01" />
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer04_pt02"/>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer04_pt03"/>
+											<panel height="0.01h"></panel>
+										</panel>
+									</panel>
+								</panel>
+
+								<!-- QUESTION 05 -->
+								<panel name="options_main_question05" float="bottom" width="100%" padding="1.0h" regrow="1" grow="1" sticky="1" stickytoinvis="0" noclick="1" visible="0">
+									<panel height="2.0h" noclick="1">
+										<frame height="1" color=".2 .2 .2 1" valign="center" noclick="1" />
+									</panel>
+
+									<label height="4.0h" style="h1" font="maindyn_20" content="options_label_faq_answertitle05" noclick="1" />
+
+									<panel width="90%" align="center" regrow="1" grow="1" noclick="1">
+										<frame y="0.0h" x="0.0h" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="1.4h" color="0.08 0.08 0.08 1"/>
+										<panel float="bottom" padding="2.0h" width="95%" align="center" regrow="1" grow="true" noclick="1">
+											<panel height="0.01h"></panel>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer05_pt01" />
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer05_pt02"/>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer05_pt03"/>
+											<instance name="options_faq_answer_entry" id="options_faq_answer_entry" answer="options_label_answer05_pt04"/>
+											<panel height="0.01h"></panel>
+										</panel>
+									</panel>
+								</panel>
+
+								<panel group="options_grow_panel_child" width="100%" grow="1" sticky="1" stickytoinvis="0" float="bottom" padding="0.8h" noclick="1" reverse="true" color="invisible">
+
+									<label name="options_main_reset_defaults_title" height="2.4h" style="h1" font="maindyn_20" content="options_label_reset_defaults_title" sticky="0" stickytoinvis="0" noclick="1" />
+									<!--
+									<label name="options_main_reset_defaults_subtitle" height="2.4h" style="labelBase" font="maindyn_18" color="0.8 0.8 0.8 1" content="options_label_reset_defaults_subtitle" sticky="0" stickytoinvis="0" noclick="1" />
+									-->
+									<panel height="7.0h" width="100%" grow="true" sticky="0" stickytoinvis="0" noclick="1">
+										<instance name="standardButton" id="options_reset_defaults_btn2" x="1h" height="5h" align="left" width="35h" valign="center" rendermode="grayscale" font="maindyn_26" label="options_reset_defaults"  borderthickness=".8h"
+											onclicklua="
+												GenericDialogAutoSize(
+												Translate('options_reset_defaults'), Translate('options_reset_defaults_desc'), '', 'general_ok', 'general_cancel',
+												function()
+													Strife_Options:ResetOptions()
+												end,
+												nil
+												)
+												"
+											onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+										/>
+
+										<instance name="standardButton" id="options_repair_install_btn" x="-1h" height="5h" align="right" width="35h" valign="center" rendermode="grayscale" font="maindyn_26" label="options_repair_install_btn"  borderthickness=".8h"
+											onclicklua="
+												GenericDialogAutoSize(
+												Translate('options_repair_install'), Translate('options_repair_install_desc'), '', 'general_ok', 'general_cancel',
+												function()
+													Client.Repair()
+												end,
+												nil
+												)
+												"
+											onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+										/>										
+										
+									</panel>
+
+									<label name="options_main_contact_title" height="2.4h" style="h1" font="maindyn_20" content="options_label_contact_title" sticky="0" stickytoinvis="0" noclick="1" />
+									<label name="options_main_contact_subtitle" height="2.4h" style="labelBase" font="maindyn_18" color="0.8 0.8 0.8 1" content="options_label_contact_subtitle" sticky="0" stickytoinvis="0" noclick="1" />
+
+									<panel name="options_main_contact_button" height="7.0h" width="100%" grow="true" sticky="0" stickytoinvis="0" noclick="1">
+										<instance name="standardButton" id="options_help_std_btn_0" height="5h" align="center" width="40h" valign="center" rendermode="normal" font="maindyn_26" label="options_customer_support"  borderthickness=".8h"
+											onclicklua="
+												if (Client.GetAccountID() ~= '4294967.295') then
+													GenericDialogAutoSize(
+														Translate('general_go_to_website'), Translate('general_go_to_cs'), Translate('general_go_to_cs_moreinfo') .. '\n\n' .. Translate('general_go_to_cs_accountid', 'value', Client.GetAccountID()) .. '\n', 'general_ok', 'general_cancel',
+														function()
+														mainUI.OpenURL((Strife_Region.regionTable[Strife_Region.activeRegion].strifeSupportURL or 'http://www.strife.com'))
+														end,
+														nil
+													)
+												else
+													GenericDialogAutoSize(
+														Translate('general_go_to_website'), Translate('general_go_to_cs'), Translate('general_go_to_cs_login') .. '\n', 'general_ok', 'general_cancel',
+														function()
+														mainUI.OpenURL((Strife_Region.regionTable[Strife_Region.activeRegion].strifeSupportURL or 'http://www.strife.com'))
+														end,
+														nil
+													)
+												end
+												"
+											onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+										/>
+									</panel>
+
+									<panel width="90%" height="3.0h" align="center" sticky="0" stickytoinvis="0" noclick="1">
+										<label y="-1h" name="options_main_contact_followup" height="4h" width="100%" style="labelBase" align="center" font="maindyn_18" textalign="center" color="0.8 0.8 0.8 1" content="options_label_contact_followup" wrap="1" noclick="1" />
+									</panel>
+								</panel>
+
+								<!-- For future scrollbar use
+								<listbox
+									name="options_main_answer_listbox"
+									y="0.5h" x="-2h"
+									width="-4h" height="-1h"
+									align="center"
+									color="invisible"
+									font="maindyn_24"
+									itemwidth="-5h"
+									itemheight="4h"
+									select="true"
+									clearselection="false"
+									hoverselect="false"
+									hoverhighlight="true"
+									highlight="under"
+									highlightcolor="invisible"
+									highlightbordercolor="invisible"
+									selectedcolor="invisible"
+									selectedbordercolor="invisible"
+									backgroundimage="$invis"
+									backgroundimagecolor="#1d2f3b"
+									colortransition="true"
+									colortransitiontime="250"
+									exteriorscrollbars="true"
+									scrollbarplaceholder="true"
+									scrollbarsize="4h"
+									scrolltexture="/ui/shared/textures/slider.tga"
+									handleheight="6h"
+									hscrollbar="0"
+									horizontal="false"
+								/>
+
+								<panel noclick="0" name="options_main_answer_listbox_blocker" visible="0" >
+									<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="8h" color="0 0 0 0.85"/>
+									<frame texture="/ui/shared/frames/border_double.tga" borderthickness="8h" bordercolor="0.2 0.2 0.2 1" color="invisible"/>
+									<label style="h1" content="main_lobby_contacting_server_desc" textalign="center" textvalign="center" noclick="1" />
+								</panel>
+								-->
+							</panel>
+
+
+							<!-- Contact -->
+							<panel name="options_main_contact" height="2.0h" sticky="1" stickytoinvis="0" noclick="1">
+								<frame height="1" color=".2 .2 .2 1" valign="center" noclick="1" />
+							</panel>
+
+
+							<!-- FAQ - Remains on Top -->
+							<panel name="options_main_faq" y="10.0h" noclick="1" height="10.0h" float="bottom" padding="1.0h">
+								<label height="2.4h" style="h1" font="maindyn_20" content="options_label_faq_title" noclick="1" />
+								<instance name="options_basic_red" id="options_faq_dropdown" width="100%"
+									onloadlua="
+										self:Clear()
+										self:AddTemplateListItem('simpleDropdownItemRed', '0', 'label', 'options_label_faq_default');
+										self:AddTemplateListItem('simpleDropdownItemRed', '1', 'label', 'options_label_faq_question01');
+										self:AddTemplateListItem('simpleDropdownItemRed', '2', 'label', 'options_label_faq_question02');
+										self:AddTemplateListItem('simpleDropdownItemRed', '3', 'label', 'options_label_faq_question03');
+										self:AddTemplateListItem('simpleDropdownItemRed', '4', 'label', 'options_label_faq_question04');
+										self:AddTemplateListItem('simpleDropdownItemRed', '5', 'label', 'options_label_faq_question05');
+										self:SetSelectedItemByIndex(0,true)
+										"
+									onselectlua="
+										if (not GetWidget('options_main_question01', nil, true)) then
+											return
+											end
+										if ( self:GetValue() == '0' ) then
+											GetWidget('options_main_question01'):SetVisible(0)
+											GetWidget('options_main_question02'):SetVisible(0)
+											GetWidget('options_main_question03'):SetVisible(0)
+											GetWidget('options_main_question04'):SetVisible(0)
+											GetWidget('options_main_question05'):SetVisible(0)
+										elseif ( self:GetValue() == '1' ) then
+											GetWidget('options_main_question01'):SetVisible(1)
+											GetWidget('options_main_question02'):SetVisible(0)
+											GetWidget('options_main_question03'):SetVisible(0)
+											GetWidget('options_main_question04'):SetVisible(0)
+											GetWidget('options_main_question05'):SetVisible(0)
+										elseif ( self:GetValue() == '2' ) then
+											GetWidget('options_main_question01'):SetVisible(0)
+											GetWidget('options_main_question02'):SetVisible(1)
+											GetWidget('options_main_question03'):SetVisible(0)
+											GetWidget('options_main_question04'):SetVisible(0)
+											GetWidget('options_main_question05'):SetVisible(0)
+										elseif ( self:GetValue() == '3' ) then
+											GetWidget('options_main_question01'):SetVisible(0)
+											GetWidget('options_main_question02'):SetVisible(0)
+											GetWidget('options_main_question03'):SetVisible(1)
+											GetWidget('options_main_question04'):SetVisible(0)
+											GetWidget('options_main_question05'):SetVisible(0)
+										elseif ( self:GetValue() == '4' ) then
+											GetWidget('options_main_question01'):SetVisible(0)
+											GetWidget('options_main_question02'):SetVisible(0)
+											GetWidget('options_main_question03'):SetVisible(0)
+											GetWidget('options_main_question04'):SetVisible(1)
+											GetWidget('options_main_question05'):SetVisible(0)
+										elseif ( self:GetValue() == '5' ) then
+											GetWidget('options_main_question01'):SetVisible(0)
+											GetWidget('options_main_question02'):SetVisible(0)
+											GetWidget('options_main_question03'):SetVisible(0)
+											GetWidget('options_main_question04'):SetVisible(0)
+											GetWidget('options_main_question05'):SetVisible(1)
+										end
+										"
+								/>
+							</panel>
+						</panel>
+					</panel>
+
+					<panel y="-1.2h" width="-3.0h" height="3.8h" align="center" valign="bottom" noclick="true">
+						<panel grow="true" height="100%" align="right" float="right" padding="1.5h">
+							<instance name="standardButton" id="options_std_btn_2" width="12h" valign="bottom" rendermode="grayscale" font="maindyn_20" label="general_close"  borderthickness=".8h"
+								onclicklua="
+									Strife_Options.LeaveOptionsScreen()
+									-- mainOptionsClose
+									-- PlaySound('/path_to/filename.wav')
+								"
+								onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+							/>
+							<instance name="standardButton" id="options_std_btn_3" width="12h" valign="bottom" font="maindyn_20" label="general_undo"  borderthickness=".8h"
+								onclicklua="
+									Strife_Options.UndoChanges()
+									-- mainOptionsUndo
+									-- PlaySound('/path_to/filename.wav')
+								"
+								onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+							/>
+							<instance name="standardButton" id="options_std_btn_4" width="14h" valign="bottom" font="maindyn_20" label="options_button_apply"  borderthickness=".8h"
+								onclicklua="
+									Strife_Options.ApplySettings()
+									-- mainOptionsApply
+									-- PlaySound('/path_to/filename.wav')
+								"
+								onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+							/>
+						</panel>
+						<frame height="1" y="-1.0h" color=".2 .2 .2 1" valign="top" noclick="true" />
+
+						<!-- Search button -->
+						<panel valign="bottom" width="3.3h" height="3.3h" x="0.5h" y="-0.3h"
+							onclicklua="Strife_Options:SearchButton()"
+							ontrigger="SetX(0); SetY(0);"
+							onmouseover="
+								GroupCall('option_search_button_jiggle', 'SetWatch(1, \'HostTime\')');
+								Scale('4.0h', '4.0h', 250);
+							"
+							onmouseout="
+								GroupCall('option_search_button_jiggle', 'SetWatch(\'\'); SetWatch(1, \'\'); SetX(0); SetY(0); SetRotation(0);');
+								Scale('3.4h', '3.4h', 250);
+							"
+							onmouseoverlua="
+								simpleTipGrowYUpdate(true, nil, Translate('general_search'), Translate('options_search_tip'))
+							"
+							onmouseoutlua="
+								simpleTipGrowYUpdate(false)
+							"
+							onhide="
+								GroupCall('option_search_button_jiggle', 'SetWatch(\'\'); SetWatch(1, \'\'); SetX(0); SetY(0); SetRotation(0);');
+								SetWidth('3.4h'); SetHeight('3.4h');
+							"
+						>
+							<image noclick="1" texture="/ui/main/shared/textures/search.tga"
+								watch="" ontrigger="SetRotation(Sin(((param % 300) / 300) * (3.14159265 * 2)) * 8);" group="option_search_button_jiggle"
+								watch1="" ontrigger1="SetRotation(Sin(((param % 300) / 300) * (3.14159265 * 2)) * 4);"
+							/>
+						</panel>
+
+						<instance name="standardButton" id="options_reset_defaults_btn" x="5.5h" width="22h" valign="bottom" rendermode="grayscale" font="maindyn_20" label="options_reset_defaults"  borderthickness=".8h"
+							onclicklua="
+								GenericDialogAutoSize(
+									Translate('options_reset_defaults'), Translate('options_reset_defaults_desc'), '', 'general_ok', 'general_cancel',
+									function()
+										Strife_Options:ResetOptions()
+									end,
+									nil
+								)
+							"
+							onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+						/>
+
+					</panel>
+
+					<!-- exit button -->
+					<instance buttonName="main_options_closex" name="closeXButton" onclicklua="Strife_Options.LeaveOptionsScreen()" visible="1" height="3.7h" width="3.7h" x="-1.0h" y="1.0h" align="right"  />
+				</panel>
+
+				<!-- Menu -->
+				<panel width="24.0h" noclick="true">
+
+					<panel height="-1.6h" valign="center" noclick="true">
+						<label style="h1" font="maindyn_36" content="general_options" noclick="1" />
+
+						<panel y="6.0h" width="100%" noclick="true" float="bottom" padding="2.5h">
+
+							<!-- Display -->
+							<instance name="options_menu_cat" id="1" icon="display.tga" label="options_label_display" current="false" />
+							<panel name="options_submenu1" height="0" group="options_submenus" width="100%" noclick="true" visible="false" sticky="true" stickytoinvis="false">
+								<panel width="-2.0h" align="right" padding="0.4h" noclick="true">
+									<instance name="options_sub_menu" cat="1" id="1" label="options_button_graphics" />
+									<instance name="options_sub_menu" cat="1" id="2" label="options_submen_video" />
+									<instance name="options_sub_menu" cat="1" id="3" label="mainlobby_label_more" />
+									<panel height="0.5h" noclick="1"/>
+								</panel>
+							</panel>
+
+							<!-- Sound -->
+							<instance name="options_menu_cat" id="2" icon="sound.tga" label="options_button_sound" current="false" />
+							<panel name="options_submenu2" height="0" group="options_submenus" width="100%" noclick="true" visible="false" sticky="true" stickytoinvis="false">
+								<panel width="-2.0h" align="right" padding="0.4h" noclick="true">
+									<instance name="options_sub_menu" cat="2" id="1" label="options_submen_vol" />
+									<instance name="options_sub_menu" cat="2" id="2" label="options_button_sound" />
+									<instance name="options_sub_menu" cat="2" id="3" label="options_button_voice" />
+									<panel height="0.5h" noclick="1"/>
+								</panel>
+							</panel>
+
+							<!-- Interface -->
+							<instance name="options_menu_cat" id="3" icon="interface.tga" label="options_button_interface" current="false" />
+							<panel name="options_submenu3" height="0" group="options_submenus" width="100%" noclick="true" visible="false" sticky="true" stickytoinvis="false">
+								<panel width="-2.0h" align="right" padding="0.4h" noclick="true">
+									<instance name="options_sub_menu" cat="3" id="1" label="options_submen_gameplay" />
+									<instance name="options_sub_menu" cat="3" id="2" label="options_submen_colors" />
+									<instance name="options_sub_menu" cat="3" id="3" label="options_submen_social" />
+									<panel height="0.5h" noclick="1"/>
+								</panel>
+							</panel>
+
+							<!-- Controls -->
+							<instance name="options_menu_cat" id="4" icon="controls.tga" label="options_button_controls" current="false" />
+							<panel name="options_submenu4" height="0" group="options_submenus" width="100%" noclick="true" visible="false" sticky="true" stickytoinvis="false">
+								<panel width="-2.0h" align="right" padding="0.4h" noclick="true">
+									<instance name="options_sub_menu" cat="4" id="1" label="options_submen_cam" />
+									<instance name="options_sub_menu" cat="4" id="2" label="options_submen_keybindings" />
+									<instance name="options_sub_menu" cat="4" id="3" label="options_submen_keybindings_adv" />
+									<panel height="0.5h" noclick="1"/>
+								</panel>
+							</panel>
+							
+							<!--
+							<instance name="options_menu_cat" id="7" icon="practice.tga" label="options_submen_matchmaking" current="false" font="maindyn_24" />
+							<panel name="options_submenu7" height="0" group="options_submenus" width="100%" noclick="true" visible="false" sticky="true" stickytoinvis="false">
+								<panel width="-2.0h" align="right" padding="0.4h" noclick="true">
+									<instance name="options_sub_menu" cat="7" id="1" label="options_submen_matchmaking" />
+									<panel height="0.5h" noclick="1"/>
+								</panel>
+							</panel>								
+							-->
+							
+							<!--
+							<instance name="options_menu_cat" id="8" icon="practice.tga" label="options_submen_practice" current="false" />
+							<panel name="options_submenu8" height="0" group="options_submenus" width="100%" noclick="true" visible="false" sticky="true" stickytoinvis="false">
+								<panel width="-2.0h" align="right" padding="0.4h" noclick="true">
+									<instance name="options_sub_menu" cat="8" id="1" label="options_submen_practice" />
+									<panel height="0.5h" noclick="1"/>
+								</panel>
+							</panel>
+							-->
+							
+							<instance name="options_menu_cat" id="6" icon="support.tga" label="options_submen_support" current="false" />
+							<panel name="options_submenu6" height="0" group="options_submenus" width="100%" noclick="true" visible="false" sticky="true" stickytoinvis="false">
+								<panel width="-2.0h" align="right" padding="0.4h" noclick="true">
+									<instance name="options_sub_menu" cat="6" id="1" label="options_submen_support" />
+									<panel height="0.5h" noclick="1"/>
+								</panel>
+							</panel>
+
+							<!-- Search -->
+							<instance name="options_menu_cat" id="5" icon="search.tga" label="general_search" current="false" />
+							<panel name="options_submenu5" height="0" group="options_submenus" width="100%" noclick="true" visible="false" sticky="true" stickytoinvis="false">
+								<panel width="-2.0h" align="right" padding="0.4h" noclick="true">
+									<instance name="options_sub_menu" cat="5" id="1" label="general_search" />
+									<panel height="0.5h" noclick="1"/>
+								</panel>
+							</panel>							
+							
+
+						</panel>
+
+						<panel name="options_cloud_indicator" height="90s" lign="left" y="0s" valign="bottom" width="100%" noclick="0" visible="1" >
+							<image name="options_cloud_indicator_image" y="5s" align="center" texture="/ui/main/shared/textures/cloud_success.tga" height="100%" width="100@" noclick="1" />
+							<label font="maindyn_18" style="labelBase" color="1 1 1 1" x="0s" y="-3s" align="center" fity="1" fitx="1" valign="bottom" shadow="true" content="cloud_save_success" noclick="true" />
+						</panel>
+
+					</panel>
+
+				</panel>
+
+
+			</panel>
+
+		</panel>
+
+	</panel>
+
+	<instance name="options_v3_button_binder" />
+	<instance name="options_v3_button_binder_impulse" />
+
+	<!-- general color picker dialog-->
+	<panel name="generic_color_dialog" width="100w" height="100h" color="invisible" visible="0">
+		<instance id="generic_color_dialog_box_wrapper" y="0" name="dialogWrapper1" inneralpha="0 0 0 .9" valign="center" align="center" visible="0" />
+		<panel name="generic_color_dialog_bg" color="0 0 0 0.3" visible="0" />
+		<panel name="generic_color_dialog_flair" noclick="1" align="center" visible="0"
+			onshowlua="
+				self:SetHeight(self:GetWidget('generic_color_dialog_box_insert'):GetHeight() * 3)
+				self:SetWidth(self:GetWidget('generic_color_dialog_box_insert'):GetWidth() * 3)
+				self:SetY(self:GetWidget('generic_color_dialog_box_insert'):GetY())
+				self:SetY(self:GetY() + (50) )
+				self:GetWidget('generic_color_dialog_flair_label_1'):SetText(Translate('options_cloud_flair_1'))
+				self:GetWidget('generic_color_dialog_flair_label_1'):SetVisible(1)
+				self:GetWidget('generic_color_dialog_flair_throb'):SetVisible(1)
+				self:GetWidget('generic_color_dialog_flair_effect'):SetVisible(0)
+				local widget = self
+				libThread.threadFunc(function()
+					wait(750)
+					widget:GetWidget('generic_color_dialog_flair_label_1'):SetText(Translate('options_cloud_flair_2'))
+					widget:GetWidget('generic_color_dialog_flair_throb'):FadeOut(250)
+					widget:GetWidget('generic_color_dialog_flair_effect'):SetVisible(1)
+					wait(1000)
+					widget:GetWidget('generic_color_dialog_flair_label_1'):FadeOut(750)
+				end)
+			"
+		>
+			<label name="generic_color_dialog_flair_label_1" y="33" fity="true" fitx="1" align="center" valign="center" textvalign="center" textalign="center" font="maindyn_22" color="white" outline="true" outlinecolor="0 0 0 .7"
+				content="options_cloud_flair_1" noclick="1" sticky="0" stickytoinvis="0"
+			/>
+			<animatedimage name="generic_color_dialog_flair_throb" texture="/ui/shared/throb/throb.tga" noclick="1" loop="1" fps="30" onshow="StartAnim(1);" visible="0"
+				y="-40s" height="90s" width="90s" align="center" valign="center"
+			/>
+			<modelpanel name="generic_color_dialog_flair_effect" align="left" valign="top" visible="0" noclick="1"
+				onshowlua="
+					self:SetEffect('/ui/main/postgame/rewards/models/chests/effects/upgrade_cloud_dissapate.effect')
+				"
+				model="/shared/models/invis.mdf"
+				depthclear="true"
+				depthcompress="false"
+				lookat="false"
+
+				modelpos="0 -330 0"
+				modelangles="8 0 0"
+
+				anim="idle"
+				rotation="90"
+
+				modelscale="0.75"
+			/>
+		</panel>
+		<panel name="generic_color_dialog_box_insert" noclick="1" align="center" valign="center" width="300s" height="225s" grow="1" regrow="1" growinvis="0" float="bottom" padding="5.6s" >
+			<instance y="0" name="dialogWrapper1" inneralpha="0 0 0 .9" />
+
+			<panel y="0" width="-11.25s" align="center" float="bottom" padding="5.6s" grow="1" regrow="1" growinvis="0" >
+				<panel height="0"/>
+				<panel height="30s">
+					<frame style="backerPanelShadow0" texture="/ui/elements:rounded_bg_white" borderthickness="5.6s" noclick="true" x="1.9s" y="1.9s"/>
+					<frame style="backerPanelGray3" texture="/ui/elements:rounded_bg_white" borderthickness="5.6s" noclick="true"/>
+					<label name="generic_color_dialog_header_1" textvalign="center" x="5.6s" font="maindyn_22" style="goldColor" outline="true" outlinecolor="0 0 0 .7" content=""/>
+					<panel align="right" grow="1" height="-7.5s" valign="center" x="-3s" float="right" padding="3s">
+						<panel width="100@">
+							<instance name="closeXButton" buttonName="generic_color_dialog_box_closex" onclicklua="
+								self:GetWidget('generic_color_dialog_box'):SetVisible(false)
+							" align="center" valign="center"/>
+						</panel>
+					</panel>
+				</panel>
+			</panel>
+
+			<panel noclick="1" height="100%" >
+				<panel name="generic_color_dialog_color_wheel" noclick="0" align="left" valign="top" x="20s" width="200s" height="200s" texture="../textures/colorpicker_wheel.tga"
+					usebitmask="1" bitmaskfile="../textures/colorpicker_wheel.tga" />
+				<panel name="generic_color_dialog_preview" noclick="0" align="center" valign="top" y="210s" x='-6s' width="90%" height="40s" color="white"/>
+				<panel name="generic_color_dialog_contrast" noclick="0" align="right" valign="top" x="-20s" width="20s" height="200s" texture="../textures/colorpicker_contrast.tga">
+				<panel name="generic_color_dialog_selection" noclick="1" align="center" valign="top" x="120s" y="100s" height="15s" width="15s" color="white" texture="../textures/colorpicker_selection.tga"/>
+				<panel name="generic_color_dialog_contrast_selection" noclick="1" align="right" valign="top" x="10s" y="0s" height="20s" width="40s" color="white" texture="../textures/colorpicker_contrast_selection.tga"/>
+
+				</panel>
+			</panel>
+			<panel noclick="1" height="33.75s" y="300s">
+				<panel noclick="1" align="right" valign="top" width="55%" >
+					<instance id="generic_color_dialog_button_1" x="-0.75h" labelX="0"
+						name="standardButton"
+						label="general_ok"
+						font="maindyn_30"
+					/>
+				</panel>
+				<panel noclick="1" align="left" valign="top" width="38%" >
+					<instance id="generic_color_dialog_button_2" x="0.75h" labelX="0"
+						name="standardButton"
+						rendermode="grayscale"
+						label="general_cancel"
+						font="maindyn_24"
+					/>
+				</panel>
+			</panel>
+		</panel>
+	</panel>
+
+
+	<!-- This is where the hacks live RMM.  The hack came back, the very next day-->
+	<!--
+	<?lua
+
+	object:GetWidget('options_cat8'):RegisterWatchLua('newPlayerExperience', function(widget, trigger)
+		if ((LuaTrigger.GetTrigger('newPlayerExperience').tutorialProgress < NPE_PROGRESS_TUTORIALCOMPLETE) and (not LuaTrigger.GetTrigger('newPlayerExperience').tutorialComplete)) then
+			widget:GetWidget('options_cat6_img'):SetRenderMode('grayscale')
+			widget:SetEnabled(false)
+		else
+			widget:GetWidget('options_cat6_img'):SetRenderMode('normal')
+			widget:SetEnabled(true)
+		end
+
+	end, false, nil, 'tutorialProgress')
+	?>
+	-->
+	
+	<?lua
+	object:GetWidget('options_sub23'):RegisterWatchLua('featureMaintenanceTrigger', function(self, trigger)
+		if ((mainUI) and (mainUI.featureMaintenance) and (mainUI.featureMaintenance['voice'])) then	-- destroy due to feature maintenance
+			self:Destroy()
+		end
+	end)
+	?>
+
+</interface>
