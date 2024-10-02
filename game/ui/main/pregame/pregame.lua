@@ -1061,13 +1061,31 @@ local popularHeroList =
     end,
 
     Update_Hero_List = function(self)
+        -- local widget_Name_List = {}
+        -- for n = 0, #heroWidgets do
+        --     if (heroWidgets[n] ~= randomWidget) then
+        --         local cur_Hero = LuaTrigger.GetTrigger('HeroSelectHeroList'..n)
+        --         local hero_Name = cur_Hero.entityName
+        --         if (self:DoesArrayContain(self.m_Array, hero_Name)) then
+        --             widget_Name_List[#widget_Name_List + 1] = n
+        --         end
+        --     end
+        -- end
+        -- println("INDEXES: "..table.concat(widget_Name_List, ", "))
+        -- groupfcall('main_pregame_hero_popular_icon_group', function(_, widget) 
+        --     println("TEST: "..widget.id)
+        --     widget:SetVisible(widget_Name_List, widget.id)
+        -- end)
+
         for n = 0, #heroWidgets do
             if (heroWidgets[n] ~= randomWidget) then
-                local hero_Name = heroWidgets[n].entityName
+                local cur_Hero = LuaTrigger.GetTrigger('HeroSelectHeroList'..n)
+                local icon_Widget = interface:GetWidget('main_pregame_popular_hero_icon_'..n)
+                local hero_Name = cur_Hero.entityName
                 if (self:DoesArrayContain(self.m_Array, hero_Name)) then
-                    heroWidgets[n].isPopular = 1
+                    icon_Widget:SetVisible(true)
                 else
-                    heroWidgets[n].isPopular = 0
+                    icon_Widget:SetVisible(false)
                 end
             end
         end
@@ -1095,6 +1113,7 @@ local popularHeroList =
                 break
             end
         end
+        println("POPULAR: "..table.concat(self.m_Array))
         self:Update_Hero_List()
     end,
 
@@ -1120,7 +1139,9 @@ local function populateHeroList()
 	main_pregame_heros_container:ClearChildren()
 	local tileWidth = getMeasurementFromString(main_pregame_heros_container, '90s')
 	heroWidgets = createWidgetArrayFromTriggerSet(
-		main_pregame_heros_container, 'main_pregame_hero_template', 'HeroSelectHeroList', 
+		main_pregame_heros_container,
+        'main_pregame_hero_template',
+        'HeroSelectHeroList', 
 		function(n, trigger) return trigger.isValid end,
 		function(n, trigger)
 			mainUI.Pregame.heroRoleTable[n] = {trigger.heroRoleCC, trigger.heroRoleMagDamage, trigger.heroRolePhysDamage, trigger.heroRoleSurvival, trigger.heroRoleUtility}
