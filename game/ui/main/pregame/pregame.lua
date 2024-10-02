@@ -1060,7 +1060,20 @@ local popularHeroList =
         return 0
     end,
 
-    Refresh = function(self)
+    Update_Hero_List = function(self)
+        for n = 0, #heroWidgets do
+            if (heroWidgets[n] ~= randomWidget) then
+                local hero_Name = heroWidgets[n].entityName
+                if (self:DoesArrayContain(self.m_Array, hero_Name)) then
+                    heroWidgets[n].isPopular = 1
+                else
+                    heroWidgets[n].isPopular = 0
+                end
+            end
+        end
+    end,
+
+    RefreshList = function(self)
         self.m_Array = {}
         local foundHeroes = {}
         local queueInfo = Chat_Web_Requests:GetQueueInfo()
@@ -1078,14 +1091,31 @@ local popularHeroList =
                             end
                         end 
                     end
-                end	
+                end
+                break
             end
         end
+        self:Update_Hero_List()
+    end,
+
+    isThreadRunning = false,
+
+    ThreadRefresh = function(self)
+        if (self.isThreadRunning) then
+            return
+        end
+        self.isThreadRunning = true
+        libThread.threadFunc(function()
+            while(state == 1) do -- 1 = hero, 2 = pet, 3 = customize
+                self:RefreshList()
+                wait(5000)
+            end
+            self.isThreadRunning = false
+        end)
     end
 }
 
 local function populateHeroList()
-    popularHeroList:Refresh()
 	if (#main_pregame_heros_container:GetChildren() > 0) then return end
 	main_pregame_heros_container:ClearChildren()
 	local tileWidth = getMeasurementFromString(main_pregame_heros_container, '90s')
@@ -1106,7 +1136,7 @@ local function populateHeroList()
 				'pickedBy', (whoPicked and whoPicked.playerName) or '',
 				'isNew', tostring(isNewHero(trigger.entityName)),
 				'x', n*tileWidth,
-                'isPopular', popularHeroList:IsHeroPopular(trigger.entityName)
+                'isPopular', 0 -- Will be filled with thread
 			} end,
 		true,
 		{
@@ -2757,6 +2787,7 @@ createSimpleButton('main_pregame_ready_start_over_button', 'main_pregame_ready_s
 	g_SkinSelection.selectedSkin = 0
 	g_SkinSelection.selectedPetSkin = 1
 	state = 1
+    popularHeroList:ThreadRefresh()
 	petSelection = false
 	refreshBreadcrumbs()
 	applyHeroFilter()
@@ -2813,6 +2844,7 @@ heroSelectButtonClick = function()
 			wait(30)
 		end
 		state = 1
+        popularHeroList:ThreadRefresh()
 		refreshBreadcrumbs()
 		petSelection = false
 		toggleGridView(true)
@@ -2923,6 +2955,7 @@ function InitSelectionTriggers() -- These should be what are made into a trigger
 		wait(1)
 		populateHeroList()
 		populatePetList()
+        popularHeroList:ThreadRefresh()
 		wait(5)
 		toggleGridView(true)
 		teamComposition1:Trigger()
