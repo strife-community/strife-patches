@@ -1718,7 +1718,8 @@
 
 										<instance name="simpleKeybind" label="options_usefamiliar" table="game" action="ActivateTool" param="18" />
 
-										<instance name="simpleKeybind" label="options_plantBomb" table="game" action="TriggerToggle" param="dropBombBind" />
+                                        <!--TheChiprel: disabled in options until there is a use case for the button.-->
+										<!--instance name="simpleKeybind" label="options_plantBomb" table="game" action="TriggerToggle" param="dropBombBind" /-->
 
 										<instance name="simpleKeybindHeader" label="options_activatableitems" />
 										<instance name="simpleKeybind" label="options_useactitem1" table="game" action="ActivateUsableItem" param="1" />
@@ -1755,7 +1756,7 @@
 										<instance name="simpleKeybind" label="options_label_chat_team_keybind" table="game" action="ChatTeam" impulse="true" />
 										<instance name="simpleKeybind" label="options_label_show_chat_keybind" table="game" action="ShowChat" />
 										<instance name="simpleKeybind" action="TriggerToggle" param="gameShowMoreInfo" label="options_expandui" table="game" />
-										<instance name="simpleKeybind" action="TriggerToggle" param="gameToggleScoreboard" label="options_showscoreboard" table="game" />
+										<instance name="simpleKeybind" action="TriggerToggle" param="gameToggleScoreboard" label="options_showscoreboard" table="spectator" />
 										<instance name="simpleKeybind" action="TriggerToggle" param="gameShowChatWheel" label="options_chatwheel" table="game" />
 
 									</listbox>
