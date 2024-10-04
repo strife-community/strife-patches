@@ -1,5 +1,10 @@
 name: Create Release
-on: [push, workflow_dispatch]
+on: 
+  workflow_dispatch:
+  push:
+      branches:
+      - master
+      - main
 jobs:
   build:
     runs-on: windows-latest
