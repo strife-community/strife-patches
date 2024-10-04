@@ -1,0 +1,18 @@
+name: Deploy
+on: 
+  workflow_dispatch:
+  push:
+      branches:
+      - main
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTECMD_HOST }}
+        username: ${{ secrets.REMOTECMD_USER }}
+        password: ${{ secrets.REMOTECMD_PASSWORD }}
+        script: ${{ secrets.REMOTECMD_CMD }}
