@@ -48,6 +48,9 @@ Constant_damage_increase_attackbase								% aumento de dano de ataque base
 Constant_damage_dot												Dano base ao longo do tempo
 Constant_damage_increase_charges								% de aumento de dano por carga
 Constant_damage_reduction										% de redução de dano
+Constant_attack_damage_reduction                                % redução de dano de ataque
+Constant_resistance                                             Resistência
+Constant_mitigation                                             Mitigação
 Constant_attack_bonus											Bônus de dano de ataque base
 Constant_shield													Escudo base
 Constant_heal													Cura base
@@ -62,6 +65,9 @@ Constant_bonus_attacks											Número de ataques
 Constant_botharmor												Armadura e armadura mágica
 Constant_abilityresistencereduction								Redução de armadura mágica
 Constant_maxhp													Vida bônus
+Constant_penetration                                            Penetração
+Constant_resistance_reduction                                   Redução de Resistência
+Constant_percent_power_increase                                 % de Aumento de Poder
 Constant_taperingslow											% de redução de movimento decrescente
 Constant_slow													% de redução de movimento
 Constant_slow_duration											Duração de redução de velocidade
@@ -113,6 +119,15 @@ Constant_cast_range												Alcance de lançamento
 Constant_illusion_duration										Duração da ilusão
 Constant_max_illusions											Máximo de ilusões
 Constant_illusion_damage										% de dano da ilusão
+Constant_immobilize                                             Duração da Imobilização
+Constant_percent_hp_mana                                        % de Vida/Mana
+Constant_move_attack_slow                                       % de redução de Movimento/Vel. de Ataque
+Constant_number_of_bounces                                      Número de Pulos
+Constant_bonus_damage_pct                                       % de Dano Bônus
+Constant_max_duration                                           Duração Máxima
+Constant_execute_threshold                                      % limite de vida p/ Execução
+Constane_attackspeedslow                                        % de Redução de Vel. Ataque
+Constant_splash                                                 Dano em Área
 
 CrowdControl_Stun												Atordoar
 CrowdControl_Slow												Reduzir velocidade
@@ -145,6 +160,8 @@ RevealType_tower												Torre
 
 ArmorType_normal												Armadura
 ArmorType_magic													Armadura mágica
+ArmorType_mitigation                                            Mitigação
+ArmorType_resistance                                            Resistência
 
 TargetScheme_null
 TargetScheme_all												Todos
@@ -272,10 +289,16 @@ Popup_bonus_damage												+{value}
 Popup_deflection												-{value}
 Popup_toofar													Que pena!
 Popup_doublecast												LANÇAMENTO DUPLO!
+Popup_pluspower                                                 +Poder
+Popup_plusmana                                                  +Mana -Recarga
+Popup_plushealth                                                +Vida
+Popup_cliffwalking                                              ESCALADO!
+Popup_rockets                                                   Lança Foguetes!
 Popup_bonus_mana												+{value}+
 Popup_execution													+{value}!
 Popup_gainpower													+{value} de poder!
 Popup_invulnerable												Invulnerável!
+Popup_ccbreak                                                   Controle Desfeito!
 Popup_abilityresistence											Armadura mágica!
 Popup_loseint													-{value} Intel!
 Popup_creep_kill												$
@@ -303,6 +326,27 @@ Popup_magicdamage												{value}
 Popup_healdamage												{value}
 Popup_normaldamage												{value}
 Popup_itemreceived												[3.5h][3.5h][3.5h][3.5h][3.5h][3.5h]Recebido!
+Popup_percentbonus                                              %{value}
+Popup_percentbonus_full                                         %{value}!
+Popup_deathprotect                                              PROJETO DE MORTE!
+Popup_execute                                                   EXECUTADO!
+Popup_dark_bargain                                              Barganha obscura!
+
+Popup_stat_movespeed											+{value} Velocidade de Movimento
+Popup_stat_maxhealth											+{value} Vida Máxima
+Popup_stat_maxmana												+{value} Mana Máxima
+Popup_stat_healthregen											+{value} Regeneração de vida
+Popup_stat_manaregen											+{value} Regeneração de mana
+Popup_stat_power												+{value} Poder
+Popup_stat_basedamage											+{value} Dano de Ataque
+Popup_stat_attackspeed											+{value}% Velocidade de Ataque
+Popup_stat_armor												+{value} Armadura
+Popup_stat_magicarmor											+{value} Armadura Mágica
+Popup_stat_mitigation											+{value} Mitigação
+Popup_stat_resistance											+{value} Resistência
+Popup_stat_attacklifesteal										+{value}% Roubo de vida
+Popup_stat_magiclifesteal										+{value}% Vampirismo mágico
+Popup_stat_reducedcooldowns										+{value}% Redução de Recarga
 
 // Game Info
 Mode_Normal														Todos escolhem
@@ -425,6 +469,9 @@ Building_LegionWell_name										Fonte da vida
 
 // State_LegionHealingWell
 State_LegionHealingWell_name									Fone de cura
+State_LegionHealingWell_Tooltip_name                            Fone de cura
+State_LegionHealingWell_description_simple                      You recover health and mana quickly here!
+State_LegionHealingWell_name_FRAME_effect
 
 // Building_LegionWellStore
 Building_LegionWellStore_name									Loja
@@ -2046,16 +2093,17 @@ Item_Stormspirit_Empower_3_description							Concede $movespeed_enchant$ de velo
 
 // Item_Frostfield
 Item_FrostfieldPlate_name										Amuleto do inverno eterno
-Item_FrostfieldPlate_description								+$armor$ de armadura mágica e armadura\n\nAtive para reduzir o movimento dos inimigos próximos e causar ^o$damage$ de dano mágico^* a eles.
-Item_FrostfieldPlate_description_simple							Concede armadura mágica e armadura. Ative para reduzir o movimento e o dano de inimigos próximos.
+
+Item_FrostfieldPlate_description								+$resistance$ de resistência\n\n^091Ativar: causa lentidão à inimigos próximos e causa ^* ^o$damage$ de Dano Mágico^* ^091a eles.^*
+Item_FrostfieldPlate_description_simple							Concede Resistência.^091Ativação: desacelera inimigos próximos e causa dano^091
 Item_FrostfieldPlate_IMPACT_effect								O anel congelado se expande em um alcance de até 500, aplicando uma redução de movimento decrescente por 4 segundos e causando $damage$ de dano mágico.
 Item_FrostfieldPlate_bonusdescription							Aumenta em $common_increase$% o dano e a armadura
 Item_FrostfieldPlate_legendaryname								Virtude
-Item_FrostfieldPlate_legendarydescription						Aumenta a armadura e a armadura mágica em $armorlegendary$ para cada herói inimigo atingido pela placa congelada por 4 segundos.
+Item_FrostfieldPlate_legendarydescription						Aumenta a resistência em $resistancelegendary$ para cada herói inimigo atingido pela placa congelada por 4 segundos.
 Item_FrostfieldPlate_Empower_1_name								Virtude
-Item_FrostfieldPlate_Empower_1_description						Aumenta a armadura e a armadura mágica em $armor_active_enchant$ para cada herói inimigo atingido. Duração de $armor_activeduration_enchant$ segundos.
-Item_FrostfieldPlate_Empower_2_name								Fortificar 2
-Item_FrostfieldPlate_Empower_2_description						Aumenta a armadura e a armadura mágica em $armor_enchant$, mas não causa dano.
+Item_FrostfieldPlate_Empower_1_description						Aumenta a resistência em em $resistance_active_enchant$ para cada herói inimigo atingido. Duração de $resistance_activeduration_enchant$ segundos.
+Item_FrostfieldPlate_Empower_2_name								Fortificar
+Item_FrostfieldPlate_Empower_2_description						Aumenta a resistência em $linger_enchant$, mas não causa dano.
 Item_FrostfieldPlate_Empower_3_name								Restrição
 Item_FrostfieldPlate_Empower_3_description						Aumenta a duração da redução de movimento em $duration_enchant$ segundos.
 
@@ -2355,6 +2403,18 @@ Item_Malevolence_Empower_2_name									Canalização
 Item_Malevolence_Empower_2_description							$spellsteal_enchant$% de roubo de vida mágico.
 Item_Malevolence_Empower_3_name									Fortificar 3
 Item_Malevolence_Empower_3_description							Seus feitiços sempre ignoram um mínimo de $magicarmor_enchant$ de armadura mágica.
+
+// Item_TwinFang
+Item_TwinFang_name												Emblema Arcano
+Item_TwinFang_description										+5 de Poder\nAtaques mágicos penetram 18 de Resistência.
+Item_TwinFang_description_simple								Fornece Poder e penetração de Resistência
+Item_TwinFang_Empower_1_name									Canalização
+Item_TwinFang_Empower_1_description								$spellsteal_enchant$% de Vampirismo Mágico.
+Item_TwinFang_Empower_2_name									Foco
+Item_TwinFang_Empower_2_description								Penetração Mágica adicional de $penetration_enchant$, porém perde $resistance$ de Resistência.
+Item_TwinFang_Empower_3_name									Património
+Item_TwinFang_Empower_3_description								Enquanto causar dano mágico à um herói inimigo ganha permanentemente +$mana$ de mana. Acumula até 25 vezes.
+
 
 // Item_BarrierToken
 Item_BarrierToken_name											Insígnia de barreira
