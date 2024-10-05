@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
   push:
       branches:
-      - master
       - main
       - dev
 jobs:
@@ -16,4 +15,4 @@ jobs:
         host: ${{ secrets.REMOTECMD_HOST }}
         username: ${{ secrets.REMOTECMD_USER }}
         password: ${{ secrets.REMOTECMD_PASSWORD }}
-        script: ${{ secrets.REMOTECMD_BASEDIR }}linux/build/game-resources/build.sh ${{ github.ref }}
+        script: ${{ secrets.REMOTECMD_BASEDIR }}linux/build/game-resources/build.sh ${{ github.ref_name }}
