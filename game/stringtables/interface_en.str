@@ -3439,7 +3439,7 @@ scrim_finder_team_voip_tip					Hold down the chat hotkey to talk to your party o
 scrim_finder_maint_feature_locked		Maintenance Mode
 scrim_finder_maint_feature_locked_desc	This feature is temporarily disabled. \nCheck the forums for more information!
 scrim_finder_comingsoon_feature_locked		Coming Soon
-scrim_finder_comingsoon_feature_locked_desc	This feature will be enabled in the future. \nCheck the forums for more information!
+scrim_finder_comingsoon_feature_locked_desc	This feature is currently unavailable and will be enabled in the future.
 scrim_finder_disabled_feature_locked		Feature Locked
 scrim_finder_disabled_feature_locked_desc	This feature is unlocked at account level 25.
 scrim_finder_disabled_too_exact_players			Need {value} Players
