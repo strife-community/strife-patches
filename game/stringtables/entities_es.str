@@ -1822,11 +1822,6 @@ Item_PowerBoots_name                                                         Bot
 Item_PowerBoots_description                                                  65 de velocidad de movimiento, \n+20 de poder
 Item_PowerBoots_description_simple                                           Otorga velocidad de movimiento y poder.
 
-// WarpBoots
-Item_WarpBoots_name                                                          Botas Mágicas
-Item_WarpBoots_description                                                   85 de velocidad de movimiento\nApunta una posición para moverte allí.
-Item_WarpBoots_description_simple                                            85 de velocidad de movimiento\nApunta una posición para moverte allí.
-
 // TeleportBoots
 Item_TeleportBoots_name                                                      Botas Mágicas
 Item_TeleportBoots_description                                               85 de velocidad de movimiento\nApunta unidades aliadas o edificios para teletransportate allí. Al llegar, gana 80 de velocidad de movimiento por 3 segundos.

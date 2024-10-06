@@ -2025,11 +2025,6 @@ Item_PowerBoots_name											Botas de poder
 Item_PowerBoots_description										65 de velocidade de movimento, \n+20 de poder
 Item_PowerBoots_description_simple								Concede velocidade de movimento e poder.
 
-// WarpBoots
-Item_WarpBoots_name												Botas da distorção
-Item_WarpBoots_description										85 de velocidade de movimento\nAvança para um lugar desejado.
-Item_WarpBoots_description_simple								85 de velocidade de movimento\nAvança para um lugar desejado.
-
 // TeleportBoots
 Item_TeleportBoots_name											Botas da distorção
 Item_TeleportBoots_description									85 de velocidade de movimento\nMire na unidade ou construção aliada para se teletransportar. 80 de velocidade bônus por 3 segundos ao chegar.

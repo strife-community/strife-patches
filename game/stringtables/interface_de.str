@@ -5822,7 +5822,7 @@ main_social_groupname_offline								Offline-Freunde
 main_social_groupname_ignored								Ignoriert
 main_social_groupname_search								Spieler finden
 // main_social_groupname_autocomplete		Find Players
-main_social_groupname_pending								Unerledigt
+main_social_groupname_pending								Freundschaftsanfragen
 // main_social_groupname_party		Party
 main_social_groupname_recently								Kürzlich gespielt
 main_social_groupname_sent									Gesendet
@@ -7176,8 +7176,8 @@ shop_item_activatable										Aktivierbar
 shop_item_activatable_tip									Der Gegenstand kann manuell benutzt werden.
 
 shop_item_stat_name_power									Kraft
-// shop_item_stat_name_baseAttackDamage		Attack Damage
-// shop_item_stat_name_baseAbilityDamage		Ability Damage
+shop_item_stat_name_baseAttackDamage						Angriffsschaden
+shop_item_stat_name_baseAbilityDamage						Fertigkeitsschaden
 shop_item_stat_name_baseAttackSpeed							Angriffsgeschwindigkeit
 shop_item_stat_name_armor									Rüstung
 shop_item_stat_name_magicArmor								magische Rüstung
@@ -7398,10 +7398,10 @@ profile_fun_fact_games_desc									Du hast {value} Spiele als {hero} gespielt
 profile_fun_fact_deaths_desc								Du bist {value} mal im durchschnitt als {hero} gestorben
 
 // profile_leaves		Leaves
-// proifile_leaves_standing_good		Good Standing.
-// proifile_leaves_standing_warning		Warning Zone.
-// proifile_leaves_standing_bad		Poor Standing.
-// proifile_leaves_standing_desc		Leaving in the middle of games will result in bans of increasing duration.
+proifile_leaves_standing_good								Guter Stand.
+proifile_leaves_standing_warning							Warnzone.
+proifile_leaves_standing_bad								Schlechter Stand.
+proifile_leaves_standing_desc								Das Verlassen mitten im Spiel führt zu Sperren mit zunehmender Dauer.
 
 main_leaver_tip_explain_title								Abbrecher-Details
 main_leaver_tip_explain_banned								^rVerbannt bis: {value}

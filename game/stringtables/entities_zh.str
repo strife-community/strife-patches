@@ -2172,11 +2172,6 @@ Item_PowerBoots_name												能量之靴
 Item_PowerBoots_description												+65移动速度     \n+20能量
 Item_PowerBoots_description_simple												增加移动速度和能量。
 
-// WarpBoots
-Item_WarpBoots_name												冲锋之靴
-Item_WarpBoots_description												+85移动速度     \n使用：冲锋至目标地点
-Item_WarpBoots_description_simple											+85移动速度     \n使用：冲锋至目标地点
-
 // TeleportBoots
 Item_TeleportBoots_name												传送之靴  
 Item_TeleportBoots_description												+85移动速度     \n使用：使你的英雄传送至友方建筑或小兵处。

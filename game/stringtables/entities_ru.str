@@ -2293,11 +2293,6 @@ Item_PowerBoots_name											Power Boots
 Item_PowerBoots_description										+65 скорости передвижения, +20 к силе.\n\n^091Примените, чтобы игнорировать 20% сопротивления противников в течение 5 секунд.^*
 Item_PowerBoots_description_simple								Увеличивают скорость передвижения и силу.
 
-// WarpBoots
-Item_WarpBoots_name												Warp Boots
-Item_WarpBoots_description										+85 скорости передвижения\n\n^091При активации переносит вашего героя к указанному союзному бойцу или башне.^*
-Item_WarpBoots_description_simple								^091При активации телепортирует к союзному бойцу или башне.^*
-
 // TeleportBoots
 Item_TeleportBoots_name											Warp Boots
 Item_TeleportBoots_description									+85 к скорости передвижения\nУкажите дружественного персонажа или строение, чтобы переместиться к нему. После телепортации скорость передвижения увеличится на 80 на 3 секунды.
