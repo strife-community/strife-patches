@@ -2307,7 +2307,7 @@ Item_Codex_bonusdescription											Erhöht Schaden vom Pyrostab um $common_in
 Item_Codex_legendaryname											Kill Stehlen
 Item_Codex_legendarydescription										Bei der Tötung eines Feindes mit Pyrostab wird die Abkühlzeit um $cooldown$ Sekunden gesenkt.
 Item_Codex_Empower_1_name											Kauterisieren
-Item_Codex_Empower_1_description									Bei der Tötung eines Feindes mit Pyrostab wird die Abkühlzeit um $cooldown_enchant$ Sekunden gesenkt.
+Item_Codex_Empower_1_description									Bei Aktivierung erhälst du $heal_enchant$ Heilung.
 Item_Codex_Empower_2_name											Treffsicherheit
 Item_Codex_Empower_2_description									Erhöht Reichweite um $range_enchant$.
 Item_Codex_Empower_3_name											Perfektion
