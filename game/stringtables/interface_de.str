@@ -8798,14 +8798,14 @@ unlock_crafting_3											Füge optionale Verzauberungen hinzu, um das Objekt 
 wheel_spin_wheel											Drehscheibe
 wheel_spin_wheel_again										Erneut Drehen
 wheel_spin_value_gems										{value} Juwelen
-// wheel_spin_value_win		You Win
-// wheel_spin_wheel_youhave		You Have
-// wheel_spin_wheel_freespins		One Free Spin
-// wheel_spin_wheel_nospins		No More Spins
-// wheel_spin_wheel_today		Today!
-// wheel_spin_wheel_alreadyspun		You have already spun today.
-// wheel_spin_wheel_comeback		Come Back in
-// wheel_spin_wheel_spinagain		To Spin Again
+wheel_spin_value_win										Gewonnen
+wheel_spin_wheel_youhave									Du hast
+wheel_spin_wheel_freespins									Eine kostenlose Drehung
+wheel_spin_wheel_nospins									Keine weiteren Drehungen
+wheel_spin_wheel_today										Heute!
+wheel_spin_wheel_alreadyspun								Du hast heute schon gedreht.
+wheel_spin_wheel_comeback									Komm zurück
+wheel_spin_wheel_spinagain									Um wieder zu drehen
 wheel_leave													Verlassen
 
 // gem_purchase_overlay_error_desc		To purchase Gems, please enable the Steam Overlay for Brawl of Ages
