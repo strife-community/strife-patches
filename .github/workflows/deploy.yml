@@ -9,10 +9,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
+    - name: "Compiling game resources. Image: game-resources "
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.REMOTECMD_HOST }}
         username: ${{ secrets.REMOTECMD_USER }}
         password: ${{ secrets.REMOTECMD_PASSWORD }}
         script: ${{ secrets.REMOTECMD_BASEDIR }}linux/build/game-resources/build.sh ${{ github.ref_name }}
+    - name: "Build Gameserver and Chatserver Application. Image: linux-server"
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTECMD_HOST }}
+        username: ${{ secrets.REMOTECMD_USER }}
+        password: ${{ secrets.REMOTECMD_PASSWORD }}
+        script: ${{ secrets.REMOTECMD_BASEDIR }}linux/build/linux-server/build.sh ${{ github.ref_name }}
+    - name: "(Re)start Gameserver with new image"
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTECMD_HOST }}
+        username: ${{ secrets.REMOTECMD_USER }}
+        password: ${{ secrets.REMOTECMD_PASSWORD }}
+        script: ${{ secrets.REMOTECMD_BASEDIR }}linux/run/game-server/runByBranch.sh ${{ github.ref_name }}
