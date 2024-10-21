@@ -2148,11 +2148,6 @@ Item_PowerBoots_name											Power Boots
 Item_PowerBoots_description										65 Movement Speed\n+20 Power\n\n^091Activate: grants 20% resistance penetration for 5 seconds.^* 
 Item_PowerBoots_description_simple								Grants Power\n^091Activate: grants resistance penetration.^*
 
-// WarpBoots
-Item_WarpBoots_name												Warp Boots
-Item_WarpBoots_description										85 Movement Speed\n\n^091Activate: Target a position to dash there.^*
-Item_WarpBoots_description_simple								^091Activate: Target a position to dash there.^*
-
 // TeleportBoots
 Item_TeleportBoots_name											Warp Boots
 Item_TeleportBoots_description									85 Movement Speed\n\n^091Activate: Target allied unit or building to teleport there.  Upon arriving, gain 80 movespeed for 3 seconds.^*

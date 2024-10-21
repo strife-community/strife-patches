@@ -448,7 +448,7 @@ pregame_general_loading										Wird geladen.. Einen Moment
 pregame_general_syncing										Synchronisierung mit Server
 pregame_select_Currently									Momentan
 pregame_select_Spectating									Zuschauen
-pregame_select_SelectedBy									Ausgewählt von:
+pregame_select_SelectedBy									Ausgewählt\nvon:\n
 pregame_ready_visit											Besuche die
 pregame_ready_website										Website
 pregame_ready_website_details								Für Wissen, Statistiken, Strategien und mehr!
@@ -655,9 +655,9 @@ load_feature_label_3										Arbeitet zusammen, um den Gegner den Todesstoß zu
 load_feature_title_4										Persönliche Kuriere
 load_feature_label_4										Kaufe Gegenstände außerhalb der Basis und lasse sie dir liefern.
 
-// game_context_toptip_1		2 More Baldir kills until Dharkwave.
-// game_context_toptip_2		1 More Baldir kill until Dharkwave!
-// game_context_toptip_3		Dharkwave Incoming!!!
+game_context_toptip_1										2 weitere Baldir-Kills bis zur Dharkwave.
+game_context_toptip_2										1 weiterer Baldir-Kill bis zur Dharkwave!
+game_context_toptip_3										Dharkwave kommt!!!
 
 game_context_tip_0											^960Tipp:^* Kaufe Gegenstände, bevor du die Basis verlässt!\nDrücke ^o'{hotkey1}'^* um den Laden zu öffnen/schließen.
 game_context_tip_1											^960Tipp:^* Stufe Fertigkeiten hoch, bevor du Feinde angreifst!\nKlicke auf \'^oFertigkeiten hochstufen^*\' über der Minikarte.
@@ -666,21 +666,21 @@ game_context_tip_3											^920Warnung:^* Du wurdest als abwesend markiert. In
 game_context_tip_4											^920Benachrichtigung:^* Ein Spieler hat das Spiel verlassen, sein Team teilt sich sein verdientes Gold.\nDu kannst jetzt das Spiel ohne Strafe verlassen.
 
 //Counter-Strife Messages
-// game_bomb_tip_1		You have picked up the bomb!
-// game_bomb_tip_2		You have dropped the bomb!
+game_bomb_tip_1												Du hast die Bombe aufgehoben!
+game_bomb_tip_2												Du hast die Bombe fallen lassen!
 
-// game_bomb_planted		A portal has been spawned.
-// game_bomb_disarming		The portal is under attack!
+game_bomb_planted											Ein Portal ist erschienen.
+game_bomb_disarming											Das Portal wird angegriffen!
 
-// game_nolives_tip1		You Ran Out of Lives!
-// game_nolives_tip2		Your items were dropped and
-// game_nolives_tip3		your level has been reset.
+game_nolives_tip1											Dir sind die Leben ausgegangen!
+game_nolives_tip2											Ihre Gegenstände wurden fallen gelassen und
+game_nolives_tip3											dein Level wurde zurückgesetzt..
 
-// game_round_match		Match point!
-// game_round_half		Last round before half-time.
+game_round_match											Matchpunkt!
+game_round_half												Letzte Runde vor der Halbzeit.
 
-// game_team_valor		You are on Team Valor!
-// game_team_glory		You are on Team Glory!
+game_team_valor												Du bist im Team Valor!
+game_team_glory												Du bist im Team Glory!
 
 //confirmations.package
 confirm_disconnect_title									Spiel abbrechen?
@@ -798,11 +798,11 @@ options_submen_video										Video
 options_submen_vol											Lautstärke
 options_submen_gameplay										Spielablauf
 options_submen_chat											Chat
-// options_submen_social		Social
+options_submen_social										Sozial
 options_submen_friendsclans									Freunde und Klan
 options_submen_notifications								Benachrichtungen
 options_submen_assistance									Unterstutzung
-// options_submen_nameplates		Health Bars
+options_submen_nameplates									Gesundheitsbalken
 options_submen_buffs										Buffs
 options_submen_keybindings									Hotkeys
 options_submen_keybindings_adv								Weitere Hotkeys
@@ -811,7 +811,7 @@ options_submen_modopts										Einstellungen der Mod
 options_submen_myrefs										Meine Empfehlungen
 options_submen_colors										Farben
 options_submen_practice										Übung
-// options_submen_matchmaking		Matchmaking
+options_submen_matchmaking									Matchmaking
 options_submen_support										Unterstutzung
 options_submen_faq											FAQ
 options_default_device										Voreingestelltes Gerät
@@ -982,8 +982,8 @@ options_ebuff_decimaltimer_tip								Wenn aktiviert, wird ein Dezimaltimer ange
 options_enable_minimap_swap									Position der Mini-Karte ändern
 options_enable_minimap_swap_tip								Wenn aktiviert, wird die Mini-Karte auf der linken, und die Ausrüstung auf der rechten Seite angezeigt.
 
-// options_yy_ingame_ui		Enable New In-Game UI
-// options_yy_ingame_ui_tip		If enabled, the new In-Game User Interface will be used instead of the Legacy Game UI.
+options_yy_ingame_ui										Die neue Im-Spiel-Benutzeroberfläche aktivieren
+options_yy_ingame_ui_tip									Wenn diese Option aktiviert ist, wird die neue Im-Spiel-Benutzeroberfläche anstelle der alten Spiel-Benutzeroberfläche verwendet.
 
 
 options_pin_unit_frames										Heldenbilder anheften
@@ -992,7 +992,7 @@ options_pin_unit_frames_tip									Heldenbilder sind immer oben auf dem Bildsch
 options_pin_hero_vitals										Vitalfunktionen des Helden anheften
 options_pin_hero_vitals_tip									Die Gesundheit und das Mana deines Helden werden immer unten auf dem Bildschirm angezeigt.
 
-// options_pin_inventory		Pin Inventory
+options_pin_inventory										Inventar anpinnen
 options_pin_inventory_tip									Deine Ausrüstung wird immer angezeigt, du siehst also nicht nur die aktivierbaren Gegenstände.
 
 options_pin_push_orb										Spiel-Uhr anheften
@@ -1432,7 +1432,7 @@ options_checkbox_disable_notifications						Keine Benachrichtungen anzeigen.
 options_checkbox_disable_notifications_tip					Wenn aktiv werden keine Popup-Benachrichtungen angezeigt. Sie stehen aber noch auf dem Logging.
 
 options_checkbox_disable_notifications_ingame				Im Spiel Benachrichtungen deaktivieren
-// options_checkbox_disable_notifications_ingame_tip		If enabled, no popup notifications will be displayed while in a game, but they will still be recorded to your notification history and display when not in a game.
+options_checkbox_disable_notifications_ingame_tip			Wenn diese Option aktiviert ist, werden während eines Spiels keine Popup-Benachrichtigungen angezeigt. Sie werden jedoch weiterhin in Ihrem Benachrichtigungsverlauf aufgezeichnet und angezeigt, wenn Sie sich nicht in einem Spiel befinden.
 
 options_checkbox_selection_highlight						Auswahl hervorheben
 options_checkbox_selection_highlight_tip					Wenn aktiv werden Einheiten hervorgehoben, wenn du die Maus über sie platzieren.
@@ -1558,7 +1558,7 @@ options_notifications_invitations							Einladungen
 options_notifications_invitations_game						Spiel
 options_notifications_invitations_channel					Kanal
 options_notifications_invitations_clan						Clan
-// options_notifications_invitations_team_matchmaking		Arranged Team Matchmaking
+options_notifications_invitations_team_matchmaking			Arrangiertes Team-Matchmaking
 options_notifications_miscellaneous							Verschiedenes
 options_notifications_miscellaneous_newpatch				Neuen Patch
 
@@ -1574,7 +1574,7 @@ options_simple_vsync_b										Kann die Anzeige weniger glatt machen
 
 px_enable													PhysX aktivieren
 options_px_tip_text											^960Neustart Erforderlich^* PhysX zu aktivieren erlaubt visuellen Effekten physische Interaktion.
-// options_px_tip_text_disabled		This option requires DirectX9 or DirectX11 as your video driver. These are currently only available on Windows.
+options_px_tip_text_disabled								Für diese Option ist DirectX9 oder DirectX11 als Grafiktreiber erforderlich. Diese sind derzeit nur unter Windows verfügbar.
 options_simple_px_a											Effekte haben physische Interaktion
 options_simple_px_b											Neustart Erforderlich.
 
@@ -1586,7 +1586,7 @@ options_simple_apex_b										^rKann die Leistung erheblich beeinträchtigen.\n
 
 d11_hair													PhysX-Pelz/Haare aktivieren
 options_d11_hair_tip_text									^960Erfordert Neustart^* Wenn dies aktiviert ist, wird die physikalische Simulation feiner Fäden wir Haare und Pelz ermöglicht.
-// options_d11_hair_tip_text_disabled		This option requires DirectX11 as your video driver. This is currently only available on Windows.
+options_d11_hair_tip_text_disabled							Für diese Option ist DirectX11 als Grafiktreiber erforderlich. Dies ist derzeit nur unter Windows verfügbar.
 options_simple_d11_hair_a									Detaillierte Haar- und Pelzsimulation
 options_simple_d11_hair_b									Erfordert Neustart
 
@@ -1948,7 +1948,7 @@ progstats_socialbonus										Sozialles Bonus
 progstats_consecutive										Konsekutiv (^w{count}^*)
 progstats_additional										Zusätzliche Statistiken
 progstats_totalxp											Gesamte Erfahrung:
-progstats_wins												Gewinne:
+progstats_wins												Siege:
 progstats_kills												Kills
 progstats_assists											Unterstutzungen
 progstats_wards												Hüter
@@ -3066,7 +3066,7 @@ postgame_khanquest_matchwon									Partie gewonnen!
 postgame_khanquest_matchlost								Partie verloren!
 postgame_khanquest_chestupgraded							KisteHochgestuft!
 postgame_khanquest_winanother								Gewinne eine weitere Partie um wieder hochzustufen
-postgame_khanquest_wins										{amount} Gewinne
+postgame_khanquest_wins										{amount} Siege
 postgame_khanquest_win										1 Gewinn
 // postgame_khanquest_defeated		Defeated!
 // postgame_khanquest_victory		Victory!
@@ -3344,7 +3344,7 @@ party_finder_game_ranked									Eingereiht
 party_finder_game_unranked									Nicht eingereiht
 party_finder_game_khanquest									Khanaufgabe
 party_finder_game_khanquest_maketeam						Team von {amount} benötigt!
-party_finder_game_khanquest_wl								{wins} Gewinne / {losses} Verluste
+party_finder_game_khanquest_wl								{wins} Siege / {losses} Niederlagen
 
 party_finder_team_voip										Stimmen-Chat der Gruppe
 party_finder_team_voip_tip									Halte den Chat-Hotkey gedrückt, um mit deiner Gruppe durch VoIP zu sprechen.
@@ -3550,22 +3550,22 @@ game_region_pop_4											tolle Wartezeiten
 game_region_pop_5											ausgezeichnete Wartezeiten
 game_region_pop_breakdown									5: ausgezeichnete Wartezeiten\n4: tolle Wartezeiten\n3: gute Wartezeiten\n2: längere Wartezeiten als üblich\n1: viel länger Wartezeiten als übliche
 
-// game_region_NA		North America
-// game_region_SA		Latin America
+game_region_NA												Nord Amerika
+game_region_SA												Latein Amerika
 game_region_EU												Europa
 game_region_CIS												GUS
-// game_region_ME		Middle East
-// game_region_OCE		Oceania
-// game_region_AFR		Africa
-// game_region_ASIA		Asia
+game_region_ME												Naher Osten
+game_region_OCE												Ozeanien
+game_region_AFR												Afrika
+game_region_ASIA											Asien
 game_region_SEA												Südostasien
 
-// game_region_AU		Australia
+game_region_AU												Australien
 game_region_CIS												GUS
 game_region_USE												USA Osten
 game_region_USW												USA Westen
 game_region_US												USA
-// game_region_AMERICA		America
+game_region_AMERICA											Amerika
 game_region_EU												Europa
 game_region_SEA												Südostasien
 // game_region_SEAMAG		SEA
@@ -3575,18 +3575,18 @@ game_region_SG												Singapur
 game_region_PH												Philippinen
 game_region_ID												Indonesien
 game_region_MY												Malaysia
-// game_region_LAT		Latin America
-// game_region_BR		Brazil
-// game_region_SA		South America
+game_region_LAT												Latein Amerika
+game_region_BR												Brasilien
+game_region_SA												Süd Amerika
 game_region_HK												Hongkong
-// game_region_DE		Germany
-// game_region_SE		Sweden
-// game_region_ZA		South Africa
-// game_region_TR		Turkey
-// game_region_TW		Taiwan
-// game_region_VI		Vietnam
-// game_region_ZH		China
-// game_region_CN		China
+game_region_DE												Deutschland
+game_region_SE												Schweden
+game_region_ZA												Süd Afrika
+game_region_TR												Türkei
+game_region_TW												Taiwan
+game_region_VI												Vietnam
+game_region_ZH												China
+game_region_CN												China
 
 // game_region_AU2		Australia Off-peak
 game_region_CIS2											GUS
@@ -3602,15 +3602,15 @@ game_region_PH2												Philippinen, Nebenzeit
 game_region_ID2												Indonesien, Nebenzeit
 game_region_MY2												Malaysia, Nebenzeit
 game_region_HK2												Hongkong, Nebenzeit
-// game_region_BR2		Brazil Off-peak
-// game_region_SA2		South America Off-peak
-// game_region_LAT2		Latin America Off-peak
-// game_region_DE2		Germany Off-peak
-// game_region_SE2		Sweden Off-peak
-// game_region_ZA2		South Africa Off-peak
-// game_region_TR2		Turkey Off-peak
-// game_region_TW2		Taiwan Off-peak
-// game_region_VI2		Vietnam Off-peak
+game_region_BR2												Brasilien, Nebenzeit
+game_region_SA2												Süd Amerika, Nebenzeit
+game_region_LAT2											Latein Amerika, Nebenzeit
+game_region_DE2												Deutschland, Nebenzeit
+game_region_SE2												Schweden, Nebenzeit
+game_region_ZA2												Süd Afrika, Nebenzeit
+game_region_TR2												Türkei, Nebenzeit
+game_region_TW2												Taiwan, Nebenzeit
+game_region_VI2												Vietnam, Nebenzeit
 
 game_region_practice										Übungsspiel
 game_region_local											Lokales Spiel
@@ -4090,8 +4090,8 @@ player_stats_lifetime_header								Lebensdauer-Statistiken
 player_stats_averages_header								Durchschnittliche Spiel-Statistiken
 player_stats_next_level										Gesamte EP für das nächste Level
 player_stats_next_level_needed								Benötigte EP für das nächste Level
-player_stats_wins											Gewinne
-player_stats_losses											Verluste
+player_stats_wins											Siege
+player_stats_losses											Niederlagen
 player_stats_disconnects									Trennungen
 player_stats_win_percent									{percent}
 player_stats_leave_percent									Abgänge
@@ -4125,7 +4125,7 @@ player_stats_kd_ratio										K:T Ratio
 player_stats_kad_ratio										K+U: T Ratio
 player_stats_assists										Unterstützungen
 player_stats_gold											Gold
-// player_stats_deny_count		Deny Count
+player_stats_deny_count										Verweigerte Kills
 player_stats_deny_xp										EP geopfert
 player_stats_clan_name										Klan: {clan}
 player_stats_level											Spielerlevel
@@ -4324,7 +4324,7 @@ tooltip_lang												Sprache
 tooltip_players_online										Spieler Online
 tooltip_friends												Freunde
 tooltip_clan												Clan
-// tooltip_regen		Regen
+tooltip_regen												Regeneration
 tooltip_ims													Empfangene IM
 tooltip_notifications										Empfangene Benachrichtigungen
 tooltip_autoconnect_title									automatisch Verbinden
@@ -4698,7 +4698,7 @@ mm_ph_region												Philippinen
 mm_th_region												Thailand
 mm_id_region												Indonesien
 mm_vn_region												Vietnam
-// mm_lat_region		Latin America
+mm_lat_region												Latien Amerika
 
 
 mm_isleaver_onopen											Spielervermittlung nicht möglich
@@ -4764,7 +4764,7 @@ matchmaker_status_msg										Das Spielervermittlungssystem sucht gerade nach S
 matchmaker_status_leaver_msg								Wenn alle zehn Spieler gefunden werden und du angefangen zum Laden hast, wirst du dich nicht abmelden können, ohne dass ein Abgang zu deinen Statistiken hinzugefügt wird.
 
 matchmaker_title											Wähle initiale Spielervermittlungswertung
-// matchmaker_beginner		Beginner
+matchmaker_beginner											Beginner
 matchmaker_beginner_desc									Bei dieser Option wirst du häufiger mit anderen Anfängern spielen. Wähle diese Option wenn du neu in Strife bist und das Spiel nicht kennst.
 matchmaker_beginner_btn										Ich bin Anfänger
 matchmaker_intermediate										Mittelstufe
@@ -4808,7 +4808,7 @@ left_lobby_no_team											Das Spiel hat angefangen, während du in einem Team
 left_lobby_new_version										Lobby verlassen, eine Aktualisierung wird zum Spielen erfordert.
 left_lobby_host_disband										Der Gastgeber hat das Lobby aufgelöst.
 left_game_lobby_disabled									Du hast das Spiel verlassen denn Lobbies wurden aufgelöst.
-// left_game_host_disband		The host disbanded the game.
+left_game_host_disband										Der Gastgeber hat das Spiel aufgelöst.
 
 join_game_error_unknown										Unbekannter Fehler beim Spiebeitritt.
 join_game_error_leaver										Konnte nicht das Spiel beitreten denn du bist zur Zeit als Abgänger markiert.
@@ -4833,11 +4833,11 @@ join_party_error_matchmaking_disabled						Konnte nicht Gruppe beitreten denn Sp
 join_party_error_in_queue									Konnte nicht Spiel beitreten denn die Gruppe steht schon auf der Wartezeit.
 join_party_error_does_not_exist								Konnte nicht Gruppe beitreten denn es ist voll
 join_party_error_private
-// party_invite_error_queue_unknown		Unknown error while joining the queue
-// party_invite_error_queue_party_size_too_small		Cannot join the matchmaking queue. Your party is too small for that queue.
-// party_invite_error_queue_party_size_too_large		Your party is too large for that queue. The PvP queue supports parties of 1-3 players. Parties of 5 can use Scrim mode.
-// party_invite_error_queue_level		Cannot join the matchmaking queue. Your party does not meet the level requirement.
-// party_invite_error_queue_games_played		Cannot join the matchmaking queue. Your party does not meet the games played requirement.
+party_invite_error_queue_unknown							Unbekannter Fehler beim Beitritt zur Warteschlange
+party_invite_error_queue_party_size_too_small				Der Matchmaking-Warteschlange kann nicht beigetreten werden. Ihre Gruppe ist zu klein für diese Warteschlange.
+party_invite_error_queue_party_size_too_large				Ihre Gruppe ist zu groß für diese Warteschlange. Die PvP-Warteschlange unterstützt Gruppen von 1–3 Spielern. Gruppen von 5 Personen können den Scrim-Modus nutzen.
+party_invite_error_queue_level								Der Matchmaking-Warteschlange kann nicht beigetreten werden. Ihre Gruppe erfüllt die Level-Anforderungen nicht.
+party_invite_error_queue_games_played						Der Matchmaking-Warteschlange kann nicht beigetreten werden. Ihre Gruppe erfüllt nicht die Anforderungen an gespielten Spielen.
 
 create_game_error_options									Konnte nicht Spiel mit den gewählten Optionen erstellen.
 create_game_error_unknown									Unbekannter Fehler bei Spielerstellung.
@@ -4860,13 +4860,13 @@ party_invite_error_version									Konnte nicht einladen: Spieler benötigt ein 
 party_invite_error_full										Konnte nicht einladen: Deine Gruppe ist voll.
 game_invite_error_invitee_kicked							Dieser Spieler wurde vorher aus der Gruppe ausgestoßen. Nur der Gastgeber kann ihn einladen.
 
-// party_challenge_error_unknown		Could not challenge: That party doesn't exist anymore.
-// party_challenge_error_not_leader		Only a party leader can challenge.
-// party_challenge_error_no_shared_region		Could not challenge: That party no longer shares a common region.
-// party_challenge_error_same		You must challenge a different party.
-// party_challenge_error_duplicate		You must wait to challenge that party again.
-// party_challenge_error_blocked		You cannot challenge that party.
-// party_challenge_error_target_not_in_party		You cannot challenge a player that is not in a party.
+party_challenge_error_unknown								Herausforderung fehlgeschlagen: Diese Gruppe existiert nicht mehr.
+party_challenge_error_not_leader							Nur der Gruppenleiter kann herausfordern.
+party_challenge_error_no_shared_region						Herausforderung fehlgeschlagen: Diese Gruppe hat keine gemeinsame Region mehr.
+party_challenge_error_same									Sie müssen eine andere Gruppe herausfordern.
+party_challenge_error_duplicate								Sie müssen warten, um diese Gruppe erneut herauszufordern.
+party_challenge_error_blocked								Sie können diese Gruppe nicht herausfordern.
+party_challenge_error_target_not_in_party					Sie können keinen Spieler herausfordern, der nicht in einer Gruppe ist.
 
 left_party_new_version										Du hast die Gruppe verlassen denn eine Aktualisierung wird zum Spielen erfordert.
 left_party_kicked											Du wurdest vom Spiel entfernt.
@@ -5047,8 +5047,8 @@ tooltip_primary_attribute_intelligence						Das Hauptattribut dieses Helden ist 
 
 //ladder.package
 ladder_field_acc_games_played								Gespielte Spiele
-ladder_field_acc_wins										Gewinne
-ladder_field_acc_losses										Verluste
+ladder_field_acc_wins										Siege
+ladder_field_acc_losses										Niederlagen
 ladder_field_acc_concedes									Zugaben
 ladder_field_acc_concedevotes								Wahl zugeben
 ladder_field_acc_buybacks									Rückkäufe
@@ -5129,8 +5129,8 @@ ladder_error_nodata											Data der Rangliste ist derzeit nicht verfügbar.
 
 ladder_title												Spieler-Rangliste
 ladder_fieldshort_acc_games_played							G.S.
-ladder_fieldshort_acc_wins									Gewinne
-ladder_fieldshort_acc_losses								Verluste
+ladder_fieldshort_acc_wins									Siege
+ladder_fieldshort_acc_losses								Niederlagen
 ladder_fieldshort_acc_concedes								C
 ladder_fieldshort_acc_concedevotes							C.V.
 ladder_fieldshort_acc_buybacks								Rückkäufe
@@ -5276,14 +5276,14 @@ lang_fr														Französisch
 lang_de														Deutsch
 lang_br														Portugiesisch
 lang_es														Spanisch
-// lang_vi		Vietnamese
-lang_vn														Vietnamesich
+lang_vi														Vietnamesisch
+lang_vn														Vietnamesisch
 lang_ru														Russisch
 lang_ro														Rumänisch
 lang_th														Thai
 lang_pt														Portugiesisch
 lang_pt_br													Portugiesisch
-// lang_id		Indonesian
+lang_id														Indonesisch
 lang_language												Alle Sprachen
 lang_notnow													Du kannst deine Sprache im Moment nicht ändern. Um deine Sprache zu ändern musst du dich erst ausloggen. Wenn erforderlich musst zuerst die Verbindung trennen.
 purch_subacct												Sub-Konto kaufen
@@ -5297,8 +5297,8 @@ client_outofdate											Eine neue Version von Strife ist verfügbar! Du musst
 update_now													Jetzt updaten
 confirm_lang_header_new										Sprache ändern?
 confirm_lang_restart_new									Du musst Strife neu starten, um die Sprache zu ändern. Möchtest du fortfahren?
-// confirm_langpack_header_new		Download Language Pack
-// confirm_langpack_restart_new		A language pack is available to download and required to continue, would you like to do this now?
+confirm_langpack_header_new									Sprachpaket herunterunterladen
+confirm_langpack_restart_new								Ein Sprachpaket steht zum Herunterladen zur Verfügung und ist zum Fortfahren erforderlich. Möchten Sie dies jetzt tun?
 
 //watch_user.package
 watch_user_waiting_for_update								Partieninfo wird abgerufen...
@@ -5821,12 +5821,12 @@ main_social_groupname_ingame								Freunde im Spiel
 main_social_groupname_offline								Offline-Freunde
 main_social_groupname_ignored								Ignoriert
 main_social_groupname_search								Spieler finden
-// main_social_groupname_autocomplete		Find Players
-main_social_groupname_pending								Unerledigt
-// main_social_groupname_party		Party
+main_social_groupname_autocomplete							Spieler finden
+main_social_groupname_pending								Freundschaftsanfragen
+main_social_groupname_party									Gruppe
 main_social_groupname_recently								Kürzlich gespielt
 main_social_groupname_sent									Gesendet
-// main_social_groupname_toast_sent		Invited {player} to lobby.
+main_social_groupname_toast_sent							{player} zur Lobby eingeladen.
 main_social_noresults										Kein Ergebnis
 main_social_processing										Wird gesucht…
 
@@ -5838,44 +5838,44 @@ main_social_processing										Wird gesucht…
 // main_social_friends_addorsearch		Add or search for a friend
 
 friend_online_status_ingame									Im Spiel
-// friend_online_status_streaming		STREAMING
+friend_online_status_streaming								STREAMING
 friend_online_status_ignored								Ignoriert
 friend_online_status_spectating								Zuschauen
-// friend_online_status_practice		PRACTICING
+friend_online_status_practice								ÜBEN
 friend_online_status_inlobby								Im Lobby
 friend_online_status_inparty								In einer Gruppe
-// friend_online_status_partypending		INVITATION PENDING
-// friend_online_status_inmyparty		PARTY MEMBER
+friend_online_status_partypending							EINLADUNG AUSSTEHEND
+friend_online_status_inmyparty								GRUPPEN MITGLIED
 // friend_online_status_lfm		LFM
 // friend_online_status_lfg		LFP
 friend_online_status_ready									Fertig zum Spielen
-// friend_online_status_invisible		APPEAR OFFLINE
-// friend_online_status_hidden		HIDDEN
+friend_online_status_invisible								OFFLINE ERSCHEINEN
+friend_online_status_hidden									UNSICHTBAR
 friend_online_status_online									Online
 friend_online_status_offline								Offline
-// friend_online_status_unknown		UNKNOWN
-// friend_online_status_idle		IDLE
+friend_online_status_unknown								UNBEKANNT
+friend_online_status_idle									LEERLAUF
 friend_online_status_afk									Abwesend
 friend_online_status_dnd									Nicht stören
 
-// friend_online_userstatus_0		ONLINE
-// friend_online_userstatus_0_desc		Online
-// friend_online_userstatus_1		LOOKING FOR PARTY
-// friend_online_userstatus_1_desc		Looking for party
-// friend_online_userstatus_2		LOOKING FOR MORE
-// friend_online_userstatus_2_desc		Looking for more
-// friend_online_userstatus_3		STREAMING
-// friend_online_userstatus_3_desc		Streaming
-// friend_online_userstatus_4		AFK
-// friend_online_userstatus_4_desc		Away from keyboard
-// friend_online_userstatus_5		DND
-// friend_online_userstatus_5_desc		Do not disturb
-// friend_online_userstatus_6		HIDDEN
-// friend_online_userstatus_6_desc		Hidden
-// friend_online_userstatus_7		APPEAR OFFLINE
-// friend_online_userstatus_7_desc		Appear Offline
+friend_online_userstatus_0		ONLINE
+friend_online_userstatus_0_desc		Online
+friend_online_userstatus_1		SUCHE GRUPPE
+friend_online_userstatus_1_desc		Auf der Suche nach einer Gruppe
+friend_online_userstatus_2		SUCHE NACH MEHR
+friend_online_userstatus_2_desc		Auf der Suche nach mehr
+friend_online_userstatus_3		STREAMING
+friend_online_userstatus_3_desc		Streaming
+friend_online_userstatus_4		AFK
+friend_online_userstatus_4_desc		Weg von der Tastatur
+friend_online_userstatus_5		DND
+friend_online_userstatus_5_desc		Bitte nicht stören
+friend_online_userstatus_6		VERSTECKT
+friend_online_userstatus_6_desc		Versteckt
+friend_online_userstatus_7		OFFLINE ERSCHEINEN
+friend_online_userstatus_7_desc		Offline erscheinen
 
-// friend_nofriends_message		Play Strife or Search using the field above to find Friends!
+friend_nofriends_message									Spielen Sie Strife oder suchen Sie über das Feld oben, um Freunde zu finden!!
 
 // Main Misc
 main_activityfeed											Newsfeed von Aktivitäten
@@ -5893,7 +5893,7 @@ matchfinder_title											Spielervermittlung
 
 // Group Finder
 groupfinder_title											Gruppenfinder
-// groupfinder_desc		Find Strife players with common interests and similar play styles by using the Group Finder!
+groupfinder_desc											Finden Sie Strife-Spieler mit gemeinsamen Interessen und ähnlichen Spielstilen, indem Sie den Gruppenfinder verwenden!
 groupfinder_skilllevel										Level der Fertigkeit
 groupfinder_seriousness										Ernsthaftigkeit
 groupfinder_populartags										Populäre Tags
@@ -5947,7 +5947,7 @@ game_afkpaused												Das Spiel ist zurzeit wegen Inaktivität pausiert.
 game_waitingforplayers										Auf Spieler warten
 
 // Buy
-// buy_time_remaining		Buy Time Remaining:
+buy_time_remaining											Verbleibende Zeit in der Kaufphase:
 
 // Stat Tips
 // stattip_power		Power
@@ -6230,7 +6230,7 @@ mainmenu_creategame											Spiel erstellen
 mainmenu_crafting											Herstellen von Gegenständen
 mainmenu_corral												Haustiere
 mainmenu_armory												Rüstkammer
-general_form_party											Trupp erstellen
+general_form_party											Gruppe erstellen
 general_form_bot_game										Bot Spiel
 general_form_party_desc										Spiele mit einer Gruppe von Freunden
 general_pets												Haustiere
@@ -6256,7 +6256,7 @@ general_watch_strife										Strife anschauen
 mainmenu_enchanting_2										Gegenstände verbessern
 mainmenu_custom_games										Spieler Gehostet
 mainmenu_custom_games_desc									Spiele die von einem Spieler gehosted werden, können Hausregeln verwenden und benutzen keine Spielervermittlung.
-mainmenu_form_party											Trupp erstellen
+mainmenu_form_party											Gruppe erstellen
 mainmenu_form_party_desc									Tu dich mit Freunden und anderen Spielern in der Spielervermittlung zusammen.
 
 tos_prompt_header											Nutzungsbedingungen
@@ -6587,8 +6587,8 @@ mana_regen_comp												Manaregeneration
 crafted_item_bonus_analog									Übliches Bonus
 crafted_item_bonus_rare										Seltsames Bonus
 crafted_item_bonus_legendary								Legendäres Bonus
-crafted_item_name_rare										{itemname} von {rarebonus}
-crafted_item_name_legendary									{legendarybonus} {itemname} von {rarebonus}
+crafted_item_name_rare										{itemname} mit {rarebonus}
+crafted_item_name_legendary									{legendarybonus} {itemname} mit {rarebonus}
 
 crafting_enchant_disabled_needitem							Keine gefertigten Gegenstände
 crafting_enchant_disabled_needitem_desc						Verzaubung ist nicht verfügbar, bis du mindestens einen gefertigten Gegenstand hast.
@@ -7176,8 +7176,8 @@ shop_item_activatable										Aktivierbar
 shop_item_activatable_tip									Der Gegenstand kann manuell benutzt werden.
 
 shop_item_stat_name_power									Kraft
-// shop_item_stat_name_baseAttackDamage		Attack Damage
-// shop_item_stat_name_baseAbilityDamage		Ability Damage
+shop_item_stat_name_baseAttackDamage						Angriffsschaden
+shop_item_stat_name_baseAbilityDamage						Fertigkeitsschaden
 shop_item_stat_name_baseAttackSpeed							Angriffsgeschwindigkeit
 shop_item_stat_name_armor									Rüstung
 shop_item_stat_name_magicArmor								magische Rüstung
@@ -7393,15 +7393,15 @@ profile_fun_fact_creepDamage_desc							Dein durchschnittliche Nicht-Helden-Scha
 profile_fun_fact_buildingDamage_desc						Dein durchschnittliche Gebäudeschaden, war {value}, als {hero}
 profile_fun_fact_goldSpent_desc								Deine durchschnittlichen Gold Ausgaben waren {value} als {hero}
 profile_fun_fact_goldEarned_desc							Deine durchschnittlichen Gold Einnahmen waren {value} als {hero}
-profile_fun_fact_actions_desc								Du hast durchschnittlichen {value} Aktionals {hero} ausgeübt
+profile_fun_fact_actions_desc								Du hast durchschnittlichen {value} Aktioneen als {hero} ausgeübt
 profile_fun_fact_games_desc									Du hast {value} Spiele als {hero} gespielt
 profile_fun_fact_deaths_desc								Du bist {value} mal im durchschnitt als {hero} gestorben
 
 // profile_leaves		Leaves
-// proifile_leaves_standing_good		Good Standing.
-// proifile_leaves_standing_warning		Warning Zone.
-// proifile_leaves_standing_bad		Poor Standing.
-// proifile_leaves_standing_desc		Leaving in the middle of games will result in bans of increasing duration.
+proifile_leaves_standing_good								Guter Stand.
+proifile_leaves_standing_warning							Warnzone.
+proifile_leaves_standing_bad								Schlechter Stand.
+proifile_leaves_standing_desc								Das Verlassen mitten im Spiel führt zu Sperren mit zunehmender Dauer.
 
 main_leaver_tip_explain_title								Abbrecher-Details
 main_leaver_tip_explain_banned								^rVerbannt bis: {value}
@@ -7506,21 +7506,21 @@ cloud_save_fail												Nicht Synchronisiert
 stat_name_total_kills										Gesamte Kills
 stat_name_total_deaths										Gesamte Tode
 stat_name_total_assists										Gesamte Unterstützungen
-stat_name_total_wins										Gewinne Insgesammt
-stat_name_total_win_x										{value} Gewinn
-stat_name_total_wins_x										{value} Gewinne
-// stat_name_pvp_rating_x		^999PVP Rating:^* {value}
-// stat_name_pvp_rating_x_short		Rating: {value}
+stat_name_total_wins										Siege Insgesammt
+stat_name_total_win_x										{value} Sieg
+stat_name_total_wins_x										{value} Siege
+stat_name_pvp_rating_x										^999PVP Bewertung:^* {value}
+stat_name_pvp_rating_x_short								Bewertung: {value}
 stat_name_ladder_rank_x										Ranglistenplatz: {value}
 stat_name_ladder_rank_x_grey								Ranglistenplatz: ^666{value}
 stat_name_ladder_rank_points_x								Ranglistenplatz: {value} ({value2} Punkte)
 stat_name_ladder_points_x									Ranglistenpunkte: {value}
 stat_name_ladder_points_x_grey								Ranglistenpunkte: ^666{value}
-// stat_name_hero_rating_x		^960{hero} Rating^*  {value}
-stat_name_hero_wins_x										Gewinne: {value}
+stat_name_hero_rating_x										^960{hero} Bewertung^*  {value}
+stat_name_hero_wins_x										Siege: {value}
 stat_name_hero_wins_next_star_x								Nächster Stern In: {value}
 stat_name_hero_mastered										Held beherrscht!
-stat_name_total_losses										Verluste
+stat_name_total_losses										Niederlagen
 stat_name_total_games										Gesamte Spiele
 stat_name_total_kills_and_assists							Kills + Unterstützungen
 stat_name_total_gold										Geamtes Gold
@@ -7530,7 +7530,7 @@ stat_name_average_damage_dealt								Durchschn. Schadensverursachung
 stat_name_wins_as_hero										Gewinnt als {heroname}
 stat_name_games_as_hero										Spielt als {heroname}
 stat_name_gold_per_min										Gold pro Minute
-stat_name_win_percentage									Gewinne in Prozent
+stat_name_win_percentage									Siege in Prozent
 stat_name_deaths_per_game									Tode
 stat_name_khanquests										Gesamte Khanaufgaben abgeschlossen
 
@@ -8798,14 +8798,14 @@ unlock_crafting_3											Füge optionale Verzauberungen hinzu, um das Objekt 
 wheel_spin_wheel											Drehscheibe
 wheel_spin_wheel_again										Erneut Drehen
 wheel_spin_value_gems										{value} Juwelen
-// wheel_spin_value_win		You Win
-// wheel_spin_wheel_youhave		You Have
-// wheel_spin_wheel_freespins		One Free Spin
-// wheel_spin_wheel_nospins		No More Spins
-// wheel_spin_wheel_today		Today!
-// wheel_spin_wheel_alreadyspun		You have already spun today.
-// wheel_spin_wheel_comeback		Come Back in
-// wheel_spin_wheel_spinagain		To Spin Again
+wheel_spin_value_win										Gewonnen
+wheel_spin_wheel_youhave									Du hast
+wheel_spin_wheel_freespins									Eine kostenlose Drehung
+wheel_spin_wheel_nospins									Keine weiteren Drehungen
+wheel_spin_wheel_today										Heute!
+wheel_spin_wheel_alreadyspun								Du hast heute schon gedreht.
+wheel_spin_wheel_comeback									Komm zurück
+wheel_spin_wheel_spinagain									Um wieder zu drehen
 wheel_leave													Verlassen
 
 // gem_purchase_overlay_error_desc		To purchase Gems, please enable the Steam Overlay for Brawl of Ages
@@ -8817,7 +8817,7 @@ wheel_leave													Verlassen
 social_twitch												Twitch
 social_chat_rooms											Chat-Rooms
 social_game_party											Spiel-Gruppen
-// social_game_party_invites_pending		{value} Invite(s) Pending
+social_game_party_invites_pending							{value} Einladung(en) ausstehend
 social_game_party_invites									Gruppen-Einladungen
 social_game_party_your										Deine Gruppe
 social_enter_channel_name									Kanal-Name eingeben
@@ -8835,11 +8835,11 @@ social_party_left											Gruppe verlassen!
 social_action_bar_send_im									Nachricht senden
 social_action_bar_invite_to_party							Zur Gruppe einladen
 social_action_bar_invite_to_lobby							Zu Lobby einladen
-// social_action_bar_invited_to_lobby		Invited!
+social_action_bar_invited_to_lobby							Eingeladen!
 social_action_bar_join_lobby								Lobby beitreten
 social_action_bar_join_party								Gruppe beitreten
 social_action_bar_view_profile								Profil anzeigen
-// social_action_bar_challenge_issue		Challenge This Player!
+social_action_bar_challenge_issue							Fordern Sie diesen Spieler heraus!
 social_action_bar_spectate									Zuseher
 social_action_bar_add_friend								Freund hinzufügen
 social_action_bar_accept_friend								Freund akzeptieren

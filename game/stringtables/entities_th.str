@@ -2057,11 +2057,6 @@ Item_PowerBoots_name											Power Boots
 Item_PowerBoots_description										เพิ่มความเร็วในการเคลื่อนที่ 65\n+20 Power
 Item_PowerBoots_description_simple								เพิ่มความเร็วในการเคลื่อนที่และพลังโจมตี
 
-// WarpBoots
-Item_WarpBoots_name												Warp Boots
-Item_WarpBoots_description										เพิ่มความเร็วในการเคลื่อนที่ 85\nเลือกยูนิตหรือสิ่งก่อสร้างเพื่อทำการวาร์ปไปยังจุดหมาย
-Item_WarpBoots_description_simple								เพิ่มความเร็วในการเคลื่อนที่ 85\nเลือกยูนิตหรือสิ่งก่อสร้างเพื่อทำการวาร์ปไปยังจุดหมาย
-
 // TeleportBoots
 Item_TeleportBoots_name											Warp Boots
 Item_TeleportBoots_description									เพิ่มความเร็วในการเคลื่อนที่ 85\nเลือกยูนิตหรือสิ่งก่อสร้างเพื่อทำการวาร์ปไปยังเป้าหมาย, เมื่อทำการวาร์ปสำเร็จจะได้รับ ความเร็วในการเคลื่อนที่อีก 80 เป็นเวลา 3 วินาที
