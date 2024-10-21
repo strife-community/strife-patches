@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Claudessa4"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+	casteffect="effects/cast.effect"
+	anim="ability_4"
+
+	actiontype="target_self"
+	
+	cooldowntime="135000,120000,105000"
+	
+	queue="front"
+	inheritmovement="true"
+
+	manacost="90,105,120"
+
+	hoverareacastrange="350"
+	alwaysshowtimer="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<constant name="damage_dot" value="30,42,54" adjustment="ability" />
+
+	<!-- tool tip only -->
+	<constant name="power_reduction" value="6,9,12" adjustment="none" />
+
+	<onimpact>
+		<starttimer duration="8000" />
+
+		<spawnaffector name="Affector_Claudessa_Ability4" target="source_entity" />
+		<spawnunit name="Gadget_Claudessa_Ability4_Initial" target="source_position" pushentity="true" />
+		<applystate name="State_Claudessa_Ability4_Linger" duration="8000" proxy="stack_entity" target="stack_entity" />
+	</onimpact>
+	
+
+</ability>

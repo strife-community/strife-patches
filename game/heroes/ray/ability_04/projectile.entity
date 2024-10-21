@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Ray_Ability4"
+
+	speed="7000"
+	gravity="0"
+
+	modelscale="1.8"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+
+	effectscale="1"
+	
+	touchradius="120"
+	touchpropradius="90"
+	touchpropanim="flamehit"
+	maxtouchespertarget="1" 
+	touchtargetscheme="enemy_units_and_buildings"
+	toucheffecttype="Magic Splash"
+	touchradiusdiradjust="true"
+
+	alwaystransmitdata="true"
+>
+	<onspawn>
+		<playeffect effect="effects/link.effect" target="this_entity" source="source_entity" />
+		<setparam a="1"  />
+	</onspawn>
+
+	<ontouch>
+		<recordheroaggression  />
+		<aggression />
+		<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />
+
+		<getconstant name="damage" adjustmentsource="this_entity" />
+		<setvar0 a="result" b="param" op="mult" />
+
+		<targettype type="hero">
+			<damage effecttype="Magic Splash" amount="1" b="var0" op="mult"/>
+			<setparam a="param" b="0.88" op="mult" />
+		</targettype>
+		<else>
+			<getconstant name="damage" adjustmentsource="this_entity" />
+			<damage effecttype="Magic Splash" amount="1" b="result" op="mult"/>
+		</else>
+	</ontouch>
+
+</projectile>

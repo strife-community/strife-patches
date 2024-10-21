@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Claudessa_Ability4_Linger"
+
+	radius="350"
+	
+	lifetime="3000"
+	targetselection="all"
+	targetscheme="enemy_units"
+
+	effecttype=""
+	persist="false"
+	
+	hazardradius="350"
+	hazardthreat="extreme"
+	
+>
+
+	<onspawn>
+		<playeffect effect="effects/ground_linger_enemies.effect" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/ground_linger_allies.effect" source="this_entity" occlude="true" visibility="allies"/>
+	</onspawn>
+
+	<onframeimpact>
+		<targettype type="hero" >
+			<applystate name="State_Claudessa_Ability4" continuous="true" timeout="frametime" />
+		</targettype>
+		<else>
+			<applystate name="State_Claudessa_Ability4_Creeps" continuous="true" timeout="frametime" />
+		</else>
+	</onframeimpact>
+	
+</affector>

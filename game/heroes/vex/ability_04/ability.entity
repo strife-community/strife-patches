@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vex4"
+
+	statuseffecttooltip=""
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+	channeltime="2000"
+	ischanneling="true"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_position"
+	targetscheme="Vex_Teleport"
+	casteffecttype="Magic"
+	casteffect=""
+
+	manacost="100,110,120"
+	cooldowntime="85000,75000,65000"
+	
+	targetradius="400"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	
+	range="999999"
+	hoverareacastrange="1"
+>
+	<constant name="damage" value="150,200,250" adjustment="ability" />
+	<onchannelend>
+		<unbind target="source_entity" />
+		<teleport source="source_entity"  interpolate="false" target="target_position" />
+		<disjoint target="source_entity" />
+		
+		<playanim name="ability_4_land" source="source_entity" target="source_entity" />
+		<playeffect effect="effects/impact.effect" target="source_position" occlude="true"  />
+		<propareaeffect center="source_position" radius="350" anim="flamehit" />
+		<expirestate name="State_Vex_Ability4_Self" target="source_entity" />
+		<areaofeffect radius="400" targetselection="all" targetscheme="enemy_units_and_buildings" effecttype="Magic" >
+			<recordheroaggression  />
+			<aggression />
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<damage effecttype="Magic Splash" significant="true" amount="1" b="result" op="mult"  />
+					<cantarget effecttype="CrowdControl" >
+						<applystate target="target_entity" name="State_Stunned" duration="1000"  />
+					</cantarget>
+					<playeffect effect="effects/impact_enemy.effect" occlude="true" target="target_position" source="target_position"/>
+				</onimpact>
+			</combatevent>
+		</areaofeffect>
+	</onchannelend>
+	
+	<onchannelstart>		
+		<playeffect effect="effects/cast.effect" />
+		<spawnunit name="Gadget_Vex_Ability4" count="1" target="target_position" pushentity="true"/>
+		<setproxy target="stack_entity" />
+		<playeffect effect="effects/ring_ally.effect" source="stack_entity" visibility="allies"/>
+		<playeffect effect="effects/ring.effect" source="stack_entity" visibility="enemies"/>
+		<applystate name="State_Vex_Ability4_Self" duration="2000" ischannel="true" target="source_entity" />
+	</onchannelstart>
+	
+	<onchannelbreak>
+		<expirestate name="State_Vex_Ability4" target="this_proxy_entity" />
+		<expirestate name="State_Vex_Ability4_Self" target="source_entity" />
+		<resetcooldown />
+		<startcooldown duration="50000,45000,40000" />
+	</onchannelbreak>
+
+	<ondamaged>
+		<compare a="source_damage" b="0" op="gt" >
+			<targettype type="player_controlled">
+				<targettype type="self"/>
+				<else>
+					<startcooldown duration="5000" />
+				</else>
+			</targettype>
+		</compare>
+	</ondamaged>
+
+	<modifier key="vex_teleporting" modpriority="100">
+		<ondamaged>
+			<compare a="source_damage" b="0" op="gt" >
+				<targettype type="player_controlled">
+					<targettype type="self"/>
+					<else>
+						<delete target="this_proxy_entity" />
+						<breakchannel />
+						<resetcooldown entity="this_entity" />
+						<startcooldown duration="5000" />
+					</else>
+				</targettype>
+			</compare>
+		</ondamaged>
+	</modifier>
+</ability>

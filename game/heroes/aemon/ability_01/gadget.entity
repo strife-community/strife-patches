@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Aemon_Ability1"
+	
+	model="/shared/models/invis.mdf"
+	passiveeffect="effects/aoe.effect"
+
+	preglobalscale="0.9"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+	sightrangeday="400"
+	sightrangenight="400"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+	canattack="false"
+
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	unitwalking="true"
+	buildingwalking="true"
+	treewalking="true"
+	cliffwalking="true"
+	flying="false"
+	clearvision="true"
+	drawonmap="false"
+	
+	hazardradius="400"
+
+
+>
+
+	<aura state="State_Aemon_Ability1_Debuff" radius="350" targetscheme="enemy_units_and_buildings" effecttype="Magic" /> 
+	<aura state="State_Aemon_Ability1_Buff" radius="350" targetscheme="ally_heroes" effecttype="Magic" /> 
+	
+	<onspawn>
+		<playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/ring_ally.effect" source="this_entity" occlude="true" visibility="allies"/>
+	</onspawn>
+	
+	<onframe>
+		<distance target="this_owner_entity" source="source_entity" /> 
+		<compare a="result" b="2000" op="gt" >
+			<expire />
+		</compare>
+		<compare a="source_health_percent" b=".1" op="le" > 
+			<expire />
+		</compare>
+	</onframe>
+
+</gadget>

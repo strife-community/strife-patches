@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Trixie_Ability1_Path_Bounce"
+
+	gravity="4000"
+	lifetime="150"
+	useexactlifetime="true"
+
+	modelscale="1"
+	model=""
+	touchradius="100"
+	traileffect=""
+	impacteffect=""
+>
+	<onspawn>
+		<spawnunit name="Gadget_Trixie_Ability1_Vision" count="1" target="source_position" pushentity="true" offset="0 50 0" />
+		<bind entity="this_entity" target="stack_entity" />
+	</onspawn>
+
+	<onimpact>
+		
+		<compare a="param" b="1" op="eq" >
+			<playeffect effect="effects/ring_ally.effect" target="target_position" source="target_position" duration="1500" visibility="allies"/>
+			<playeffect effect="effects/ring_ally.effect" occlude="true" source="target_position" duration="1500" visibility="allies"/>
+			<playeffect effect="effects/ring_enemy.effect" target="target_position" source="target_position" duration="1500" visibility="enemies"/>
+			<playeffect effect="effects/ring_enemy.effect" occlude="true" source="target_position" duration="1500" visibility="enemies"/>
+			
+			
+		</compare>
+		
+		<else>
+			<distance source="this_proxy_entity" target="target_position"  />
+			<setvar0 a="result" b="2" op="div" />
+			<setpos0 position="this_proxy_entity" positionend="target_position" positionmodifier="pointpastline" positionvalue="var0" snaptoterrain="true"  />
+			<playeffect effect="effects/ring_ally.effect" source="stack_entity" oclude="true" duration="1500"/>
+			<spawnprojectile name="Projectile_Trixie_Ability1_Path_Bounce" source="target_position" param="1" target="pos0" offset="0 0 0" />
+			
+			<playeffect effect="effects/ring_ally.effect" occlude="true" source="target_position" duration="1500" visibility="allies"/>
+			<playeffect effect="effects/ring_enemy.effect" occlude="true" source="target_position" duration="1500" visibility="enemies"/>
+			
+			
+			
+		</else>
+
+	</onimpact>
+
+</projectile>

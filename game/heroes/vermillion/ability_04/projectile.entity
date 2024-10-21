@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Vermillion_Ability4"
+
+	speed="2300"
+	gravity="0"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	
+
+>
+	<onimpact>
+		<propareaeffect center="this_position" radius="150" anim="flamehit" />
+		<areaofeffect
+			center="this_entity"
+			radius="200"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<damage effecttype="Magic Splash" significant="true" amount="1" b="result" op="mult" />
+					<cantarget effecttype="CrowdControl" >
+						<applystate name="State_Stunned" duration="1000,1300,1600" />
+					</cantarget>
+				</onimpact>
+			</combatevent>	
+			<recordheroaggression  />
+			<aggression />
+			<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+		</areaofeffect>
+		<playeffect effect="effects/explosion.effect" source="this_position" target="" occlude="true" />
+	</onimpact>
+</projectile>

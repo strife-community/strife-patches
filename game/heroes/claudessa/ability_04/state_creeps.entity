@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Claudessa_Ability4_Creeps"
+
+	icon="icon.tga"
+	displaylevel="true"
+	passiveeffect="effects/state_creeps.effect"
+	
+	effecttype=""
+>
+	<oninflict>
+		<playeffect effect="effects/impact_sound.effect" target="target_position"/>
+	</oninflict>
+
+	<onframe>
+		<getconstant name="damage_dot" adjustmentsource="this_entity" />
+		<setvar0 a="result" b="frametime" op="mult" />
+		<damage effecttype="Magic DOT Indirect Splash" amount="1" b="var0" op="mult"/>
+	</onframe>
+</state>

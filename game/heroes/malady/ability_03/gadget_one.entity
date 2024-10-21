@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Malady_Ability3_One"
+		
+	icon=""
+	portrait=""
+	modelscale=".925"
+	model="effects/rainbow_wall/model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	isselectable="false"
+	iscontrollable="false"
+	invulnerable="true"
+	hidealtinfo="true"
+	selectsound=""
+	orderconfirmedsound=""
+	unitwalking="true"
+	drawonmap="false"
+	
+	preglobalscale="0.9"
+	effectscale="1.0"
+	boundsheight="38"
+	radiusheight="38"
+	boundsradius="42"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="true"
+	
+	sightrangeday="200"
+	sightrangenight="200"
+
+	attacktype="none"
+	
+	lifetime="4000"
+	corpsetime="0"
+	deathtime="0"
+	corpsefadetime="0"
+	
+	blocking="false"
+	
+>
+	<onspawn>
+		<playeffect effect="effects/state_gadget_one_enemy.effect" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/state_gadget_one_ally.effect" source="this_entity" occlude="true" visibility="allies"/>
+	</onspawn>
+
+</gadget>

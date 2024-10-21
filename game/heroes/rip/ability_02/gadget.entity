@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Rip_Ability2"
+
+	icon=""
+	portrait=""
+	modelscale="1.25"
+	model="/shared/models/invis.mdf"
+
+	passiveeffect="effects/aoe.effect"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="0"
+	sightrangenight="0"
+	unitwalking="true"
+	canattack="false"
+	deathtime="0"
+	corpsetime="0"
+	invulnerable="true"
+	hidealtinfo="true"
+	flying="false"
+	drawonmap="false"
+	
+	lifetime="1200"
+	
+	hazardradius="300"
+>
+
+	<onspawn>
+		<playeffect effect="effects/ring_ally.effect" target="this_entity" source="this_entity" occlude="true" visibility="allies"/>
+		<playeffect effect="effects/ring.effect" target="this_entity" source="this_entity" occlude="true" visibility="enemies"/>
+	</onspawn>
+
+</gadget>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Midknight_Ability4_Slow"
+	
+	passiveeffect=""  
+	icon="/shared/icons/slow.tga"
+
+	movespeedslow="0.2"
+
+	effecttype="StatusSlow CrowdControl StatusDebuff"
+
+
+>
+
+
+</state>

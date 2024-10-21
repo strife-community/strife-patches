@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Malady_Ability3"
+		
+	icon=""
+	portrait=""
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	isselectable="false"
+	iscontrollable="false"
+	invulnerable="true"
+	hidealtinfo="true"
+	selectsound=""
+	orderconfirmedsound=""
+
+	drawonmap="false"
+	
+	preglobalscale="0.9"
+	effectscale="1.0"
+	boundsheight="38"
+	radiusheight="38"
+	boundsradius="42"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="true"
+	
+	sightrangeday="200"
+	sightrangenight="200"
+
+	attacktype="none"
+	
+	lifetime="4000"
+	corpsetime="0"
+	deathtime="0"
+	corpsefadetime="0"
+	
+	blocking="true"
+	noallyblock="true"
+	
+	
+>
+	<onframe>
+		<areaofeffect
+			radius="50"
+			targetselection="all"
+			targetscheme="ally_units"
+		>
+			<applystate name="State_Malady_Ability3_Speed" duration="1250" />
+		</areaofeffect>
+	</onframe>
+
+</gadget>

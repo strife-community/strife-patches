@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bo_Ability2"
+	
+	icon="icon.tga"
+	effecttype=""
+	allowtransfer=""
+	passiveeffect="effects/charge.effect"
+	movespeed="75"
+	ishidden="true"
+	impactinterval="4000"
+	
+>
+
+	<oninflict>
+		<setaccumulator value="1" />
+	</oninflict>
+
+	<onattackeddamageevent>
+		<getconstant name="damage_scale" adjustmentsource="tool_entity"/>
+		<setvar0 a="result" b="100" op="div" />
+		<setvar0 a="1" b="var0" op="sub" />
+		<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+	</onattackeddamageevent>    
+
+	<onimpact>
+		<propareaeffect center="source_entity" radius="250" anim="flamehit" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<damage effecttype="Magic Splash" amount="1" b="result" op="mult"  />
+					<cantarget effecttype="CrowdControl" >
+						<applystate target="target_entity" name="State_Stunned" duration="1000,1200,1400,1600"  />
+					</cantarget>
+				</onimpact>
+			</combatevent>
+			<recordheroaggression  />
+			<aggression />
+		</areaofeffect>
+		<compare a="result" b="0" op="gt">
+			<playeffect effect="effects/sound.effect" source="source_entity" />
+		</compare>
+		<compare a="result" b="3" op="gt">
+			<playeffect effect="effects/sound.effect" source="source_entity" />
+		</compare>
+		<playeffect effect="effects/spin.effect" source="source_position" occlude="true" />
+	</onimpact>
+	
+	
+	
+	
+
+	<modifier key="gear_1" modpriority="1"
+	>
+	
+		<oninflict>
+			<setaccumulator value="1" />
+		</oninflict>
+
+		<onattackeddamageevent>
+			<getconstant name="damage_scale" adjustmentsource="tool_entity"/>
+			<setvar0 a="result" b="100" op="div" />
+			<setvar0 a="1" b="var0" op="sub" />
+			<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+		</onattackeddamageevent>    
+
+		<onimpact>
+			<propareaeffect center="source_entity" radius="250" anim="flamehit" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units_and_buildings"
+				effecttype="Magic"
+			>
+				<combatevent effecttype="Counterable">
+					<onimpact>
+						<getconstant name="damage" adjustmentsource="this_entity" />
+						<damage effecttype="Magic Splash" amount="1" b="result" op="mult"  />
+						<cantarget effecttype="CrowdControl" >
+							<applystate target="target_entity" name="State_Stunned" duration="1000,1250,1500,1750"  />
+						</cantarget>
+					</onimpact>
+				</combatevent>
+				<recordheroaggression  />
+				<aggression />
+			</areaofeffect>
+			<compare a="result" b="0" op="gt">
+				<playeffect effect="effects/sound.effect" source="source_entity" />
+			</compare>
+			<compare a="result" b="3" op="gt">
+				<playeffect effect="effects/sound.effect" source="source_entity" />
+			</compare>
+			<playeffect effect="effects/spin_gear_1.effect" source="source_position" occlude="true" />
+		</onimpact>
+
+	</modifier>
+	
+	
+	
+	<modifier key="uber" modpriority="1"
+	>
+	
+		<oninflict>
+			<setaccumulator value="1" />
+		</oninflict>
+
+		<onattackeddamageevent>
+			<getconstant name="damage_scale" adjustmentsource="tool_entity"/>
+			<setvar0 a="result" b="100" op="div" />
+			<setvar0 a="1" b="var0" op="sub" />
+			<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+		</onattackeddamageevent>    
+
+		<onimpact>
+			<propareaeffect center="source_entity" radius="250" anim="flamehit" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units_and_buildings"
+				effecttype="Magic"
+			>
+				<combatevent effecttype="Counterable">
+					<onimpact>
+						<getconstant name="damage" adjustmentsource="this_entity" />
+						<damage effecttype="Magic Splash" amount="1" b="result" op="mult"  />
+						<cantarget effecttype="CrowdControl" >
+							<applystate target="target_entity" name="State_Stunned" duration="1000,1250,1500,1750"  />
+						</cantarget>
+					</onimpact>
+				</combatevent>
+				<recordheroaggression  />
+				<aggression />
+			</areaofeffect>
+			<compare a="result" b="0" op="gt">
+				<playeffect effect="effects/sound.effect" source="source_entity" />
+			</compare>
+			<compare a="result" b="3" op="gt">
+				<playeffect effect="effects/sound.effect" source="source_entity" />
+			</compare>
+			<playeffect effect="effects/spin_gear_uber.effect" source="source_position" occlude="true" />
+		</onimpact>
+
+	</modifier>
+
+
+</state>

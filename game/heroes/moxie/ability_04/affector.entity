@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Moxie_Ability4"
+
+	radius="325"
+	impactdelay="650"
+	targetselection="all"
+	targetscheme="enemy_units_and_buildings"
+	effecttype="Magic"
+	hazardradius="325"
+	hazardthreat="extreme"
+
+>
+
+	<onimpact>
+		<setparam a="1" />
+		<propareaeffect center="this_position" radius="275" anim="flamehit" />
+		<distance target="target_entity" source="this_entity" />
+		<compare a="result" b="146" op="le" >
+			<playeffect effect="effects/impact_crit.effect" source="target_position" target="target_position" occlude="true"  />
+			<playeffect effect="effects/impact_crit_enemy.effect" source="target_entity" target="target_entity" occlude="true"  />
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<setvar0 a="result" />
+					<getconstant name="bonus_damage" adjustmentsource="this_entity" />
+					<setvar0 a="var0" b="result" op="add" />
+					<damage effecttype="Magic Splash" amount="1" b="var0" op="mult" />
+					<recordheroaggression  />
+					<aggression />
+					<applystate name="State_Moxie_Ability4_Crit" duration="4000" />
+					
+					<targettype type="hero" >
+						<popup name="max" source="target_entity" target="source_entity" />
+					</targettype>
+				</onimpact>
+			</combatevent>
+		</compare>
+		<else>
+			<playeffect effect="effects/impact.effect" source="target_position" target="target_position" occlude="true"  />
+			<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" occlude="true"  />
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+					<recordheroaggression  />
+					<aggression />
+					<applystate name="State_Moxie_Ability4" duration="3000" />
+				</onimpact>
+			</combatevent>
+		</else>
+	</onimpact>
+	
+	<onexpired>
+		<compare a="param" b="1" op="eq" >
+			<playeffect effect="effects/impact_sound.effect"  />
+		</compare>
+	</onexpired>
+
+</affector>

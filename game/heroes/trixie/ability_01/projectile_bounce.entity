@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Trixie_Ability1_Bounce"
+
+	gravity="4000"
+	lifetime="800"
+	useexactlifetime="true"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	touchradius="100"
+	traileffect="effects/trail.effect"
+	impacteffect=""
+>
+	<onspawn>
+		<spawnunit name="Gadget_Trixie_Ability1_Vision" count="1" target="source_position" pushentity="true" offset="0 50 0" />
+		<bind entity="this_entity" target="stack_entity" />
+	</onspawn>
+
+	<onimpact>
+		
+		<compare a="param" b="1" op="eq" >
+			<playeffect effect="effects/aoe_3.effect" occlude="true" source="target_position" />
+			<propareaeffect center="this_position" radius="260" anim="flamehit" />
+			<kill target="this_proxy_entity" source="" />
+			
+			<areaofeffect
+				radius="260"
+				targetselection="all"
+				targetscheme="enemy_units_and_buildings"
+				effecttype="Magic Splash"
+
+			>
+				<applystate name="State_Trixie_Ability1_Slow" duration="1000" target="target_entity" />
+				<applystate name="State_Trixie_Ability1_Damage3" duration="2000" target="target_entity" />
+				<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+				<recordheroaggression  />
+				<aggression />
+			</areaofeffect>
+		</compare>
+		
+		<else>
+		
+			<distance source="this_proxy_entity" target="target_position"  />
+			<setvar0 a="result" b="2" op="div" />
+			<setpos0 position="this_proxy_entity" positionend="target_position" positionmodifier="pointpastline" positionvalue="var0" snaptoterrain="true"  />
+			<spawnprojectile name="Projectile_Trixie_Ability1_Bounce" source="target_position" param="1" target="pos0" offset="0 0 0" />
+			
+			<playeffect effect="effects/aoe_2.effect" occlude="true" source="target_position" />
+			<propareaeffect center="this_position" radius="260" anim="flamehit" />
+			<kill target="this_proxy_entity" source="" />
+			
+			<areaofeffect
+				radius="260"
+				targetselection="all"
+				targetscheme="enemy_units_and_buildings"
+				effecttype="Magic Splash"
+
+			>
+				<applystate name="State_Trixie_Ability1_Slow" duration="1000" target="target_entity" />
+				<applystate name="State_Trixie_Ability1_Damage2" duration="2000" target="target_entity" />
+				<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+				<recordheroaggression  />
+				<aggression />
+			</areaofeffect>
+		</else>
+
+	</onimpact>
+
+</projectile>

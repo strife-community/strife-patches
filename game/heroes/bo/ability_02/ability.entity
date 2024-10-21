@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bo2"
+	
+	statuseffecttooltip="State_Bo_Ability2"
+	icon="icon.tga"
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="target_self"
+	manacost="85,90,95,100"
+	
+	queue="front"
+	inheritmovement="true"
+	
+	cooldowntime="15000"
+	hoverareacastrange="300"
+	alwaysshowtimer="true"
+>
+	<constant name="damage" value="80,105,130,155" adjustment="ability" />
+	<constant name="damage_scale" value="10" adjustment="none" noshowintooltip="true"/>
+	
+	<!-- tooltip only -->
+	<constant name="stun" value="1,1.25,1.5,1.75" adjustment="none" floatprecision="2" />
+	
+	<onimpact >
+		<setactivemodifierkey name="charging" />
+		<applystate name="State_Bo_Ability2" duration="4000" />
+		<spawnaffector name="Affector_Bo_Ability2_Hazard" target="source_entity" />
+		<starttimer duration="4000" />
+	</onimpact>
+	
+	<modifier key="charging" modpriority="100"
+		ignorecooldown="true"
+		anim=""
+		icon="charging.tga"
+		casttime="0"
+		castactiontime="0"
+		manacost="0"
+		actiontype="no_target"
+		cooldowntime="0"
+	>
+		<onimpact >
+		</onimpact>
+
+		<ontimer>
+			<setactivemodifierkey name="" />
+		</ontimer>
+	</modifier>
+	
+
+	
+</ability>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Claudessa_Ability4_Linger"
+	
+	icon="icon.tga"
+	
+	allowtransfer="true"
+	ishidden="true"
+	passiveeffect=""
+	
+>
+
+	<onframe>
+		<compare a="this_proxy_entity" b="0" op="ne" >
+			<distance source="source_entity" target="this_proxy_entity" />
+			<compare a="result" b="300" op="ge">
+				<spawnunit name="Gadget_Claudessa_Ability4_Reveal" target="source_position" pushentity="true" />
+				<spawnaffector name="Affector_Claudessa_Ability4_Linger" target="stack_entity"  />
+				<setproxy entity="stack_entity" target="this_proxy_entity" />
+				<setproxy entity="this_entity" target="stack_entity" />
+			</compare>
+		</compare>
+		<else>
+			<spawnunit name="Gadget_Claudessa_Ability4_Reveal" target="source_position" pushentity="true" />
+			<spawnaffector name="Affector_Claudessa_Ability4_Linger" target="stack_entity"  />
+			<setproxy entity="stack_entity" target="this_proxy_entity" />
+			<setproxy entity="this_entity" target="stack_entity" />
+		</else>
+	</onframe>
+
+	<onexpired>
+		<kill target="this_proxy_entity" source="" />
+		<playeffect effect="effects/sound_end.effect" source="source_entity" target="source_entity" occlude="true" />
+	</onexpired>
+
+	<oninflict>
+		<playeffect effect="effects/sound.effect" source="source_entity" target="source_entity" occlude="true" />
+	</oninflict>
+
+</state>

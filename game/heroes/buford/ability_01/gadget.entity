@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Buford_Ability1"
+	
+	icon="icon.tga"
+	portrait=""
+	
+	model="/shared/models/invis.mdf"
+
+
+	preglobalscale="1.4"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="64"
+	isselectable="false"
+	iscontrollable="false"
+	invulnerable="true"
+	
+	drawonmap="false"
+
+	targetoffset="0 0 0"
+
+	canrotate="true"
+	ismobile="false"
+	nothreat="true"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="300"
+	sightrangenight="300"
+	unitwalking="true"
+	canattack="false"
+
+	flying="false"
+	clearvision="true"
+	
+	
+	deathtime="0"
+	corpsetime="0"
+	
+	lifetime="6000"
+	
+
+>
+
+	<onspawn>
+		<playeffect effect="effects/aoe.effect" source="this_entity" target="source_position" occlude="true"/>
+			<playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="allies"/>
+		<playeffect effect="effects/ring_enemy.effect" source="this_entity" occlude="true" visibility="enemies"/>
+		<spawnaffector name="Affector_Buford_Ability1_Hazard" target="target_entity" proxy="this_entity" />
+	</onspawn>
+	
+	<ondeath>
+		<kill target="this_proxy_entity" source="" />
+	</ondeath>
+	
+	<onkilled>
+		<playeffect effect="effects/explosion.effect" target="source_position" occlude="true" />
+		<playeffect effect="effects/aoe2.effect" target="source_position" occlude="true" />
+		<propareaeffect center="this_position" radius="150" anim="flamehit" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage_explode" entity="tool_entity" adjustmentsource="this_owner_entity" />
+					<damage effecttype="Magic Splash TrapDamage" significant="true" source="this_owner_entity" inflictor="this_owner_entity" amount="1" b="result" op="mult" />
+				</onimpact>
+			</combatevent>
+			<recordheroaggression source="this_owner_entity" />
+			<aggression source="this_owner_entity" />
+		</areaofeffect>
+	
+	</onkilled>
+
+		<aura name="buford_max_ability1" state="State_Buford_Ability1" radius="300" targetscheme="enemy_units" duration="1000" effecttype="Magic" />
+		
+		
+	
+</gadget>

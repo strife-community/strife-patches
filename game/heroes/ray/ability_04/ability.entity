@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ray4"
+
+	icon="icon.tga"
+	anim="ability_4b" 
+
+	casttime="600"
+	castactiontime="600"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_position"
+	targetscheme="enemy_units_and_buildings"
+
+	casteffect=""
+	
+	casteffecttype="Magic"
+	
+	manacost="90,100,110"
+	cooldowntime="90000"
+	range="1800"
+
+	forcerange="1800" 
+	allowoutofboundscast="true"
+	allowoutofrangecast="true"
+	
+	showlinecast="true"
+	linecastrange="1880"
+	linecastwidth="120"
+	
+>
+	<constant name="damage" value="210,280,350" adjustment="ability" />
+	
+	<onimpact>
+		<playeffect effect="effects/cast.effect" />
+		<applystate name="State_Ray_Ability4" duration="300" target="source_entity" />
+		<spawnprojectile name="Projectile_Ray_Ability4" target="target_position" bind="stack_entity" param="1" offset="0 120 0"/>
+	</onimpact>
+	
+	<onstart>
+		<setpos0 position="source_entity" positionend="target_position" positionmodifier="pointonline" positionvalue="50" />
+		<spawnunit name="Gadget_Ray_Ability4" source="source_entity" target="source_position" fixedposition="true" facing="pos0" pushentity="true" />
+		<playeffect effect="effects/laser_ally.effect" source="stack_entity" target="" visibility="allies" />
+		<playeffect effect="effects/laser.effect" source="stack_entity" target="" visibility="enemies" />
+	</onstart>
+</ability>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Vermillion_Ability1"
+
+	speed="2000"
+	gravity="0"
+
+	modelscale="2"
+	model=""
+
+	effectscale="1.0"
+	traileffect=""
+	impacteffect=""
+>	
+	<onimpact>
+		<propareaeffect center="target_position" radius="250" anim="flamehit" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>			
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<damage effecttype="Magic Splash" significant="true" amount="1" b="result" op="mult" />
+					<applystate name="State_Vermillion_Ability1" duration="2000,2500,3000,3500" />
+				</onimpact>
+			</combatevent>
+			<recordheroaggression  />
+			<aggression />
+			<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity"/>
+		</areaofeffect>
+		<playeffect effect="effects/gadget_state.effect" source="target_position" occlude="true"/>
+	</onimpact>
+</projectile>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_JinShe_Ability4"
+
+	icon=""
+	portrait=""
+	model="/shared/models/invis.mdf"
+	
+
+	preglobalscale="1.0"
+
+	modelscale="1"
+	effectscale="1.0"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+	
+	hasdynamicpower="false"
+
+	attacktype="none"
+	combattype="Ranged"
+	canattack="false"
+
+	sightrangeday="300"
+	sightrangenight="300"
+	unitwalking="true"
+	unittype="jinshefire"
+
+	deathtime="0"
+	corpsetime="0"
+	lifetime="9000"
+	persist="true"
+
+	
+	invulnerable="true"
+	flying="false"
+	clearvision="false"
+	drawonmap="false"
+>
+
+	<aura state="State_JinShe_Ability4" radius="160" targetscheme="enemy_units" source="this_owner_entity" />
+	
+	<onspawn>
+		<playeffect effect="effects/ground_ally.effect" target="this_entity" source="this_entity" occlude="true" visibility="allies"/>
+		<playeffect effect="effects/ground.effect" target="this_entity" source="this_entity" occlude="true" visibility="enemies"/>
+	</onspawn>
+	
+		
+
+	
+</gadget>

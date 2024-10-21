@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rip_Ability2_Wait"
+	
+	icon="icon.tga"
+	
+	allowtransfer="true"
+	ishidden="true"
+
+	stunned="true"
+
+>
+	<oninflict>
+		<playanim name="attack_2_faster" target="source_entity" source="source_entity"/>   
+		
+		<setpos0 position="source_position" offset="0 0 -300" />
+		<playeffect effect="effects/impact_arrival.effect" source="pos0" target="pos0" occlude="true"/>
+		<playeffect effect="effects/impact_arrival_fade.effect" source="source_entity" target="source_entity" occlude="true"/>
+		
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic Splash"
+		>
+			<recordheroaggression  />
+			<aggression />
+			<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" occlude="true"/>
+			<getconstant name="damage" />
+			<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+		</areaofeffect>
+	</oninflict>
+
+	
+
+</state>

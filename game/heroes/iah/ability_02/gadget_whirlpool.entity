@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Iah_Ability2_Whirlpool"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/shared/models/invis.mdf"
+	skin=""
+	unitwalking="true"
+
+	passiveeffect="effects/aoe.effect"
+	respawneffect=""
+	selectsound=""
+	isselectable="false"
+	iscontrollable="false"
+	orderconfirmedsound=""
+	
+	preglobalscale="1"
+	modelscale="1.0"
+	effectscale="1"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 0"
+
+	movespeed="0"
+	turnrate="0"
+	ismobile="false"
+	canrotate="false"
+
+	maxhealth="0"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	invulnerable="true"
+	canattack="false"
+	
+	sightrangeday="300"
+	sightrangenight="300"
+	corpsetime="0"
+	deathtime="0"
+	
+	lifetime="3000"
+
+	hazardradius="300"
+	
+>
+	<aura state="State_Iah_Ability2_Slow" radius="300" targetscheme="enemy_units" effecttype="Push CrowdControl" />
+	<aura state="State_Iah_Ability2_Damage" radius="300" targetscheme="enemy_units_and_buildings" effecttype="Magic" />
+
+	<onspawn>
+		<playeffect effect="effects/ring_ally.effect" source="this_entity" visibility="allies" occlude="true" />
+		<playeffect effect="effects/ring.effect" source="this_entity" visibility="enemies" occlude="true" />
+		<propareaeffect center="this_position" radius="350" anim="flamehit" />
+		
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_heroes_and_buildings"
+			effecttype="Magic Splash"
+		>
+			<recordheroaggression  />
+			<aggression />
+		</areaofeffect>
+	</onspawn>
+
+	
+</gadget>

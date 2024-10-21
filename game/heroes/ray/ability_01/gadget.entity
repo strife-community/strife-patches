@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Ray_Ability1"
+	
+	icon="icon.tga"
+	portrait=""
+	modelscale="1.7"
+	model="effects/spider_mine/model.mdf"
+	skin=""
+	
+	passiveeffect="effects/passive.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	unitwalking="true"
+	
+	isselectable="false"
+	invulnerable="false"
+	
+	preglobalscale="1.0"
+	effectscale="1.0"
+	boundsheight="38"
+	radiusheight="38"
+	boundsradius="10"
+	selectionradius="26"
+	targetoffset="0 0 0"
+	combattype="Mine"
+	
+	maxhealth="600"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+	
+	sightrangeday="350"
+	sightrangenight="350"
+
+	attacktype="none"
+	
+	corpsetime="0"
+	deathtime="0"
+	corpsefadetime="0"
+
+	unittype="Ray_Mine"
+	
+	blocking="false"
+>
+	<onkilled>
+		<playeffect effect="effects/death.effect" target="source_position" occlude="true" />	
+		<propareaeffect center="this_position" radius="150" anim="flamehit" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+			center="this_position"
+		>
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" entity="tool_entity" adjustmentsource="this_owner_entity" />
+					<damage effecttype="Magic Splash TrapDamage" significant="true" source="this_owner_entity" inflictor="this_owner_entity" amount="1" b="result" op="mult" />
+				</onimpact>
+			</combatevent>
+			<recordheroaggression source="this_owner_entity" />
+			<aggression source="this_owner_entity" />
+		</areaofeffect>
+		<addcharges entity="proxy_entity" count="1" />
+	</onkilled>
+</gadget>

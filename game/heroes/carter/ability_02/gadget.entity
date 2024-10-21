@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Carter_Ability2"
+
+	icon=""
+	portrait=""
+	model="effects/puke_goop/model.mdf"
+	passiveeffect="effects/trail.effect"
+	deatheffect=""
+	
+	preglobalscale="1.0"
+	modelscale="1.5"
+	effectscale="0.9"
+	boundsheight="0"
+	radiusheight="0"
+	boundsradius="0"
+	isselectable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+	canattack="false"
+
+	sightrangeday="400"
+	sightrangenight="400"
+
+	deathtime="0"
+	corpsetime="0"
+	
+	unittype="carter_projectile"
+	
+	invulnerable="true"
+	hidealtinfo="true"
+	flying="0"
+	clearvision="true"
+	drawonmap="false"
+	
+>
+	<onkilled>
+		<compare a="accumulator" b="0" op="ne">
+			<spawnaffector name="Affector_Carter_Ability2" proxy="this_proxy_entity" owner="this_owner_entity" source="this_owner_entity" target="source_position" param="1" />
+			<playeffect effect="effects/impact_lit.effect" source="source_position" target="" occlude="true" />	
+		</compare>
+		<else>
+			<spawnaffector name="Affector_Carter_Ability2" proxy="this_proxy_entity" owner="this_owner_entity" source="this_owner_entity" target="source_position" param="0" />
+			<playeffect effect="effects/impact.effect" source="source_position" target="" occlude="true" />		
+		</else>
+	</onkilled>
+	
+	<modifier key="carter_flame_wall_active" modpriority="100"
+		passiveeffect="effects/trail_lit.effect"
+	>
+	</modifier>
+</gadget>

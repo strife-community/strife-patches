@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pal4"
+	
+	icon="icon.tga"
+	anim="ability_4"
+	casttime="400"
+	castactiontime="400"
+
+	casteffect="effects/sound.effect"
+	casteffecttype="Magic"	
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+	
+	actiontype="target_self"
+	manacost="100,110,120"
+	
+	queue="front"
+	inheritmovement="true"
+	
+	cooldowntime="80000,70000,60000"
+	hoverareacastrange="700"
+	
+	maxcharges="100"
+>
+	<constant name="damage" value="270,360,450" adjustment="ability" />
+	<constant name="damage_reduction" value="9,12,15" adjustment="none" noshowintooltip="false"/>
+	
+	
+	<onattackeddamageevent>
+		<getconstant name="damage_reduction" adjustmentsource="tool_entity"/>
+		<setvar0 a="result" b="100" op="div" />
+		<setvar0 a="1" b="var0" op="sub" />
+		<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+	</onattackeddamageevent>   
+	
+	<onimpact>
+		<playeffect effect="effects/ring.effect" target="target_position" source="target_entity" occlude="true" />
+		<spawnaffector name="Affector_Pal_Ability4" target="source_position" param="charges"  />	
+		<compare a="charges" b="100" op="ge" >
+			<popup name="max" target="source_entity" source="source_entity"/>
+		</compare>
+		<setcharges a="0" />
+	</onimpact>
+
+	<ondamaged>
+		<applystate name="State_Pal_Ability4_Charging" duration="25000" target="source_entity" proxy="this_entity" />
+	</ondamaged>
+	
+	<onframe>
+		<compare a="charges" b="0" op="eq" >
+			<setactivemodifierkey entity="this_entity" name="" />
+		</compare>
+		<else>
+			<compare a="charges" b="30" op="le" >
+				<setactivemodifierkey entity="this_entity" name="Pal_Charged1" />
+			</compare>
+			<else>
+				<compare a="charges" b="60" op="le" >
+					<setactivemodifierkey entity="this_entity" name="Pal_Charged2" />
+				</compare>
+				<else>
+					<compare a="charges" b="100" op="eq" >
+						<setactivemodifierkey entity="this_entity" name="Pal_Charged3" />
+					</compare>
+				</else>
+			</else>
+		</else>
+	</onframe>
+
+	<modifier key="Pal_Charged1" modpriority="100" passiveeffect="effects/passive1.effect"/>
+	<modifier key="Pal_Charged2" modpriority="101" passiveeffect="effects/passive2.effect"/>
+	<modifier key="Pal_Charged3" modpriority="102" passiveeffect="effects/passive3.effect"/>
+	
+	<onstart>
+		<expirestate name="State_Pal_Ability2" target="source_entity" />
+	</onstart>	
+	
+</ability>

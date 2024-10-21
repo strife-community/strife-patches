@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Claudessa_Ability4"
+
+	radius="350"
+	hazardradius="350"
+	lifetime="8000"
+	targetselection="all"
+	targetscheme="enemy_units_and_buildings"
+	
+	effecttype=""
+	persist="true"
+	hazardthreat="extreme"
+>
+
+	<onspawn>
+		<playeffect effect="effects/ground_initial_enemies.effect" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/ground_initial_allies.effect" source="this_entity" occlude="true" visibility="allies"/>
+	</onspawn>
+
+	<onframeimpact>
+		<targettype type="enemy_heroes_and_buildings" >
+			<applystate name="State_Claudessa_Ability4" continuous="true" timeout="frametime" />
+		</targettype>
+		<else>
+			<applystate name="State_Claudessa_Ability4_Creeps" continuous="true" timeout="frametime" />
+		</else>
+	</onframeimpact>
+
+	
+</affector>

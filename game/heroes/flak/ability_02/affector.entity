@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Flak_Ability2"
+
+	radius="200"	
+	targetselection="all"
+	targetscheme="all_units_and_buildings"
+	effecttype="Magic"
+	destroytrees="true"
+	impactdelay="0"
+	impacteffect=""
+	
+>
+	<onspawn>
+	</onspawn>
+	
+	<onimpact>
+		<targettype type="Boss" />
+		<else>
+			<cantarget targetscheme="enemy_units">
+				<applystate name="State_Flak_Ability2" duration="300" />
+				<playanim name="knock_1" target="target_entity" />
+
+				<getconstant name="damage" adjustmentsource="this_entity" />
+				<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+				
+				<push force="1250" duration="200" source="this_entity" />
+				
+				<recordheroaggression  />
+				<aggression />
+			</cantarget>
+			<targettype type="self">
+				<push force="2500" duration="200" source="this_entity" />
+			</targettype>
+			<else>
+				<cantarget targetscheme="enemy_buildings">
+				<getconstant name="damage" adjustmentsource="this_entity" />
+				<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+				<recordheroaggression  />
+				<aggression />
+				</cantarget>
+			</else>
+		</else>
+		
+		<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" occlude="true" />
+	</onimpact>
+</affector>

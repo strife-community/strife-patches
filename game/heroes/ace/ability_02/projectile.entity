@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Ace_Ability2"
+
+	gravity="3000"
+	lifetime="650"
+	useexactlifetime="true"
+
+	modelscale="1.0"
+	model=""
+	deatheffect=""
+	canturn="false"
+	flying="false"
+	flyheight="0"
+	
+	touchprojectileblockers="true"
+	touchradius="1"
+	touchradiusdiradjust="true"
+	touchtargetscheme="Nothing"
+	toucheffecttype=""
+>
+	<ontouch>
+		<targettype type="alive" target="source_entity" >
+			<hasbinds>
+				<propareaeffect center="source_entity" radius="250" anim="flamehit" />
+				<areaofeffect
+					radius="250"
+					targetselection="all"
+					targetscheme="enemy_units_and_buildings"
+					effecttype="Magic Splash"
+				>
+					<recordheroaggression  />
+					<aggression />
+					<combatevent effecttype="Counterable">
+						<onimpact>
+							<applystate name="State_Ace_Ability2_Debuff" duration="3500" />
+							<getconstant name="damage" adjustmentsource="this_entity" />
+							<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+						</onimpact>
+					</combatevent>
+				</areaofeffect>
+				<delete target="this_entity" />	
+			</hasbinds>
+		</targettype>
+	</ontouch>
+
+	<onimpact>
+		<targettype type="alive" target="source_entity" >
+			<hasbinds>
+				<propareaeffect center="source_entity" radius="250" anim="flamehit" />
+				<areaofeffect
+					radius="250"
+					targetselection="all"
+					targetscheme="enemy_units_and_buildings"
+					effecttype="Magic Splash"
+				>
+					<recordheroaggression  />
+					<aggression />
+					<combatevent effecttype="Counterable">
+						<onimpact>
+							<applystate name="State_Ace_Ability2_Debuff" duration="3500" />
+							<getconstant name="damage" adjustmentsource="this_entity" />
+							<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+						</onimpact>
+					</combatevent>
+				</areaofeffect>
+				
+
+				<playeffect effect="effects/impact.effect" source="source_position" target="" occlude="true" />
+				<playeffect effect="effects/impact_fist.effect" source="source_entity" target="" occlude="true" />
+			</hasbinds>
+		</targettype>
+	</onimpact>
+</projectile>

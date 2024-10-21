@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.25">
+
+			<sound
+				life="3500"
+				falloffstart="500"
+				falloffend="2400"
+				volume="0.85"
+				sample="../sounds/sfx_trail.wav"
+			/>
+			
+			
+			
+			
+			<terrainemitter
+				count="1"
+				life="2000"
+				spawnrate="12"
+				particlelife="2000"
+				position="0 185 0"
+				offsetsphere="0 0 6"
+			>
+				<particle
+				>
+<!--
+					<billboard
+						delay="0"
+						material="/shared/effects/smaterials/flame_ring_ground.material"
+						startcolor=".5"
+						endcolor=".15"
+						life="250"
+						startsize="50"
+						midsize="170"
+						endsize="150"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="-50"
+					/>
+-->
+				
+				
+					<billboard
+						material="/shared/effects/smaterials/flame_ring_ground.material"
+						startcolor="0"
+						midcolor=".2"
+						endcolor="0"
+						midcolorpos=".25"
+						life="1500"
+						size="150"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="-50"
+					/>
+
+					<billboard
+						material="/shared/effects/smaterials/flame_ring_ground.material"
+						startcolor="0"
+						midcolor=".2"
+						endcolor="0"
+						midcolorpos=".25"
+						life="1500"
+						size="150"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="-50"
+						roll="-45"
+						rollspeed="10"
+					/>
+					
+					<billboard
+						material="/shared/effects/smaterials/flame_ring_ground.material"
+						startcolor="0"
+						midcolor=".2"
+						endcolor="0"
+						midcolorpos=".25"
+						life="1500"
+						size="150"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="-50"
+						roll="90"
+						rollspeed="-20"
+					/>
+
+					<billboard
+						material="/shared/effects/smaterials/flame_ring_ground.material"
+						startcolor="0"
+						midcolor=".2"
+						endcolor="0"
+						midcolorpos=".25"
+						life="1500"
+						size="150"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="-50"
+						roll="135"
+						rollspeed="20"
+					/>
+
+					<light
+						position="0 0 50"
+						life="1500"
+						startcolor="1 0 6"
+						endcolor="0 0 0"
+						falloffstart="0"
+						falloffend="125"
+					/>
+
+				</particle>
+			</terrainemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			<template name="">
+
+				<terrainemitter
+					delay="100"
+					life="420"
+					spawnrate="500"
+					minparticlelife="250"
+					maxparticlelife="750"
+					gravity="0"
+					minspeed="0"
+					maxspeed="150"
+					position="{zpos}"
+					material="/shared/effects/smaterials/firesprite_swirl_purple.material"	
+					minangle="0"
+					maxangle="1"
+					direction="0 0 1"
+					depthbias="25"
+					directionalspace="world"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						minstartscale=".5"
+						maxstartscale="1"
+						endscale="1"
+						startcolor="1 1 1"
+						midcolor=".85 0 1"
+						endcolor=".25 0 .35"
+						startalpha="0"
+						midalpha=".55"
+						endalpha="0"
+						midalphapos=".2"
+						startframe="0"
+						endframe="1"
+						startsize="40"
+						endsize="0"
+						turn="true"
+					/>
+				</terrainemitter>
+<!--
+				<terrainemitter
+					delay="100"
+					life="420"
+					spawnrate="100"
+					minparticlelife="100"
+					maxparticlelife="300"
+					gravity="0"
+					minspeed="0"
+					maxspeed="200"
+					position="{zpos}"
+					material="/shared/effects/smaterials/firesprite_blue.material"	
+					minangle="0"
+					maxangle="1"
+					direction="0 0 1"
+					depthbias="25"
+					directionalspace="world"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						minstartscale=".5"
+						maxstartscale="1"
+						endscale="1"
+						startcolor="0 .1 .35"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".2"
+						startframe="0"
+						endframe="1"
+						startsize="40"
+						endsize="0"
+						turn="true"
+					/>
+				</terrainemitter>
+-->
+			</template>
+			
+			<instance name="" zpos="20 0 0"/>
+			<instance name="" zpos="-20 0 0"/>
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- first hole -->
+			<terrainemitter
+				count="1"
+				life="550"
+				spawnrate="12"
+				particlelife="2000"
+				position="0 0 0"
+				offsetsphere="0 0 6"
+			>
+				<particle
+				>
+					<groundsprite
+						delay="150"
+						position="0 0 0"
+						life="600"
+						material="/shared/effects/smaterials/dirtpile_groundsprite.material"
+						size="90"
+						color=".4"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".75"
+						minyaw="0"
+						maxyaw="360"
+					/>
+
+					<groundsprite
+						delay="150"
+						position="0 0 0"
+						life="500"
+						material="/shared/effects/smaterials/torch_hole_overlay.material"
+						size="36"
+						color="1 1 1"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".75"
+						minyaw="90"
+						maxyaw="90"
+					/>
+					
+					<groundsprite
+						delay="150"
+						position="0 0 0"
+						life="500"
+						material="/shared/effects/smaterials/torch_hole_overlay.material"
+						size="36"
+						color="1 1 1"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".75"
+					/>
+<!--
+					<billboard
+					delay="150"
+					position="0 0 0"
+						life="600"
+						startcolor="0 0 0"
+						midcolor=".125 0 .35"
+						endcolor="0 0 0"
+						midcolorpos=".15"
+						size="150"
+						material="/shared/effects/smaterials/whitedot.material"
+						depthbias="-25"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						directionalspace="local"
+					/>
+-->
+				</particle>
+			</terrainemitter>
+			
+			<!-- 2nd hole -->
+			<terrainemitter
+				count="1"
+				life="550"
+				spawnrate="12"
+				particlelife="2000"
+				position="0 120 0"
+				offsetsphere="0 0 6"
+			>
+				<particle
+				>
+					<groundsprite
+						delay="400"
+						position="0 0 0"
+						life="400"
+						material="/shared/effects/smaterials/dirtpile_groundsprite.material"
+						size="90"
+						color=".4"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".75"
+						minyaw="0"
+						maxyaw="360"
+					/>
+
+					<groundsprite
+						delay="400"
+						position="0 0 0"
+						life="300"
+						material="/shared/effects/smaterials/torch_hole_overlay.material"
+						size="36"
+						color="1 1 1"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".75"
+						minyaw="90"
+						maxyaw="90"
+					/>
+					
+					<groundsprite
+						delay="400"
+						position="0 0 0"
+						life="300"
+						material="/shared/effects/smaterials/torch_hole_overlay.material"
+						size="36"
+						color="1 1 1"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".75"
+					/>
+
+				</particle>
+			</terrainemitter>
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+
+			
+			
+			
+
+			
+			
+			
+			
+			
+
+			<terrainemitter
+				spawnrate="16"
+				particlelife="2000"
+				position="0 0 0"
+				offsetsphere="0 150 0"
+			>
+				<particle
+				>
+					<model
+						position="0 0 0"
+						minlife="500"
+						maxlife="1000"
+						name="emitter0" 
+						anim="idle"
+						model="/heroes/malady/ability_01/effects/rocks/model.mdf"
+						minscale=".125"
+						maxscale=".175"
+						color="1.7 1.35 1"
+						startalpha=".75"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".75"
+						minyaw="0"
+						maxyaw="360"
+					/>
+				</particle>
+			</terrainemitter>
+
+			<simpleemitter
+			count="1"
+				spawnrate="10"
+				particlelife="5000"
+				minangle="0"
+				maxangle="0"
+				direction="0 -1 0"
+				position="0 10 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						life="1650"
+						model="hump/model.mdf"
+						material="dragon/material.material"
+						anim="idle"
+						expirelife="500"
+						startcolor="1.5"
+						endcolor="-2"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".75"
+						directionalspace="local"
+						lockup="true"
+						lockright="true"
+						pitch="0"
+						yaw="180"
+						position="0 0 20"
+						scale=".75"
+					>
+					</model>
+
+					<billboard
+						delay="150"
+						position="0 -25 0"
+						life="600"
+						startcolor="0 0 0"
+						midcolor="0 .35 1"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						size="150"
+						material="/shared/effects/smaterials/whitedot.material"
+						depthbias="-25"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startheight="300"
+						endheight="400"
+						width="165"
+						directionalspace="local"
+					/>
+					
+					<billboard
+						delay="150"
+						position="0 -25 0"
+						life="600"
+						startcolor="0 0 0"
+						midcolor="0 .075 .25"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						size="150"
+						material="/shared/effects/smaterials/whitedot.material"
+						depthbias="-25"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startheight="300"
+						endheight="400"
+						width="165"
+						directionalspace="local"
+					/>
+					
+<!--
+					<billboard
+					delay="150"
+					position="20 -70 0"
+						life="850"
+						startcolor="0 0 0"
+						midcolor=".125 0 .25"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						size="150"
+						material="/shared/effects/smaterials/whitedot.material"
+						depthbias="-25"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startheight="100"
+						endheight="300"
+						width="35"
+						directionalspace="local"
+					/>
+					
+					<billboard
+					delay="150"
+					position="-20 -60 0"
+						life="850"
+						startcolor="0 0 0"
+						midcolor=".125 0 .25"
+						endcolor="0 0 0"
+						midcolorpos=".5"
+						size="150"
+						material="/shared/effects/smaterials/whitedot.material"
+						depthbias="-25"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startheight="100"
+						endheight="320"
+						width="35"
+						directionalspace="local"
+					/>
+-->
+				</particle>
+			</simpleemitter>
+
+      </particlesystem>
+   </definitions>
+<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<wait duration="20000"/>
+</thread>
+</effect>

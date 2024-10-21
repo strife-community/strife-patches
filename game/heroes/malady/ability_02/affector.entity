@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Malady_Ability2"
+	
+	radius="300"
+	targetselection="all"
+	targetscheme="enemy_units_and_buildings"
+	impactinterval="250"
+	lifetime="4900"
+	effecttype="Magic"
+	touchpropradius="270"
+	touchpropanim="hit"
+
+	hazardradius="330"
+>
+
+	<onspawn>
+		<playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/ring_ally.effect" source="this_entity" occlude="true" visibility="allies"/>
+	</onspawn>
+
+	<oninterval>
+		<playeffect effect="effects/ring_pulse.effect" source="this_entity" target="this_entity" occlude="true" />
+	</oninterval>
+
+	<onimpact>
+		<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+		<combatevent effecttype="Counterable">
+			<onimpact>	
+				<cantarget targetscheme="enemy_units" >
+				<getconstant name="damage" adjustmentsource="this_entity" />
+				<setvar0 a="result" b="20" op="div" />
+				
+				<damage effecttype="Magic Splash DOT" amount="1" b="var0" op="mult" />
+				
+				<!-- slow targets, unless they've dispelled it, then don't apply it again -->
+				<hasstate name="State_Malady_Ability2_Blocker">
+					<hasstate name="State_Malady_Ability2_Unblocker">
+						<applystate name="State_Malady_Ability2" duration="1000"/>
+					</hasstate>
+				</hasstate>
+				<else>
+					<applystate name="State_Malady_Ability2" duration="1000"/>
+					<applystate name="State_Malady_Ability2_Blocker" duration="7000"/>
+					<applystate name="State_Malady_Ability2_Unblocker" duration="7000"/>
+				</else>
+				</cantarget>
+					<cantarget targetscheme="enemy_buildings" >
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<setvar0 a="result" b="20" op="div" />
+					
+					<damage effecttype="Magic Splash DOT" amount=".5" b="var0" op="mult" />
+					</cantarget>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<onexpired>
+		<playeffect effect="effects/ring_death.effect" source="this_position" occlude="true" />
+	</onexpired>
+
+</affector>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Caprice_Ability2"
+
+	radius="215"
+	impactdelay="550"
+	targetselection="all"
+	targetscheme="enemy_units_and_buildings"
+	effecttype="Magic"
+	hazardradius="215"
+	touchpropradius="150"
+	touchpropanim="flamehit"
+>
+	<onspawn>
+		<playeffect effect="effects/impact.effect" source="target_position" target="" occlude="true" />		
+	</onspawn>
+	
+	<onimpact>
+		<combatevent effecttype="Counterable">
+			<onimpact>
+				<cantarget effecttype="CrowdControl" >
+					<applystate target="target_entity" name="State_Stunned" duration="1100,1250,1400,1550"  />
+				</cantarget>
+				<getconstant name="damage" adjustmentsource="this_entity" />
+				<damage effecttype="Magic Splash" significant="true" amount="1" b="result" op="mult"/>
+			</onimpact>
+		</combatevent>
+		<recordheroaggression  />
+		<aggression />
+	</onimpact>
+	
+	<modifier key="Caprice_Ability3_Learned" modpriority="100"
+	>
+		<onimpact>
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<cantarget effecttype="CrowdControl" >
+						<applystate target="target_entity" name="State_Stunned" duration="1100,1250,1400,1550"  />
+					</cantarget>
+					<applystate target="target_entity" name="State_Caprice_Ability3" duration="5000"  />
+					
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<damage effecttype="Magic Splash" significant="true" amount="1" b="result" op="mult"/>
+				</onimpact>
+			</combatevent>
+			<recordheroaggression  />
+			<aggression />
+		</onimpact>
+	</modifier>
+</affector>

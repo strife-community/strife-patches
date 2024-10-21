@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Flak_Ability2"
+
+	speed="1600"
+
+	gravity="13000"
+
+	model="/shared/models/invis.mdf"
+	modelscale="1.7"
+	traileffect="effects/trail.effect"
+
+>
+
+	<onimpact>
+		<spawnaffector name="Affector_Flak_Ability2" target="target_position" />
+		<playeffect effect="effects/impact.effect" source="target_position" position="0 0 50" target="" occlude="true" />
+		<recordheroaggression  />
+		<aggression />
+	</onimpact>
+
+</projectile>

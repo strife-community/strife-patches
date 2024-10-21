@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Trixie_Ability1"
+
+	speed="1500" 
+
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	
+	touchpropradius="120"
+	touchpropanim="hit"
+	hazardradius="350"
+	hazardoffset="175"
+
+>
+
+	<onspawn>
+		<spawnunit name="Gadget_Trixie_Ability1_Vision" count="1" target="source_position" pushentity="true" offset="0 50 0" />
+		<bind entity="this_entity" target="stack_entity" />
+		<setproxy entity="this_proxy_entity" target="stack_entity" />
+	</onspawn>
+
+	<onimpact>
+		<distance source="this_proxy_entity" target="target_position"  />
+		<setpos0 position="this_proxy_entity" positionend="target_position" positionmodifier="pointpastline" positionvalue="result" snaptoterrain="true"  />
+		<spawnprojectile name="Projectile_Trixie_Ability1_Bounce" source="target_position" proxy="this_proxy_entity" target="pos0" offset="0 0 0" />
+		
+		<playeffect effect="effects/aoe_1.effect" source="target_position" occlude="true" />
+		<propareaeffect center="this_position" radius="260" anim="flamehit" />
+
+		<areaofeffect
+			radius="260"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic Splash"
+
+		>
+			<applystate name="State_Trixie_Ability1_Slow" duration="1000" target="target_entity" />
+			<applystate name="State_Trixie_Ability1_Damage" duration="2000" target="target_entity" />
+			<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+			
+			<recordheroaggression  />
+			<aggression />
+		</areaofeffect>
+		
+	</onimpact>
+	
+
+</projectile>

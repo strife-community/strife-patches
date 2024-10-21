@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Eanu_Ability4"
+
+	speed="850"
+	gravity="2500"
+
+	modelscale="1.0"
+	model="/shared/models/invis.mdf"
+	traileffect=""
+	canturn="false"
+	flying="true"
+	flyheight="150"
+	
+	touchradius="400"
+	touchradiusdiradjust="true"
+	touchtargetscheme="enemy_units_and_buildings"
+	toucheffecttype=""
+	
+	maxtouchespertarget="1"
+>
+
+	<onimpact>
+		<playeffect effect="effects/splash_aoe.effect" source="this_position" occlude="true" />
+		<areaofeffect
+				radius="400"
+				center="this_position"
+				targetselection="all"
+				targetscheme="enemy_units_and_buildings"
+			>
+				<getconstant name="stun_duration" adjustmentsource="this_entity" />
+				<setvar0 a="result" b="1000" op="mult" />
+				<applystate name="State_Stunned" duration="var0"/>
+				<getconstant name="damage" adjustmentsource="this_entity" />
+				<damage effecttype="Magic Splash" significant="true" amount="1" b="result" op="mult"  />
+			<applystate name="State_Eanu_Wet" target="target_entity" duration="5000"/>	
+			<recordheroaggression  />
+				<aggression />
+		</areaofeffect>
+		<kill target="proxy_entity" source="" />
+		<spawnunit name="Gadget_Eanu_Ability4_Linger" count="1" target="target_position" />
+	</onimpact>
+	
+	<ontouch>
+		<applystate name="State_Eanu_Wet" duration="5000"/>
+	</ontouch>
+
+	
+</projectile>

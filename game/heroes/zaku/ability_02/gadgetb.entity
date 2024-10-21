@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Zaku_Ability2b"
+	
+	icon=""
+	portrait=""
+	modelscale="1.1"
+	model="effects/web_legs/web_legs_closed/model.mdf"
+	skin=""
+	
+	passiveeffect="effects/aoe_burst.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	unitwalking="true"
+	treewalking="true"
+	nothreat="true"
+	infoheight="100"
+	
+	isselectable="false"
+	invulnerable="true"
+	
+	preglobalscale="1.0"
+	effectscale="1.0"
+	boundsheight="20"
+	boundsradius="80"
+	selectionradius="80"
+	targetoffset="0 0 0"
+	
+	maxhealth="2"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+	
+	sightrangeday="400"
+	sightrangenight="400"
+
+	attacktype="none"
+	
+	corpsetime="0"
+	deathtime="500"
+	corpsefadetime="0"
+	
+	blocking="false"
+	
+	lifetime="1300,1700,2100,2500"
+	showlifetime="true"
+	
+	goldbountymin="20"
+	goldbountymax="20"
+	
+	isdragselectablemulti="false"
+	noglobalselect="true"
+	
+>	
+
+
+</gadget>
