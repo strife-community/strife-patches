@@ -76,7 +76,7 @@
 			<label textalign="center" textvalign="center" font="subdyn_9" color="#571000" outline="1" outlinecolor="#ffb525" content="general_new" noclick="1" visible="1" />
 		</panel>
 	</template>
-
+    
 	<template name="main_pregame_hero_template">
 		<panel x="{x}" width="91s" height="110s" visible="{visible=true}">
 			<panel y="2s" width="98%" height="98@" align="center" noclick="1">
@@ -112,6 +112,29 @@
 
 				<!-- New sign -->
 				<instance name="main_pregame_new_sign" x="-1s" y="-2s" width="32s" height="32s" isNew="{isNew=0}"/>
+                
+                <!-- Popular hero -->
+                <panel name="main_pregame_popular_hero_icon_{index}" x="57%" y="-5s" width="40s" height="40s" visible="{isPopular=0}" color="invisible"
+                >
+                    <image 
+                        texture="/ui/main/shared/textures/hourglass.tga"
+                        onmouseoverlua="simpleTipGrowYUpdate(true, nil, Translate('selection_long_queue_hero_1'), Translate('selection_long_queue_hero_1_desc'), 320)"
+                        onmouseoutlua="simpleTipGrowYUpdate(false)"
+                    />
+                    <modelpanel visible="1"
+                        noclick="true"
+                        x="25s" y="-2s" align="center" valign="center"
+                        width="+32s" height="+14s"
+                        model="/shared/models/invis.mdf"
+                        effect="/ui/main/shared/effects/boost_rocket_flames.effect"
+                        camerapos="0 0 10"
+                        cameraangles="0 0 0"
+                        camerafov="80"
+                        depthclear="true"
+                        depthcompress="true"
+                    />
+                    <!--label textalign="center" textvalign="center" font="subdyn_9" color="#571000" outline="1" outlinecolor="#ffb525" content="general_new" noclick="1" visible="1" /-->
+                </panel>
 			</panel>
 			<label content="{HeroName}" font="subdyn_12" valign="bottom" y="-3s" height="15s" textalign="center" wrap="1" color="#729fad" noclick="true"/>
 			<label name="main_pregame_hero_{prefix}{index}_hero_selected" group="main_pregame_hero{prefix}_hero_selected" content="{HeroName}" font="subdyn_12" valign="bottom" y="-3s" height="15s" textalign="center" wrap="1" color="#30cdff" noclick="true" visible="0"/>
