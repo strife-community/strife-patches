@@ -37,8 +37,8 @@
 	<onimpact>
 		<spawnaffector name="Affector_Moxie_Ability4" target="target_position" />
 		<spawnunit name="Gadget_MoxieDummyReveal" target="target_position" />
-		<playeffect effect="effects/ring.effect" target="target_position" source="target_position" occlude="true" visibility="enemies"/>
-		<playeffect effect="effects/affector.effect" source="target_position" occlude="true"/>
+		<playeffect effect="effects/ring.effect" target="target_position" source="target_position" occlude="true" visibility="enemies" sightedradius="325" />
+		<playeffect effect="effects/affector.effect" source="target_position" occlude="true" sightedradius="325" />
 	</onimpact>
 	
 

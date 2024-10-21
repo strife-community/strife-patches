@@ -20,7 +20,7 @@
 	<onimpact>
 		
 		<compare a="param" b="1" op="eq" >
-			<playeffect effect="effects/aoe_3.effect" occlude="true" source="target_position" />
+			<playeffect effect="effects/aoe_3.effect" occlude="true" source="target_position" sightedradius="260" />
 			<propareaeffect center="this_position" radius="260" anim="flamehit" />
 			<kill target="this_proxy_entity" source="" />
 			
@@ -46,7 +46,7 @@
 			<setpos0 position="this_proxy_entity" positionend="target_position" positionmodifier="pointpastline" positionvalue="var0" snaptoterrain="true"  />
 			<spawnprojectile name="Projectile_Trixie_Ability1_Bounce" source="target_position" param="1" target="pos0" offset="0 0 0" />
 			
-			<playeffect effect="effects/aoe_2.effect" occlude="true" source="target_position" />
+			<playeffect effect="effects/aoe_2.effect" occlude="true" source="target_position" sightedradius="260" />
 			<propareaeffect center="this_position" radius="260" anim="flamehit" />
 			<kill target="this_proxy_entity" source="" />
 			

@@ -43,11 +43,11 @@
 	<onkilled>
 		<compare a="accumulator" b="0" op="ne">
 			<spawnaffector name="Affector_Carter_Ability2" proxy="this_proxy_entity" owner="this_owner_entity" source="this_owner_entity" target="source_position" param="1" />
-			<playeffect effect="effects/impact_lit.effect" source="source_position" target="" occlude="true" />	
+			<playeffect effect="effects/impact_lit.effect" source="source_position" target="" occlude="true" sightedradius="250" />	
 		</compare>
 		<else>
 			<spawnaffector name="Affector_Carter_Ability2" proxy="this_proxy_entity" owner="this_owner_entity" source="this_owner_entity" target="source_position" param="0" />
-			<playeffect effect="effects/impact.effect" source="source_position" target="" occlude="true" />		
+			<playeffect effect="effects/impact.effect" source="source_position" target="" occlude="true" sightedradius="250" />		
 		</else>
 	</onkilled>
 	

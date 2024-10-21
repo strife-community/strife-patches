@@ -19,7 +19,7 @@
 	toucheffecttype="Magic Splash"
 	touchradiusdiradjust="true"
 
-	alwaystransmitdata="true"
+    sightedradius="300"
 >
 	<onspawn>
 		<playeffect effect="effects/link.effect" target="this_entity" source="source_entity" />

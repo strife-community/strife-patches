@@ -66,7 +66,7 @@
 				</areaofeffect>
 				
 
-				<playeffect effect="effects/impact.effect" source="source_position" target="" occlude="true" />
+				<playeffect effect="effects/impact.effect" source="source_position" target="" occlude="true" sightedradius="250" />
 				<playeffect effect="effects/impact_fist.effect" source="source_entity" target="" occlude="true" />
 			</hasbinds>
 		</targettype>

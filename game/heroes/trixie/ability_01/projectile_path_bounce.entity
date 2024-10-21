@@ -20,10 +20,10 @@
 	<onimpact>
 		
 		<compare a="param" b="1" op="eq" >
-			<playeffect effect="effects/ring_ally.effect" target="target_position" source="target_position" duration="1500" visibility="allies"/>
+			<playeffect effect="effects/ring_ally.effect" occlude="true" target="target_position" source="target_position" duration="1500" visibility="allies"/>
 			<playeffect effect="effects/ring_ally.effect" occlude="true" source="target_position" duration="1500" visibility="allies"/>
-			<playeffect effect="effects/ring_enemy.effect" target="target_position" source="target_position" duration="1500" visibility="enemies"/>
-			<playeffect effect="effects/ring_enemy.effect" occlude="true" source="target_position" duration="1500" visibility="enemies"/>
+			<playeffect effect="effects/ring_enemy.effect" occlude="true" target="target_position" source="target_position" duration="1500" visibility="enemies" sightedradius="260" />
+			<playeffect effect="effects/ring_enemy.effect" occlude="true" source="target_position" duration="1500" visibility="enemies" sightedradius="260" />
 			
 			
 		</compare>
@@ -36,7 +36,7 @@
 			<spawnprojectile name="Projectile_Trixie_Ability1_Path_Bounce" source="target_position" param="1" target="pos0" offset="0 0 0" />
 			
 			<playeffect effect="effects/ring_ally.effect" occlude="true" source="target_position" duration="1500" visibility="allies"/>
-			<playeffect effect="effects/ring_enemy.effect" occlude="true" source="target_position" duration="1500" visibility="enemies"/>
+			<playeffect effect="effects/ring_enemy.effect" occlude="true" source="target_position" duration="1500" visibility="enemies" sightedradius="260" />
 			
 			
 			

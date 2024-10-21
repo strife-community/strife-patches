@@ -17,6 +17,7 @@
 	iscontrollable="false"
 	selectionradius="0"
 	targetoffset="0 0 0"
+    sightedradius="300"
 
 	canrotate="false"
 	ismobile="false"
@@ -39,4 +40,7 @@
 	clearvision="true"
 	drawonmap="false"
 >
+    <onspawn>
+        <playeffect effect="effects/cast.effect" source="source_position" target="source_entity" occlude="true" sightedradius="300" />
+    </onspawn>
 </gadget>

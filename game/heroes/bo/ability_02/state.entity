@@ -47,9 +47,9 @@
 			<playeffect effect="effects/sound.effect" source="source_entity" />
 		</compare>
 		<compare a="result" b="3" op="gt">
-			<playeffect effect="effects/sound.effect" source="source_entity" />
+			<playeffect effect="effects/sound.effect" source="source_entity" sightedradius="300" />
 		</compare>
-		<playeffect effect="effects/spin.effect" source="source_position" occlude="true" />
+		<playeffect effect="effects/spin.effect" source="source_position" occlude="true" sightedradius="300" />
 	</onimpact>
 	
 	

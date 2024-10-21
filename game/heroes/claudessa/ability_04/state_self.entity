@@ -30,11 +30,11 @@
 
 	<onexpired>
 		<kill target="this_proxy_entity" source="" />
-		<playeffect effect="effects/sound_end.effect" source="source_entity" target="source_entity" occlude="true" />
+		<playeffect effect="effects/sound_end.effect" source="source_position" target="source_entity" occlude="true" sightedradius="300" />
 	</onexpired>
 
 	<oninflict>
-		<playeffect effect="effects/sound.effect" source="source_entity" target="source_entity" occlude="true" />
+		<playeffect effect="effects/sound.effect" source="source_position" target="source_entity" occlude="true" sightedradius="300" />
 	</oninflict>
 
 </state>

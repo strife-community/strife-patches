@@ -25,7 +25,7 @@
 	<constant name="damage_scale" value="10" adjustment="none" noshowintooltip="true"/>
 	
 	<!-- tooltip only -->
-	<constant name="stun" value="1,1.25,1.5,1.75" adjustment="none" floatprecision="2" />
+	<constant name="stun" value="1,1.2,1.4,1.6" adjustment="none" floatprecision="1" />
 	
 	<onimpact >
 		<setactivemodifierkey name="charging" />

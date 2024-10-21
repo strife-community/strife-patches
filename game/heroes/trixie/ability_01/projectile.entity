@@ -25,7 +25,7 @@
 		<setpos0 position="this_proxy_entity" positionend="target_position" positionmodifier="pointpastline" positionvalue="result" snaptoterrain="true"  />
 		<spawnprojectile name="Projectile_Trixie_Ability1_Bounce" source="target_position" proxy="this_proxy_entity" target="pos0" offset="0 0 0" />
 		
-		<playeffect effect="effects/aoe_1.effect" source="target_position" occlude="true" />
+		<playeffect effect="effects/aoe_1.effect" source="target_position" occlude="true" sightedradius="260" />
 		<propareaeffect center="this_position" radius="260" anim="flamehit" />
 
 		<areaofeffect

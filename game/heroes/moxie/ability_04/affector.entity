@@ -17,7 +17,7 @@
 		<propareaeffect center="this_position" radius="275" anim="flamehit" />
 		<distance target="target_entity" source="this_entity" />
 		<compare a="result" b="146" op="le" >
-			<playeffect effect="effects/impact_crit.effect" source="target_position" target="target_position" occlude="true"  />
+			<playeffect effect="effects/impact_crit.effect" source="target_position" target="target_position" occlude="true" sightedradius="325" />
 			<playeffect effect="effects/impact_crit_enemy.effect" source="target_entity" target="target_entity" occlude="true"  />
 			<combatevent effecttype="Counterable">
 				<onimpact>
@@ -37,7 +37,7 @@
 			</combatevent>
 		</compare>
 		<else>
-			<playeffect effect="effects/impact.effect" source="target_position" target="target_position" occlude="true"  />
+			<playeffect effect="effects/impact.effect" source="target_position" target="target_position" occlude="true" sightedradius="325" />
 			<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" occlude="true"  />
 			<combatevent effecttype="Counterable">
 				<onimpact>
@@ -53,7 +53,7 @@
 	
 	<onexpired>
 		<compare a="param" b="1" op="eq" >
-			<playeffect effect="effects/impact_sound.effect"  />
+			<playeffect effect="effects/impact_sound.effect" sightedradius="325" />
 		</compare>
 	</onexpired>
 

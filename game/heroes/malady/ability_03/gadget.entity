@@ -27,6 +27,7 @@
 	boundsradius="42"
 	selectionradius="0"
 	targetoffset="0 0 0"
+    sightedradius="300"
 
 	canrotate="false"
 	ismobile="false"

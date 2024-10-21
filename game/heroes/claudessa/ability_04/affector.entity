@@ -11,11 +11,12 @@
 	effecttype=""
 	persist="true"
 	hazardthreat="extreme"
+    sightedradius="350"
 >
 
 	<onspawn>
-		<playeffect effect="effects/ground_initial_enemies.effect" source="this_entity" occlude="true" visibility="enemies"/>
-		<playeffect effect="effects/ground_initial_allies.effect" source="this_entity" occlude="true" visibility="allies"/>
+		<playeffect effect="effects/ground_initial_enemies.effect" source="this_entity" occlude="true" visibility="enemies" sightedradius="350" />
+		<playeffect effect="effects/ground_initial_allies.effect" source="this_entity" occlude="true" visibility="allies" />
 	</onspawn>
 
 	<onframeimpact>

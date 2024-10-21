@@ -22,6 +22,7 @@
 	boundsradius="16"
 	selectionradius="36"
 	targetoffset="0 0 0"
+    sightedradius="300"
 
 	movespeed="0"
 	turnrate="0"
@@ -51,7 +52,7 @@
 
 	<onspawn>
 		<playeffect effect="effects/ring_ally.effect" source="this_entity" visibility="allies" occlude="true" />
-		<playeffect effect="effects/ring.effect" source="this_entity" visibility="enemies" occlude="true" />
+		<playeffect effect="effects/ring.effect" source="this_entity" visibility="enemies" occlude="true" sightedradius="300"/>
 		<propareaeffect center="this_position" radius="350" anim="flamehit" />
 		
 		<areaofeffect

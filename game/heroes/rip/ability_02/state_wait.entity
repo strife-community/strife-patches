@@ -14,8 +14,8 @@
 		<playanim name="attack_2_faster" target="source_entity" source="source_entity"/>   
 		
 		<setpos0 position="source_position" offset="0 0 -300" />
-		<playeffect effect="effects/impact_arrival.effect" source="pos0" target="pos0" occlude="true"/>
-		<playeffect effect="effects/impact_arrival_fade.effect" source="source_entity" target="source_entity" occlude="true"/>
+		<playeffect effect="effects/impact_arrival.effect" source="pos0" target="pos0" occlude="true" sightedradius="300" />
+		<playeffect effect="effects/impact_arrival_fade.effect" source="source_entity" target="source_entity" occlude="true" sightedradius="300" />
 		
 		<areaofeffect
 			radius="300"

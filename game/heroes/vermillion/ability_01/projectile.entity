@@ -31,6 +31,6 @@
 			<aggression />
 			<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity"/>
 		</areaofeffect>
-		<playeffect effect="effects/gadget_state.effect" source="target_position" occlude="true"/>
+		<playeffect effect="effects/gadget_state.effect" source="target_position" occlude="true" sightedradius="300" />
 	</onimpact>
 </projectile>

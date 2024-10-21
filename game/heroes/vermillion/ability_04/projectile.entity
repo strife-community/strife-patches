@@ -32,6 +32,6 @@
 			<aggression />
 			<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
 		</areaofeffect>
-		<playeffect effect="effects/explosion.effect" source="this_position" target="" occlude="true" />
+		<playeffect effect="effects/explosion.effect" source="this_position" target="" occlude="true" sightedradius="200"/>
 	</onimpact>
 </projectile>

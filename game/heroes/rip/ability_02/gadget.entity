@@ -14,6 +14,7 @@
 	iscontrollable="false"
 	selectionradius="0"
 	targetoffset="0 0 0"
+    sightedradius="300"
 
 	canrotate="false"
 	ismobile="false"
@@ -39,7 +40,7 @@
 
 	<onspawn>
 		<playeffect effect="effects/ring_ally.effect" target="this_entity" source="this_entity" occlude="true" visibility="allies"/>
-		<playeffect effect="effects/ring.effect" target="this_entity" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/ring.effect" target="this_entity" source="this_entity" occlude="true" visibility="enemies" sightedradius="300" />
 	</onspawn>
 
 </gadget>

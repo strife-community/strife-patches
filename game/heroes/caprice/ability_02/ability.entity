@@ -34,7 +34,7 @@
 	
 	<onimpact>
 		<spawnaffector name="Affector_Caprice_Ability2" target="target_position" />
-		<playeffect effect="effects/ring.effect" target="target_position" source="target_position" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/ring.effect" target="target_position" source="target_position" occlude="true" visibility="enemies" sightedradius="215" />
 		<playeffect effect="effects/ring_ally.effect" target="target_position" source="target_position" occlude="true" visibility="allies"/>
 		
 	</onimpact>

@@ -9,12 +9,13 @@
 	effecttype=""
 >
 	<oninflict>
-		<playeffect effect="effects/impact_sound.effect" target="target_position"/>
+		<playeffect effect="effects/impact_sound.effect" source="target_entity" target="" sightedradius="350" />
 	</oninflict>
 
 	<onframe>
 		<getconstant name="damage_dot" adjustmentsource="this_entity" />
 		<setvar0 a="result" b="frametime" op="mult" />
 		<damage effecttype="Magic DOT Indirect Splash" amount="1" b="var0" op="mult"/>
+		<aggression />
 	</onframe>
 </state>

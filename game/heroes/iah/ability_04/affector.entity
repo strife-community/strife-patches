@@ -13,17 +13,17 @@
 
 	<onspawn>
 	
-		<playeffect effect="effects/eclipse.effect" source="target_position" occlude="true" />
+		<playeffect effect="effects/eclipse.effect" source="target_position" occlude="true" sightedradius="300" />
 		
 		<playeffect effect="effects/ring_ally.effect" source="target_position" occlude="true" visibility="allies" />
-		<playeffect effect="effects/ring_enemy.effect" source="target_position" occlude="true" visibility="enemies" />
+		<playeffect effect="effects/ring_enemy.effect" source="target_position" occlude="true" visibility="enemies" sightedradius="300" />
 	
 	</onspawn>
 
 	
 	<oninterval>
 	
-		<playeffect effect="effects/aoe_impact.effect" source="target_position" occlude="true" />
+		<playeffect effect="effects/aoe_impact.effect" source="target_position" occlude="true" sightedradius="300" />
 	
 		<areaofeffect
 			radius="300"
@@ -37,7 +37,7 @@
 			<getconstant name="damage" adjustmentsource="this_entity" />
 			<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
 
-			<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity"/>
+			<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" />
 
 		</areaofeffect>
 		
@@ -50,7 +50,7 @@
 			<getconstant name="heal" adjustmentsource="this_entity" />
 			<heal target="target_entity" a="1" b="result" op="mult" effecttype="Assist"/>
 
-			<playeffect effect="effects/impact_ally.effect" source="target_entity" target="target_entity"/>
+			<playeffect effect="effects/impact_ally.effect" source="target_entity" target="target_entity" />
 
 		</areaofeffect>
 		

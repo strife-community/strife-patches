@@ -26,6 +26,7 @@
 	selectionradius="26"
 	targetoffset="0 0 0"
 	combattype="Mine"
+    sightedradius="70"
 	
 	maxhealth="600"
 
@@ -49,7 +50,7 @@
 	blocking="false"
 >
 	<onkilled>
-		<playeffect effect="effects/death.effect" target="source_position" occlude="true" />	
+		<playeffect effect="effects/death.effect" target="source_position" occlude="true" sightedradius="300" />	
 		<propareaeffect center="this_position" radius="150" anim="flamehit" />
 		<areaofeffect
 			radius="300"

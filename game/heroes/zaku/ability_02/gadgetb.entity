@@ -27,6 +27,7 @@
 	boundsradius="80"
 	selectionradius="80"
 	targetoffset="0 0 0"
+    sightedradius="175"
 	
 	maxhealth="2"
 

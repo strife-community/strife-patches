@@ -6,6 +6,7 @@
 	portrait=""
 	
 	model="/shared/models/invis.mdf"
+    passiveeffect="effects/aoe.effect"
 
 
 	preglobalscale="1.4"
@@ -17,6 +18,7 @@
 	isselectable="false"
 	iscontrollable="false"
 	invulnerable="true"
+    sightedradius="300"
 	
 	drawonmap="false"
 
@@ -47,9 +49,8 @@
 >
 
 	<onspawn>
-		<playeffect effect="effects/aoe.effect" source="this_entity" target="source_position" occlude="true"/>
-			<playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="allies"/>
-		<playeffect effect="effects/ring_enemy.effect" source="this_entity" occlude="true" visibility="enemies"/>
+        <playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="allies"/>
+		<playeffect effect="effects/ring_enemy.effect" source="this_entity" occlude="true" visibility="enemies" sightedradius="300" />
 		<spawnaffector name="Affector_Buford_Ability1_Hazard" target="target_entity" proxy="this_entity" />
 	</onspawn>
 	
@@ -58,8 +59,8 @@
 	</ondeath>
 	
 	<onkilled>
-		<playeffect effect="effects/explosion.effect" target="source_position" occlude="true" />
-		<playeffect effect="effects/aoe2.effect" target="source_position" occlude="true" />
+		<playeffect effect="effects/explosion.effect" target="source_position" occlude="true" sightedradius="300" />
+		<playeffect effect="effects/aoe2.effect" target="source_position" occlude="true" sightedradius="300" />
 		<propareaeffect center="this_position" radius="150" anim="flamehit" />
 		<areaofeffect
 			radius="300"

@@ -27,6 +27,7 @@
 	boundsradius="42"
 	selectionradius="0"
 	targetoffset="0 0 0"
+    sightedradius="300"
 
 	canrotate="false"
 	ismobile="false"
@@ -47,7 +48,7 @@
 	
 >
 	<onspawn>
-		<playeffect effect="effects/state_gadget_one_enemy.effect" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/state_gadget_one_enemy.effect" source="this_entity" occlude="true" visibility="enemies" sightedradius="300"/>
 		<playeffect effect="effects/state_gadget_one_ally.effect" source="this_entity" occlude="true" visibility="allies"/>
 	</onspawn>
 

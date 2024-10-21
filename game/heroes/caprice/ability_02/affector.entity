@@ -12,7 +12,7 @@
 	touchpropanim="flamehit"
 >
 	<onspawn>
-		<playeffect effect="effects/impact.effect" source="target_position" target="" occlude="true" />		
+		<playeffect effect="effects/impact.effect" source="target_position" target="" occlude="true" sightedradius="215" />		
 	</onspawn>
 	
 	<onimpact>

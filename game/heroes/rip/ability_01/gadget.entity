@@ -15,16 +15,16 @@
 	lifetime="4000"
 	deathtime="0"
 	corpsetime="0"
-	alwaystransmitdata="true"
 	
 	hazardradius="350"
+    sightedradius="400"
 >
 	<aura state="State_Rip_Ability1" radius="350" targetscheme="enemy_units" effecttype="Magic" />
 	<aura state="State_Rip_Ability1_Ally" radius="350" targetscheme="ally_heroes" effecttype="Magic" />
 
 	<onspawn>
 		<playeffect effect="effects/ring_ally.effect" target="this_entity" source="this_entity" occlude="true" visibility="allies"/>
-		<playeffect effect="effects/ring.effect" target="this_entity" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/ring.effect" target="this_entity" source="this_entity" occlude="true" visibility="enemies" sightedradius="400" />
 	</onspawn>
 	
 	<onframe>

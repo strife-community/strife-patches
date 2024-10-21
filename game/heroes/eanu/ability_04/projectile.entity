@@ -21,7 +21,7 @@
 >
 
 	<onimpact>
-		<playeffect effect="effects/splash_aoe.effect" source="this_position" occlude="true" />
+		<playeffect effect="effects/splash_aoe.effect" source="this_position" occlude="true" sightedradius="400"/>
 		<areaofeffect
 				radius="400"
 				center="this_position"

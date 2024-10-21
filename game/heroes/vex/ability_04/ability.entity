@@ -36,7 +36,7 @@
 		<disjoint target="source_entity" />
 		
 		<playanim name="ability_4_land" source="source_entity" target="source_entity" />
-		<playeffect effect="effects/impact.effect" target="source_position" occlude="true"  />
+		<playeffect effect="effects/impact.effect" target="source_position" occlude="true" sightedradius="400" />
 		<propareaeffect center="source_position" radius="350" anim="flamehit" />
 		<expirestate name="State_Vex_Ability4_Self" target="source_entity" />
 		<areaofeffect radius="400" targetselection="all" targetscheme="enemy_units_and_buildings" effecttype="Magic" >
@@ -49,7 +49,7 @@
 					<cantarget effecttype="CrowdControl" >
 						<applystate target="target_entity" name="State_Stunned" duration="1000"  />
 					</cantarget>
-					<playeffect effect="effects/impact_enemy.effect" occlude="true" target="target_position" source="target_position"/>
+					<playeffect effect="effects/impact_enemy.effect" occlude="true" target="target_position" source="target_position" sightedradius="400" />
 				</onimpact>
 			</combatevent>
 		</areaofeffect>

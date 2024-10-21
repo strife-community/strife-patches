@@ -18,6 +18,7 @@
 	iscontrollable="false"
 	selectionradius="0"
 	targetoffset="0 0 0"
+    sightedradius="160"
 
 	canrotate="false"
 	ismobile="false"

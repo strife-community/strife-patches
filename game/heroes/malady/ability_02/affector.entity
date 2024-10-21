@@ -12,15 +12,16 @@
 	touchpropanim="hit"
 
 	hazardradius="330"
+    sightedradius="300"
 >
 
 	<onspawn>
-		<playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="enemies"/>
-		<playeffect effect="effects/ring_ally.effect" source="this_entity" occlude="true" visibility="allies"/>
+		<playeffect effect="effects/ring.effect" source="this_position" target="this_entity" occlude="true" visibility="enemies" sightedradius="300" />
+		<playeffect effect="effects/ring_ally.effect" source="this_position" target="this_entity" occlude="true" visibility="allies"/>
 	</onspawn>
 
 	<oninterval>
-		<playeffect effect="effects/ring_pulse.effect" source="this_entity" target="this_entity" occlude="true" />
+		<playeffect effect="effects/ring_pulse.effect" source="this_position" target="this_entity" occlude="true" sightedradius="300" />
 	</oninterval>
 
 	<onimpact>
@@ -56,7 +57,7 @@
 	</onimpact>
 	
 	<onexpired>
-		<playeffect effect="effects/ring_death.effect" source="this_position" occlude="true" />
+		<playeffect effect="effects/ring_death.effect" source="this_position" occlude="true" sightedradius="300" />
 	</onexpired>
 
 </affector>

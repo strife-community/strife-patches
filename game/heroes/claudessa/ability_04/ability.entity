@@ -6,7 +6,7 @@
 	
 	maxlevel="3"
 	requiredlevel="6,11,15"
-	casteffect="effects/cast.effect"
+	casteffect=""
 	anim="ability_4"
 
 	actiontype="target_self"

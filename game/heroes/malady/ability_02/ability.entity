@@ -25,7 +25,7 @@
 >
 	<constant name="damage" value="180,250,320,390" adjustment="ability" />
 	<onimpact>
-		<playeffect effect="effects/sound.effect" source="target_position" target="" occlude="true" />
+		<playeffect effect="effects/sound.effect" source="target_position" target="" occlude="true" sightedradius="300" />
 		<spawnaffector name="Affector_Malady_Ability2" target="target_position" />
 		<propareaeffect center="target_position" radius="230" anim="flamehit" />		
 		<areaofeffect

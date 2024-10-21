@@ -24,6 +24,7 @@
 	boundsradius="10"
 	selectionradius="26"
 	targetoffset="0 0 0"
+    sightedradius="1800"
 	
 	maxhealth="600"
 
@@ -47,5 +48,8 @@
 	
 	blocking="false"
 >
-
+    <onspawn>
+        <playeffect effect="effects/laser_ally.effect" source="this_entity" target="" visibility="allies" />
+		<playeffect effect="effects/laser.effect" source="this_entity" target="" visibility="enemies" sightedradius="1800"/>
+    </onspawn>
 </gadget>

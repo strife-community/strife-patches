@@ -36,7 +36,7 @@
 	</onattackeddamageevent>   
 	
 	<onimpact>
-		<playeffect effect="effects/ring.effect" target="target_position" source="target_entity" occlude="true" />
+		<playeffect effect="effects/ring.effect" target="target_position" source="target_position" occlude="true" sightedradius="700" />
 		<spawnaffector name="Affector_Pal_Ability4" target="source_position" param="charges"  />	
 		<compare a="charges" b="100" op="ge" >
 			<popup name="max" target="source_entity" source="source_entity"/>

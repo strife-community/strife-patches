@@ -16,6 +16,7 @@
 	targetoffset="0 0 0"
 	sightrangeday="400"
 	sightrangenight="400"
+    sightedradius="350"
 
 	canrotate="false"
 	ismobile="false"
@@ -45,8 +46,8 @@
 	<aura state="State_Aemon_Ability1_Buff" radius="350" targetscheme="ally_heroes" effecttype="Magic" /> 
 	
 	<onspawn>
-		<playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="enemies"/>
-		<playeffect effect="effects/ring_ally.effect" source="this_entity" occlude="true" visibility="allies"/>
+		<playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="enemies" sightedradius="350" />
+		<playeffect effect="effects/ring_ally.effect" source="this_entity" occlude="true" visibility="allies" />
 	</onspawn>
 	
 	<onframe>
