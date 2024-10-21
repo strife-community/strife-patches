@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<getconstant name="resistance" adjustmentsource="this_entity" />
+<state
+	name="State_Claudessa_Ability2"
+	
+	icon="icon.tga"
+
+	passiveeffect="effects/state_shields.effect"
+
+	
+	effecttype="StatusBuff Assist"
+	allowtransfer="true"
+
+	resistance="result"
+
+>
+
+</state>
+ 
