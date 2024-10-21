@@ -2010,7 +2010,6 @@ local function DisplayDyePreviewModel(skin, dye, specialEdition)
 		local AltAvatarTrigger = LuaTrigger.GetTrigger('HeroSelectHeroAltAvatarList'..skin)
 		ownGear = AltAvatarTrigger.canSelect
 		SetModel(main_pregame_dye_selection_heromodel, AltAvatarTrigger.modelPath)
-		main_pregame_dye_selection_heromodel:SetEffect(HeroSelectLocalPlayerInfo.previewPassiveEffect)
 		main_pregame_dye_selection_heromodel:SetModelOrientation(AltAvatarTrigger.previewAngles)
 		main_pregame_dye_selection_heromodel:SetModelPosition(AltAvatarTrigger.previewPos)
 		main_pregame_dye_selection_heromodel:SetModelScale(AltAvatarTrigger.previewScale)
