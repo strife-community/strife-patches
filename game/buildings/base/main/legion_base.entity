@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building
+	name="Building_LegionBase"
+	
+	icon="icon.tga"
+	portrait=""
+	model="crux/MainBase/model.mdf"
+	mapicon="/shared/icons/minimap_base.tga"
+	mapiconsize="0.048"
+	skin=""
+
+	ignoreteamattackcommands="true"
+	ignoreteammovecommands="true"
+	
+	unittype="MainBaseStructure Tower"
+	effectsignorefog="true"
+	passiveeffect="/world/sprops/well/crux/effects/idle.effect"
+	
+	aggroteamheropassiveeffect="/shared/tower_range_indicators/effects/main_base_structure/aoe_mbs.effect"
+	aggromyheropassiveeffect="/shared/tower_range_indicators/effects/main_base_structure/aoe_mbsAggroMe.effect"
+	herothreatradiuspassiveeffect="/shared/tower_range_indicators/effects/main_base_structure/aoe_mbs.effect"
+	herothreatradius="1600"
+	
+	destroyedsound=""
+	lowhealtheffect=""
+	lowhealthsound=""
+	selectsound=""
+
+	aggrosound="towertestaggro"	
+	
+	preglobalscale="0.9"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="256"
+	radiusheight="256"
+	boundsradius="210"
+	selectionradius="192"
+	targetoffset="0 0 400"
+	infoheight="630"
+
+	noheroarmorreduction="false"
+	
+	maxhealth="16200"
+	healthregen="0"
+
+	resistance="300"
+
+	canattack="true"
+	immunity="CrowdControlImmunity"
+	stunnedimmunity="true"
+	
+	attackduration="800"
+	attackactiontime="50"
+	attackcooldown="800"
+	attackdamagemin="300"
+	attackdamagemax="300"
+	attacknumanims="1"
+	attackoffset="0 200 300"
+	attackprojectile="Projectile_EvilTowerAttack"
+	attackrange="700"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Tower"
+	attackdamagetype="AttackDamage"
+	attacktargetscheme="attack_minus_neutrals_plus_mines"
+
+	inventory0="Ability_LegionBase_Shield"
+
+	hazardradius="700"
+	revealrange="1050"
+	revealtype="tower"
+
+	aggrorange="800"
+	sightrangeday="2500"
+	sightrangenight="2500"
+
+	attackdamagepercharge="1.5"
+	armorpercharge="1"
+	maxcharges="33"
+	
+	drawonmap="true"
+	isbase="true"
+	isphysical="true"
+	
+	sharedinventory0=""
+	sharedremoteshopaccess="Shop_Basic Shop_Boots Shop_Consumables Shop_MagicDefense Shop_MagicOffense Shop_PhysicalDefense Shop_PhysicalOffense Shop_Utility Shop_Offense Shop_VitalBoosters Shop_Artifacts Shop_Crafted"
+>
+	<aura state="State_Blank" radius="1600" notooltip="true" ignoreinvulnerable="true" targetscheme="enemy_heroes" reflexivestate="State_MainBaseRangeIndicator_Self" /> 
+
+	<onframe>
+		<compare a="accumulator" b="0" op="gt" >
+			<applystate name="State_MainBaseStructure_Music" target="this_entity" duration="-1" continuous="true" />
+		</compare>
+		<applystate name="State_MainBaseStructure_Scaling" target="this_entity" duration="-1" continuous="true" pushentity="true"/>
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype=""
+			ignoreinvulnerable="true"
+			targetselection="all"
+			radius="930"
+			maximpactspertarget="1"
+		>
+			<applystate name="State_Enemy_Range" duration="3000" target="source_entity" />
+		</areaofeffect>
+	</onframe>
+
+	<onattackeddamageevent>
+		<targettype type="hero">
+			<damagesupertype supertype="attack">
+				<playeffect effect="effects/attacked.effect" target="source_entity" />
+			</damagesupertype>
+		</targettype>
+		
+		<targettype type="hero">
+			<areaofeffect
+				targetscheme="ally_heroes"
+				effecttype=""
+				ignoreinvulnerable="true"
+				targetselection="all"
+				radius="1500"
+				maximpactspertarget="1"
+			>
+				<playconductorevent name="BaseDefend_3" entity="target_entity" />
+			</areaofeffect>
+			<areaofeffect
+				targetscheme="enemy_heroes"
+				effecttype=""
+				ignoreinvulnerable="true"
+				targetselection="all"
+				radius="1500"
+				maximpactspertarget="1"
+			>
+				<playconductorevent name="BaseAttack_3" entity="target_entity" />
+			</areaofeffect>
+		</targettype>
+
+		<setvar0 a="source_shield" b="source_health" op="add"/>
+		<compare a="damage_attempted" b="var0" op="ge" >
+			<compare a="target_team" b="1" op="eq" target="source_entity">
+				<pushentitybyname name="left_pillar" />
+				<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+				<pushentitybyname name="mid_pillar" />
+				<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+				<pushentitybyname name="right_pillar" />
+				<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+			</compare>
+
+			<compare a="target_team" b="2" op="eq" target="source_entity">
+				<pushentitybyname name="left_pillar2" />
+				<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+				<pushentitybyname name="mid_pillar2" />
+				<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+				<pushentitybyname name="right_pillar2" />
+				<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+			</compare>
+		</compare>
+	</onattackeddamageevent>
+
+	<ondeath>
+		<expirestate name="State_Kongor_TowerDisarm" target="this_entity"/>
+		<expirestate name="State_Kongor_TowerDisarm2" target="this_entity"/>
+		<compare a="target_team" b="1" op="eq" target="source_entity">
+			<pushentitybyname name="Weather_Gadget_One" />
+			<playeffect effect="/shared/effects/weather/defeat.effect" source="stack_entity" target="stack_entity" visibility="allies" />
+			<playeffect effect="/shared/effects/weather/victory.effect" source="stack_entity" target="stack_entity" visibility="enemies" />
+
+			<pushentitybyname name="left_pillar" />
+			<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+			<changeaccumulator entity="stack_entity" b="0" op="add" />
+			<compare a="result" b="0" op="eq" >
+				<setactivemodifierkey name="hit" entity="stack_entity" />
+				<playanim name="death_1" target="stack_entity" />
+			</compare>
+
+			<pushentitybyname name="mid_pillar" />
+			<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+			<changeaccumulator entity="stack_entity" b="0" op="add" />
+			<compare a="result" b="0" op="eq" >
+				<setactivemodifierkey name="hit" entity="stack_entity" />
+				<playanim name="death_1" target="stack_entity" />
+			</compare>
+
+			<pushentitybyname name="right_pillar" />
+			<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+			<changeaccumulator entity="stack_entity" b="0" op="add" />
+			<compare a="result" b="0" op="eq" >
+				<setactivemodifierkey name="hit" entity="stack_entity" />
+				<playanim name="death_1" target="stack_entity" />
+			</compare>
+		</compare>
+
+		<compare a="target_team" b="2" op="eq" target="source_entity">
+			<pushentitybyname name="Weather_Gadget_Two" />
+			<playeffect effect="/shared/effects/weather/defeat.effect" source="stack_entity" target="stack_entity" visibility="allies" />
+			<playeffect effect="/shared/effects/weather/victory.effect" source="stack_entity" target="stack_entity" visibility="enemies" />
+			<pushentitybyname name="left_pillar2" />
+			<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+			<changeaccumulator entity="stack_entity" b="0" op="add" />
+			<compare a="result" b="0" op="eq" >
+				<setactivemodifierkey name="hit" entity="stack_entity" />
+				<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+				<playanim name="death_1" target="stack_entity" />
+			</compare>
+
+			<pushentitybyname name="mid_pillar2" />
+			<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+			<changeaccumulator entity="stack_entity" b="0" op="add" />
+			<compare a="result" b="0" op="eq" >
+				<setactivemodifierkey name="hit" entity="stack_entity" />
+				<playanim name="death_1" target="stack_entity" />
+			</compare>
+
+			<pushentitybyname name="right_pillar2" />
+			<expirestate name="State_Kongor_TowerDisarm2" target="stack_entity"/>
+			<changeaccumulator entity="stack_entity" b="0" op="add" />
+			<compare a="result" b="0" op="eq" >
+				<setactivemodifierkey name="hit" entity="stack_entity" />
+				<playanim name="death_1" target="stack_entity" />
+			</compare>
+		</compare>
+	</ondeath>
+	
+	<onattackpredamage>
+		<expirestate name="State_ConsecutiveTowerHit" target="proxy_entity" />
+		<setproxy />
+		<targettype type="player_controlled">
+			<applystate name="State_ConsecutiveTowerHit" duration="3000" />
+			<applystate name="State_ConsecutiveTowerHit_Immunity" duration="300" />
+		</targettype>
+	</onattackpredamage>
+	
+	<onattackingdamageevent>
+		<targettype type="kongor">
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.66" op="mult" />
+		</targettype>
+	</onattackingdamageevent>
+	
+	<onattack>
+		<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+		<setvar0 a="source_attackdamage" />
+		<cantarget targetscheme="enemy_heroes">
+			<setvar0 a="var0" b="1.76" op="mult" />
+			<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="225 -140 300" param="var0" />
+			<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="-235 -140 300" param="var0" />
+		</cantarget>
+		<else>
+			<setvar0 a="var0" b="1.21" op="mult" />
+			<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="225 -140 300" param="var0" />
+			<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="-235 -140 300" param="var0" />
+		</else>
+	</onattack>
+
+	<modifier key="krytos_disabled" modpriority="110"
+	>
+		<onframe>
+			<compare a="target_team" b="1" op="eq" target="source_entity">
+				<pushentitybyname name="left_pillar" />
+				<applystate name="State_Kongor_TowerDisarm2" target="stack_entity" duration="100"/>
+				<pushentitybyname name="mid_pillar" />
+				<applystate name="State_Kongor_TowerDisarm2" target="stack_entity" duration="100"/>
+				<pushentitybyname name="right_pillar" />
+				<applystate name="State_Kongor_TowerDisarm2" target="stack_entity" duration="100"/>
+			</compare>
+
+			<compare a="target_team" b="2" op="eq" target="source_entity">
+				<pushentitybyname name="left_pillar2" />
+				<applystate name="State_Kongor_TowerDisarm2" target="stack_entity" duration="100"/>
+				<pushentitybyname name="mid_pillar2" />
+				<applystate name="State_Kongor_TowerDisarm2" target="stack_entity" duration="100"/>
+				<pushentitybyname name="right_pillar2" />
+				<applystate name="State_Kongor_TowerDisarm2" target="stack_entity" duration="100"/>
+			</compare>
+		</onframe>
+	</modifier>
+	
+	<modifier key="rax_destroyed_1" modpriority="100"
+		passiveeffect="/world/sprops/well/crux/effects/idle_1.effect"
+
+	>
+		<onattack>
+			<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+			<setvar0 a="source_attackdamage" />
+			<cantarget targetscheme="enemy_heroes">
+				<setvar0 a="var0" b="1.76" op="mult" />
+				<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="-235 -140 300" param="var0" />
+			</cantarget>
+			<else>
+				<setvar0 a="var0" b="1.21" op="mult" />
+				<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="-235 -140 300" param="var0" />
+			</else>
+		</onattack>
+	</modifier>
+
+
+	<modifier key="rax_destroyed_2" modpriority="100"
+		passiveeffect="/world/sprops/well/crux/effects/idle_2.effect"
+		attackoffset="225 -140 300"
+	>
+		<onattack>
+			<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+			<setvar0 a="source_attackdamage" />
+			<cantarget targetscheme="enemy_heroes">
+				<setvar0 a="var0" b="1.76" op="mult" />
+				<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="-235 -140 300" param="var0" />
+			</cantarget>
+			<else>
+				<setvar0 a="var0" b="1.21" op="mult" />
+				<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="-235 -140 300" param="var0" />
+			</else>
+		</onattack> 
+	</modifier>
+
+
+	<modifier key="rax_destroyed_3" modpriority="100"
+		passiveeffect="/world/sprops/well/crux/effects/idle_3.effect"
+		attackoffset="-235 -140 300"
+	>
+		<onattack >
+			<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+		</onattack >
+		
+	</modifier>
+
+
+	<modifier key="rax_destroyed_4" modpriority="100"
+		passiveeffect="/world/sprops/well/crux/effects/idle_4.effect"
+	>
+		<onattack>
+			<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+			<setvar0 a="source_attackdamage" />
+			<cantarget targetscheme="enemy_heroes">
+				<setvar0 a="var0" b="1.76" op="mult" />
+				<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="225 -140 300" param="var0" />
+			</cantarget>
+			<else>
+				<setvar0 a="var0" b="1.21" op="mult" />
+				<spawnprojectile name="Projectile_EvilMainBonusAttack" offset="225 -140 300" param="var0" />
+			</else>
+		</onattack>
+	</modifier>
+
+
+	<modifier key="rax_destroyed_5" modpriority="100"
+		passiveeffect="/world/sprops/well/crux/effects/idle_5.effect"
+	>
+		<onattack >
+			<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+		</onattack >
+	</modifier>
+
+	<modifier key="rax_destroyed_6" modpriority="100"
+		passiveeffect="/world/sprops/well/crux/effects/idle_6.effect"
+		attackoffset="225 -140 300"
+	>
+		<onattack >
+			<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+		</onattack >
+	</modifier>
+	
+	
+	<modifier key="rax_destroyed_7" modpriority="100"  canattack="false" passiveeffect="/world/sprops/well/crux/effects/state_frozen.effect" immunity="CrowdControlImmunity" stunnedimmunity="true" hazardradius="0"
+		disarmed="true"
+		attacktype="none"
+		aggroteamheropassiveeffect=""
+		aggromyheropassiveeffect=""
+		herothreatradiuspassiveeffect=""
+		aggrosound=""	
+	>
+
+	</modifier>
+	
+	<modifier key="tutorial3" modpriority="100"
+		maxhealth="5000"
+		attackdamagemin="30"
+		attackdamagemax="30"
+	>
+
+	</modifier>
+
+</building>
