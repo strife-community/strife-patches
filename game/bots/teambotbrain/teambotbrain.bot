@@ -110,4 +110,19 @@
 		goldscale="1.2"
 		expscale="1.3"
 	/>
+	<teampersonality
+		name="shattered_trials"
+		reactiontime="150"
+		clumpdistance="150"
+		allvision="0"
+		composition="medium"
+		mintargethealth="0"
+		maxtargethealth="0.6"
+		towerdive="0"
+		teamtargets="standard"
+		initialharasstime="0"
+		harasstime="1000"
+		goldscale="1.1"
+		expscale="1.1"
+	/>
 </bot>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texturelist>
+  <texture id="0" name="$checker"></texture>
+  <texture id="1" name="/world/foliage/textures/evil_grass_4.tga"></texture>
+  <texture id="2" name="/world/foliage/textures/swamp_grass_3.tga"></texture>
+  <texture id="4" name="/world/foliage/textures/cattails_1.tga"></texture>
+  <texture id="5" name="/world/foliage/textures/evil_grass_1.tga"></texture>
+  <texture id="6" name="/world/foliage/textures/evil_grass_2.tga"></texture>
+  <texture id="7" name="/world/foliage/textures/evil_grass_3.tga"></texture>
+  <texture id="8" name="/world/foliage/textures/evil_grass_5.tga"></texture>
+  <texture id="9" name="/world/foliage/textures/fat_grass_1.tga"></texture>
+  <texture id="10" name="/world/foliage/textures/fat_grass_2.tga"></texture>
+  <texture id="11" name="/world/foliage/textures/bushGreen.tga"></texture>
+  <texture id="12" name="/world/foliage/textures/grass_2.tga"></texture>
+  <texture id="13" name="/world/foliage/textures/ivy_green.tga"></texture>
+  <texture id="14" name="/world/foliage/textures/poppys_yellow.tga"></texture>
+  <texture id="15" name="/world/foliage/textures/shrubYellow.tga"></texture>
+  <texture id="16" name="/world/foliage/textures/clover_1.tga"></texture>
+  <texture id="17" name="/world/foliage/textures/swamp_grass_4.tga"></texture>
+  <texture id="18" name="/world/foliage/textures/cattails_2.tga"></texture>
+  <texture id="45" name="/world/foliage/textures/cattails2.tga"></texture>
+</texturelist>

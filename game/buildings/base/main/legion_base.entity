@@ -370,6 +370,16 @@
 	>
 
 	</modifier>
+
+	<modifier key="shattered_trials_mod"
+		modpriority="100"
+		healthregen="10"
+		attackcooldown="500"
+	>
+		<onattack >
+			<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+		</onattack >
+	</modifier>
 	
 	<modifier key="tutorial3" modpriority="100"
 		maxhealth="5000"
