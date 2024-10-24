@@ -209,10 +209,10 @@ function create_gameRegister(object)
 	spectatorCountDropdown:SetSelectedItemByValue(spectatorCount:GetNumber())
 
 	-- teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 0, 'label', 'game_setup_one_v_one')
-	-- teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 1, 'label', 'game_setup_one_v_one')
-	-- teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 2, 'label', 'game_setup_two_v_two')
-	-- teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 3, 'label', 'game_setup_three_v_three')
-	-- teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 4, 'label', 'game_setup_four_v_four')
+	teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 1, 'label', 'game_setup_one_v_one')
+	teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 2, 'label', 'game_setup_two_v_two')
+	teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 3, 'label', 'game_setup_three_v_three')
+	teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 4, 'label', 'game_setup_four_v_four')
 	teamSizeDropdown:AddTemplateListItem(style_main_dropdownItem, 5, 'label', 'game_setup_five_v_five')
 	teamSizeDropdown:SetSelectedItemByValue(teamSize:GetNumber())
 
@@ -329,11 +329,11 @@ function create_gameRegister(object)
 		PlaySound('/ui/sounds/launcher/sfx_dropdown.wav')
 	end)
 	
-	if (Strife_Region.regionTable[Strife_Region.activeRegion]) and (Strife_Region.regionTable[Strife_Region.activeRegion].enableDevMaps) then
+	--if (Strife_Region.regionTable[Strife_Region.activeRegion]) and (Strife_Region.regionTable[Strife_Region.activeRegion].enableDevMaps) then
 		mapDropdown_parent:SetVisible(1)
-	else
-		mapDropdown_parent:SetVisible(0)
-	end
+	--else
+	--	mapDropdown_parent:SetVisible(0)
+	--end
 	
 	modeDropdown:ClearItems()
 	modeDropdown:AddTemplateListItem(style_main_dropdownItem, 'normal', 'label', 'game_setup_normal', 'texture', '/ui/main/play/textures/icon_team.tga.tga')
@@ -389,7 +389,7 @@ function create_gameRegister(object)
 
 		serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'remote_dedicated', 'label', 'game_setup_remote_dedicated', 'texture', '/ui/_textures/icons/automatic.tga')
 		
-		if (Strife_Region.regionTable[Strife_Region.activeRegion]) and (Strife_Region.regionTable[Strife_Region.activeRegion].enableDevServerTypes) then
+		--if (Strife_Region.regionTable[Strife_Region.activeRegion]) and (Strife_Region.regionTable[Strife_Region.activeRegion].enableDevServerTypes) then
 			
 			-- serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'remote_automatic', 'label', 'game_setup_automatic', 'texture', '/ui/_textures/icons/automatic.tga')
 			
@@ -402,7 +402,7 @@ function create_gameRegister(object)
 			serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'practice', 'label', 'game_setup_practice', 'texture', '/ui/_textures/icons/local.tga')
 			-- serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'browse', 'label', 'game_setup_browse')
 			
-		end
+		--end
 		
 		if (triggerConnection.isConnected) then
 			serverDropdown:SetSelectedItemByValue('selected')
