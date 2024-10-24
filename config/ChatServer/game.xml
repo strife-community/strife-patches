@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<hero name="Hero_Ace" visible="true" enabled="true" />
+	<hero name="Hero_Aemon" visible="true" enabled="true" />
+	<hero name="Hero_Bandito" visible="true" enabled="true" />
+	<hero name="Hero_Bastion" visible="true" enabled="true" />
+	<hero name="Hero_Blazer" visible="true" enabled="true" />	
+	<hero name="Hero_Bo" visible="true" enabled="true" />
+	<hero name="Hero_Buford" visible="true" enabled="true" />
+	<hero name="Hero_Caprice" visible="true" enabled="true" />
+	<hero name="Hero_Carter" visible="true" enabled="true" />
+	<hero name="Hero_Chester" visible="true" enabled="true" />
+	<hero name="Hero_Claudessa" visible="true" enabled="true" />
+	<hero name="Hero_Eanu" visible="true" enabled="true" />
+	<hero name="Hero_Fetterstone" visible="true" enabled="true" />
+	<hero name="Hero_Flak" visible="true" enabled="true" />	
+	<hero name="Hero_GoKong" visible="true" enabled="true" />
+	<hero name="Hero_Hale" visible="true" enabled="true" />
+	<hero name="Hero_Harrower" visible="true" enabled="true" />	
+	<hero name="Hero_Iah" visible="true" enabled="true" />
+	<hero name="Hero_JinShe" visible="true" enabled="true" />
+	<hero name="Hero_Ladytinder" visible="true" enabled="true" />
+	<hero name="Hero_Malady" visible="true" enabled="true" />
+	<hero name="Hero_Malph" visible="true" enabled="true" />
+	<hero name="Hero_Midknight" visible="true" enabled="true" />
+	<hero name="Hero_Minerva" visible="true" enabled="true" />
+	<hero name="Hero_Moxie" visible="true" enabled="true" />
+	<hero name="Hero_Nikolai" visible="true" enabled="true" />
+	<hero name="Hero_Pal" visible="true" enabled="true" />
+	<hero name="Hero_Ray" visible="true" enabled="true" />
+	<hero name="Hero_Rip" visible="true" enabled="true" />
+	<hero name="Hero_Rook" visible="true" enabled="true" />
+	<hero name="Hero_Shank" visible="true" enabled="true" />
+	<hero name="Hero_Trace" visible="true" enabled="true" />
+	<hero name="Hero_Trixie" visible="true" enabled="true" />
+	<hero name="Hero_Vermillion" visible="true" enabled="true" />
+	<hero name="Hero_Vex" visible="true" enabled="true" />
+	<hero name="Hero_Zaku" visible="true" enabled="true" />
+	<!--<region name="AMERICA" />-->
+	<region name="EU" />
+	<!-- <region name="SEA" /> -->
+
+	<!--<voiceregion name="AMERICA" regions="AMERICA,USE,USW,CA,LAT,BR" />-->
+	<voiceregion name="EU" regions="EU,EU_Nordic,EU_Rest,DE,CIS,M_East,Africa" />
+	<!-- <voiceregion name="SEA" regions="SEA,Oceania,ID,KR,PH,TH,TH2,SG,JP,VN,MY,IN,TW,PH,CN,Asia_Rest,AU,HK" /> -->
+
+	<map name="strife" teamsize="5" />
+
+	<!--<leaver region="USE" forgiveness_min="20160" safetime_sec="1" orig_safetime_sec="470" orig_strike_penalties_min="30 120 360 1440 2880"  strike_penalties_min="0 0 0 0 0" />-->
+	<leaver region="EU" forgiveness_min="20160" safetime_sec="1" orig_safetime_sec="470" orig_strike_penalties_min="30 120 360 1440 2880"  strike_penalties_min="0 0 0 0 0" />
+	<!-- <leaver region="SEA" forgiveness_min="20160" safetime_sec="470" strike_penalties_min="0 30 60 120 360 1440 2880" /> -->
+
+	<!-- -->
+	<lobby visible="true" enabled="true">
+		<rewards enabled="false" visible="false" />
+
+		<!--<region name="AMERICA" visible="true" enabled="true" default="true" />-->
+		<region name="EU" visible="true" enabled="true" default="true" />
+		<!-- <region name="SEA" visible="true" enabled="true" /> -->
+	</lobby>
+
+	<matchmaking visible="true" enabled="true">
+		<!--<region name="AMERICA" visible="true" enabled="true" default="true" />-->
+		<region name="EU" visible="true" enabled="true" default="true" />
+		<!-- <region name="SEA" visible="true" enabled="true" /> -->
+
+		<queue name="pvp" visible="true" enabled="true" default="true" mode="no_hero_rating">
+			<rewards enabled="true" visible="true" />
+		</queue>
+		
+		<queue name="pve" visible="true" enabled="true" mode="pve">
+			<rewards enabled="true" visible="true" />
+		</queue>
+		
+		<queue name="ranked" visible="true" enabled="false" mode="no_hero_rating">
+			<requirements enabled="true" minpartysize="1" maxpartysize="2" minlevel="25" />
+			<rewards enabled="true" visible="true" />
+		</queue>
+		
+		<queue name="scrim" visible="true" enabled="true" pickmode="captains_draft">
+			<requirements enabled="true" minpartysize="5" maxpartysize="5" minlevel="1" />
+			<rewards enabled="true" visible="true" />
+		</queue>
+	</matchmaking>
+</game>
