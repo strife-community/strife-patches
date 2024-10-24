@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters shader="smoke.shader" vDiffuseColor="1 1 1" fSpecularLevel="1.0" fGlossiness="23.0" fOpacity="1.0" fReflect="1.0" />
+	
+	<phase name="color" cull="none" alphawrite="true" blend="translucent">
+		<sampler name="diffuse" texture="smoke.tga" repeat_u="true" repeat_v="true" />
+		<sampler name="diffuse2" texture="grad.tga" repeat_u="true" repeat_v="true" />		
+	</phase>
+	
+</material>
+ 
