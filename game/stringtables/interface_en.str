@@ -2685,9 +2685,6 @@ game_alt_couriers_purchase					Purchase This Courier
 game_alt_couriers_lock						Lock Courier
 game_alt_couriers_unlock						Unlock Courier
 
-ability_on_cooldown_remaing					^980{value2}^* on cooldown for ^r{value1}s^*!
-ability_on_cooldown_ready					^980{value2}^* is ^gready^*!
-
 // game_chat.package
 gamechat_button_send_message				Send Message
 gamechat_tip_hit_z_history					^y*Tip:^* Hit "Z" to bring up chat history

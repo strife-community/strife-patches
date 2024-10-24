@@ -2730,9 +2730,6 @@ game_alt_couriers_purchase					Mua Pet Này
 game_alt_couriers_lock						Khóa Pet
 game_alt_couriers_unlock						Mở Khóa Pet
 
-ability_on_cooldown_remaing					^980{value2}^* đang cooldown trong ^r{value1}s^*!
-ability_on_cooldown_ready					^980{value2}^* đã ^gchuẩn bị^*!
-
 // game_chat.package
 gamechat_button_send_message				Gửi Tin
 gamechat_tip_hit_z_history					^y*Tip:^* Nhấn "Z" xem chat history

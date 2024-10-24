@@ -2578,9 +2578,6 @@ game_alt_couriers_purchase                                                      
 game_alt_couriers_lock                                                                       Bloquer messager
 game_alt_couriers_unlock                                                                     Débloquer messager
 
-ability_on_cooldown_remaing                                                                  Recharge de ^980{value2}^* : ^r{value1} sec.^* restantes
-ability_on_cooldown_ready                                                                    ^980{value2}^* ^grechargé(e)^* !
-
 // game_chat.package
 gamechat_button_send_message                                                                 Envoyer message
 gamechat_tip_hit_z_history                                                                   ^y*Astuce :^* affichez l'historique de discussion avec "Z"

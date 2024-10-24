@@ -2522,9 +2522,6 @@ game_alt_couriers_purchase												购买此信使
 game_alt_couriers_lock												锁定信使
 game_alt_couriers_unlock												解锁信使
 
-ability_on_cooldown_remaing					^980{value2}^*需^r{value1}s^冷却时间*!
-ability_on_cooldown_ready					^980{value2}^*^可使用^*!
-
 // game_chat.package
 gamechat_button_send_message												发送信息
 gamechat_tip_hit_z_history												^y*小提示:^* 按"Z"键可查看对话记录。
