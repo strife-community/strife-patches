@@ -45,6 +45,7 @@
 	<!-- <voiceregion name="SEA" regions="SEA,Oceania,ID,KR,PH,TH,TH2,SG,JP,VN,MY,IN,TW,PH,CN,Asia_Rest,AU,HK" /> -->
 
 	<map name="strife" teamsize="5" />
+	<map name="shattered_trials" teamsize="3"/>
 
 	<!--<leaver region="USE" forgiveness_min="20160" safetime_sec="1" orig_safetime_sec="470" orig_strike_penalties_min="30 120 360 1440 2880"  strike_penalties_min="0 0 0 0 0" />-->
 	<leaver region="EU" forgiveness_min="20160" safetime_sec="1" orig_safetime_sec="470" orig_strike_penalties_min="30 120 360 1440 2880"  strike_penalties_min="0 0 0 0 0" />
@@ -70,6 +71,16 @@
 		
 		<queue name="pve" visible="true" enabled="true" mode="pve">
 			<rewards enabled="true" visible="true" />
+		</queue>
+
+		<queue name="pvpAram" visible="true" enabled="true" minpartysize="1" maxpartysize="3" mode="no_hero_rating">
+			<requirements enabled="true" minpartysize="1" maxpartysize="3" minlevel="1"/>
+			<rewards enabled="true" visible="true"/>
+		</queue>
+		
+		<queue name="pveAram" visible="true" enabled="true" mode="pve">
+			<requirements enabled="true" minpartysize="1" maxpartysize="3" minlevel="1"/>
+			<rewards enabled="true" visible="true"/>
 		</queue>
 		
 		<queue name="ranked" visible="true" enabled="false" mode="no_hero_rating">
