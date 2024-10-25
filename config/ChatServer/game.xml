@@ -44,8 +44,17 @@
 	<voiceregion name="EU" regions="EU,EU_Nordic,EU_Rest,DE,CIS,M_East,Africa" />
 	<!-- <voiceregion name="SEA" regions="SEA,Oceania,ID,KR,PH,TH,TH2,SG,JP,VN,MY,IN,TW,PH,CN,Asia_Rest,AU,HK" /> -->
 
+	<map name="strife" teamsize="1" />
+	<map name="strife" teamsize="2" />
+	<map name="strife" teamsize="3" />
+	<map name="strife" teamsize="4" />
 	<map name="strife" teamsize="5" />
+	
+	<map name="shattered_trials" teamsize="1"/>
+	<map name="shattered_trials" teamsize="2"/>
 	<map name="shattered_trials" teamsize="3"/>
+	<map name="shattered_trials" teamsize="4"/>
+	<map name="shattered_trials" teamsize="5"/>
 
 	<!--<leaver region="USE" forgiveness_min="20160" safetime_sec="1" orig_safetime_sec="470" orig_strike_penalties_min="30 120 360 1440 2880"  strike_penalties_min="0 0 0 0 0" />-->
 	<leaver region="EU" forgiveness_min="20160" safetime_sec="1" orig_safetime_sec="470" orig_strike_penalties_min="30 120 360 1440 2880"  strike_penalties_min="0 0 0 0 0" />
