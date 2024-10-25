@@ -312,7 +312,17 @@ function create_gameRegister(object)
 	mapDropdown:ClearItems()
 
 	for k,v in pairs(GetMaps()) do
-		mapDropdown:AddTemplateListItem(style_main_dropdownItem, v.fileName, 'label', Translate(v.displayName))
+		local hide = false
+		if string.find(v.fileName, 'tutorial') then
+			hide = true
+		end
+		if string.find(v.fileName, 'bastact') then
+			hide = true
+		end
+
+		if not hide then
+			mapDropdown:AddTemplateListItem(style_main_dropdownItem, v.fileName, 'label', Translate(v.displayName))
+		end
 	end
 	mapDropdown:SetSelectedItemByValue(mapName:GetString())
 	mapDropdown:SetCallback(
@@ -398,7 +408,7 @@ function create_gameRegister(object)
 				serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'local_dedicated', 'label', 'game_setup_local_dedicated', 'texture', '/ui/_textures/icons/local.tga')
 			end
 			
-			serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'tutorial', 'label', 'game_setup_tutorial', 'texture', '/ui/_textures/icons/local.tga')
+			--serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'tutorial', 'label', 'game_setup_tutorial', 'texture', '/ui/_textures/icons/local.tga')
 			serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'practice', 'label', 'game_setup_practice', 'texture', '/ui/_textures/icons/local.tga')
 			-- serverDropdown:AddTemplateListItem(style_main_dropdownItem, 'browse', 'label', 'game_setup_browse')
 			
