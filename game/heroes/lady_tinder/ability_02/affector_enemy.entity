@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Ladytinder_Ability2_Enemy"
+
+	radius="450"
+
+	maximpactsperinterval="1"
+	maximpactspertarget="1"
+	targetscheme="enemy_units_and_buildings"
+	targetselection="closest"
+	effecttype="Magic"
+	persist="true"
+	
+	
+	
+	impacteffect="effects/impact_enemy.effect"
+	linkeffect="effects/link_enemy.effect"
+>
+	<onimpact>
+		<recordheroaggression  />
+		<aggression />
+		<compare a="param" b="0" op="gt" >
+			<damage effecttype="Magic" amount="1" b="param" op="mult" />
+			<recordheroaggression  />
+			<aggression />
+			<setparam a="param" b="0.8" op="mult" />
+		</compare>
+		<else>
+			<getconstant name="damage" adjustmentsource="this_entity" />
+			<damage effecttype="Magic" amount="1" b="result" op="mult" />
+			<setparam a="result" b="0.8" op="mult" />
+		</else>
+
+		<chain count="3"/>
+	</onimpact>
+</affector>

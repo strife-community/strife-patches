@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Ladytinder_Ability2"
+
+	radius="575"
+
+	maximpactsperinterval="1"
+	maximpactspertarget="1"
+	targetscheme="injured_ally_units"
+	targetselection="closest"
+	effecttype="Magic Assist"
+	persist="true"
+	
+	impacteffect="effects/impact.effect"
+	linkeffect="effects/link.effect"
+>
+	<onimpact>
+		<compare a="param" b="0" op="gt" >
+			<heal a="param" effecttype="Assist" />
+			<setparam a="param" b="0.8" op="mult" />
+		</compare>
+		<else>
+			<getconstant name="heal" adjustmentsource="this_entity" />
+			<heal a="result" effecttype="Assist" />
+			<setparam a="result" b="0.8" op="mult" />
+		</else>
+
+		<chain count="3"/>
+	</onimpact>
+</affector>
