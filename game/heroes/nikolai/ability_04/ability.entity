@@ -40,6 +40,9 @@
 >
 
 	<constant name="damage" value="195,260,325" adjustment="ability" />
+    <constant name="cooldown_reset" value="3" adjustment="none" noshowintooltip="true" />
+    <!-- tooltip only -->
+    <constant name="manacost" value="100,110,120" adjustment="none" noshowintooltip="true" />
 
 
 	<onimpact>

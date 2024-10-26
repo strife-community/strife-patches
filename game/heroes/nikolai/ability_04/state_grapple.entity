@@ -46,6 +46,15 @@
 			<starttimer duration="2200" entity="tool_entity" />
 			<expire />
 		</condition>
+        <else>
+            <popup name="doublecast" />
+            <getconstant name="manacost" adjustmentsource="this_entity" />
+            <givemana amount="result" target="source_entity" />
+            <resetcooldown entity="tool_entity" />
+            <getconstant name="cooldown_reset" adjustmentsource="this_entity" />
+            <setvar0 a="result" b="1000" op="mult" />
+            <startcooldown entity="tool_entity" duration="result" />
+        </else>
 
 	</onimpact>
 	
