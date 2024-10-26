@@ -1180,7 +1180,7 @@ Ability_Ladytinder1_description									Target direction to launch bindweed, stu
 Ability_Ladytinder1_description_simple							skillshot stun grab and damage
 // Ability_Ladytinder2
 Ability_Ladytinder2_name										Tinder Touch
-Ability_Ladytinder2_description									Target ally to heal for ^o$heal$^* Health, bouncing 3 times.  \n\nAlternatively, target enemy to deal ^o$damage$ Magic damage^*, bouncing 3 times.  Effect diminishes on each bounce.
+Ability_Ladytinder2_description									Target ally to heal for ^o$heal$^* Health, bouncing 3 times. \n\nAlternatively, target enemy to deal ^o$damage$ Magic damage^*, bouncing 3 times.\n\nDamage and heal are reduced by $chain_reduce_percent$% on each bounce.
 Ability_Ladytinder2_description_simple							chain heal or chain damage
 State_Ladytinder_Ability2_Self_name								Imprison
 // Ability_Ladytinder3
