@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nikolai_Ability1_Grapple"
+
+
+	passiveeffect=""
+	stunned="true"
+	unitwalking="true"
+	ishidden="true"
+	
+	impactinterval="400"
+	durationunmodifiable="true"
+	
+	immunitytype="CrowdControlImmunity"
+	
+
+>
+
+	<onimpact>
+		<condition test="hasstate State_Nikolai_Ability4_EnemyGrapple" target="this_proxy_entity" >
+			<unbind target="this_owner_entity" />
+			
+			<spawnunit name="Gadget_Nikolai_Ability4" count="1" target="this_proxy_entity" pushentity="true" source="this_proxy_entity" />
+			<bind entity="source_entity" target="stack_entity"  />
+			<playeffect effect="effects/ring.effect" source="stack_entity" occlude="false" visibility="enemies"/>
+		
+			<spawnunit name="Gadget_Nikolai_Ability4" count="1" target="source_position" pushentity="true" />
+			<bind entity="source_entity" target="stack_entity"  />
+			<applystate name="State_Nikolai_Ability4_BindDelay" duration="500" target="this_proxy_entity" proxy="source_entity" />
+
+			<playeffect effect="effects/trail_up.effect" source="source_position" target="source_position" occlude="false" /> 
+			<playeffect effect="effects/shadow.effect" source="stack_entity" target="stack_entity" occlude="false" /> 
+			
+			<playeffect effect="effects/ring_ally.effect" source="stack_entity" occlude="false" visibility="allies"/>
+			
+			
+			<setpos0 position="source_entity" offsetspace="source_entity" offset="0 0 1400" />
+			<spawnprojectile name="Projectile_Nikolai_Ability4_Raise" source="source_entity" target="pos0" pushentity="true" proxy="this_proxy_entity" />
+			<bind entity="stack_entity" target="this_proxy_entity" position="false" />
+			
+			<applystate name="State_Nikolai_Ability4" duration="2200" target="source_entity" ischannel="false" proxy="this_proxy_entity" />
+			<applystate name="State_Nikolai_Ability4_Disable" duration="250" target="source_entity"  />
+			<applystate name="State_Nikolai_Ability4_EnemyDisable" duration="2200" target="this_proxy_entity"  />
+			
+			
+			<starttimer duration="2200" entity="tool_entity" />
+			<expire />
+		</condition>
+
+	</onimpact>
+	
+
+	
+	
+</state>

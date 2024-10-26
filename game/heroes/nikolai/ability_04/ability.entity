@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Nikolai4"
+	
+	statuseffecttooltip=""
+	
+	icon="icon.tga"
+
+	anim="ability_4"
+	casttime="400"
+	castactiontime="400"
+	casteffect="effects/cast.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_position"
+	casteffecttype=""
+	targetscheme="enemy_heroes"
+	
+	queue="dropmovement"
+
+	manacost="100,110,120"
+	cooldowntime="60000,50000,40000"
+	
+	range="525"
+	forcerange="525"
+	allowoutofrangecast="true"
+	
+	showlinecast="true"
+	linecastwidth="130"
+	linecastrange="590"
+	
+	hoverareacastrange="590"
+	
+	showareacast="false"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	alwaysshowtimer="true"
+>
+
+	<constant name="damage" value="195,260,325" adjustment="ability" />
+
+
+	<onimpact>
+		<spawnprojectile name="Projectile_Nikolai_Ability4_Leap" source="source_entity" target="target_position" bind="source_entity" bindstate="State_Bound" proxy="this_entity" pushentity="true" />
+		<spawnprojectile name="Projectile_Nikolai_Ability4_Cliff" source="source_entity" target="target_position" proxy="stack_entity" offset="0 75 0"/>
+	</onimpact>
+	
+
+</ability>
