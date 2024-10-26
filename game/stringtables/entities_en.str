@@ -1343,7 +1343,7 @@ Ability_Nikolai3_description									Activate to damage all nearby enemies for $
 Ability_Nikolai3_description_simple								area damage and shield buff
 // Ability_Nikolai4
 Ability_Nikolai4_name											Piledriver
-Ability_Nikolai4_description									Target direction to lunge, grabbing the first enemy hero you contact - launching you both into the air. While airborn you may continue to move.\n\nUpon landing, you deal ^o$damage$^* Magic Damage in a small area.\n\nIf enemy hero use CC Break to avoid being launched into the air, Nikolai gets mana refunded and skill is put on $cooldown_reset$ second cooldown instead.
+Ability_Nikolai4_description									Target direction to lunge, grabbing the first enemy hero you contact - launching you both into the air. While airborn you may continue to move.\n\nUpon landing, you deal ^o$damage$^* Magic Damage in a small area.\n\nIf enemy hero use CC Break to avoid being launched into the air, Nikolai gets mana refunded and ability is put on $cooldown_reset$ second cooldown instead.
 Ability_Nikolai4_description_simple								single target relocation
 
 // Hero_Pal
