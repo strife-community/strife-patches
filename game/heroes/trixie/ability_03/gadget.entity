@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Trixie_Ability3"
+
+	icon=""
+	portrait=""
+	model=""
+	passiveeffect=""
+	deatheffect=""
+	
+	preglobalscale="1.0"
+	modelscale="1.5"
+	effectscale="0.9"
+	boundsheight="0"
+	radiusheight="0"
+	boundsradius="0"
+	isselectable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+	canattack="false"
+
+	sightrangeday="0"
+	sightrangenight="0"
+	
+	buildingwalking="true"
+
+	deathtime="0"
+	corpsetime="0"
+
+	lifetime="5000"
+
+	invulnerable="true"
+	hidealtinfo="true"
+	flying="true"
+	flyheight="150"
+	clearvision="true"
+	drawonmap="false"
+	
+	hazardradius="250"
+
+	alwaystransmitdata="true"
+	
+>
+
+
+
+</gadget>

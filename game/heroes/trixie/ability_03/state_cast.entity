@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Trixie_Ability3"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	impactinterval="50"
+	modifierkey="trixie_ability3"
+	disarmed="true"
+	perplexed="true"
+	alwaystransmitdata="true" 
+	ishidden="true"
+>
+	<onframe>
+		<haseffecttype name="StatusDisable">
+			<expire/>
+		</haseffecttype>
+	</onframe>
+
+	<onactivatepreimpact>
+		<casteffecttype entity="inflictor_entity" effecttype="NoResponse" >
+			<casteffecttype entity="inflictor_entity" effecttype="BreakStealth" >
+				<expire/>
+			</casteffecttype>
+		</casteffecttype>
+		<else>
+			<casteffecttype entity="inflictor_entity" effecttype="TrixieDash" />
+			<else>
+				<expire/>
+			</else>
+		</else>
+	</onactivatepreimpact>
+
+	<oninflict>
+		<spawnunit name="Gadget_Trixie_Ability3" count="1" source="source_entity" target="target_position" pushentity="true" />
+		<setproxy target="stack_entity" />
+
+		<setpos0 position="source_entity" offsetspace="source_entity" offset="0 900 0" />
+		<setpos1 position="source_entity" offsetspace="source_entity" offset="0 175 0" />
+		<setpos2 position="source_entity" offsetspace="source_entity" offset="0 225 0" />
+		<pushentityproxy />
+		
+		<lineofeffect
+			radius="100"
+			maxtotalimpacts="1"
+			start="pos2"
+			end="pos0"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>
+			<distance target="target_entity" source="source_entity" /> 
+			<setaccumulator entity="this_entity" value="result" />	
+			<setproxy />
+		</lineofeffect>
+
+		<lineofeffect
+			radius="100"
+			maxtotalimpacts="1"
+			start="pos1"
+			end="pos0"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype="Magic"
+		>
+			<compare a="accumulator" b="0" op="gt">
+				<distance target="target_entity" source="source_entity" /> 
+				<compare a="result" b="accumulator" op="le">
+					<setproxy />
+				</compare>
+			</compare>
+			<else>
+				<setproxy />
+			</else>
+
+			<distance target="target_entity" source="source_entity" /> 
+			<setaccumulator entity="this_entity" value="result" />
+		</lineofeffect>
+
+
+		<compare a="accumulator" b="0" op="eq">
+			<teleport source="stack_entity" target="pos0" interpolate="true" />
+		</compare>
+		<else>
+			<applystate name="State_Trixie_Ability3_Damage" target="this_proxy_entity" duration="100" />
+			<distance target="this_proxy_entity" source="source_entity" />
+			<compare a="result" b="1100" op="le">
+				<setpos0 position="source_position" positionend="pos0" positionmodifier="pointonline" positionvalue="result" />
+				<teleport source="stack_entity" target="pos0" interpolate="true" />
+			</compare>
+			<else>
+				<teleport source="stack_entity" target="pos0" interpolate="true" />
+			</else>
+			<recordheroaggression  />
+			<aggression />
+		</else>
+
+		<setaccumulator entity="this_entity" value="0" />
+		<setproxy target="stack_entity" />
+
+		<playeffect effect="effects/link.effect" source="source_entity" target="this_proxy_entity" />
+	</oninflict>
+
+	<onimpact>
+		<setpos0 position="source_entity" offsetspace="source_entity" offset="0 900 0" />
+		<setpos1 position="source_entity" offsetspace="source_entity" offset="0 175 0" />
+		<setpos2 position="source_entity" offsetspace="source_entity" offset="0 225 0" />
+		<pushentityproxy />
+		
+		<lineofeffect
+			radius="100"
+			maxtotalimpacts="1"
+			start="pos2"
+			end="pos0"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>
+			<distance target="target_entity" source="source_entity" /> 
+			<setaccumulator entity="this_entity" value="result" />	
+			<setproxy />
+		</lineofeffect>
+
+		<lineofeffect
+			radius="100"
+			maxtotalimpacts="1"
+			start="pos1"
+			end="pos0"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype="Magic"
+		>
+			<compare a="accumulator" b="0" op="gt">
+				<distance target="target_entity" source="source_entity" /> 
+				<compare a="result" b="accumulator" op="le">
+					<setproxy />
+				</compare>
+			</compare>
+			<else>
+				<setproxy />
+			</else>
+
+			<distance target="target_entity" source="source_entity" /> 
+			<setaccumulator entity="this_entity" value="result" />
+		</lineofeffect>
+
+
+		<compare a="accumulator" b="0" op="eq">
+			<teleport source="stack_entity" target="pos0" interpolate="true" />
+		</compare>
+		<else>
+			<applystate name="State_Trixie_Ability3_Damage" target="this_proxy_entity" duration="100" />
+			<distance target="this_proxy_entity" source="source_entity" />
+			<compare a="result" b="1100" op="le">
+				<setpos0 position="source_position" positionend="pos0" positionmodifier="pointonline" positionvalue="result" />
+				<teleport source="stack_entity" target="pos0" interpolate="true" />
+			</compare>
+			<else>
+				<teleport source="stack_entity" target="pos0" interpolate="true" />
+			</else>
+			<recordheroaggression  />
+			<aggression />
+		</else>
+
+		<setaccumulator entity="this_entity" value="0" />
+		<setproxy target="stack_entity" />
+		
+	</onimpact>
+	
+	<onexpired>
+		<delete target="this_proxy_entity" source="" />
+		<setactivemodifierkey name="" entity="tool_entity" />
+		<starttimer duration="0" entity="tool_entity" />
+		<playeffect effect="effects/sound_2.effect" source="source_entity" target="source_entity" occlude="true" />
+	</onexpired>
+
+</state>
