@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Pal_Ability1"
+	
+	icon="icon.tga"
+	portrait=""
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	unitwalking="true"
+	
+	isselectable="false"
+	
+	preglobalscale="1.0"
+	effectscale="1.0"
+	boundsheight="38"
+	radiusheight="38"
+	boundsradius="10"
+	selectionradius="26"
+	targetoffset="0 0 0"
+	
+	maxhealth="600"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+
+	invulnerable="true"
+	cliffwalking="true"
+	
+	sightrangeday="0"
+	sightrangenight="0"
+
+	attacktype="none"
+	
+	corpsetime="0"
+	deathtime="0"
+	corpsefadetime="0"
+	lifetime="6000"
+	
+	blocking="false"
+>
+
+</gadget>

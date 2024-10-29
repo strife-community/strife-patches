@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pal1"
+
+	icon="icon.tga"
+	anim="ability_1" 
+
+	casttime="300"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetscheme="enemy_nonboss_units"
+
+	casteffect="effects/sound.effect"
+	casteffecttype="Magic"
+	
+	manacost="100"
+	cooldowntime="15000"
+	range="1000"
+
+	forcerange="1000" 
+	allowoutofboundscast="true"
+	allowoutofrangecast="true"
+	
+	showlinecast="true"
+	linecastrange="1000"
+	linecastwidth="120"
+	
+>
+	<constant name="damage" value="80,110,140,170" adjustment="ability" />
+	
+	<onimpact>
+		<spawnunit name="Gadget_Pal_Ability1" count="1" target="target_position" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" />
+		<setpos0 position="source_position" offsetspace="source_entity" offset="0 150 0" /> 
+		<spawnunit name="Gadget_Pal_Ability1" count="1" target="pos0" pushentity="true" />
+		<playeffect effect="effects/link.effect" source="stack_entity" target="this_proxy_entity" proxy="this_proxy_entity" visibility="allies"/>
+		<playeffect effect="effects/link_enemy.effect" source="stack_entity" target="this_proxy_entity" proxy="this_proxy_entity" visibility="enemies"/>
+		<applystate name="State_Pal_Ability1_Trace" target="stack_entity" proxy="this_proxy_entity" duration="6000" />
+		<setpos0 position="stack_entity" offsetspace="stack_entity" offset="100 0 0" /> 
+		<spawnunit name="Gadget_Pal_Ability1_Right" count="1" target="pos0" />
+		<setpos0 position="stack_entity" offsetspace="stack_entity" offset="-100 0 0" /> 
+		<spawnunit name="Gadget_Pal_Ability1_Left" count="1" target="pos0" />
+	</onimpact>
+	
+	<onstart>
+		<expirestate name="State_Pal_Ability2" target="source_entity" />
+	</onstart>
+	
+</ability>
