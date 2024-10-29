@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<world image="/maps/caldavar/loading.tga" size="9" scale="32.0000" texturescale="16.0000" texeldensity="4" groundlevel="0.0000" minplayersperteam="0" maxplayers="5" botsallowed="true" minimappaddingtop="0.0250" minimappaddingright="0.0250" minimappaddingbottom="0.0250" minimappaddingleft="0.0250" gameboundsleft="0.0000" gameboundstop="0.0000" gameboundsright="16384.0000" gameboundsbottom="16384.0000" cameraboundsleft="0.0000" cameraboundstop="0.0000" cameraboundsright="16384.0000" cameraboundsbottom="16384.0000" cliffsize="4" gameinfo="shattered_trials_game_rules" gameinterface="" newgameinterface="" loadscreencontrolled="false" precacheinterfaces="/maps/tutorial/resources/ui/game_tutorial1.interface" music1="/music/pregame.mp3" music2="/music/baseline_normal.mp3" music3="/music/baseline_tension.mp3" music4="/music/baseline_tension_guardian_zone.mp3" music5="/music/baseline_tension_jungle.mp3" music6="/music/baseline_tension_tower_damage.mp3" music7="/music/baseline_excitement.mp3" music8="/music/baseline_excitement_large_team_fight.mp3" music9="/music/baseline_excitement_large_team_fight_congor.mp3" music10="/music/baseline_excitement_small_team_fight.mp3" music11="/music/baseline_excitement_small_team_fight_congor.mp3" music12="/music/base_cracking_2.mp3" music13="/music/base_cracking_3.mp3" music14="/music/base_cracking_4.mp3" music15="/music/base_cracking_5.mp3" music16="/music/base_cracking_5_congor.mp3" music17="/music/crack_basing_1.mp3" music18="/music/crack_basing_2.mp3" music19="/music/crack_basing_3.mp3" music20="/music/crack_basing_4.mp3" music21="/music/crack_basing_5.mp3" music22="/music/crack_basing_5_congor.mp3" music23="/music/base_cracking_1.mp3" music24="/music/death_with_stinger.mp3" musicshuffle="true" dev="false" conductor="/music/strife.conductor" modifiers="shattered_trials_mod">
+	<var name="cg_worldAmbientSound" value="" />
+	<var name="cg_worldAmbientSoundVolume" value="0.2462" />
+	<var name="scene_altSkyColor" value="1.0000 1.0000 1.0000 1.0000" />
+	<var name="scene_altSkyOffset" value="10.0000" />
+	<var name="scene_altSkySkin" value="blue2" />
+	<var name="scene_altSkyTopOffset" value="0.0000" />
+	<var name="scene_bgColor" value="0.0000 0.0000 0.0000" />
+	<var name="scene_brightMax" value="2.0000" />
+	<var name="scene_brightMin" value="1.0000" />
+	<var name="scene_brightScale" value="0.0000" />
+	<var name="scene_drawAltSky" value="false" />
+	<var name="scene_drawMoon" value="false" />
+	<var name="scene_drawSky" value="false" />
+	<var name="scene_drawSkybox" value="false" />
+	<var name="scene_drawSun" value="false" />
+	<var name="scene_fogColor" value="0.6147 0.7425 0.7350" />
+	<var name="scene_fogDensity" value="0.0000" />
+	<var name="scene_fogFar" value="5690.3770" />
+	<var name="scene_fogNear" value="2677.8242" />
+	<var name="scene_fogScale" value="1.0000" />
+	<var name="scene_fogType" value="0" />
+	<var name="scene_maxHeight" value="-128.0000" />
+	<var name="scene_minHeight" value="-128.0000" />
+	<var name="scene_moonColor" value="1.0000 1.0000 1.0000 1.0000" />
+	<var name="scene_moonSize" value="50.0000" />
+	<var name="scene_propAmbientColor" value="0.6000 0.7000 0.7000" />
+	<var name="scene_propSunColor" value="1.0000 1.0000 1.0000" />
+	<var name="scene_skyboxMaterial" value="/world/sky/desert/desert.material" />
+	<var name="scene_skyColor" value="1.0000 1.0000 1.0000 1.0000" />
+	<var name="scene_skyOffset" value="10.0000" />
+	<var name="scene_skySkin" value="blue2" />
+	<var name="scene_skyTopOffset" value="0.0000" />
+	<var name="scene_sunAltitude" value="50.9016" />
+	<var name="scene_sunAzimuth" value="32.4590" />
+	<var name="scene_sunColor" value="1.0000 1.0000 1.0000 1.0000" />
+	<var name="scene_sunSize" value="2000.0000" />
+	<var name="scene_terrainAmbientColor" value="0.4024 0.4268 0.4390" />
+	<var name="scene_terrainSunColor" value="0.7195 0.7317 0.5121" />
+	<var name="scene_unitAmbientColor" value="0.6000 0.7000 0.7000" />
+	<var name="scene_unitSunColor" value="1.0000 1.0000 1.0000" />
+	<var name="scene_windSpeed" value="1.8000" />
+	<var name="scene_windSpeedAlt" value="1.8000" />
+	<var name="scene_windSpeedAltTop" value="0.9000" />
+	<var name="scene_windSpeedTop" value="0.9000" />
+	<var name="scene_worldFarClip" value="900000000.0000" />
+	<var name="tod_brightMax1" value="2.0000" />
+	<var name="tod_brightMax2" value="2.0000" />
+	<var name="tod_brightMax3" value="2.0000" />
+	<var name="tod_brightMax4" value="2.0000" />
+	<var name="tod_brightMin1" value="1.0000" />
+	<var name="tod_brightMin2" value="1.0000" />
+	<var name="tod_brightMin3" value="1.0000" />
+	<var name="tod_brightMin4" value="1.0000" />
+	<var name="tod_brightScale1" value="1.0000" />
+	<var name="tod_brightScale2" value="1.0000" />
+	<var name="tod_brightScale3" value="1.0000" />
+	<var name="tod_brightScale4" value="1.0000" />
+	<var name="tod_entityAmbientColor1" value="0.6000 0.7000 0.7000" />
+	<var name="tod_entityAmbientColor2" value="0.0135 0.2895 0.4594" />
+	<var name="tod_entityAmbientColor3" value="0.5000 0.6000 0.6000" />
+	<var name="tod_entityAmbientColor4" value="0.3000 0.4000 0.4000" />
+	<var name="tod_entitySunColor1" value="0.9000 0.9000 0.9000" />
+	<var name="tod_entitySunColor2" value="0.7894 1.0000 1.0000" />
+	<var name="tod_entitySunColor3" value="0.8000 0.8000 0.9500" />
+	<var name="tod_entitySunColor4" value="1.0000 0.9000 0.5000" />
+	<var name="tod_terrainAmbientColor1" value="0.4024 0.4268 0.4390" />
+	<var name="tod_terrainAmbientColor2" value="0.3008 0.3421 0.4218" />
+	<var name="tod_terrainAmbientColor3" value="0.3500 0.4000 0.4500" />
+	<var name="tod_terrainAmbientColor4" value="0.3000 0.4000 0.4000" />
+	<var name="tod_terrainSunColor1" value="0.7195 0.7317 0.5121" />
+	<var name="tod_terrainSunColor2" value="0.4135 0.6428 0.8684" />
+	<var name="tod_terrainSunColor3" value="0.6000 0.7000 0.8000" />
+	<var name="tod_terrainSunColor4" value="1.0000 0.9000 0.5000" />
+	<var name="vid_foliageAnimateSpeed" value="1.0000" />
+	<var name="vid_foliageAnimateStrength" value="10.0000" />
+	<var name="vid_foliageMaxSlope" value="0.5000" />
+	<var name="world_maxCamHeight" value="10000000000.0000" />
+	<var name="world_minCamHeight" value="-10000000000.0000" />
+</world>

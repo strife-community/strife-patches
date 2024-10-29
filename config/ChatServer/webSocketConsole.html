@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Chat Server Web Console</h1>
+
+<script>
+function sendFunc() {
+	doSend(document.getElementById("CommandBox").value);
+}
+
+ var wsUri = "ws://localhost:7080/webconsole";
+ var output; 
+ function init() {
+	output = document.getElementById("output");
+	testWebSocket();
+}
+
+ function testWebSocket() {
+	websocket = new WebSocket(wsUri);
+	websocket.onopen = function(evt) { onOpen(evt) };
+	websocket.onclose = function(evt) { onClose(evt) };
+	websocket.onmessage = function(evt) { onMessage(evt) };
+	websocket.onerror = function(evt) { onError(evt) };
+}
+
+function onOpen(evt) {
+	writeToScreen("CONNECTED");
+}
+
+function onClose(evt) {
+	writeToScreen("DISCONNECTED");
+}
+
+function onMessage(evt) {
+	writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+}
+
+function onError(evt) {
+	writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+}
+
+function doSend(message) {
+	writeToScreen("SENT: " + message);
+	websocket.send(message);
+}
+
+function writeToScreen(message) {
+	var pre = document.createElement("p");
+	pre.style.wordWrap = "break-word";
+	pre.innerHTML = message;
+	output.appendChild(pre);
+}
+
+window.addEventListener("load", init, false);
+
+
+/*
+var exampleSocket = new WebSocket("ws://localhost:7080/webconsole", ["webconsole"]);
+
+// Send text to all users through the server
+function sendText() {
+  // Construct a msg object containing the data the server needs to process the message from the chat client.
+  var msg = {
+    type: "message",
+    text: document.getElementById("text").value,
+    id:   clientID,
+    date: Date.now()
+  };
+
+  // Send the msg object as a JSON-formatted string.
+  exampleSocket.send(JSON.stringify(msg));
+  
+  // Blank the text input element, ready to receive the next line of text from the user.
+  document.getElementById("text").value = "";
+}
+
+exampleSocket.onmessage = function(event) {
+  var f = document.getElementById("chatbox").contentDocument;
+  var text = "";
+  var msg = JSON.parse(event.data);
+  var time = new Date(msg.date);
+  var timeStr = time.toLocaleTimeString();
+  
+  switch(msg.type) {
+    case "id":
+      clientID = msg.id;
+      setUsername();
+      break;
+    case "username":
+      text = "<b>User <em>" + msg.name + "</em> signed in at " + timeStr + "</b><br>";
+      break;
+    case "message":
+      text = "(" + timeStr + ") <b>" + msg.name + "</b>: " + msg.text + "<br>";
+      break;
+    case "rejectusername":
+      text = "<b>Your username has been set to <em>" + msg.name + "</em> because the name you chose is in use.</b><br>"
+      break;
+    case "userlist":
+      var ul = "";
+      for (i=0; i < msg.users.length; i++) {
+        ul += msg.users[i] + "<br>";
+      }
+      document.getElementById("userlistbox").innerHTML = ul;
+      break;
+  }
+  
+  if (text.length) {
+    f.write(text);
+    document.getElementById("chatbox").contentWindow.scrollByPages(1);
+  }
+};
+*/
+</script>
+
+ <div id="output"></div>
+ 
+<input type="text" id="CommandBox">
+<button type="button" onclick="sendFunc()">Send</button>
+ 
+</body>
+</html> 

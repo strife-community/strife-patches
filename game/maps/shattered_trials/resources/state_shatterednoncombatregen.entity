@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShatteredNonCombatRegen"
+	
+	ishidden="true"
+	icon="../icons/noncombat.tga"
+	deathpersist="true"
+	
+	passiveeffect=""
+	manaregenmultiplier2="3"
+	manaproportionregen="0.0"
+	healthregenmultiplier2="3.3"
+	healthproportionregen="0.0"
+	healthregen="15.0"
+	manaregen="6.0"
+	modifierkey="out_of_combat_regen"
+>
+	<onframe>
+		<compare a="time" b="0" op="gt">
+			<setvar0 a="2.223" b="frametime" op="mult" />
+			<setaccumulator entity="this_entity" value="accumulator" valueb="var0" valueop="add"/>
+		</compare>
+
+		<compare a="target_health" b="target_maxhealth" op="lt">
+			<applystate name="State_OOC_Regen_Effects" duration="100" />
+		</compare>
+		<compare a="target_mana" b="target_maxmana" op="lt">
+			<applystate name="State_OOC_Regen_Effects" duration="100" />
+		</compare>
+	</onframe>
+
+	<preexperiencegain>
+
+		<compare a="accumulator" b="combat_experience" op="ge">
+			<setaccumulator entity="this_entity" value="accumulator" valueb="combat_experience" valueop="sub"/>
+			<setvalue name="combat_experience_multiplier" a="combat_experience_multiplier" b="2" op="mult" />
+		</compare>
+		<else>
+			<compare a="accumulator" b="0" op="gt">
+				<setvar0 a="accumulator" b="combat_experience" op="div" />
+				<setvar0 a="var0" b="1" op="add" />
+				<setvalue name="combat_experience_multiplier" a="combat_experience_multiplier" b="var0" op="mult" />
+				<setaccumulator entity="this_entity" value="0" />
+			</compare>
+		</else>
+
+	</preexperiencegain>
+	
+	<modifier key="in_combat" modpriority="100" 
+		manaregenmultiplier2="0.000"
+		manaregen="0.0"
+		healthproportionregen="0.0"
+		healthregenmultiplier2="0"
+		manaproportionregen="0.0"
+		healthregen="0.0"
+		ishidden="true"
+		passiveeffect=""
+		modifierkey=""
+	>
+		<onframe>
+			<compare a="time" b="0" op="gt">
+				<setvar0 a="2.223" b="frametime" op="mult" />
+				<setaccumulator entity="this_entity" value="accumulator" valueb="var0" valueop="add"/>
+			</compare>
+		</onframe>
+
+	</modifier>		
+
+	<modifier key="shop_access_dead" condition="!alive" modpriority="100" 
+	>
+		<onframe />
+	</modifier>
+</state>
