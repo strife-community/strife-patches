@@ -56,12 +56,12 @@
     </onspawn>
     
     <onframe>
-        <!-- If enemy see one either of a beam, they must see other end too! -->
+        <!-- If enemy see either end of a beam, they must see other end too! -->
         <condition test="canenemysee" target="this_entity" >
-            <applystate name="State_Pal_Gadget_Reveal" target="this_proxy_entity" continuous="true" timeout="frametime" />
+            <applystate name="State_Pal_Ability1_Reveal" target="this_proxy_entity" continuous="true" timeout="frametime" />
         </condition>
         <condition test="canenemysee" target="this_proxy_entity" >
-            <applystate name="State_Pal_Gadget_Reveal" target="this_entity" continuous="true" timeout="frametime" />
+            <applystate name="State_Pal_Ability1_Reveal" target="this_entity" continuous="true" timeout="frametime" />
         </condition>
     </onframe>
 
