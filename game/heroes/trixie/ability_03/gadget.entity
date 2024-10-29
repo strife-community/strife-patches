@@ -1,53 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Trixie_Ability3"
+    name="Gadget_Trixie_Ability3"
 
-	icon=""
-	portrait=""
-	model=""
-	passiveeffect=""
-	deatheffect=""
-	
-	preglobalscale="1.0"
-	modelscale="1.5"
-	effectscale="0.9"
-	boundsheight="0"
-	radiusheight="0"
-	boundsradius="0"
-	isselectable="false"
-	selectionradius="0"
-	targetoffset="0 0 0"
+    icon=""
+    portrait=""
+    model=""
+    passiveeffect=""
+    deatheffect=""
 
-	canrotate="false"
-	ismobile="false"
+    preglobalscale="1.0"
+    modelscale="1.5"
+    effectscale="0.9"
+    boundsheight="0"
+    radiusheight="0"
+    boundsradius="0"
+    isselectable="false"
+    selectionradius="0"
+    targetoffset="0 0 0"
 
-	attacktype="none"
-	combattype="Ranged"
-	canattack="false"
+    canrotate="false"
+    ismobile="false"
 
-	sightrangeday="0"
-	sightrangenight="0"
-	
-	buildingwalking="true"
+    attacktype="none"
+    combattype="Ranged"
+    canattack="false"
 
-	deathtime="0"
-	corpsetime="0"
+    sightrangeday="0"
+    sightrangenight="0"
 
-	lifetime="5000"
+    buildingwalking="true"
 
-	invulnerable="true"
-	hidealtinfo="true"
-	flying="true"
-	flyheight="150"
-	clearvision="true"
-	drawonmap="false"
-	
-	hazardradius="250"
+    deathtime="0"
+    corpsetime="0"
 
-	alwaystransmitdata="true"
-	
+    lifetime="5000"
+
+    invulnerable="true"
+    hidealtinfo="true"
+    flying="true"
+    flyheight="150"
+    clearvision="true"
+    drawonmap="false"
+
+    hazardradius="250"
+
 >
-
-
-
+    <onframe>
+        <!-- If enemy see either end of a beam, they must see other end too! -->
+        <condition test="canenemysee" target="this_proxy_entity" >
+            <applystate name="State_Trixie_Ability3_Reveal" target="this_entity" continuous="true" timeout="frametime" />
+        </condition>
+        <condition test="canenemysee" target="this_entity" >
+            <applystate name="State_Trixie_Ability3_Reveal" target="this_proxy_entity" continuous="true" timeout="frametime" />
+        </condition>
+    </onframe>
 </gadget>

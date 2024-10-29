@@ -8,7 +8,6 @@
 	modifierkey="trixie_ability3"
 	disarmed="true"
 	perplexed="true"
-	alwaystransmitdata="true" 
 	ishidden="true"
 >
 	<onframe>
@@ -32,7 +31,7 @@
 	</onactivatepreimpact>
 
 	<oninflict>
-		<spawnunit name="Gadget_Trixie_Ability3" count="1" source="source_entity" target="target_position" pushentity="true" />
+		<spawnunit name="Gadget_Trixie_Ability3" count="1" source="source_entity" target="target_position" proxy="source_entity" pushentity="true" />
 		<setproxy target="stack_entity" />
 
 		<setpos0 position="source_entity" offsetspace="source_entity" offset="0 900 0" />
