@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pal_Gadget_Reveal"
+	ishidden="true"
+	alwaystransmitdata="true"
+
+>
+    <!-- This state just makes target visible globally with "alwaystransmitdata" attribute, NOTHING TO DO -->
+</state>
