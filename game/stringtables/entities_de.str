@@ -2125,33 +2125,28 @@ Item_AssasinsShroud_Empower_3_description							Gewährt $deflection_enchant$ Ab
 
 // SpringBoots
 Item_SpringBoots_name												Raketenstiefel
-Item_SpringBoots_description										55 Bewegungsgeschwindigkeit .\nAktiviere um 525 Einheiten vorwärts zu stürmen
+Item_SpringBoots_description										55 Bewegungsgeschwindigkeit.\nAktiviere um 525 Einheiten vorwärts zu stürmen
 Item_SpringBoots_description_simple									Gewährt Bewegungsgeschwindigkeit. Aktiviere zum Stürmen.
 
 // ASBoots
 Item_ASBoots_name													Leidenschaftsstiefel
-Item_ASBoots_description											50 Bewegungsgeschwindigkeit, 25 Angriffsgeschwindigkeit. Aktiviere um Bewegungsgeschwindigkeitum 80 zu erhöhen und Einheitfgang für 3 Sekunden zu gewinnen
+Item_ASBoots_description											50 Bewegungsgeschwindigkeit, 25 Angriffsgeschwindigkeit.\nAktiviere um Bewegungsgeschwindigkeitum 80 zu erhöhen und Einheitfgang für 3 Sekunden zu gewinnen
 Item_ASBoots_description_simple										Gewährt Bewegungs- und Angriffsgeschwindigkeit. Aktiviere zum Sprinten und um durch Einheiten gehen zu können.
 
 // HealthBoots
 Item_HealthBoots_name												Trägheitsstiefel
-Item_HealthBoots_description										65 Bewegungsgeschwindigkeit, +250 Gesundheit\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
+Item_HealthBoots_description										65 Bewegungsgeschwindigkeit, +250 Gesundheit.\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
 Item_HealthBoots_description_simple									Gewährt Bewegungsgeschwindigkeit und Gesundheit. Aktiviere um alle Betäubungen und Verlangsamungen von dir zu entfernem
 
 // RuneBoots
 Item_RuneBoots_name													Runenstiefel
-Item_RuneBoots_description											70 Bewegungsgeschwindigkeit, 15%Abkühlzeiten-Senkung\n Aktiviere um 20% deiner max. Gesundheit und Mana in 3 Sekunden zurückzubekommen. Schadennahme annulliert Wirkung.
+Item_RuneBoots_description											70 Bewegungsgeschwindigkeit, 15%Abkühlzeiten-Senkung.\nAktiviere um 20% deiner max. Gesundheit und Mana in 3 Sekunden zurückzubekommen. Schadennahme annulliert Wirkung.
 Item_RuneBoots_description_simple									Gewährt Bewegungsgeschwindigkeit und Abkühlzeiten-Senkung. Aktiviere um schnell Gesundheit und Mana zurückzubekommen
 
 // PowerBoots
 Item_PowerBoots_name												Kraftstiefel
 Item_PowerBoots_description											65 Bewegungseschwindigkeit,\n+20 Kraft
 Item_PowerBoots_description_simple									Gewährt Bewegungsgeschwindigkeit und Kraft.
-
-// WarpBoots
-Item_WarpBoots_name													Teleportstiefel
-Item_WarpBoots_description											85 Bewegungsgeschwindigkeit\nZiele auf eine Stelle um dahin zu stürmen.
-Item_WarpBoots_description_simple									85 Bewegungsgeschwindigkeit\nZiele auf eine Stelle um dahin zu stürmen.
 
 // TeleportBoots
 Item_TeleportBoots_name												Teleportstiefel
@@ -2312,7 +2307,7 @@ Item_Codex_bonusdescription											Erhöht Schaden vom Pyrostab um $common_in
 Item_Codex_legendaryname											Kill Stehlen
 Item_Codex_legendarydescription										Bei der Tötung eines Feindes mit Pyrostab wird die Abkühlzeit um $cooldown$ Sekunden gesenkt.
 Item_Codex_Empower_1_name											Kauterisieren
-Item_Codex_Empower_1_description									Bei der Tötung eines Feindes mit Pyrostab wird die Abkühlzeit um $cooldown_enchant$ Sekunden gesenkt.
+Item_Codex_Empower_1_description									Bei Aktivierung erhälst du $heal_enchant$ Heilung.
 Item_Codex_Empower_2_name											Treffsicherheit
 Item_Codex_Empower_2_description									Erhöht Reichweite um $range_enchant$.
 Item_Codex_Empower_3_name											Perfektion
@@ -2610,17 +2605,17 @@ State_Orb_Of_Revelation_Reveal_name_FRAME_effect
 
 // Item_Frostbrand
 Item_Frostbrand_name												Frostprisma
-Item_Frostbrand_description											^o+$damage$ Attack Damage^*.\nAngriff verwendet $slow$% Bewegungsverlangsamung für das Ziel. Hält 2,0 Sekunden.\nVerlangsamung ist für Fernangreifer weniger stark.
+Item_Frostbrand_description											^o+$damage$ Attack Damage^*.\nAngriff verwendet $slow$% Bewegungsverlangsamung für das Ziel. Hält 2,0 Sekunden.\nVerlangsamung ist für Fernangreifer weniger effektiv.
 Item_Frostbrand_description_simple									Verleiht ^oAttack Damage^* und deine Angriffe verlangsamen den Gegner.
 Item_Frostbrand_effect_header										Frosteffekt
 Item_Frostbrand_tooltip_flavor										Selbst nach eine Stunde im Feuer, ist es immer noch kalt.
 Item_Frostbrand_effect_header:attack								Frosteffekt
-Item_Frostbrand_ATTACK_IMPACT_effect:attack							TGibt dem Gegner Abgekühlt für 4 Sekunden, wenn es von einem Nahkampfhelden geführt wird oder für 2,5 Sekunden, wenn es von einem Fernkampfhelden geführt wird. Fügt eine Ladung pro Anwendung hinzu. Maximal 5 Ladungen.
+Item_Frostbrand_ATTACK_IMPACT_effect:attack							Gibt dem Gegner Abgekühlt für 4 Sekunden, wenn es von einem Nahkampfhelden geführt wird oder für 2,5 Sekunden, wenn es von einem Fernkampfhelden geführt wird. Fügt eine Ladung pro Anwendung hinzu. Maximal 5 Ladungen.
 Item_Frostbrand_bonusdescription									Erhöht die Wirksamkeit der Verlangsamung um $common_increase$%.
 Item_Frostbrand_legendaryname										Schnelligkeit
 Item_Frostbrand_legendarydescription								Erhöht bei einem Treffer die Bewegungsgeschw. einers Helden für 3 Sekunden.
 Item_Frostbrand_Empower_1_name										Schnelligkeit
-Item_Frostbrand_Empower_1_description								^o+$damage$ Angriffsschaden^*.\nAngriffe $slow$% Bewegungsverlangsamung für das Ziel. Hält 2,5 Sekunden.
+Item_Frostbrand_Empower_1_description								Gewährt $movespeed_enchant$ Bewegungsgeschw. beim Angriff für 2,5 Sekunden.
 Item_Frostbrand_Empower_2_name										Erschöpfung
 Item_Frostbrand_Empower_2_description								Angriffe verlangsamen die Angriffsgeschwindigkeit des Gegners um $attackspeed_enchant$.
 Item_Frostbrand_Empower_3_name										Fokus
@@ -2645,7 +2640,7 @@ State_Eye_Of_TempraRanged_name										Gefroren
 
 // Item_Dark_Bargain
 Item_Dark_Bargain_name												Dunkles Schnäppchen
-Item_Dark_Bargain_description										^o+$damage$ Angriffsschaden^*\n\n^091Aktivieren: Geben Sie 500 Gold aus, um ^o+$perm_bonus$ Angriffsschaden dauerhaft^* und ^o+$bonus$ Angriffsschaden^* ^091vorübergehend für 8 Sekunden zu erhalten. Keine Abklingzeit. Stapelbar.^*
+Item_Dark_Bargain_description										^o+$damage$ Angriffsschaden^*\n\n^091Aktivieren: Geben Sie 500 Gold aus, um ^o+$perm_bonus$ Angriffsschaden dauerhaft^* ^091und^* ^o+$bonus$ Angriffsschaden^* ^091vorübergehend für 8 Sekunden zu erhalten. Keine Abklingzeit. Stapelbar.^*
 Item_Dark_Bargain_description_simple								Bonus ^oAngriffsschaden^*.\n^091Aktivieren: Gold gegen mehr ^oAngriffsschaden eintauschen.^*
 Item_Dark_Bargain_Empower_1_name									Fleiß
 Item_Dark_Bargain_Empower_1_description								Erhöht die Dauer des Bonusschadens um $duration_enchant$ Sekunden.

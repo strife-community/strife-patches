@@ -1824,11 +1824,6 @@ Item_PowerBoots_name                                                            
 Item_PowerBoots_description                                                       65 Vitesse de Mouvement, \n+20 Puissance
 Item_PowerBoots_description_simple                                                Ces bottes accordent de la vitesse de mouvement et de la puissance.
 
-// WarpBoots
-Item_WarpBoots_name                                                               Bottes de Téléportation
-Item_WarpBoots_description                                                        85 Vitesse de Mouvement.\nVisez un emplacement pour vous ruer vers la destination.
-Item_WarpBoots_description_simple                                                 85 Vitesse de Mouvement.\nVisez un emplacement pour vous ruer vers la destination.
-
 // TeleportBoots
 Item_TeleportBoots_name                                                           Bottes de Téléportation
 Item_TeleportBoots_description                                                    85 Vitesse de Mouvement.\nCiblez une unité ou un bâtiment alliés pour vous téléporter jusque-là. À votre arrivée, obtenez 80 Vitesse de Mouvement pendant 3 secondes.
