@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Pal_Ability1_Start"
+	
+	icon="icon.tga"
+	portrait=""
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	unitwalking="true"
+	
+	isselectable="false"
+	
+	preglobalscale="1.0"
+	effectscale="1.0"
+	boundsheight="38"
+	radiusheight="38"
+	boundsradius="10"
+	selectionradius="26"
+	targetoffset="0 0 0"
+    sightedradius="450"
+	
+	maxhealth="600"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+
+	invulnerable="true"
+	cliffwalking="true"
+	
+	sightrangeday="0"
+	sightrangenight="0"
+
+	attacktype="none"
+	
+	corpsetime="0"
+	deathtime="0"
+	corpsefadetime="0"
+	lifetime="6000"
+	
+	blocking="false"
+>
+    <onspawn>
+        <!-- Creating laser beam effect -->
+        <playeffect effect="effects/link.effect" source="this_entity" target="this_proxy_entity" proxy="this_proxy_entity" visibility="allies"/>
+        <playeffect effect="effects/link_enemy.effect" source="this_entity" target="this_proxy_entity" proxy="this_proxy_entity" visibility="enemies"/>
+    </onspawn>
+    
+    <onframe>
+        <!-- If enemy see either end of a beam, they must see other end too! -->
+        <condition test="canenemysee" target="this_entity" >
+            <applystate name="State_Pal_Ability1_Reveal" target="this_proxy_entity" continuous="true" timeout="frametime" />
+        </condition>
+        <condition test="canenemysee" target="this_proxy_entity" >
+            <applystate name="State_Pal_Ability1_Reveal" target="this_entity" continuous="true" timeout="frametime" />
+        </condition>
+    </onframe>
+
+</gadget>
