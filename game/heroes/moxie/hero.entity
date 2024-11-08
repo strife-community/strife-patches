@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hero
-	name="Hero_Blazer"
+	name="Hero_Moxie"
 
 	showinpractice="true"
 	team="final"
 	icon="icon.tga"
-	portrait="icon.tga" 
+	portrait="icon.tga"
 	model="model.mdf"
 	skin=""
 	mapicon="icon_circle.tga"
 	cutouticon="icon_full.tga"
 	
-	passiveeffect="effects/body.effect"
+	passiveeffect=""
 	spawneffect=""
 	respawneffect="/shared/effects/respawn.effect"
 	selectedsound=""
 	selectedflavorsound=""
 
-	heroselectannouncement="sounds/voice/vo_selecthero_1.wav"
+	heroselectannouncement="sounds/voice/vo_spawn_%.wav"
 	heroselectflavorannouncement="sounds/voice/vo_selecthero_2.wav"
 	confirmmovesound="sounds/voice/vo_move_%.wav"
 	confirmattacksound="sounds/voice/vo_attack_%.wav"
-	nomanasound="sounds/voice/vo_oom_%.wav"
-	cooldownsound="sounds/voice/vo_cooldown_%.wav"
+	nomanasound="sounds/voice/vo_oom.wav"
+	cooldownsound="sounds/voice/vo_cooldown.wav"
 	streaksound="sounds/voice/vo_ck_2.wav,sounds/voice/vo_ck_3.wav,sounds/voice/vo_ck_4.wav,sounds/voice/vo_ck_5.wav"
 	
-	creepkillannouncement="sounds/voice/vo_lasthit_1.wav,sounds/voice/vo_lasthit_2.wav,sounds/voice/vo_lasthit_3.wav"
+	creepkillannouncement=""
 	herokillfrequentannouncement="sounds/voice/vo_herokill_%.wav"
-	herokillinfrequentannouncement="sounds/voice/vo_sporadickill_%.wav"
-	herolevelultannouncement="sounds/voice/vo_levelup_1.wav,sounds/voice/vo_levelup_2.wav,sounds/voice/vo_levelup_3.wav"
-	creepdamageannouncement="sounds/voice/vo_creepdamage_%.wav"
+	herokillinfrequentannouncement="sounds/voice/vo_herokill_%.wav"
+	herolevelultannouncement="sounds/voice/vo_move_%.wav"
+	creepdamageannouncement="sounds/voice/vo_creepdamage.wav"
 	toweraggroannouncement="sounds/voice/vo_towerdamage.wav"
-	deathannouncement=""
+	deathannouncement="sounds/voice/vo_death_2.wav"
 	respawnannouncement="sounds/voice/vo_spawn_%.wav"
 	itemacquireannouncement=""
 	itempurchaseannouncement="sounds/voice/vo_itempurchase_%.wav"
-	lowhealthannouncement="sounds/voice/vo_lowhealth_%.wav"
-	abilityflavorannouncement="sounds/voice/vo_ability_1.wav,sounds/voice/vo_ability_2.wav,sounds/voice/vo_ability_3.wav,sounds/voice/vo_ability_4.wav"
+	lowhealthannouncement="sounds/voice/vo_lowhealth.wav"
+	abilityflavorannouncement="sounds/voice/vo_towerdamage.wav"
 		
 	assistannouncement="sounds/voice/vo_ping_assist.wav"
 	attackannouncement="sounds/voice/vo_ping_attack.wav"
@@ -71,38 +71,39 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
-    abilityreadyannouncement="sounds/voice/vo_spawn_2.wav"
-    abilitycooldownannouncement="sounds/voice/vo_cooldown_%.wav"
-    abilitynomanaannouncement="sounds/voice/vo_oom_%.wav"
-    abilitycooldownnomanaannouncement="sounds/voice/vo_oom_%.wav"
+    abilityreadyannouncement="sounds/voice/vo_ping_attack.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom.wav"
 	
-	preglobalscale="1.6"
-	modelscale="1.15"
-	effectscale="1.025"
-	boundsheight="112"
-	boundsradius="24"
-	selectionradius="48"
-	targetoffset="0 0 64"
-	infoheight="300"
-	searchradius="105"
-	minsearchradius="65"
-	searchheight="125"
-
 	revealrange="700"
 	revealtype="hero"
+	
+	preglobalscale="1.175"
+	modelscale="1"
+	effectscale="1.1"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="54"
+	targetoffset="0 0 64"
+	searchradius="105"
+	minsearchradius="65"
+	searchheight="125" 
+	infoheight="195"
 
 	category="magic"
-	difficulty="4"
-	movespeed="345"
+	difficulty="3"
+	movespeed="330"
 	turnrate="900"
 	turnsmoothing="0.01"
 	
 	rolesurvival="0"
-	rolecrowdcontrol="2"
-	rolephysicaldamage="4"
-	rolemagicdamage="4"
-	roleutility="2"
-
+	rolecrowdcontrol="1"
+	rolephysicaldamage="0"
+	rolemagicdamage="5"
+	roleutility="0"
+	
+	
 	maxhealth="881,941,1002,1063,1123,1184,1244,1305,1366,1426,1487,1548,1608,1669,1730"
 	maxhealthperlevel="0"
 	healthregen="2.02,2.16,2.3,2.44,2.58,2.72,2.86,3,3.14,3.28,3.42,3.56,3.7,3.84,3.98"
@@ -110,17 +111,17 @@
 	
 	unitcriticalmultiplier="1.0"
 	
-	maxmana="320"
+	maxmana="350"
 	maxmanaperlevel="15"
-	manaregen="2.11,2.16,2.20,2.24,2.29,2.33,2.37,2.42,2.46,2.51,2.55,2.59,2.64,2.68,2.72"
+	manaregen="2.29,2.33,2.37,2.42,2.48,2.52,2.57,2.61,2.67,2.71,2.76,2.80,2.85,2.90,2.94"
 	manaproportionregen="0.0"
 
 	resistance="10"
 
-	inventory0="Ability_Blazer1"
-	inventory1="Ability_Blazer2"
-	inventory2="Ability_Blazer3"
-	inventory3="Ability_Blazer4"
+	inventory0="Ability_Moxie1"
+	inventory1="Ability_Moxie2"
+	inventory2="Ability_Moxie3"
+	inventory3="Ability_Moxie4"
 	inventory4=""
 	inventory5=""
 	inventory6=""
@@ -130,31 +131,28 @@
 	inventory10="Ability_WardSwitch"
 	inventory11="Ability_AutomatedCourier"
 
-	
-	
+
 	power="130"
-	attackduration="400"
-	attackactiontime="250"
+	attackduration="500"
+	attackactiontime="200"
 	attackcooldown="1100"
 	attackdamagemin="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
 	attackdamageminperlevel="0"
 	attackdamagemax="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
 	attackdamagemaxperlevel="0"
 	attacknumanims="2"
-	tiltfactor="0.0"
-	tiltspeed="90.0"
-	attackoffset="-5 200 200"
-	attackprojectile="Projectile_Blazer_Attack"
+	attackoffset="-22 70 60"
+	attackprojectile="Projectile_MoxieAttack"
 	attackrange="550"
-	attackstarteffect="effects/attack.effect"
-	attackactioneffect=""
-	attackimpacteffect=""
+	attackstarteffect="effects/attack_start.effect"
+	attackactioneffect="projectile/effects/attack.effect"
+	attackimpacteffect="effects/projectile/effects/projectile_impact.effect"
 	critimpacteffect="/shared/effects/crit_impact.effect"
 	attacktype="ranged"
 	attackdamagetype="AttackDamage"
 	combattype="Hero"
 
-	aggrorange="800"
+	aggrorange="600"
 	sightrangeday="1500"
 	sightrangenight="1500"
 	wanderrange="250"
@@ -169,37 +167,33 @@
 	
 	previewpassiveeffect="effects/preview.effect"
 	previewmodel="preview.mdf"
-	previewpos="18 0 -180"
-	previewangles="25 0 0"
-	previewscale="1.33"
+	previewpos="18 0 -120"
+	previewangles="42 0 0"
+	previewscale="0.85"
 	
 	storemodel="preview.mdf"
-	storepos="0 0 -120"
-	storeangles="0 0 0"
-	storescale="1.45"
+	storepos="0 0 -100"
+	storeangles="40 0 0"
+	storescale="1.1"
 	
 	occlusionstealthtype="occlusion"
 	occlusionfadeineffect="/shared/effects/fade_in.effect"
 	occlusionfadeouteffect="/shared/effects/fade_out.effect"
+
+	defaultfamiliar="Familiar_Mystik"
+	itembuild="Moxie"
+	levelbuild="1,2,3,2,2,4,2,1,1,1,4,3,3,3,4"
 	
-	defaultfamiliar="Familiar_Razer"
-	itembuild="Blazer"
-	levelbuild="1,2,3,2,2,4,2,3,3,3,4,1,1,1,4"
-	
-	corpsetime="1500"
+	corpsetime="1200"
 	corpsefadetime="4000"
 	corpsefadeeffect="/shared/effects/corpse_sink.effect"
-	
 >
 	<modifier key="counterstrife" modpriority="1" healthregen="0" manaregen="0" inventory8="" inventory9="Ability_SpawnInvulnerability" inventory10="" inventory11="" dropitemsondeath="true" movespeed="500" sightrangeday="1000" sightrangenight="1000" />
-	<modifier key="Blazer_Ability1_Charging" priority="100" walkanim="ability_1_walk" idleanim="ability_1_aim" abilityflavorannouncement="sounds/voice/vo_ability_1_2.wav,sounds/voice/vo_ability_2.wav,sounds/voice/vo_ability_3.wav,sounds/voice/vo_ability_4.wav" />
-	<modifier key="frost" modpriority="100" attackprojectile="Projectile_Frost"/> 
-	<modifier key="shop_access_dead" condition="!alive" modpriority="100" exclusive="true" shopaccess="Shop_Utility Shop_Basic Shop_Boots Shop_Consumables Shop_MagicDefense Shop_PhysicalDefense Shop_VitalBoosters Shop_Artifacts Shop_Offense Shop_Crafted" stashaccess="true"/>
-	<modifier key="no_aggro" modpriority="100" defaultbehavior="aggro"/>
-	<modifier key="Blazer_Ability4_Invis" modpriority="100" passiveeffect="effects/body_invis.effect" />
-	<modifier key="voidkeyactive" modpriority="100" passiveeffect="" />
-	
-	<modifier key="gear_2" modpriority="1" altavatar="true" passiveeffect="gear_2/effects/body.effect" icon2="gear_2/icon.tga" portrait="gear_2/icon.tga" model="gear_2/model.mdf" previewmodel="gear_2/preview.mdf" storemodel="gear_2/preview.mdf" />
+	<modifier key="shop_access_dead" condition="!alive" modpriority="100" exclusive="true" shopaccess="Shop_Utility Shop_Basic Shop_Boots Shop_Consumables Shop_MagicDefense Shop_PhysicalDefense Shop_VitalBoosters Shop_Artifacts Shop_Offense Shop_Crafted" stashaccess="true" />
+	<modifier key="no_aggro" modpriority="100" defaultbehavior="hold" />
 
+	<modifier key="gear_1" modpriority="1" altavatar="true" model="gear_1/model.mdf" previewmodel="gear_1/preview.mdf" storemodel="gear_1/preview.mdf" /> 
+	<modifier key="gear_2" modpriority="1" altavatar="true" model="gear_2/model.mdf" previewmodel="gear_2/preview.mdf" storemodel="gear_3/preview.mdf" />
+	<modifier key="uber" modpriority="1" altavatar="true" model="gear_3/model_3.mdf" previewmodel="gear_3/preview.mdf" storemodel="gear_3/preview.mdf" />
 	
 </hero>
