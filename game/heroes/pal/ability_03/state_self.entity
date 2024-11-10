@@ -5,7 +5,7 @@
 	allowtransfer="true"
 	
 	resistance="8,12,16,20"
-	
+	sightedradius="400"
 >
 	
 	<onframe>
