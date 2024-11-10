@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pal_Ability3_Self"
+	ishidden="true"
+	allowtransfer="true"
+	
+	resistance="8,12,16,20"
+	
+>
+	
+	<onframe>
+	</onframe>
+
+</state>
