@@ -2534,10 +2534,7 @@ game_alt_couriers_current					Текущий выбор посыльного
 game_alt_couriers_select					Выбрать этого посыльного
 game_alt_couriers_purchase					Купить этого посыльного
 game_alt_couriers_lock						Заблокировать посыльного
-game_alt_couriers_unlock						Разблокировать посыльного
-
-ability_on_cooldown_remaing					Умение ^980«{value2}»^* будет готово через ^r{value1} сек.^*
-ability_on_cooldown_ready					Умение ^980«{value2}»^* ^gготово^*!
+game_alt_couriers_unlock					Разблокировать посыльного
 
 // game_chat.package
 gamechat_button_send_message				Отправить сообщение
@@ -4053,6 +4050,7 @@ map_tutorial_2								Спасение Аурос
 map_tutorial_3								Матч с подсказками
 map_bastact1								История Бастиона
 map_bastact2								Зеленый лист
+map_shattered_trials							The Shattered Trials
 
 // tooltips
 tooltip_passive_bonuses						Пассивные бонусы

@@ -1180,7 +1180,7 @@ Ability_Ladytinder1_description									Target direction to launch bindweed, stu
 Ability_Ladytinder1_description_simple							skillshot stun grab and damage
 // Ability_Ladytinder2
 Ability_Ladytinder2_name										Tinder Touch
-Ability_Ladytinder2_description									Target ally to heal for ^o$heal$^* Health, bouncing 3 times.  \n\nAlternatively, target enemy to deal ^o$damage$ Magic damage^*, bouncing 3 times.  Effect diminishes on each bounce.
+Ability_Ladytinder2_description									Target ally to heal for ^o$heal$^* Health, bouncing 3 times. \n\nAlternatively, target enemy to deal ^o$damage$ Magic damage^*, bouncing 3 times.\n\nDamage and heal are reduced by $chain_reduce_percent$% on each bounce.
 Ability_Ladytinder2_description_simple							chain heal or chain damage
 State_Ladytinder_Ability2_Self_name								Imprison
 // Ability_Ladytinder3
@@ -1343,7 +1343,7 @@ Ability_Nikolai3_description									Activate to damage all nearby enemies for $
 Ability_Nikolai3_description_simple								area damage and shield buff
 // Ability_Nikolai4
 Ability_Nikolai4_name											Piledriver
-Ability_Nikolai4_description									Target direction to lunge, grabbing the first enemy hero you contact - launching you both into the air.  While airborn you may continue to move.  \n\nUpon landing, you deal ^o$damage$^* Magic Damage in a small area.
+Ability_Nikolai4_description									Target direction to lunge, grabbing the first enemy hero you contact - launching you both into the air. While airborn you may continue to move.\n\nUpon landing, you deal ^o$damage$^* Magic Damage in a small area.\n\nIf enemy hero use CC Break to avoid being launched into the air, you get mana refunded and ability is put on $cooldown_reset$ second cooldown instead.
 Ability_Nikolai4_description_simple								single target relocation
 
 // Hero_Pal
@@ -2147,11 +2147,6 @@ Item_RuneBoots_description_simple								Grants Cooldown Reduction\n^091Activate
 Item_PowerBoots_name											Power Boots
 Item_PowerBoots_description										65 Movement Speed\n+20 Power\n\n^091Activate: grants 20% resistance penetration for 5 seconds.^* 
 Item_PowerBoots_description_simple								Grants Power\n^091Activate: grants resistance penetration.^*
-
-// WarpBoots
-Item_WarpBoots_name												Warp Boots
-Item_WarpBoots_description										85 Movement Speed\n\n^091Activate: Target a position to dash there.^*
-Item_WarpBoots_description_simple								^091Activate: Target a position to dash there.^*
 
 // TeleportBoots
 Item_TeleportBoots_name											Warp Boots

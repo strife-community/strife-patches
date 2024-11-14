@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<botmetadata version="1">
+	<nodes>
+		<node index="0" name="team1_mid_tower3" x="4620.9546" y="4463.3467" z="-130.6603" radius="32.0000">
+			<property name="lane" type="string" value="middle" />
+			<property name="lane_index" type="number" value="1.0000" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="1.0000" />
+			<property name="team_target" type="string" value="generator" />
+			<property name="team_target_prereq" type="string" value="lane2_goodtower2" />
+			<property name="type" type="string" value="tower" />
+			<property name="unit" type="string" value="good_melee2" />
+		</node>
+		<node index="1" name="team1_base" x="3555.1077" y="3403.6809" z="-128.0000" radius="32.0000">
+			<property name="innerrange" type="number" value="2500.0000" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="outerrange" type="number" value="3500.0000" />
+			<property name="team" type="number" value="1.0000" />
+			<property name="team_target" type="string" value="base" />
+			<property name="team_target_prereq" type="string" value="good_melee1,good_melee2,good_melee3" />
+			<property name="team_target_prereq_count" type="number" value="1.0000" />
+			<property name="type" type="string" value="base" />
+			<property name="unit" type="string" value="good_base" />
+		</node>
+		<node index="2" name="team1_well" x="2219.6785" y="2059.6743" z="55.2075" radius="32.0000">
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="1.0000" />
+			<property name="type" type="string" value="well" />
+			<property name="unit" type="string" value="good_well" />
+		</node>
+		<node index="3" name="team1_mid_tower2" x="5946.9941" y="5707.0391" z="-128.0000" radius="32.0000">
+			<property name="lane" type="string" value="middle" />
+			<property name="lane_index" type="number" value="2.0000" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="1.0000" />
+			<property name="team_target" type="string" value="tower2" />
+			<property name="team_target_prereq" type="string" value="lane2_goodtower1" />
+			<property name="type" type="string" value="tower" />
+			<property name="unit" type="string" value="lane2_goodtower2" />
+		</node>
+		<node index="4" name="team1_mid_tower1" x="7105.7368" y="6825.1055" z="-128.0000" radius="32.0000">
+			<property name="lane" type="string" value="middle" />
+			<property name="lane_index" type="number" value="5.0000" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="1.0000" />
+			<property name="team_target" type="string" value="tower1" />
+			<property name="type" type="string" value="tower" />
+			<property name="unit" type="string" value="lane2_goodtower1" />
+		</node>
+		<node index="7" name="" x="5446.1426" y="5314.2144" z="-128.0000" radius="32.0000">
+			<property name="lane" type="string" value="value" />
+			<property name="lanepath" type="boolean" value="true" />
+		</node>
+		<node index="9" name="team2_well" x="14410.1914" y="14192.4561" z="49.8631" radius="32.0000">
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="2.0000" />
+			<property name="type" type="string" value="well" />
+			<property name="unit" type="string" value="bad_well" />
+		</node>
+		<node index="10" name="team2_base" x="13096.3232" y="12880.4600" z="-128.0000" radius="32.0000">
+			<property name="innerrange" type="number" value="2500.0000" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="outerrange" type="number" value="3500.0000" />
+			<property name="team" type="number" value="2.0000" />
+			<property name="team_target" type="string" value="base" />
+			<property name="team_target_prereq" type="string" value="bad_melee1,bad_melee2,bad_melee3" />
+			<property name="team_target_prereq_count" type="number" value="1.0000" />
+			<property name="type" type="string" value="base" />
+			<property name="unit" type="string" value="bad_base" />
+		</node>
+		<node index="12" name="team2_mid_tower2" x="10808.7900" y="10635.3691" z="-128.0000" radius="32.0000">
+			<property name="lane" type="string" value="middle" />
+			<property name="lane_index" type="number" value="2.0000" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="2.0000" />
+			<property name="team_target" type="string" value="tower2" />
+			<property name="team_target_prereq" type="string" value="lane2_badtower1" />
+			<property name="type" type="string" value="tower" />
+			<property name="unit" type="string" value="lane2_badtower2" />
+		</node>
+		<node index="13" name="team2_mid_tower1" x="9577.4043" y="9400.3994" z="-127.9995" radius="32.0000">
+			<property name="lane" type="string" value="middle" />
+			<property name="lane_index" type="number" value="3.0000" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="2.0000" />
+			<property name="team_target" type="string" value="tower1" />
+			<property name="type" type="string" value="tower" />
+			<property name="unit" type="string" value="lane2_badtower1" />
+		</node>
+		<node index="283" name="team2_mid_tower3" x="11970.7637" y="11789.4043" z="-142.0452" radius="32.0000">
+			<property name="lane" type="string" value="middle" />
+			<property name="lane_index" type="number" value="1.0000" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="2.0000" />
+			<property name="team_target" type="string" value="generator" />
+			<property name="team_target_prereq" type="string" value="lane2_badtower2" />
+			<property name="type" type="string" value="tower" />
+			<property name="unit" type="string" value="bad_melee2" />
+		</node>
+		<node index="314" name="" x="8365.3242" y="8105.1855" z="-128.0000" radius="32.0000">
+			<property name="lanepath" type="boolean" value="true" />
+		</node>
+		<node index="452" name="" x="11110.3506" y="10925.3848" z="-128.0000" radius="32.0000">
+			<property name="lanepath" type="boolean" value="true" />
+		</node>
+		<node index="589" name="" x="6476.2617" y="6222.7788" z="-128.0000" radius="32.0000">
+			<property name="escape" type="boolean" value="true" />
+			<property name="lane" type="string" value="middle" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="2.0000" />
+		</node>
+		<node index="592" name="" x="10337.3555" y="10169.4834" z="-128.0000" radius="32.0000">
+			<property name="escape" type="boolean" value="true" />
+			<property name="lane" type="string" value="middle" />
+			<property name="lanepath" type="boolean" value="true" />
+			<property name="team" type="number" value="1.0000" />
+		</node>
+	</nodes>
+	<links>
+		<link index="5" name="" nodeaindex="0" nodebindex="1" />
+		<link index="6" name="" nodeaindex="1" nodebindex="2" />
+		<link index="8" name="" nodeaindex="3" nodebindex="589" />
+		<link index="14" name="" nodeaindex="13" nodebindex="314" />
+		<link index="17" name="" nodeaindex="9" nodebindex="10" />
+		<link index="129" name="" nodeaindex="10" nodebindex="283" />
+		<link index="317" name="" nodeaindex="12" nodebindex="592" />
+		<link index="454" name="" nodeaindex="12" nodebindex="452" />
+		<link index="457" name="" nodeaindex="3" nodebindex="7" />
+		<link index="458" name="" nodeaindex="0" nodebindex="7" />
+		<link index="582" name="" nodeaindex="283" nodebindex="452" />
+		<link index="590" name="" nodeaindex="4" nodebindex="589" />
+		<link index="591" name="" nodeaindex="4" nodebindex="314" />
+		<link index="594" name="" nodeaindex="13" nodebindex="592" />
+	</links>
+</botmetadata>

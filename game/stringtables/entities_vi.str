@@ -1891,11 +1891,6 @@ Item_PowerBoots_name											Power Boots
 Item_PowerBoots_description										65 Movement Speed, \n+20 Power
 Item_PowerBoots_description_simple								Tăng Tốc Độ Chạy và Power.
 
-// WarpBoots
-Item_WarpBoots_name												Warp Boots
-Item_WarpBoots_description										75 Movement Speed\nCó thể di chuyển nhanh đến chỗ Lính hay Trụ.
-Item_WarpBoots_description_simple								75 Movement Speed\nCó thể di chuyển nhanh đến chỗ Lính hay Trụ.
-
 // TeleportBoots
 Item_TeleportBoots_name											Warp Boots
 Item_TeleportBoots_description									75 Movement Speed\nCó thể di chuyển nhanh đến chỗ Lính hay Trụ

@@ -2768,9 +2768,6 @@ game_alt_couriers_purchase					Comprar este Mensageiro
 game_alt_couriers_lock						Bloquear Mensageiro
 game_alt_couriers_unlock						Desbloquear Mensageiro
 
-ability_on_cooldown_remaing					Recarga de ^980{value2}^* por ^r{value1}s^*!
-ability_on_cooldown_ready					^980{value2}^* ^grecarregado^*!
-
 // game_chat.package
 gamechat_button_send_message				Enviar Mensagem
 gamechat_tip_hit_z_history					^y*Dica:^* Aperte "Z" para exibir o histórico do chat
@@ -4241,6 +4238,7 @@ map_tutorial_2								O resgate de Auros
 map_tutorial_3								Partida guiada
 map_bastact1								A História de Bastion
 map_bastact2								A Folha Verde
+map_shattered_trials							The Shattered Trials
 
 // tooltips
 tooltip_passive_bonuses						Bônus passivos
