@@ -73,7 +73,7 @@
 		
 		<!-- pop bomb -->
 		<cantarget targetscheme="tracebomb" ignoreinvulnerable="true">
-			<compare a="proxy_entity" b="target_entity" op="ne">
+			<compare a="source_team" b="target_team" op="eq">
 				<kill target="target_entity" source="" />
 			</compare>
 		</cantarget>
