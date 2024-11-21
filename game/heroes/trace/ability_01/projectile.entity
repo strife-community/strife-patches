@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Trace_Ability1"
+
+	speed="1300"
+	
+
+	preglobalscale="1.75"
+	modelscale="1.3"
+	effectscale="1.05"
+	
+	model="/shared/models/invis.mdf"
+
+	traileffect="effects/trail.effect"
+	
+	canturn="true"
+
+	lifetime="1600"
+	
+	
+	touchradiusdiradjust="true"
+	touchtargetscheme="all"
+	toucheffecttype="Magic"
+	touchignoreinvulnerable="true"
+	
+	touchradius="105"
+	touchpropradius="95"
+	touchpropanim="flamehit"
+	touchcliffs="false"
+>
+
+	<onspawn>
+		<setparam a="0" />
+	</onspawn>
+	
+	<onimpact>
+		<expirestate name="State_Trace_Ability1_BoomerangOut" target="source_entity" />
+	</onimpact>
+
+	<ontouch>
+		<cantarget targetscheme="enemy_units_and_buildings">
+			<cantarget targetscheme="enemy_units_and_buildings">
+				<hasstate name="State_Trace_Ability1">
+					<!-- don't hit the same guy twice   -->
+				</hasstate>
+				<else>
+					
+					<setvar0 a="source_attackdamage" b="0.8,0.95,1.1,1.25" op="mult" />
+					<damage effecttype="AttackDamage Splash" amount="1" b="var0" op="mult" />
+					<applystate name="State_Trace_Ability1" duration="1500" />
+					<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+					
+					<setparam a="1" />
+				</else>
+			</cantarget>
+			
+			<recordheroaggression  />
+			<aggression />
+		</cantarget>
+
+		<cantarget targetscheme="self">
+			<hasstate name="State_Trace_Ability1_CatchDelay" target="source_entity">
+				<!-- (don't catch the boomerang right as we throw it) -->
+			</hasstate>
+			<else>
+				<reducecooldown entity="tool_entity" duration="20000" />
+				<delete target="this_entity" />
+				<expirestate name="State_Trace_Ability1_BoomerangOut" target="source_entity" />
+				<playeffect effect="effects/impact_self.effect" source="source_entity" target="source_entity"/>
+				<playanim name="idle" target="source_entity" />
+			</else>
+		</cantarget>
+		
+		<!-- pop bomb -->
+		<cantarget targetscheme="tracebomb" ignoreinvulnerable="true">
+			<compare a="proxy_entity" b="target_entity" op="ne">
+				<kill target="target_entity" source="" />
+			</compare>
+		</cantarget>
+	</ontouch>
+</projectile>
