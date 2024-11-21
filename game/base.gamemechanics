@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamemechanics>
+	<!-- Attack types -->
+	<attacktype name="none" deniedexpmultiplier="1.0" />
+	<attacktype name="melee" deniedexpmultiplier="0.67" />
+	<attacktype name="ranged" deniedexpmultiplier="0.33" uphillmisschance="0.25" />
+	
+	<!-- Combat types -->
+	<combattypes list="Hero,Melee,Ranged,Siege2,Structure,Tower,Neutral,Mine">
+		<combattable name="Hero">
+			<attackmultiplier target="Mine" value="1.0"/>
+			<attackmultiplier target="Hero" value="1.0"/>
+			<attackmultiplier target="Melee" value="1.0"/>
+			<attackmultiplier target="Ranged" value="1.0"/>
+			<attackmultiplier target="Siege2" value="1"/>
+			<attackmultiplier target="Structure" value="1"/>
+			<attackmultiplier target="Tower" value="1"/>
+			<attackmultiplier target="Neutral" value="1.00"/>
+			
+			<spellmultiplier target="Mine" value="1.0"/>
+			<spellmultiplier target="Hero" value="1.0"/>
+			<spellmultiplier target="Melee" value="1.0"/>
+			<spellmultiplier target="Ranged" value="1.0"/>
+			<spellmultiplier target="Siege2" value="1.0"/>
+			<spellmultiplier target="Structure" value="1.0"/>
+			<spellmultiplier target="Tower" value="1.0"/>
+			<spellmultiplier target="Neutral" value="1.0"/>
+			
+			<!-- preference to aggro -->
+			<!-- note that the game runs through all of these numbers and picks the highest number. The numbers have meaning relative to all other priority numbers -->
+			<aggropriority target="Mine" value="0"/>
+			<aggropriority target="Hero" value="0"/>
+			<aggropriority target="Melee" value="0"/>
+			<aggropriority target="Ranged" value="0"/>
+			<aggropriority target="Siege2" value="0"/>
+			<aggropriority target="Structure" value="-3"/>
+			<aggropriority target="Tower" value="-2"/>
+			<aggropriority target="Neutral" value="0"/>
+			
+			<!-- priority to attack targets that have attacked this unit type -->
+			<attackpriority target="Mine" value="0"/>
+			<attackpriority target="Hero" value="0"/>
+			<attackpriority target="Melee" value="0"/>
+			<attackpriority target="Ranged" value="0"/>
+			<attackpriority target="Siege2" value="-1"/>
+			<attackpriority target="Structure" value="-3"/>
+			<attackpriority target="Tower" value="-2"/>
+			<attackpriority target="Neutral" value="0"/>
+			
+			<!-- priority based on proximity -->
+			<proximitypriority target="Mine" value="0"/>
+			<proximitypriority target="Hero" value="0"/>
+			<proximitypriority target="Melee" value="0"/>
+			<proximitypriority target="Ranged" value="0"/>
+			<proximitypriority target="Siege2" value="-1"/>
+			<proximitypriority target="Structure" value="-3"/>
+			<proximitypriority target="Tower" value="-2"/>
+			<proximitypriority target="Neutral" value="1"/>
+			
+			<targetpriority target="Mine" value="1"/>
+			<targetpriority target="Hero" value="1"/>
+			<targetpriority target="Melee" value="1"/>
+			<targetpriority target="Ranged" value="1"/>
+			<targetpriority target="Siege2" value="-1"/>
+			<targetpriority target="Structure" value="-3"/>
+			<targetpriority target="Tower" value="-2"/>
+			<targetpriority target="Neutral" value="1"/>
+		</combattable>
+
+		<combattable name="Melee">
+			<attackmultiplier target="Mine" value="0.75"/>
+			<attackmultiplier target="Hero" value="0.75"/>
+			<attackmultiplier target="Melee" value="1.0"/>
+			<attackmultiplier target="Ranged" value="1.0"/>
+			<attackmultiplier target="Siege2" value="1.0"/>
+			<attackmultiplier target="Structure" value="0.66"/>
+			<attackmultiplier target="Tower" value="0.66"/>
+			<attackmultiplier target="Neutral" value="1.0"/>
+			
+			<spellmultiplier target="Mine" value="1.0"/>
+			<spellmultiplier target="Hero" value="1.0"/>
+			<spellmultiplier target="Melee" value="1.0"/>
+			<spellmultiplier target="Ranged" value="1.0"/>
+			<spellmultiplier target="Siege2" value="1.0"/>
+			<spellmultiplier target="Structure" value="1.0"/>
+			<spellmultiplier target="Tower" value="1.0"/>
+			<spellmultiplier target="Neutral" value="1.0"/>
+			
+			<aggropriority target="Mine" value="-1"/>
+			<aggropriority target="Hero" value="-1"/>
+			<aggropriority target="Melee" value="1"/>
+			<aggropriority target="Ranged" value="1"/>
+			<aggropriority target="Siege2" value="-1"/>
+			<aggropriority target="Structure" value="-3"/>
+			<aggropriority target="Tower" value="-2"/>
+			<aggropriority target="Neutral" value="0"/>
+			
+			<attackpriority target="Mine" value="0"/>
+			<attackpriority target="Hero" value="0"/>
+			<attackpriority target="Melee" value="0"/>
+			<attackpriority target="Ranged" value="0"/>
+			<attackpriority target="Siege2" value="-1"/>
+			<attackpriority target="Structure" value="-3"/>
+			<attackpriority target="Tower" value="-2"/>
+			<attackpriority target="Neutral" value="0"/>
+			
+			<proximitypriority target="Mine" value="-1"/>
+			<proximitypriority target="Hero" value="-1"/>
+			<proximitypriority target="Melee" value="0"/>
+			<proximitypriority target="Ranged" value="0"/>
+			<proximitypriority target="Siege2" value="-1"/>
+			<proximitypriority target="Structure" value="-3"/>
+			<proximitypriority target="Tower" value="0"/>
+			<proximitypriority target="Neutral" value="0"/>
+			
+			<targetpriority target="Mine" value="1"/>
+			<targetpriority target="Hero" value="0"/>
+			<targetpriority target="Melee" value="1"/>
+			<targetpriority target="Ranged" value="1"/>
+			<targetpriority target="Siege2" value="-1"/>
+			<targetpriority target="Structure" value="-3"/>
+			<targetpriority target="Tower" value="-2"/>
+			<targetpriority target="Neutral" value="1"/>
+		</combattable>
+
+		<combattable name="Ranged">
+			<attackmultiplier target="Mine" value="0.75"/>
+			<attackmultiplier target="Hero" value="0.75"/>
+			<attackmultiplier target="Melee" value="1.0"/>
+			<attackmultiplier target="Ranged" value="1.0"/>
+			<attackmultiplier target="Siege2" value="1.0"/>
+			<attackmultiplier target="Structure" value="0.66"/>
+			<attackmultiplier target="Tower" value="0.66"/>
+			<attackmultiplier target="Neutral" value="1.0"/>
+			
+			<spellmultiplier target="Mine" value="1.0"/>
+			<spellmultiplier target="Hero" value="1.0"/>
+			<spellmultiplier target="Melee" value="1.0"/>
+			<spellmultiplier target="Ranged" value="1.0"/>
+			<spellmultiplier target="Siege2" value="1.0"/>
+			<spellmultiplier target="Structure" value="1.0"/>
+			<spellmultiplier target="Tower" value="1.0"/>
+			<spellmultiplier target="Neutral" value="1.0"/>
+			
+			<aggropriority target="Mine" value="-1"/>
+			<aggropriority target="Hero" value="-1"/>
+			<aggropriority target="Melee" value="1"/>
+			<aggropriority target="Ranged" value="1"/>
+			<aggropriority target="Siege2" value="-1"/>
+			<aggropriority target="Structure" value="-3"/>
+			<aggropriority target="Tower" value="-2"/>
+			<aggropriority target="Neutral" value="0"/>
+			
+			<attackpriority target="Mine" value="0"/>
+			<attackpriority target="Hero" value="0"/>
+			<attackpriority target="Melee" value="0"/>
+			<attackpriority target="Ranged" value="0"/>
+			<attackpriority target="Siege2" value="-1"/>
+			<attackpriority target="Structure" value="-3"/>
+			<attackpriority target="Tower" value="-2"/>
+			<attackpriority target="Neutral" value="0"/>
+			
+			<proximitypriority target="Mine" value="-1"/>
+			<proximitypriority target="Hero" value="-1"/>
+			<proximitypriority target="Melee" value="0"/>
+			<proximitypriority target="Ranged" value="0"/>
+			<proximitypriority target="Siege2" value="-1"/>
+			<proximitypriority target="Structure" value="-3"/>
+			<proximitypriority target="Tower" value="0"/>
+			<proximitypriority target="Neutral" value="0"/>
+			
+			<targetpriority target="Mine" value="1"/>
+			<targetpriority target="Hero" value="0"/>
+			<targetpriority target="Melee" value="1"/>
+			<targetpriority target="Ranged" value="1"/>
+			<targetpriority target="Siege2" value="-1"/>
+			<targetpriority target="Structure" value="-3"/>
+			<targetpriority target="Tower" value="-2"/>
+			<targetpriority target="Neutral" value="1"/>
+		</combattable>
+
+		<combattable name="Siege2">
+			<attackmultiplier target="Mine" value="1.0"/>
+			<attackmultiplier target="Hero" value="0.66"/>
+			<attackmultiplier target="Melee" value="1.00"/>
+			<attackmultiplier target="Ranged" value="1.00"/>
+			<attackmultiplier target="Siege2" value="1.00"/>
+			<attackmultiplier target="Structure" value="1.6"/>
+			<attackmultiplier target="Tower" value="1.6"/>
+			<attackmultiplier target="Neutral" value="1.00"/>
+			
+			<spellmultiplier target="Mine" value="1.0"/>
+			<spellmultiplier target="Hero" value="1.0"/>
+			<spellmultiplier target="Melee" value="1.0"/>
+			<spellmultiplier target="Ranged" value="1.0"/>
+			<spellmultiplier target="Siege2" value="1.0"/>
+			<spellmultiplier target="Structure" value="1.0"/>
+			<spellmultiplier target="Tower" value="1.0"/>
+			<spellmultiplier target="Neutral" value="1.0"/>
+			
+			<aggropriority target="Mine" value="-6"/>
+			<aggropriority target="Hero" value="-6"/>
+			<aggropriority target="Melee" value="-1"/>
+			<aggropriority target="Ranged" value="-1"/>
+			<aggropriority target="Siege2" value="-5"/>
+			<aggropriority target="Structure" value="-3"/>
+			<aggropriority target="Tower" value="-2"/>
+			<aggropriority target="Neutral" value="0"/>
+			
+			<attackpriority target="Mine" value="-6"/>
+			<attackpriority target="Hero" value="-6"/>
+			<attackpriority target="Melee" value="0"/>
+			<attackpriority target="Ranged" value="0"/>
+			<attackpriority target="Siege2" value="-5" />
+			<attackpriority target="Structure" value="3"/>
+			<attackpriority target="Tower" value="3"/>
+			<attackpriority target="Neutral" value="0"/>
+			
+			<proximitypriority target="Mine" value="-6"/>
+			<proximitypriority target="Hero" value="-6"/>
+			<proximitypriority target="Melee" value="0"/>
+			<proximitypriority target="Ranged" value="0"/>
+			<proximitypriority target="Siege2" value="-5"/>
+			<proximitypriority target="Structure" value="-3"/>
+			<proximitypriority target="Tower" value="2"/>
+			<proximitypriority target="Neutral" value="0"/>
+			
+			<targetpriority target="Mine" value="-6"/>
+			<targetpriority target="Hero" value="-6"/>
+			<targetpriority target="Melee" value="1"/>
+			<targetpriority target="Ranged" value="1"/>
+			<targetpriority target="Siege2" value="-5"/>
+			<targetpriority target="Structure" value="3"/>
+			<targetpriority target="Tower" value="3"/>
+			<targetpriority target="Neutral" value="1"/>
+		</combattable>
+
+		<combattable name="Structure">
+			<attackmultiplier target="Mine" value="1.0"/>
+			<attackmultiplier target="Hero" value="1.0"/>
+			<attackmultiplier target="Melee" value="1.0"/>
+			<attackmultiplier target="Ranged" value="1.0"/>
+			<attackmultiplier target="Siege2" value="1.0"/>
+			<attackmultiplier target="Structure" value="1.0"/>
+			<attackmultiplier target="Tower" value="1.0"/>
+			<attackmultiplier target="Neutral" value="1.0"/>
+			
+			<spellmultiplier target="Mine" value="1.0"/>
+			<spellmultiplier target="Hero" value="1.0"/>
+			<spellmultiplier target="Melee" value="1.0"/>
+			<spellmultiplier target="Ranged" value="1.0"/>
+			<spellmultiplier target="Siege2" value="1.0"/>
+			<spellmultiplier target="Structure" value="1.0"/>
+			<spellmultiplier target="Tower" value="1.0"/>
+			<spellmultiplier target="Neutral" value="1.0"/>
+			
+			<aggropriority target="Mine" value="0"/>
+			<aggropriority target="Hero" value="2"/>
+			<aggropriority target="Melee" value="0"/>
+			<aggropriority target="Ranged" value="0"/>
+			<aggropriority target="Siege2" value="0"/>
+			<aggropriority target="Structure" value="0"/>
+			<aggropriority target="Tower" value="3"/>
+			<aggropriority target="Neutral" value="0"/>
+			
+			<attackpriority target="Mine" value="0"/>
+			<attackpriority target="Hero" value="0"/>
+			<attackpriority target="Melee" value="0"/>
+			<attackpriority target="Ranged" value="0"/>
+			<attackpriority target="Siege2" value="0"/>
+			<attackpriority target="Structure" value="0"/>
+			<attackpriority target="Tower" value="0"/>
+			<attackpriority target="Neutral" value="0"/>
+			
+			<proximitypriority target="Mine" value="0"/>
+			<proximitypriority target="Hero" value="0"/>
+			<proximitypriority target="Melee" value="0"/>
+			<proximitypriority target="Ranged" value="0"/>
+			<proximitypriority target="Siege2" value="0"/>
+			<proximitypriority target="Structure" value="0"/>
+			<proximitypriority target="Tower" value="0"/>
+			<proximitypriority target="Neutral" value="0"/>
+			
+			<targetpriority target="Mine" value="0"/>
+			<targetpriority target="Hero" value="0"/>
+			<targetpriority target="Melee" value="0"/>
+			<targetpriority target="Ranged" value="0"/>
+			<targetpriority target="Siege2" value="0"/>
+			<targetpriority target="Structure" value="0"/>
+			<targetpriority target="Tower" value="0"/>
+			<targetpriority target="Neutral" value="0"/>
+		</combattable>
+
+		<combattable name="Tower">
+			<attackmultiplier target="Mine" value="2"/>
+			<attackmultiplier target="Hero" value="1.0"/>
+			<attackmultiplier target="Melee" value="0.8"/>
+			<attackmultiplier target="Ranged" value="0.8"/>
+			<attackmultiplier target="Siege2" value="0.8"/>
+			<attackmultiplier target="Structure" value="1.0"/>
+			<attackmultiplier target="Tower" value="1.0"/>
+			<attackmultiplier target="Neutral" value="1.0"/>
+			
+			<spellmultiplier target="Mine" value="1.0"/>
+			<spellmultiplier target="Hero" value="1.0"/>
+			<spellmultiplier target="Melee" value="1.0"/>
+			<spellmultiplier target="Ranged" value="1.0"/>
+			<spellmultiplier target="Siege2" value="1.0"/>
+			<spellmultiplier target="Structure" value="1.0"/>
+			<spellmultiplier target="Tower" value="1.0"/>
+			<spellmultiplier target="Neutral" value="1.0"/>
+			
+			<aggropriority target="Mine" value="-5"/>
+			<aggropriority target="Hero" value="-4"/>
+			<aggropriority target="Melee" value="0"/>
+			<aggropriority target="Ranged" value="0"/>
+			<aggropriority target="Siege2" value="-1"/>
+			<aggropriority target="Structure" value="-3"/>
+			<aggropriority target="Tower" value="-2"/>
+			<aggropriority target="Neutral" value="0"/>
+			
+			<attackpriority target="Mine" value="-6"/>
+			<attackpriority target="Hero" value="-5"/>
+			<attackpriority target="Melee" value="0"/>
+			<attackpriority target="Ranged" value="0"/>
+			<attackpriority target="Siege2" value="-4"/>
+			<attackpriority target="Structure" value="-3"/>
+			<attackpriority target="Tower" value="2"/>
+			<attackpriority target="Neutral" value="0"/>
+			
+			<proximitypriority target="Mine" value="-6"/>
+			<proximitypriority target="Hero" value="-5"/>
+			<proximitypriority target="Melee" value="5"/>
+			<proximitypriority target="Ranged" value="5"/>
+			<proximitypriority target="Siege2" value="-4"/>
+			<proximitypriority target="Structure" value="-3"/>
+			<proximitypriority target="Tower" value="-2"/>
+			<proximitypriority target="Neutral" value="0"/>
+			
+			<targetpriority target="Mine" value="-5"/>
+			<targetpriority target="Hero" value="-5"/>
+			<targetpriority target="Melee" value="1"/>
+			<targetpriority target="Ranged" value="1"/>
+			<targetpriority target="Siege2" value="-4"/>
+			<targetpriority target="Structure" value="-3"/>
+			<targetpriority target="Tower" value="-2"/>
+			<targetpriority target="Neutral" value="1"/>
+		</combattable>
+		
+		<combattable name="Neutral">
+			<attackmultiplier target="Mine" value="0.75"/>
+			<attackmultiplier target="Hero" value="0.75"/>
+			<attackmultiplier target="Melee" value="1.0"/>
+			<attackmultiplier target="Ranged" value="1.0"/>
+			<attackmultiplier target="Siege2" value="0.7"/>
+			<attackmultiplier target="Structure" value="0.7"/>
+			<attackmultiplier target="Tower" value="0.7"/>
+			<attackmultiplier target="Neutral" value="1.25"/>
+			
+			<spellmultiplier target="Mine" value="1.0"/>
+			<spellmultiplier target="Hero" value="1.0"/>
+			<spellmultiplier target="Melee" value="1.0"/>
+			<spellmultiplier target="Ranged" value="1.0"/>
+			<spellmultiplier target="Siege2" value="1.0"/>
+			<spellmultiplier target="Structure" value="1.0"/>
+			<spellmultiplier target="Tower" value="1.0"/>
+			<spellmultiplier target="Neutral" value="1.0"/>
+			
+			<aggropriority target="Mine" value="0"/>
+			<aggropriority target="Hero" value="0"/>
+			<aggropriority target="Melee" value="0"/>
+			<aggropriority target="Ranged" value="0"/>
+			<aggropriority target="Siege2" value="0"/>
+			<aggropriority target="Structure" value="-3"/>
+			<aggropriority target="Tower" value="2"/>
+			<aggropriority target="Neutral" value="0"/>
+			
+			<attackpriority target="Mine" value="0"/>
+			<attackpriority target="Hero" value="0"/>
+			<attackpriority target="Melee" value="0"/>
+			<attackpriority target="Ranged" value="0"/>
+			<attackpriority target="Siege2" value="0"/>
+			<attackpriority target="Structure" value="-3"/>
+			<attackpriority target="Tower" value="2"/>
+			<attackpriority target="Neutral" value="0"/>
+			
+			<proximitypriority target="Mine" value="-1"/>
+			<proximitypriority target="Hero" value="-1"/>
+			<proximitypriority target="Melee" value="0"/>
+			<proximitypriority target="Ranged" value="0"/>
+			<proximitypriority target="Siege2" value="-1"/>
+			<proximitypriority target="Structure" value="-3"/>
+			<proximitypriority target="Tower" value="-2"/>
+			<proximitypriority target="Neutral" value="0"/>
+			
+			<targetpriority target="Mine" value="1"/>
+			<targetpriority target="Hero" value="1"/>
+			<targetpriority target="Melee" value="1"/>
+			<targetpriority target="Ranged" value="1"/>
+			<targetpriority target="Siege2" value="1"/>
+			<targetpriority target="Structure" value="-3"/>
+			<targetpriority target="Tower" value="-2"/>
+			<targetpriority target="Neutral" value="1"/>
+		</combattable>
+
+		<combattable name="Mine">
+			<attackmultiplier target="Mine" value="1.0"/>
+			<attackmultiplier target="Hero" value="1.0"/>
+			<attackmultiplier target="Melee" value="1.0"/>
+			<attackmultiplier target="Ranged" value="1.0"/>
+			<attackmultiplier target="Siege2" value="1.0"/>
+			<attackmultiplier target="Structure" value="1.0"/>
+			<attackmultiplier target="Tower" value="1.0"/>
+			<attackmultiplier target="Neutral" value="1.0"/>
+			
+			<spellmultiplier target="Mine" value="1.0"/>
+			<spellmultiplier target="Hero" value="1.0"/>
+			<spellmultiplier target="Melee" value="1.0"/>
+			<spellmultiplier target="Ranged" value="1.0"/>
+			<spellmultiplier target="Siege2" value="1.0"/>
+			<spellmultiplier target="Structure" value="1.0"/>
+			<spellmultiplier target="Tower" value="1.0"/>
+			<spellmultiplier target="Neutral" value="1.0"/>
+			
+			<aggropriority target="Mine" value="0"/>
+			<aggropriority target="Hero" value="0"/>
+			<aggropriority target="Melee" value="0"/>
+			<aggropriority target="Ranged" value="0"/>
+			<aggropriority target="Siege2" value="0"/>
+			<aggropriority target="Structure" value="0"/>
+			<aggropriority target="Tower" value="0"/>
+			<aggropriority target="Neutral" value="0"/>
+			
+			<attackpriority target="Mine" value="0"/>
+			<attackpriority target="Hero" value="0"/>
+			<attackpriority target="Melee" value="0"/>
+			<attackpriority target="Ranged" value="0"/>
+			<attackpriority target="Siege2" value="0"/>
+			<attackpriority target="Structure" value="0"/>
+			<attackpriority target="Tower" value="0"/>
+			<attackpriority target="Neutral" value="0"/>
+			
+			<proximitypriority target="Mine" value="0"/>
+			<proximitypriority target="Hero" value="0"/>
+			<proximitypriority target="Melee" value="0"/>
+			<proximitypriority target="Ranged" value="0"/>
+			<proximitypriority target="Siege2" value="0"/>
+			<proximitypriority target="Structure" value="0"/>
+			<proximitypriority target="Tower" value="0"/>
+			<proximitypriority target="Neutral" value="0"/>
+			
+			<targetpriority target="Mine" value="0"/>
+			<targetpriority target="Hero" value="0"/>
+			<targetpriority target="Melee" value="0"/>
+			<targetpriority target="Ranged" value="0"/>
+			<targetpriority target="Siege2" value="0"/>
+			<targetpriority target="Structure" value="0"/>
+			<targetpriority target="Tower" value="0"/>
+			<targetpriority target="Neutral" value="0"/>
+		</combattable>
+		
+	</combattypes>
+	
+	<!-- Target Schemes (Make sure all comes first, otherwise bad things will happen -->
+	<targetscheme name="all" allow="all" restrict=""/>	
+	<targetscheme name="all_heroes" allow="hero" restrict="dead,corpse"/>
+	<targetscheme name="all_heroes_dead_alive" allow="hero" restrict=""/>
+	<targetscheme name="shopkeeper" allow="unit" restrict="!ally,hero,dead,corpse,tree,gadget,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade,!shopkeeper"/>
+	<targetscheme name="tutorial_hero" allow="hero" restrict="ally,dead,corpse,!Hero_CapriceTutorial"/>
+	<targetscheme name="tutorial_hero2" allow="hero" restrict="ally,dead,corpse,!Hero_CapriceTutorial2"/>
+	<targetscheme name="teleporter" allow="Gadget_Tutorial_Boss_Home" restrict="!Gadget_Tutorial_Boss_Home"/>
+	<targetscheme name="Gadget_Tutorial_NoCast" allow="gadget" restrict="hero,dead,corpse,tree,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade,!Gadget_Tutorial_NoCast"/>
+	<targetscheme name="Gadget_Tutorial2_NoCast" allow="gadget" restrict="hero,dead,corpse,tree,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade,!Gadget_Tutorial2_NoCast"/>
+	<targetscheme name="Gadget_Tutorial_TowerRetreat" allow="gadget" restrict="hero,dead,corpse,tree,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade,!Gadget_Tutorial_TowerRetreat"/>
+	<targetscheme name="Gadget_Tutorial2_Retreat" allow="gadget" restrict="hero,dead,corpse,tree,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade,!Gadget_Tutorial2_Retreat"/>
+	<targetscheme name="Gadget_Tutorial3_TowerRetreat" allow="gadget" restrict="hero,dead,corpse,tree,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade,!Gadget_Tutorial3_TowerRetreat"/>
+	<targetscheme name="Gadget_Tutorial2_Spawner" allow="gadget" restrict="hero,dead,corpse,tree,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade,!Gadget_Tutorial2_Boss_Minions"/>
+	<targetscheme name="Tutorial2_Boss_Gadgets" allow="gadget" restrict="hero,dead,corpse,tree,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade,!Gadget_Tutorial2_Boss"/>
+	<targetscheme name="all_nonhero_corpses" allow="unit" restrict="!corpse,hero,persistent,Mechanical,chest,gadget" allow2="unit" restrict2="!pseudo_corpse" />
+	<targetscheme name="all_nonhero_nonboss_units" allow="unit" restrict="building,dead,corpse,gadget,tree,chest,hero,Boss,Tutorial_Marker"/>
+	<targetscheme name="all_other_nongadget_units" allow="unit" restrict="building,dead,corpse,tree,chest,gadget,self,!team_tapper"/>
+	<targetscheme name="all_other_units" allow="unit" restrict="building,dead,corpse,tree,chest,self,gadgets,Courier,!team_tapper"/>
+	<targetscheme name="all_other_units_and_buildings" allow="unit" restrict="dead,corpse,tree,chest,self,gadgets,Courier,!team_tapper"/>
+	<targetscheme name="all_other_nontower_units" allow="unit" restrict="building,dead,corpse,tree,chest,self,gadgets,Courier,!team_tapper,Tower"/>
+	<targetscheme name="all_other_visible_heroes" allow="hero" restrict="dead,corpse,self,!visible"/>
+	<targetscheme name="all_units" allow="unit" restrict="building,dead,corpse,tree,chest,gadget,Courier,!team_tapper"/>
+	<targetscheme name="all_units_and_buildings" allow="unit,building" restrict="dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper"/>
+	<targetscheme name="all_units_and_couriers" allow="unit" restrict="building,dead,corpse,tree,chest,gadget,!team_tapper"/>
+	<targetscheme name="all_units_and_own_gadgets" allow="unit" allow2="unit" restrict="building,dead,corpse,tree,chest,gadget,Courier" restrict2="!mine,dead,corpse,Courier,building,!team_tapper" />
+	<targetscheme name="own_gadgets" allow="unit" restrict="!mine,dead,corpse,Courier,building" />
+	<targetscheme name="ally_buildings" allow="building" restrict="enemy,dead,corpse"/>
+	<targetscheme name="all_buildings" allow="building" restrict="dead,corpse"/>
+	<targetscheme name="enemy_buildings" allow="building" restrict="ally,dead,corpse"/>
+	<targetscheme name="enemy_units_and_buildings" allow="unit,building" restrict="ally,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper"/>
+	<targetscheme name="ally_dead_rax" allow="building" restrict="enemy,!dead,!MeleeRax"/>
+	<targetscheme name="ally_heroes" allow="hero" restrict="enemy,building,dead,corpse,gadget,PseudoPet"/>
+	<targetscheme name="other_ally_heroes" allow="hero" restrict="self,enemy,building,dead,corpse,gadget,PseudoPet"/>
+	<targetscheme name="ally_heroes_deadalive" allow="hero" restrict="!ally"/>
+	<targetscheme name="ally_main_base_structure" allow="MainBaseStructure" restrict="enemy"/>
+	<targetscheme name="ally_well_krytos_structure" allow="Well_Krytos" restrict="enemy"/>
+	<targetscheme name="ally_mana_units" allow="unit" restrict="enemy,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,!manapool"/>
+	<targetscheme name="ally_marker" allow="unit" restrict="!LaneMarker,enemy"/>
+	<targetscheme name="ally_rax" allow="building" restrict="enemy,dead,corpse,!MeleeRax"/>
+	<targetscheme name="ally_towers" allow="building" restrict="enemy,dead,corpse,!Tower"/>
+	<targetscheme name="ally_units" allow="unit" restrict="enemy,building,dead,corpse,tree,chest,gadget,PseudoPet"/>
+	<targetscheme name="ally_units_nocreep" allow="unit" restrict="enemy,building,dead,corpse,tree,chest,gadget,PseudoPet,creep"/>
+	<targetscheme name="ally_well" allow="Well" restrict="!ally"/>
+	<targetscheme name="wall" allow="Gadget_Tutorial2_NoCast,Tutorial_Wall" restrict=""/>
+	<targetscheme name="crumbledwall" allow="Tutorial_CrumbledWall" restrict="!Tutorial_CrumbledWall"/>
+	<targetscheme name="tutorial_gold" allow="Tutorial_Gold" restrict="!Tutorial_Gold"/>
+	<targetscheme name="any_marker" allow="unit" restrict="!LaneMarker"/>
+	<targetscheme name="attack" allow="enemy,neutral,deniable,smackable" restrict="!alive,!unit,tree,self,Ray_Mine,!team_tapper,gadget"/>
+	<targetscheme name="attack_minus_neutrals" allow="enemy,deniable,smackable" restrict="neutral,!alive,!unit,tree,self,Ray_Mine,!team_tapper"/>
+	<targetscheme name="attack_minus_neutrals_plus_mines" allow="enemy,deniable,smackable" restrict="neutral,!alive,!unit,tree,self,!team_tapper,carter_projectile"/>
+	<targetscheme name="baldir_effects_beamsgadget" allow="BaldirBeams" restrict="dead,corpse" />
+	<targetscheme name="boss" allow="Boss" restrict=""/>
+	<targetscheme name="boss1" allow="Boss1" restrict=""/>
+	<targetscheme name="carter_firering" allow="unit" restrict="enemy,dead,corpse,!carter_firering,!team_tapper" />
+	<targetscheme name="carter_projectile" allow="unit" restrict="enemy,dead,corpse,!carter_projectile,!team_tapper" />
+	<targetscheme name="fetterstone_enemies_and_gem" allow="unit" allow2="Fetterstone_Gem" restrict="ally,building,dead,corpse,tree,chest,gadget,Courier" restrict2="!mine,dead,corpse" />
+	<targetscheme name="fetterstone_gem" allow="unit" restrict="enemy,dead,corpse,!Fetterstone_Gem,!team_tapper" />
+	<targetscheme name="enemy_creeps" allow="unit" restrict="ally,building,dead,corpse,hero,tree,pet,gadget,chest,powerup,!team_tapper"/>
+	<targetscheme name="enemy_creeps_and_buildings" allow="unit,building" restrict="ally,dead,corpse,hero,tree,pet,gadget,chest,powerup,!team_tapper" restrict2="ally,dead,corpse" />
+	<targetscheme name="enemy_creeps_noboss" allow="unit" restrict="Boss,ally,building,dead,corpse,hero,tree,pet,gadget,chest,powerup,!team_tapper"/>
+	<targetscheme name="enemy_lane_neutral_creeps" allow="unit" restrict="Kongor,Boss,ally,building,dead,corpse,hero,tree,pet,gadget,chest,powerup,!team_tapper"/>
+	<targetscheme name="ally_creeps" allow="unit" restrict="enemy,building,dead,corpse,hero,tree,pet,gadget,chest,powerup"/>
+	<targetscheme name="ally_nonpromoted_creeps" allow="unit" restrict="enemy,building,dead,corpse,hero,tree,pet,gadget,chest,powerup,PromotedCreep,Boss"/>
+	<targetscheme name="ally_nonpromoted_nondharkwave_creeps" allow="unit" restrict="enemy,building,dead,corpse,hero,tree,pet,gadget,chest,powerup,PromotedCreep,Boss,Pusher"/>
+	<targetscheme name="all_nonneutral_creeps" allow="unit" restrict="building,Boss,dead,corpse,hero,Kongor,tree,pet,gadget,chest,powerup,neutral,Neutral_Graveyard_Small,Neutral_Graveyard_Medium"/>
+	<targetscheme name="enemy_heroes" allow="hero" restrict="ally,dead,corpse,Ray_Mine"/>
+	<targetscheme name="enemy_heroes_deadalive" allow="hero" restrict="ally,Ray_Mine"/>
+	<targetscheme name="enemy_heroes_and_buildings" allow="hero,building" restrict="ally,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper"/>
+	<targetscheme name="enemy_main_base_structure" allow="building" restrict="ally,dead,corpse,!MainBaseStructure"/>
+	<targetscheme name="enemy_nonboss_units" allow="unit" restrict="ally,building,dead,corpse,tree,chest,Boss,gadget,PseudoPet,Courier"/>
+	<targetscheme name="enemy_nonboss_units_and_buildings" allow="unit" restrict="ally,dead,corpse,tree,chest,Boss,gadget,PseudoPet,Courier"/>
+	<targetscheme name="ally_nonboss_units" allow="unit" restrict="enemy,building,dead,corpse,tree,chest,Boss,gadget,PseudoPet,Courier"/>
+	<targetscheme name="enemy_towers" allow="building" restrict="ally,dead,corpse,!Tower,MainBaseStructure"/>
+	<targetscheme name="enemy_towers_not_mbs" allow="building" restrict="ally,dead,corpse,!Tower,MainBaseStructure"/>
+	<targetscheme name="enemy_units" allow="unit" restrict="ally,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper" />
+	<targetscheme name="enemy_nonhero" allow="unit" restrict="hero,ally,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper" />
+	<targetscheme name="non_idle_visible_neutral" allow="neutral" restrict="idle,!visible,building,dead,corpse,hero,Kongor,tree,pet,gadget,chest,powerup,!team_tapper"/>
+	<targetscheme name="non_idle_visible_enemy_units" allow="unit" restrict="idle,!visible,ally,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper" />
+	<targetscheme name="non_idle_enemy_units" allow="unit" restrict="idle,ally,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper" />
+	<targetscheme name="enemy_nonneutral_units" allow="unit" restrict="ally,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,neutral,Ray_Mine" />
+	<targetscheme name="enemy_units_and_firering" allow="unit" allow2="unit" restrict="ally,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine" restrict2="enemy,dead,corpse,!carter_firering,!team_tapper"/>
+	<targetscheme name="enemy_units_and_Towers" allow="unit" restrict="ally,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper" />
+	<targetscheme name="enemy_units_and_self" allow="unit" restrict="ally,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper" allow2="self" restrict2="dead,corpse,!team_tapper"/>
+	<targetscheme name="enemy_units_and_structures" allow="unit" allow2="building" restrict="ally,gadget,dead,corpse,tree,chest,PseudoPet,Ray_Mine,!team_tapper" restrict2="ally,dead,corpse,!team_tapper" />
+	<targetscheme name="everything_but_towers" allow="enemy,neutral,deniable,smackable" restrict="!alive,!unit,tree,self,Tower,Ray_Mine,!team_tapper" />
+	<targetscheme name="idle_units" allow="unit" restrict="!idle,!team_tapper"/>
+	<targetscheme name="injured_ally_units" allow="unit" restrict="enemy,building,dead,corpse,tree,chest,full,Courier"/>
+	<targetscheme name="kongor_spawner" allow="unit" restrict="!kongor_spawner"/>
+	<targetscheme name="main_base_structure" allow="MainBaseStructure" restrict="dead,corpse"/>
+	<targetscheme name="nonillusion_enemy_heroes" allow="hero" restrict="ally,dead,corpse,illusion"/>
+	<targetscheme name="nonillusion_other_ally_heroes" allow="hero" restrict="dead,corpse,self,enemy,illusion"/>
+	<targetscheme name="nonneutral_enemy_creeps" allow="unit" restrict="ally,building,Boss,dead,corpse,hero,Kongor,tree,pet,gadget,chest,powerup,neutral,Neutral_Graveyard_Small,Neutral_Graveyard_Medium"/>
+	<targetscheme name="neutral_units" allow="neutral" restrict="building,dead,corpse,hero,Kongor,tree,pet,gadget,chest,powerup,!team_tapper"/>
+	<targetscheme name="neutral_nonboss_units" allow="neutral" restrict="Boss,dead,building,dead,corpse,hero,Kongor,tree,pet,gadget,chest,powerup,!team_tapper"/>
+	<targetscheme name="not_invulnerable_units" allow="unit" restrict="dead,corpse,invulnerable,!team_tapper" />
+	<targetscheme name="nothing" allow="" restrict="all"/>
+	<targetscheme name="other_ally_units" allow="unit" restrict="self,enemy,building,dead,corpse,tree,chest,gadget"/>
+	<targetscheme name="other_bosses" allow="Boss" restrict="self,dead,corpse"/>
+	<targetscheme name="other_heroes" allow="hero" restrict="self,dead,corpse"/>
+	<targetscheme name="player_controlled_enemy_units" allow="unit" restrict="ally,building,dead,corpse,neutral,tree,chest,!player_controlled"/>
+	<targetscheme name="non_player_controlled_enemy_units" allow="unit" restrict="ally,building,dead,corpse,tree,chest,player_controlled"/>
+	<targetscheme name="player_controlled_units" allow="unit" restrict="building,dead,corpse,neutral,tree,chest,!player_controlled"/>
+	<targetscheme name="self" allow="self" restrict="dead,corpse"/>
+	<targetscheme name="self_and_illusions" allow="hero" allow2="self" restrict="dead,corpse,!illusion,!mine" restrict2="dead,corpse"/>
+	<targetscheme name="my_illusions" allow="hero" restrict="dead,corpse,!illusion,!mine" />
+	<targetscheme name="my_hero" allow="hero" restrict="dead,corpse,!mine,enemy" />
+	<targetscheme name="spellblade_pet" allow="Unit_Spellblade" restrict="dead,corpse,!mine"/>
+	<targetscheme name="teleport_targets" allow="unit" restrict="!ally,hero,dead,corpse,tree,gadget,chest,Courier,PseudoPet,AntiTP,MedicPet,Unit_Spellblade"/>
+	<targetscheme name="visible_enemy_heroes" allow="hero" allow2="unit" restrict="ally,dead,corpse,!visible" restrict2="ally,!stealth_hero" />
+	<targetscheme name="visible_enemy_units" allow="unit" restrict="ally,building,dead,corpse,tree,chest,powerup,!visible,gadget,PseudoPet,Courier,Ray_Mine"/>
+	<targetscheme name="visible_enemy_units_and_buildings" allow="unit" restrict="ally,dead,corpse,tree,chest,powerup,!visible,gadget,PseudoPet,Courier,Ray_Mine"/>
+	<targetscheme name="visible_nonhero_enemy_units" allow="unit" restrict="ally,building,dead,corpse,tree,chest,powerup,!visible,gadget,PseudoPet,Courier,Ray_Mine,hero"/>
+	<targetscheme name="Tut3_Objective" allow="unit" restrict="!Tut3_Objective"/>
+	<targetscheme name="non_rook_heroes" allow="hero" restrict="dead,corpse,Hero_Rook"/>
+	<targetscheme name="CounterStrife_CaptureDevice" allow="Gadget_CaptureDevice" restrict="" />
+	<targetscheme name="CounterStrife_RockMonster" allow="Building_IdleRockMonster" restrict="" />
+	<targetscheme name="CounterStrife_Bomb" allow="Item_CounterStrifeBomb" restrict="" />
+	<targetscheme name="CounterStrife_DharkwaveRunSpot" allow="Gadget_DharkwaveTargetRunSpot" restrict="" />
+	<targetscheme name="Buford_Cage" allow="Pet_Buford_Ability4_Cage" restrict="" />	
+	<targetscheme name="Buford_Fire" allow="Gadget_Buford_Ability2_Path" restrict="" />
+
+	<targetscheme name="Chroma_Reactor" allow="unit" restrict="enemy,building,dead,corpse,chest,PseudoPet,!Chroma_Reactor" />
+	<targetscheme name="Vex_Teleport" allow="unit,building" restrict="enemy,dead,corpse,tree,chest,gadget,PseudoPet,self,AntiTP,MedicPet,Unit_Spellblade" />
+	<targetscheme name="ConduitAbility1Gadget" allow="unit" restrict="!ConduitAbility1Gadget" />
+	<targetscheme name="Warlock_Ult_Gadget" allow="unit" restrict="!Warlock_Ult_Gadget" />
+	<targetscheme name="Degaris_Gadgets" allow="unit" restrict="dead,corpse,self,!degaris_ability1_gadget" />
+	<targetscheme name="RayAbility4Gadget" allow="unit" restrict="!RayAbility4Gadget" />
+	<targetscheme name="FluxmageAbility1Targets" allow="unit" restrict="!FluxmageAbility1Gadget" allow2="unit" restrict2="ally,building,dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier" />
+	<targetscheme name="Gadget_Medic_Ability2" allow="Gadget_Medic_Ability2" restrict="dead,corpse,enemy"/>
+	<targetscheme name="HookUltTargets" allow="unit" restrict="enemy,dead,corpse,!HookUltTarget" />
+	<targetscheme name="Kongor_Chained" allow="unit" restrict="!Kongor_Chained"/>
+	<targetscheme name="Medic_Pet" allow="unit" restrict="dead,corpse,self,!MedicPet" />
+	<targetscheme name="ObservatoryDefense" allow="unit" allow2="hero,dead,corpse" restrict="!ObservatoryDefense,!ally" restrict2="!ally,dead,corpse"/>
+	<targetscheme name="OwnedOrbitGadget" allow="unit" restrict="!OrbitGadget,!mine" />
+	<targetscheme name="PalGadgetLeft" allow="unit" restrict="!PalGadgetLeft" />
+	<targetscheme name="PalGadgetRight" allow="unit" restrict="!PalGadgetRight" />
+	<targetscheme name="Tyme_Gadgets" allow="unit" restrict="dead,corpse,self,!tyme_trail_object" />
+	<targetscheme name="VargAbility4Gadget" allow="unit" restrict="!VargAbility4Gadget" />
+	<targetscheme name="Gadget_Tutorial_Thief" allow="unit" restrict="!Gadget_Tutorial_Thief" />
+	<targetscheme name="HarrowerAbility1Gadget" allow="unit" restrict="!HarrowerAbility1Gadget,corpse" />
+	<targetscheme name="jinshefire" allow="unit" restrict="enemy,building,dead,corpse,chest,PseudoPet,!jinshefire" />
+	<targetscheme name="mole_mounds" allow="unit" restrict="enemy,building,dead,corpse,chest,PseudoPet,!mole_mounds" />
+	<targetscheme name="tracebomb" allow="tracebomb" restrict="!tracebomb" />
+	<targetscheme name="bufordpoison" allow="bufordpoison" restrict="!bufordpoison" />
+	<targetscheme name="Nikolai_Location" allow="unit" restrict="enemy,building,dead,corpse,chest,PseudoPet,!Nikolai_Location" />
+	<targetscheme name="Patrol_Gadget" allow="unit" restrict="!Patrol_Gadget"/>
+	<targetscheme name="fading_wall" allow="unit" restrict="!Gadget_FadingWall" />
+	<targetscheme name="patrol_guard" allow="unit" restrict="!patrolling_guard" />
+	<targetscheme name="switches" allow="unit" restrict="!Gadget_Switch"/>
+	<targetscheme name="boxes" allow="unit" restrict="!breakable"/>	
+	<targetscheme name="throwable_objects" allow="unit" restrict="!throwable" />
+	<targetscheme name="spider_egg" allow="unit" restrict="!Bastact1_ThrowableSpiderEgg"/>
+	<targetscheme name="non_player_controlled_heroes" allow="hero" restrict="ally,building,dead,corpse,neutral,tree,chest,player_controlled"/>
+	<targetscheme name="Teleport_Gadget" allow="unit" restrict="!Bastact1_Teleport_Gadget"/>
+	<targetscheme name="bastact1_archer" allow="unit" restrict="!Bastact1_Enemy_Ranged"/>	
+	<targetscheme name="Bombpos_Gadget" allow="unit" restrict="!Bastact1_Bombpos_Gadget"/>
+	<targetscheme name="Bastact1_Bombspawner_Gadget" allow="unit" restrict="!Bastact1_Bombspawner_Gadget"/>	
+	<targetscheme name="Bastact1_BombAbility_Start" allow="unit" restrict="!Bastact1_BombAbility_Start"/>
+	<targetscheme name="Bastact1_Spinpos_Gadget" allow="unit" restrict="!Bastact1_Spinpos_Gadget"/>	
+	<targetscheme name="Bastact1_Hook_Point" allow="unit" restrict="!Bastact1_Hook_Point"/>
+	<targetscheme name="Bastact1_Wizard_Point" allow="unit" restrict="!Bastact1_Wizard_Point"/>
+	<targetscheme name="guards_and_player" allow="unit" allow2="unit" restrict="!Bastact1_Enemy_Guard,!visible,enemy,dead,corpse,tree,chest,gadget,self" restrict2="!player_controlled" />
+	<targetscheme name="trash_mob" allow="unit" restrict="!trash_mob"/>
+	<targetscheme name="not_trash_mob" allow="unit" restrict="building,dead,corpse,tree,chest,gadget,Courier,!team_tapper,trash_mob"/>
+	<targetscheme name="player_and_mobs" allow="unit" allow2="hero" restrict="!visible,!trash_mob" restrict2="!visible,!player_controlled" />
+	<targetscheme name="visible_mobs" allow="unit" restrict="ally,building,dead,corpse,tree,chest,powerup,!visible,gadget,PseudoPet,Courier,breakable"/>
+	<targetscheme name="Rook_Bastact1_Q" allow="unit" allow2="building" restrict="self,ally,gadget"  restrict2="" />
+	<targetscheme name="Rook_Bastact1_Ult" allow="unit"  restrict="self,ally,building"  />
+	<targetscheme name="Gauntlet_Door" allow="unit" restrict="!BastAct1_Gauntlet_Door" />
+	<targetscheme name="Bastact1_GuardKillCounter" allow="unit" restrict="!Gadget_Bastact1_Gauntlet_GuardKillCounter" />
+	<targetscheme name="Bastact1_LockedDoor" allow="unit" allow2="unit" restrict="!Building_Bastact1_LockedDoor_OpensToAll" restrict2="!Building_Bastact1_LockedDoor_OpensToAll_RookUlt_Door"/>
+	<targetscheme name="Doom_Door" allow="unit" allow2="pet" restrict="!player_controlled,building,dead,corpse,tree,chest,Courier,!team_tapper" restrict2="PseudoPet" />  
+	<targetscheme name="Rook_Reveal_Gadget" allow="gadget"  restrict="!Gadget_Rook_Ability4_Reveal_Bastact1" /> 
+	<targetscheme name="Doom_Door_Defeat" allow="gadget" allow2="pet" restrict="!Gadget_Bastact1_PathBlocker" restrict2="!Bastact1_Barrel_Spawner" /> 
+	<targetscheme name="Hook_Mag" allow="gadget"  restrict="!Gadget_Rook_Ability1_Reveal_Bastact1" /> 
+	<targetscheme name="BastAct2_Burnable" allow="unit" restrict="!burnable" />
+
+	<!-- Activate Schemes -->
+	<targetscheme name="heroes_only" allow="hero" restrict="" />
+	<targetscheme name="movement" allow="all" restrict="immobilized,restrained" />
+	<targetscheme name="canattack" allow="all" restrict="disarmed" />
+	
+
+	<!-- Tokens / Cheese / Doombringer restrictions -->
+	<targetscheme name="token" allow="hero" />
+	<targetscheme name="cheese" allow="hero" />
+	<targetscheme name="doombringer" allow="hero" />
+
+	<!-- Stealth (Max 32) -->
+	<stealthtype name="hero"/>
+	<stealthtype name="shrouded"/>
+	<stealthtype name="item"/>
+	<stealthtype name="ward"/>
+	<stealthtype name="unrevealable"/>
+	<stealthtype name="visionorb"/>
+	<stealthtype name="occlusion"/>
+	
+	<revealtype name="hero" reveal="hero"/>
+	<revealtype name="ward" reveal="hero,ward,item"/>
+	<revealtype name="shrouded" reveal="shrouded"/>
+	<revealtype name="eye" reveal="hero,item"/>
+	<revealtype name="tower" reveal="hero,ward,item,shrouded"/>
+	<revealtype name="orb_reveal" reveal="visionorb"/>
+	
+	<!-- Effect Types (Max 32) -->
+	<!-- Referenced in Code -->
+	<effecttype name="Attack"/>
+	<effecttype name="AbilityAttack"/>
+	<effecttype name="Familiar" log="true" />
+	<effecttype name="Splash"/>
+	<effecttype name="StatusDebuff" assist="true" debuff="true" negative="true" />
+	<!-- Referenced in Scripts-->
+	<effecttype name="Magic" log="true"/>
+	<effecttype name="AbilityBasedProjectile" />
+	<effecttype name="Assist" assist="true" />
+	<effecttype name="AttackDamage" log="true"/>
+	<effecttype name="BindingProjectile" />
+	<effecttype name="Buff"/>
+	<effecttype name="Cleave" />
+	<effecttype name="Counterable"/>
+	<effecttype name="CrowdControl" />
+	<effecttype name="DOT"/>
+	<effecttype name="TymeDOT"/>
+	<effecttype name="Indirect"/>
+	<effecttype name="NoResponse" />
+	<effecttype name="Push"/>
+	<effecttype name="Replenish"/>
+	<effecttype name="Returned" />
+	<effecttype name="SkillTrigger"/>
+	<effecttype name="StatusBuff" buff="true"/>
+	<effecttype name="StatusDisable" assist="true" disable="true" negative="true" />
+	<effecttype name="StatusSlow" assist="true" debuff="true" negative="true" />
+	<effecttype name="StatusStealth"/>
+	<effecttype name="TrapDamage" />
+	<effecttype name="BreakStealth" />
+	<effecttype name="TrixieDash" />
+	<effecttype name="Invulnerable" />
+	<effecttype name="ZakuUlt" />
+	<!-- There are 25 here-->
+	<!-- Unused 
+	<effecttype name="DeBuff"/>
+	<effecttype name="DirectDOT"/>
+	<effecttype name="ItemDamage" />
+	<effecttype name="Power"/>
+	<effecttype name="Tower"/>
+	<effecttype name="Transfigure"/>
+	-->
+
+	<!-- Item Types (Max 32)-->
+	<itemtype name="Normal"/>
+	<itemtype name="Consumable"/>
+	<itemtype name="Boots"/>
+	<itemtype name="Bomb" />
+	<itemtype name="Provisional" />
+
+  <!-- Immunity Types -->
+	<immunitytype name="MagicImmunity1" immune="Magic"/>
+	<immunitytype name="KongorImmunity" immune="CrowdControl Push StatusDisable StatusSlow"/>
+	<immunitytype name="BossImmunity" immune="CrowdControl Push"/>
+	<immunitytype name="SiegeImmunity" immune="Push"/>
+	<immunitytype name="TargetingImmunity" immune="AttackDamage"/>
+	<immunitytype name="ReplenishImmunity" immune="Replenish"/>
+	<immunitytype name="GadgetImmunity" immune="CrowdControl Push Splash Buff"/>
+	<immunitytype name="CourierImmunity" immune="Splash"/>
+	<immunitytype name="AttackImmunity" immune="Attack"/>
+	<immunitytype name="IndirectImmunity" immune="DOT Cleave"/>
+	<immunitytype name="AncientImmunity2" immune="Push"/>
+	<immunitytype name="PhysicalImmunity" immune="AttackDamage"/>
+	<immunitytype name="PushImmunity" immune="Push" />
+	<immunitytype name="SplashImmunity" immune="Splash" />
+	<immunitytype name="AllImmunity" immune="Attack Push Buff Splash"/>
+	<immunitytype name="CrowdControlImmunity" immune="CrowdControl StatusDisable"/>
+	<immunitytype name="NoResponseImmunity" immune="NoResponse"/>
+	
+	<!-- Response types (Max 32) -->
+	<responsetype name="Staccato"/>
+	
+	<!-- Hero Categories (Max 32)  -->
+	<herocategory name="cc"/>
+	<herocategory name="magic"/>
+	<herocategory name="muc"/>
+	<herocategory name="physical"/>
+	<herocategory name="protective"/>
+	<herocategory name="tank"/>	
+	
+	<!-- Armor Types -->
+	<armortype name="normal" effects="AttackDamage" factor="0.01"/>
+	<armortype name="magic" effects="Magic" factor="0.01"/>
+	<armortype name="mitigation" effects="AttackDamage Magic" factor="0.01"/>
+	<armortype name="resistance" effects="AttackDamage Magic" factor="0.01"/>
+			  
+	<!-- Popups -->
+	<popup name="gold" startcolor="1 0.9 0 1" value="true" duration="1500" fadetime="750" starty="4" speedy="7" accely="-10" visibility="self" />
+	<popup name="experience" startcolor="0.75 0 0.75 1" value="true" duration="1500" fadetime="750" starty="1.5" speedy="7" accely="-10" visibility="self" />
+	<popup name="quest" startcolor="1 0.9 0 1" duration="2000" fadetime="750" starty="5.5" speedy="2" visibility="self" />
+	<popup name="quest_complete" startcolor="1 0.9 0 1" duration="2000" fadetime="750" starty="5.5" speedy="2" visibility="self" />
+	<popup name="hint" startcolor="1 0.9 0 1" duration="2000" fadetime="750" starty="5.5" speedy="2" visibility="self" />
+	<popup name="critical" startcolor="white" midpercent="0.25" midcolor="red" endcolor="#FF8000" value="true" duration="1500" fadetime="750" glow="true" />
+	<popup name="miss" startcolor="red" duration="2000" fadetime="1000" />
+	<popup name="miss2" startcolor="red" duration="2000" fadetime="1000" visibility="self" />
+	<popup name="deny" startcolor="*" duration="3000" fadetime="1000" />
+	<popup name="deflect" startcolor="0.7 0.7 0.7 1" value="true" duration="2000" fadetime="1000" starty="4" speedy="7" accely="-10" />
+	<popup name="poison" startcolor="0.33 1 0 1" value="true" duration="2000" fadetime="1000" />
+	<popup name="bonus_damage" startcolor="red" value="true" duration="2000" fadetime="1000" visibility="self" />
+	<popup name="toofar" startcolor="red" duration="3000" fadetime="1000" />
+	<popup name="doublecast" startcolor="red" duration="1100" fadetime="700" />
+	<popup name="bonus_mana" startcolor="#1E90FF" value="true" duration="2000" fadetime="1000" />
+	<popup name="execution" startcolor="red" value="true" duration="1500" fadetime="750" visibility="self" />
+	<popup name="gainpower" startcolor="blue" value="true" duration="3000" fadetime="1000" />
+	<popup name="invulnerable" startcolor="yellow" duration="2000" fadetime="1000" />
+	<popup name="ccbreak" startcolor="yellow" duration="2000" fadetime="1000" />
+	<popup name="abilityresistence" startcolor="yellow"  duration="2000" fadetime="1000" />
+	<popup name="loseint" startcolor="red" value="true" duration="3000" fadetime="1000" />
+	<popup name="creep_kill" startcolor="*" duration="3000" fadetime="1000" visibility="spectator" />
+	<popup name="javoflight" startcolor="0 0.66 1 1" value="true" duration="3000" fadetime="1000" />
+	<popup name="1s" startcolor="1 1 0 1" duration="3000" fadetime="1000" />
+	<popup name="14s" startcolor="1 1 0 1" duration="3000" fadetime="1000" />
+	<popup name="18s" startcolor="1 1 0 1" duration="3000" fadetime="1000" />
+	<popup name="22s" startcolor="1 1 0 1" duration="3000" fadetime="1000" />
+	<popup name="26s" startcolor="1 1 0 1" duration="3000" fadetime="1000" />
+	<popup name="3s" startcolor="1 1 0 1" duration="3000" fadetime="1000" />
+	<popup name="35s" startcolor="1 1 0 1" duration="3000" fadetime="1000" />
+	<popup name="max" startcolor="0 0.66 1 1" duration="3000" fadetime="1000" visibility="self" />
+	<popup name="dot_physical_damage" startcolor="1 0.66 0 1" value="true" duration="2000" fadetime="1000" />
+	<popup name="timer" startcolor="0 0.66 1 1" value="true" duration="1500" fadetime="500" />
+	<popup name="timer_hero" startcolor="0 0.66 1 1" value="true" duration="1500" fadetime="500" startx="0" starty="9" />
+	<popup name="deflected" startcolor="yellow" duration="500" fadetime="150" startx="0" starty="10" endx="0" endy="10" />
+	<popup name="too_far" startcolor="red" duration="2000" fadetime="1000" />
+	<popup name="homecoming_nogold" startcolor="red" duration="2000" fadetime="1000" visibility="self" />
+	<popup name="tower_damage" startcolor="#FFA500" value="true" duration="1000" fadetime="1000" />
+	<popup name="multicast" startcolor="red" duration="3000" fadetime="1000" visibility="self" />
+	<popup name="BastionUlt" startcolor="0 0.66 1 1" value="true" duration="1250" fadetime="500" startx="0" starty="13" />
+	<popup name="checkpoint" startcolor="red" duration="6000" fadetime="1000" />
+	<popup name="attackdamage" startcolor="0.5 0.5 0.5 1" value="true" duration="1000" fadetime="500" starty="4" speedx="5" speedy="5" accely="-10" visibility="self" />
+	<popup name="magicdamage" startcolor="#1c71ff" value="true" duration="1000" fadetime="500" starty="4" speedx="-5" speedy="5" accely="-10" visibility="self" />
+	<popup name="healdamage" startcolor="#22EE33" value="true" minValue="1" duration="1000" fadetime="500" starty="1" speedy="4" accely="-2" visibility="self" />
+	<popup name="normaldamage" startcolor="white" value="true" duration="1000" fadetime="500" starty="4" speedy="5" accely="-2" visibility="self" />
+	<popup name="pluspower" startcolor="orange" duration="1100" fadetime="700" />
+	<popup name="plusmana" startcolor="blue" duration="1100" fadetime="700" />
+	<popup name="plushealth" startcolor="red" duration="1100" fadetime="700" />
+	<popup name="cliffwalking" startcolor="yellow" duration="1100" fadetime="700" />
+	<popup name="rockets" startcolor="purple" duration="1100" fadetime="700" />
+	<popup name="percentbonus" startcolor="0.8 0.5 0.2" value="true" duration="2000" fadetime="1000" />
+	<popup name="percentbonus_full" startcolor="red" value="true" duration="2000" fadetime="1000" />
+	<popup name="deathprotect" startcolor="blue" duration="2000" fadetime="1000" />
+	<popup name="execute" startcolor="red" duration="2000" fadetime="1000" />
+	<popup name="dark_bargain" startcolor="red" duration="2000" fadetime="1000" />
+	
+	<popup name="aggro" startcolor="yellow" duration="3000" fadetime="1000" starty="9" speedy="0" visibility="self" bindtotarget="true"  glow="true" />
+	
+	<popup name="levelup" startcolor="cyan"  midpercent="0.70" midcolor="cyan" endcolor="cyan" duration="3500" fadetime="500" visibility="self" bindtotarget="true"  glow="true" />
+	<popup name="itemreceived" startcolor="white" duration="3000" fadetime="1000" starty="9" speedy="0" visibility="self" bindtotarget="true"  glow="true" />
+
+	<popup name="stat_movespeed"		startcolor="cyan"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_maxhealth"		startcolor="yellow"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_maxmana"		startcolor="blue"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_healthregen"		startcolor="yellow"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_manaregen"		startcolor="blue"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_power"		startcolor="orange"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_basedamage"		startcolor="orange"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_attackspeed"		startcolor="orange"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_armor"		startcolor="purple"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_magicarmor"		startcolor="purple"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_mitigiton"		startcolor="purple"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_resistance"		startcolor="purple"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_attacklifesteal"	startcolor="purple"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_magiclifesteal"	startcolor="purple"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+	<popup name="stat_reducedcooldowns"	startcolor="purple"	value="true" minValue="1" duration="1500" fadetime="750" starty="20" speedy="4" visibility="self" />
+
+
+	<!-- Sound -->	
+	<sound name="receivedgold" path="/npcs/creeps/golem/sounds/sfx_gold_lasthit.wav" volume="0.3" falloff="1000" visibility="teaminsideradius" playfromposition="false" radius="1000" nospectator="true" />
+	<sound name="seeteamgold" path="/npcs/creeps/golem/sounds/sfx_gold_friendly.wav" volume="0.3" falloff="1000" visibility="teamoutsideradius" playfromposition="true" radius="1000"/>
+	<sound name="seeenemygold" path="/npcs/creeps/golem/sounds/sfx_gold_enemy.wav" volume="0.3" falloff="1000" visibility="enemy" playfromposition="true" nospectator="true" />
+
+	<sound name="creepaggro" path="/npcs/creeps/golem/sounds/sfx_aggro_%.wav" volume="0.4" falloff="1750" visibility="self" playfromposition="true" radius="6500"/>
+	<sound name="towertestaggro" path="/world/sprops/towers/cannon/sounds/sfx_aggro.wav" volume="0.6" visibility="self" playfromposition="false"/>
+
+	<sound name="testbaldir" path="/npcs/Baldir/sounds/vo_baldir_iholdthepower.wav" volume="1.0"  falloff="1000" visibility="teaminsideradius" playfromposition="false" radius="1000"/>
+
+	<sound name="couriersend" path="/shared/automated_courier/sounds/vo_courier_send_%.wav" volume="1.0" playfromposition="false" visibility="self" />
+	<sound name="courierdeliver" path="/shared/automated_courier/sounds/vo_courier_deliver_%.wav" volume="1.0" playfromposition="false" visibility="self" />
+	<sound name="courierready" path="/shared/automated_courier/sounds/vo_courier_ready_%.wav" volume="1.0" playfromposition="false" visibility="self" />
+	<sound name="couriercancel" path="/shared/automated_courier/sounds/vo_courier_cancel_%.wav" volume="1.0" playfromposition="false" visibility="self" />
+	<sound name="itemdeliver" path="/ui/sounds/shop/sfx_item_stash.wav" volume="1.0" playfromposition="false" visibility="self" />
+
+	<sound name="deathstinger" path="/music/ingame/music_death_stinger.wav" volume="0.4" playfromposition="false" visibility="self" />
+	<sound name="respawningsoonstinger" path="/music/ingame/music_death_prespawn.wav" volume="0.7" playfromposition="false" visibility="self" />
+
+	<sound name="owl_combatprevent" path="/familiars/owl/ability_02/sounds/sfx_combatprevent_%.wav" volume="0.25" playfromposition="false" visibility="self" />
+
+	<!-- Pings -->
+	<ping name="alert"						minimapeffect="/shared/effects/ping.effect" visibility="team" color="*"
+		  worldeffect="/shared/effects/ping_ground.effect"
+		  />
+	<ping name="alert2"						minimapeffect="/shared/effects/ping.effect" visibility="team" color="white"
+		  worldeffect="/shared/effects/ping_ground.effect"
+		  />
+	<ping name="ally_building_killed"		minimapeffect="/shared/effects/ping_kill_tower.effect" visibility="team" color="red"/>
+	<ping name="ally_hero_killed"			minimapeffect="/shared/effects/ping_kill_hero.effect" color="red"/>
+	<ping name="attack_building"			minimapeffect="/shared/effects/ping_attack_building.effect" visibility="team" color="*"/>
+	<ping name="building_under_attack"		minimapeffect="/shared/effects/ping_building_attack.effect" visibility="team" color="red"/>
+	<ping name="enemy_building_killed"		minimapeffect="/shared/effects/ping_kill_tower.effect" visibility="team" color="green"/>
+	<ping name="enemy_hero_killed"			minimapeffect="/shared/effects/ping_kill_hero.effect" color="green"/>
+	<ping name="protect_building"			minimapeffect="/shared/effects/ping_protect_building.effect" visibility="team" color="*"/>
+	<ping name="teleport"					minimapeffect="/shared/effects/teleport_ping.effect" visibility="team" color="green"/>
+	<ping name="teleport_green"				minimapeffect="/shared/effects/teleport_ping.effect" visibility="team" color="green"/>
+	<ping name="teleport_red"				minimapeffect="/shared/effects/teleport_ping.effect" visibility="team" color="red"/>
+	<ping name="ward_lit"					minimapeffect="/shared/effects/ward_ping.effect" color="white"/>
+	
+	<ping name="attack_building_crux"
+		  heroannounce="attack_crux"
+		  minimapeffect="/shared/effects/ping_attack_building.effect" color="red"
+		  targeteffect="/shared/effects/Enemy_Target.effect"
+		  visibility="team"/>
+	<ping name="attack_building_generator"
+		  heroannounce="attack_generator"
+		  minimapeffect="/shared/effects/ping_attack_building.effect" color="red"
+		  targeteffect="/shared/effects/Enemy_Target.effect"
+		  visibility="team" />
+	<ping name="attack_building_tower"
+		  heroannounce="attack_tower"
+		  minimapeffect="/shared/effects/ping_attack_building.effect" color="red"
+		  targeteffect="/shared/effects/Enemy_Target.effect"
+		  visibility="team" />
+	<ping name="attack_hero"
+		  heroannounce="attack_enemy"
+		  minimapeffect="/shared/effects/ping_attack_hero.effect" color="red"
+		  targeteffect="/shared/effects/Enemy_Hero_Target.effect"
+		  visibility="team" />
+	<ping name="protect_building_crux"		
+		  heroannounce="defend_crux"		
+		  minimapeffect="/shared/effects/ping_protect_building.effect" color="green"
+		  targeteffect="/shared/effects/Ally_Target.effect"
+		  visibility="team" />
+	<ping name="protect_building_generator" 
+		  heroannounce="defend_generator"	
+		  minimapeffect="/shared/effects/ping_protect_building.effect" color="green"
+		  targeteffect="/shared/effects/Ally_Target.effect"
+		  visibility="team" />
+	<ping name="protect_building_tower"		
+		  heroannounce="defend_tower"		
+		  minimapeffect="/shared/effects/ping_protect_building.effect" color="green"
+		  targeteffect="/shared/effects/Ally_Target.effect"
+		  visibility="team" />
+
+	<!-- Command Pings -->
+	<ping name="command_missing" 	minimapeffect="/shared/effects/ping_command.effect" worldeffect="/shared/effects/ping_missing_ground.effect" visibility="team" color="white"/>
+	<ping name="command_careful" 	minimapeffect="/shared/effects/ping_command.effect" worldeffect="/shared/effects/ping_danger_ground.effect" visibility="team" color="white"/>
+	<ping name="command_help" 		minimapeffect="/shared/effects/ping_command.effect" worldeffect="/shared/effects/ping_help_ground.effect" visibility="team" color="white"/>
+	<ping name="command_onmyway" 	minimapeffect="/shared/effects/ping_command.effect" worldeffect="/shared/effects/ping_omw_ground.effect" visibility="team" color="white"/>
+
+	<!-- Building armor mechanics -->
+	<buildingheroarmorreduction>
+		<reductionplayers total="5">
+			<reductionmultiplier alive="5" multiplier="1.0"/>
+			<reductionmultiplier alive="4" multiplier="0.8"/>
+			<reductionmultiplier alive="3" multiplier="0.6"/>
+			<reductionmultiplier alive="2" multiplier="0.4"/>
+			<reductionmultiplier alive="1" multiplier="0.2"/>
+			<reductionmultiplier alive="0" multiplier="0.0"/>
+		</reductionplayers>
+		<reductionplayers total="4">
+			<reductionmultiplier alive="4" multiplier="1.00"/>
+			<reductionmultiplier alive="3" multiplier="0.75"/>
+			<reductionmultiplier alive="2" multiplier="0.50"/>
+			<reductionmultiplier alive="1" multiplier="0.25"/>
+			<reductionmultiplier alive="0" multiplier="0.00"/>
+		</reductionplayers>
+		<reductionplayers total="3">
+			<reductionmultiplier alive="3" multiplier="1.000"/>
+			<reductionmultiplier alive="2" multiplier="0.666"/>
+			<reductionmultiplier alive="1" multiplier="0.333"/>
+			<reductionmultiplier alive="0" multiplier="0.000"/>
+		</reductionplayers>
+		<reductionplayers total="2">
+			<reductionmultiplier alive="2" multiplier="1.0"/>
+			<reductionmultiplier alive="1" multiplier="0.5"/>
+			<reductionmultiplier alive="0" multiplier="0.0"/>
+		</reductionplayers>
+		<reductionplayers total="1">
+			<reductionmultiplier alive="1" multiplier="1.0"/>
+			<reductionmultiplier alive="0" multiplier="0.0"/>
+		</reductionplayers>
+	</buildingheroarmorreduction>
+
+	<inventoryfilters default="Any">
+		<filterslots region="Backpack" start="0" end="0" types="Boots" />
+		<filterslots region="Backpack" start="1" end="6" types="Normal" />
+		<filterslots region="Backpack" start="7" end="8" types="Consumable" />
+	</inventoryfilters>
+
+	<combateffecttypes>
+		<ignorecombat type="TrapDamage" distance="1800" />
+	</combateffecttypes>
+
+	<rarecomponenttiers recipecost="0, 350, 661, 900, 1050, 1200, 1280, 1350, 1430, 1500, 1560, 1610, 1650" />
+						
+	<bothazard name="default" value="0.5" />
+	<bothazard name="clump" value="0.8" />
+	<bothazard name="extreme" value="-5" />
+
+
+	<botdifficulty name="tutorial" mixed="hard" allbot="tutorial" />
+	<botdifficulty name="tutorial2" mixed="tutorial_ally" allbot="tutorial2" />
+	<botdifficulty name="tutorial3" mixed="tutorial_ally" allbot="tutorial" />
+	<botdifficulty name="easy" mixed="hard" allbot="easy" />
+	<botdifficulty name="medium" mixed="medium" allbot="medium" />
+	<botdifficulty name="hard" mixed="hard" allbot="hard" />
+	<botdifficulty name="unfair" mixed="hard" allbot="unfair" />
+
+	<physicalmaterial name="default" static="1" dynamic="1" restitution="0.1" />
+	<physicalmaterial name="rock" static="1" dynamic="1" restitution="0.1" />
+	<physicalmaterial name="debug" static="100" dynamic="100" restitution="1" />
+</gamemechanics>
