@@ -483,7 +483,7 @@
 	<targetscheme name="all_other_units_and_buildings" allow="unit" restrict="dead,corpse,tree,chest,self,gadgets,Courier,!team_tapper"/>
 	<targetscheme name="all_other_nontower_units" allow="unit" restrict="building,dead,corpse,tree,chest,self,gadgets,Courier,!team_tapper,Tower"/>
 	<targetscheme name="all_other_visible_heroes" allow="hero" restrict="dead,corpse,self,!visible"/>
-	<targetscheme name="all_units" allow="unit" restrict="building,dead,corpse,tree,chest,gadget,Courier,!team_tapper"/>
+	<targetscheme name="all_units" allow="unit" restrict="building,dead,corpse,tree,chest,gadget,Courier,!team_tapper,PseudoPet"/>
 	<targetscheme name="all_units_and_buildings" allow="unit,building" restrict="dead,corpse,tree,chest,powerup,gadget,PseudoPet,Courier,Ray_Mine,!team_tapper"/>
 	<targetscheme name="all_units_and_couriers" allow="unit" restrict="building,dead,corpse,tree,chest,gadget,!team_tapper"/>
 	<targetscheme name="all_units_and_own_gadgets" allow="unit" allow2="unit" restrict="building,dead,corpse,tree,chest,gadget,Courier" restrict2="!mine,dead,corpse,Courier,building,!team_tapper" />
