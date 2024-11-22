@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Ray_Ability2_Pylon"
+
+	icon="icon.tga"
+	portrait=""
+	model="effects/spheres_animated/model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+
+	preglobalscale="1.2"
+	modelscale=".5"
+	effectscale="1.0"
+	boundsheight="64"
+	radiusheight="64"
+	boundsradius="16"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	unitwalking="true"
+	serverentity="false"
+	visible="true"
+	revealed="true"
+	ismobile="false"
+	isselectable="false"
+	iscontrollable="false"
+	canrotate="false"
+	drawonmap="false"
+
+	invulnerable="true"
+	hidealtinfo="true"
+
+	alwaystransmitdata="true"
+
+	resistance="0"
+	immunity="GadgetImmunity"
+
+	canattack="false"
+	
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="0"
+	sightrangenight="0"
+
+	
+	lifetime="3200"
+	
+	unittype="EnergyFieldEngine"
+	
+	corpsetime="2500"
+	corpsefadetime="2500"
+	corpsefadeeffect="/shared/effects/corpse_sinkfast.effect"
+>
+	<onframe>
+		<targettype type="dead" target="proxy_entity">
+			<expire entity="this_entity" />
+		</targettype>
+	</onframe>
+
+</gadget>
