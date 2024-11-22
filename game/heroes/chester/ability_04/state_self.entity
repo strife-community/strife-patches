@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Chester_Ability4_Data"
+    name="State_Chester_Ability4_Self"
 
-	icon=""
-	ishidden="true"
+    icon=""
+    ishidden="true"
 
-	alwaystransmitdata="true"
-	
-	effecttype=""
+    effecttype=""
+    sightedradius="300"
+    revealed="true"
 >
+    <!-- This state is used only to give sighted radius to character, so NOTHING TO DO -->
 </state>

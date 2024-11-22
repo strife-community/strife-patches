@@ -27,19 +27,23 @@
 	doubleactivatenoninterrupting="true"
 
 >
-	<constant name="damage" value="90,120,150" adjustment="ability" />
-	
-	<onimpact>
-		<applystate name="State_Chester_Ability4_Data" duration="8000" target="source_entity" />
-		<applystate name="State_Chester_Ability4" duration="8000" proxy="source_entity" />
-		<setproxy entity="this_entity" target="target_entity" />
-		<playeffect effect="effects/sound.effect" source="target_entity" target="" occlude="true" />
-	</onimpact>
-	
-	<ondeath>
-		<expirestate name="State_Chester_Ability4" target="source_entity" />
-		<expirestate name="State_Chester_Ability4_Data" target="source_entity" />
-	</ondeath>
+    <!-- Damage dealt by ability per second -->
+    <constant name="damage" value="90,120,150" adjustment="ability" />
+
+    <onimpact>
+        <!-- Apply state for giving Chester sighted radius (to avoid link invisibility between bushes -->
+        <applystate name="State_Chester_Ability4_Self" duration="8000" target="source_entity" />
+        <!-- Actual link state applied to target -->
+        <applystate name="State_Chester_Ability4" duration="8000" proxy="source_entity" />
+        <!-- Playing cast sound -->
+        <playeffect effect="effects/sound.effect" source="target_entity" target="" occlude="true" />
+    </onimpact>
+
+    <ondeath>
+        <!-- If Chester dies, link must be destroyed -->
+        <expirestate name="State_Chester_Ability4" target="source_entity" />
+        <expirestate name="State_Chester_Ability4_Self" target="source_entity" />
+    </ondeath>
 
 	
 </ability>
