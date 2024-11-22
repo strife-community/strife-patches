@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Chester_Ability4"
+
+	icon="icon.tga"
+	passiveeffect="effects/link.effect"
+	effecttype="StatusBuff Assist"
+
+	displaylevel="true"
+	alwaystransmitdata="true"
+>
+	
+	<onattackeddamageevent>
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.7" op="mult" />
+	</onattackeddamageevent>    
+	
+	<onframe>
+		<lineofeffect
+			radius="100"
+			maxtotalimpacts="-1"
+			start="source_entity"
+			end="target_entity"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>
+
+			<applystate name="State_Chester_Ability4_Damage" duration="50" />
+		</lineofeffect>
+		
+		<areaofeffect
+			radius="200"
+			maxtotalimpacts="-1"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>
+			<applystate name="State_Chester_Ability4_Damage" duration="50" />
+		</areaofeffect>
+		
+		<distance target="target_entity" source="source_entity" /> 
+		<compare a="result" b="3000" op="gt" >
+			<expire />
+		</compare>
+		<compare a="source_health_percent" b=".001" op="le" > 
+			<expire />
+		</compare>
+	</onframe>
+	
+	<onexpired>
+		<expirestate name="State_Chester_Ability4_Data" target="source_entity" />
+	</onexpired>
+	
+</statenetaccum>
