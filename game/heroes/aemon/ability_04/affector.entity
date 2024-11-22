@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Aemon_Ability4_Consecrated"
+
+	radius="99999"
+	targetselection="all"
+	targetscheme="enemy_units_and_buildings"
+	effecttype="Physical"
+	maximpactspertarget="1"
+>
+	<constant name="damage" value="75,100,125" adjustment="ability" />
+
+	<onimpact>
+		<hasmodifier entity="target_entity" name="Aemon_Ability1_Debuff">
+			<getconstant name="damage" adjustmentsource="this_entity" />
+			<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+			<applystate name="State_Revealed" duration="3000" />
+			<playeffect effect="effects/aoe_impact_small.effect" source="target_entity" occlude="true" />
+		</hasmodifier>
+
+	</onimpact>
+	
+</affector>
