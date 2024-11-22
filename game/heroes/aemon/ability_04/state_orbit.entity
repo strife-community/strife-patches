@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Orbit"
+
+	icon="icon.tga"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	ishidden="true"
+>
+
+	<oninflict>
+		<getconstant name="number_of_orbs" adjustmentsource="this_entity" />
+		<setcharges a="result" />
+	</oninflict>
+
+	<ondamaged>
+		<compare a="charges" b="0" op="gt">
+			<damageeffecttype effecttype="Indirect" />
+			<else>
+				<damageeffecttype effecttype="DOT" />
+				<else>
+					<targettype type="self" />
+					<else>
+						<cantarget targetscheme="enemy_heroes" >
+							<scaledamage scale="0.75" />
+							<removecharge count="1" entity="tool_entity" />
+							
+							<distance />
+							<compare a="result" b="1400" op="lt">
+								<setproxy />
+								<areaofeffect
+									radius="300"
+									targetselection="all"
+									targetscheme="OwnedOrbitGadget"
+									ignoreinvulnerable="true"
+									maxtotalimpacts="1"
+									center="source_entity"
+								>
+									<unbind target="target_entity" />
+									<delete source="" />
+									<spawnprojectile name="Projectile_Aemon_Ability4_Damage" target="this_proxy_entity" source="target_entity" bind="target_entity" bindturn="true" proxy="target_entity"  />
+								</areaofeffect>
+							</compare>
+							<else>
+								<areaofeffect
+									radius="300"
+									targetselection="all"
+									targetscheme="OwnedOrbitGadget"
+									ignoreinvulnerable="true"
+									maxtotalimpacts="1"
+									center="source_entity"
+								>
+									<unbind target="target_entity" />
+									<kill source="" />
+								</areaofeffect>
+							</else>
+						</cantarget>
+					</else>
+				</else>
+			</else>
+		</compare>
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+	</ondamaged>
+
+	<onexpired>
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="OwnedOrbitGadget"
+			ignoreinvulnerable="true"
+			center="source_entity"
+		>
+			<unbind target="target_entity" />
+			<delete source="" />
+		</areaofeffect>
+		<starttimer entity="this_proxy_entity" duration="0" />
+	</onexpired>
+	
+</state>

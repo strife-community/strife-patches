@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Aemon4"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+	casteffect="effects/aoe.effect"
+	anim="ability_4"
+
+	casttime="550"
+	castactiontime="0"
+	
+	actiontype="target_self"
+	
+	queue="front"
+	inheritmovement="true"
+
+	manacost="75"
+	cooldowntime="10000,8000,6000"
+	
+	targetradius="350"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	
+	maxcharges="3"
+	
+>
+	<constant name="damage" value="75,100,125" adjustment="ability" />
+	<constant name="back_attack" value="15,25,35" adjustment="ability" noshowintooltip="true"/>
+	<constant name="number_of_orbs" value="3" adjustment="none" noshowintooltip="true" />
+
+	
+	<onlearn>
+		<setcharges a="0" />
+	</onlearn>
+	
+	<onimpact>
+		<areaofeffect
+			radius="350"
+			targetselection="closest"
+			targetscheme="enemy_units_and_buildings"
+			maxtotalimpacts="-1"
+			maximpactspertarget="1"
+		>
+			<recordheroaggression  />
+			<aggression />
+
+			<getconstant name="damage" adjustmentsource="this_entity" />
+			<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+			<playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" occlude="true" />
+		</areaofeffect>
+		<spawnaffector name="Affector_Aemon_Ability4_Consecrated" target="target_position" proxy="target_entity" ignore="target_entity" />
+		<spawnaffector name="Affector_Aemon_Ability4_Ground" target="target_position" proxy="target_entity" ignore="target_entity" />
+		
+		
+	</onimpact>
+	
+	<onattackimpact>
+		
+		<compare a="charges" b="0" op="eq">
+			<spawnunit name="Gadget_Aemon_Ability4" count="1" target="source_position" pushentity="true" />
+			<spawnprojectile name="Projectile_Aemon_Ability4_Orbit" target="source_entity" source="source_entity" bind="stack_entity" bindturn="true" orbitstartingtheta="0"/>
+		</compare>
+		<compare a="charges" b="1" op="eq">
+			<spawnunit name="Gadget_Aemon_Ability4" count="1" target="source_position" pushentity="true" />
+			<spawnprojectile name="Projectile_Aemon_Ability4_Orbit2" target="source_entity" source="source_entity" bind="stack_entity" bindturn="true" orbitstartingtheta="0" />
+		</compare>
+		<compare a="charges" b="2" op="eq">
+			<spawnunit name="Gadget_Aemon_Ability4" count="1" target="source_position" pushentity="true" />
+			<spawnprojectile name="Projectile_Aemon_Ability4_Orbit3" target="source_entity" source="source_entity" bind="stack_entity" bindturn="true" orbitstartingtheta="0" />
+		</compare>
+		<addcharges count="1"/>
+
+		<applystate name="State_Orbit" target="source_entity" proxy="this_entity" duration="-1" />
+	</onattackimpact>
+		
+	
+</ability>
