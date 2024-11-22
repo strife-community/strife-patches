@@ -26,18 +26,39 @@
     maxcharges="3"
 
 >
+    <!-- Damage dealt in AoE on activation -->
     <constant name="damage" value="75,100,125" adjustment="ability" />
+    <!-- Damage returned to attacker -->
     <constant name="back_attack" value="15,25,35" adjustment="ability" />
-    <constant name="number_of_orbs" value="3" adjustment="none" noshowintooltip="true" />
-    <!--TODO: since scaledamage can't take variable arguments, this is for tooltip only for now-->
+    <!-- Damage reduction for charge -->
+    <!--TODO: since scaledamage can't take variable as attributes, this is for tooltip only for now-->
     <constant name="damage_reduction_percent" value="25" adjustment="none" noshowintooltip="true" />
 
-
+    <!-- Resetting number of charges when ability learned -->
     <onlearn>
         <setcharges a="0" />
     </onlearn>
+    
+    <!-- Resetting number of charges when Aemon dies -->
+    <ondeath>
+        <setcharges a="0" />
+        <!-- Also removing projectiles -->
+        <areaofeffect
+            radius="300"
+            targetselection="all"
+            targetscheme="OwnedOrbitGadget"
+            ignoreinvulnerable="true"
+            maxtotalimpacts="3"
+            center="source_entity"
+        >
+            <unbind target="target_entity" />
+            <delete source="" />
+        </areaofeffect>
+    </ondeath>
 
+    <!-- Active: AoE damage on Aemon's position and Consecrated Ground position -->
     <onimpact>
+        <!-- AoE damage around Aemon -->
         <areaofeffect
             radius="350"
             targetselection="closest"
@@ -45,21 +66,24 @@
             maxtotalimpacts="-1"
             maximpactspertarget="1"
         >
+            <!-- Recording aggression -->
             <recordheroaggression  />
             <aggression />
 
+            <!-- Dealing damage enemies -->
             <getconstant name="damage" adjustmentsource="this_entity" />
             <damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
             <playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" occlude="true" />
         </areaofeffect>
+        <!-- Affector for visual effects around Aemon -->
         <spawnaffector name="Affector_Aemon_Ability4_Consecrated" target="target_position" proxy="target_entity" ignore="target_entity" />
+        <!-- AoE damage on Consecrated Ground -->
         <spawnaffector name="Affector_Aemon_Ability4_Ground" target="target_position" proxy="target_entity" ignore="target_entity" />
-        
-        
     </onimpact>
 
+    <!-- Passive: Adding charges and projectile spheres -->
     <onattackimpact>
-        
+        <!-- Adding specific sphere depending on number of charges -->
         <compare a="charges" b="0" op="eq">
             <spawnunit name="Gadget_Aemon_Ability4" count="1" target="source_position" pushentity="true" />
             <spawnprojectile name="Projectile_Aemon_Ability4_Orbit" target="source_entity" source="source_entity" bind="stack_entity" bindturn="true" orbitstartingtheta="0"/>
@@ -72,13 +96,15 @@
             <spawnunit name="Gadget_Aemon_Ability4" count="1" target="source_position" pushentity="true" />
             <spawnprojectile name="Projectile_Aemon_Ability4_Orbit3" target="source_entity" source="source_entity" bind="stack_entity" bindturn="true" orbitstartingtheta="0" />
         </compare>
+        <!-- Adding charge -->
         <addcharges count="1"/>
-
     </onattackimpact>
         
-        
+    <!-- Passive: reacting to damage -->
     <ondamaged>
+        <!-- Checking if we have charges -->
         <compare a="charges" b="0" op="gt">
+            <!-- DO NOTHING if damage is indirect, Damage Over Time, done by Aemon to self or can't target us -->
             <damageeffecttype effecttype="Indirect" />
             <else>
                 <damageeffecttype effecttype="DOT" />
@@ -86,15 +112,19 @@
                     <targettype type="self" />
                     <else>
                         <cantarget targetscheme="enemy_heroes" >
+                            <!-- Decreasing damage -->
                             <!--TODO: count scaledamage from constant when scaledamage is fixed-->
                             <!--getconstant name="damage_reduction_percent" /-->
                             <!--setvar0 a="result" b="-100" op="div" /-->        <!--Getting multiplier lost on next bounce-->
                             <!--setvar0 a="1.0" b="var0" op="add" /-->           <!--Getting multiplier remaining-->
                             <scaledamage scale="0.75" />
+                            <!-- Removing charge -->
                             <removecharge count="1" />
                             
+                            <!-- Checking distance: if target is too far, back damage is not triggered -->
                             <distance />
                             <compare a="result" b="1400" op="lt">
+                                <!-- Selecting sphere, replacing it with projectile to damage enemy -->
                                 <setproxy />
                                 <areaofeffect
                                     radius="300"
@@ -110,6 +140,7 @@
                                 </areaofeffect>
                             </compare>
                             <else>
+                                <!-- Selecting sphere and just remove it -->
                                 <areaofeffect
                                     radius="300"
                                     targetselection="all"
@@ -126,9 +157,6 @@
                     </else>
                 </else>
             </else>
-        </compare>
-        <compare a="charges" b="0" op="eq">
-            <expire />
         </compare>
     </ondamaged>
 
