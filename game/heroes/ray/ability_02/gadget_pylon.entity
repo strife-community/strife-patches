@@ -1,67 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Ray_Ability2_Pylon"
+    name="Gadget_Ray_Ability2_Pylon"
 
-	icon="icon.tga"
-	portrait=""
-	model="effects/spheres_animated/model.mdf"
-	skin=""
-	
-	passiveeffect=""
-	spawneffect=""
-	respawneffect=""
-	selectsound=""
-	orderconfirmedsound=""
-	
+    icon="icon.tga"
+    portrait=""
+    model="effects/spheres_animated/model.mdf"
+    skin=""
 
-	preglobalscale="1.2"
-	modelscale=".5"
-	effectscale="1.0"
-	boundsheight="64"
-	radiusheight="64"
-	boundsradius="16"
-	selectionradius="48"
-	targetoffset="0 0 64"
+    passiveeffect=""
+    spawneffect=""
+    respawneffect=""
+    selectsound=""
+    orderconfirmedsound=""
 
-	unitwalking="true"
-	serverentity="false"
-	visible="true"
-	revealed="true"
-	ismobile="false"
-	isselectable="false"
-	iscontrollable="false"
-	canrotate="false"
-	drawonmap="false"
 
-	invulnerable="true"
-	hidealtinfo="true"
+    preglobalscale="1.2"
+    modelscale=".5"
+    effectscale="1.0"
+    boundsheight="64"
+    radiusheight="64"
+    boundsradius="16"
+    selectionradius="48"
+    targetoffset="0 0 64"
 
-	alwaystransmitdata="true"
+    unitwalking="true"
+    serverentity="false"
+    visible="true"
+    revealed="true"
+    ismobile="false"
+    isselectable="false"
+    iscontrollable="false"
+    canrotate="false"
+    drawonmap="false"
 
-	resistance="0"
-	immunity="GadgetImmunity"
+    invulnerable="true"
+    hidealtinfo="true"
 
-	canattack="false"
-	
-	attacktype="none"
-	combattype="Ranged"
+    resistance="0"
+    immunity="GadgetImmunity"
 
-	sightrangeday="0"
-	sightrangenight="0"
+    canattack="false"
 
-	
-	lifetime="3200"
-	
-	unittype="EnergyFieldEngine"
-	
-	corpsetime="2500"
-	corpsefadetime="2500"
-	corpsefadeeffect="/shared/effects/corpse_sinkfast.effect"
+    attacktype="none"
+    combattype="Ranged"
+
+    sightrangeday="0"
+    sightrangenight="0"
+
+
+    lifetime="3200"
+
+    unittype="EnergyFieldEngine"
+
+    corpsetime="2500"
+    corpsefadetime="2500"
+    corpsefadeeffect="/shared/effects/corpse_sinkfast.effect"
 >
-	<onframe>
-		<targettype type="dead" target="proxy_entity">
-			<expire entity="this_entity" />
-		</targettype>
-	</onframe>
+    <onframe>
+        <targettype type="dead" target="proxy_entity">
+            <expire entity="this_entity" />
+        </targettype>
+        
+        <condition test="canenemysee" target="this_entity" >
+            <areaofeffect
+                radius="650"
+                targetselection="all"
+                targetscheme="Ray_Ability2_Reveal_Gadget"
+                ignoreinvulnerable="true"
+                center="this_entity"
+            >
+                <applystate name="State_Ray_Ability2_Reveal_Gadget" target="target_entity" continuous="true" timeout="frametime" />
+            </areaofeffect>
+        </condition>
+    </onframe>
+
 
 </gadget>
