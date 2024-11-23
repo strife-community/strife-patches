@@ -7,7 +7,7 @@
 
 	<trigger name="goldReportVis"/>
 	<trigger name="gameToggleMenu"/>
-	<trigger name="gameToggleScoreboard"/>
+	<!--trigger name="gameToggleScoreboard"/-->
 
 	<!-- Widget visibility controls, specifically for maps -->
 	<trigger name="mapWidgetVis_minimap_show"/>
@@ -1637,12 +1637,13 @@
 	<childinterface file="/ui/shared/options/options.interface"/>
 	<include file="/ui/main/control_presets/control_presets.package"/>
 	
-	<childinterface file="/ui/shared/scoreboard_templates.interface"/>
+	<!--childinterface file="/ui/shared/scoreboard_templates.interface"/-->
 
 	<include file="/ui/game/karma/karma_vote.package"/>
-	<include file="/ui/game/scoreboard/scoreboard.package"/>
+	<!--include file="/ui/game/scoreboard/scoreboard.package"/-->
 	
 	<!-- === Split between tips/popups (below) and above-game-widgets stuff (above) -->
+    <include file="/ui/game/scoreboard/scoreboard.package"/>
 
 	<childinterface file="/ui/game/test/game_test.interface"/>
 	
@@ -1937,7 +1938,11 @@
 	<lua file="/ui/game/item_guidance/item_guidance.lua"/>
 	
 	<lua file="/ui/game/karma/karma_vote.lua"/>
-	<lua file="/ui/game/scoreboard/scoreboard.lua"/>
+    <lua file="/ui/game/scoreboard/game_helper.lua"/>
+    <lua file="/ui/game/scoreboard/scoreboard.lua" />
+    
+    
+	<!--lua file="/ui/game/scoreboard/scoreboard.lua"/-->
 
 	<lua file="/ui/game/levelup/leveluppanel2.lua"/>
 	<lua file="/ui/game/gold_report/goldreport.lua"/>
@@ -1950,14 +1955,16 @@
 	<lua file="/ui/game/item_cursor/itemcursor.lua"/>
 
 	<lua file="/ui/game/remote_cursor/remote_cursor.lua"/>
+    
+    <lua file="/ui/game/scoreboard/scoreboard_register.lua" />
+    
 	<lua file="/ui/game/triggers/triggers_game_init.lua"/><!-- Stuff that we need to execute once all other lua is loaded -->
+    
 
 	<lua file="/ui/shared/database.lua"/>
 	<panel name="npeScriptWidget" color="invisible" noclick="true"/>
 	<lua file="/ui/main/new_player_experience/new_player_experience_lib.lua"/>
 	<lua file="/ui_dev/window_controller.lua"/>
-    
-    <lua file="/ui/new_game/new_game_scoreboard.lua" />
 	
 	<panel noclick="1" color="black" onshowlua="self:Sleep(500, function() self:FadeOut(500) end)" />
 	

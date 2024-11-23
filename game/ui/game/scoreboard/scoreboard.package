@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <!-- Scoreboard Styles -->
+    <style name="gameScoareboardContainer"
+        width="90h"
+        height="55h"
+        align="center"
+        valign="top"
+        y="12%"
+        noclick="1"
+    />
+    
+    <style name="gameBannerAlly"
+        noclick="1"
+        color="#00cd20"
+    />
+    
+    <style name="gameBannerEnemy"
+        noclick="1"
+        color="#a10101"
+    />
+    
+    <style name="gameBannerLogo"
+        width="80%"
+        height="80@"
+        align="center"
+        valign="center"
+        y="-2%"
+        noclick="1"
+        color="1 1 1 0.3"
+    />
+    
+    <style name="gameBannerTeam"
+        y="20%"
+        noclick="1"
+        textalign="center"
+        fity="1"
+        font="maindyn_11"
+    />
+    
+    <style name="gameBannerTeamAlly"
+        color="#002306"
+        style="gameBannerTeam"
+    />
+    
+    <style name="gameBannerTeamEnemy"
+        color="#150000"
+        style="gameBannerTeam"
+    />
+    
+    <style name="gameBannerTeamName"
+        y="25%"
+        noclick="1"
+        textalign="center"
+        fity="1"
+        font="maindyn_24"
+        outline="1"
+    />
+    
+    <style name="gameBannerTeamNameAlly"
+        color="#6df47a"
+        outlinecolor="#00430b"
+        style="gameBannerTeamName"
+    />
+    
+    <style name="gameBannerTeamNameEnemy"
+        color="#fc8888"
+        outlinecolor="#380000"
+        style="gameBannerTeamName"
+    />
+    
+    <style name="gameBannerKills"
+        y="47%"
+        noclick="1"
+        color="#ffa800"
+        textalign="center"
+        fity="1"
+        font="maindyn_36"
+        outline="1"
+        outlinecolor="0.42 0.27 0 0.5"
+    />
+    
+    <style name="gameBannerTotalKills"
+        y="68%"
+        noclick="1"
+        color="#ffa800"
+        textalign="center"
+        fity="1"
+        font="maindyn_11"
+        outline="1"
+        outlinecolor="0.42 0.27 0 0.4"
+    />
+    
+    <style name="gameScoreboard"
+        width="-1.6h"
+        height="10%"
+        align="center"
+        noclick="0"
+    />
+    
+    <style name="gameScoreboardRow"
+        noclick="1"
+        float="right"
+    />
+    
+    <style name="gameScoreboardRow_hover"
+        width="100%"
+        height="100%"
+        noclick="1"
+        texture="/ui/shared/textures/scoreboard_highlight01.tga"
+        visible="0"
+    />
+    
+    <style name="gameScoreboardRowAlly_hover"
+        color="0 1 0 0.5"
+        style="gameScoreboardRow_hover"
+    />
+    
+    <style name="gameScoreboardRowEnemy_hover"
+        color="1 0 0 0.5"
+        style="gameScoreboardRow_hover"
+    />
+    
+    <style name="gameScoreboardText"
+        noclick="1"
+        outline="1"
+        outlinecolor="0 0 0 0.8"
+        font="maindyn_12"
+        textvalign="center"
+    />
+    
+    <style name="gameScoreboardTextSM"
+        noclick="1"
+        outline="1"
+        outlinecolor="0 0 0 0.4"
+        font="maindyn_9"
+        fity="1"
+        textalign="left"
+    />
+    
+    <style name="gameScoreboardPlayerTextSM"
+        color="#f0e5a7"
+        style="gameScoreboardTextSM"
+    />
+    
+    <style name="gameScoreboardAllyTextSM"
+        color="#a7f0ae"
+        style="gameScoreboardTextSM"
+    />
+    
+    <style name="gameScoreboardEnemyTextSM"
+        color="#f0a7a7"
+        style="gameScoreboardTextSM"
+    />
+    
+    <style name="gameScoreboardHero"
+        width="90@"
+        height="90%"
+        align="center"
+        valign="center"
+        noclick="1"
+    />
+    
+    <style name="gameScoreboardPet"
+        width="70@"
+        height="70%"
+        align="center"
+        valign="center"
+        noclick="1"
+    />
+    
+    <style name="gameScoreboardItem"
+        width="85@"
+        height="85%"
+        align="center"
+        valign="center"
+        noclick="1"
+    />
+    
+    <!-- Scoreboard Hero Border -->
+    <style name="gameScoreboardBorder"
+        noclick="1"
+        color="invisible"
+        borderthickness="0.2h"
+    />
+    
+    <style name="gameScoreboardBorderPlayer"
+        bordercolor="#484916"
+        style="gameScoreboardBorder"
+    />
+    
+    <style name="gameScoreboardBorderAlly"
+        bordercolor="#164916"
+        style="gameScoreboardBorder"
+    />
+    
+    <style name="gameScoreboardBorderEnemy"
+        bordercolor="#491616"
+        style="gameScoreboardBorder"
+    />
+    
+    <style name="gameScoreboardVOID"
+        width="70@"
+        height="70%"
+        align="center"
+        valign="center"
+        noclick="1"
+        visible="0"
+    />
+    
+    <style name="gameScoreboardSpeaker"
+        texture="/ui/shared/textures/megaphone.tga"
+        style="gameScoreboardVOID"
+    />
+    
+    <style name="gameScoreboardMute"
+        texture="/ui/shared/textures/kick_up.tga"
+        style="gameScoreboardVOID"
+    /> 
+    
+    <style name="gameScoreboardGlow"
+        width="95@"
+        height="95%"
+        align="center"
+        valign="center"
+        noclick="1"
+        texture="/ui/shared/textures/inside_glow.tga"
+        visible="0"
+    />
+    
+    <style name="gameScoreboardGlowPlayer"
+        color="#ffb400"
+        style="gameScoreboardGlow"
+    />
+    
+    <style name="gameScoreboardGlowAlly"
+        color="#00ce0a"
+        style="gameScoreboardGlow"
+    />
+    
+    <style name="gameScoreboardGlowEnemy"
+        color="#ce0000"
+        style="gameScoreboardGlow"
+    />
+    
+    <style name="scoreboardFrameBG"
+        noclick="1"
+        color="#292929"
+        borderthickness="0.2h"
+    />
+    
+	<style name="scoreboardFrameBorder"
+        noclick="1"
+        color="invisible"
+        borderthickness="0.2h"
+        bordercolor="#515151"
+    />
+    
+	<style name="scoreboardShadow"
+        width="+2h"
+        height="+2h"
+        align="center"
+        valign="center"
+        noclick="1"
+        color="invisible"
+        borderthickness="1.5h"
+        bordercolor="0 0 0 0.7"
+        texture="/ui/elements:squareglow"
+    />
+    
+    <style name="scoreboardItemBase"
+        width="70@"
+        height="70%"
+        align="center"
+        valign="center"
+        noclick="1"
+        color="1 1 1 0.05"
+    />
+    
+    <style name="scoreboardCrafted"
+        align="left"
+        valign="top"
+        x="-0.3h"
+        y="-0.3h"
+        noclick="1"
+        texture="/ui/shared/textures/itemtype_crafted.tga"
+        style="gameIcon"
+    />
+    
+    <style name="scoreboardCraftedBorder"
+        width="-0.6h"
+        height="-0.6h"
+        align="center"
+        valign="center"
+        noclick="1"
+        texture="/ui/elements:rounded_bg_white"
+        borderthickness="0.3h"
+        color="invisible"
+        bordercolor="#9a0fb4"
+    />
+    
+    <!-- Templates -->
+    <template name="inventoryDisplay">
+        <frame
+            texture="/ui/shared/frames/rounded_bg_grad.tga"
+            style="scoreboardFrameBG"
+            color="#161616"
+        />
+        <image
+            texture="/ui/shared/textures/itemtype_boots.tga"
+            style="scoreboardItemBase"
+            visible="{isBoot}"
+            color="1 1 1 0.02"
+        />
+        <image
+            texture="/ui/shared/textures/itemtype_consumable.tga"
+            style="scoreboardItemBase"
+            visible="{isConsumable}"
+            color="1 1 1 0.02"
+        />
+        <image
+            texture="/ui/shared/textures/itemtype_base.tga"
+            style="scoreboardItemBase"
+            visible="{isStandard}"
+            color="1 1 1 0.02"
+        />
+        <image
+            name="{id}"
+            height="95%"
+            width="95@"
+            align="center"
+            valign="center"
+            noclick="0"
+            visible="0"
+        />
+        <frame
+            texture="/ui/shared/frames/rounded_bg_grad.tga"
+            style="scoreboardFrameBorder"
+            bordercolor="#272727"
+        />
+        <frame
+            name="{id}CraftedBorder"
+            style="scoreboardCraftedBorder"
+            width="+0.3h"
+            height="+0.3h"
+            noclick="1"
+            texture="/ui/elements:rounded_bg_white"
+            borderthickness="0.3h"
+            visible="0"
+        />
+        <image
+            name="{id}CraftedIcon"
+            x="-25%"
+            y="-25%"
+            style="scoreboardCrafted"
+            visible="0"
+        />
+    </template>
+    
+    <template name="gameScoreboardBaldirMarker">
+        <image texture="/ui/game/scoreboard/textures/bcount_ring_on.tga" x="-1s" y="2s" color="0 0 0 .4" align="center" valign="center" noclick="1" />		
+        <image texture="/npcs/Baldir_2/icon_circle.tga" align="center" valign="center" width="82%" height="82%" color=".9 .9 .9 1" noclick="1" />					
+        <image texture="/npcs/Baldir_2/icon_circle.tga" align="center" valign="center" width="82%" height="82%" rendermode="grayscale" color=".7 .7 .7 .85" noclick="1" />					
+        <image texture="/ui/game/scoreboard/textures/bcount_ring_off.tga" align="center" valign="center" noclick="1" />
+        <label x="-0.1h" y="-0.1h" textalign="center" textvalign="center" font="maindyn_13" color="1 1 1 .6" outline="1" outlinecolor="0 0 0 .4" content="{countdown}" />					
+        <panel name="{markerName}" visible="0">						
+            <image texture="/npcs/Baldir_2/icon_circle.tga" align="center" valign="center" width="82%" height="82%" noclick="1" />
+            <image texture="/ui/game/scoreboard/textures/bcount_ring_on.tga" color="{markerColor}" align="center" valign="center" noclick="1" />
+        </panel>
+    </template>
+    
+    <template name="gameScoreboardBanner">
+        <panel y="{y}" height="40%" noclick="1">			
+            <panel y="{markerY=0.6h}" x="15%" width="74%" height="3.0h" valign="{markerValign}" noclick="1">				
+                <panel y="{markerOffset}" align="left" width="100@" height="100%" noclick="1">					
+                    <instance name="gameScoreboardBaldirMarker" markerColor="{markerColor}" countdown="3"	markerName="gameScoreboard{team}BaldirKills1" />
+                </panel>				
+                <panel y="0" align="center" width="100@" height="100%" noclick="1">					
+                    <instance name="gameScoreboardBaldirMarker" markerColor="{markerColor}" countdown="2"	markerName="gameScoreboard{team}BaldirKills2" />
+                </panel>				
+                <panel y="{markerOffset}" align="right" width="100@" height="100%" noclick="1">					
+                    <instance name="gameScoreboardBaldirMarker" markerColor="{markerColor}" countdown="1"	markerName="gameScoreboard{team}BaldirKills3" />
+                </panel>				
+            </panel>
+            <image texture="/ui/shared/textures/flag_base.tga" noclick="1" />
+            <image texture="/ui/shared/textures/flag_color.tga" style="gameBanner{team}" />			
+            <panel x="0.3h" noclick="1">
+                <image style="gameBannerLogo" texture="/ui/shared/textures/team_logo_{teamName}.tga" />
+                <label style="gameBannerTeam{team}" content="{content}"/>
+                <label name="gameScoreboard{team}TeamName" style="gameBannerTeamName{team}" content="{teamName}"/>
+                
+                <label name="gameScoreboard{team}Score" style="gameBannerKills" content="12"/>
+                <label style="gameBannerTotalKills" content="game_scoreboard_totalKills"/>
+            </panel>
+        </panel>
+    </template>
+            
+    <template name="gameScoreboardHeaderEntry">
+        <panel width="{width}" noclick="1">
+            <label x="{x}" y="0.5h" color="#4f7e87" outline="1" outlinecolor="black" font="maindyn_9" textvalign="center" textalign="{textalign}" content="{content}" noclick="1" />
+        </panel>
+    </template>
+    
+    <template name="gameScoreboardRowBlank">
+        <panel name="gameScoreboardRow{type}" style="gameScoreboard">	
+            <panel name="gameScoreboard{type}Row" style="gameScoreboardRow" color="{color}" texture="{texture}" noclick="0" />			
+            <panel height="0.1h" color="0 0 0 0.2" valign="bottom" noclick="1" />
+        </panel>
+    </template>
+    
+    <template name="gameScoreboardRow"> 
+        <panel name="gameScoreboardRow{type}{id}" style="gameScoreboard">	
+            <panel name="gameScoreboard{type}{id}Row" style="gameScoreboardRow" color="{color}" texture="{texture}" noclick="0">
+                <panel name="gameScoreBoardRow{type}{id}_hover" style="gameScoreboardRow{type}_hover" noclick="1" />
+                
+                <panel y="0" x="0" width="7%"  noclick="1">
+                    <panel name="gameScoreboard{type}{id}_heroparent" noclick="0" style="gameScoreboardHero">
+                        <frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="scoreboardFrameBG" />	
+                        <image name="gameScoreboard{type}{id}_icon" texture="" height="95%" width="95@" align="center" valign="center" noclick="1" />
+                        <label name="gameScoreboard{type}{id}_iconlabel"  style="gameScoreboardText" color="white" shadow="black" valign="center" align="center" fitx="1" fity="1"/>
+                        <image name="gameScoreboard{type}{id}_speaker" style="gameScoreboardSpeaker" /> <!-- talking -->
+                        <image name="gameScoreboard{type}{id}_mute" style="gameScoreboardMute" /> <!-- muted -->
+                        <image name="gameScoreboard{type}{id}_glow" style="gameScoreboardGlow{type}" />
+                        <frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="gameScoreboardBorder{type}" />
+                    </panel>
+                </panel>
+                
+                <panel width="15%" noclick="1">
+                    <panel x="1h" valign="center" width="100%" float="bottom" grow="1" regrow="1" noclick="1">
+                        <label name="gameScoreboard{type}{id}_name" style="gameScoreboardText" color="white" textalign="left" fity="1"/>
+                        <label name="gameScoreboard{type}{id}_hero" style="gameScoreboard{type}TextSM" />
+                    </panel>
+                </panel>
+                
+                <panel width="5%"  noclick="1">
+                    <panel name="gameScoreboard{type}{id}_muted" noclick="0" >
+                        <image texture="/ui/main/friends/textures/icon_mute.tga" height="62%" width="62@" align="center" valign="center" noclick="1" />
+                        <image name="gameScoreboard{type}{id}_muted_image" style="gameScoreboardMute" visible="0" height="85%" width="85@" align="center" valign="center" noclick="1" />
+                    </panel>
+                </panel>				
+                
+                <panel width="5%" noclick="1">
+                    <label name="gameScoreboard{type}{id}_level" x="0.6h" style="gameScoreboardText" color="white" textalign="center" align="left" fitx="1"/>
+                </panel>
+                
+                <panel width="5%"  noclick="1">
+                    <panel style="gameScoreboardPet">
+                        <frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="scoreboardFrameBG" />	
+                        <image name="gameScoreboard{type}{id}_pet" texture="" height="95%" width="95@" align="center" valign="center" noclick="0" />
+                        <frame texture="/ui/shared/frames/rounded_bg_grad.tga" style="scoreboardFrameBorder" />
+                    </panel>
+                </panel>
+                
+                <panel width="6%" noclick="1">
+                    <panel style="gameScoreboardItem">
+                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item1" isStandard="1" />
+                    </panel>
+                </panel>
+                
+                <panel width="6%"  noclick="1">
+                    <panel style="gameScoreboardItem">
+                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item2" isStandard="1" />
+                    </panel>
+                </panel>
+                
+                <panel width="6%"  noclick="1">
+                    <panel style="gameScoreboardItem">
+                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item3" isStandard="1" />
+                    </panel>
+                </panel>
+                
+                <panel width="6%"  noclick="1">
+                    <panel style="gameScoreboardItem">
+                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item4" isStandard="1" />
+                    </panel>
+                </panel>
+                
+                <panel width="6%"  noclick="1">
+                    <panel style="gameScoreboardItem">
+                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item5" isStandard="1" />
+                    </panel>
+                </panel>
+                
+                <panel width="6%"  noclick="1">
+                    <panel style="gameScoreboardItem">
+                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item6" isStandard="1" />
+                    </panel>
+                </panel>
+                
+                <panel width="6%"  noclick="1">
+                    <panel style="gameScoreboardItem">
+                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item7" isBoot="1" />
+                    </panel>
+                </panel>
+                
+                <panel width="7%"  noclick="1">
+                    <label name="gameScoreboard{type}{id}_kills" style="gameScoreboardText" color="white" textalign="center"/>
+                </panel>
+                
+                <panel width="7%"  noclick="1">
+                    <label name="gameScoreboard{type}{id}_assists" style="gameScoreboardText" color="#b4cdd1" textalign="center"/>
+                </panel>
+                
+                <panel width="7%"  noclick="1">
+                    <label name="gameScoreboard{type}{id}_GPM" style="gameScoreboardText" color="#ffab03" textalign="center"/>
+                </panel>
+            </panel>
+            
+            <panel height="0.1h" color="0 0 0 0.2" valign="bottom" noclick="1" />
+        </panel>
+    </template>
+    
+    <!-- Scoreboard -->
+    <panel name="gameScoreboardContainers" noclick="1">
+        <panel name="gameScoreboardContainer" style="gameScoareboardContainer"  noclick="1">
+            
+            <panel width="14%" noclick="1">
+                <instance name="gameScoreboardBanner" team="Ally"  teamName="glory" content="game_scoreboard_ally"	markerValign="bottom"	markerOffset="0.6h"		markerColor="#05ab1f"					y="3%"/>
+                <instance name="gameScoreboardBanner" team="Enemy" teamName="valor" content="game_scoreboard_enemy"	markerValign="top"		markerOffset="-0.6h"	markerColor="#aa2727"	markerY="-1.4h"	y="59%"/>
+            </panel>
+            
+            <panel height="4.2h" width="14%" valign="center" noclick="1">
+                <label textalign="center" font="maindyn_13" color="#a4c3cb" outline="1" outlinecolor="0 0 0 .6" content="game_scorebaord_baldir_kills" />			
+                <label width="-2h" fity="1" wrap="1" lineheight="1.2h" align="center" valign="bottom" textalign="center" font="maindyn_9" color="#bbc4c7" outline="1" outlinecolor="0 0 0 .4" content="game_scorebaord_to_spawn" />			
+            </panel>
+            
+            <frame width="86.7%" texture="/ui/elements:rounded_bg_white" align="right" float="bottom" color="0 0.07 0.09 0.8" borderthickness="0.8h" noclick="1">
+                <frame style="scoreboardShadow" noclick="1"/>
+                <panel y="0h" x="0h" height="4.2h" color="#00090d" noclick="1">
+                    <panel width="-1.6h" align="center" float="right" noclick="1">
+                        <instance name="gameScoreboardHeaderEntry" width="8%"  content="game_scoreboard_hero"      textalign="center"/>
+                        <instance name="gameScoreboardHeaderEntry" width="19%" content="game_scoreboard_name" />
+                        <instance name="gameScoreboardHeaderEntry" width="5%"  content="game_scoreboard_level"     />
+                        <instance name="gameScoreboardHeaderEntry" width="5%"  content="game_scoreboard_pet"       textalign="center"/>
+                        <instance name="gameScoreboardHeaderEntry" width="42%" content="game_scoreboard_inventory" textalign="center"/>
+                        <instance name="gameScoreboardHeaderEntry" width="7%"  content="game_scoreboard_kills"     textalign="center"/>
+                        <instance name="gameScoreboardHeaderEntry" width="7%"  content="game_scoreboard_assists"   textalign="center"/>
+                        <instance name="gameScoreboardHeaderEntry" width="7%"  content="game_scoreboard_gpm"       textalign="right" x="-1h"/>
+                    </panel>
+                </panel>
+                <panel height="-4.8h" noclick="1">
+                    <!-- blanks -->
+                    <panel noclick="1" float="bottom">
+                        <instance name="gameScoreboardRowBlank" type="Player" texture="/ui/shared/textures/scoreboard_highlight01.tga" color="#fff000"/>
+                        <instance name="gameScoreboardRowBlank" type="Ally"   color="0 1 0 0.01"/>
+                        <instance name="gameScoreboardRowBlank" type="Ally"   color="0 1 0 0.03"/>
+                        <instance name="gameScoreboardRowBlank" type="Ally"   color="0 1 0 0.01"/>
+                        <instance name="gameScoreboardRowBlank" type="Ally"   color="0 1 0 0.03"/>
+                        
+                        <instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.03"/>
+                        <instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.01"/>
+                        <instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.03"/>
+                        <instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.01"/>
+                        <instance name="gameScoreboardRowBlank" type="Enemy"  color="1 0 0 0.03"/>
+                    </panel>
+                        
+                    <image texture="/ui/shared/textures/inside_glow.tga" align="right" color="0 0 0 0.6" noclick="1"/>
+                    
+                    <panel noclick="1" float="bottom">
+                        <instance name="gameScoreboardRow" type="Player" id="0" texture="/ui/shared/textures/scoreboard_highlight01.tga" color="#fff000"/>
+                        <instance name="gameScoreboardRow" type="Ally"   id="0" color="0 1 0 0.01"/>
+                        <instance name="gameScoreboardRow" type="Ally"   id="1" color="0 1 0 0.03"/>
+                        <instance name="gameScoreboardRow" type="Ally"   id="2" color="0 1 0 0.01"/>
+                        <instance name="gameScoreboardRow" type="Ally"   id="3" color="0 1 0 0.03"/>
+                        
+                        <instance name="gameScoreboardRow" type="Enemy"  id="0" color="1 0 0 0.03"/>
+                        <instance name="gameScoreboardRow" type="Enemy"  id="1" color="1 0 0 0.01"/>
+                        <instance name="gameScoreboardRow" type="Enemy"  id="2" color="1 0 0 0.03"/>
+                        <instance name="gameScoreboardRow" type="Enemy"  id="3" color="1 0 0 0.01"/>
+                        <instance name="gameScoreboardRow" type="Enemy"  id="4" color="1 0 0 0.03"/>
+                    </panel>
+                </panel>
+            </frame>
+            
+            <frame width="86.7%" texture="/ui/shared/frames/stone.tga" align="right" color="invisible" borderthickness="5h" bordercolor="white" noclick="1">
+                <image texture="/ui/shared/textures/stone_corner_tl.tga" y="-0.2h" x="-0.2h" height="6h" width="6h" align="left" valign="top" noclick="1" />
+                <image texture="/ui/shared/textures/stone_corner_tr.tga" y="-0.2h" x="0.2h" height="6h" width="6h" align="right" valign="top" noclick="1" />
+                <image texture="/ui/shared/textures/stone_corner_bl.tga" y="0.2h" x="-0.2h" height="6h" width="6h" align="left" valign="bottom" noclick="1" />
+                <image texture="/ui/shared/textures/stone_corner_br.tga" y="0.2h" x="0.2h" height="6h" width="6h" align="right" valign="bottom" noclick="1" />
+                
+                <image texture="/ui/shared/textures/decal_orb.tga" y="-1.3h" x="-1.3h" height="5.3h" width="5.3h" align="left" valign="top" noclick="1" />
+                <image texture="/ui/shared/textures/decal_orb.tga" y="-1.3h" x="1.3h" height="5.3h" width="5.3h" align="right" valign="top" noclick="1" />
+            </frame>
+        </panel>
+    </panel>
+</package>
