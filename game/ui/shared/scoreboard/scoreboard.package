@@ -268,8 +268,95 @@
         texture="/ui/elements:squareglow"
     />
     
+    <style name="scoreboardItemBase"
+        width="70@"
+        height="70%"
+        align="center"
+        valign="center"
+        noclick="1"
+        color="1 1 1 0.05"
+    />
+    
+    <style name="scoreboardCrafted"
+        align="left"
+        valign="top"
+        x="-0.3h"
+        y="-0.3h"
+        noclick="1"
+        texture="/ui/shared/textures/itemtype_crafted.tga"
+        style="gameIcon"
+    />
+    
+    <style name="scoreboardCraftedBorder"
+        width="-0.6h"
+        height="-0.6h"
+        align="center"
+        valign="center"
+        noclick="1"
+        texture="/ui/elements:rounded_bg_white"
+        borderthickness="0.3h"
+        color="invisible"
+        bordercolor="#9a0fb4"
+    />
+    
     <!-- Templates -->
-    <!-- Scoreboard Templates -->
+    <template name="scoreboardInventoryDisplay">
+        <frame
+            texture="/ui/shared/frames/rounded_bg_grad.tga"
+            style="scoreboardFrameBG"
+            color="#161616"
+        />
+        <image
+            texture="/ui/shared/textures/itemtype_boots.tga"
+            style="scoreboardItemBase"
+            visible="{isBoot}"
+            color="1 1 1 0.02"
+        />
+        <image
+            texture="/ui/shared/textures/itemtype_consumable.tga"
+            style="scoreboardItemBase"
+            visible="{isConsumable}"
+            color="1 1 1 0.02"
+        />
+        <image
+            texture="/ui/shared/textures/itemtype_base.tga"
+            style="scoreboardItemBase"
+            visible="{isStandard}"
+            color="1 1 1 0.02"
+        />
+        <image
+            name="{id}"
+            height="95%"
+            width="95@"
+            align="center"
+            valign="center"
+            noclick="0"
+            visible="0"
+        />
+        <frame
+            texture="/ui/shared/frames/rounded_bg_grad.tga"
+            style="scoreboardFrameBorder"
+            bordercolor="#272727"
+        />
+        <frame
+            name="{id}CraftedBorder"
+            style="scoreboardCraftedBorder"
+            width="+0.3h"
+            height="+0.3h"
+            noclick="1"
+            texture="/ui/elements:rounded_bg_white"
+            borderthickness="0.3h"
+            visible="0"
+        />
+        <image
+            name="{id}CraftedIcon"
+            x="-25%"
+            y="-25%"
+            style="scoreboardCrafted"
+            visible="0"
+        />
+    </template>
+    
     <template name="gameScoreboardBaldirMarker">
         <image texture="/ui/game/scoreboard/textures/bcount_ring_on.tga" x="-1s" y="2s" color="0 0 0 .4" align="center" valign="center" noclick="1" />		
         <image texture="/npcs/Baldir_2/icon_circle.tga" align="center" valign="center" width="82%" height="82%" color=".9 .9 .9 1" noclick="1" />					
@@ -366,43 +453,43 @@
                 
                 <panel width="6%" noclick="1">
                     <panel style="gameScoreboardItem">
-                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item1" isStandard="1" />
+                        <instance name="scoreboardInventoryDisplay" id="gameScoreboard{type}{id}_item1" isStandard="1" />
                     </panel>
                 </panel>
                 
                 <panel width="6%"  noclick="1">
                     <panel style="gameScoreboardItem">
-                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item2" isStandard="1" />
+                        <instance name="scoreboardInventoryDisplay" id="gameScoreboard{type}{id}_item2" isStandard="1" />
                     </panel>
                 </panel>
                 
                 <panel width="6%"  noclick="1">
                     <panel style="gameScoreboardItem">
-                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item3" isStandard="1" />
+                        <instance name="scoreboardInventoryDisplay" id="gameScoreboard{type}{id}_item3" isStandard="1" />
                     </panel>
                 </panel>
                 
                 <panel width="6%"  noclick="1">
                     <panel style="gameScoreboardItem">
-                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item4" isStandard="1" />
+                        <instance name="scoreboardInventoryDisplay" id="gameScoreboard{type}{id}_item4" isStandard="1" />
                     </panel>
                 </panel>
                 
                 <panel width="6%"  noclick="1">
                     <panel style="gameScoreboardItem">
-                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item5" isStandard="1" />
+                        <instance name="scoreboardInventoryDisplay" id="gameScoreboard{type}{id}_item5" isStandard="1" />
                     </panel>
                 </panel>
                 
                 <panel width="6%"  noclick="1">
                     <panel style="gameScoreboardItem">
-                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item6" isStandard="1" />
+                        <instance name="scoreboardInventoryDisplay" id="gameScoreboard{type}{id}_item6" isStandard="1" />
                     </panel>
                 </panel>
                 
                 <panel width="6%"  noclick="1">
                     <panel style="gameScoreboardItem">
-                        <instance name="inventoryDisplay" id="gameScoreboard{type}{id}_item7" isBoot="1" />
+                        <instance name="scoreboardInventoryDisplay" id="gameScoreboard{type}{id}_item7" isBoot="1" />
                     </panel>
                 </panel>
                 

@@ -23,5 +23,4 @@ registerHeroStats()				-- register the stat boxes
 registerGameTimers()			-- register the game and boss timers
 registerAllyEnemyEvents()		-- register the other player icons (top area)
 registerMinimapButtons()		-- register buttons above the minimap
-registerScoreboard()			-- register the score board
 registerMapFlip()

@@ -488,3 +488,5 @@ function registerScoreboard()
 	end	
 	
 end
+
+registerScoreboard()			-- register the score board

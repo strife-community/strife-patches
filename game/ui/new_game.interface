@@ -15,8 +15,6 @@
 
 	<trigger name="goldReportVis"/>
 	<trigger name="gameToggleMenu"/>
-    <!-- TheChiprel: disabling this didn't change anything! -->
-	<!--trigger name="gameToggleScoreboard"/-->
 
 	<!-- Widget visibility controls, specifically for maps -->
 	<trigger name="mapWidgetVis_abilityBarPet_show"/>
@@ -1544,7 +1542,7 @@
 	<include file="/ui/game/lane_choice/game_lane_choice.package"/>
 
     <!-- Scoreboard -->
-    <include file="/ui/new_game/scoreboard/scoreboard.package"/>
+    <include file="/ui/shared/scoreboard/scoreboard.package"/>
 
 	<!-- info bars -->
 	<include file="/ui/game/channel_bar/game_channelbar.package"/>
@@ -1774,11 +1772,6 @@
 	
 	
 	<lua file="/ui/game/karma/karma_vote.lua"/>
-    
-    <!-- The Chiprel: didn't do anything -->
-    <!--childinterface file="/ui/shared/scoreboard_templates.interface"/-->
-    <!--include file="/ui/game/scoreboard/scoreboard.package"/-->
-	<!--lua file="/ui/game/scoreboard/scoreboard.lua"/-->
 
 	<!-- dialog --> 
 	<include file="/ui/game/dialog/dialog.package"/>	
@@ -1790,17 +1783,17 @@
 	<lua file="/ui/game/item_cursor/itemcursor.lua"/>
 
 	<lua file="/ui_dev/window_controller.lua"/>
+    <lua file="/ui/shared/shared_common.lua"/>
 
 	<!-- new_game  -->
 	<lua file="/ui/new_game/new_game_animations.lua" />
-	<lua file="/ui/new_game/new_game_common.lua" />
 	<lua file="/ui/new_game/new_game_allyEnemyTimers.lua" />
 	<lua file="/ui/new_game/new_game_playerhero.lua" />
 	<lua file="/ui/new_game/new_game_inventory.lua" />
 	<lua file="/ui/new_game/new_game_herotargetstats.lua" />
 	<lua file="/ui/new_game/new_game_minimapheader.lua" />
 	<lua file="/ui/new_game/new_game_radialWheels.lua" />
-	<lua file="/ui/new_game/scoreboard/scoreboard.lua" />
+	<lua file="/ui/shared/scoreboard/scoreboard.lua" />
 	<lua file="/ui/new_game/new_game_screeneffects.lua" />
 	<lua file="/ui/new_game/inventory.lua" />
 	<lua file="/ui/new_game/new_game.lua" />
