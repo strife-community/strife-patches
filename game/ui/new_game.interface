@@ -1787,6 +1787,7 @@
 
 	<!-- new_game  -->
 	<lua file="/ui/new_game/new_game_animations.lua" />
+    <lua file="/ui/new_game/new_game_common.lua"/>
 	<lua file="/ui/new_game/new_game_allyEnemyTimers.lua" />
 	<lua file="/ui/new_game/new_game_playerhero.lua" />
 	<lua file="/ui/new_game/new_game_inventory.lua" />
