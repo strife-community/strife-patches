@@ -15,7 +15,8 @@
 
 	<trigger name="goldReportVis"/>
 	<trigger name="gameToggleMenu"/>
-	<trigger name="gameToggleScoreboard"/>
+    <!-- TheChiprel: disabling this didn't change anything! -->
+	<!--trigger name="gameToggleScoreboard"/-->
 
 	<!-- Widget visibility controls, specifically for maps -->
 	<trigger name="mapWidgetVis_abilityBarPet_show"/>
@@ -266,53 +267,7 @@
 	<style name="gameMinimapButtonContainer" 			      height="100%" align="right"  valign="center" x="-2.5h" y="0h"    noclick="1" float="right"   padding="0.6h"   grow="1" />
 	<style name="gameMinimapInset" 			 													 	       x="-0.1h" y="-0.1h" noclick="1" hmargin="0.9h"  vmargin="0.9h" />
 	
-	<!-- Scoreboard Styles -->
-	<style name="gameScoareboardContainer"	   width="90h"    height="55h"  align="center" valign="top"				 y="12%"   noclick="1" />
-	
-	<style name="gameBannerAlly"																							   noclick="1" color="#00cd20" />
-	<style name="gameBannerEnemy"																							   noclick="1" color="#a10101" />
-	<style name="gameBannerLogo"			   width="80%"	  height="80@"  align="center" valign="center"			 y="-2%"   noclick="1" color="1 1 1 0.3" />	
-	<style name="gameBannerTeam"																					 y="20%"   noclick="1" textalign="center" fity="1" font="maindyn_11" />
-	<style name="gameBannerTeamAlly"																									   color="#002306" style="gameBannerTeam" />
-	<style name="gameBannerTeamEnemy"																									   color="#150000" style="gameBannerTeam" />
-	
-	<style name="gameBannerTeamName" 																				 y="25%"   noclick="1" textalign="center" fity="1" font="maindyn_24" outline="1"/>
-	<style name="gameBannerTeamNameAlly"																								   color="#6df47a" outlinecolor="#00430b" style="gameBannerTeamName"/>
-	<style name="gameBannerTeamNameEnemy"																								   color="#fc8888" outlinecolor="#380000" style="gameBannerTeamName"/>
-	
-	<style name="gameBannerKills"																					 y="47%"   noclick="1" color="#ffa800" textalign="center" fity="1" font="maindyn_36" outline="1" outlinecolor="0.42 0.27 0 0.5"/>
-	<style name="gameBannerTotalKills"																				 y="68%"   noclick="1" color="#ffa800" textalign="center" fity="1" font="maindyn_11" outline="1" outlinecolor="0.42 0.27 0 0.4"/>
-	
-	<style name="gameScoreboard"			   width="-1.6h"  height="10%"  align="center"									   noclick="0" />
-	<style name="gameScoreboardRow"			   									   											   noclick="1" float="right" />
-	<style name="gameScoreboardRow_hover"	   width="100%"   height="100%" 												   noclick="1" texture="/ui/shared/textures/scoreboard_highlight01.tga" visible="0"/>
-	<style name="gameScoreboardRowAlly_hover"																							   color="0 1 0 0.5" style="gameScoreboardRow_hover" />
-	<style name="gameScoreboardRowEnemy_hover"																							   color="1 0 0 0.5" style="gameScoreboardRow_hover" />
-	
-	<style name="gameScoreboardText"																						   noclick="1" outline="1" outlinecolor="0 0 0 0.8" font="maindyn_12" textvalign="center" />
-	<style name="gameScoreboardTextSM"																						   noclick="1" outline="1" outlinecolor="0 0 0 0.4" font="maindyn_9" fity="1" textalign="left" />
-	<style name="gameScoreboardPlayerTextSM"																					  		   color="#f0e5a7" style="gameScoreboardTextSM" />
-	<style name="gameScoreboardAllyTextSM"																					  			   color="#a7f0ae" style="gameScoreboardTextSM" />
-	<style name="gameScoreboardEnemyTextSM"																					   			   color="#f0a7a7" style="gameScoreboardTextSM" />
-	
-	<style name="gameScoreboardHero"		   width="90@" 	  height="90%"  align="center" valign="center" 					   noclick="1" />
-	<style name="gameScoreboardPet"			   width="70@" 	  height="70%"  align="center" valign="center" 					   noclick="1" />
-	<style name="gameScoreboardItem"		   width="85@" 	  height="85%"  align="center" valign="center" 					   noclick="1" />
-	
-	<!-- Scoreboard Hero Border -->
-	<style name="gameScoreboardBorder"																					   	   noclick="1" color="invisible" borderthickness="0.2h" />
-	<style name="gameScoreboardBorderPlayer"																				   			   bordercolor="#484916" style="gameScoreboardBorder" />
-	<style name="gameScoreboardBorderAlly"																					   			   bordercolor="#164916" style="gameScoreboardBorder" />
-	<style name="gameScoreboardBorderEnemy"																					   			   bordercolor="#491616" style="gameScoreboardBorder" />
-	
-	<style name="gameScoreboardVOID"		   width="70@" 	  height="70%"  align="center" valign="center" 					   noclick="1" visible="0" /> 
-	<style name="gameScoreboardSpeaker"		   																				   			   texture="/ui/shared/textures/megaphone.tga" style="gameScoreboardVOID" /> 
-	<style name="gameScoreboardMute"		   					 															   			   texture="/ui/shared/textures/kick_up.tga" style="gameScoreboardVOID" /> 
-	
-	<style name="gameScoreboardGlow" 		   width="95@"    height="95%"  align="center" valign="center" 					   noclick="1" texture="/ui/shared/textures/inside_glow.tga" visible="0"/>
-	<style name="gameScoreboardGlowPlayer" 																								   color="#ffb400" style="gameScoreboardGlow" />
-	<style name="gameScoreboardGlowAlly" 																								   color="#00ce0a" style="gameScoreboardGlow" />
-	<style name="gameScoreboardGlowEnemy" 																								   color="#ce0000" style="gameScoreboardGlow" />
+	<include file="/ui/new_game/scoreboard/scoreboard.package"/>
 	
 	<!--
 	===========================	
@@ -2033,13 +1988,17 @@
 
 	<lua file="/ui/new_game/item_guidance/item_guidance.lua"/>
 
-	<childinterface file="/ui/shared/scoreboard_templates.interface"/>	
+	
 	
 	<include file="/ui/game/karma/karma_vote.package"/>
-	<include file="/ui/game/scoreboard/scoreboard.package"/>
+	
 	
 	<lua file="/ui/game/karma/karma_vote.lua"/>
-	<lua file="/ui/game/scoreboard/scoreboard.lua"/>
+    
+    <!-- The Chiprel: didn't do anything -->
+    <!--childinterface file="/ui/shared/scoreboard_templates.interface"/-->
+    <!--include file="/ui/game/scoreboard/scoreboard.package"/-->
+	<!--lua file="/ui/game/scoreboard/scoreboard.lua"/-->
 
 	<!-- dialog --> 
 	<include file="/ui/game/dialog/dialog.package"/>	
@@ -2061,7 +2020,7 @@
 	<lua file="/ui/new_game/new_game_herotargetstats.lua" />
 	<lua file="/ui/new_game/new_game_minimapheader.lua" />
 	<lua file="/ui/new_game/new_game_radialWheels.lua" />
-	<lua file="/ui/new_game/new_game_scoreboard.lua" />
+	<lua file="/ui/new_game/scoreboard/scoreboard.lua" />
 	<lua file="/ui/new_game/new_game_screeneffects.lua" />
 	<lua file="/ui/new_game/inventory.lua" />
 	<lua file="/ui/new_game/new_game.lua" />
