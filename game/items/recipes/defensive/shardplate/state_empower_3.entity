@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shardplate_Empower_3"
+	allowtransfer="true"
+	ishidden="true"
+>
+
+	<onattackeddamageevent>
+		<damagesupertype supertype="attack">
+			<getconstant name="damagereduction_enchant" adjustmentsource="tool_entity"/>
+			<setvar0 a="result" b="100" op="div" />
+			<setvar1 a="damage_attempted" b="var0" op="mult" />
+			<setvar2 a="1" b="var0" op="sub" />
+			<setvalue name="damage_attempted" a="damage_attempted" b="var2" op="mult" />
+			<damage target="this_inflictor_entity" effecttype="AttackDamage" amount="1" b="var1" op="mult" nonlethal="true" />
+			<!-- effect & popup -->
+			<playeffect effect="effects/self/impact.effect" source="this_inflictor_entity" target="this_inflictor_entity" />
+			<popup name="attackdamage" source="this_inflictor_entity" target="this_inflictor_entity" a="var1" />
+		</damagesupertype>
+	</onattackeddamageevent>    
+
+	
+</state>
