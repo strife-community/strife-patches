@@ -12,7 +12,7 @@
 			<setvar1 a="damage_attempted" b="var0" op="mult" />
 			<setvar2 a="1" b="var0" op="sub" />
 			<setvalue name="damage_attempted" a="damage_attempted" b="var2" op="mult" />
-			<damage target="this_inflictor_entity" effecttype="AttackDamage" amount="1" b="var1" op="mult" nonlethal="true" />
+			<damage target="this_inflictor_entity" effecttype="Indirect" amount="1" b="var1" op="mult" nonlethal="true" />
 			<!-- effect & popup -->
 			<playeffect effect="effects/self/impact.effect" source="this_inflictor_entity" target="this_inflictor_entity" />
 			<popup name="attackdamage" source="this_inflictor_entity" target="this_inflictor_entity" a="var1" />
