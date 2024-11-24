@@ -18,7 +18,7 @@
 		</button>
 	</template>
 
-	<panel name="selectedPlayerHero" width="19.6h" height="10h" noclick="1" visible="1">
+	<panel name="selectedPlayerHero" width="19.6h" height="10h" noclick="1" visible="0">
 	
 		<panel name="selectedPlayerHeroExtraInfo" y="-0.3h" x="-0.5h" noclick="true">
 			<image texture="/ui/game/unit_frames/textures/unit_frame_details_bg.tga" />

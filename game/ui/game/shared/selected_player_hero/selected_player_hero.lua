@@ -390,4 +390,6 @@ local function selectedPlayerHeroRegister(object)
 	
 end
 
-selectedPlayerHeroRegister(object)
+-- The Chiprel: Disabled stats showing since they are no longer required.
+--              Tooltips show everything in much better way.
+--selectedPlayerHeroRegister(object)
