@@ -105,7 +105,6 @@ function registerScoreboard()
 	end
 	
 	local function ShowHeroTooltip(sourceWidget, unitTrigger, actuallyTheUnitTrigger, index, unitType)
-		
 		if (unitType == 'Player') then
 			unitType = 'Hero'
 		end
@@ -119,7 +118,7 @@ function registerScoreboard()
 		if (actuallyTheUnitTrigger) and (actuallyTheUnitTrigger.clanTag) and (not Empty(actuallyTheUnitTrigger.clanTag)) then
 			text = (('[' .. (actuallyTheUnitTrigger.clanTag or '') ..']') .. (actuallyTheUnitTrigger.playerName or ''))
 		elseif (actuallyTheUnitTrigger) then
-			text = (trigger.playerName or '')
+			text = (actuallyTheUnitTrigger.playerName or '')
 		end			
 		
 		if (unitType == 'Hero') then

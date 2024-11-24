@@ -2823,7 +2823,7 @@ local function heroRegister(object)
 		if (unitTrigger) and (unitTrigger.clanTag) and (not Empty(unitTrigger.clanTag)) then
 			text = (('[' .. (unitTrigger.clanTag or '') ..']') .. (unitTrigger.playerName or ''))
 		elseif (unitTrigger) then
-			text = (trigger.playerName or '')
+			text = (unitTrigger.playerName or '')
 		end			
 		
 		if (relation == 'Hero') then
