@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="selected_player_hero" scenewidth="100%" sceneheight="100%" luatable="true">
+
+	<childinterface file="/ui/game/shared/game_styles.interface"/>
+
+	<template name="selectedPlayerHeroItemBackerBoots">
+		<image texture="/ui/elements:itemtype_boots" color=".2 .2 .2 1"/>
+	</template>
+
+	<template name="selectedPlayerHeroItem">
+		<button name="selectedPlayerHeroItem{id}" width="{width=100@}" height="{height=100%}" texture="/ui/elements:rounded_bg_white_vert" color="invisible" x="{x}" y="{y}" align="{align}" valign="{valign}">
+			<instance name="{backerTemplate}"/>
+			<panel name="selectedPlayerHeroItem{id}Body" noclick="true" passivechildren="true">
+				<image name="selectedPlayerHeroItem{id}Icon"/>
+			</panel>
+			<frame color="invisible" borderthickness="2" bordercolor="0 0 0 1" noclick="true"/>
+			<frame color="invisible" borderthickness="1" bordercolor=".2 .2 .2 1" noclick="true"/>
+		</button>
+	</template>
+
+	<panel name="selectedPlayerHero" width="19.6h" height="10h" noclick="1" visible="1">
+	
+		<panel name="selectedPlayerHeroExtraInfo" y="-0.3h" x="-0.5h" noclick="true">
+			<image texture="/ui/game/unit_frames/textures/unit_frame_details_bg.tga" />
+			
+			<panel name="selectedPlayerHeroVitals" align="right" valign="top" width="58%" height="36s" x="-18s" y="9s">
+				<!-- HP Bar -->
+				<panel height="46%" noclick="1" texture="/ui/game/unit_frames/textures/unit_frame_details_bar_bg.tga">
+					<panel name="selectedPlayerHeroHealthBar" texture="/ui/elements:rounded_bg_white_vert" hmargin="1s" width="50%" height="-2s" valign="center" color="#22EE33"/>
+					<panel name="selectedPlayerHeroHealthPips" texture="$invis" uscale="64p" utile="true" height="-2s" valign="center"/>
+					<label name="selectedPlayerHeroHealthMax" y="-2s" textalign="center" textvalign="center" style="labelBase" font="maindyn_14" content="-"/>
+				</panel>
+				
+				<!-- Mana Bar -->
+				<panel height="46%" valign="bottom" noclick="1" texture="/ui/game/unit_frames/textures/unit_frame_details_bar_bg.tga">
+					<panel name="selectedPlayerHeroManaBar" texture="/ui/elements:rounded_bg_white_vert" hmargin="1s" width="50%" height="-2s" valign="center" color="#00CCFF"/>
+					<label name="selectedPlayerHeroManaMax" y="-0.1h" textalign="center" textvalign="center" style="labelBase"  font="maindyn_14" content="-"/>
+				</panel>
+			</panel>
+	
+	
+			<!-- Top Stats Row -->
+			<panel y="7s" width="-30s" height="37s" align="center" noclick="1">
+				
+				<panel width="30%" align="left" noclick="1">
+					<label textalign="center" style="labelBase" color=".8 .8 .8 1" font="maindyn_12" content="game_selected_kills" noclick="true"/>
+					<label name="selectedPlayerHeroKills" style="labelBase" textvalign="bottom" textalign="center" color="1 1 1 1" font="maindyn_14" content="--" noclick="true"/>
+				</panel>
+				
+				<panel name="selectedPlayerHeroDeathsContainer" width="30%" align="center" noclick="1">
+					<label textalign="center" style="labelBase" color=".8 .8 .8 1" font="maindyn_12" content="game_selected_deaths" noclick="true"/>
+					<label name="selectedPlayerHeroDeaths" style="labelBase" textvalign="bottom" textalign="center" color="1 1 1 1" font="maindyn_14" content="--" noclick="true"/>
+				</panel>
+				
+				<panel name="selectedPlayerHeroGPMContainer" width="30%" align="right" noclick="1">
+					<label textalign="center" style="labelBase" color=".8 .8 .8 1" font="maindyn_12" content="game_selected_gpm" noclick="true"/>
+					<label name="selectedPlayerHeroGPM" style="labelBase" textvalign="bottom" textalign="center" color="1 1 1 1" font="maindyn_14" content="--" noclick="true"/>
+				</panel>				
+
+			</panel>
+
+			<panel grow="true" x="-1s" y="-13s" height="43s" align="center" valign="bottom">
+				<panel height="-6s" grow="true" valign="center" align="right" noclick="true" float="right" padding="30s">
+					<panel width="0"/>
+					<!-- Power -->
+					<panel width="35@" height="100%" noclick="true">
+						<image texture="/ui/game/shared/textures/herostat_power.tga" width="56@" height="56%" align="center" color="#f4d331" noclick="1" />
+						<label name="selectedPlayerHeroPower" textalign="center" textvalign="bottom" color="#f4d331" outline="true" font="maindyn_12" content="" noclick="1" />
+					</panel>
+					<!-- DPS --> 
+					<panel width="35@" height="100%" noclick="true">
+						<image texture="/ui/game/shared/textures/herostat_dps.tga" width="56@" height="56%" align="center" color="1 1 1 1" noclick="1" />
+						<label name="selectedPlayerHeroDamage" textalign="center" textvalign="bottom" color="white" outline="true" font="maindyn_12" content="" noclick="1" />
+					</panel>
+					<!-- Mitigation -->
+					<panel width="35@" height="100%" noclick="true">
+						<image texture="/ui/game/shared/textures/herostat_armor.tga" width="56@" height="56%" align="center" color="#da4733" noclick="1" />
+						<label name="selectedPlayerHeroMitigation" textalign="center" textvalign="bottom" color="#da4733" outline="true" font="maindyn_12" content="XX" noclick="1" />
+					</panel>
+					<!-- Resistance -->
+					<panel width="35@" height="100%" noclick="true">
+						<image texture="/ui/game/shared/textures/herostat_magicarmor.tga" width="56@" height="56%" align="center" color="#2d69ce" noclick="1" />
+						<label name="selectedPlayerHeroResistance" textalign="center" textvalign="bottom" color="#2d69ce" outline="true" font="maindyn_12" content="" noclick="1" />
+					</panel>
+					<panel width="0"/>
+				</panel>
+			</panel>
+			
+		</panel>
+	
+
+		<!-- Inventory Row -->
+		<panel name="selectedPlayerHeroItems" height="90s" width="140s" y="-85s" align="center" 		noclick="true">
+			<image name="selectedPlayerHeroItemsBG" texture="/ui/game/unit_frames/textures/unit_frame_inventory_bg.tga" x="-2s" height="100%" width="200@" valign="bottom" noclick="1" />
+			<panel name="selectedPlayerHeroItemsNonBoots" x="9s" noclick="true">
+				<panel y="20s" height="26s" noclick="true"><!--  float="right" padding="0.45h" (lua float now) -->
+					<instance name="selectedPlayerHeroItem" id="97"/>
+					<instance name="selectedPlayerHeroItem" id="98"/>
+					<instance name="selectedPlayerHeroItem" id="99"/>
+				</panel>
+				
+				<panel y="-16s" height="26s" noclick="true" valign="bottom"><!--  float="right" padding="0.45h" (lua float now) -->
+					<instance name="selectedPlayerHeroItem" id="100"/>
+					<instance name="selectedPlayerHeroItem" id="101"/>
+					<instance name="selectedPlayerHeroItem" id="102"/>
+				</panel>
+			</panel>
+			<instance name="selectedPlayerHeroItem" id="96" backerTemplate="selectedPlayerHeroItemBackerBoots" valign="center" x="101s" y="3s" width="26s" height="26s"/>
+		</panel>
+		
+
+	</panel>
+
+	<lua file="selected_player_hero.lua"/>
+
+</interface>
