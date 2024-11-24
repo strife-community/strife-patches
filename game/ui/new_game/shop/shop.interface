@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="game_shop" scenewidth="100%" sceneheight="100%" luatable="true">
+
+	<!--
+	===========================	
+	Styles
+	===========================
+	-->		
+	<childinterface file="/ui/game/shared/game_styles.interface"/>
+
+	<style name="gameShopItemListItemDescription_base"	width="-110@"  				 			   valign="bottom"  x="110@"   			 	         color="white" font="subdyn_10" outline="1" outlinecolor="0 0 0 .7" wrap="1" />
+	<style name="gameShopItemListItemName_base"			width="-190@"  												x="100@"  					     textvalign="center" color="#22EE33" font="maindyn_14" outline="1" wrap="1" />	
+	
+	<style name="gameShopCategoryList_base"	        					   				 									   y="8%"    noclick="1" visible="1" />
+	<style name="gameShopCategoryRow1_base"							   				 align="center" 					  	   			 noclick="1" float="right" grow="1" regrow="1" growinvis="0" />
+	<style name="gameShopCategoryRow2_base" 						   				 align="center" valign="bottom" 		   			 noclick="1" float="right" grow="1" regrow="1" growinvis="0"/>
+	
+	<style name="gameShopSearch_base" 								   height="100%" 				 								     noclick="1" float="right" grow="1" regrow="1" growinvis="0" />
+	<style name="game_shop_search_cover_label_base" 												   valign="center"  				     noclick="1" color="#32677a" textvalign="center" font="maindyn_16" /> 
+	<style name="game_shop_search_input_base" 																				   						 color="invisible" textcolor="black" textvalign="center" font="maindyn_16" shadow="1" />
+	<style name="shopDisplayOptions_base" 							   height="78%" 			   valign="center" 						 noclick="1" float="right" grow="1" regrow="1" growinvis="0"/>
+	<style name="gameShopItemListScrollbar_base" 					 				 align="right" 													 texture="/ui/shared/textures/new_slider.tga" />
+	<style name="gameShopSelectRecipeLabel_base" 					   																				 style="h1" color="1 1 1 1" textvalign="center" visible="0" />
+	
+	<style name="gameShopHeader" 									   height="6.0h" 													 noclick="1" visible="1" />
+	<style name="gameShopHeaderBar" 												 align="left" 							   y="0" 	 noclick="1" texture="/ui/new_game/shop/textures/shop_header.tga" />		
+	<style name="gameShopTabBuildsPlacer" 				width="27.5%" 												x="5%" 				 noclick="1" />
+	<style name="gameShopTabItemsPlacer" 				width="42%" 												x="2%" 				 noclick="1" />
+	<style name="gameShopTabAbilitiesPlacer" 			width="42%" 												x="45%" 			 noclick="1" />
+	
+	<style name="gameShopTabPlacerPlate" 							   height="80%" 										   y="8%" />
+	<style name="gameShopTabPlacerPlateMargins" 					   height="100%" 																 vmargin="0.3h" hmargin="0.6h" />
+
+	<style name="gameShopTabIconButton" 				width="86@"    height="86%"  align="right" valign="center" 									 colorized="1" icon="/ui/shared/textures/magnifying_glass.tga" borderthickness="0.4h" />
+
+	<style name="gameShopItemListContainer" 				  	       height="69.7%" align="right" valign="top"			   y="22.4%" noclick="1" />
+	
+	<style name="gameShopItemInnerGlow" 																										     texture="/ui/shared/shop/textures/shop_item_iglow.tga" visible="0" />
+	<style name="gameShopItemInnerGlowGreen" 																										 color="#5fc85135" style="gameShopItemInnerGlow" />
+	<style name="gameShopItemInnerGlowYellow" 																										 color="#efd05635" style="gameShopItemInnerGlow" />
+	<style name="gameShopItemInnerGlowRed" 																											 color="#a8222260" style="gameShopItemInnerGlow" />
+	
+	<style name="gameShopItemouterFrame" 																											 texture="/ui/shared/frames/button_stroke.tga"  bordercolor=".75 .75 .75 1" borderthickness="33@" visible="0" />
+	<style name="gameShopItemouterFrameWhite" 																										 bordercolor="1 1 1 1" style="gameShopItemouterFrame" />
+	<style name="gameShopItemouterFrameGreen" 																										 bordercolor="#5fc851" style="gameShopItemouterFrame" />
+	<style name="gameShopItemouterFrameYellow" 																										 bordercolor="#efd056" style="gameShopItemouterFrame" />
+	<style name="gameShopItemouterFrameRed" 																										 bordercolor="#a82222" style="gameShopItemouterFrame" />
+	
+	<style name="gameShopItemshoppingIcon" 				width="44@"    height="44%"  align="right" 				    x="14@"    y="-14%"   			 visible="0" />
+	<style name="gameShopItemshoppingIconCourier" 																									 texture="/ui/shared/shop/textures/shop_hoverIcon_courier.tga" style="gameShopItemshoppingIcon" />
+	<style name="gameShopItemshoppingIconOwned" 																									 texture="/ui/shared/shop/textures/shop_hoverIcon_owned.tga" style="gameShopItemshoppingIcon" />
+	<style name="gameShopItemshoppingIconBroke" 																									 texture="/ui/shared/shop/textures/shop_hoverIcon_coins.tga" style="gameShopItemshoppingIcon" />
+	
+	<style name="gameShopCenter" 							 		   height="70%"  										   y="22%"   noclick="1" texture="/ui/shared/textures/background_stone.jpg" color="0 0.09 0.14 0.3" />
+	
+	<!-- Launcher stuff still needs to be checked -->
+	<if condition="host_islauncher">	
+		<style name="gameShopItemListItemDescription"  				   height="-225s" 			  													 style="gameShopItemListItemDescription_base" />
+		<style name="gameShopItemListItemName" 						   height="15s" 																 style="gameShopItemListItemName_base" />	
+		
+		<style name="gameShopContainer" 				width="529s"   height="-140s" align="left" 					x="-529s"  />
+		<style name="gameShopCategoryList" 							   height="106s" 										   						 style="gameShopCategoryList_base" />
+		<style name="gameShopCategoryRow1" 							   height="60s"  				 				x="-12s" 			 			 padding="10s" style="gameShopCategoryRow1_base" />
+		<style name="gameShopCategoryRow2" 							   height="40s" 			   							 						 padding="10s" style="gameShopCategoryRow2_base" />
+		
+		<style name="gameShopSearch" 																												 padding="10s" style="gameShopSearch_base" />
+		<style name="game_shop_search_cover_label" 												   					x="10s"    y="0" 	 			 style="game_shop_search_cover_label_base" /> 
+		<style name="game_shop_search_input" 													   				 			   y="2s" 				 vmargin="4s" hmargin="10s" style="game_shop_search_input_base" />		 
+		<style name="shopCategoryButtonSep" 			width="1" 													x="276s" 			 noclick="1" color="1 1 1 .1" />
+		<style name="shopDisplayOptions" 																											 padding="10s" style="shopDisplayOptions_base" />
+		<style name="shopDisplayOptionsSep" 			width="3s" 																		 noclick="1" />		
+		<style name="gameShopItemListScrollbar" 		width="12s" 				 																 scrollbarsize="28s" handleheight="56s" style="gameShopItemListScrollbar_base" />
+		<style name="gameShopSelectRecipeLabel" 					   height="40s" 								x="15s"    y="2s"				 style="gameShopSelectRecipeLabel_base" />
+	</if>
+	
+	<!-- In-Game -->
+	<if condition="!host_islauncher" >
+		<style name="gameShopItemListItemDescription"				   height="-2.25h" 			  							   y="-0.3h" 	         style="gameShopItemListItemDescription_base" />
+		<style name="gameShopItemListItemName" 	   					   height="1.5h" 																 style="gameShopItemListItemName_base" />	
+		
+		<style name="gameShopContainer" 		   		width="52.9h"  height="-14h" align="left"  					x="-52.9h" 		  />
+		<style name="gameShopCategoryList" 							   height="11.2h" 										   						 style="gameShopCategoryList_base" />
+		<style name="gameShopCategoryRow1" 							   height="5.8h" 																 padding="1h" style="gameShopCategoryRow1_base" />
+		<style name="gameShopCategoryRow2"  						   height="4h" 											   y="0.2h"  			 padding="1h" style="gameShopCategoryRow2_base" />
+		
+		<style name="gameShopSearch" 								   																				 padding="1h" style="gameShopSearch_base" />
+		<style name="gameShopSearchBar" 				width="22h"																	     noclick="1" />		
+		<style name="game_shop_search_cover_label" 												   				    x="1.2h"   y="-0.1h" 			 style="game_shop_search_cover_label_base" /> 
+		<style name="game_shop_search_input" 																				   y="0.3h" 			 hmargin="0.65h" vmargin="0.25h" style="game_shop_search_input_base"/>
+		<style name="shopCategoryButtonSep" 			width="1" 																		 noclick="1" />
+		<style name="shopDisplayOptions" 							   																				 padding="1.0h" style="shopDisplayOptions_base" />
+		<style name="shopDisplayOptionsSep" 			width="1.0h" 																	 noclick="1" />
+		<style name="gameShopItemListScrollbar" 		width="1.2h" 				 								x="-0.8h"						 scrollbarsize="3.0h" handleheight="6.0h" style="gameShopItemListScrollbar_base" />
+		<style name="gameShopSelectRecipeLabel" 					   height="4h"  								x="1.5h"   y="0.2h" 			 style="gameShopSelectRecipeLabel_base" />
+	</if>
+	
+	<!--
+	===========================	
+	Includes
+	===========================
+	-->
+	<include file="/ui/shared/templates_elements_simple.package"/>
+	<childinterface file="/ui/game/shared/game_shared_templates.interface"/>
+	
+	<include file="/ui/new_game/shop/shop_templates.package"/>
+	
+	<!--
+	===========================	
+	Core Interface
+	===========================
+	-->
+	<panel name="gameShopContainer" style="gameShopContainer" blockinput="true" visible="false" hotkey="ESC" onhotkey="PlaySound('/shared/sounds/ui/button_close_01.wav'); CloseShop();" y="300s"><!-- Shop Container -->
+		<!-- Item Bookmarks -->
+		<panel name="gameShopBuyQueueContainer" noclick="1" align="right" x="7.1h" y="0.2h" height="1.5h" width="8h">
+			<panel y="0.8h" x="0.3h" width="7h" height="68h" align="center" noclick="true">		
+		
+				<!-- Full Catch Area -->
+				<panel name="autoBuyQueueAddDropTargetFull" visible="false">
+					<instance name="DropLand" width="100%" height="100%" visible="1" noclick="1"/>
+				</panel>				
+				
+				<panel grow="1" regrow="1" width="100%" float="bottom" y="0" noclick="1">					
+					<panel grow="1" regrow="1" width="100%" noclick="1">
+						<panel noclick="1" >
+							<instance name="shopShadowsThin" />
+							<image name="gameShopBuyQueueBackground" texture="/ui/new_game/shop/textures/shop_bg.jpg" width="+0.5h" vtile="1" color="#696969" vscale="128p" noclick="1"
+								onevent="SetVScale(GetHeight() # 'p');" onload="DoEvent()"
+							/>
+							<frame texture="/ui/shared/frames/stone.tga" width="+0.5h" color="invisible" borderthickness="5h" bordercolor="#bcbcbc" noclick="1">
+								<image texture="/ui/shared/textures/stone_corner_br.tga" y="0.2h" x="0.2h" height="3h" width="3h" align="right" valign="bottom" color="#bcbcbc" noclick="1" />
+							</frame>
+							<panel width="+0.5h" float="right" noclick="1">
+								<image texture="/ui/main/shared/textures/grad_vert.tga" width="-0.5h" vflip="1" color="0 0.78 1 0.1" rendermode="additive"/>
+								<image texture="/ui/main/shared/textures/grad_vert.tga" width="0.5h" vflip="1" color="0 0.78 1 0.2" rendermode="additive"/>
+							</panel>
+						</panel>
+						<panel y="3.5h" grow="1" regrow="1" growinvis="0" float="bottom" padding="0" width="100%" noclick="1">
+							<instance name="buyQueueEntry" id="0"/>
+							<instance name="buyQueueEntry" id="1"/>
+							<instance name="buyQueueEntry" id="2"/>
+							<instance name="buyQueueEntry" id="3"/>
+							<instance name="buyQueueEntry" id="4"/>
+							<instance name="buyQueueEntry" id="5"/>
+							<instance name="buyQueueEntry" id="6"/>
+							<instance name="buyQueueEntry" id="7"/>
+							<instance name="buyQueueEntry" id="8"/>
+							<panel name="autoBuyQueueAdd" width="100%" height="100@" noclick="true" sticky="true" stickytoinvis="false">
+								<panel width="80%" height="80@" align="center">
+									<image name="autoBuyQueueAdd_icon" texture="/ui/shared/shop/textures/scroll_target.tga" color="0.12 0.43 0.8 0.5"/>
+									<instance name="DropLand" id="autoBuyQueueAddDropTarget" width="+0.8h" height="+0.8h" />
+								</panel>
+							</panel>
+						</panel>
+					</panel>				
+				</panel>				
+				<image texture="/ui/shared/shop/textures/scroll_highlight.tga" y="0.5h" width="100%" height="15@" noclick="1" color="1 1 1 .1" />
+			</panel>			
+			<image texture="/ui/shared/shop/textures/scroll_slot.tga" width="100%" height="12.5@" noclick="1" />
+		</panel>
+		
+		<!-- Base of the Shop -->		
+		<instance name="shopShadows" />
+		<panel name="gameShopLevelUpKeyController" noclick="true" color="invisible"/>
+		<frame name="gameShopContainer_dummyglow_2" visible="0" noclick="true" texture="/ui/shared/frames/frameglow.tga" color=".4 .9 1 .7" bordercolor=".4 .9 1 .7" rendermode="additive" width="+26s" height="+26s" align="center" valign="center" borderthickness="18s" />				
+		<frame name="gameShopContainer_dummyglow_1" visible="0" noclick="true" color="invisible" bordercolor="invisible" width="+230s" height="+630s" align="center" valign="center">				
+			<modelpanel height="+460s" width="+130s" align="center" valign="center" visible="1"
+				noclick="true"
+				model="/shared/models/invis.mdf"
+				effect="/ui/main/crafting/effects/alert_wide.effect"
+				onshowlua="self:SetEffect('/ui/main/crafting/effects/alert_wide.effect')"
+				onhidelua="self:SetEffect('')"					
+				camerapos="0 0 0"
+				cameraangles="0 0 0"
+				camerafov="70"
+				depthclear="true"
+				depthcompress="true"
+			/>
+		</frame>		
+		<image texture="/ui/new_game/shop/textures/shop_bg.jpg" noclick="1" vtile="1" vscale="128p"/>
+		<frame x="-1h" texture="/ui/elements:rounded_bg_white" width="+1.3h" height="+0.3h" color="invisible" borderthickness="0.3h" bordercolor="#00080d" noclick="1"/>
+		
+		<!-- Header Bar/Menu -->		
+		<label name="gameShopSelectRecipeLabel" style="gameShopSelectRecipeLabel" content="game_shop_select_recipe_to_modify"/>
+		<panel name="gameShopHeader" style="gameShopHeader">
+			<instance name="shopShadows" />
+			<image style="gameShopHeaderBar" />
+			
+			<!-- Buy Item Button -->
+			<panel style="gameShopTabItemsPlacer">			
+				<panel style="gameShopTabPlacerPlate" noclick="true">
+					<instance name="shopShadowsThin" />
+					<frame texture="/ui/shared/frames/rounded_bg_grad.tga" borderthickness="0.4h" color="#535353" noclick="1">
+						<button name="gameShopTabItemsButton" interactive="false" color="invisible" />
+						<panel style="gameShopTabPlacerPlateMargins" noclick="true">
+							<panel width="-72@" y="-0.2h" noclick="true" passivechildren="true">
+								<label name="gameShopTabItemsLabel" textalign="center" textvalign="top" font="maindyn_18" outline="true" outlinecolor="0 0 0 .6" color="1 1 1 1" content="game_shop_label_buyitems"/>
+								
+								<!-- Gold -->
+								<panel grow="1" regrow="1" y="0.1h" x="0.5h" height="1.9h" valign="bottom" float="right" padding="0.4h" align="center" noclick="1">
+									<label name="gameShopHeroGold" fitx="true" style="labelBase" color="#eda00f" outline="1" outlinecolor="#1c1c1c" textvalign="center" font="maindyn_14" content="" noclick="1"/>
+									<panel width="100@" height="100%" noclick="1">
+										<image texture="/ui/elements:gold_coins" y="0.2h" width="100@" height="100%" noclick="1"/>
+									</panel>
+								</panel>
+								
+							</panel>
+							
+							<!-- Hotkey Button -->
+							<instance y="7%" x="7@" name="shopShadowsThin" width="100@" height="100%" align="right" />
+							<instance id="shopItemListTabHotkey" name="shopBindableHotkeyButton" align="right" width="85@" height="85%" valign="center"
+								labelY="-0.15h"
+								onrefreshlua="
+									local button = GetKeybindButton('game', 'ToggleShop', '')
+									if button then
+										self:SetText(button)
+									else
+										self:SetText('')
+									end
+								"
+							/>
+							
+						</panel>
+					</frame>
+				</panel>			
+			</panel>
+			
+			<!-- Ability Button -->
+			<panel style="gameShopTabAbilitiesPlacer">
+				<panel style="gameShopTabPlacerPlate">
+					<instance name="shopShadowsThin" />
+					<frame texture="/ui/shared/frames/rounded_bg_grad.tga" borderthickness="0.4h" color="#535353" noclick="1">
+						<button name="gameShopTabAbilitiesButton" interactive="false" color="invisible" />
+						<panel style="gameShopTabPlacerPlateMargins" noclick="true">
+							<panel width="-72@" y="-0.2h" noclick="true" passivechildren="true">
+								<label name="gameShopTabAbilitiesLabel" textalign="center" textvalign="top" font="maindyn_18" outline="true" outlinecolor="0 0 0 .6" color="1 1 1 1" content="game_shop_label_abilities"/>
+								
+								<!-- Ability Points -->
+								<panel grow="1" regrow="1" y="0.1h" x="0.5h" height="1.9h" valign="bottom" float="right" padding="0.4h" align="center" noclick="1">
+									<label fitx="true" style="labelBase" color=".7 .7 .7 1" textvalign="center" font="maindyn_14" content="game_shop_label_skillpoints" noclick="1"/>
+									<label name="gameShopTabAbilitiesLabel_points" fitx="true" style="labelBase" color=".7 .7 .7 1" textvalign="center" font="maindyn_14" content="" noclick="1"
+										onloadlua="
+											self:UnregisterWatchLua('ActiveUnit')
+											self:RegisterWatchLua('ActiveUnit', function(widget, trigger)
+												widget:SetText(trigger.availablePoints)
+											end, false, nil, 'availablePoints')									
+										"
+									/>								
+								</panel>
+								
+							</panel>
+
+							<!-- Hotkey Button	-->
+							<instance y="7%" x="7@" name="shopShadowsThin" width="100@" height="100%" align="right" />
+							<instance id="shopAbilitiesTabHotkey" name="shopBindableHotkeyButton" align="right" width="85@" height="85%" valign="center"
+								labelY="-0.15h"
+								onrefreshlua="
+									local button = GetKeybindButton('game', 'TriggerToggle', 'gameShowSkills')
+									if button then
+										self:SetText(button)
+									else
+										self:SetText('')
+									end
+								"
+							/>
+							
+						</panel>
+					</frame>
+				</panel>
+			</panel>	
+
+			<!-- Close Shop Button -->
+			<instance name="framed_mini_button" id="game_shop_closex" x="-2.4h" y="-0.2h" width="3.5h" height="3.5h" align="right" valign="center" bindShow="false" texture="/ui/shared/textures/mini_close.tga" state="2" iconcolor="#ffc5c5"/>
+		</panel>
+		
+		<!-- Load Button -->
+		<panel x="10.5h" y="-2h" align="right" width="14h" height="7h" noclick="1" texture="/ui/new_game/shop/textures/shop_load.tga">
+			<instance id="gameShopBookmarkIcon"
+					y="0.5h" x="0.2h"
+					width="50%" height="3h"
+					align="center" valign="center" labelY="-0.1h"
+					borderthickness="0.4h"
+					name="standardButton"
+					label="general_load_cap"
+					font="maindyn_14"
+					outlinecolor="#75130a"
+				/>
+		</panel>
+
+		<!-- Item Categories -->
+		<panel name="gameShopCategoryList" style="gameShopCategoryList">
+			<!-- Top half of the frame -->
+			<image texture="/ui/new_game/shop/textures/shop_bg.jpg" y="-0.7h" height="7h" vtile="1" color="#696969" vscale="128p" noclick="1"/>			
+			<frame texture="/ui/shared/frames/stone.tga" y="-0.7h" height="7.2h" color="invisible" borderthickness="3h" bordercolor="#ababab" noclick="1">
+				<image texture="/ui/shared/textures/stone_corner_tl.tga" y="-0.2h" x="-0.2h" height="3h" width="3h" align="left"  valign="top" color="#ababab" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_tr.tga" y="-0.2h" x="0.2h" height="3h" width="3h" align="right" valign="top" color="#ababab" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_bl.tga" y="0.2h" x="-0.2h" height="3h" width="3h" align="left"  valign="bottom" color="#ababab" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_br.tga" y="0.2h" x="0.2h" height="3h" width="3h" align="right" valign="bottom" color="#ababab" noclick="1" />
+			</frame>
+			
+			<!-- Bottom half of the frame -->
+			<frame texture="/ui/shared/frames/stone.tga" y="6.8h" height="5.5h" color="invisible" borderthickness="3h" bordercolor="white" noclick="1">
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.6h" color="0 0.55 0.73 0.2" noclick="1"/>
+			</frame>
+			
+			<panel style="gameShopCategoryRow1" >
+				<instance name="shopCategoryButton" id="2" icon="recommended"/>
+				<instance name="shopCategoryButton" id="5" icon="caster"/>
+				<instance name="shopCategoryButton" id="4" icon="physical"/>
+				<instance name="shopCategoryButton" id="6" icon="mana"/>
+				<instance name="shopCategoryButton" id="7" icon="defense"/>
+				<instance name="shopCategoryButton" id="8" icon="support"/>
+				<instance name="shopCategoryButton" id="3" icon="boots"/>
+			</panel>
+
+			<!-- Second Row -->
+			<panel style="gameShopCategoryRow2">
+
+				<!-- All/Search Box -->
+				<panel style="gameShopSearch">
+					<instance name="shopCategoryButton2" id="1" icon="all"/>
+					
+					<panel style="gameShopSearchBar">
+						<panel align="right" valign="center" height="90%" noclick="1">
+							<frame name="game_shop_search_bg" texture="/ui/shared/frames/text_input.tga" borderthickness="0.6h" color="0.9 0.9 0.9 1" noclick="1"/>
+							<label name="game_shop_search_cover_label" style="game_shop_search_cover_label" content="game_shop_search"/>
+							<textbox name="game_shop_search_input" style="game_shop_search_input" 
+								onesc="
+									EraseInputLine()
+								"
+								onfocuslua="
+									trigger_gamePanelInfo.selectedShopItem = -1
+									trigger_gamePanelInfo.selectedShopItemType = ''
+									trigger_gamePanelInfo:Trigger(false)
+
+									trigger_shopFilter.shopCategory	= ''
+									trigger_shopFilter:Trigger(false)
+
+									self:GetWidget('game_shop_search_cover_label'):FadeOut(50)
+									self:GetWidget('game_shop_search_closex'):FadeIn(50)
+									self:GetWidget('game_shop_search_bg'):SetColor('1 1 1 1')
+									self:GetWidget('game_shop_search_bg'):SetBorderColor('1 1 1 1')
+								"
+								onenter="DoEvent()"
+								onevent="self:SetFocus(false)"
+								onchangelua="
+									if (string.len(tostring(self:GetValue())) &#62; 0) then
+										self:GetWidget('game_shop_search_cover_label'):FadeOut(50)
+										self:GetWidget('game_shop_search_closex'):FadeIn(50)
+										self:GetWidget('game_shop_search_bg'):SetColor('1 1 1 1')
+										self:GetWidget('game_shop_search_bg'):SetBorderColor('1 1 1 1')
+										Shop.SetSearchString(self:GetValue())
+									else
+										self:GetWidget('game_shop_search_cover_label'):FadeIn(250)
+										self:GetWidget('game_shop_search_closex'):FadeOut(250)
+										self:GetWidget('game_shop_search_bg'):SetColor('0.9 0.9 0.9 1')
+										self:GetWidget('game_shop_search_bg'):SetBorderColor('0.9 0.9 0.9 1')
+										Shop.SetSearchString('')
+									end
+								"
+							/>
+							<instance name="closeXButton" buttonName="game_shop_search_closex" width="80@" height="80%" align="right" x="-15@" valign="center"
+								onclicklua="
+									self:GetWidget('game_shop_search_input'):EraseInputLine()
+								"
+							visible="0" />
+						</panel>
+					</panel>
+				</panel>
+				<instance name="shopCategoryButton2" id="10" icon="components"/><!-- Components -->
+				<instance name="shopCategoryButton2" id="9" icon="consumable"/>
+				<panel style="shopCategoryButtonSep" />
+				<panel style="shopDisplayOptions">
+					<instance name="ListButton" id="gameShopItemViewButtonDetailed"/><!-- List View -->
+					<instance name="GridButton" id="gameShopItemViewButtonSimple"/><!-- Icon View -->
+					<panel style="shopDisplayOptionsSep" />
+					<instance name="FilterButton" id="shopToggleFilterBtn" /><!-- Show Filters -->
+				</panel>
+			</panel>
+		</panel>
+
+		<panel style="gameShopCenter" />
+		
+		<panel name="gameShopFilterList" align="left" width="15h" height="70%" x="0.8h" y="23%" float="bottom" padding="0.5h" noclick="true" visible="0" ><!-- Filters / Filtergories -->
+			<instance name="shopFilterHeader" id="general" />
+				<instance name="shopFilterCheckbox" id="activatable"/>
+				
+			<instance name="shopFilterHeader" id="damage" />
+				<instance name="shopFilterCheckbox" id="ability_power"/>
+				<instance name="shopFilterCheckbox" id="attack_damage"/>
+				<instance name="shopFilterCheckbox" id="attack_speed"/>
+				<instance name="shopFilterCheckbox" id="attack_mod"/>
+				
+			<instance name="shopFilterHeader" id="defense" />
+				<instance name="shopFilterCheckbox" id="defense_armor"/>
+				<instance name="shopFilterCheckbox" id="defense_magic_armor"/>
+				<instance name="shopFilterCheckbox" id="defense_mitigation"/>
+				<instance name="shopFilterCheckbox" id="defense_resistance"/>
+				<instance name="shopFilterCheckbox" id="defense_health"/>
+				<instance name="shopFilterCheckbox" id="attack_lifesteal"/>
+			
+			<instance name="shopFilterHeader" id="mana" />
+				<instance name="shopFilterCheckbox" id="ability_mana"/>
+				<instance name="shopFilterCheckbox" id="cd_reduction"/>
+				
+			<instance name="shopFilterHeader" id="utility" />
+				<instance name="shopFilterCheckbox" id="debuff_enemy"/>
+				<instance name="shopFilterCheckbox" id="mobility"/>
+				<instance name="shopFilterCheckbox" id="attack_crit"/>
+				<instance name="shopFilterCheckbox" id="buff_team"/>
+				<instance name="shopFilterCheckbox" id="stealth"/>
+				
+			<instance name="shopFilterHeader" id="components" />
+				<instance name="shopFilterCheckbox" id="health_comp" />
+				<instance name="shopFilterCheckbox" id="health_regen_comp" />
+				<instance name="shopFilterCheckbox" id="mana_comp" />
+				<instance name="shopFilterCheckbox" id="mana_regen_comp" />
+				<instance name="shopFilterCheckbox" id="power_comp" />
+				<instance name="shopFilterCheckbox" id="attack_speed_comp" />
+				
+			<instance name="shopFilterHeaderBlank" id="blank" />
+		</panel>
+
+		<!-- Item list -->
+		<panel name="gameShopItemListContainer" style="gameShopItemListContainer">
+			<frame texture="/ui/shared/frames/stone.tga" height="-0.6h" color="invisible" borderthickness="5h" noclick="1">
+				<panel hmargin="0.5h" vmargin="0.5h" noclick="1">
+					<image texture="/ui/shared/textures/background_stone.jpg" color="0 0.09 0.14 0.3" noclick="1" /> 
+					<image texture="/ui/shared/textures/inside_glow.tga" color="0 0 0 0.3" noclick="1"/>
+					<frame color="invisible" bordercolor="#00080b" borderthickness="0.1h"/>
+				
+					<panel name="gameShopItemListScrollbarBlank" width="1.2h" height="100%" x="-0.8h" align="right" noclick="1" visible="0"> <!-- blank scrollbar -->
+						<scrollbar
+							texture="/ui/shared/textures/new_slider.tga"
+							color="0.4 0.4 0.4 0.1"
+							handlecolor="invisible"
+							x="0.5h"
+							scrollbarsize="3.0h" handleheight="6.0h"
+							width="1.2h" height="100%"
+							vertical="true"
+							hscrollbar="0"
+							horizontal="false"
+							step="1"
+						/>
+					</panel>				
+				
+					<panel clip="true" noclick="true" y="-0.5h" height="+0.5h">
+						<panel name="gameShopItemList" x="0.5h" y="1h" height="-2h" width="-1h" hmargin="0.5h" vmargin="0.5h">
+							<panel x="0.5h" width="-0.5h" name="gameShopItemListBody" noclick="1"><!-- Just instantiate these later on -->
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="1"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="2"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="3"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="4"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="5"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="6"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="7"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="8"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="9"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="10"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="11"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="12"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="13"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="14"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="15"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="16"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="17"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="18"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="19"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="20"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="21"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="22"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="23"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="24"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="25"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="26"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="27"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="28"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="29"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="30"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="31"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="32"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="33"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="34"/>
+								<instance name="gameShopItemListRow" itemRowTemplate="gameShopItemListItemRow" id="35"/>
+								<instance name="gameShopItemListRow" id="36"/>
+								<instance name="gameShopItemListRow" id="37"/>
+								<instance name="gameShopItemListRow" id="38"/>
+								<instance name="gameShopItemListRow" id="39"/>
+								<instance name="gameShopItemListRow" id="40"/>
+								<instance name="gameShopItemListRow" id="41"/>
+								<instance name="gameShopItemListRow" id="42"/>
+								<instance name="gameShopItemListRow" id="43"/>
+								<instance name="gameShopItemListRow" id="44"/>
+								<instance name="gameShopItemListRow" id="45"/>
+								<instance name="gameShopItemListRow" id="46"/>
+								<instance name="gameShopItemListRow" id="47"/>
+								<instance name="gameShopItemListRow" id="48"/>
+								<instance name="gameShopItemListRow" id="49"/>
+								<instance name="gameShopItemListRow" id="50"/>
+								<instance name="gameShopItemListRow" id="51"/>
+								<instance name="gameShopItemListRow" id="52"/>
+								<instance name="gameShopItemListRow" id="53"/>
+								<instance name="gameShopItemListRow" id="54"/>
+								<instance name="gameShopItemListRow" id="55"/>
+								<instance name="gameShopItemListRow" id="56"/>
+								<instance name="gameShopItemListRow" id="57"/>
+								<instance name="gameShopItemListRow" id="58"/>
+								<instance name="gameShopItemListRow" id="59"/>
+								<instance name="gameShopItemListRow" id="60"/>
+								<instance name="gameShopItemListRow" id="61"/>
+								<instance name="gameShopItemListRow" id="62"/>
+								<instance name="gameShopItemListRow" id="63"/>
+								<instance name="gameShopItemListRow" id="64"/>
+								<instance name="gameShopItemListRow" id="65"/>
+								<instance name="gameShopItemListRow" id="66"/>
+								<instance name="gameShopItemListRow" id="67"/>
+								<instance name="gameShopItemListRow" id="68"/>
+								<instance name="gameShopItemListRow" id="69"/>
+								<instance name="gameShopItemListRow" id="70"/>
+								<instance name="gameShopItemListRow" id="71"/>
+								<instance name="gameShopItemListRow" id="72"/>
+								<instance name="gameShopItemListRow" id="73"/>
+								<instance name="gameShopItemListRow" id="74"/>
+								<instance name="gameShopItemListRow" id="75"/>
+								<instance name="gameShopItemListRow" id="76"/>
+								<instance name="gameShopItemListRow" id="77"/>
+								<instance name="gameShopItemListRow" id="78"/>
+								<instance name="gameShopItemListRow" id="79"/>
+								<instance name="gameShopItemListRow" id="80"/>
+								<instance name="gameShopItemListRow" id="81"/>
+								<instance name="gameShopItemListRow" id="82"/>
+								<instance name="gameShopItemListRow" id="83"/>
+								<instance name="gameShopItemListRow" id="84"/>
+								<instance name="gameShopItemListRow" id="85"/>
+								<instance name="gameShopItemListRow" id="86"/>
+								<instance name="gameShopItemListRow" id="87"/>
+								<instance name="gameShopItemListRow" id="88"/>
+								<instance name="gameShopItemListRow" id="89"/>	
+								<instance name="gameShopItemListRow" id="90"/>
+								<instance name="gameShopItemListRow" id="91"/>
+								<instance name="gameShopItemListRow" id="92"/>
+								<instance name="gameShopItemListRow" id="93"/>
+								<instance name="gameShopItemListRow" id="94"/>
+								<instance name="gameShopItemListRow" id="95"/>
+								<instance name="gameShopItemListRow" id="96"/>
+								<instance name="gameShopItemListRow" id="97"/>
+								<instance name="gameShopItemListRow" id="98"/>
+								<instance name="gameShopItemListRow" id="99"/>						
+								<instance name="gameShopItemListRow" id="100"/>						
+							</panel>
+						</panel>
+					</panel>
+					
+					<panel name="gameShopItemListSimple_noitems" noclick="1" passivechildren="true" visible="0" >
+						<?lua
+							libGeneral.createGroupTrigger('ShopItemExistance', { 'ShopItem0.exists', 'ShopItem1.exists', 'ShopItem2.exists', 'ShopItem3.exists', 'ShopItem4.exists', 'ShopItem5.exists' })
+							object:RegisterWatchLua('ShopItemExistance', function(widget, groupTrigger)
+								local showIt = true
+								for i = 0,5,1 do
+									if (groupTrigger['ShopItem'..i].exists) then
+										showIt = false
+									end
+								end
+								widget:SetVisible(showIt)
+							end)
+						?>
+						<panel width="-0.5h" noclick="true" align="right">
+							<label name="gameShopItemListSimple_noitems_label" y="-20h" textalign="center" textvalign="center" color="#CCCCCC" font="maindyn_24" shadow="true" noclick="true" content="game_shop_noresults"/>
+						</panel>
+					</panel>
+
+					<scrollbar
+						name="gameShopItemListScrollbar"
+						style="gameShopItemListScrollbar"
+						x="-0.35h"
+						vertical="true"
+						hscrollbar="0"
+						horizontal="false"
+						step="1"
+					/>
+					<panel name="gameShopItemListScrollPanel" hover="false" processonlyscroll="true" color="invisible"/>
+				</panel>
+				
+				<image texture="/ui/shared/textures/stone_corner_tl.tga" y="-0.2h" height="3h" width="3h" align="left"  valign="top"    color="#b5b5b5" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_tr.tga" y="-0.2h" height="3h" width="3h" align="right" valign="top"    color="#b5b5b5" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_bl.tga" y="0.2h"  height="3h" width="3h" align="left"  valign="bottom" color="#b5b5b5" noclick="1" />
+				<image texture="/ui/shared/textures/stone_corner_br.tga" y="0.2h"  height="3h" width="3h" align="right" valign="bottom" color="#b5b5b5" noclick="1" />
+			</frame>	
+		</panel>
+		<panel name="gameShopItemItemChooser" color="0 0 0 0.75" visible="0">
+			<panel name="gameShopItemItemChooserParent" x="3h" color="invisible" width="+2h" align="center" valign="center" height="38h">
+				<panel x="1h" y="1h" width="-2h" height="-2h" color="0.2 0.2 0.2 1"/>
+				<panel y="1h" height="5h" color="invisible">
+					<label x="2h" textalign="left" textvalign="center" color="#FFFFFF" font="maindyn_22" shadow="true" noclick="true" content="game_shop_label_swapitems"/>
+					<instance name="closeXButton" buttonName="gameShopItemItemChooserClose" width="60@" height="60%" align="right" x="-35@" valign="center"
+						onclicklua="self:GetWidget('gameShopItemItemChooser'):SetVisible(false)"
+					/>
+				</panel>
+				
+				<listbox
+					name="gameShopItemSwapContainer"
+					x="1h"
+					y="6h"
+					width="-2h"
+					height="-6.8h"
+					color="invisible"
+					itemheight="5.1h"
+					highlightcolor="invisible"
+					highlightbordercolor="invisible"
+					scrollbarsize="3h"
+					scrolltexture="/ui/shared/textures/slider.tga"
+					handleheight="6h"
+					exteriorscrollbars="false"
+					scrollbarplaceholder="true"
+					scrollbaroffset="0h"
+				>
+				</listbox>
+				
+				<panel name="gameShopItemSwapContainerScrollHider" color="0.2 0.2 0.2 1" align="right" x="-1h" width="3h" y="5.5h" height="-6h"/>
+				
+				<panel y="1h" height="0" color="red" valign="bottom"/>
+				
+				<frame texture="/ui/shared/frames/rounded_bg_solid.tga" align="center" valign="center" borderthickness="1h" bordercolor="0.2 0.2 0.2 1" color="invisible" noclick="1" />
+				<frame texture="/ui/shared/frames/border_double.tga" align="center" valign="center" borderthickness="1h" bordercolor="0.2 0.2 0.2 1" color="invisible" noclick="1" />
+		
+			</panel>
+		</panel>
+
+		<!-- Build Select -->
+		<panel name="gameShopBuildSelect_items" noclick="1" height="30.5h" y="7.8h" visible="0" width="26h" align="center" padding="1h" x="48.5h" >
+			
+			<instance name="dialogWrapper1" />		
+			
+			<panel height="2.6h" noclick="1">
+				<label textvalign="center" font="maindyn_22" style="h1" content="game_shop_bookmark_choose_bookmark2"/>				
+				<instance name="iconButton"
+					id="gameShopBuildSelect_items_closex"
+					icon="/ui/main/shared/textures/close.tga"
+					width="100@" height="100%" align="right" valign="top" borderthickness="0.4h"
+					onclicklua="self:GetWidget('gameShopBuildSelect_items'):SetVisible(false)"
+				/>
+			</panel>
+					
+			<instance id="game_shop_build_clear_items_bookmark_btn" height="3.5h" width="40%" align="left" valign="bottom" rendermode="grayscale"
+				name="standardButton"
+				label="game_shop_bookmark_clear_bookmark"
+				font="maindyn_20"
+			/>		
+
+			<instance id="game_shop_build_select_items_bookmark_btn" height="3.5h" width="58%" align="right" valign="bottom"
+				name="standardButton"
+				label="game_shop_bookmark_load_bookmark"
+				font="maindyn_20"
+			/>			
+			
+			<panel height="-8.6h" y="3.7h" noclick="1">
+				<frame texture="/ui/elements:roundframe" borderthickness="0.5h" color=".2 .2 .2 1"/>
+			
+				<listbox
+					name="game_bookmarks_load_listbox"
+					width="-1.0h" height="-1.0h"
+					align="center" valign="center"
+					color="invisible"
+					font="maindyn_16"
+					itemwidth="100%"
+					itemheight="2.6h"
+					select="true"
+					clearselection="true"
+					hoverselect="false"
+					hoverhighlight="true"
+					highlight="under"
+					highlightcolor="1 1 1 .2"
+					highlightbordercolor="invisible"
+					selectedcolor="1 1 1 .1"
+					selectedbordercolor=".2 .2 .2 1"
+					backgroundimage="$invis"
+					backgroundimagecolor="#1d2f3b"
+					colortransition="true"
+					colortransitiontime="250"
+					scrollbarsize="2.4h"
+					scrolltexture="/ui/shared/textures/slider.tga"
+					handleheight="4.8h"
+					onselect="Echo('onselect');"
+					hscrollbar="0"
+					horizontal="false"
+				/>	
+
+			</panel>			
+			
+			
+		</panel>
+		
+		<panel name="shop_dragger_sliver_fix" valign="bottom" height="7.5h"><!-- rmm hack fix for dragger sliver issue -->
+		</panel>	
+		
+		<panel name="gameShop_sell_area" valign="bottom" x="51h" y="1.5h" width="10h" height="10h" visible="0" noclick="1"><!-- Sell -->
+			<!-- Can of Justice -->
+			<modelpanel x="15%" width="140%" height="112%" align="center" valign="center" visible="1" noclick="1"
+				onloadlua="
+					self:SetEffect('/ui/shared/effects/glow_gold_low.effect')
+				"
+				model="/shared/models/invis.mdf"
+				depthclear="true" 
+				depthcompress="false"
+				lookat="true"
+				
+				camerapos="20 100 135"
+				modelpos="0 0 0"
+				modelangles="0 0 0" 
+
+				anim="idle"	
+				modelscale="3"	
+			/>			
+			<image texture="/ui/shared/shop/textures/trash/can.tga" align="center" valign="center" noclick="true"/>
+			<panel x="2.5h" y="-4h" grow="1" regrow="1" valign="center" float="right" padding="0.4h" align="right">
+				<label name="gameDropTrashGold" y="0" x="0" fity="1" fitx="true" style="labelBase" textvalign="center" font="maindyn_18" content="+0"/>
+				<image width="100@" height="100%" texture="/ui/elements:gold_coins" sticky='1'/>
+			</panel>			
+			<image name="gameDropTrashLid" texture="/ui/shared/shop/textures/trash/lid.tga" align="center" valign="center" noclick="true" visible="1" />			
+			<panel name="gameShopDropSell" visible="false"/><!-- Item Cursor -->
+			<panel name="gameShopDragSell" visible="false"/>
+		</panel>		
+		
+		<!-- Item Stash / Courier -->
+		<panel name="gameShopStashContainer" height="7h" width="100%" valign="bottom" noclick="1">
+			<frame texture="/ui/shared/frames/stone.tga" color="invisible" borderthickness="3h" bordercolor="white" noclick="1">
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.6h" color="0 0.55 0.73 0.1" noclick="1"/>
+			</frame>
+			
+			<panel x="1h" height="5h" width="100%" valign="center" noclick="1" >
+				<panel width="90@" height="100%" noclick="1">
+					<image texture="/ui/new_game/shop/textures/shop_hoverIcon_stash.tga" rendermode="grayscale" color="1 1 1 0.3" align="center" valign="top" hflip="1" width="90@" height="90%" noclick="1" />
+					<label y="0.0h" width="6h" textalign="center" textvalign="bottom" wrap="true" align="center" valign="bottom" lineheight="1.4h" font="maindyn_12" style="labelBase" color="1 1 1 1" content="game_shop_stash"/>
+				</panel>
+
+				<panel name="gameShopCourierContainer" x="-2.7h" y="0.8h" height="95%" width="95@" noclick="1" align="right" >
+					<instance name="gameInventoryBasicBackers" 		id="11" suffix="B" keySpace="gameInventoryItemKeySpace" keyStyle="gameInventoryItemHotkeyLabel"/>
+					<instance name="gameInventoryBasicIcons" 		id="11" suffix="B" keySpace="gameInventoryItemKeySpace" keyStyle="gameInventoryItemHotkeyLabel"/>
+					<instance name="gameInventoryBasicCooldowns" 	id="11" suffix="B" keySpace="gameInventoryItemKeySpace" keyStyle="gameInventoryItemHotkeyLabel"/>
+					<instance name="gameInventoryBasicModels" 		id="11" suffix="B" keySpace="gameInventoryItemKeySpace" keyStyle="gameInventoryItemHotkeyLabel"/>
+					<instance name="gameInventoryBasicOverlays" 	id="11" suffix="B" keySpace="gameInventoryItemKeySpace" keyStyle="gameInventoryItemHotkeyLabel"/>
+					<instance name="gameInventoryBasicLabels" 		id="11" suffix="B" keySpace="gameInventoryItemKeySpace" keyStyle="gameInventoryItemHotkeyLabel"/>
+					<instance name="gameInventoryBasicLabels12"		id="11" suffix="B" keySpace="gameInventoryItemKeySpace" keyStyle="gameInventoryItemHotkeyLabel"/>
+				</panel>
+			</panel>
+		</panel>
+
+		<panel name="levelUpPanel" width="100%" noclick="true" hmargin="1h" visible="false" grow="1" regrow="1" growinvis="0" float="bottom"><!-- Entire Ability Management -->
+			<panel height="6h" width="100%" noclick="1" />
+		
+			<panel width="100%" height="3.5h" sticky="1" stickytoinvis="0">
+				<panel x="0.5h" align="left" float="right" padding="0.5h">
+					<!--<label fitx="true" textvalign="center" color="#CCCCCC" outline="true" font="maindyn_16" content="game_shop_label_yourlevel" />-->
+					<label name="levelUpPanelCurrentLevel" textvalign="center" outline="true" font="maindyn_16" color="white" content=""/>
+				</panel>
+				<panel align="right" grow="true" regrow="true" height="100%" float="right" padding="0.5h">
+					<label fitx="true" textalign="right" textvalign="center" color="#95b4cc" outline="true" font="maindyn_16" content="game_shop_label_skillpoints" />
+					<label name="levelUpPanelPointsLeft" fitx="true" fitxpadding="1h" textvalign="center" color="white" outline="true" font="maindyn_16" content=""/>
+				</panel>
+			</panel>
+
+			<panel visible="0" height="2.5h" width="100%" float="right" padding="0.5h" sticky="1" stickytoinvis="0"> <!-- RMM Remove this? -->
+				<instance name="GridButton" id="levelUpPanelViewButtonSimple" width="100@" height="100%"/>
+				<label name="levelUpPanelViewButtonSimpleLabel" fitx="true" textvalign="center" color="white" outline="true" font="maindyn_12" content="game_shop_label_simpleview"/>
+				<panel width="3h"/>
+				<instance name="ListButton" id="levelUpPanelViewButtonDetailed" width="100@" height="100%"/>
+				<label name="levelUpPanelViewButtonDetailedLabel" fitx="true" textvalign="center" color="white" outline="true" font="maindyn_12" content="game_shop_label_detailedview"/>
+			</panel>
+			
+			<!-- ability builds selection -->
+			<panel name="gameShopBuildSelect_abilities" height="7.8h" noclick="1" visible="0" sticky="1" stickytoinvis="0" onshowlua="self:BringToFront()">
+				<panel noclick="1" width="-1h" height="7.3h" align="center" >
+					<panel noclick="1" valign="bottom" height="3.1h" float="right" padding="0.3h" >
+						<instance  name="gameShopBuildSelect_abilities_icon" index="1" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="2" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="3" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="4" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="5" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="6" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="7" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="8" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="9" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="10" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="11" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="12" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="13" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="14" />
+						<instance  name="gameShopBuildSelect_abilities_icon" index="15"/>
+					</panel>
+					<panel noclick="1" height="3.5h" float="right" padding="0.8h" >
+						<instance name="simpleCombobox" id="game_shop_build_select_abilities_combobox" blockinput="0" visible="1" width="32.5h" align="left" isBlue="blue_" />		
+						<instance name="standardButton2Check" id="game_shop_autolevel_checkbox" width="16h" height="3.5h" align="center" enabled="1" label="game_shop_autolevel" disableCheck="true"/>	
+					</panel>
+				</panel>
+			</panel>
+
+			<panel name="levelUpPanelListSimple" width="100%" y="17.7h" noclick="true" float="bottom" padding="0.5h" visible="0" grow="1" regrow="1" growinvis="0" ><!-- Simple View -->
+				<instance name="levelUpPanelEntrySimple" id="0"/>
+				<instance name="levelUpPanelEntrySimple" id="1"/>
+				<instance name="levelUpPanelEntrySimple" id="2"/>
+				<instance name="levelUpPanelEntrySimple" id="3"/>
+			</panel>
+
+			<panel name="levelUpPanelListDetailed" width="100%" noclick="true" float="bottom" padding="1h" visible="0" height="0" sticky="1" stickytoinvis="0"><!-- Detailed View -->
+				<instance name="levelUpPanelEntryDetailed" id="0"/>
+				<instance name="levelUpPanelEntryDetailed" id="1"/>
+				<instance name="levelUpPanelEntryDetailed" id="2"/>
+				<instance name="levelUpPanelEntryDetailed" id="3"/>
+			</panel>
+		</panel>
+
+	</panel><!-- End Shop Container -->
+	
+	<panel name="gameShopItemPurchasedAnimScriptWidget" color="invisible" noclick="true"/>
+	
+</interface>
