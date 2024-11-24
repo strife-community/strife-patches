@@ -240,7 +240,7 @@
 					align="center" labelY="-0.1h"
 					borderthickness="0.4h" rendermode="grayscale"
 					name="standardButton"
-					label="general_load"
+					label="general_build"
 					font="maindyn_12"
 				/>
 			</panel>			

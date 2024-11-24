@@ -272,7 +272,7 @@
 			<instance name="framed_mini_button" id="game_shop_closex" x="-2.4h" y="-0.2h" width="3.5h" height="3.5h" align="right" valign="center" bindShow="false" texture="/ui/shared/textures/mini_close.tga" state="2" iconcolor="#ffc5c5"/>
 		</panel>
 		
-		<!-- Load Button -->
+		<!-- Build Button -->
 		<panel x="10.5h" y="-2h" align="right" width="14h" height="7h" noclick="1" texture="/ui/new_game/shop/textures/shop_load.tga">
 			<instance id="gameShopBookmarkIcon"
 					y="0.5h" x="0.2h"
@@ -280,7 +280,7 @@
 					align="center" valign="center" labelY="-0.1h"
 					borderthickness="0.4h"
 					name="standardButton"
-					label="general_load_cap"
+					label="general_build_cap"
 					font="maindyn_14"
 					outlinecolor="#75130a"
 				/>
