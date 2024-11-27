@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Claudessa_Ability2"
+    name="Projectile_Claudessa_Ability2"
 
-	speed="3000"
-	gravity="0"	
-	modelscale="2"
-	model="effects/shield/model.mdf"
-	canturn="true"
-	impacteffect="effects/impact_heal.effect"
-	traileffect="effects/trail.effect"
-	
-	flying="true"
-	flyheight="100"
+    speed="3000"
+    gravity="0"	
+    modelscale="2"
+    model="effects/shield/model.mdf"
+    canturn="true"
+    impacteffect="effects/impact_heal.effect"
+    traileffect="effects/trail.effect"
+
+    flying="true"
+    flyheight="100"
 	
 >
-	<onimpact>
-		<compare a="target_entity" b="source_entity" op="ne" >
-			<applystate name="State_Claudessa_Ability2" duration="5000" />
-		</compare>
-	</onimpact>
-	
+    <onimpact>
+        <compare a="target_entity" b="source_entity" op="ne" >
+            <getconstant name="duration" />
+            <applystate name="State_Claudessa_Ability2" duration="result" />
+        </compare>
+    </onimpact>
+
 </projectile>
