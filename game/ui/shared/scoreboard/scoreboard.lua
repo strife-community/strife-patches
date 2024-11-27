@@ -113,6 +113,7 @@ function registerScoreboard()
 		local height, width = 10, 22
 
 		sourceWidget:GetWidget('game_hero_unitframe_tooltip'):SetVisible(1)
+        sourceWidget:GetWidget('game_hero_unitframe_tooltip_inventory_parent'):SetVisible(0)
 	
 		local text = ''
 		if (actuallyTheUnitTrigger) and (actuallyTheUnitTrigger.clanTag) and (not Empty(actuallyTheUnitTrigger.clanTag)) then
