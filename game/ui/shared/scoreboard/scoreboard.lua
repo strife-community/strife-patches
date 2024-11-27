@@ -409,7 +409,7 @@ function registerScoreboard()
 			elseif (trigger) then
 				text = (trigger.playerName or '')
 			end			
-			widget:SetVisible((trigger.isActive) and (text ~= ''))
+			widget:SetVisible(text ~= '')
 			widget:SetText(text)
 		end, true, nil, 'isActive', 'playerName')			
 		
