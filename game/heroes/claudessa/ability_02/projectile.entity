@@ -12,13 +12,13 @@
 
     flying="true"
     flyheight="100"
-	
+    
 >
     <onimpact>
-        <compare a="target_entity" b="source_entity" op="ne" >
-            <getconstant name="duration" />
-            <applystate name="State_Claudessa_Ability2" duration="result" />
-        </compare>
+        <!-- Setting state for Resistance buff -->
+        <getconstant name="duration" />
+        <setvar0 a="result" b="1000" op="mult" />
+        <applystate name="State_Claudessa_Ability2" duration="var0" />
     </onimpact>
 
 </projectile>
