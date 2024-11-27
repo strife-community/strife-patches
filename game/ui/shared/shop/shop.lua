@@ -5534,6 +5534,7 @@ local function shopItemTipRegister(object)
 		local triggerName			= 'ShopItem'
 		local itemType				= trigger.itemType
 		local isFromCrafting		= false
+		local isRemoteItem			= false
 		if string.len(itemType) > 0 then triggerName = itemType end
 
 		local triggerIndex = index
@@ -5541,6 +5542,8 @@ local function shopItemTipRegister(object)
 		if itemType == 'craftedItemInfoShop' then
 			triggerIndex = ''
 			isFromCrafting = true
+		elseif string.find(itemType, 'EnemyInventory') or string.find(itemType, 'AllyInventory') then
+			isRemoteItem = true 
 		end
 
 		local infoTrigger			= LuaTrigger.GetTrigger(triggerName..triggerIndex)
@@ -5559,10 +5562,9 @@ local function shopItemTipRegister(object)
 				paramPrefix	= 'recipeComponentDetail'..trigger.componentID
 			end
 
-			if itemType == 'ActiveInventory' or itemType == 'StashInventory' or itemType == 'HeroInventory' or itemType == 'SelectedInventory' then
+			if itemType == 'ActiveInventory' or itemType == 'StashInventory' or itemType == 'HeroInventory' or itemType == 'SelectedInventory' or isRemoteItem then
 				cooldownParam		= 'cooldownTime'
 				costParam			= 'sellValue'
-				-- recipeParam		= 'isRecipeCompleted'
 				isInventory = true
 			end
 
