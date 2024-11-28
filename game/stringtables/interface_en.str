@@ -2426,6 +2426,8 @@ credit_card_result_subscription_number		Subscription #: ^w{id}
 credit_card_result_next_bill_date			Next Billing Date: ^w{date}
 credit_card_result_email					Email: ^w{email}
 
+general_build               Build
+general_build_cap           BUILD
 builds_item_builds			Item Builds
 builds_ability_builds		Ability Builds
 builds_save_build			Save Build
@@ -7149,8 +7151,8 @@ game_shop_autobuy						Auto-Buy
 game_shop_autobuy_allitems				Auto-Buy All Items
 game_shop_autolevel						Auto-Level
 game_shop_bookmark						Bookmark
-game_shop_bookmarks						Bookmarks
-game_shop_bookmarks_tip					Click to quick load. \n\nBookmarks allow you to save a list of items to purchase later in the current game.
+game_shop_bookmarks						Item builds
+game_shop_bookmarks_tip					Click to choose item build guide. \n\nAfter choosing a guide items will be added to your shop queue.
 game_shop_clearfilters					Clear Filters
 game_shop_noresults						No Results!
 game_shop_search						Search Shop...

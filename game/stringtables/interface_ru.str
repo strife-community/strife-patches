@@ -2277,6 +2277,8 @@ credit_card_result_subscription_number		Подписка #: ^w{id}
 credit_card_result_next_bill_date			Дата следующей оплаты: ^w{date}
 credit_card_result_email					Адрес электронной почты: ^w{email}
 
+general_build               Сборка
+general_build_cap           СБОРКА
 builds_item_builds			Таблица предметов
 builds_ability_builds		Таблица способностей
 builds_save_build			Сохранить
@@ -6941,8 +6943,8 @@ game_shop_autobuy						Автоматическая покупка
 game_shop_autobuy_allitems				Автоматическая покупка всех предметов
 game_shop_autolevel						Использовать
 game_shop_bookmark						Закладка
-game_shop_bookmarks						Закладки
-game_shop_bookmarks_tip					Нажмите, чтобы загрузить список предметов из схемы развития героя. \nЛибo составьте свой список для покупки, перемещая картинки предметов на панель закладок.
+game_shop_bookmarks						Сборки предметов
+game_shop_bookmarks_tip					Нажмите, чтобы выбрать руководство по предметам (сборку). \nПредметы из выбранной сборки будут добавлены в очередь для покупки.
 game_shop_clearfilters					Очистить фильтры
 game_shop_noresults						Нет результатов!
 game_shop_search						Поиск в магазине...
