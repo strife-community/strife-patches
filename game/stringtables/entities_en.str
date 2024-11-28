@@ -929,7 +929,7 @@ Ability_Claudessa1_description									Target direction to damage enemies in a l
 Ability_Claudessa1_description_simple							Line damage and pull.
 // Ability_Claudessa2
 Ability_Claudessa2_name											Scale Shield
-Ability_Claudessa2_description									Passively grants $resistance$ Resistance.\n\nTarget ally to heal for ^o$heal$^* Health and transfer your shield to them. 
+Ability_Claudessa2_description									Passively grants $resistance$ Resistance.\n\nTarget ally to heal for ^o$heal$^* Health and transfer your shield to them for $duration$ seconds.
 Ability_Claudessa2_description_simple							Target heal and damage reduction
 // State_Claudessa_Ability2
 State_Claudessa_Ability2_Tooltip_name							Scale Shield
