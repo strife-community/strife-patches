@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Orbit"
+
+	icon="icon.tga"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	ishidden="true"
+>
+
+	<!--Not  used anymore-->
+	
+</state>
