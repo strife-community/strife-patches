@@ -127,6 +127,7 @@ Constant_max_duration											Max Duration
 Constant_execute_threshold										% MaxHP Threshold
 Constane_attackspeedslow										% Attack Speed Slow
 Constant_splash													Splash Damage
+Constant_back_attack                                            Base Return Damage
 
 CrowdControl_Stun												Stun
 CrowdControl_Slow												Slow
@@ -692,7 +693,7 @@ Ability_Aemon3_description										Aemon gains a burst of $movespeed$ Movement 
 Ability_Aemon3_description_simple								Movespeed burst and slow on attacks
 // Ability_Aemon4
 Ability_Aemon4_name												Justice
-Ability_Aemon4_description										Aemon calls down a pillar of light on him and on his Consecration, dealing ^o$damage$ Magic Damage^* to enemies. \n\nPassive: Aemon's attacks grant a charge of Justice. Enemy attacks consume a charge and deal ^o$back_attack$^* back to the attacker.
+Ability_Aemon4_description										Aemon calls down a pillar of light on him and on his Consecration, dealing ^o$damage$ Magic Damage^* to enemies. \n\nPassive: Aemon's attacks grant a charge of Justice. Enemy attacks consume a charge, have damage reduced by $damage_reduction_percent$% and deal ^o$back_attack$ Magic Damage^* back to the attacker.
 Ability_Aemon4_description_simple								Heavy AOE damage and back attack
 
 
@@ -928,7 +929,7 @@ Ability_Claudessa1_description									Target direction to damage enemies in a l
 Ability_Claudessa1_description_simple							Line damage and pull.
 // Ability_Claudessa2
 Ability_Claudessa2_name											Scale Shield
-Ability_Claudessa2_description									Passively grants $resistance$ Resistance.\n\nTarget ally to heal for ^o$heal$^* Health and transfer your shield to them. 
+Ability_Claudessa2_description									Passively grants $resistance$ Resistance.\n\nTarget ally to heal for ^o$heal$^* Health and transfer your shield to them for $duration$ seconds.
 Ability_Claudessa2_description_simple							Target heal and damage reduction
 // State_Claudessa_Ability2
 State_Claudessa_Ability2_Tooltip_name							Scale Shield

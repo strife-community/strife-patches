@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+    name="Projectile_Claudessa_Ability2"
+
+    speed="3000"
+    gravity="0"	
+    modelscale="2"
+    model="effects/shield/model.mdf"
+    canturn="true"
+    impacteffect="effects/impact_heal.effect"
+    traileffect="effects/trail.effect"
+
+    flying="true"
+    flyheight="100"
+    
+>
+    <onimpact>
+        <!-- Setting state for Resistance buff -->
+        <getconstant name="duration" />
+        <setvar0 a="result" b="1000" op="mult" />
+        <applystate name="State_Claudessa_Ability2" duration="var0" />
+    </onimpact>
+
+</projectile>
