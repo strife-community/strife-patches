@@ -1644,6 +1644,12 @@
 			</panel>
 
 			<panel height="0.7h" noclick="true" />
+            
+            <panel name="game_hero_unitframe_tooltip_mvp" height="2.5h" noclick="true" sticky="1" stickytoinvis="0" >
+                <frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+                <frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+                <label name="game_hero_unitframe_tooltip_mvp_label" content="game_mvp_enemy" height="100%" valign="center" textalign="center" textvalign="center" shadow="true" outline="1" color="#DD1FFF" font="maindyn_14" noclick="true"/>
+            </panel>
 			
 			<panel name="game_hero_unitframe_tooltip_gpm" height="2.0h" noclick="true" sticky="1" stickytoinvis="0" >
 				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
@@ -1714,6 +1720,23 @@
 				<label name="gameSelfMoveSpeed2" height="100%" hmargin="5%" textalign="left" textvalign="center" width="100%" x="0" color="1 1 .5 1" outline="true" font="maindyn_14"  		content="game_tooltip_movespeed" noclick="true"/>
 				<label name="gameSelfMoveSpeed" height="100%" hmargin="5%" textalign="right" textvalign="center" width="100%" x="0" color="1 1 .5 1" outline="true" font="maindyn_14"  		content="?" noclick="true"/>
 			</panel>			
+            
+            <panel name="game_hero_unitframe_tooltip_inventory_parent" visible="1" height="10h" noclick="true" sticky="1" stickytoinvis="0" >
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="0 0 0 0.25" x="0.15h" y="0.15h"/>
+				<frame texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#181818"/>
+
+				<panel height="50%" float="right" hmargin="0.2h" vmargin="0.2h" valign="top" padding="0.2h">
+					<image name="game_hero_unitframe_tooltip_inventory_1" width="100@" texture="/ui/shared/textures/pack2.tga" />
+					<image name="game_hero_unitframe_tooltip_inventory_2" width="100@" texture="/ui/shared/textures/pack2.tga" />
+					<image name="game_hero_unitframe_tooltip_inventory_3" width="100@" texture="/ui/shared/textures/pack2.tga" />
+				</panel>
+				<panel height="50%" float="right" y="-0.4h" hmargin="0.2h" vmargin="0.2h" valign="bottom" padding="0.2h">
+					<image name="game_hero_unitframe_tooltip_inventory_4" width="100@" texture="/ui/shared/textures/pack2.tga" />
+					<image name="game_hero_unitframe_tooltip_inventory_5" width="100@" texture="/ui/shared/textures/pack2.tga" />
+					<image name="game_hero_unitframe_tooltip_inventory_6" width="100@" texture="/ui/shared/textures/pack2.tga" />
+				</panel>
+				<image x="150@" height="55%" valign="center" name="game_hero_unitframe_tooltip_inventory_0" width="55@" texture="/ui/shared/textures/pack2.tga" />
+			</panel>
 			
 			<panel height="0.7h" noclick="true" />
 
