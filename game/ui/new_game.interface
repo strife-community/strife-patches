@@ -1789,12 +1789,13 @@
 
 	<lua file="/ui/new_game/item_guidance/item_guidance.lua"/>
 
-	
-	
 	<include file="/ui/game/karma/karma_vote.package"/>
+    <include file="/ui/shared/endgame/endgame.package"/>
 	
 	
 	<lua file="/ui/game/karma/karma_vote.lua"/>
+    <lua file="/ui/shared/endgame/endgame.lua"/>
+
 
 	<!-- dialog --> 
 	<include file="/ui/game/dialog/dialog.package"/>	
