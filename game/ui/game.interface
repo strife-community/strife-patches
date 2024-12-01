@@ -1639,10 +1639,11 @@
 	<!--childinterface file="/ui/shared/scoreboard_templates.interface"/-->
 
 	<include file="/ui/game/karma/karma_vote.package"/>
-	<!--include file="/ui/game/scoreboard/scoreboard.package"/-->
+    <include file="/ui/shared/endgame/endgame.package"/>
 	
-	<!-- === Split between tips/popups (below) and above-game-widgets stuff (above) -->
     <include file="/ui/shared/scoreboard/scoreboard.package"/>
+
+	<!-- === Split between tips/popups (below) and above-game-widgets stuff (above) -->
 
 	<childinterface file="/ui/game/test/game_test.interface"/>
 	
@@ -1937,6 +1938,7 @@
 	<lua file="/ui/game/item_guidance/item_guidance.lua"/>
 	
 	<lua file="/ui/game/karma/karma_vote.lua"/>
+    <lua file="/ui/shared/endgame/endgame.lua"/>
     <lua file="/ui/shared/shared_common.lua"/>
     <lua file="/ui/shared/scoreboard/scoreboard.lua" />
 
