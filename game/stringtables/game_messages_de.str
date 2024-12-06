@@ -395,7 +395,7 @@ chat_command_gameall                                all,allchat,a
 chat_command_gameall_params                         {Message}
 chat_command_gameall_info                           Sendet eine Nachicht an alle verbundenen Mitspieler (nur Admin.)
 chat_command_ping                                   anpingen
-chat_command_ping_info                              Zeige deinen Ping an (nur Admin.)
+chat_command_ping_info                              Zeige deinen Ping an
 chat_command_ping_ping                              Ping: {value}
 chat_command_servercommand                          Server-Befehl,Befehl, cmd,cvar,setcvar,remote,remoteconsole
 chat_command_servercommand_params                   "Kommentarzeile"

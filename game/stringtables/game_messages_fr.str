@@ -395,7 +395,7 @@ chat_command_gameall                                     all,allchat,a
 chat_command_gameall_params                              {Message}
 chat_command_gameall_info                                Envoie un message à tous les utilisateurs connectés (admin seulement)
 chat_command_ping                                        ping
-chat_command_ping_info                                   Affiche votre ping (admin seulement)
+chat_command_ping_info                                   Affiche votre ping
 chat_command_ping_ping                                   Ping : {value}
 chat_command_servercommand                               servercommand,command,cmd,cvar,setcvar,remote,remoteconsole
 chat_command_servercommand_params                        "command line"
