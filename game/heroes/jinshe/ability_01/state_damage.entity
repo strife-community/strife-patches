@@ -6,9 +6,7 @@
 	ishidden="true"
 >
 	<oninflict>
-		<setvar0 a="70,105,140,175" b="source_power" op="mult" />
-		<setvar0 a="var0" b="source_powerratiomultiplier" op="mult" />
-		<setvar0 a="var0" b="100" op="div" />
-		<damage effecttype="Magic Splash" significant="true" amount="1" b="var0" op="mult" />
+        <getconstant name="damage" adjustmentsource="this_entity" />
+		<damage effecttype="Magic Splash" amount="1" b="result" op="mult"/>
 	</oninflict>
 </state>

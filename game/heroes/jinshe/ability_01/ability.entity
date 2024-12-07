@@ -31,9 +31,8 @@
 	manacost="85,90,95,100"
 	cooldowntime="13000,12000,11000,10000" 
 >
-	<!--Tooltip Only-->
-	<constant name="damage" value="70,100,130,160" adjustment="ability" />
-	<constant name="stun" value="1" adjustment="none" />
+	<constant name="damage" value="70,105,140,175" adjustment="ability" />
+	<constant name="stun" value="1" adjustment="none" noshowintooltip="true" />
 
 	<onimpact>
 		<spawnunit name="Gadget_JinShe_Ability1" count="1" target="source_position" pushentity="true" offsetspace="source_entity" offset="0 -100 0" />
