@@ -2519,9 +2519,9 @@ Ability_Tortus_Passive2_3_description_simple                                    
 Ability_Tortus_TriggeredPassive_1_name                                            Endurcissement
 Ability_Tortus_TriggeredPassive_2_name                                            Endurcissement
 Ability_Tortus_TriggeredPassive_3_name                                            Endurcissement
-Ability_Tortus_TriggeredPassive_1_description                                     Bloque jusqu'à $deflection$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). Délai de rechargement de 18 secondes.
-Ability_Tortus_TriggeredPassive_2_description                                     Bloque jusqu'à $deflection$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de 12 secondes^*.
-Ability_Tortus_TriggeredPassive_3_description                                     Bloque jusqu'à $deflection$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). Délai de rechargement de 12 secondes.
+Ability_Tortus_TriggeredPassive_1_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
+Ability_Tortus_TriggeredPassive_2_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
+Ability_Tortus_TriggeredPassive_3_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
 Ability_Tortus_TriggeredPassive_1_description_simple                              Bloque les dégâts des attaques de base.
 Ability_Tortus_TriggeredPassive_2_description_simple                              Bloque les dégâts des attaques de base.
 Ability_Tortus_TriggeredPassive_3_description_simple                              Bloque les dégâts des attaques de base.

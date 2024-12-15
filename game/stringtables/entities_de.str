@@ -3043,9 +3043,9 @@ Ability_Tortus_Passive_3_description								Erhöht max. Gesundheit um $passive$
 Ability_Tortus_TriggeredPassive_1_name								Abhärten
 Ability_Tortus_TriggeredPassive_2_name								Abhärten
 Ability_Tortus_TriggeredPassive_3_name								Abhärten
-Ability_Tortus_TriggeredPassive_1_description						Blockiert bis zu $deflection$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). 18 Sekunden Abkühlung.
-Ability_Tortus_TriggeredPassive_2_description						Blockiert bis zu $deflection$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c12 Sekunden Abkühlung^*.
-Ability_Tortus_TriggeredPassive_3_description						Blockiert bis zu ^c$deflection$ Damage^* Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). 12 Sekunden Abkühlung.
+Ability_Tortus_TriggeredPassive_1_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
+Ability_Tortus_TriggeredPassive_2_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
+Ability_Tortus_TriggeredPassive_3_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
 Ability_Tortus_TriggeredPassive_1_description_simple				Blockiert den Schaden von Basis-Attacken
 Ability_Tortus_TriggeredPassive_2_description_simple				Blockiert den Schaden von Basis-Attacken
 Ability_Tortus_TriggeredPassive_3_description_simple				Blockiert den Schaden von Basis-Attacken

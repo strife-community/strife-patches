@@ -2757,9 +2757,9 @@ Ability_Tortus_Passive2_3_description_simple					Aumenta a regeneração de mana
 Ability_Tortus_TriggeredPassive_1_name							Endurecer
 Ability_Tortus_TriggeredPassive_2_name							Endurecer
 Ability_Tortus_TriggeredPassive_3_name							Endurecer
-Ability_Tortus_TriggeredPassive_1_description					Bloqueia até $deflection$ de dano de ataques básicos de um herói (escalona com o nível do herói). 18 segundos de recarga.
-Ability_Tortus_TriggeredPassive_2_description					Bloqueia até $deflection$ de dano de ataques básicos de um herói (escalona com o nível do herói). ^c12 segundos de recarga^*.
-Ability_Tortus_TriggeredPassive_3_description					Bloqueia até ^c$deflection$ de dano^* de ataques básicos de um herói (escalona com o nível do herói). 12 segundos de recarga.
+Ability_Tortus_TriggeredPassive_1_description					Bloqueia até $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de dano de ataques básicos de um herói (escalona com o nível do herói). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
+Ability_Tortus_TriggeredPassive_2_description					Bloqueia até $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de dano de ataques básicos de um herói (escalona com o nível do herói). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
+Ability_Tortus_TriggeredPassive_3_description					Bloqueia até $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de dano de ataques básicos de um herói (escalona com o nível do herói). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Bloqueia o dano de ataques básicos
 Ability_Tortus_TriggeredPassive_2_description_simple			Bloqueia o dano de ataques básicos
 Ability_Tortus_TriggeredPassive_3_description_simple			Bloqueia o dano de ataques básicos

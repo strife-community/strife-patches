@@ -2920,9 +2920,9 @@ Ability_Tortus_Passive2_3_description_simple												增加法力回复
 Ability_Tortus_TriggeredPassive_1_name											援护
 Ability_Tortus_TriggeredPassive_2_name												援护
 Ability_Tortus_TriggeredPassive_3_name												援护
-Ability_Tortus_TriggeredPassive_1_description												 托特斯对你进行援护，减少来自敌方英雄$deflection$普通攻击伤害(根据英雄等级而定)。冷却时间18秒。
-Ability_Tortus_TriggeredPassive_2_description													  托特斯对你进行援护，减少来自敌方英雄$deflection$普通攻击伤害(根据英雄等级而定)。冷却时间^c12秒^*。
-Ability_Tortus_TriggeredPassive_3_description													 托特斯对你进行援护，减少来自敌方英雄^c$deflection$^*普通攻击伤害(根据英雄等级而定)。冷却时间12秒。
+Ability_Tortus_TriggeredPassive_1_description												 托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
+Ability_Tortus_TriggeredPassive_2_description													  托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
+Ability_Tortus_TriggeredPassive_3_description													 托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
 Ability_Tortus_TriggeredPassive_1_description_simple												抵抗来自普攻的伤害 
 Ability_Tortus_TriggeredPassive_2_description_simple												抵抗来自普攻的伤害
 Ability_Tortus_TriggeredPassive_3_description_simple												抵抗来自普攻的伤害
