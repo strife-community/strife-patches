@@ -2406,9 +2406,9 @@ Ability_Ganker_Passive_3_description_simple                                     
 Ability_Ganker_TriggeredPassive_1_name                                            Prime
 Ability_Ganker_TriggeredPassive_2_name                                            Prime
 Ability_Ganker_TriggeredPassive_3_name                                            Prime
-Ability_Ganker_TriggeredPassive_1_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. Délai de rechargement de $cooldown$ seconde(s).
-Ability_Ganker_TriggeredPassive_2_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. ^cDélai de rechargement de $cooldown$ seconde(s)^*.
-Ability_Ganker_TriggeredPassive_3_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez ^c$gold$ Or Bonus^*. Délai de rechargement de $cooldown$ seconde(s).
+Ability_Ganker_TriggeredPassive_1_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. ^cDélai de rechargement de $cooldown_sec$ seconde(s)^*.
+Ability_Ganker_TriggeredPassive_2_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. ^cDélai de rechargement de $cooldown_sec$ seconde(s)^*.
+Ability_Ganker_TriggeredPassive_3_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. ^cDélai de rechargement de $cooldown_sec$ seconde(s)^*.
 Ability_Ganker_TriggeredPassive_1_description_simple                              Accorde une prime bonus pour l'élimination des héros.
 Ability_Ganker_TriggeredPassive_2_description_simple                              Accorde une prime bonus pour l'élimination des héros.
 Ability_Ganker_TriggeredPassive_3_description_simple                              Accorde une prime bonus pour l'élimination des héros.

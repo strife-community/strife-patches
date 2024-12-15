@@ -2732,9 +2732,9 @@ Ability_Ganker_Passive_3_description_simple						Increases Movespeed while out o
 Ability_Ganker_TriggeredPassive_1_name							Bounty
 Ability_Ganker_TriggeredPassive_2_name							Bounty
 Ability_Ganker_TriggeredPassive_3_name							Bounty
-Ability_Ganker_TriggeredPassive_1_description					Upon killing an enemy hero, grants 130 bonus gold.\n\n^c40 Second Cooldown.^*
-Ability_Ganker_TriggeredPassive_2_description					Upon killing an enemy hero, grants 130 bonus gold.\n\n^c40 Second Cooldown.^*
-Ability_Ganker_TriggeredPassive_3_description					Upon killing an enemy hero, grants 130 bonus gold.\n\n^c40 Second Cooldown.^*
+Ability_Ganker_TriggeredPassive_1_description					Upon killing an enemy hero, grants $gold$ bonus gold.\n\n^c$cooldown_sec$ Second Cooldown.^*
+Ability_Ganker_TriggeredPassive_2_description					Upon killing an enemy hero, grants $gold$ bonus gold.\n\n^c$cooldown_sec$ Second Cooldown.^*
+Ability_Ganker_TriggeredPassive_3_description					Upon killing an enemy hero, grants $gold$ bonus gold.\n\n^c$cooldown_sec$ Second Cooldown.^*
 Ability_Ganker_TriggeredPassive_1_description_simple			Grants bonus bounty for hero kills.
 Ability_Ganker_TriggeredPassive_2_description_simple			Grants bonus bounty for hero kills.
 Ability_Ganker_TriggeredPassive_3_description_simple			Grants bonus bounty for hero kills.

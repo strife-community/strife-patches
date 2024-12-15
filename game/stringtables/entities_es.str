@@ -2404,9 +2404,9 @@ Ability_Ganker_Passive_3_description_simple                                  Aum
 Ability_Ganker_TriggeredPassive_1_name                                       Recompensa
 Ability_Ganker_TriggeredPassive_2_name                                       Recompensa
 Ability_Ganker_TriggeredPassive_3_name                                       Recompensa
-Ability_Ganker_TriggeredPassive_1_description                                Al matar a un héroe enemigo, otorga $gold$ oro de bonificación. $cooldown$ segundos de recarga.
-Ability_Ganker_TriggeredPassive_2_description                                Al matar a un héroe enemigo, otorga $gold$ oro de bonificación. ^c$cooldown$ segundos de recarga^*.
-Ability_Ganker_TriggeredPassive_3_description                                Al matar a un héroe enemigo, otorga ^c$gold$ oro de bonificación^*. $cooldown$ segundos de recarga.
+Ability_Ganker_TriggeredPassive_1_description                                Al matar a un héroe enemigo, otorga $gold$ oro de bonificación. ^c$cooldown_sec$ segundos de recarga^*.
+Ability_Ganker_TriggeredPassive_2_description                                Al matar a un héroe enemigo, otorga $gold$ oro de bonificación. ^c$cooldown_sec$ segundos de recarga^*.
+Ability_Ganker_TriggeredPassive_3_description                                Al matar a un héroe enemigo, otorga $gold$ oro de bonificación. ^c$cooldown_sec$ segundos de recarga^*.
 Ability_Ganker_TriggeredPassive_1_description_simple                         Otorga una recompensa de bonificación por bajas de héroes
 Ability_Ganker_TriggeredPassive_2_description_simple                         Otorga una recompensa de bonificación por bajas de héroes
 Ability_Ganker_TriggeredPassive_3_description_simple                         Otorga una recompensa de bonificación por bajas de héroes
