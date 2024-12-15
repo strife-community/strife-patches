@@ -2610,9 +2610,9 @@ Ability_Tortus_Passive2_3_description_simple					Tăng MP Hồi Phục
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Khóa $deflection$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  18 giây Cooldown.
-Ability_Tortus_TriggeredPassive_2_description					Khóa $deflection$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c12 giây Cooldown^*.
-Ability_Tortus_TriggeredPassive_3_description					Khóa ^c$deflection$ Damage^* từ đòn đánh thường của địch (dựa trên lv Hero).  12 giây Cooldown.
+Ability_Tortus_TriggeredPassive_1_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+Ability_Tortus_TriggeredPassive_2_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+Ability_Tortus_TriggeredPassive_3_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Khóa đòn đánh thường
 Ability_Tortus_TriggeredPassive_2_description_simple			Khóa đòn đánh thường
 Ability_Tortus_TriggeredPassive_3_description_simple			Khóa đòn đánh thường

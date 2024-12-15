@@ -3044,9 +3044,9 @@ Ability_Tortus_Passive_3_description							Increases Max Health by 15%.
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Blocks 36-106 Damage from a hero's basic attack (scales with hero level).\n\n^c12 Second Cooldown^*. 
-Ability_Tortus_TriggeredPassive_2_description					Blocks 36-106 Damage from a hero's basic attack (scales with hero level).\n\n^c12 Second Cooldown^*. 
-Ability_Tortus_TriggeredPassive_3_description					Blocks 36-106 Damage from a hero's basic attack (scales with hero level).\n\n^c12 Second Cooldown^*. 
+Ability_Tortus_TriggeredPassive_1_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
+Ability_Tortus_TriggeredPassive_2_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
+Ability_Tortus_TriggeredPassive_3_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Blocks damage from hero attacks.
 Ability_Tortus_TriggeredPassive_2_description_simple			Blocks damage from hero attacks.
 Ability_Tortus_TriggeredPassive_3_description_simple			Blocks damage from hero attacks.
