@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tortus_TriggeredPassive_3"
+
+	icon="icon.tga"
+	maxlevel="15"
+	actiontype="passive"
+	manacost="0"
+	
+	cooldowntime="12000"
+	cooldowntype="familiar"
+	
+>
+
+	<constant name="deflection" value="106" adjustment="none" />
+	
+	<onframe>
+		<setactivemodifierkey entity="this_entity" name="tortusspawned" />
+	</onframe>
+	
+	<modifier key="tortusspawned" modpriority="100">
+		<onframe>
+			<setcharges a="source_level" />
+		</onframe>
+		<onattackedpredamage> 
+			<targettype type="hero">
+				<isready>
+					<combateffecttype effecttype="Attack">
+						<setvar0 a="36,41,46,51,56,61,66,71,76,81,86,91,96,101,106" />
+						<setvalue name="combat_deflection" a="combat_deflection" b="var0" op="add" />
+						<startcooldown />
+						<popup name="deflect" target="source_entity" a="var0" />
+						<applystate name="State_Tortus_Not_Ready" duration="12000" target="this_proxy_entity" />
+						<applystate name="State_Tortus_Shield" duration="250" target="source_entity" />
+					</combateffecttype>
+				</isready>
+			</targettype>
+		</onattackedpredamage>
+	</modifier>
+	
+</ability>
