@@ -6,12 +6,13 @@
 	maxlevel="15"
 	actiontype="passive"
 	manacost="0"
-	cooldowntime="40000"
+	cooldowntime="55000"
 	
 >
-
-	<constant name="gold" value="130" adjustment="none" />
-	<constant name="cooldown" value="40" adjustment="none" />
+    <!-- Additional gold received for the hero kill -->
+	<constant name="gold" value="110" adjustment="none" />
+    <!-- Ability cooldown. TOOLTIP ONLY! The real value is "cooldowntime" attribute! -->
+	<constant name="cooldown" value="55" adjustment="none" />
 	
 	<onkill propagatetoillusions="false" >
 		<isready>
