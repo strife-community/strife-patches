@@ -12,7 +12,7 @@
     <!-- Additional gold received for the hero kill -->
 	<constant name="gold" value="110" adjustment="none" />
     <!-- Ability cooldown. TOOLTIP ONLY! The real value is "cooldowntime" attribute! -->
-	<constant name="cooldown" value="55" adjustment="none" />
+	<constant name="cooldown_sec" value="55" adjustment="none" />
 	
 	<onkill propagatetoillusions="false" >
 		<isready>

@@ -2793,9 +2793,9 @@ Ability_Ganker_Passive_3_description_simple					战斗状态外增加移动速�
 Ability_Ganker_TriggeredPassive_1_name						奖励
 Ability_Ganker_TriggeredPassive_2_name						奖励
 Ability_Ganker_TriggeredPassive_3_name						奖励
-Ability_Ganker_TriggeredPassive_1_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
-Ability_Ganker_TriggeredPassive_2_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
-Ability_Ganker_TriggeredPassive_3_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_1_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown_sec$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_2_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown_sec$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_3_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown_sec$秒冷却时间^*。
 Ability_Ganker_TriggeredPassive_1_description_simple		击杀敌方英雄后，获得额外奖励  
 Ability_Ganker_TriggeredPassive_2_description_simple		击杀敌方英雄后，获得额外奖励
 Ability_Ganker_TriggeredPassive_3_description_simple		击杀敌方英雄后，获得额外奖励

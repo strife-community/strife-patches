@@ -2678,9 +2678,9 @@ Ability_Ganker_Passive_3_description_simple					เพิ่มความเ�
 Ability_Ganker_TriggeredPassive_1_name						Bounty
 Ability_Ganker_TriggeredPassive_2_name						Bounty
 Ability_Ganker_TriggeredPassive_3_name						Bounty
-Ability_Ganker_TriggeredPassive_1_description				เมื่อฆ่าฮีโร่ศัตรูจะได้รับ $gold$ bonus gold คูลดาวน์ $cooldown$ วินาที
-Ability_Ganker_TriggeredPassive_2_description				เมื่อฆ่าฮีโร่ศัตรูจะได้รับ $gold$ bonus gold คูลดาวน์ ^c$cooldown$ วินาที^*
-Ability_Ganker_TriggeredPassive_3_description				เมื่อฆ่าฮีโร่ศัตรูจะได้รับ ^c$gold$ bonus gold^* คูลดาวน์ $cooldown$ วินาที
+Ability_Ganker_TriggeredPassive_1_description				เมื่อฆ่าฮีโร่ศัตรูจะได้รับ $gold$ bonus gold คูลดาวน์ ^c$cooldown_sec$ วินาที^*
+Ability_Ganker_TriggeredPassive_2_description				เมื่อฆ่าฮีโร่ศัตรูจะได้รับ $gold$ bonus gold คูลดาวน์ ^c$cooldown_sec$ วินาที^*
+Ability_Ganker_TriggeredPassive_3_description				เมื่อฆ่าฮีโร่ศัตรูจะได้รับ $gold$ bonus gold คูลดาวน์ ^c$cooldown_sec$ วินาที^*
 Ability_Ganker_TriggeredPassive_1_description_simple		ได้รับ Gold เพิ่มเมื่อฆ่าฮีโร่
 Ability_Ganker_TriggeredPassive_2_description_simple		ได้รับ Gold เพิ่มเมื่อฆ่าฮีโร่
 Ability_Ganker_TriggeredPassive_3_description_simple		ได้รับ Gold เพิ่มเมื่อฆ่าฮีโร่

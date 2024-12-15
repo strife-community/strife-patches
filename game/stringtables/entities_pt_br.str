@@ -2630,9 +2630,9 @@ Ability_Ganker_Passive_3_description_simple					Aumenta a vel. de movimento fora
 Ability_Ganker_TriggeredPassive_1_name						Recompensa
 Ability_Ganker_TriggeredPassive_2_name						Recompensa
 Ability_Ganker_TriggeredPassive_3_name						Recompensa
-Ability_Ganker_TriggeredPassive_1_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. $cooldown$ segundos de recarga.
-Ability_Ganker_TriggeredPassive_2_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. ^c$cooldown$ segundos de recarga^*.
-Ability_Ganker_TriggeredPassive_3_description				Ao eliminar um herói inimigo, concede ^c$gold$ de bônus de ouro^*. $cooldown$ segundos de recarga.
+Ability_Ganker_TriggeredPassive_1_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. ^c$cooldown_sec$ segundos de recarga^*.
+Ability_Ganker_TriggeredPassive_2_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. ^c$cooldown_sec$ segundos de recarga^*.
+Ability_Ganker_TriggeredPassive_3_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. ^c$cooldown_sec$ segundos de recarga^*.
 Ability_Ganker_TriggeredPassive_1_description_simple		Concede prêmio bônus por eliminar heróis.
 Ability_Ganker_TriggeredPassive_2_description_simple		Concede prêmio bônus por eliminar heróis.
 Ability_Ganker_TriggeredPassive_3_description_simple		Concede prêmio bônus por eliminar heróis.
