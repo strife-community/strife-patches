@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_StoneSkin"
+	
+	icon="icon.tga"
+	
+	cost="1300"
+	components="Item_Booster Item_Staff"
+	
+	anim="item_1"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntype="StoneSkin"
+	manacost="0"
+	noninterrupting="true"
+	botitem="StoneSkinItem"
+
+	cooldowntime="45000"
+
+	basedamage="8"
+
+	filters="defense,utility,cc_resist,activatable,other_mobility"
+	alwaysshowtimer="true"
+
+	empoweredeffects="Item_StoneSkin_Empower_1,Item_StoneSkin_Empower_2"
+	
+	showinpractice="true"
+>
+	<!--Tooltip only-->
+	<constant name="damage" value="8" adjustment="item" />
+	<constant name="resistance" value="80" adjustment="none" qualityvalue="6" qualityadjustment="common" op="add"/>
+
+	<constant name="cooldown" value="45" adjustment="none" />
+	<constant name="cooldown_legendary" value="4" adjustment="none" qualityvalue="4" qualityadjustment="legendary" op="add"/>
+	<onaction>
+		<playeffect effect="effects/cast.effect" />
+	</onaction>
+	
+	<onimpact>
+		<applystate name="State_StoneSkin" duration="8000" />
+		<starttimer duration="8000" />
+	</onimpact>
+</crafteditem>
