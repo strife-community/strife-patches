@@ -1946,7 +1946,7 @@ Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$ de armadura.
 
 // Item_StoneSkin
 Item_StoneSkin_name												Pele de pedra
-Item_StoneSkin_description										^o+$damage$ de dano de ataque^* \nAtive para reduzir todos os danos recebidos em $damage_scale$% e o controle de aglomeração em $ccreduction$% por 8 segundos. 
+Item_StoneSkin_description										^o+$damage$ de dano de ataque^* \nAtive para reduzir todos os danos recebidos em $damage_scale$% e o controle de aglomeração em $ccreduction$% por $duration_sec$ segundos. 
 Item_StoneSkin_description_simple								Concede ^odano de ataque^*. Ative para reduzir o dano sofrido e o controle de aglomeração.
 Item_StoneSkin_bonusdescription									
 Item_StoneSkin_legendaryname									

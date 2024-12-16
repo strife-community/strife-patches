@@ -1743,7 +1743,7 @@ Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$ de Armadura\
 
 // Item_StoneSkin
 Item_StoneSkin_name                                                          Piel de piedra
-Item_StoneSkin_description                                                   ^o+$damage$ de daño de ataque^* \nActiva para reducir todo el daño entrante en un $damage_scale$%, y todo el control de multitudes en un $ccreduction$% durante 6 segundos.
+Item_StoneSkin_description                                                   ^o+$damage$ de daño de ataque^* \nActiva para reducir todo el daño entrante en un $damage_scale$%, y todo el control de multitudes en un $ccreduction$% durante $duration_sec$ segundos.
 Item_StoneSkin_description_simple                                            Otorga ^odaño de ataque^*. Activa para reducir el daño entrante y el control de multitudes.
 Item_StoneSkin_bonusdescription
 Item_StoneSkin_legendaryname

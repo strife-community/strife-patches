@@ -1978,7 +1978,7 @@ Item_CrusaderShield_Empower_3_description						เพิ่ม Magic Armor ใ�
 
 // Item_StoneSkin
 Item_StoneSkin_name												Stone Skin
-Item_StoneSkin_description										^o+$damage$ Attack Damage^* \nกดใช้เพื่อลดความเสียหายที่ได้รับ $damage_scale$% เพิ่มความต้านทาน CC $ccreduction$% เป็นเวลา 8 วินาที
+Item_StoneSkin_description										^o+$damage$ Attack Damage^* \nกดใช้เพื่อลดความเสียหายที่ได้รับ $damage_scale$% เพิ่มความต้านทาน CC $ccreduction$% เป็นเวลา $duration_sec$ วินาที
 Item_StoneSkin_description_simple								เพิ่ม^oพลังโจมตี^* ลบผลของ สตัน/สโลว์ และเพิ่มความต้านทานการ สตัน/สโลว์ ในเวลาสั้นๆ
 Item_StoneSkin_bonusdescription									
 Item_StoneSkin_legendaryname									

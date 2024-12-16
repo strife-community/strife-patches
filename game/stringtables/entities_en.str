@@ -2068,7 +2068,7 @@ Item_Shatterstone_legendaryname
 Item_Shatterstone_legendarydescription	
 
 Item_StoneSkin_name												Stone Skin
-Item_StoneSkin_description										^o+$damage$ Attack Damage^*\n\n^091Activate: gain $resistance$ Resistance for 8 seconds.^*
+Item_StoneSkin_description										^o+$damage$ Attack Damage^*\n\n^091Activate: gain $resistance$ Resistance and $ccreduction$% stun/slow reduction for $duration_sec$ seconds.^*
 Item_StoneSkin_description_simple								Grants ^oAttack Damage^*\n^091Activate: gain massive Resistance for a duration.^*
 Item_StoneSkin_bonusdescription									
 Item_StoneSkin_legendaryname									

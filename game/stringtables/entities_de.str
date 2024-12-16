@@ -2067,7 +2067,7 @@ Item_Shatterstone_legendaryname
 Item_Shatterstone_legendarydescription
 
 Item_StoneSkin_name													Steinhaut
-Item_StoneSkin_description											^o+$damage$ Angriffsschaden^*\n\n^091Aktivieren: Erhalte 8 Sekunden lang $resistance$ Widerstand.^*
+Item_StoneSkin_description											^o+$damage$ Angriffsschaden^*\n\n^091Aktivieren: Erhalte $duration_sec$ Sekunden lang $resistance$ Widerstand.^*
 Item_StoneSkin_description_simple									Gewährt ^oAngriffsschaden^*\n^091Aktivieren: Erhalten Sie für eine Dauer massiven Widerstand.^*
 Item_StoneSkin_bonusdescription
 Item_StoneSkin_legendaryname

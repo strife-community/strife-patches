@@ -2092,7 +2092,7 @@ Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$坚韧，周�
 
 // Item_StoneSkin
 Item_StoneSkin_name												石化之肤
-Item_StoneSkin_description										^o+$damage$物理伤害^*   \n\n使用：+$resistance$坚韧，持续6秒。                                         
+Item_StoneSkin_description										^o+$damage$物理伤害^*   \n\n使用：+$resistance$坚韧，持续$duration_sec$秒。                                         
 Item_StoneSkin_description_simple												+^o物理伤害^* \n使用: gain massive Resistance for a duration.^*
 Item_StoneSkin_bonusdescription												+$common_increase$%伤害减免效果
 Item_StoneSkin_legendaryname												再充能
