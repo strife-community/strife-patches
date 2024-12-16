@@ -1811,7 +1811,7 @@ Item_ASBoots_description_simple                                                 
 
 // HealthBoots
 Item_HealthBoots_name                                                             Bottes d'Inertie
-Item_HealthBoots_description                                                      65 Vitesse de Mouvement, +250 PV. \nActivez les Bottes afin de complètement désactiver le Contrôle de foule pour vous-même et pour permettre une réduction du CF de 50 % pendant 2 secondes. Elles peuvent être utilisées lorsqu'elles sont désactivées.
+Item_HealthBoots_description                                                      $movespeed$ Vitesse de Mouvement, +$max_health$ PV. \nActivez les Bottes afin de complètement désactiver le Contrôle de foule pour vous-même et pour permettre une réduction du CF de 50 % pendant 2 secondes. Elles peuvent être utilisées lorsqu'elles sont désactivées.
 Item_HealthBoots_description_simple                                               Ces Bottes accordent de la Vitesse de Mouvement et des PV. Activez-les pour retirer tous les Assommements et les Ralentissements qui vous affectent.
 
 // RuneBoots

@@ -1878,7 +1878,7 @@ Item_ASBoots_description_simple									Tăng Tốc Độ Chạy và Tốc �
 
 // HealthBoots
 Item_HealthBoots_name											Inertia Boots
-Item_HealthBoots_description									65 Movement Speed, +240 HP \nKích hoạt để giải trừ mọi trạng thái Stun/Slow và tăng 50% CC-Reduction trong 1 second. Khi bị Stun/Slow vẫn dùng được item.
+Item_HealthBoots_description									$movespeed$ Movement Speed, +$max_health$ HP \nKích hoạt để giải trừ mọi trạng thái Stun/Slow và tăng 50% CC-Reduction trong 1 second. Khi bị Stun/Slow vẫn dùng được item.
 Item_HealthBoots_description_simple								Tăng Tốc Độ Chạy và HP.  Kích hoạt item để chạy khi bị Stun/Slow.
 
 // RuneBoots

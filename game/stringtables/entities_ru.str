@@ -2281,7 +2281,7 @@ Item_ASBoots_description_simple									Увеличивают скорость 
 
 // HealthBoots
 Item_HealthBoots_name											Inertia Boots
-Item_HealthBoots_description									+65 скорости передвижения\n+250 здоровья\n\n^091Примените, чтобы снять все эффекты оглушения и замедления. В течение 2 секунд смягчает эффекты оглушения и замедления на 50%.^*
+Item_HealthBoots_description									+$movespeed$ скорости передвижения\n+$max_health$ здоровья\n\n^091Примените, чтобы снять все эффекты оглушения и замедления. В течение 2 секунд смягчает эффекты оглушения и замедления на 50%.^*
 Item_HealthBoots_description_simple								Увеличивают здоровье\n^091Примените, чтобы снять замедления и оглушения.^*
 
 // RuneBoots

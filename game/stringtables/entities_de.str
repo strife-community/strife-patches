@@ -2135,7 +2135,7 @@ Item_ASBoots_description_simple										Gewährt Bewegungs- und Angriffsgeschwi
 
 // HealthBoots
 Item_HealthBoots_name												Trägheitsstiefel
-Item_HealthBoots_description										65 Bewegungsgeschwindigkeit, +250 Gesundheit.\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
+Item_HealthBoots_description										$movespeed$ Bewegungsgeschwindigkeit, +$max_health$ Gesundheit.\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
 Item_HealthBoots_description_simple									Gewährt Bewegungsgeschwindigkeit und Gesundheit. Aktiviere um alle Betäubungen und Verlangsamungen von dir zu entfernem
 
 // RuneBoots

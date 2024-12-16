@@ -2136,7 +2136,7 @@ Item_ASBoots_description_simple									Grants Atack Speed\n^091Activate: sprint
 
 // HealthBoots
 Item_HealthBoots_name											Inertia Boots
-Item_HealthBoots_description									65 Movement Speed\n+250 Health \n\n^091Activate: remove all stuns/slows and provide 50% stun/slow reduction for 2 seconds.^*
+Item_HealthBoots_description									$movespeed$ Movement Speed\n+$max_health$ Health \n\n^091Activate: remove all stuns/slows and provide 50% stun/slow reduction for 2 seconds.^*
 Item_HealthBoots_description_simple								Grants Health\n^091Activate: remove all stuns and slows from yourself.^*
 
 // RuneBoots

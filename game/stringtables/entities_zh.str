@@ -2159,7 +2159,7 @@ Item_ASBoots_description_simple												增加移动速度和攻击力，主�
 
 // HealthBoots
 Item_HealthBoots_name												惯性之靴
-Item_HealthBoots_description											+65移动速度  \n+250生命值   \n使用：解除英雄受到的所有控制效果并在接下来的2秒内减少50%的控制效果。
+Item_HealthBoots_description											+$movespeed$移动速度  \n+$max_health$生命值   \n使用：解除英雄受到的所有控制效果并在接下来的2秒内减少50%的控制效果。
 Item_HealthBoots_description_simple												增加移动速度和生命值，主动使用解除受到的控制效果。
 
 // RuneBoots
