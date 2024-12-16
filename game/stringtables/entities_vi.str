@@ -1878,7 +1878,7 @@ Item_ASBoots_description_simple									Tăng Tốc Độ Chạy và Tốc �
 
 // HealthBoots
 Item_HealthBoots_name											Inertia Boots
-Item_HealthBoots_description									65 Movement Speed, +240 HP \nKích hoạt để giải trừ mọi trạng thái Stun/Slow và tăng 50% CC-Reduction trong 1 second. Khi bị Stun/Slow vẫn dùng được item.
+Item_HealthBoots_description									$movespeed$ Movement Speed, +$max_health$ HP \nKích hoạt để giải trừ mọi trạng thái Stun/Slow và tăng 50% CC-Reduction trong 1 second. Khi bị Stun/Slow vẫn dùng được item.
 Item_HealthBoots_description_simple								Tăng Tốc Độ Chạy và HP.  Kích hoạt item để chạy khi bị Stun/Slow.
 
 // RuneBoots
@@ -2581,7 +2581,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pincer phản công Hero 
 Ability_Pincer_Ult_1_name										Breakout
 Ability_Pincer_Ult_2_name										Breakout
 Ability_Pincer_Ult_3_name										Breakout
-Ability_Pincer_Ult_1_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  $cooldown$ giây Cooldown.
+Ability_Pincer_Ult_1_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_2_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_3_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_1_description_simple							Loại bõ mọi tác động xấu trên Hero

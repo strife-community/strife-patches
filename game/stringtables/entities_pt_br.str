@@ -2012,7 +2012,7 @@ Item_ASBoots_description_simple									Concede velocidade de movimento e de ata
 
 // HealthBoots
 Item_HealthBoots_name											Botas de inércia
-Item_HealthBoots_description									65 de velocidade de movimento, +250 de vida \nAtive para anular o CA e fornecer 50% de redução de CA por 2 segundos. Pode ser usada ao ser anulado.
+Item_HealthBoots_description									$movespeed$ de velocidade de movimento, +$max_health$ de vida \nAtive para anular o CA e fornecer 50% de redução de CA por 2 segundos. Pode ser usada ao ser anulado.
 Item_HealthBoots_description_simple								Concede velocidade de movimento e vida. Ative para remover todos os atordoamentos e reduções de movimento.
 
 // RuneBoots
@@ -2728,9 +2728,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pinça contra-ataca inimi
 Ability_Pincer_Ult_1_name										Fuga
 Ability_Pincer_Ult_2_name										Fuga
 Ability_Pincer_Ult_3_name										Fuga
-Ability_Pincer_Ult_1_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  $cooldown$ segundos de recarga.
-Ability_Pincer_Ult_2_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga.
-Ability_Pincer_Ult_3_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga.
+Ability_Pincer_Ult_1_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
+Ability_Pincer_Ult_2_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
+Ability_Pincer_Ult_3_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
 Ability_Pincer_Ult_1_description_simple							Remove efeitos de Atordoamento/Lentidão
 Ability_Pincer_Ult_2_description_simple							Remove efeitos de Atordoamento/Lentidão
 Ability_Pincer_Ult_3_description_simple							Remove efeitos de Atordoamento/Lentidão

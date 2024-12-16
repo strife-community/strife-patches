@@ -1809,7 +1809,7 @@ Item_ASBoots_description_simple                                              Oto
 
 // HealthBoots
 Item_HealthBoots_name                                                        Botas de Inercia
-Item_HealthBoots_description                                                 65 de velocidad de movimiento, +250 de salud \nActiva para purgar el CM propio y proporcionar 50% de reducción de CM durante 2 segundos. Se puede usar cuando está desactivado.
+Item_HealthBoots_description                                                 $movespeed$ de velocidad de movimiento, +$max_health$ de salud \nActiva para purgar el CM propio y proporcionar 50% de reducción de CM durante 2 segundos. Se puede usar cuando está desactivado.
 Item_HealthBoots_description_simple                                          Otorga velocidad de movimiento y salud. Activa para eliminar todas los efectos de aturdir y desacelerar de ti mismo.
 
 // RuneBoots
@@ -2488,7 +2488,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple                         Pin
 Ability_Pincer_Ult_1_name                                                    Fuga
 Ability_Pincer_Ult_2_name                                                    Fuga
 Ability_Pincer_Ult_3_name                                                    Fuga
-Ability_Pincer_Ult_1_description								Puedes activarlo para quitar todos los aturdimientos/ralentizaciones y otorgar una reducción de 50% al aturdimiento/ralentización durante 2 segundos.  Reactivación de $cooldown$ segundo/s.
+Ability_Pincer_Ult_1_description								Puedes activarlo para quitar todos los aturdimientos/ralentizaciones y otorgar una reducción de 50% al aturdimiento/ralentización durante 2 segundos.  ^cReactivación de $cooldown$ segundo/s.^*
 Ability_Pincer_Ult_2_description								Puedes activarlo para quitar todos los aturdimientos/ralentizaciones y otorgar una reducción de 50% al aturdimiento/ralentización durante 2 segundos.  ^cReactivación de $cooldown$ segundo/s.^*
 Ability_Pincer_Ult_3_description								Puedes activarlo para quitar todos los aturdimientos/ralentizaciones y otorgar una reducción de 50% al aturdimiento/ralentización durante 2 segundos.  ^cReactivación de $cooldown$ segundo/s.^*
 Ability_Pincer_Ult_1_description_simple							Elimina los efectos de Aturdir/Ralentizar
