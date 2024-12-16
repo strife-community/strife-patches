@@ -11,7 +11,8 @@
 	
 	<onframe>
 		<!--Shield Value-->
-		<setvar0 a="1500" />
+        <getconstant name="max_shield" adjustmentsource="none" />
+		<setvar0 a="result" />
 	
 		<setaccumulator value="var0" valueb="5" valueop="div" />		
 		<setvalue source="this_entity" name="source_max_shield" a="var0" />
