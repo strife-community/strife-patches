@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pincer_Ult_3"
+
+	icon="icon.tga"
+	
+	maxlevel="1"
+	baselevel="1"
+
+	actiontype="target_self"
+	manacost="0"
+	cooldowntime="100000"
+	cooldowntype="familiar3" 
+	casteffect="effects/cast.effect" 
+	casteffecttype="NoResponse"
+	nostun="true"
+	noperplex="true"
+	nosilence="true"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	responsetype="NoResponse"
+	noninterrupting="true"
+	ispetultimate="true"
+	
+>
+
+	<constant name="cooldown" value="100" adjustment="none" />
+
+	<onimpact>
+		<dispel type="CrowdControl" />
+		<dispel type="StatusDisable" />
+		<applystate target="source_entity" name="State_Pincer_Immune" duration="2000" />
+		<playeffect effect="effects/state_pet.effect" target="this_proxy_entity" source="this_proxy_entity"/>
+		<popup name="ccbreak" source="source_entity" target="source_entity" />
+	</onimpact>
+	
+</ability>
