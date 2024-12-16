@@ -1745,7 +1745,7 @@ Item_CrusaderShield_Empower_3_description						Armure -$sacrifice_enchant$\nAugm
 
 // Item_StoneSkin
 Item_StoneSkin_name                                                               Peau de Pierre
-Item_StoneSkin_description                                                        ^o+$damage$ Dégâts d'Attaque^* \nActivez ceci pour réduire tous les dégâts subis de $damage_scale$ % ainsi que tout le Contrôle de foule de $ccreduction$ % pendant 6 secondes.
+Item_StoneSkin_description                                                        ^o+$damage$ Dégâts d'Attaque^* \nActivez ceci pour réduire tous les dégâts subis de $damage_scale$ % ainsi que tout le Contrôle de foule de $ccreduction$ % pendant $duration_sec$ secondes.
 Item_StoneSkin_description_simple                                                 Inflige des ^oDégâts d'Attaque^*. Activez ceci pour réduire les dégâts subis ainsi que le contrôle de foule.
 Item_StoneSkin_bonusdescription
 Item_StoneSkin_legendaryname

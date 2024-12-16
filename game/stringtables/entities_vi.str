@@ -1812,7 +1812,7 @@ Item_CrusaderShield_Empower_3_description						Tăng thêm $sacrifice_enchant$ A
 
 // Item_StoneSkin
 Item_StoneSkin_name												Stone Skin
-Item_StoneSkin_description										^o+$damage$ Attack Damage^* \nKích hoạt sẽ kháng $damage_scale$% các sát thương, và $ccreduction$% Crowd Control trong 6 giây. 
+Item_StoneSkin_description										^o+$damage$ Attack Damage^* \nKích hoạt sẽ kháng $damage_scale$% các sát thương, và $ccreduction$% Crowd Control trong $duration_sec$ giây. 
 Item_StoneSkin_description_simple								Tăng ^oAttack Damage^*. Kháng sát thương và Crowd Control.
 Item_StoneSkin_bonusdescription									
 Item_StoneSkin_legendaryname									

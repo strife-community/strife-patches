@@ -6,6 +6,8 @@
 	passiveeffect="effects/state_hero.effect"
 	
 	resistance="80"
+    stunneddurationmultiplier="-0.3"
+	slowresistance="0.3"
 	
 	effecttype="StatusBuff"
 	allowtransfer="true"
