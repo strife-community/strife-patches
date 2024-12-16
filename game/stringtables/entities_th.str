@@ -2446,7 +2446,7 @@ Item_BarrierToken_Empower_3_description							ไม่เพิ่ม $magicarm
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										Oracle's Trinket
-Item_OraclesTrinket_description									กดใช้เพื่อลบสถานะ stuns/slow และป้องกันสถานะ stuns/slow ได้ 50% เป็นเวลา 2 วินาที \nเมื่อใช้เพื่อลบสถานะผิดปกติต่างๆ จะฟื้นฟูพลังชีวิตให้อีก ^o$heal$^* HP
+Item_OraclesTrinket_description									^o+$base_damage$ พลังโจมตี^*\nกดใช้เพื่อลบสถานะ stuns/slow และป้องกันสถานะ stuns/slow ได้ 50% เป็นเวลา $cc_state_duration_sec$ วินาที \nเมื่อใช้เพื่อลบสถานะผิดปกติต่างๆ จะฟื้นฟูพลังชีวิตให้อีก ^o$heal$^* HP
 Item_OraclesTrinket_description_simple							ลบสถานะผิดปกติและฮีล
 Item_OraclesTrinket_Empower_1_name								Concentration
 Item_OraclesTrinket_Empower_1_description						เมื่อลบสถานะผิดปกติได้สำเร็จจะฟื้นฟู $mana_enchant$ มานา

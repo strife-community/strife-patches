@@ -2561,7 +2561,7 @@ Item_BarrierToken_Empower_3_description							不再获得$magicarmor_enchant$�
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										圣谕徽章
-Item_OraclesTrinket_description									+$resistance$坚韧  \n\n^主动使用: 消除所有晕眩效果/减速且晕眩敌人，晕眩效果为50%/减速减成，持续2秒。 \n\n如果能消除群控效果，可提供^* ^o$heal$^*生命值回复。^*
+Item_OraclesTrinket_description									+^o$base_damage$物理伤害^*\n\n^主动使用: 消除所有晕眩效果/减速且晕眩敌人，晕眩效果为50%/减速减成，持续2秒。 \n\n如果能消除群控效果，可提供^* ^o$heal$^*生命值回复。^*
 Item_OraclesTrinket_description_simple							获取坚韧 \n主动使用：减除晕眩/减速效果，提供自我治疗 
 Item_OraclesTrinket_Empower_1_name								浓缩
 Item_OraclesTrinket_Empower_1_description						移除群控效果，回复$mana_enchant$法力值。

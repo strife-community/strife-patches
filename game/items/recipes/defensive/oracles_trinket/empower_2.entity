@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qualityitem
-	name="Item_OraclesTrinket_Empower_2"
-	
-	cost="1525"
+    name="Item_OraclesTrinket_Empower_2"
+    
+    cost="1525"
 
 
 >
-	<onimpact>
-	
-		<areaofeffect radius="500" targetselection="all" targetscheme="ally_heroes" effecttype="Magic">
-			<haseffecttype name="CrowdControl StatusDisable StatusDebuff">
-				<playeffect effect="effects/heal.effect" source="target_entity" target="target_entity" occlude="true" />
-			</haseffecttype>
-			<dispel type="CrowdControl" />
-			<dispel type="StatusDisable" />
-			<dispel type="StatusDebuff" />
-			<applystate name="State_OraclesTrinket" target="target_entity" duration="2000" />
-			<popup name="ccbreak" source="target_entity" target="target_entity" />
-		</areaofeffect>
-		
-		<haseffecttype name="CrowdControl StatusDisable StatusDebuff">
-			<getconstant name="heal" adjustmentsource="this_entity" />
-			<heal a="result" />
-			<playeffect effect="effects/heal.effect" source="source_entity" target="" occlude="true" />
-		</haseffecttype>
-		<dispel type="CrowdControl" />
-		<dispel type="StatusDisable" />
-		<dispel type="StatusDebuff" />
-		
-		<applystate name="State_OraclesTrinket" target="source_entity" duration="2000" />
-		<popup name="ccbreak" source="source_entity" target="source_entity" />
-		
-	</onimpact>
+    <onimpact>
+        <!-- Checking if any CC or debuff is applied -->
+        <haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+            <!-- Heal hero -->
+            <getconstant name="heal" adjustmentsource="this_entity" />
+            <heal a="result" />
+            <playeffect effect="effects/heal.effect" source="source_entity" target="" occlude="true" />
+        </haseffecttype>
+
+        <!-- Dispell negative effects -->
+        <dispel type="CrowdControl" />
+        <dispel type="StatusDisable" />
+        <dispel type="StatusDebuff" />
+        <popup name="ccbreak" source="source_entity" target="source_entity" />
+        
+        <!-- Apply CC reduction state -->
+        <getconstant name="cc_state_duration_sec" />
+        <setvar0 a="result" b="1000" op="mult" />
+        <applystate name="State_OraclesTrinket" target="source_entity" duration="var0" />
+
+        <!-- For each ally in area remove CC or debuff -->
+        <areaofeffect radius="500" targetselection="all" targetscheme="ally_heroes" effecttype="Magic">
+            <!-- Checking if any CC or debuff is applied -->
+            <haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+                <!-- Play visual effect -->
+                <playeffect effect="effects/heal.effect" source="target_entity" target="target_entity" occlude="true" />
+            </haseffecttype>
+
+            <!-- Dispell negative effects -->
+            <dispel type="CrowdControl" />
+            <dispel type="StatusDisable" />
+            <dispel type="StatusDebuff" />
+            <popup name="ccbreak" source="target_entity" target="target_entity" />
+
+            <!-- Apply CC reduction state -->
+            <getconstant name="cc_state_duration_sec" />
+            <setvar0 a="result" b="1000" op="mult" />
+            <applystate name="State_OraclesTrinket" target="target_entity" duration="var0" />
+        </areaofeffect>
+        
+        
+    </onimpact>
 
 </qualityitem>

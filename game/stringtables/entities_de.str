@@ -2527,7 +2527,7 @@ Item_BarrierToken_Empower_3_description								Gewährt keine $magicarmor_enchan
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name											Schmuckstück des Orakels
-Item_OraclesTrinket_description										+$resistance$ Widerstand\n\n^091Aktivieren: Entfernt alle Betäubungen/Verlangsamungen/Debuffs und sorgt für 2 Sekunden lang für 50% Betäubungs-/Verlangsamungsreduzierung.\n\nWenn die Massenkontrolle erfolgreich entfernt wird, heilen Sie um^* ^o$heal$^* ^091Gesundheit.^*
+Item_OraclesTrinket_description										^o+$base_damage$ Angriffsschaden^*\n\n^091Aktivieren: Entfernt alle Betäubungen/Verlangsamungen/Debuffs und sorgt für $cc_state_duration_sec$ Sekunden lang für 50% Betäubungs-/Verlangsamungsreduzierung.\n\nWenn die Massenkontrolle erfolgreich entfernt wird, heilen Sie um^* ^o$heal$^* ^091Gesundheit.^*
 Item_OraclesTrinket_description_simple								Gewährt Widerstand\n^091Aktivieren: Betäubung/Verlangsamungsentfernung und Selbstheilung^*
 Item_OraclesTrinket_Empower_1_name									Konzentration
 Item_OraclesTrinket_Empower_1_description							Das erfolgreiche Entfernen der Massenkontrolle stellt auch $mana_enchant$ Mana wieder her.

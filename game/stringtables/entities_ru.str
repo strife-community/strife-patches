@@ -2683,12 +2683,12 @@ Item_BarrierToken_Empower_3_description							Больше не увеличив
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										Oracle's Trinket
-Item_OraclesTrinket_description									+$resistance$ сопротивления\n \n^091При использовании снимает все негативные эффекты и смягчает замедления и оглушения на 50% в течение 2 секунд.\nЕсли эффекты контроля успешно сняты, восстанавливает ^o$heal$ здоровья^*^091.^*
+Item_OraclesTrinket_description									^o+$base_damage$ урона базовых атак^*\n \n^091При использовании снимает все негативные эффекты и смягчает замедления и оглушения на 50% в течение $cc_state_duration_sec$ секунд.\nЕсли эффекты контроля успешно сняты, восстанавливает ^o$heal$ здоровья^*^091.^*
 Item_OraclesTrinket_description_simple							Снимает эффекты контроля и восстанавливает здоровье.
 Item_OraclesTrinket_Empower_1_name								Concentration
 Item_OraclesTrinket_Empower_1_description						Успешное снятие замедления или оглушения также восстанавливает $mana_enchant$ маны.
 Item_OraclesTrinket_Empower_2_name								Protection
-Item_OraclesTrinket_Empower_2_description						Снимает негативные эффекты с союзников в радиусе 300.
+Item_OraclesTrinket_Empower_2_description						Снимает негативные эффекты с союзников в радиусе 500.
 
 // Item_TwinFang
 Item_TwinFang_name												Arcane Emblem
