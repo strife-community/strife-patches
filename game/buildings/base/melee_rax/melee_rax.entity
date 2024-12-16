@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building
+	name="Building_HellbourneMeleeBarracks"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/world/sprops/generator/model_b.mdf"
+	mapicon="/shared/icons/minimap_melee.tga"
+	mapiconsize="0.03"
+	skin=""
+
+	ignoreteamattackcommands="true"
+	ignoreteammovecommands="true"
+	
+	effectsignorefog="true"
+	passiveeffect="/world/sprops/generator/effects/idle.effect"
+	lowhealtheffect="effects/damage.effect"
+	
+	aggroteamheropassiveeffect="/shared/tower_range_indicators/effects/generator/aoe.effect"
+	aggromyheropassiveeffect="/shared/tower_range_indicators/effects/generator/aoe_aggroMe.effect"
+	herothreatradiuspassiveeffect="/shared/tower_range_indicators/effects/generator/aoe.effect"
+	herothreatradius="1300"
+
+	cutouticon="icon_generator.tga"
+	
+	destroyedsound=""
+	lowhealthsound=""
+	selectsound=""
+	
+	canattack="true"
+	aggrosound="towertestaggro"	
+	
+	attackduration="1200"
+	attackactiontime="100" 
+	attackcooldown="1200"
+	attackdamagemin="400"
+	attackdamagemax="400"
+	attacknumanims="1"
+	attackoffset="0 0 450"
+	attackprojectile="Projectile_Generator"
+	attackrange="800"
+	attackstarteffect="/world/sprops/generator/effects/attackstart.effect"
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Tower"
+	noheroarmorreduction="false"
+	attacktargetscheme="attack_minus_neutrals_plus_mines"
+	attackdamagetype="AttackDamage"
+	
+	preglobalscale="1.2"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="256"
+	radiusheight="256"
+	boundsradius="86"
+	selectionradius="170"
+	targetoffset="0 0 0"
+	revealrange="850"
+	revealtype="tower"
+
+	hazardradius="800"
+
+	maxhealth="9000"
+	healthregen="0"
+
+	resistance="300"
+	immunity="CrowdControlImmunity"
+	stunnedimmunity="true"
+
+	sightrangeday="1600"
+	sightrangenight="1600"
+	
+	goldbountymin="6250"
+	goldbountymax="6250"
+	goldbountyteam="0"
+	goldbountyconsolation="0"
+	goldbountypercentsplit="0.2,0.4,0.6,0.8,1.0"
+
+	inventory0="Ability_Tower_Shield"
+	
+	corpsetime="100"
+	corpsefadetime="3900"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	ismobile="false"
+	
+	unittype="MeleeRax Tower"
+	israx="true"
+	isphysical="true"
+	
+	deathtime="100"
+>
+	<onspawn>
+		<applystate name="State_TowerDamage" target="source_entity" proxy="stack_entity" duration="-1" />
+	</onspawn>
+
+	<aura state="State_TowerRegen" radius="800" targetscheme="ally_heroes" ignoreinvulnerable="true" />	
+	
+	<onframe>
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype=""
+			ignoreinvulnerable="true"
+			targetselection="all"
+			radius="930"
+			maximpactspertarget="1"
+		>
+			<applystate name="State_Enemy_Range" duration="3000" target="source_entity" />
+		</areaofeffect>
+	</onframe>
+	
+	<onattackeddamageevent>
+
+		<targettype type="hero">
+			<damagesupertype supertype="attack">
+				<playeffect effect="effects/attacked.effect" target="source_entity" />
+			</damagesupertype>
+		</targettype>
+		
+		<compare a="source_health_percent" b="0.68" op="le" >
+			<areaofeffect
+				targetscheme="enemy_heroes"
+				effecttype=""
+				ignoreinvulnerable="true"
+				targetselection="all"
+				radius="1500"
+				maximpactspertarget="1"
+			>
+			</areaofeffect>
+			<compare a="result" b="1" op="ge" >
+				<areaofeffect
+					targetscheme="ally_heroes"
+					effecttype=""
+					ignoreinvulnerable="true"
+					targetselection="all"
+					radius="1500"
+					maximpactspertarget="1"
+				>
+					<playconductorevent name="BaseDefend_2" entity="target_entity" />
+					<applystate name="State_Base_Defend" duration="7000" />
+				</areaofeffect>
+				<areaofeffect
+					targetscheme="enemy_heroes"
+					effecttype=""
+					ignoreinvulnerable="true"
+					targetselection="all"
+					radius="1500"
+					maximpactspertarget="1"
+				>
+					<playconductorevent name="BaseAttack_2" entity="target_entity" />
+					<applystate name="State_Base_Attack" duration="7000" />
+				</areaofeffect>
+			</compare>
+
+		</compare>
+		<else>
+			<areaofeffect
+				targetscheme="enemy_heroes"
+				effecttype=""
+				ignoreinvulnerable="true"
+				targetselection="all"
+				radius="1500"
+				maximpactspertarget="1"
+			>
+			</areaofeffect>
+			<compare a="result" b="1" op="ge" >
+				<areaofeffect
+					targetscheme="ally_heroes"
+					effecttype=""
+					ignoreinvulnerable="true"
+					targetselection="all"
+					radius="1500"
+					maximpactspertarget="1"
+				>
+					<playconductorevent name="BaseDefend_1" entity="target_entity" />
+					<applystate name="State_Base_Defend" duration="7000" />
+				</areaofeffect>
+				<areaofeffect
+					targetscheme="enemy_heroes"
+					effecttype=""
+					ignoreinvulnerable="true"
+					targetselection="all"
+					radius="1500"
+					maximpactspertarget="1"
+				>
+					<playconductorevent name="BaseAttack_1" entity="target_entity" />
+					<applystate name="State_Base_Attack" duration="7000" />
+				</areaofeffect>
+			</compare>
+		</else>
+	</onattackeddamageevent>
+
+	
+	<ondeath>
+		<pushentitysearch global="true" targetscheme="ally_main_base_structure" ignoreinvulnerable="true" />
+
+		<areaofeffect
+			radius="1000"
+			targetselection="all"
+			targetscheme="any_marker"
+			effecttype=""
+			center="source_entity"
+			ignoreinvulnerable="true"
+		>
+			<setproxy entity="this_entity" target="target_entity" />
+		</areaofeffect>
+
+
+		<!-- bot rax -->
+		<entitytype type="Marker_BottomLegion" source="this_proxy_entity" target="this_proxy_entity">
+			<pushentitybyname name="Legion_Projectile_Bot" />
+			<spawnprojectile name="Projectile_MainBaseStructure_ShieldDestruction_Sides" source="source_entity" param="1" target="stack_entity" />
+		</entitytype>
+		<entitytype type="Marker_BottomHellbourne" source="this_proxy_entity" target="this_proxy_entity">
+			<pushentitybyname name="Hellbourne_Projectile_Bot" />
+			<spawnprojectile name="Projectile_MainBaseStructure_ShieldDestruction_Sides" source="source_entity" param="4" target="stack_entity" />
+		</entitytype>
+
+		<!-- mid rax -->
+		<entitytype type="Marker_MiddleLegion" source="this_proxy_entity" target="this_proxy_entity">
+			<setpos0 position="stack_entity" offsetspace="stack_entity" offset="0 0 0" />
+			<spawnprojectile name="Projectile_MainBaseStructure_ShieldDestruction" source="source_entity" param="2" target="pos0" proxy="stack_entity" />
+		</entitytype>
+		<entitytype type="Marker_MiddleHellbourne" source="this_proxy_entity" target="this_proxy_entity">
+			<setpos0 position="stack_entity" offsetspace="stack_entity" offset="0 0 0" />
+			<spawnprojectile name="Projectile_MainBaseStructure_ShieldDestruction" source="source_entity" param="2" target="pos0" proxy="stack_entity" />
+		</entitytype>
+
+
+		<!-- top rax -->
+		<entitytype type="Marker_TopLegion" source="this_proxy_entity" target="this_proxy_entity">
+			<pushentitybyname name="Legion_Projectile_Top" />
+			<spawnprojectile name="Projectile_MainBaseStructure_ShieldDestruction_Sides" source="source_entity" param="4" target="stack_entity" />
+		</entitytype>
+		<entitytype type="Marker_TopHellbourne" source="this_proxy_entity" target="this_proxy_entity">
+			<pushentitybyname name="Hellbourne_Projectile_Top" />
+			<spawnprojectile name="Projectile_MainBaseStructure_ShieldDestruction_Sides" source="source_entity" param="1" target="stack_entity" />
+		</entitytype>		
+	</ondeath>
+
+	<onattack>
+		<targettype type="hero">
+			<applystate name="State_TowerAttackSpeed" duration="2000" target="source_entity" />
+		</targettype>	
+	</onattack>
+	
+	<modifier key="tutorial3" modpriority="100"
+		maxhealth="3500"
+	>
+		<onattack/>
+	</modifier>
+	
+	<modifier key="Tut3_Objective" modpriority="100"
+		unittype="Tower Tut3_Objective"
+	>
+
+	</modifier>
+
+</building>

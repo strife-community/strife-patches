@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Tower_Shield"
+
+	icon="icon.tga"
+	passiveeffect="/shared/effects/generator_shield/shield_on.effect"
+	effecttype=""
+	allowtransfer="true"
+	displaylevel="true"
+>
+	
+	<onframe>
+		<!--Shield Value-->
+		<setvar0 a="1500" />
+	
+		<setaccumulator value="var0" valueb="5" valueop="div" />		
+		<setvalue source="this_entity" name="source_max_shield" a="var0" />
+	
+		<compare source="this_owner_entity" a="source_shield" b="source_max_shield" op="lt">
+			<setvar0 a="frametime" b="accumulator" op="mult" />
+			<setvalue source="this_owner_entity" name="source_shield" a="source_shield" b="var0" op="add" />
+			<expirestate name="State_Tower_Shield_NoRegen_Empty" target="source_entity" />
+		</compare>
+		
+	</onframe>
+	
+	<onattackeddamageevent>
+		<startcooldown />
+		<compare a="damage_attempted" b="source_shield" op="ge">
+			<playeffect effect="effects/state_expire.effect" source="source_entity" />
+			<applystate name="State_Tower_Shield_NoRegen_Empty" target="source_entity" duration="-1" />
+		</compare>
+
+		<applystate name="State_Tower_Shield_NoRegen" duration="18000" target="source_entity" />
+	</onattackeddamageevent>
+	
+	<onattackedpostimpact>
+		<targettype type="enemy">
+			<playeffect effect="/shared/effects/generator_shield/onattacked.effect" source="source_entity"/>
+		</targettype>
+	</onattackedpostimpact>
+	
+	<modifier key="TowerShield_noregen" modpriority="102"
+	>
+		<onframe>
+
+		</onframe>
+	</modifier>
+	
+	<modifier key="TowerShieldDisabled" modpriority="101"
+		passiveeffect="" 
+	>
+		<onattackedpostimpact />
+		
+	</modifier>
+	
+	
+</statenetaccum>
