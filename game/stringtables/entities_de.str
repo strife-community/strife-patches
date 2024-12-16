@@ -2868,7 +2868,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple				Pincer rächt sich an Ge
 Ability_Pincer_Ult_1_name											Durchbruch
 Ability_Pincer_Ult_2_name											Durchbruch
 Ability_Pincer_Ult_3_name											Durchbruch
-Ability_Pincer_Ult_1_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.$cooldown$ Sekunde Abklingzeit.
+Ability_Pincer_Ult_1_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_2_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_3_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_1_description_simple								Beseitigt Betäubungs-/Lähmeffekte

@@ -2581,7 +2581,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pincer phản công Hero 
 Ability_Pincer_Ult_1_name										Breakout
 Ability_Pincer_Ult_2_name										Breakout
 Ability_Pincer_Ult_3_name										Breakout
-Ability_Pincer_Ult_1_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  $cooldown$ giây Cooldown.
+Ability_Pincer_Ult_1_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_2_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_3_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_1_description_simple							Loại bõ mọi tác động xấu trên Hero

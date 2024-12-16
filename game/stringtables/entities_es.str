@@ -2488,7 +2488,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple                         Pin
 Ability_Pincer_Ult_1_name                                                    Fuga
 Ability_Pincer_Ult_2_name                                                    Fuga
 Ability_Pincer_Ult_3_name                                                    Fuga
-Ability_Pincer_Ult_1_description								Puedes activarlo para quitar todos los aturdimientos/ralentizaciones y otorgar una reducción de 50% al aturdimiento/ralentización durante 2 segundos.  Reactivación de $cooldown$ segundo/s.
+Ability_Pincer_Ult_1_description								Puedes activarlo para quitar todos los aturdimientos/ralentizaciones y otorgar una reducción de 50% al aturdimiento/ralentización durante 2 segundos.  ^cReactivación de $cooldown$ segundo/s.^*
 Ability_Pincer_Ult_2_description								Puedes activarlo para quitar todos los aturdimientos/ralentizaciones y otorgar una reducción de 50% al aturdimiento/ralentización durante 2 segundos.  ^cReactivación de $cooldown$ segundo/s.^*
 Ability_Pincer_Ult_3_description								Puedes activarlo para quitar todos los aturdimientos/ralentizaciones y otorgar una reducción de 50% al aturdimiento/ralentización durante 2 segundos.  ^cReactivación de $cooldown$ segundo/s.^*
 Ability_Pincer_Ult_1_description_simple							Elimina los efectos de Aturdir/Ralentizar

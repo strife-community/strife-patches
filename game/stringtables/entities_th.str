@@ -2776,7 +2776,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pincer จะทำกา
 Ability_Pincer_Ult_1_name										Breakout
 Ability_Pincer_Ult_2_name										Breakout
 Ability_Pincer_Ult_3_name										Breakout
-Ability_Pincer_Ult_1_description								กดใช้เพื่อลบสถานะ stuns/slows และลดระยะเวลาในการติดสถานะผิดปกติ 50% เป็นเวลา 2 วินาที คูลดาวน์ $cooldown$ วินาที
+Ability_Pincer_Ult_1_description								กดใช้เพื่อลบสถานะ stuns/slows และลดระยะเวลาในการติดสถานะผิดปกติ 50% เป็นเวลา 2 วินาที ^cคูลดาวน์ $cooldown$ วินาที^*
 Ability_Pincer_Ult_2_description								กดใช้เพื่อลบสถานะ stuns/slows และลดระยะเวลาในการติดสถานะผิดปกติ 50% เป็นเวลา 2 วินาที ^cคูลดาวน์ $cooldown$ วินาที^*
 Ability_Pincer_Ult_3_description								กดใช้เพื่อลบสถานะ stuns/slows และลดระยะเวลาในการติดสถานะผิดปกติ 50% เป็นเวลา 2 วินาที ^cคูลดาวน์ $cooldown$ วินาที^*
 Ability_Pincer_Ult_1_description_simple							ลบสถานะ stuns/slows

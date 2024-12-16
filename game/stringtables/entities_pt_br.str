@@ -2728,9 +2728,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pinça contra-ataca inimi
 Ability_Pincer_Ult_1_name										Fuga
 Ability_Pincer_Ult_2_name										Fuga
 Ability_Pincer_Ult_3_name										Fuga
-Ability_Pincer_Ult_1_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  $cooldown$ segundos de recarga.
-Ability_Pincer_Ult_2_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga.
-Ability_Pincer_Ult_3_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga.
+Ability_Pincer_Ult_1_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
+Ability_Pincer_Ult_2_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
+Ability_Pincer_Ult_3_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
 Ability_Pincer_Ult_1_description_simple							Remove efeitos de Atordoamento/Lentidão
 Ability_Pincer_Ult_2_description_simple							Remove efeitos de Atordoamento/Lentidão
 Ability_Pincer_Ult_3_description_simple							Remove efeitos de Atordoamento/Lentidão

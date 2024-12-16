@@ -2891,9 +2891,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple												平瑟会反攻�
 Ability_Pincer_Ult_1_name												脱逃
 Ability_Pincer_Ult_2_name												脱逃
 Ability_Pincer_Ult_3_name												脱逃
-Ability_Pincer_Ult_1_description												  移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间$cooldown$秒。
+Ability_Pincer_Ult_1_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
 Ability_Pincer_Ult_2_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
-Ability_Pincer_Ult_3_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间$cooldown$秒。
+Ability_Pincer_Ult_3_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
 Ability_Pincer_Ult_1_description_simple												移除晕眩/减速效果
 Ability_Pincer_Ult_2_description_simple												移除晕眩/减速效果
 Ability_Pincer_Ult_3_description_simple												移除晕眩/减速效果

@@ -2490,7 +2490,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple                            
 Ability_Pincer_Ult_1_name                                                         Fuite
 Ability_Pincer_Ult_2_name                                                         Fuite
 Ability_Pincer_Ult_3_name                                                         Fuite
-Ability_Pincer_Ult_1_description								À activer pour dissiper tous les effets d'assommement et de ralentissement et réduire de 50 % les assommements et les ralentissements pendant 2 secondes.  $cooldown$ Deuxième rechargement.
+Ability_Pincer_Ult_1_description								À activer pour dissiper tous les effets d'assommement et de ralentissement et réduire de 50 % les assommements et les ralentissements pendant 2 secondes.  ^c$cooldown$ Deuxième rechargement^*.
 Ability_Pincer_Ult_2_description								À activer pour dissiper tous les effets d'assommement et de ralentissement et réduire de 50 % les assommements et les ralentissements pendant 2 secondes.  ^c$cooldown$ Deuxième rechargement^*.
 Ability_Pincer_Ult_3_description								À activer pour dissiper tous les effets d'assommement et de ralentissement et réduire de 50 % les assommements et les ralentissements pendant 2 secondes.  ^c$cooldown$ Deuxième rechargement^*.
 Ability_Pincer_Ult_1_description_simple							Dissipe les effets d'assommement et de ralentissement.

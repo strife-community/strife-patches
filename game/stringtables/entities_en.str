@@ -2869,9 +2869,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pincer retaliates against
 Ability_Pincer_Ult_1_name										Breakout
 Ability_Pincer_Ult_2_name										Breakout
 Ability_Pincer_Ult_3_name										Breakout
-Ability_Pincer_Ult_1_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
-Ability_Pincer_Ult_2_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
-Ability_Pincer_Ult_3_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
+Ability_Pincer_Ult_1_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
+Ability_Pincer_Ult_2_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
+Ability_Pincer_Ult_3_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
 Ability_Pincer_Ult_1_description_simple							Activate to remove all Stun/Slow effects.
 Ability_Pincer_Ult_2_description_simple							Activate to remove all Stun/Slow effects.
 Ability_Pincer_Ult_3_description_simple							Activate to remove all Stun/Slow effects.
