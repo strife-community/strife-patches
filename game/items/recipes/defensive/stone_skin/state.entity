@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_StoneSkin"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_hero.effect"
+	
+	resistance="80"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	ishidden="true"
+>
+
+</state>
