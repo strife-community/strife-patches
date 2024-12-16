@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_HealthBoots"
+	
+	itemtype="Boots"
+	ignoredynamicactivation="true"
+	
+	icon="icon.tga"
+	
+	cost="1080"
+	
+	actiontype="target_self"
+	queue="front"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="50000"
+	noninterrupting="true"
+	manacost="0"
+	components="Item_Marchers"
+	nostun="true"
+	noperplex="true"
+	nosilence="true"
+	casteffect="cast.effect"
+	disabled="true"
+	maxhealth="300"
+	botitem="InertiaBootsItem"
+
+	filters="boots,cc_resist,activatable, other_mobility"
+	
+	showinpractice="true"
+>
+	<onimpact>
+		<dispel type="CrowdControl" />
+		<dispel type="StatusDisable" />
+		<applystate name="State_HealthBoots" target="source_entity" duration="2000" />
+		<popup name="ccbreak" source="source_entity" target="source_entity" />
+	</onimpact>
+	
+
+
+	<checkcost>
+		<haseffecttype name="CrowdControl StatusDisable" />
+		<else>
+			<!--<invalidate  />-->
+		</else>
+	</checkcost>
+	
+	<modifier key="boots" modpriority="51" exclusive="true"
+		movespeed="65"
+		disabled="false"
+	/>
+	
+</item>
