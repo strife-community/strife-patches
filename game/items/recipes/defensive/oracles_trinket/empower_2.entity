@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_OraclesTrinket_Empower_2"
+	
+	cost="1525"
+
+
+>
+	<onimpact>
+	
+		<areaofeffect radius="500" targetselection="all" targetscheme="ally_heroes" effecttype="Magic">
+			<haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+				<playeffect effect="effects/heal.effect" source="target_entity" target="target_entity" occlude="true" />
+			</haseffecttype>
+			<dispel type="CrowdControl" />
+			<dispel type="StatusDisable" />
+			<dispel type="StatusDebuff" />
+			<applystate name="State_OraclesTrinket" target="target_entity" duration="2000" />
+			<popup name="ccbreak" source="target_entity" target="target_entity" />
+		</areaofeffect>
+		
+		<haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+			<getconstant name="heal" adjustmentsource="this_entity" />
+			<heal a="result" />
+			<playeffect effect="effects/heal.effect" source="source_entity" target="" occlude="true" />
+		</haseffecttype>
+		<dispel type="CrowdControl" />
+		<dispel type="StatusDisable" />
+		<dispel type="StatusDebuff" />
+		
+		<applystate name="State_OraclesTrinket" target="source_entity" duration="2000" />
+		<popup name="ccbreak" source="source_entity" target="source_entity" />
+		
+	</onimpact>
+
+</qualityitem>

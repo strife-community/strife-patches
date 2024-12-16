@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_OraclesTrinket"
+	
+	icon="icon.tga"
+	cost="1125"
+	components="Item_Staff Item_Manaregen2"
+	anim="item_self"
+	
+	actiontype="target_self"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	queue="front"
+	inheritmovement="true"
+	noninterrupting="true" 
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="60000"
+	cooldowntype="oraclestrinket"
+	casteffect="effects/cast.effect"
+	nostun="true"
+	noperplex="true"
+	nosilence="true"
+	resistance="5"
+	botitem="OraclesTrinketItem"
+	filters="utility,activatable,defense,resistance"
+	empoweredeffects="Item_OraclesTrinket_Empower_1,Item_OraclesTrinket_Empower_2"
+	showinpractice="true"
+>
+	<constant name="heal" value="180" adjustment="item" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="5" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add" />
+	
+	<onimpact>
+		<haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+			<getconstant name="heal" adjustmentsource="this_entity" />
+			<heal a="result" />
+			<playeffect effect="effects/heal.effect" source="source_entity" target="" occlude="true" />
+		</haseffecttype>
+		<dispel type="CrowdControl" />
+		<dispel type="StatusDisable" />
+		<dispel type="StatusDebuff" />
+		<applystate name="State_OraclesTrinket" target="source_entity" duration="2000" />
+		<popup name="ccbreak" source="source_entity" target="source_entity" />
+	</onimpact>
+	
+</crafteditem>

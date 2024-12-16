@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_OraclesTrinket_Empower_1"
+	
+	cost="1250"
+
+>
+	<!-- Tooltip only -->
+	<constant name="mana_enchant" value="100" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
+
+	<onimpact>
+		<haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+			<getconstant name="heal" adjustmentsource="this_entity" />
+			<heal a="result" />
+			<playeffect effect="effects/heal.effect" source="source_entity" target="" occlude="true" />
+			<getconstant name="mana_enchant" />
+			<givemana amount="1" b="result" op="mult" />
+		</haseffecttype>
+		<dispel type="CrowdControl" />
+		<dispel type="StatusDisable" />
+		<dispel type="StatusDebuff" />
+		<applystate name="State_OraclesTrinket" target="source_entity" duration="2000" />
+		<popup name="ccbreak" source="source_entity" target="source_entity" />
+	</onimpact>
+
+</qualityitem>
