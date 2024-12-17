@@ -145,9 +145,14 @@ local function WheelRegister(object)
 	local winningResourceRotation
 	
 	local function SpinWheel()
-		GetWidget('wheel_moxie_model'):SetAnim('ability_3')
+		GetWidget('wheel_moxie_model'):SetAnim('ability_4')
+        GetWidget('wheel_moxie_model'):SetEffect('/ui/main/wheel/effects/bandito_spin.effect')
 		GetWidget('wheel_moxie_lightning_effect'):SetEffect('/ui/main/wheel/effects/lightning.effect')
 		PlaySound('/heroes/bandito/ability_04/sounds/sfx_state.wav')
+
+        --GetWidget('wheel_moxie_model'):SetAnim('ability_4')
+        --GetWidget('wheel_moxie_model'):SetEffect('heroes/bandito/ability_04/effects/state_self.effect')
+        
 		
 		--WARNING
 		--Obscure-ish math ahead.
@@ -329,17 +334,20 @@ local function WheelRegister(object)
 	end
 		
 	local function showSpinnableWheel()
-		GetWidget('wheel_moxie_model'):SetModel(GetEntityModel('Hero_Bandito'))
-		GetWidget('wheel_moxie_model'):SetEffect(GetPreviewPassiveEffect('Hero_Bandito'))
+        GetWidget('wheel_moxie_model'):SetModel(GetPreviewModel('Hero_Bandito'))
+		--GetWidget('wheel_moxie_model'):SetModel(GetEntityModel('Hero_Bandito'))
+        --GetWidget('wheel_moxie_model'):SetEffect(GetPreviewPassiveEffect('Hero_Bandito'))
+		GetWidget('wheel_moxie_model'):SetEffect("/heroes/bandito/effects/body.effect")
 		GetWidget('wheelOfFortune'):FadeIn(styles_mainSwapAnimationDuration)
 		GetWidget('wheel_background'):FadeIn(styles_mainSwapAnimationDuration)
+        GetWidget('wheel_moxie_model'):SetModelScale(GetPreviewScale('Hero_Bandito') * 0.4)
 		GetWidget('wheel_moxie_model'):SetY("-1000s")
 		GetWidget('wheel_moxie_model'):SetAnim('ability_4')
 		
 		libThread.threadFunc(function()
 			wait(500)
-			GetWidget('wheel_moxie_model'):SlideY("-70", 500)
-			--PlaySound('/heroes/bandito/sounds/voice/vo_emote_1.wav')
+			GetWidget('wheel_moxie_model'):SlideY("-100", 500)
+			PlaySound('/heroes/bandito/sounds/voice/vo_emote_1.wav')
 		end)
 		
 		mainUI.Clans.Toggle(nil, true)

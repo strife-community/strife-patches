@@ -58,8 +58,9 @@
 		<!-- Moxie -->		
 		<modelpanel
 			name="wheel_moxie_model"
+            x="-250s"
 			y="-75s"
-			height="450s" width="500s"
+			height="700s" width="1000s"
 			align="left" valign="bottom"
 			visible="1"
 			noclick="true"
@@ -86,7 +87,7 @@
 		<modelpanel
 			name="wheel_moxie_lightning_effect"
 			y="-90s"
-			height="450s" width="500s"
+			height="700s" width="1000s"
 			align="left" valign="bottom"
 			visible="1"
 			noclick="true"
