@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<include file="wheel_templates.package"/>	
+	
+	<panel noclick="1" name="wheel_sleeper" />
+	
+	<panel name="wheelOfFortune" visible="0" noclick="1">
+		<image texture="/ui/main/wheel/textures/background_glow.tga" x="280s" y="30s" height="700s" width="700s" color="1 1 1 1" align="center" valign="center" noclick="1" />
+		
+		<!-- Prize Wheel -->
+		<panel name="wheel_spinnable" noclick="1" x="280s" y="30s" height="668s" width="668s" align="center" valign="center" >
+			<image name="wheelOfFortuneImage" texture="" color="1 1 1 1" align="center" valign="center" noclick="1"
+				resourcecontext="wheelOfFortuneImage"
+				onshowlua="AddResourceContext(self, '/ui/main/wheel/textures/wheel_wheel.tga')"
+				onhidelua="DeleteResourceContext(self)"
+			/>
+			<image name="wheelOfFortuneGlow" texture="" color="1 1 1 1" align="center" valign="center" noclick="1"
+				resourcecontext="wheelOfFortuneGlow"
+				onshowlua="AddResourceContext(self, '/ui/main/wheel/textures/wheel_glow.tga')"
+				onhidelua="DeleteResourceContext(self)"
+			/>
+			<image name="wheelOfFortuneArrow" texture="" y="-102s" x="-66s" height="120s" width="240s" color="1 1 1 1" align="left" valign="center" noclick="1"
+				resourcecontext="wheelOfFortuneArrow"
+				onshowlua="AddResourceContext(self, '/ui/main/wheel/textures/arrow.tga')"
+				onhidelua="DeleteResourceContext(self)"
+			/>
+		</panel>
+		
+		<!-- Spin Button - Only on when there is a spin -->
+		<panel name="wheelSpin" visible="1" noclick="1">
+			<image name="spinSign" y="15s" texture="/ui/main/wheel/textures/spin_sign.tga" width="256s" height="256s" color="1 1 1 1" align="right" valign="bottom" noclick="1" />
+			<panel name="wheel_spin_wheel_btn" y="-100s" width="256s" height="100s" align="right" valign="bottom">
+				<label name="spinSignMessage" content="wheel_spin_wheel" font="maindyn_72" color="#fff9c4" outline="1" outlinecolor="0.39 0.15 0.07 0.52" fity="1" fitx="1" textalign="center" align="center" valign="center" noclick="1" />
+			</panel>
+		</panel>
+		
+		
+		<!-- Leave - Only on when the user has spun -->
+		<panel name="wheelSpun" visible="0" noclick="1">
+			<label content="wheel_spin_wheel_alreadyspun" y="-135s" x="-15s" font="maindyn_16" color="#b9cdde" outline="1" outlinecolor="#172532" fity="1" width="240s" textalign="center" align="right" valign="bottom" noclick="1" />
+			<instance
+				id="wheel_leave_wheel_btn" 
+				width="240s" 
+				height="75s" 
+				x="-15s"
+				y="-55s"
+				align="right" 
+				valign="bottom"
+				borderthickness="6.4s"	
+				name="standardButton"
+				label="wheel_leave"
+				font="maindyn_40"
+				enabled="1"
+			/>
+		</panel>
+
+		<!-- Moxie -->		
+		<modelpanel
+			name="wheel_moxie_model"
+			y="-75s"
+			height="450s" width="500s"
+			align="left" valign="bottom"
+			visible="1"
+			noclick="true"
+			anim="ability_1"
+			lookat="false"
+			camerapos="0 400 50"
+			cameraangles="0 0 180"
+			modelangles="0 0 40"
+			camerafov="22"			
+			cameranear="1"
+			carmerafar="100"
+			depthclear="true"
+			depthcompress="true"
+			sunazimuth="90"
+			sunaltitude="50"
+			suncolor="0.9 0.9 0.9"
+			ambientcolor="0.6 0.65 0.8"
+			model=""
+			resourcecontext="wheel_moxie_model"
+			onshowlua="AddResourceContext(self, '/shared/models/Hero_Moxie.mdf')"
+			onhidelua="DeleteResourceContext(self)"
+		/>
+		
+		<modelpanel
+			name="wheel_moxie_lightning_effect"
+			y="-90s"
+			height="450s" width="500s"
+			align="left" valign="bottom"
+			visible="1"
+			noclick="true"
+			anim="ability_1"
+			lookat="false"
+			camerapos="0 400 50"
+			cameraangles="0 0 180"
+			modelangles="0 0 40"
+			camerafov="22"			
+			cameranear="1"
+			carmerafar="100"
+			depthclear="true"
+			depthcompress="true"
+			sunazimuth="90"
+			sunaltitude="50"
+			suncolor="0.9 0.9 0.9"
+			ambientcolor="0.6 0.65 0.8"
+			effect="/ui/main/wheel/effects/lightning.effect"
+			model="/shared/models/invis.mdf"
+		/>
+		
+		<image name="wheelOfFortuneTable" texture="" y="-34s" width="1024s" height="256s" color="1 1 1 1" align="left" valign="bottom" noclick="1"
+			resourcecontext="wheelOfFortuneTable"
+			onshowlua="AddResourceContext(self, '/ui/main/wheel/textures/table.tga')"
+			onhidelua="DeleteResourceContext(self)"/>
+		<panel y="-55s" x="70s" width="370s" height="120" align="left" valign="bottom">
+			<label name="wheel_mainMessage_title" content="wheel_spin_wheel_youhave" y="-34s" font="maindyn_26" color="#892d17" outline="1" outlinecolor="0.8 0.6 0.41 0.13" fity="1" textalign="center" align="center" valign="center" noclick="1" />
+			<label name="wheel_mainMessage_highlight" content="wheel_spin_wheel_freespins" font="maindyn_48" color="#fff9c4" outline="1" outlinecolor="0.39 0.15 0.07 0.52" fity="1" textalign="center" align="center" valign="center" noclick="1" />
+			<label name="wheel_mainMessage_footer" content="wheel_spin_wheel_today" y="34s" font="maindyn_26" color="#892d17" outline="1" outlinecolor="0.8 0.6 0.41 0.48" fity="1" textalign="center" align="center" valign="center" noclick="1" />
+		</panel>
+		
+		<panel name="wheelPrizeContainer" visible="0" noclick="1">
+			<panel x="-200s" y="-200s" noclick="1">
+				<panel align="center" valign="center" noclick="1" >
+					<modelpanel
+						noclick="true"
+						model="/shared/models/invis.mdf"
+						effect="" 
+						camerapos="0 -40 0"
+						cameraangles="0 0 0"
+						camerafov="55"
+						depthclear="true"
+						depthcompress="true"
+						align="center" valign="center"
+						width="400s"
+						height="400s"
+						onloadlua="
+							self:SetEffect('/ui/main/shared/effects/generic_highlight_rays.effect', '0', '0.35', '0.5')
+						"
+					/>
+				</panel>
+				<panel name="wheelResourceTarget" align="center" valign="center" noclick="1" width="0" height="0" />
+				<label name="wheelPrizeMessage" content="wheel_spin_value_win" y="80s" font="maindyn_26" color="1 1 1 1" outline="1" outlinecolor="#212121" fity="1" width="240s" textalign="center" align="center" valign="center" noclick="1" />
+				<label name="wheelPrizeCount" content="5" x="-85s" font="maindyn_36" y="108s" color="1 1 1 1" outline="1" outlinecolor="#212121" fity="1" width="150s" textalign="right" align="center" valign="center" noclick="1" />
+				<image name="wheelPrizeResource" x="30s" y="108s" texture="/ui/main/shared/textures/commodity_shards.tga" width="40s" height="40s" color="1 1 1 1" align="center" valign="center" noclick="1" />
+			</panel>
+		</panel>
+		
+		<!-- Resource icons -->
+		<panel noclick="1" x="280s" y="30s" height="668s" width="668s" align="center" valign="center" >
+			<panel name="wheel_container" noclick="1"/>
+		</panel>
+	</panel>
+	
+	<lua file="wheel.lua"/>
+
+</package>
