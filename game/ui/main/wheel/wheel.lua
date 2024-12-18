@@ -145,13 +145,9 @@ local function WheelRegister(object)
 	local winningResourceRotation
 	
 	local function SpinWheel()
-		GetWidget('wheel_moxie_model'):SetAnim('ability_4')
-        GetWidget('wheel_moxie_model'):SetEffect('/ui/main/wheel/effects/bandito_spin.effect')
-		GetWidget('wheel_moxie_lightning_effect'):SetEffect('/ui/main/wheel/effects/lightning.effect')
-		PlaySound('/heroes/bandito/ability_04/sounds/sfx_state.wav')
-
-        --GetWidget('wheel_moxie_model'):SetAnim('ability_4')
-        --GetWidget('wheel_moxie_model'):SetEffect('heroes/bandito/ability_04/effects/state_self.effect')
+        GetWidget('wheel_moxie_model'):SetAnim('ability_4')
+        GetWidget('wheel_moxie_model'):SetEffect('/heroes/bandito/effects/wheel_spin.effect')
+        GetWidget('wheel_moxie_lightning_effect'):SetEffect('/ui/main/wheel/effects/lightning.effect')
         
 		
 		--WARNING
@@ -333,25 +329,23 @@ local function WheelRegister(object)
 		GetWidget('wheelOfFortune'):FadeOut(styles_mainSwapAnimationDuration)
 	end
 		
-	local function showSpinnableWheel()
+    local function showSpinnableWheel()
         GetWidget('wheel_moxie_model'):SetModel(GetPreviewModel('Hero_Bandito'))
-		--GetWidget('wheel_moxie_model'):SetModel(GetEntityModel('Hero_Bandito'))
-        --GetWidget('wheel_moxie_model'):SetEffect(GetPreviewPassiveEffect('Hero_Bandito'))
-		GetWidget('wheel_moxie_model'):SetEffect("/heroes/bandito/effects/body.effect")
-		GetWidget('wheelOfFortune'):FadeIn(styles_mainSwapAnimationDuration)
-		GetWidget('wheel_background'):FadeIn(styles_mainSwapAnimationDuration)
+        GetWidget('wheel_moxie_model'):SetEffect("/heroes/bandito/effects/body.effect")
+        GetWidget('wheelOfFortune'):FadeIn(styles_mainSwapAnimationDuration)
+        GetWidget('wheel_background'):FadeIn(styles_mainSwapAnimationDuration)
         GetWidget('wheel_moxie_model'):SetModelScale(GetPreviewScale('Hero_Bandito') * 0.4)
-		GetWidget('wheel_moxie_model'):SetY("-1000s")
-		GetWidget('wheel_moxie_model'):SetAnim('ability_4')
-		
-		libThread.threadFunc(function()
-			wait(500)
-			GetWidget('wheel_moxie_model'):SlideY("-100", 500)
-			PlaySound('/heroes/bandito/sounds/voice/vo_emote_1.wav')
-		end)
-		
-		mainUI.Clans.Toggle(nil, true)
-	end
+        GetWidget('wheel_moxie_model'):SetY("-1000s")
+        GetWidget('wheel_moxie_model'):SetAnim('ability_4')
+    
+        libThread.threadFunc(function()
+            wait(500)
+            GetWidget('wheel_moxie_model'):SlideY("-100", 500)
+            PlaySound('/heroes/bandito/sounds/voice/vo_emote_1.wav')
+        end)
+    
+        mainUI.Clans.Toggle(nil, true)
+    end
 	
 	-- buttons
 	interface:GetWidget('wheel_leave_wheel_btn'):SetCallback('onclick', function(widget)
