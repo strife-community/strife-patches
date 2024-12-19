@@ -1904,7 +1904,7 @@ Item_CircletOfTheSage_Empower_4_description						Grants $magic_damage_enchant$% 
 
 // Fell Blade
 Item_FellBlade_name												Fel Blade
-Item_FellBlade_description										Recipe grants an additional $power$ power.
+Item_FellBlade_description										Recipe grants an additional $power$ power.\nIncreases movement speed by $speed_boost_percent$% while out of combat.
 Item_FellBlade_description_simple								Cheap, efficient Power increase
 Item_FellBlade_bonusdescription									Increases the power provided by $common_increase$%.
 Item_FellBlade_legendaryname									Sharpened
