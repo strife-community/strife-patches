@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="Item_FellBlade_OOCBoost"
+
+    icon="icon.tga"
+    ishidden="true"
+    
+>
+    <onframe>
+        <hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+            <setactivemodifierkey name="fell_blade_ooc_speed_boost" />
+        </hasmodifier>
+    </onframe>
+    
+    <!--getconstant name="speed_boost_percent" /-->
+    <!--setvar0 a="speed_boost_percent" b="100" op="div" /-->
+    <modifier key="fell_blade_ooc_speed_boost" modpriority="100" movespeedmultiplier="0.05">
+        <onframe>
+            <hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+            </hasmodifier>
+            <else>
+                <setactivemodifierkey name="" />
+            </else>
+        </onframe>
+    </modifier>
+
+    
+</state>
