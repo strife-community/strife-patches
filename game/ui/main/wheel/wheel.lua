@@ -145,10 +145,9 @@ local function WheelRegister(object)
 	local winningResourceRotation
 	
 	local function SpinWheel()
+        GetWidget('wheel_moxie_model'):SetAnim('ability_3')
         GetWidget('wheel_moxie_model'):SetEffect('/heroes/bandito/effects/wheel_spin.effect')
         GetWidget('wheel_moxie_lightning_effect'):SetEffect('/ui/main/wheel/effects/lightning.effect')
-        GetWidget('wheel_moxie_model'):SetAnim('ability_3')
-        
 		
 		--WARNING
 		--Obscure-ish math ahead.
@@ -330,7 +329,7 @@ local function WheelRegister(object)
 	end
 		
     local function showSpinnableWheel()
-        GetWidget('wheel_moxie_model'):SetModel(GetPreviewModel('Hero_Bandito'))
+        GetWidget('wheel_moxie_model'):SetModel(GetEntityModel('Hero_Bandito'))
         GetWidget('wheel_moxie_model'):SetEffect("/heroes/bandito/effects/body.effect")
         GetWidget('wheelOfFortune'):FadeIn(styles_mainSwapAnimationDuration)
         GetWidget('wheel_background'):FadeIn(styles_mainSwapAnimationDuration)
