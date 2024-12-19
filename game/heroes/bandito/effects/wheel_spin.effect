@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+<definitions>
+
+<!-- 0 -->
+<particlesystem name="system0" space="entity" scale="1.0">
+
+
+
+
+
+		<!-- Passive Cigar -->
+		<template name="p1" parentmodel="true" parentskeleton="true" directionalspace="local">
+			<model life="1000" parentskeleton="true" model="light/model.mdf" material="/shared/effects/smaterials/shell_glass.material" startcolor="3 0 0" midcolor="5 0 0" endcolor="3 0 0" loop="true"/>
+			<model parentskeleton="true" model="light/model.mdf" material="../material.material" color="5 0 0" startalpha=".5" endalpha="0"/>
+			<model parentskeleton="true" model="visor/model.mdf" material="../material.material" color="5 2.5 1" startalpha=".5" endalpha="0"/>
+			<simpleemitter bone="_bone_fx_cigar" spawnrate="50" minparticlelife="250" maxparticlelife="750" minspeed="0" maxspeed="0" position="0 0 0" material="/shared/effects/smaterials/cartoon_dust.material" direction="0 0 1" offsetsphere="5" directionalspace="local" particledirectionalspace="local">
+				<particle minangle="-360" maxangle="360" minanglespeed="-90" maxanglespeed="90" startscale="2" endscale="6" startcolor="1 1 1" endcolor="0 0 0" startalpha="0" midalpha=".25" endalpha="0" midalphapos=".2"/>
+			</simpleemitter>
+			<billboard bone="_bone_fx_cigar" expirelife="250" material="/shared/effects/smaterials/whitedot.material" startcolor=".25 0 0" endcolor="0 0 0" size="5" depthbias="-10"/>
+			<billboard bone="_bone_fx_cigar" expirelife="250" material="/shared/effects/smaterials/whitedot.material" startcolor="1 .5 0" endcolor="0 0 0" size="5" depthbias="-10"/>
+		</template>	  
+	
+		<instance name="p1"/>
+
+		
+		<!-- Sounds -->
+		<sound delay="0" 	sample="sounds/v_2.wav" linearfalloff="true" falloffstart="400" falloffend="2400" volume="0.45" channel="90003" />
+		
+</particlesystem>
+
+<!-- 1 -->
+<particlesystem name="system1" space="entity" scale="1.0">
+
+		<!-- Gold Impact -->
+		<template name="p3" parentmodel="true" parentskeleton="true" directionalspace="local">
+			<simpleemitter bone="_bone_centerofchest" count="15" spawnrate="2000" particlelife="750" gravity="0" minspeed="22.0" maxspeed="22" acceleration="0.0" offsetsphere="0 0 0" material="/shared/effects/smaterials/whitedot.material" depthbias="-10" directionalspace="local" particledirectionalspace="local">
+				<particle anchor="1" startcolor=".5 .4 .05" midcolor=".5 .4 .05" endcolor="0 0 0" startscale="8" midscale="12" endscale="12" turn="true" minheight="6" maxheight="15" minwidth="1" maxwidth="4"/>
+			</simpleemitter>
+			<template name="1x" parentmodel="true" parentskeleton="true" directionalspace="local">
+				<simpleemitter delay="{zdelay}" count="1" bone="_bone_centerofchest" spawnrate="10" particlelife="1000" material="/shared/effects/smaterials/whitedot_ground_inverted.material" offsetsphere="0" depthbias="-10" directionalspace="local" particledirectionalspace="local">
+					<particle anchor="1" startcolor="0 0 0" midcolor="{zcolor}" endcolor="0 0 0" midcolorpos=".1" startscale=".5" endscale=".85" minwidth="150" maxwidth="150" height="150"/>
+				</simpleemitter>
+			</template>
+			<instance name="1x" zcolor=".1 .075 .02" zdelay="0"/>
+			<instance name="1x" zcolor=".1 .075 .02" zdelay="75"/>
+			<instance name="1x" zcolor=".1 .075 .02" zdelay="150"/>
+			<simpleemitter bone="_bone_centerofchest" count="8" life="1000" spawnrate="150" particlelife="2000" position="0 0 0" directionalspace="local" particledirectionalspace="local" depthbias="-10">
+				<particle>
+					<simpleemitter count="1" bone="_bone_centerofchest" life="3000" minspeed="75" maxspeed="150" spawnrate="220" gravity="10" direction="0 0 0" offsetsphere="30 30 30" particlelife="2000" depthbias="-10" directionalspace="local" particledirectionalspace="local">
+						<particle>
+							<model bone="_bone_centerofchest" model="treasure/coin/model.mdf" color="1 1 1" minyaw="-360" maxyaw="360" minlife="600" maxlife="800" minpitch="-360" maxpitch="360" scale="2.35" startalpha="1" midalpha="1" endalpha="1"/>
+						</particle>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			<billboard life="500" bone="_bone_centerofchest" material="/shared/effects/smaterials/whitedot.material" startcolor="1 .7 0" endcolor="0 0 0" size="200" lockup="1" lockright="1" pitch="90" depthbias="0"/>
+		</template>
+		<instance name="p3"/>	
+
+			<!-- Passive 2 -->
+			<template name="p2" parentmodel="true" parentskeleton="true" directionalspace="local">
+				<sound falloffstart="500" falloffend="2400" volume="0.15" sample="sounds/redstate.wav" channel="90003" />
+				<sound delay="7500" falloffstart="520" falloffend="2420" volume="0.18" sample="sounds/end.wav" channel="90003" />
+				<light bone="_bone_fx_light01" expirelife="1000" startcolor="10 0 0" endcolor="0 0 0" falloffstart="25" falloffend="100" position="0 0 12"/>
+				<simpleemitter life="5500" loop="false" timenudge="2000" bone="_bone_fx_light01" spawnrate="25" minparticlelife="1000" maxparticlelife="1000" gravity="0" minspeed="0" maxspeed="1" acceleration="0" position="0 0 0" material="/shared/effects/smaterials/whitedot_ground_inverted.material" offsetsphere="0" depthbias="0" directionalspace="local" particledirectionalspace="local">
+					<particle anchor="1" startcolor="0 0 0" midcolor=".15 0 0" endcolor="0 0 0" midcolorpos=".1" minstartscale=".25" maxstartscale=".25" endscale="1" minwidth="150" maxwidth="150" height="150"/>
+				</simpleemitter>
+				<simpleemitter life="5500" loop="false" timenudge="2000" bone="_bone_fx_light01" spawnrate=".5" particlelife="2000" gravity="0" minspeed="0" maxspeed="1" acceleration="0" position="0 0 0" material="/shared/effects/smaterials/whitedot_ground_inverted.material" offsetsphere="0" depthbias="0" directionalspace="local" particledirectionalspace="local">
+					<particle anchor="1" startcolor="0 0 0" midcolor=".1 .05 0" endcolor="0 0 0" minstartscale=".45" maxstartscale=".55" endscale=".75" minwidth="150" maxwidth="150" height="150"/>
+				</simpleemitter>
+				<simpleemitter life="5500" loop="false" timenudge="2000" bone="_bone_fx_light01" spawnrate=".5" particlelife="2000" gravity="0" minspeed="0" maxspeed="1" acceleration="0" position="0 0 0" material="/shared/effects/smaterials/whitedot_ground_inverted.material" offsetsphere="0" depthbias="0" directionalspace="local" particledirectionalspace="local">
+					<particle anchor="1" startcolor="0 0 0" midcolor=".1 .05 0" endcolor="0 0 0" minstartscale=".75" maxstartscale=".85" endscale="1.05" minwidth="150" maxwidth="150" height="150"/>
+				</simpleemitter>
+				<model life="5500" loop="false" bone="_bone_fx_light01" model="spinning_light/model.mdf" material="../material.material" anim="idle" color="1" startalpha="1" endalpha="0" yawspeed="270">
+					<template name="1" parentmodel="true" parentskeleton="true" directionalspace="local">
+						<simpleemitter timenudge="2000" bone="_bone_fx_03" spawnrate="20" particlelife="5000" material="/shared/effects/smaterials/whitedot.material" offsetsphere="0 0 0" position="0 0 0" direction="0 1 0" minangle="0" maxangle="1" directionalspace="local" particledirectionalspace="local">
+							<particle anchor="1" turn="true" minangle="0" maxangle="360" size="20" minwidth="25" maxwidth="50" minheight="500" maxheight="500" startcolor=".1 0 0" midcolor="0 0 0" endcolor="0 0 0" midcolorpos=".25" lockup="1" lockright="1" pitch="90"/>
+						</simpleemitter>
+					</template>
+					<instance name="1" zbone="_bone_fx_03" zroll="0" zpos="0 0 0"/>
+					<template name="2" parentmodel="true" parentskeleton="true" directionalspace="local">
+						<billboard bone="_bone_fx_03" expirelife="600" material="/shared/effects/smaterials/lightray.material" startcolor=".025 0 0" endcolor="0 0 0" size="20" depthbias="-25" directionalspace="local" lockup="1" lockright="1" pitch="{zpitch}" width="300" height="50"/>
+						<billboard bone="_bone_fx_03" expirelife="600" material="/shared/effects/smaterials/lightray.material" startcolor=".025 0 0" endcolor="0 0 0" size="20" depthbias="-25" directionalspace="local" lockup="1" lockright="1" pitch="{zpitch}" width="300" height="600"/>
+					</template>
+					<instance name="2" zpitch="90"/>
+					<instance name="2" zpitch="60"/>
+					<instance name="2" zpitch="-60"/>
+				</model>
+				<simpleemitter life="5500" loop="false" bone="_bone_fx_03" minspeed="75" maxspeed="200" spawnrate="15" gravity="10" offsetsphere="15" particlelife="2000" direction="0 -1 0" minangle="0" maxangle="25"  directionalspace="local" particledirectionalspace="local">
+					<particle>
+						<model bone="_bone_fx_03" model="treasure/coin/model.mdf" color="1 1 1" minyaw="-360" maxyaw="360" minlife="600" maxlife="800" minpitch="-360" maxpitch="360" scale="2.25" startalpha="1" midalpha="1" endalpha="1"/>
+						<billboard bone="_bone_fx_03" minlife="600" maxlife="800" material="/shared/effects/smaterials/whitedot.material" startcolor=".15 .075 0" endcolor="0 0 0" size="50" depthbias="-25"/>
+					</particle>
+				</simpleemitter>
+				<billboard bone="_bone_fx_03" expirelife="500" material="/shared/effects/smaterials/whitedot.material" startcolor=".25 .075 0" endcolor="0 0 0" size="100" depthbias="-25"/>
+				<template name="3" parentmodel="true" parentskeleton="true" directionalspace="local">
+					<model life="5500" loop="false" bone="{zbone}" model="wheel/model.mdf" material="../material.material" anim="idle" color="1 1 1" startalpha="1" endalpha="0" directionalspace="local" yaw="90" roll="90" yawspeed="{zyawspeed}" scale="1.1"/>
+				</template>
+				<instance name="3" zbone="_bone_gambler_reel1" zyawspeed="180"/>
+				<instance name="3" zbone="_bone_gambler_reel2" zyawspeed="450"/>
+				<instance name="3" zbone="_bone_gambler_reel3" zyawspeed="90"/>
+				<billboard bone="_bone_fx_wheel01" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+				<billboard bone="_bone_fx_wheel02" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+				<billboard bone="_bone_fx_wheel02" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+				<billboard bone="_bone_fx_wheel01" delay="1500" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+				<billboard bone="_bone_fx_wheel02" delay="1500" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+				<billboard bone="_bone_fx_wheel02" delay="1500" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+				<billboard bone="_bone_fx_wheel01" delay="3000" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+				<billboard bone="_bone_fx_wheel02" delay="3000" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+				<billboard bone="_bone_fx_wheel02" delay="3000" life="1500" material="/shared/effects/smaterials/whitedot.material" startcolor="0 0 0" midcolor=".5 .15 0" endcolor="0 0 0" size="70" depthbias="0" loop="false"/>
+			</template>
+			<instance name="p2"/>
+
+
+</particlesystem>	
+
+</definitions>
+<thread>
+<!-- Order -->
+<spawnparticlesystem instance="instance0" particlesystem="system0" />
+<spawnparticlesystem instance="instance1" particlesystem="system1" />
+<waitfordeath instance="instance0" />
+<waitfordeath instance="instance1" />
+</thread>
+</effect>
