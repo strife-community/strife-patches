@@ -119,7 +119,6 @@
 <thread>
 <!-- Order -->
 <spawnparticlesystem instance="instance0" particlesystem="system0" />
-<wait duration="7000"/>
 <spawnparticlesystem instance="instance1" particlesystem="system1" />
 <waitfordeath instance="instance0" />
 <waitfordeath instance="instance1" />

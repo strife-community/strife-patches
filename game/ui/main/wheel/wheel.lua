@@ -145,9 +145,9 @@ local function WheelRegister(object)
 	local winningResourceRotation
 	
 	local function SpinWheel()
-        GetWidget('wheel_moxie_model'):SetAnim('ability_4')
         GetWidget('wheel_moxie_model'):SetEffect('/heroes/bandito/effects/wheel_spin.effect')
         GetWidget('wheel_moxie_lightning_effect'):SetEffect('/ui/main/wheel/effects/lightning.effect')
+        GetWidget('wheel_moxie_model'):SetAnim('ability_3')
         
 		
 		--WARNING
@@ -336,7 +336,6 @@ local function WheelRegister(object)
         GetWidget('wheel_background'):FadeIn(styles_mainSwapAnimationDuration)
         GetWidget('wheel_moxie_model'):SetModelScale(GetPreviewScale('Hero_Bandito') * 0.4)
         GetWidget('wheel_moxie_model'):SetY("-1000s")
-        GetWidget('wheel_moxie_model'):SetAnim('ability_4')
     
         libThread.threadFunc(function()
             wait(500)
