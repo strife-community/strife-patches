@@ -2053,7 +2053,7 @@ Item_CircletOfTheSage_Empower_4_description						Увеличивает маги
 
 // Fell Blade
 Item_FellBlade_name												Fel Blade
-Item_FellBlade_description										Увеличивает силу на $power$.
+Item_FellBlade_description										Увеличивает силу на $power$.\nУвеличивает скорость перемещения на $speed_boost_percent$%, когда герой находится вне боя.
 Item_FellBlade_description_simple								Недорогой предмет, заметно повышающий силу.
 Item_FellBlade_bonusdescription									Прирост силы увеличен на $common_increase$%.
 Item_FellBlade_legendaryname									Sharpened
