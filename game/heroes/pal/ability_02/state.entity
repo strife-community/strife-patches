@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pal_Ability2"
+	
+	icon="icon.tga"
+	
+	modifierkey="pal_roll"
+	unitwalking="true"
+	ishidden="true"
+	
+
+	movespeedmultiplier="0.05,0.09,0.13,0.17"	
+
+>
+
+	<ondamaged>
+		<applystate name="State_Pal_Ability2_Damaged" duration="500" target="source_entity" stack="true" />
+	</ondamaged>
+	
+	<onexpired>
+		<delete target="this_proxy_entity" />
+		<playanim name="ability_3" target="source_entity"/>
+	</onexpired>
+
+</state>
