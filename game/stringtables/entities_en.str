@@ -820,7 +820,7 @@ Hero_Buford_description											Lives in the Bayou and uses bugs as weapons.
 Hero_Buford_role												Long range attack damage hero
 // Ability_Buford1
 Ability_Buford1_name											Poison Slug
-Ability_Buford1_description										Target location to create a cloud of toxic fumes. Fumes slow all enemies by $slow$% and reduces their resistance by $resistance$. If toxic fumes are ignited by Fire Slug they explode dealing ^o$damage_explode$ Magic damage^*.\n\n^444Toxic Ammo^*\nAttacks deal $damage$ bonus damage. Only one Ammo can be active.
+Ability_Buford1_description										Target location to create a cloud of toxic fumes. Fumes slow all enemies by $slow$% and reduces their resistance by $resistance$. If toxic fumes are ignited by Fire Slug they explode dealing ^o$damage_explode$ Magic damage^*.\n\n^444Toxic Ammo^*\nAttacks deal $damage_increase_attackbase$% bonus damage. Only one Ammo can be active.
 Ability_Buford1_description_simple								AOE slow and attack damage increase
 // Ability_Buford2
 Ability_Buford2_name											Fire Slug

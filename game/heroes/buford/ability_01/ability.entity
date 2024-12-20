@@ -27,7 +27,7 @@
 	showareacast="true"
 	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
 >
-	<constant name="damage" value="10,15,20,25" adjustment="ability" />
+	<constant name="damage_increase_attackbase" value="6,8,10,12" adjustment="none" />
 	<constant name="damage_explode" value="100,140,180,220" adjustment="ability" noshowintooltip="true"/>
 	<constant name="slow" value="15,20,25,30" adjustment="none" />
 	<constant name="resistance" value="-10,-15,-20,-25" adjustment="none" />
