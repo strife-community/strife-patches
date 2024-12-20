@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Buford_Ability1_Poison" 
+
+	icon="icon.tga"
+	modifierkey="poison"
+	passiveeffect="effects/state_self.effect"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	basedamage="15,20,25,30"
+
+>
+
+
+
+
+</state>
