@@ -2483,9 +2483,9 @@ Ability_Ganker_Passive_3_description_simple					Tăng Movespeed khi Out Combat
 Ability_Ganker_TriggeredPassive_1_name						Bounty
 Ability_Ganker_TriggeredPassive_2_name						Bounty
 Ability_Ganker_TriggeredPassive_3_name						Bounty
-Ability_Ganker_TriggeredPassive_1_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  $cooldown$ giây Cooldown.
-Ability_Ganker_TriggeredPassive_2_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown$ giây Cooldown^*.
-Ability_Ganker_TriggeredPassive_3_description				Khi giết được Hero địch, Tăng ^c$gold$ bonus gold^*.  $cooldown$ giây Cooldown.
+Ability_Ganker_TriggeredPassive_1_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown_sec$ giây Cooldown^*.
+Ability_Ganker_TriggeredPassive_2_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown_sec$ giây Cooldown^*.
+Ability_Ganker_TriggeredPassive_3_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown_sec$ giây Cooldown^*.
 Ability_Ganker_TriggeredPassive_1_description_simple		Tăng bonus bounty khi giết Hero địch
 Ability_Ganker_TriggeredPassive_2_description_simple		Tăng bonus bounty khi giết Hero địch
 Ability_Ganker_TriggeredPassive_3_description_simple		Tăng bonus bounty khi giết Hero địch

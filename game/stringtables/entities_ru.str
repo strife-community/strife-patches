@@ -2953,9 +2953,9 @@ Ability_Ganker_Passive_3_description_simple					Увеличивает скор�
 Ability_Ganker_TriggeredPassive_1_name						Bounty
 Ability_Ganker_TriggeredPassive_2_name						Bounty
 Ability_Ganker_TriggeredPassive_3_name						Bounty
-Ability_Ganker_TriggeredPassive_1_description				Вы получаете на $gold$ зол. больше за убийство героя.
-Ability_Ganker_TriggeredPassive_2_description				Вы получаете на $gold$ зол. больше за убийство героя.
-Ability_Ganker_TriggeredPassive_3_description				Вы получаете на ^c$gold$^* зол. больше за убийство героя.
+Ability_Ganker_TriggeredPassive_1_description				Вы получаете на $gold$ золота больше за убийство героя.\n\n^cВремя перезарядки - $cooldown_sec$.^*
+Ability_Ganker_TriggeredPassive_2_description				Вы получаете на $gold$ золота больше за убийство героя.\n\n^cВремя перезарядки - $cooldown_sec$.^*
+Ability_Ganker_TriggeredPassive_3_description				Вы получаете на $gold$ золота больше за убийство героя.\n\n^cВремя перезарядки - $cooldown_sec$.^*
 Ability_Ganker_TriggeredPassive_1_description_simple		Вы получаете больше золота за убийство героев.
 Ability_Ganker_TriggeredPassive_2_description_simple		Вы получаете больше золота за убийство героев.
 Ability_Ganker_TriggeredPassive_3_description_simple		Вы получаете больше золота за убийство героев.

@@ -2731,9 +2731,9 @@ Ability_Ganker_Passive_3_description_simple							Erhöhte Bewegungsgeschwindigk
 Ability_Ganker_TriggeredPassive_1_name								Kopfgeld
 Ability_Ganker_TriggeredPassive_2_name								Kopfgeld
 Ability_Ganker_TriggeredPassive_3_name								Kopfgeld
-Ability_Ganker_TriggeredPassive_1_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. $cooldown$ Sekunden Abkühlzeit.
-Ability_Ganker_TriggeredPassive_2_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. ^c$cooldown$ Sekunden Abkühlzeit^*.
-Ability_Ganker_TriggeredPassive_3_description						Gibt dir ^c$gold$ Extragold^*, wenn du einen Gegner abschießt. $cooldown$ Sekunden Abkühlzeit.
+Ability_Ganker_TriggeredPassive_1_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. ^c$cooldown_sec$ Sekunden Abkühlzeit^*.
+Ability_Ganker_TriggeredPassive_2_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. ^c$cooldown_sec$ Sekunden Abkühlzeit^*.
+Ability_Ganker_TriggeredPassive_3_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. ^c$cooldown_sec$ Sekunden Abkühlzeit^*.
 Ability_Ganker_TriggeredPassive_1_description_simple				Gibt Extragold für Kills von Helden
 Ability_Ganker_TriggeredPassive_2_description_simple				Gibt Extragold für Kills von Helden
 Ability_Ganker_TriggeredPassive_3_description_simple				Gibt Extragold für Kills von Helden
