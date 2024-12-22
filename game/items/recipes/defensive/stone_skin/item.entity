@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+    name="Item_StoneSkin"
+    
+    icon="icon.tga"
+    
+    cost="1300"
+    components="Item_Booster Item_Staff"
+    
+    anim="item_1"
+    
+    actiontype="target_self"
+    frontqueue="true"
+    inheritmovement="true"
+    casttime="0"
+    castactiontime="0"
+    cooldowntype="StoneSkin"
+    manacost="0"
+    noninterrupting="true"
+    botitem="StoneSkinItem"
+
+    cooldowntime="45000"
+
+    basedamage="8"
+
+    filters="defense,utility,cc_resist,activatable,other_mobility"
+    alwaysshowtimer="true"
+
+    empoweredeffects="Item_StoneSkin_Empower_1,Item_StoneSkin_Empower_2"
+    
+    showinpractice="true"
+>
+    <!-- Base damage bonus. TOOLTIP ONLY! Real value used is set in "basedamage" attribute! -->
+    <constant name="damage" value="8" adjustment="item" />
+
+    <!-- Ability duration, seconds -->
+    <constant name="duration_sec" value="8" adjustment="none" />
+    <!-- Stun and slow duration reduction percent. TOOLTIP ONLY! Real value used is set in state.entity file! -->
+    <constant name="ccreduction" value="30" adjustment="none" />
+    <!-- Resistance granted by the ability. TOOLTIP ONLY! Real value used is set in state.entity file! -->
+    <constant name="resistance" value="80" adjustment="none" qualityvalue="6" qualityadjustment="common" op="add"/>
+
+    <onaction>
+        <playeffect effect="effects/cast.effect" />
+    </onaction>
+    
+    <onimpact>
+        <getconstant name="duration_sec" />
+        <setvar0 a="duration_sec" b="1000" op="mult" />
+        <applystate name="State_StoneSkin" duration="var0" />
+    </onimpact>
+</crafteditem>
