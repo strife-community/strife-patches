@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+    name="Ability_Tortus_TriggeredPassive_2"
+
+    icon="icon.tga"
+    maxlevel="15"
+    actiontype="passive"
+    manacost="0"
+    
+    cooldowntime="13000,12500,12000,11500,11000,10500,10000,9500,9000,8500,8000,7500,7000,6500,6000"
+    cooldowntype="familiar"
+    
+>
+    <!-- Damage diflected by the ability -->
+    <constant name="deflection" value="50,57,64,71,78,85,92,99,106,113,120,127,134,141,150" adjustment="none" />
+    <!-- TOOLTIP ONLY VALUES -->
+    <constant name="tooltip_cooldown_sec_lvl1" value="13" adjustment="none" />
+    <constant name="tooltip_cooldown_sec_lvl15" value="6" adjustment="none" />
+    <constant name="tooltip_deflection_lvl15" value="150" adjustment="none" />
+    <constant name="tooltip_deflection_lvl1" value="50" adjustment="none" />
+    
+    <onframe>
+        <setactivemodifierkey entity="this_entity" name="tortusspawned" />
+    </onframe>
+    
+    <modifier key="tortusspawned" modpriority="100">
+        <onframe>
+            <setcharges a="source_level" />
+        </onframe>
+
+        <onready>
+            <!-- This removes state, that disables pet's ready effect -->
+            <expirestate name="State_Tortus_Not_Ready" target="this_proxy_entity"/>
+        </onready>
+
+        <onattackedpredamage>
+            <targettype type="hero">
+                <isready>
+                    <combateffecttype effecttype="Attack">
+                        <getconstant name="deflection"/>
+                        <setvar0 a="result" />
+                        <setvalue name="combat_deflection" a="combat_deflection" b="result" op="add" />
+                        <startcooldown />
+                        <popup name="deflect" target="source_entity" a="var0" />
+                        <!-- This adds state, that disables pet's ready effect. Removed when cooldown finish -->
+                        <applystate name="State_Tortus_Not_Ready" duration="-1" target="this_proxy_entity" />
+                        <applystate name="State_Tortus_Shield" duration="250" target="source_entity" />
+                    </combateffecttype>
+                </isready>
+            </targettype>
+        </onattackedpredamage>
+    </modifier>
+    
+</ability>

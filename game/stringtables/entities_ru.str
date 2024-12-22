@@ -3080,9 +3080,9 @@ Ability_Tortus_Passive2_3_description_simple					Повышает скорост
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Отражает до $deflection$ урона от обычной атаки вражеского героя (значение растет с уровнем героя). Время перезарядки - 18 секунд^*.
-Ability_Tortus_TriggeredPassive_2_description					Отражает до $deflection$ урона от обычной атаки вражеского героя (значение растет с уровнем героя). Время перезарядки - ^c12 секунд^*.
-Ability_Tortus_TriggeredPassive_3_description					Отражает до $deflection$ урона от обычной атаки вражеского героя (значение растет с уровнем героя). Время перезарядки - 12 секунд^*.
+Ability_Tortus_TriggeredPassive_1_description					Отражает $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ урона от обычной атаки вражеского героя (значение растет с уровнем героя).\n\n^cВремя перезарядки - $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ секунд.^*
+Ability_Tortus_TriggeredPassive_2_description					Отражает $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ урона от обычной атаки вражеского героя (значение растет с уровнем героя).\n\n^cВремя перезарядки - $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ секунд.^*
+Ability_Tortus_TriggeredPassive_3_description					Отражает $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ урона от обычной атаки вражеского героя (значение растет с уровнем героя).\n\n^cВремя перезарядки - $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ секунд.^*
 Ability_Tortus_TriggeredPassive_1_description_simple			Отражает урон от обычных атак.
 Ability_Tortus_TriggeredPassive_2_description_simple			Отражает урон от обычных атак.
 Ability_Tortus_TriggeredPassive_3_description_simple			Отражает урон от обычных атак.
