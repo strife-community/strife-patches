@@ -2542,7 +2542,7 @@ Item_TwinFang_description_simple								Grants Power and ability Resistance pene
 Item_TwinFang_Empower_1_name									Siphoning
 Item_TwinFang_Empower_1_description								$spellsteal_enchant$% Magic Lifesteal.
 Item_TwinFang_Empower_2_name									Focus
-Item_TwinFang_Empower_2_description								Additional $penetration_enchant$ Magical Penetration, but lose $resistance$ Resistance.
+Item_TwinFang_Empower_2_description								Additional $penetration_enchant$ Resistance penetration, but lose $resistance$ Resistance.
 Item_TwinFang_Empower_3_name									Heritage
 Item_TwinFang_Empower_3_description								Upon dealing magic damage to an enemy hero, permanently gain +$mana$ mana. Stacks 25 times.
 
