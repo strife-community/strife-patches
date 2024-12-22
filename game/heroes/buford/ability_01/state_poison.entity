@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Buford_Ability1_Poison" 
+
+    icon="icon.tga"
+    modifierkey="poison"
+    passiveeffect="effects/state_self.effect"
+    effecttype="StatusBuff"
+    allowtransfer="true"
+
+>
+    <!-- Increasing attack damage. Starting with damage event -->
+    <onattackdamageevent >
+        <!-- Making sure only direct attacks are counted -->
+        <damagesupertype supertype="attack">
+            <damageeffecttype effecttype="Splash" />
+            <else>
+                <!-- Taking percent from constant -->
+                <getconstant name="damage_increase_attackbase" adjustmentsource="none"/>
+                <!-- Calcluating damage multiplier -->
+                <setvar0 a="result" b=".01" op="mult" />
+                <setvar0 a="var0" b="1" op="add" />
+                <!-- Actually increasing damage -->
+                <setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+            </else>
+        </damagesupertype>
+    </onattackdamageevent>
+
+</state>

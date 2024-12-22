@@ -819,7 +819,7 @@ Hero_Buford_description												Lebt im Bayou und nutzt Käfer als Waffen.
 Hero_Buford_role													Held spezialisiert auf Angriffsschaden in langer Reichweite
 // Ability_Buford1
 Ability_Buford1_name												Giftschnecke
-Ability_Buford1_description											Ziele auf eine Stelle um eine Wolke aus giftigen Dämpfen zu erzeugen. Die Dämpfe verlangsamen alle Feinde um $slow$% und verringern ihren Widerstand um $resistance$. Wenn giftige Dämpfe von Feuerschnecke entzündet werden, explodieren sie und verursachen ^o$damage_explode$ magischen Schaden^*.\n\n^444Toxische Munition^*\nAngriffe verursachen $damage$ Bonusschaden. Es kann nur eine Munition aktiv sein.
+Ability_Buford1_description											Ziele auf eine Stelle um eine Wolke aus giftigen Dämpfen zu erzeugen. Die Dämpfe verlangsamen alle Feinde um $slow$% und verringern ihren Widerstand um $resistance$. Wenn giftige Dämpfe von Feuerschnecke entzündet werden, explodieren sie und verursachen ^o$damage_explode$ magischen Schaden^*.\n\n^444Toxische Munition^*\nAngriffe verursachen $damage_increase_attackbase$% Bonusschaden. Es kann nur eine Munition aktiv sein.
 Ability_Buford1_description_simple									AOE-Verlangsamung und erhöhter Angriffsschaden
 // Ability_Buford2
 Ability_Buford2_name												Feuerschnecke
