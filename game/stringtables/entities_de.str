@@ -2135,7 +2135,7 @@ Item_ASBoots_description_simple										Gewährt Bewegungs- und Angriffsgeschwi
 
 // HealthBoots
 Item_HealthBoots_name												Trägheitsstiefel
-Item_HealthBoots_description										65 Bewegungsgeschwindigkeit, +250 Gesundheit.\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
+Item_HealthBoots_description										$movespeed$ Bewegungsgeschwindigkeit, +$max_health$ Gesundheit.\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
 Item_HealthBoots_description_simple									Gewährt Bewegungsgeschwindigkeit und Gesundheit. Aktiviere um alle Betäubungen und Verlangsamungen von dir zu entfernem
 
 // RuneBoots
@@ -2527,7 +2527,7 @@ Item_BarrierToken_Empower_3_description								Gewährt keine $magicarmor_enchan
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name											Schmuckstück des Orakels
-Item_OraclesTrinket_description										+$resistance$ Widerstand\n\n^091Aktivieren: Entfernt alle Betäubungen/Verlangsamungen/Debuffs und sorgt für 2 Sekunden lang für 50% Betäubungs-/Verlangsamungsreduzierung.\n\nWenn die Massenkontrolle erfolgreich entfernt wird, heilen Sie um^* ^o$heal$^* ^091Gesundheit.^*
+Item_OraclesTrinket_description										^o+$base_damage$ Angriffsschaden^*\n\n^091Aktivieren: Entfernt alle Betäubungen/Verlangsamungen/Debuffs und sorgt für $cc_state_duration_sec$ Sekunden lang für 50% Betäubungs-/Verlangsamungsreduzierung.\n\nWenn die Massenkontrolle erfolgreich entfernt wird, heilen Sie um^* ^o$heal$^* ^091Gesundheit.^*
 Item_OraclesTrinket_description_simple								Gewährt Widerstand\n^091Aktivieren: Betäubung/Verlangsamungsentfernung und Selbstheilung^*
 Item_OraclesTrinket_Empower_1_name									Konzentration
 Item_OraclesTrinket_Empower_1_description							Das erfolgreiche Entfernen der Massenkontrolle stellt auch $mana_enchant$ Mana wieder her.
@@ -2868,7 +2868,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple				Pincer rächt sich an Ge
 Ability_Pincer_Ult_1_name											Durchbruch
 Ability_Pincer_Ult_2_name											Durchbruch
 Ability_Pincer_Ult_3_name											Durchbruch
-Ability_Pincer_Ult_1_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.$cooldown$ Sekunde Abklingzeit.
+Ability_Pincer_Ult_1_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_2_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_3_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_1_description_simple								Beseitigt Betäubungs-/Lähmeffekte

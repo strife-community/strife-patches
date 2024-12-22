@@ -2159,7 +2159,7 @@ Item_ASBoots_description_simple												增加移动速度和攻击力，主�
 
 // HealthBoots
 Item_HealthBoots_name												惯性之靴
-Item_HealthBoots_description											+65移动速度  \n+250生命值   \n使用：解除英雄受到的所有控制效果并在接下来的2秒内减少50%的控制效果。
+Item_HealthBoots_description											+$movespeed$移动速度  \n+$max_health$生命值   \n使用：解除英雄受到的所有控制效果并在接下来的2秒内减少50%的控制效果。
 Item_HealthBoots_description_simple												增加移动速度和生命值，主动使用解除受到的控制效果。
 
 // RuneBoots
@@ -2561,7 +2561,7 @@ Item_BarrierToken_Empower_3_description							不再获得$magicarmor_enchant$�
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										圣谕徽章
-Item_OraclesTrinket_description									+$resistance$坚韧  \n\n^主动使用: 消除所有晕眩效果/减速且晕眩敌人，晕眩效果为50%/减速减成，持续2秒。 \n\n如果能消除群控效果，可提供^* ^o$heal$^*生命值回复。^*
+Item_OraclesTrinket_description									+^o$base_damage$物理伤害^*\n\n^主动使用: 消除所有晕眩效果/减速且晕眩敌人，晕眩效果为50%/减速减成，持续2秒。 \n\n如果能消除群控效果，可提供^* ^o$heal$^*生命值回复。^*
 Item_OraclesTrinket_description_simple							获取坚韧 \n主动使用：减除晕眩/减速效果，提供自我治疗 
 Item_OraclesTrinket_Empower_1_name								浓缩
 Item_OraclesTrinket_Empower_1_description						移除群控效果，回复$mana_enchant$法力值。
@@ -2891,9 +2891,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple												平瑟会反攻�
 Ability_Pincer_Ult_1_name												脱逃
 Ability_Pincer_Ult_2_name												脱逃
 Ability_Pincer_Ult_3_name												脱逃
-Ability_Pincer_Ult_1_description												  移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间$cooldown$秒。
+Ability_Pincer_Ult_1_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
 Ability_Pincer_Ult_2_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
-Ability_Pincer_Ult_3_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间$cooldown$秒。
+Ability_Pincer_Ult_3_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
 Ability_Pincer_Ult_1_description_simple												移除晕眩/减速效果
 Ability_Pincer_Ult_2_description_simple												移除晕眩/减速效果
 Ability_Pincer_Ult_3_description_simple												移除晕眩/减速效果

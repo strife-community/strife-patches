@@ -2136,7 +2136,7 @@ Item_ASBoots_description_simple									Grants Atack Speed\n^091Activate: sprint
 
 // HealthBoots
 Item_HealthBoots_name											Inertia Boots
-Item_HealthBoots_description									65 Movement Speed\n+250 Health \n\n^091Activate: remove all stuns/slows and provide 50% stun/slow reduction for 2 seconds.^*
+Item_HealthBoots_description									$movespeed$ Movement Speed\n+$max_health$ Health \n\n^091Activate: remove all stuns/slows and provide 50% stun/slow reduction for 2 seconds.^*
 Item_HealthBoots_description_simple								Grants Health\n^091Activate: remove all stuns and slows from yourself.^*
 
 // RuneBoots
@@ -2528,7 +2528,7 @@ Item_BarrierToken_Empower_3_description							No longer gives $resistance_enchan
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										Oracle's Trinket
-Item_OraclesTrinket_description									+$resistance$ Resistance\n\n^091Activate: remove all stuns/slows/debuffs and provide 50% stun/slow reduction for 2 seconds. \n\nIf crowd control is successfully removed, heal for^* ^o$heal$^* ^091Health.^*
+Item_OraclesTrinket_description									^o+$base_damage$ Attack Damage^*\n\n^091Activate: remove all stuns/slows/debuffs and provide 50% stun/slow reduction for $cc_state_duration_sec$ seconds. \n\nIf crowd control is successfully removed, heal for^* ^o$heal$^* ^091Health.^*
 Item_OraclesTrinket_description_simple							Grants Resistance\n^091Activate: Stun/Slow removal and self heal^*
 Item_OraclesTrinket_Empower_1_name								Concentration
 Item_OraclesTrinket_Empower_1_description						Successfully removing crowd-control also restores $mana_enchant$ Mana.
@@ -2869,9 +2869,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pincer retaliates against
 Ability_Pincer_Ult_1_name										Breakout
 Ability_Pincer_Ult_2_name										Breakout
 Ability_Pincer_Ult_3_name										Breakout
-Ability_Pincer_Ult_1_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
-Ability_Pincer_Ult_2_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
-Ability_Pincer_Ult_3_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
+Ability_Pincer_Ult_1_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
+Ability_Pincer_Ult_2_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
+Ability_Pincer_Ult_3_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
 Ability_Pincer_Ult_1_description_simple							Activate to remove all Stun/Slow effects.
 Ability_Pincer_Ult_2_description_simple							Activate to remove all Stun/Slow effects.
 Ability_Pincer_Ult_3_description_simple							Activate to remove all Stun/Slow effects.
