@@ -1946,7 +1946,7 @@ Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$ de armadura.
 
 // Item_StoneSkin
 Item_StoneSkin_name												Pele de pedra
-Item_StoneSkin_description										^o+$damage$ de dano de ataque^* \nAtive para reduzir todos os danos recebidos em $damage_scale$% e o controle de aglomeração em $ccreduction$% por 8 segundos. 
+Item_StoneSkin_description										^o+$damage$ de dano de ataque^* \nAtive para reduzir todos os danos recebidos em $damage_scale$% e o controle de aglomeração em $ccreduction$% por $duration_sec$ segundos. 
 Item_StoneSkin_description_simple								Concede ^odano de ataque^*. Ative para reduzir o dano sofrido e o controle de aglomeração.
 Item_StoneSkin_bonusdescription									
 Item_StoneSkin_legendaryname									
@@ -2012,7 +2012,7 @@ Item_ASBoots_description_simple									Concede velocidade de movimento e de ata
 
 // HealthBoots
 Item_HealthBoots_name											Botas de inércia
-Item_HealthBoots_description									65 de velocidade de movimento, +250 de vida \nAtive para anular o CA e fornecer 50% de redução de CA por 2 segundos. Pode ser usada ao ser anulado.
+Item_HealthBoots_description									$movespeed$ de velocidade de movimento, +$max_health$ de vida \nAtive para anular o CA e fornecer 50% de redução de CA por 2 segundos. Pode ser usada ao ser anulado.
 Item_HealthBoots_description_simple								Concede velocidade de movimento e vida. Ative para remover todos os atordoamentos e reduções de movimento.
 
 // RuneBoots
@@ -2630,9 +2630,9 @@ Ability_Ganker_Passive_3_description_simple					Aumenta a vel. de movimento fora
 Ability_Ganker_TriggeredPassive_1_name						Recompensa
 Ability_Ganker_TriggeredPassive_2_name						Recompensa
 Ability_Ganker_TriggeredPassive_3_name						Recompensa
-Ability_Ganker_TriggeredPassive_1_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. $cooldown$ segundos de recarga.
-Ability_Ganker_TriggeredPassive_2_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. ^c$cooldown$ segundos de recarga^*.
-Ability_Ganker_TriggeredPassive_3_description				Ao eliminar um herói inimigo, concede ^c$gold$ de bônus de ouro^*. $cooldown$ segundos de recarga.
+Ability_Ganker_TriggeredPassive_1_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. ^c$cooldown_sec$ segundos de recarga^*.
+Ability_Ganker_TriggeredPassive_2_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. ^c$cooldown_sec$ segundos de recarga^*.
+Ability_Ganker_TriggeredPassive_3_description				Ao eliminar um herói inimigo, concede $gold$ de bônus de ouro. ^c$cooldown_sec$ segundos de recarga^*.
 Ability_Ganker_TriggeredPassive_1_description_simple		Concede prêmio bônus por eliminar heróis.
 Ability_Ganker_TriggeredPassive_2_description_simple		Concede prêmio bônus por eliminar heróis.
 Ability_Ganker_TriggeredPassive_3_description_simple		Concede prêmio bônus por eliminar heróis.
@@ -2728,9 +2728,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pinça contra-ataca inimi
 Ability_Pincer_Ult_1_name										Fuga
 Ability_Pincer_Ult_2_name										Fuga
 Ability_Pincer_Ult_3_name										Fuga
-Ability_Pincer_Ult_1_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  $cooldown$ segundos de recarga.
-Ability_Pincer_Ult_2_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga.
-Ability_Pincer_Ult_3_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga.
+Ability_Pincer_Ult_1_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
+Ability_Pincer_Ult_2_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
+Ability_Pincer_Ult_3_description								Ative pare remover todos os efeitos de atordoamento/lentidão e fornecer uma redução de 50% nesses efeitos por 2 segundos.  ^c$cooldown$ segundos de recarga^*.
 Ability_Pincer_Ult_1_description_simple							Remove efeitos de Atordoamento/Lentidão
 Ability_Pincer_Ult_2_description_simple							Remove efeitos de Atordoamento/Lentidão
 Ability_Pincer_Ult_3_description_simple							Remove efeitos de Atordoamento/Lentidão
@@ -2757,9 +2757,9 @@ Ability_Tortus_Passive2_3_description_simple					Aumenta a regeneração de mana
 Ability_Tortus_TriggeredPassive_1_name							Endurecer
 Ability_Tortus_TriggeredPassive_2_name							Endurecer
 Ability_Tortus_TriggeredPassive_3_name							Endurecer
-Ability_Tortus_TriggeredPassive_1_description					Bloqueia até $deflection$ de dano de ataques básicos de um herói (escalona com o nível do herói). 18 segundos de recarga.
-Ability_Tortus_TriggeredPassive_2_description					Bloqueia até $deflection$ de dano de ataques básicos de um herói (escalona com o nível do herói). ^c12 segundos de recarga^*.
-Ability_Tortus_TriggeredPassive_3_description					Bloqueia até ^c$deflection$ de dano^* de ataques básicos de um herói (escalona com o nível do herói). 12 segundos de recarga.
+Ability_Tortus_TriggeredPassive_1_description					Bloqueia até $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de dano de ataques básicos de um herói (escalona com o nível do herói). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
+Ability_Tortus_TriggeredPassive_2_description					Bloqueia até $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de dano de ataques básicos de um herói (escalona com o nível do herói). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
+Ability_Tortus_TriggeredPassive_3_description					Bloqueia até $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de dano de ataques básicos de um herói (escalona com o nível do herói). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Bloqueia o dano de ataques básicos
 Ability_Tortus_TriggeredPassive_2_description_simple			Bloqueia o dano de ataques básicos
 Ability_Tortus_TriggeredPassive_3_description_simple			Bloqueia o dano de ataques básicos

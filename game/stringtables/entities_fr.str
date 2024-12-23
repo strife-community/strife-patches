@@ -1745,7 +1745,7 @@ Item_CrusaderShield_Empower_3_description						Armure -$sacrifice_enchant$\nAugm
 
 // Item_StoneSkin
 Item_StoneSkin_name                                                               Peau de Pierre
-Item_StoneSkin_description                                                        ^o+$damage$ Dégâts d'Attaque^* \nActivez ceci pour réduire tous les dégâts subis de $damage_scale$ % ainsi que tout le Contrôle de foule de $ccreduction$ % pendant 6 secondes.
+Item_StoneSkin_description                                                        ^o+$damage$ Dégâts d'Attaque^* \nActivez ceci pour réduire tous les dégâts subis de $damage_scale$ % ainsi que tout le Contrôle de foule de $ccreduction$ % pendant $duration_sec$ secondes.
 Item_StoneSkin_description_simple                                                 Inflige des ^oDégâts d'Attaque^*. Activez ceci pour réduire les dégâts subis ainsi que le contrôle de foule.
 Item_StoneSkin_bonusdescription
 Item_StoneSkin_legendaryname
@@ -1811,7 +1811,7 @@ Item_ASBoots_description_simple                                                 
 
 // HealthBoots
 Item_HealthBoots_name                                                             Bottes d'Inertie
-Item_HealthBoots_description                                                      65 Vitesse de Mouvement, +250 PV. \nActivez les Bottes afin de complètement désactiver le Contrôle de foule pour vous-même et pour permettre une réduction du CF de 50 % pendant 2 secondes. Elles peuvent être utilisées lorsqu'elles sont désactivées.
+Item_HealthBoots_description                                                      $movespeed$ Vitesse de Mouvement, +$max_health$ PV. \nActivez les Bottes afin de complètement désactiver le Contrôle de foule pour vous-même et pour permettre une réduction du CF de 50 % pendant 2 secondes. Elles peuvent être utilisées lorsqu'elles sont désactivées.
 Item_HealthBoots_description_simple                                               Ces Bottes accordent de la Vitesse de Mouvement et des PV. Activez-les pour retirer tous les Assommements et les Ralentissements qui vous affectent.
 
 // RuneBoots
@@ -2406,9 +2406,9 @@ Ability_Ganker_Passive_3_description_simple                                     
 Ability_Ganker_TriggeredPassive_1_name                                            Prime
 Ability_Ganker_TriggeredPassive_2_name                                            Prime
 Ability_Ganker_TriggeredPassive_3_name                                            Prime
-Ability_Ganker_TriggeredPassive_1_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. Délai de rechargement de $cooldown$ seconde(s).
-Ability_Ganker_TriggeredPassive_2_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. ^cDélai de rechargement de $cooldown$ seconde(s)^*.
-Ability_Ganker_TriggeredPassive_3_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez ^c$gold$ Or Bonus^*. Délai de rechargement de $cooldown$ seconde(s).
+Ability_Ganker_TriggeredPassive_1_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. ^cDélai de rechargement de $cooldown_sec$ seconde(s)^*.
+Ability_Ganker_TriggeredPassive_2_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. ^cDélai de rechargement de $cooldown_sec$ seconde(s)^*.
+Ability_Ganker_TriggeredPassive_3_description                                     Lorsque vous éliminez un héros ennemi, vous gagnez $gold$ Or Bonus. ^cDélai de rechargement de $cooldown_sec$ seconde(s)^*.
 Ability_Ganker_TriggeredPassive_1_description_simple                              Accorde une prime bonus pour l'élimination des héros.
 Ability_Ganker_TriggeredPassive_2_description_simple                              Accorde une prime bonus pour l'élimination des héros.
 Ability_Ganker_TriggeredPassive_3_description_simple                              Accorde une prime bonus pour l'élimination des héros.
@@ -2490,7 +2490,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple                            
 Ability_Pincer_Ult_1_name                                                         Fuite
 Ability_Pincer_Ult_2_name                                                         Fuite
 Ability_Pincer_Ult_3_name                                                         Fuite
-Ability_Pincer_Ult_1_description								À activer pour dissiper tous les effets d'assommement et de ralentissement et réduire de 50 % les assommements et les ralentissements pendant 2 secondes.  $cooldown$ Deuxième rechargement.
+Ability_Pincer_Ult_1_description								À activer pour dissiper tous les effets d'assommement et de ralentissement et réduire de 50 % les assommements et les ralentissements pendant 2 secondes.  ^c$cooldown$ Deuxième rechargement^*.
 Ability_Pincer_Ult_2_description								À activer pour dissiper tous les effets d'assommement et de ralentissement et réduire de 50 % les assommements et les ralentissements pendant 2 secondes.  ^c$cooldown$ Deuxième rechargement^*.
 Ability_Pincer_Ult_3_description								À activer pour dissiper tous les effets d'assommement et de ralentissement et réduire de 50 % les assommements et les ralentissements pendant 2 secondes.  ^c$cooldown$ Deuxième rechargement^*.
 Ability_Pincer_Ult_1_description_simple							Dissipe les effets d'assommement et de ralentissement.
@@ -2519,9 +2519,9 @@ Ability_Tortus_Passive2_3_description_simple                                    
 Ability_Tortus_TriggeredPassive_1_name                                            Endurcissement
 Ability_Tortus_TriggeredPassive_2_name                                            Endurcissement
 Ability_Tortus_TriggeredPassive_3_name                                            Endurcissement
-Ability_Tortus_TriggeredPassive_1_description                                     Bloque jusqu'à $deflection$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). Délai de rechargement de 18 secondes.
-Ability_Tortus_TriggeredPassive_2_description                                     Bloque jusqu'à $deflection$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de 12 secondes^*.
-Ability_Tortus_TriggeredPassive_3_description                                     Bloque jusqu'à $deflection$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). Délai de rechargement de 12 secondes.
+Ability_Tortus_TriggeredPassive_1_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
+Ability_Tortus_TriggeredPassive_2_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
+Ability_Tortus_TriggeredPassive_3_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
 Ability_Tortus_TriggeredPassive_1_description_simple                              Bloque les dégâts des attaques de base.
 Ability_Tortus_TriggeredPassive_2_description_simple                              Bloque les dégâts des attaques de base.
 Ability_Tortus_TriggeredPassive_3_description_simple                              Bloque les dégâts des attaques de base.

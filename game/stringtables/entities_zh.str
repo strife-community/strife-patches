@@ -2092,7 +2092,7 @@ Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$坚韧，周�
 
 // Item_StoneSkin
 Item_StoneSkin_name												石化之肤
-Item_StoneSkin_description										^o+$damage$物理伤害^*   \n\n使用：+$resistance$坚韧，持续6秒。                                         
+Item_StoneSkin_description										^o+$damage$物理伤害^*   \n\n使用：+$resistance$坚韧，持续$duration_sec$秒。                                         
 Item_StoneSkin_description_simple												+^o物理伤害^* \n使用: gain massive Resistance for a duration.^*
 Item_StoneSkin_bonusdescription												+$common_increase$%伤害减免效果
 Item_StoneSkin_legendaryname												再充能
@@ -2159,7 +2159,7 @@ Item_ASBoots_description_simple												增加移动速度和攻击力，主�
 
 // HealthBoots
 Item_HealthBoots_name												惯性之靴
-Item_HealthBoots_description											+65移动速度  \n+250生命值   \n使用：解除英雄受到的所有控制效果并在接下来的2秒内减少50%的控制效果。
+Item_HealthBoots_description											+$movespeed$移动速度  \n+$max_health$生命值   \n使用：解除英雄受到的所有控制效果并在接下来的2秒内减少50%的控制效果。
 Item_HealthBoots_description_simple												增加移动速度和生命值，主动使用解除受到的控制效果。
 
 // RuneBoots
@@ -2561,7 +2561,7 @@ Item_BarrierToken_Empower_3_description							不再获得$magicarmor_enchant$�
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										圣谕徽章
-Item_OraclesTrinket_description									+$resistance$坚韧  \n\n^主动使用: 消除所有晕眩效果/减速且晕眩敌人，晕眩效果为50%/减速减成，持续2秒。 \n\n如果能消除群控效果，可提供^* ^o$heal$^*生命值回复。^*
+Item_OraclesTrinket_description									+^o$base_damage$物理伤害^*\n\n^主动使用: 消除所有晕眩效果/减速且晕眩敌人，晕眩效果为50%/减速减成，持续2秒。 \n\n如果能消除群控效果，可提供^* ^o$heal$^*生命值回复。^*
 Item_OraclesTrinket_description_simple							获取坚韧 \n主动使用：减除晕眩/减速效果，提供自我治疗 
 Item_OraclesTrinket_Empower_1_name								浓缩
 Item_OraclesTrinket_Empower_1_description						移除群控效果，回复$mana_enchant$法力值。
@@ -2793,9 +2793,9 @@ Ability_Ganker_Passive_3_description_simple					战斗状态外增加移动速�
 Ability_Ganker_TriggeredPassive_1_name						奖励
 Ability_Ganker_TriggeredPassive_2_name						奖励
 Ability_Ganker_TriggeredPassive_3_name						奖励
-Ability_Ganker_TriggeredPassive_1_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
-Ability_Ganker_TriggeredPassive_2_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
-Ability_Ganker_TriggeredPassive_3_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_1_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown_sec$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_2_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown_sec$秒冷却时间^*。
+Ability_Ganker_TriggeredPassive_3_description				当杀死一个敌方英雄时，获得$gold$额外金币。^c$cooldown_sec$秒冷却时间^*。
 Ability_Ganker_TriggeredPassive_1_description_simple		击杀敌方英雄后，获得额外奖励  
 Ability_Ganker_TriggeredPassive_2_description_simple		击杀敌方英雄后，获得额外奖励
 Ability_Ganker_TriggeredPassive_3_description_simple		击杀敌方英雄后，获得额外奖励
@@ -2891,9 +2891,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple												平瑟会反攻�
 Ability_Pincer_Ult_1_name												脱逃
 Ability_Pincer_Ult_2_name												脱逃
 Ability_Pincer_Ult_3_name												脱逃
-Ability_Pincer_Ult_1_description												  移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间$cooldown$秒。
+Ability_Pincer_Ult_1_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
 Ability_Pincer_Ult_2_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
-Ability_Pincer_Ult_3_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间$cooldown$秒。
+Ability_Pincer_Ult_3_description												 移除英雄身上的晕眩/减速效果，并在接下来2秒内减少50%的被控制效果。冷却时间^c$cooldown$秒^*。
 Ability_Pincer_Ult_1_description_simple												移除晕眩/减速效果
 Ability_Pincer_Ult_2_description_simple												移除晕眩/减速效果
 Ability_Pincer_Ult_3_description_simple												移除晕眩/减速效果
@@ -2920,9 +2920,9 @@ Ability_Tortus_Passive2_3_description_simple												增加法力回复
 Ability_Tortus_TriggeredPassive_1_name											援护
 Ability_Tortus_TriggeredPassive_2_name												援护
 Ability_Tortus_TriggeredPassive_3_name												援护
-Ability_Tortus_TriggeredPassive_1_description												 托特斯对你进行援护，减少来自敌方英雄$deflection$普通攻击伤害(根据英雄等级而定)。冷却时间18秒。
-Ability_Tortus_TriggeredPassive_2_description													  托特斯对你进行援护，减少来自敌方英雄$deflection$普通攻击伤害(根据英雄等级而定)。冷却时间^c12秒^*。
-Ability_Tortus_TriggeredPassive_3_description													 托特斯对你进行援护，减少来自敌方英雄^c$deflection$^*普通攻击伤害(根据英雄等级而定)。冷却时间12秒。
+Ability_Tortus_TriggeredPassive_1_description												 托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
+Ability_Tortus_TriggeredPassive_2_description													  托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
+Ability_Tortus_TriggeredPassive_3_description													 托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
 Ability_Tortus_TriggeredPassive_1_description_simple												抵抗来自普攻的伤害 
 Ability_Tortus_TriggeredPassive_2_description_simple												抵抗来自普攻的伤害
 Ability_Tortus_TriggeredPassive_3_description_simple												抵抗来自普攻的伤害

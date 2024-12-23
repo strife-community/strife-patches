@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+    name="Item_OraclesTrinket_Empower_1"
+    
+    cost="1250"
+
+>
+    <constant name="mana_enchant" value="100" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
+
+    <onimpact>
+        <!-- Checking if any CC or debuff is applied -->
+        <haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+            <!-- Heal hero -->
+            <getconstant name="heal" adjustmentsource="this_entity" />
+            <heal a="result" />
+            <playeffect effect="effects/heal.effect" source="source_entity" target="" occlude="true" />
+            <!-- Give hero mana -->
+            <getconstant name="mana_enchant" />
+            <givemana amount="1" b="result" op="mult" />
+        </haseffecttype>
+
+        <!-- Dispell negative effects -->
+        <dispel type="CrowdControl" />
+        <dispel type="StatusDisable" />
+        <dispel type="StatusDebuff" />
+        <popup name="ccbreak" source="source_entity" target="source_entity" />
+
+        <!-- Apply CC reduction state -->
+        <getconstant name="cc_state_duration_sec" />
+        <setvar0 a="result" b="1000" op="mult" />
+        <applystate name="State_OraclesTrinket" target="source_entity" duration="var0" />
+    </onimpact>
+
+</qualityitem>

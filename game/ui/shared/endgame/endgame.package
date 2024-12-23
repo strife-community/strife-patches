@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<include file="/ui/main/postgame/scoreboard/scoreboard_templates_temp.package"/>
+
+	<panel name="endgame_scoreboard" grow="true" x="2.0h" y="-7h" width="110h" align="center" valign="center" float="bottom" padding="0.3h" noclick="1" visible="false">
+		<instance name="postgame_scoreboard_header" prefix="endgame" team="temp_gamelobby_team1" />			
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="0" icon="assassin" />
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="1" icon="bastion" />
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="2" icon="chipper" />
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="3" icon="embermage" />
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="4" icon="engineer" />
+		<panel height="0.3h" noclick="1" />
+		<instance name="postgame_scoreboard_header" prefix="endgame" team="temp_gamelobby_team2" />			
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="5" icon="assassin" />		
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="6" icon="bastion" />
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="7" icon="chipper" />
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="8" icon="embermage" />
+		<instance name="postgame_scoreboard_row" prefix="endgame" height="4.7h" index="9" icon="engineer" />
+		
+		<panel height="4h">
+			<instance name="standardButton" id="endgame_scoreboard_leavegame" y="1.5h" width="18h" font="maindyn_20" label="game_scoreboard_leave_game"/>
+		</panel>
+	</panel>
+</package>

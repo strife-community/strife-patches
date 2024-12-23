@@ -1812,7 +1812,7 @@ Item_CrusaderShield_Empower_3_description						Tăng thêm $sacrifice_enchant$ A
 
 // Item_StoneSkin
 Item_StoneSkin_name												Stone Skin
-Item_StoneSkin_description										^o+$damage$ Attack Damage^* \nKích hoạt sẽ kháng $damage_scale$% các sát thương, và $ccreduction$% Crowd Control trong 6 giây. 
+Item_StoneSkin_description										^o+$damage$ Attack Damage^* \nKích hoạt sẽ kháng $damage_scale$% các sát thương, và $ccreduction$% Crowd Control trong $duration_sec$ giây. 
 Item_StoneSkin_description_simple								Tăng ^oAttack Damage^*. Kháng sát thương và Crowd Control.
 Item_StoneSkin_bonusdescription									
 Item_StoneSkin_legendaryname									
@@ -1878,7 +1878,7 @@ Item_ASBoots_description_simple									Tăng Tốc Độ Chạy và Tốc �
 
 // HealthBoots
 Item_HealthBoots_name											Inertia Boots
-Item_HealthBoots_description									65 Movement Speed, +240 HP \nKích hoạt để giải trừ mọi trạng thái Stun/Slow và tăng 50% CC-Reduction trong 1 second. Khi bị Stun/Slow vẫn dùng được item.
+Item_HealthBoots_description									$movespeed$ Movement Speed, +$max_health$ HP \nKích hoạt để giải trừ mọi trạng thái Stun/Slow và tăng 50% CC-Reduction trong 1 second. Khi bị Stun/Slow vẫn dùng được item.
 Item_HealthBoots_description_simple								Tăng Tốc Độ Chạy và HP.  Kích hoạt item để chạy khi bị Stun/Slow.
 
 // RuneBoots
@@ -2483,9 +2483,9 @@ Ability_Ganker_Passive_3_description_simple					Tăng Movespeed khi Out Combat
 Ability_Ganker_TriggeredPassive_1_name						Bounty
 Ability_Ganker_TriggeredPassive_2_name						Bounty
 Ability_Ganker_TriggeredPassive_3_name						Bounty
-Ability_Ganker_TriggeredPassive_1_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  $cooldown$ giây Cooldown.
-Ability_Ganker_TriggeredPassive_2_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown$ giây Cooldown^*.
-Ability_Ganker_TriggeredPassive_3_description				Khi giết được Hero địch, Tăng ^c$gold$ bonus gold^*.  $cooldown$ giây Cooldown.
+Ability_Ganker_TriggeredPassive_1_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown_sec$ giây Cooldown^*.
+Ability_Ganker_TriggeredPassive_2_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown_sec$ giây Cooldown^*.
+Ability_Ganker_TriggeredPassive_3_description				Khi giết được Hero địch, Tăng $gold$ bonus gold.  ^c$cooldown_sec$ giây Cooldown^*.
 Ability_Ganker_TriggeredPassive_1_description_simple		Tăng bonus bounty khi giết Hero địch
 Ability_Ganker_TriggeredPassive_2_description_simple		Tăng bonus bounty khi giết Hero địch
 Ability_Ganker_TriggeredPassive_3_description_simple		Tăng bonus bounty khi giết Hero địch
@@ -2581,7 +2581,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pincer phản công Hero 
 Ability_Pincer_Ult_1_name										Breakout
 Ability_Pincer_Ult_2_name										Breakout
 Ability_Pincer_Ult_3_name										Breakout
-Ability_Pincer_Ult_1_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  $cooldown$ giây Cooldown.
+Ability_Pincer_Ult_1_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_2_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_3_description								Kích hoạt để loại bõ mọi CC và tăng 50% CC-Reduction trong 2 giây.  ^c$cooldown$ giây Cooldown^*.
 Ability_Pincer_Ult_1_description_simple							Loại bõ mọi tác động xấu trên Hero
@@ -2610,9 +2610,9 @@ Ability_Tortus_Passive2_3_description_simple					Tăng MP Hồi Phục
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Khóa $deflection$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  18 giây Cooldown.
-Ability_Tortus_TriggeredPassive_2_description					Khóa $deflection$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c12 giây Cooldown^*.
-Ability_Tortus_TriggeredPassive_3_description					Khóa ^c$deflection$ Damage^* từ đòn đánh thường của địch (dựa trên lv Hero).  12 giây Cooldown.
+Ability_Tortus_TriggeredPassive_1_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+Ability_Tortus_TriggeredPassive_2_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+Ability_Tortus_TriggeredPassive_3_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Khóa đòn đánh thường
 Ability_Tortus_TriggeredPassive_2_description_simple			Khóa đòn đánh thường
 Ability_Tortus_TriggeredPassive_3_description_simple			Khóa đòn đánh thường

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ganker_TriggeredPassive_2"
+
+	icon="icon.tga"
+	maxlevel="15"
+	actiontype="passive"
+	manacost="0"
+	cooldowntime="55000"
+	
+>
+    <!-- Additional gold received for the hero kill -->
+	<constant name="gold" value="110" adjustment="none" />
+    <!-- Ability cooldown. TOOLTIP ONLY! The real value is "cooldowntime" attribute! -->
+	<constant name="cooldown_sec" value="55" adjustment="none" />
+	
+	<onkill propagatetoillusions="false" >
+		<isready>
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>
+					<targettype type="self" />
+					<else>
+						<startcooldown />
+						<getconstant name="gold" />
+						<givegold amount="result" target="source_entity" position="this_proxy_entity" />
+						<playeffect effect="/shared/effects/lasthit/lasthit_pusher.effect" source="this_proxy_entity" target="this_proxy_entity" occlude="true" />
+					</else>
+				</else>
+			</targettype>
+		</isready>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<isready>
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>
+					<targettype type="self" />
+					<else>
+						<startcooldown />
+						<getconstant name="gold" />
+						<givegold amount="result" target="source_entity" position="this_proxy_entity" />
+						<playeffect effect="/shared/effects/lasthit/lasthit_pusher.effect" source="this_proxy_entity" target="this_proxy_entity" occlude="true" />
+					</else>
+				</else>
+			</targettype>
+		</isready>
+	</onassist>
+
+
+</ability>

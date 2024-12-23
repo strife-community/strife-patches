@@ -226,16 +226,23 @@
 		<expirestate name="State_ConsecutiveTowerHit" target="proxy_entity" />
 		<setproxy />
 		<targettype type="player_controlled">
+			
 			<applystate name="State_ConsecutiveTowerHit" duration="3000" />
 			<applystate name="State_ConsecutiveTowerHit_Immunity" duration="300" />
 		</targettype>
 	</onattackpredamage>
 	
-	<onattackingdamageevent>
-		<targettype type="kongor">
-			<setvalue name="damage_attempted" a="damage_attempted" b="1.66" op="mult" />
-		</targettype>
-	</onattackingdamageevent>
+    <onattackingdamageevent>
+        <targettype type="kongor">
+            <setvalue name="damage_attempted" a="damage_attempted" b="1.66" op="mult" />
+        </targettype>
+        <else>
+            <targettype type="player_controlled">
+                <!-- Double damage against player controlled units -->
+                <setvalue name="damage_attempted" a="damage_attempted" b="2.0" op="mult" />
+            </targettype>
+        </else>
+    </onattackingdamageevent>
 	
 	<onattack>
 		<playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />

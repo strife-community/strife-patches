@@ -504,7 +504,7 @@ chat_command_gameall						all,allchat,a
 chat_command_gameall_params					{Message}
 chat_command_gameall_info					Сообщение для всех пользователей в игре (только для администратора).
 chat_command_ping							ping
-chat_command_ping_info						Выводит время отклика сервера (только для администратора)
+chat_command_ping_info						Выводит время отклика сервера
 chat_command_ping_ping						Пинг: {value}
 chat_command_servercommand					servercommand,command,cmd,cvar,setcvar,remote,remoteconsole
 chat_command_servercommand_params			"command line"

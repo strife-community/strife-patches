@@ -504,7 +504,7 @@ chat_command_gameall						全部聊天
 chat_command_gameall_params					{Message}
 chat_command_gameall_info					向所有在线用户发送消息
 chat_command_ping							ping
-chat_command_ping_info						展示你的ping(Admin only)
+chat_command_ping_info						展示你的ping
 chat_command_ping_ping						Ping: {value}
 chat_command_servercommand					服务器命令
 chat_command_servercommand_params			"命令行"

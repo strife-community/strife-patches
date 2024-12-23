@@ -819,7 +819,7 @@ Hero_Buford_description												Lebt im Bayou und nutzt Käfer als Waffen.
 Hero_Buford_role													Held spezialisiert auf Angriffsschaden in langer Reichweite
 // Ability_Buford1
 Ability_Buford1_name												Giftschnecke
-Ability_Buford1_description											Ziele auf eine Stelle um eine Wolke aus giftigen Dämpfen zu erzeugen. Die Dämpfe verlangsamen alle Feinde um $slow$% und verringern ihren Widerstand um $resistance$. Wenn giftige Dämpfe von Feuerschnecke entzündet werden, explodieren sie und verursachen ^o$damage_explode$ magischen Schaden^*.\n\n^444Toxische Munition^*\nAngriffe verursachen $damage$ Bonusschaden. Es kann nur eine Munition aktiv sein.
+Ability_Buford1_description											Ziele auf eine Stelle um eine Wolke aus giftigen Dämpfen zu erzeugen. Die Dämpfe verlangsamen alle Feinde um $slow$% und verringern ihren Widerstand um $resistance$. Wenn giftige Dämpfe von Feuerschnecke entzündet werden, explodieren sie und verursachen ^o$damage_explode$ magischen Schaden^*.\n\n^444Toxische Munition^*\nAngriffe verursachen $damage_increase_attackbase$% Bonusschaden. Es kann nur eine Munition aktiv sein.
 Ability_Buford1_description_simple									AOE-Verlangsamung und erhöhter Angriffsschaden
 // Ability_Buford2
 Ability_Buford2_name												Feuerschnecke
@@ -2067,7 +2067,7 @@ Item_Shatterstone_legendaryname
 Item_Shatterstone_legendarydescription
 
 Item_StoneSkin_name													Steinhaut
-Item_StoneSkin_description											^o+$damage$ Angriffsschaden^*\n\n^091Aktivieren: Erhalte 8 Sekunden lang $resistance$ Widerstand.^*
+Item_StoneSkin_description											^o+$damage$ Angriffsschaden^*\n\n^091Aktivieren: Erhalte $duration_sec$ Sekunden lang $resistance$ Widerstand.^*
 Item_StoneSkin_description_simple									Gewährt ^oAngriffsschaden^*\n^091Aktivieren: Erhalten Sie für eine Dauer massiven Widerstand.^*
 Item_StoneSkin_bonusdescription
 Item_StoneSkin_legendaryname
@@ -2135,7 +2135,7 @@ Item_ASBoots_description_simple										Gewährt Bewegungs- und Angriffsgeschwi
 
 // HealthBoots
 Item_HealthBoots_name												Trägheitsstiefel
-Item_HealthBoots_description										65 Bewegungsgeschwindigkeit, +250 Gesundheit.\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
+Item_HealthBoots_description										$movespeed$ Bewegungsgeschwindigkeit, +$max_health$ Gesundheit.\nAktiviere um CC von selbst auszuräumen und 50%CC-Senkung für 2 Sekunden zu haben. Kann benutzt werden wenn deaktiviert.
 Item_HealthBoots_description_simple									Gewährt Bewegungsgeschwindigkeit und Gesundheit. Aktiviere um alle Betäubungen und Verlangsamungen von dir zu entfernem
 
 // RuneBoots
@@ -2527,7 +2527,7 @@ Item_BarrierToken_Empower_3_description								Gewährt keine $magicarmor_enchan
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name											Schmuckstück des Orakels
-Item_OraclesTrinket_description										+$resistance$ Widerstand\n\n^091Aktivieren: Entfernt alle Betäubungen/Verlangsamungen/Debuffs und sorgt für 2 Sekunden lang für 50% Betäubungs-/Verlangsamungsreduzierung.\n\nWenn die Massenkontrolle erfolgreich entfernt wird, heilen Sie um^* ^o$heal$^* ^091Gesundheit.^*
+Item_OraclesTrinket_description										^o+$base_damage$ Angriffsschaden^*\n\n^091Aktivieren: Entfernt alle Betäubungen/Verlangsamungen/Debuffs und sorgt für $cc_state_duration_sec$ Sekunden lang für 50% Betäubungs-/Verlangsamungsreduzierung.\n\nWenn die Massenkontrolle erfolgreich entfernt wird, heilen Sie um^* ^o$heal$^* ^091Gesundheit.^*
 Item_OraclesTrinket_description_simple								Gewährt Widerstand\n^091Aktivieren: Betäubung/Verlangsamungsentfernung und Selbstheilung^*
 Item_OraclesTrinket_Empower_1_name									Konzentration
 Item_OraclesTrinket_Empower_1_description							Das erfolgreiche Entfernen der Massenkontrolle stellt auch $mana_enchant$ Mana wieder her.
@@ -2731,9 +2731,9 @@ Ability_Ganker_Passive_3_description_simple							Erhöhte Bewegungsgeschwindigk
 Ability_Ganker_TriggeredPassive_1_name								Kopfgeld
 Ability_Ganker_TriggeredPassive_2_name								Kopfgeld
 Ability_Ganker_TriggeredPassive_3_name								Kopfgeld
-Ability_Ganker_TriggeredPassive_1_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. $cooldown$ Sekunden Abkühlzeit.
-Ability_Ganker_TriggeredPassive_2_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. ^c$cooldown$ Sekunden Abkühlzeit^*.
-Ability_Ganker_TriggeredPassive_3_description						Gibt dir ^c$gold$ Extragold^*, wenn du einen Gegner abschießt. $cooldown$ Sekunden Abkühlzeit.
+Ability_Ganker_TriggeredPassive_1_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. ^c$cooldown_sec$ Sekunden Abkühlzeit^*.
+Ability_Ganker_TriggeredPassive_2_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. ^c$cooldown_sec$ Sekunden Abkühlzeit^*.
+Ability_Ganker_TriggeredPassive_3_description						Gibt dir $gold$ Extragold, wenn du einen Gegner abschießt. ^c$cooldown_sec$ Sekunden Abkühlzeit^*.
 Ability_Ganker_TriggeredPassive_1_description_simple				Gibt Extragold für Kills von Helden
 Ability_Ganker_TriggeredPassive_2_description_simple				Gibt Extragold für Kills von Helden
 Ability_Ganker_TriggeredPassive_3_description_simple				Gibt Extragold für Kills von Helden
@@ -2868,7 +2868,7 @@ Ability_Pincer_TriggeredPassive_3_description_simple				Pincer rächt sich an Ge
 Ability_Pincer_Ult_1_name											Durchbruch
 Ability_Pincer_Ult_2_name											Durchbruch
 Ability_Pincer_Ult_3_name											Durchbruch
-Ability_Pincer_Ult_1_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.$cooldown$ Sekunde Abklingzeit.
+Ability_Pincer_Ult_1_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_2_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_3_description									Aktivieren, um alle Betäubungs-/Lähmeffekte zu beseitigen und 2 Sekunden lang Betäubungs-/Lähmeffekte um 50% zu reduzieren.^c$cooldown$ Sekunde Abklingzeit^*.
 Ability_Pincer_Ult_1_description_simple								Beseitigt Betäubungs-/Lähmeffekte
@@ -3043,9 +3043,9 @@ Ability_Tortus_Passive_3_description								Erhöht max. Gesundheit um $passive$
 Ability_Tortus_TriggeredPassive_1_name								Abhärten
 Ability_Tortus_TriggeredPassive_2_name								Abhärten
 Ability_Tortus_TriggeredPassive_3_name								Abhärten
-Ability_Tortus_TriggeredPassive_1_description						Blockiert bis zu $deflection$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). 18 Sekunden Abkühlung.
-Ability_Tortus_TriggeredPassive_2_description						Blockiert bis zu $deflection$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c12 Sekunden Abkühlung^*.
-Ability_Tortus_TriggeredPassive_3_description						Blockiert bis zu ^c$deflection$ Damage^* Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). 12 Sekunden Abkühlung.
+Ability_Tortus_TriggeredPassive_1_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
+Ability_Tortus_TriggeredPassive_2_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
+Ability_Tortus_TriggeredPassive_3_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
 Ability_Tortus_TriggeredPassive_1_description_simple				Blockiert den Schaden von Basis-Attacken
 Ability_Tortus_TriggeredPassive_2_description_simple				Blockiert den Schaden von Basis-Attacken
 Ability_Tortus_TriggeredPassive_3_description_simple				Blockiert den Schaden von Basis-Attacken

@@ -820,7 +820,7 @@ Hero_Buford_description											Lives in the Bayou and uses bugs as weapons.
 Hero_Buford_role												Long range attack damage hero
 // Ability_Buford1
 Ability_Buford1_name											Poison Slug
-Ability_Buford1_description										Target location to create a cloud of toxic fumes. Fumes slow all enemies by $slow$% and reduces their resistance by $resistance$. If toxic fumes are ignited by Fire Slug they explode dealing ^o$damage_explode$ Magic damage^*.\n\n^444Toxic Ammo^*\nAttacks deal $damage$ bonus damage. Only one Ammo can be active.
+Ability_Buford1_description										Target location to create a cloud of toxic fumes. Fumes slow all enemies by $slow$% and reduces their resistance by $resistance$. If toxic fumes are ignited by Fire Slug they explode dealing ^o$damage_explode$ Magic damage^*.\n\n^444Toxic Ammo^*\nAttacks deal $damage_increase_attackbase$% bonus damage. Only one Ammo can be active.
 Ability_Buford1_description_simple								AOE slow and attack damage increase
 // Ability_Buford2
 Ability_Buford2_name											Fire Slug
@@ -1904,7 +1904,7 @@ Item_CircletOfTheSage_Empower_4_description						Grants $magic_damage_enchant$% 
 
 // Fell Blade
 Item_FellBlade_name												Fel Blade
-Item_FellBlade_description										Recipe grants an additional $power$ power.
+Item_FellBlade_description										Recipe grants an additional $power$ power.\nIncreases movement speed by $speed_boost_percent$% while out of combat.
 Item_FellBlade_description_simple								Cheap, efficient Power increase
 Item_FellBlade_bonusdescription									Increases the power provided by $common_increase$%.
 Item_FellBlade_legendaryname									Sharpened
@@ -2068,7 +2068,7 @@ Item_Shatterstone_legendaryname
 Item_Shatterstone_legendarydescription	
 
 Item_StoneSkin_name												Stone Skin
-Item_StoneSkin_description										^o+$damage$ Attack Damage^*\n\n^091Activate: gain $resistance$ Resistance for 8 seconds.^*
+Item_StoneSkin_description										^o+$damage$ Attack Damage^*\n\n^091Activate: gain $resistance$ Resistance and $ccreduction$% stun/slow reduction for $duration_sec$ seconds.^*
 Item_StoneSkin_description_simple								Grants ^oAttack Damage^*\n^091Activate: gain massive Resistance for a duration.^*
 Item_StoneSkin_bonusdescription									
 Item_StoneSkin_legendaryname									
@@ -2136,7 +2136,7 @@ Item_ASBoots_description_simple									Grants Atack Speed\n^091Activate: sprint
 
 // HealthBoots
 Item_HealthBoots_name											Inertia Boots
-Item_HealthBoots_description									65 Movement Speed\n+250 Health \n\n^091Activate: remove all stuns/slows and provide 50% stun/slow reduction for 2 seconds.^*
+Item_HealthBoots_description									$movespeed$ Movement Speed\n+$max_health$ Health \n\n^091Activate: remove all stuns/slows and provide 50% stun/slow reduction for 2 seconds.^*
 Item_HealthBoots_description_simple								Grants Health\n^091Activate: remove all stuns and slows from yourself.^*
 
 // RuneBoots
@@ -2528,7 +2528,7 @@ Item_BarrierToken_Empower_3_description							No longer gives $resistance_enchan
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										Oracle's Trinket
-Item_OraclesTrinket_description									+$resistance$ Resistance\n\n^091Activate: remove all stuns/slows/debuffs and provide 50% stun/slow reduction for 2 seconds. \n\nIf crowd control is successfully removed, heal for^* ^o$heal$^* ^091Health.^*
+Item_OraclesTrinket_description									^o+$base_damage$ Attack Damage^*\n\n^091Activate: remove all stuns/slows/debuffs and provide 50% stun/slow reduction for $cc_state_duration_sec$ seconds. \n\nIf crowd control is successfully removed, heal for^* ^o$heal$^* ^091Health.^*
 Item_OraclesTrinket_description_simple							Grants Resistance\n^091Activate: Stun/Slow removal and self heal^*
 Item_OraclesTrinket_Empower_1_name								Concentration
 Item_OraclesTrinket_Empower_1_description						Successfully removing crowd-control also restores $mana_enchant$ Mana.
@@ -2542,7 +2542,7 @@ Item_TwinFang_description_simple								Grants Power and ability Resistance pene
 Item_TwinFang_Empower_1_name									Siphoning
 Item_TwinFang_Empower_1_description								$spellsteal_enchant$% Magic Lifesteal.
 Item_TwinFang_Empower_2_name									Focus
-Item_TwinFang_Empower_2_description								Additional $penetration_enchant$ Magical Penetration, but lose $resistance$ Resistance.
+Item_TwinFang_Empower_2_description								Additional $penetration_enchant$ Resistance penetration, but lose $resistance$ Resistance.
 Item_TwinFang_Empower_3_name									Heritage
 Item_TwinFang_Empower_3_description								Upon dealing magic damage to an enemy hero, permanently gain +$mana$ mana. Stacks 25 times.
 
@@ -2732,9 +2732,9 @@ Ability_Ganker_Passive_3_description_simple						Increases Movespeed while out o
 Ability_Ganker_TriggeredPassive_1_name							Bounty
 Ability_Ganker_TriggeredPassive_2_name							Bounty
 Ability_Ganker_TriggeredPassive_3_name							Bounty
-Ability_Ganker_TriggeredPassive_1_description					Upon killing an enemy hero, grants 130 bonus gold.\n\n^c40 Second Cooldown.^*
-Ability_Ganker_TriggeredPassive_2_description					Upon killing an enemy hero, grants 130 bonus gold.\n\n^c40 Second Cooldown.^*
-Ability_Ganker_TriggeredPassive_3_description					Upon killing an enemy hero, grants 130 bonus gold.\n\n^c40 Second Cooldown.^*
+Ability_Ganker_TriggeredPassive_1_description					Upon killing an enemy hero, grants $gold$ bonus gold.\n\n^c$cooldown_sec$ Second Cooldown.^*
+Ability_Ganker_TriggeredPassive_2_description					Upon killing an enemy hero, grants $gold$ bonus gold.\n\n^c$cooldown_sec$ Second Cooldown.^*
+Ability_Ganker_TriggeredPassive_3_description					Upon killing an enemy hero, grants $gold$ bonus gold.\n\n^c$cooldown_sec$ Second Cooldown.^*
 Ability_Ganker_TriggeredPassive_1_description_simple			Grants bonus bounty for hero kills.
 Ability_Ganker_TriggeredPassive_2_description_simple			Grants bonus bounty for hero kills.
 Ability_Ganker_TriggeredPassive_3_description_simple			Grants bonus bounty for hero kills.
@@ -2869,9 +2869,9 @@ Ability_Pincer_TriggeredPassive_3_description_simple			Pincer retaliates against
 Ability_Pincer_Ult_1_name										Breakout
 Ability_Pincer_Ult_2_name										Breakout
 Ability_Pincer_Ult_3_name										Breakout
-Ability_Pincer_Ult_1_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
-Ability_Pincer_Ult_2_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
-Ability_Pincer_Ult_3_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c100 Second Cooldown^*. 
+Ability_Pincer_Ult_1_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
+Ability_Pincer_Ult_2_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
+Ability_Pincer_Ult_3_description								Activate to remove all stuns/slows & provide 50% stun/slow reduction for 2 seconds.\n\n^c$cooldown$ Second Cooldown^*. 
 Ability_Pincer_Ult_1_description_simple							Activate to remove all Stun/Slow effects.
 Ability_Pincer_Ult_2_description_simple							Activate to remove all Stun/Slow effects.
 Ability_Pincer_Ult_3_description_simple							Activate to remove all Stun/Slow effects.
@@ -3044,9 +3044,9 @@ Ability_Tortus_Passive_3_description							Increases Max Health by 15%.
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Blocks 36-106 Damage from a hero's basic attack (scales with hero level).\n\n^c12 Second Cooldown^*. 
-Ability_Tortus_TriggeredPassive_2_description					Blocks 36-106 Damage from a hero's basic attack (scales with hero level).\n\n^c12 Second Cooldown^*. 
-Ability_Tortus_TriggeredPassive_3_description					Blocks 36-106 Damage from a hero's basic attack (scales with hero level).\n\n^c12 Second Cooldown^*. 
+Ability_Tortus_TriggeredPassive_1_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
+Ability_Tortus_TriggeredPassive_2_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
+Ability_Tortus_TriggeredPassive_3_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Blocks damage from hero attacks.
 Ability_Tortus_TriggeredPassive_2_description_simple			Blocks damage from hero attacks.
 Ability_Tortus_TriggeredPassive_3_description_simple			Blocks damage from hero attacks.

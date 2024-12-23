@@ -57,7 +57,7 @@
 	<map name="shattered_trials" teamsize="5"/>
 
 	<!--<leaver region="USE" forgiveness_min="20160" safetime_sec="1" orig_safetime_sec="470" orig_strike_penalties_min="30 120 360 1440 2880"  strike_penalties_min="0 0 0 0 0" />-->
-	<leaver region="EU" forgiveness_min="20160" safetime_sec="1" orig_safetime_sec="470" orig_strike_penalties_min="30 120 360 1440 2880"  strike_penalties_min="0 0 0 0 0" />
+	<leaver region="EU" forgiveness_min="20160" safetime_sec="470" strike_penalties_min="30 120 360 1440 2880" />
 	<!-- <leaver region="SEA" forgiveness_min="20160" safetime_sec="470" strike_penalties_min="0 30 60 120 360 1440 2880" /> -->
 
 	<!-- -->

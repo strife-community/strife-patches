@@ -196,7 +196,7 @@
 	<modifier key="shop_access_dead" condition="!alive" modpriority="100" exclusive="true" shopaccess="Shop_Utility Shop_Basic Shop_bots Shop_Consumables Shop_MagicDefense Shop_PhysicalDefense Shop_Vitalboosters Shop_Artifacts Shop_Offense Shop_Crafted" stashaccess="true" />
 	<modifier key="no_aggro" modpriority="100" defaultbehavior="hold" /> 
 	
-	<modifier key="pal_roll" modpriority="100" model="ability_02/effects/ball_form/model.mdf" passiveeffect="ability_02/effects/trail.effect" infoheight="200"/>
+	<modifier key="pal_roll" modpriority="100" model="ability_02/effects/ball_form/model.mdf" passiveeffect="ability_02/effects/trail.effect" infoheight="200" attackrange="50" />
 	<modifier key="Melee_Slow_resistence" condition="melee" modpriority="100" slowresistance="0.0" />
 	
 </hero>
