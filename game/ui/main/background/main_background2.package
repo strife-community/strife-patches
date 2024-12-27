@@ -124,6 +124,6 @@
 	</panel>
 	<panel name="pregame_splashimage_container" y="90s" height="-90s" visible="0" noclick="1"/>
 	
-	<splashimage name="wheel_background" onshowlua="self:SetImage('/ui/main/shared/concept_art/prematch_background.jpg')" onhidelua="self:SetImage('')" noclick="1" visible="0" />
+	<splashimage name="wheel_background" onshowlua="self:SetImage('/ui/main/shared/concept_art/prematch_background.jpg')" onhidelua="self:SetImage('')" noclick="1" visible="0" view="stretch" />
 	
 </package>

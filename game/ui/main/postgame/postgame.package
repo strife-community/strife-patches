@@ -23,6 +23,7 @@
 				noclick="1"
 				visible="1"
 				height="63.49@" width="100%"
+				view="stretch"
 				onhidelua="self:SetImage('')"
 				onshowlua="self:SetImage('/ui/main/postgame/textures/enviro_base_0.jpg')"
 			/>
