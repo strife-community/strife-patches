@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+
+	<panel name="mainBG" texture="/ui/main/shared/textures/main_background.tga" width="178.777778@" height="100%" align="center"/>
+
+	<!-- play screen background -->
+	<template name="selection_background" >
+		<panel name="selection_background" noclick="1" texture="$invis" color="1 1 1 1" visible="0" >		
+		</panel>	
+	</template>	
+	
+	<!-- big wheel -->
+	<panel name="mainBGWheel_parent" width="127h" height="127h" valign="center" x="-250s" noclick="true" passivechildren="true">
+		 
+		<!-- BEHIND WHEEL GLOW -->
+		<panel name="mainBG_behind_glow" width="205w" height="200h" align="center" valign="center" color="invisible" noclick="1" >
+			<modelpanel name="mainBG_behind_glow_modelpanel"
+				noclick="true"
+				model="/shared/models/invis.mdf"
+				effect="" 
+				camerapos="0 -40 0"
+				cameraangles="0 0 0"
+				camerafov="55"
+				depthclear="true"
+				depthcompress="true"
+				onloadlua="
+					self:SetEffect('/ui/main/background/blue/main_bg.effect', '1', '1', '1')
+				"
+			/>
+		</panel>	
+		
+		<panel height="100h" width="100w" x="58.5h" y="9.0h" >
+			<instance name="selection_background" />	
+		</panel>
+		
+		<image name="mainBGWheel_shadow" visible="0" texture="/ui/shared/textures/bg_wheel_texture_glow.tga" width="126@" height="126%" align="center" valign="center" color="0 0 0 0.45" noclick="true"/>		
+
+		<!-- WHEEL MODEL -->
+		<modelpanel name="mainBGWheel" width="252@" height="252%" align="center" valign="center" visible="1"
+
+			model="/ui/main/background/blue/model/model.mdf"
+			
+			effect=""
+			
+			onloadlua="
+				self:SetEffect('/ui/main/background/blue/front.effect', '1', '1', '1')
+			"
+			
+			depthclear="true" 
+			depthcompress="false"
+			lookat="false"
+			
+			modelscale="0.5"
+			modelpos="0 -1350 0"
+			modelangles="0 0 0" 
+
+			anim="idle"	
+			rotation="0"
+			ambientcolor=".5 .5 .5"
+		/>		
+		
+		<!-- BEHIND RANKED GLOW -->
+		<panel name="mainBG_behind_ranked_glow" visible="0" width="205w" height="200h" align="center" valign="center" color="invisible" noclick="1" >
+			<modelpanel name="mainBG_behind_ranked_glow_modelpanel"
+				noclick="true"
+				model="/shared/models/invis.mdf"
+				effect="" 
+				camerapos="0 -40 0"
+				cameraangles="0 0 0"
+				camerafov="55"
+				depthclear="true"
+				depthcompress="true"
+				onloadlua="
+					self:SetEffect('/ui/main/background/main_bg.effect', '0.85', '0.52', '0.40')
+				"
+			/>
+		</panel>		
+		
+		<modelpanel name="mainBGWheel_ranked" visible="0" width="252@" height="252%" align="center" valign="center"
+
+			XXXmodel="/ui/shared/models/ranked_wheel/test/model.mdf"
+			ZZZmodel="/ui/main/background/ranked/div_silver/model.mdf"
+			model="/ui/main/background/ranked/div_silver/model.mdf"
+			
+			effect=""
+			
+			onloadlua="
+				--self:Sleep(1000, function(self) self:SetVisible(1) end)
+				--self:SetEffect('/ui/main/background/blue/front.effect', '1', '1', '1')
+			"
+			
+			depthclear="true" 
+			depthcompress="false"
+			lookat="false"
+			
+			modelscale="20"
+			modelpos="-20 -250 0"
+			modelangles="0 0 0" 
+
+			anim="idle"	
+			rotation="0"
+			ambientcolor=".5 .5 .5"
+		/>		
+
+		<image name="mainBGWheel_texture" visible="0" texture="$invis" width="100@" height="100%" align="center" valign="center"  color="1 1 1 1" noclick="true"/>			
+		
+		<image name="mainBGWheel_shadow_2" visible="1" texture="/ui/shared/textures/bg_wheel_texture_glow.tga" width="126@" height="126%" align="center" valign="center" color="0 0 0 .1" noclick="true"/>		
+
+	</panel>	
+	
+	<panel name="mainBackgroundBlackTop" height="90s" color="black" visible="0" noclick="1"/>
+
+	<panel name="preview_splash" noclick="1" passivechildren="true" color="invisible" y="0" visible="0" >
+		<image texture="/ui/main/background/textures/dhw_logo.tga" x="45s" y="-65s" valign="bottom" width="360s" height="180s" noclick="1" />
+	</panel>	
+
+	<frame name="main_bg_loading_bar_frame" texture="/ui/elements:rounded_bg_white" width="40h" height="1.5h" align="center" valign="bottom" y="-20%" x="40%" color="1 1 1 1.0" borderthickness="0.5h" noclick="1" clip="true" visible="0">
+		<frame name="main_bg_loading_bar" texture="/ui/elements:rounded_bg_white" onshowlua="self:SetWidth('5%')" width="5%" height="1.5h" color="1 0 0 1.0" borderthickness="0.5h" noclick="1" />
+	</frame>	
+	  
+	<!-- container for pregame splash images to cover the background with -->
+	<panel name="pregame_loading_background" y="90s" height="-90s" visible="0" color="black" noclick="1">
+		<label content="pregame_general_loading" y="-100s" font="maindyn_36" style="labelBase" color="#b9f9ff99" textalign="center" textvalign="center" noclick="1"/>
+	</panel>
+	<panel name="pregame_splashimage_container" y="90s" height="-90s" visible="0" noclick="1"/>
+	
+	<splashimage name="wheel_background" onshowlua="self:SetImage('/ui/main/shared/concept_art/prematch_background.jpg')" onhidelua="self:SetImage('')" noclick="1" visible="0" />
+	
+</package>

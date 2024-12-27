@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<include file="postgame_templates.package"/>
+
+	<panel name="post_game_loop_parent" noclick="1" visible="0" 
+		onshowlua="
+			mainUI.resourceContextTable	= mainUI.resourceContextTable or {}
+			mainUI.resourceContextTable.rewards_bg_texture = true		
+		"
+		onhidelua="
+			self:Sleep(1, function(self)
+				if (mainUI.resourceContextTable) and (mainUI.resourceContextTable.rewards_bg_texture) then
+					self:UICmd('DeleteResourceContext(\'rewards_bg_texture\')')
+				end
+			end)
+		"	
+	>
+
+		<!-- Postgame Background -->
+		<panel name="postgame_enviro_background" width="100%" color="0 0 0 1" height="100%" noclick="1" visible="1">
+		
+			<splashimage
+				noclick="1"
+				visible="1"
+				height="63.49@" width="100%"
+				onhidelua="self:SetImage('')"
+				onshowlua="self:SetImage('/ui/main/postgame/textures/enviro_base_0.jpg')"
+			/>
+			
+			
+			<modelpanel
+				noclick="true"
+				height="75%"
+				model="/shared/models/invis.mdf"
+				camerapos="-240 0 -30"
+				cameraangles="0 0 0"
+				camerafov="50"
+				depthclear="true"
+				depthcompress="true"
+				onloadlua="
+					self:SetEffect('/ui/main/postgame/effects/sun_rays.effect', '1', '1', '1')
+				"
+			/>
+			
+			
+			<panel width="2048s" height="1024s" noclick="1" valign="bottom"
+				texture="" onhidelua="self:SetTexture('')" onshowlua="self:SetTexture('/ui/main/postgame/textures/enviro_base_1.tga') self:SetColor('1 1 1 1')"
+			/>
+						
+		</panel>
+				
+		<instance name="postgame_khanquest_template" />
+		<instance name="postgame_rewards_template" />
+		<instance name="postgame_progress_template" />
+		
+		<!-- Postgame Foreground-->
+		<panel name="postgame_enviro_foreground" y="-15s" valign="bottom" noclick="1" visible="1">		
+			<panel x="0" width="920s" height="460s" valign="bottom" noclick="1"
+				texture="" onhidelua="self:SetTexture('')" onshowlua="self:SetTexture('/ui/main/postgame/textures/rockshelf.tga') self:SetColor('1 1 1 1')"
+			/>
+				
+		</panel>		
+		
+		<instance name="postgame_summary_template" />
+		
+		<panel name="postgame_summary_freeform_parent" noclick="1" >
+			<!-- Animated Rewards are inserted here -->
+		</panel>		
+		
+		<instance name="postgame_notice_parent_template" />
+		
+		<instance name="postgame_scoreboard_template" />
+		<instance name="postgame_nav_template" />
+		
+		<panel y="-10s" x="-5s" width="260s" height="124s" valign="bottom" noclick="1"
+			texture="" onhidelua="self:SetTexture('')" onshowlua="self:SetTexture('/ui/main/postgame/textures/rockshelf_foregrass.tga') self:SetColor('1 1 1 1')"
+		/>	
+
+	</panel>
+	
+	<lua file="/ui/main/postgame/quest_progress/quest_progress.lua"/>
+	<lua file="/ui/main/postgame/splash/postgame_splash.lua"/>
+	<lua file="/ui/main/postgame/khanquest/khanquest.lua"/>
+	<lua file="/ui/main/postgame/rewards/rewards.lua"/> 			<!-- move this in to rewards when seperated -->
+	<lua file="/ui/main/postgame/scoreboard/scoreboard.lua"/> 		<!-- move this in to scoreboard when awards seperated -->
+	<lua file="/ui/main/postgame/postgame.lua"/>
+	
+</package>
