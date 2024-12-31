@@ -10,12 +10,13 @@ local function originsRegister(object)
 	local select_mode_spe_splash_sound_wrapper_1		= object:GetWidget('select_mode_spe_splash_sound_wrapper_1')
 	local select_mode_spe_splash_sound_wrapper_2		= object:GetWidget('select_mode_spe_splash_sound_wrapper_2')
 	
+    selection_origins_logo_image:SetTexture('/ui/main/origins/textures/child_of_the_dawn_logo.tga')
 	if (GetCvarString('host_language') == 'en') then
-		selection_origins_logo_image:SetTexture('/ui/main/origins/textures/child_of_the_dawn_logo.tga')
+		selection_origins_logo_image:SetVisible(1)
 		selection_origins_region_title1:SetVisible(0)
 		selection_origins_region_title2:SetVisible(0)
 	else
-		selection_origins_logo_image:SetTexture('/ui/main/origins/textures/child_of_the_dawn_regions.tga')
+		selection_origins_logo_image:SetVisible(0)
 		selection_origins_region_title1:SetVisible(1)
 		selection_origins_region_title2:SetVisible(1)
 	end
