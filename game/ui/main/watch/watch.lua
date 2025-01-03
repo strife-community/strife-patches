@@ -502,6 +502,7 @@ local function WatchRegister(object)
 		end		
 		
 		local watch_gamelist_listbox = GetWidget('watch_gamelist_listbox')
+		local watch_gamelist_listbox_vscroll = GetWidget('watch_gamelist_listbox_vscroll')
 		
 		if (reloadFromCode) then
 			replayData = GetExtensiveReplayData()
@@ -631,7 +632,10 @@ local function WatchRegister(object)
 			content = string.gsub(content, [[\]], "")
 			return content
 		end
-		
+
+		local lastScrollValue = watch_gamelist_listbox_vscroll:GetValue()
+		watch_gamelist_listbox_vscroll:SetValue(0)
+
 		watch_gamelist_listbox:UICmd([[Clear()]])
 		if (mainUI.watch.myReplays) then
 			for index,myReplayTable in ipairs(mainUI.watch.myReplays) do
@@ -684,6 +688,7 @@ local function WatchRegister(object)
 					)
 				end
 			end
+			watch_gamelist_listbox_vscroll:SetValue(lastScrollValue)
 			libThread.threadFunc(function()	
 				wait(styles_mainSwapAnimationDuration)		
 				if (watchStateTrigger.matchIndex) and (not Empty(watchStateTrigger.matchIndex)) then
