@@ -510,7 +510,11 @@ local function WatchRegister(object)
 		end
 		mainUI.watch.myReplays = {}
 		mainUI.watch.selectedRecentMatchIndex = -1
-		
+
+		for index, replayGameTable in pairs(replayData) do	-- add/reset flag to determine orphaned replays
+			replayGameTable.isMatchedToRecent = false
+		end
+
 		local function GetReplayInformation(recentGameTable, matchID)
 			for index, replayTable in pairs(replayData) do
 				local insertMatchID = replayTable.matchid or '0'
@@ -527,7 +531,7 @@ local function WatchRegister(object)
 					end							
 					recentGameTable.match_id  = insertMatchID
 					recentGameTable.stats = replayTable
-					replayData[index] = nil
+					replayData[index].isMatchedToRecent = true
 					break
 				end
 			end	
@@ -556,20 +560,22 @@ local function WatchRegister(object)
 		end
 
 		for index, replayGameTable in pairs(replayData) do	-- add all remaining replays
-			local tempTable = {}
-			tempTable.isRecentGame			= false
-			tempTable.hasReplay			  	= true
-			tempTable.localPlayerInReplay 	= false
-			tempTable.date 					= replayGameTable.date or ''
-			local insertMatchID = replayGameTable.match_id or '0'
-			if string.find(insertMatchID, '%.') or (insertMatchID == '0') then
-			else
-				insertMatchID = string.sub(insertMatchID, 1, -4) .. '.' .. string.sub(insertMatchID, -3)
-			end					
-			tempTable.match_id 				= insertMatchID
-			tempTable.timestamp 			= replayGameTable.timestamp or '0'
-			tempTable.stats = replayGameTable
-			tinsert(mainUI.watch.myReplays, tempTable)
+			if not replayGameTable.isMatchedToRecent then
+				local tempTable = {}
+				tempTable.isRecentGame			= false
+				tempTable.hasReplay			  	= true
+				tempTable.localPlayerInReplay 	= false
+				tempTable.date 					= replayGameTable.date or ''
+				local insertMatchID = replayGameTable.matchid or '0'
+				if string.find(insertMatchID, '%.') or (insertMatchID == '0') then
+				else
+					insertMatchID = string.sub(insertMatchID, 1, -4) .. '.' .. string.sub(insertMatchID, -3)
+				end
+				tempTable.match_id 				= insertMatchID
+				tempTable.timestamp 			= replayGameTable.timestamp or '0'
+				tempTable.stats = replayGameTable
+				tinsert(mainUI.watch.myReplays, tempTable)
+			end
 		end	
 
 		for index, myReplayTable in pairs(mainUI.watch.myReplays) do	-- scan for local player (by name for now, add identid later)
