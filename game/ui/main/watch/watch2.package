@@ -215,7 +215,7 @@
 									if (trigger.matchID == '0') or (Empty(trigger.matchID)) then
 										widget:SetText(Translate('general_local'))
 									else
-										widget:SetText(trigger.matchID)
+										widget:SetText(string.sub(trigger.matchID, 1, -4) .. '.' .. string.sub(trigger.matchID, -3))
 									end
 								end)
 								self:RegisterWatchLua('WatchStateTrigger', function(widget, trigger)
