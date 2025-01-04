@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<include file="watch_templates2.package"/>
+	
+	<panel name="watch" noclick="true" visible="0" color="0 .01 .02 .4" >
+		
+		<panel noclick="true" align="center" y="155s" width="-68s" height="-200s">
+			
+			<panel name="watch_content_featured" visible="0" height="100%" noclick="1"  group="watch_featured_anim_group">
+			
+				<panel noclick="1" >
+					<label style="h1" font="maindyn_40" noclick="1" textalign="center" content="watch_featured_videos" />
+					<label y="45s" style="labelBase" font="maindyn_22" color="1 1 1 1" noclick="1" textalign="center" content="watch_featured_videos_info" />
+				</panel>
+				
+				<panel name="watch_content_featured_parent" noclick="1" >
+					<panel name="watch_content_featured_0" x="25s" y="126s" visible="1" height="55%" noclick="1" >
+						<panel align="left" grow="1" regrow="1" growinvis="0" width="100%" visible="1" height="100%" noclick="1" sticky="0" stickytoinvis="0" >					
+							<image x="330s" y="15s" width="7%" height="60%" texture="/ui/shared/textures/meter_grad.tga" color=".07 .07 .07 1" noclick="1"  hflip="1"/>
+							<image x="795s" y="15s" width="7%" height="60%" texture="/ui/shared/textures/meter_grad.tga" color=".07 .07 .07 1" noclick="1" />
+							<instance name="watch_featured_item_template" index="1" width="380s" height="225s" align="center" />
+						</panel>
+					</panel>
+					
+					<panel name="watch_content_featured_1" x="25s" y="410s" width="82%" align="center" visible="1" noclick="1" >
+						<instance name="watch_featured_item_template" font="maindyn_20" index="2" width="270s" height="160s" align="left" />
+						<instance name="watch_featured_item_template" font="maindyn_20" index="3" width="270s" height="160s" align="center" />
+						<instance name="watch_featured_item_template" font="maindyn_20" index="4" width="270s" height="160s" align="right" />
+					</panel>				
+				</panel>
+				
+				<label name="watch_videos_label_1" visible="0" width="100%" height="100%" textalign="center" textvalign="center" style="labelBase" font="maindyn_30" color=".7 .7 .7 1" content="twitch_searching_streams" noclick="true" />				
+				<!-- Throbber -->
+				<panel name="watch_videos_throb" visible="0" y="-80s" width="128s" height="128s" align="center" valign="center" >
+					<animatedimage texture="/ui/shared/throb/throb.tga" noclick="true" loop="1" fps="30" onshow="StartAnim(1);" />
+				</panel>				
+				
+			</panel>			
+			
+			<panel name="watch_content_replays" visible="0"  height="100%" float="bottom" padding="2s" noclick="1" >
+				
+				<panel noclick="1" group="watch_replays_anim_group">
+					<label style="h1" font="maindyn_40" noclick="1" textalign="center" content="player_profile_recent" />
+					<label y="45s" style="labelBase" font="maindyn_22" color="1 1 1 1 1" wrap="true" noclick="1" textalign="center" content="player_profile_recent_info" />
+				</panel>
+				
+				<panel name="watch_gamelist_listbox_parent" x="30s" y="90s" height="-106s" width="540s" align="left" group="watch_replays_anim_group">
+					<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="doubleFrameBg" borderthickness="8s"/>
+					<frame texture="/ui/shared/frames/border_double.tga" style="doubleFrame" borderthickness="8s" />
+
+					<panel noclick="1" y="16s" grow="1" regrow="1" height="54s" float="right" padding="15s" align="center"  >	
+						<label style="h1" content="heroselect_yourcrafteditems" fitx="true" textvalign="center" noclick="1" />
+						
+						<instance
+							name="watch_gamelist_filter"
+							id="all"
+							icon="/ui/main/watch/textures/watch_menu_featured.tga"
+							onclicklua="
+								local watchStateTrigger = LuaTrigger.GetTrigger('WatchStateTrigger')
+								watchStateTrigger.filter = 'all'
+								watchStateTrigger:Trigger(false)
+								mainUI.savedLocally.watchDefaultFilter = 'all'
+								mainUI.watch.PopulateReplays()
+							"
+							onmouseoverlua="
+								simpleTipGrowYUpdate(true, nil, Translate('watch_filter_all'), Translate('watch_filter_all_tip'), libGeneral.HtoP(34))
+								GetWidget('watch_gamelist_filterallHover'):FadeIn(125)
+							"
+							onmouseoutlua="
+								simpleTipGrowYUpdate(false) 
+								GetWidget('watch_gamelist_filterallHover'):FadeOut(125)
+							"
+							backeronloadlua="
+								self:RegisterWatchLua('WatchStateTrigger', function(widget, trigger)
+									if (trigger.filter == 'all') then
+										widget:SetTexture('/ui/_textures/elements/toggle_on.tga')
+									else
+										widget:SetTexture('/ui/_textures/elements/toggle_off.tga')
+									end
+								end, false, nil, 'filter')
+							"
+						/>
+						
+						<instance
+							name="watch_gamelist_filter"
+							id="recent"
+							icon="/ui/main/watch/textures/watch_replay_filterrecent.tga"
+							onclicklua="
+								local watchStateTrigger = LuaTrigger.GetTrigger('WatchStateTrigger')
+								watchStateTrigger.filter = 'recent'
+								watchStateTrigger:Trigger(false)
+								mainUI.savedLocally.watchDefaultFilter = 'recent'
+								mainUI.watch.PopulateReplays()
+							"
+							onmouseoverlua="
+								simpleTipGrowYUpdate(true, nil, Translate('watch_filter_recent'), Translate('watch_filter_recent_tip'), libGeneral.HtoP(34))
+								GetWidget('watch_gamelist_filterrecentHover'):FadeIn(125)
+							"
+							onmouseoutlua="
+								simpleTipGrowYUpdate(false) 
+								GetWidget('watch_gamelist_filterrecentHover'):FadeOut(125)
+							"
+							backeronloadlua="
+								self:RegisterWatchLua('WatchStateTrigger', function(widget, trigger)
+									if (trigger.filter == 'recent') then
+										widget:SetTexture('/ui/_textures/elements/toggle_on.tga')
+									else
+										widget:SetTexture('/ui/_textures/elements/toggle_off.tga')
+									end
+								end, false, nil, 'filter')
+							"							
+						/>
+						
+						<instance
+							name="watch_gamelist_filter"
+							id="dl"
+							icon="/ui/main/watch/textures/watch_replay_filterdl.tga"
+							onclicklua="
+								local watchStateTrigger = LuaTrigger.GetTrigger('WatchStateTrigger')
+								watchStateTrigger.filter = 'downloaded'
+								watchStateTrigger:Trigger(false)
+								mainUI.savedLocally.watchDefaultFilter = 'downloaded'
+								mainUI.watch.PopulateReplays()
+							"
+							onmouseoverlua="
+								simpleTipGrowYUpdate(true, nil, Translate('watch_filter_dl'), Translate('watch_filter_dl_tip'), libGeneral.HtoP(34))
+								GetWidget('watch_gamelist_filterdlHover'):FadeIn(125)
+							"
+							onmouseoutlua="
+								simpleTipGrowYUpdate(false) 
+								GetWidget('watch_gamelist_filterdlHover'):FadeOut(125)
+							"
+							backeronloadlua="
+								self:RegisterWatchLua('WatchStateTrigger', function(widget, trigger)
+									if (trigger.filter == 'downloaded') then
+										widget:SetTexture('/ui/_textures/elements/toggle_on.tga')
+									else
+										widget:SetTexture('/ui/_textures/elements/toggle_off.tga')
+									end
+								end, false, nil, 'filter')
+							"							
+						/>
+						
+					</panel>
+
+					
+					<listbox
+						name="watch_gamelist_listbox"						
+						y="78s" x="-16s"
+						width="-60s" height="-85s"
+						align="center"
+						color="invisible"
+						font="maindyn_24"
+						itemwidth="-5s"
+						itemheight="40s"
+						select="true"
+						clearselection="false"
+						hoverselect="false"
+						hoverhighlight="true"
+						highlight="under"
+						highlightcolor="invisible"
+						highlightbordercolor="invisible"
+						selectedcolor="invisible"
+						selectedbordercolor="invisible"
+						backgroundimage="$invis"
+						backgroundimagecolor="#1d2f3b"
+						colortransition="true"
+						colortransitiontime="250"
+						exteriorscrollbars="true"
+						scrollbarplaceholder="true"
+						scrollbarsize="32s"
+						scrolltexture="/ui/shared/textures/slider.tga"
+						handleheight="64s"				
+						
+						hscrollbar="0"
+						horizontal="false"			
+
+					/>
+
+					<panel noclick="0" name="watch_gamelist_listbox_blocker" visible="0" >	
+						<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="doubleFrameBg" borderthickness="8s"/>
+						<frame texture="/ui/shared/frames/border_double.tga" style="doubleFrame" borderthickness="8s" color="invisible"/>				
+						<label style="h1" content="main_lobby_contacting_server_desc" textalign="center" textvalign="center" noclick="1" />					
+					</panel>
+					
+				</panel>			
+				
+				<panel name="replays_matchinfo" x="650s" width="50%" noclick="1" group="watch_replays_anim_group" float="bottom" padding="6s">	
+					
+					<panel name="replays_matchinfo_title" x="55s" y="85s" width="350s" height="30s" float="right" noclick="1">
+						<panel float="right" padding="8s" noclick="1">
+							<label fity="1" fitx="1" style="h1" font="maindyn_26" textalign="left" content="watch_match" noclick="1" 
+								onloadlua="
+									self:RegisterWatchLua('WatchStateTrigger', function(widget, trigger)
+										if (trigger.matchName) and (not Empty(trigger.matchName)) then
+											widget:SetText(trigger.matchName)
+										else
+											widget:SetText(Translate('watch_match'))
+										end
+									end)
+								"					
+							/>
+
+							<panel name="replays_matchinfo_edit_btn" sticky="1" valign="center" height="70%" width="70@"
+								onclicklua="mainUI.watch.EditMatchInfo()"
+							>
+								<image texture="/ui/shared/textures/edit.tga" y="25%" noclick="1" />
+							</panel>
+						</panel>
+					
+						<label fity="1" fitx="1" style="labelBase" font="maindyn_20" noclick="1" textalign="right" align="right" content="general_local" color="0.6 0.6 0.6 1" 
+							onloadlua="
+								self:RegisterWatchLua('ReplayInfoGame', function(widget, trigger)
+									if (trigger.matchID == '0') or (Empty(trigger.matchID)) then
+										widget:SetText(Translate('general_local'))
+									else
+										widget:SetText(trigger.matchID)
+									end
+								end)
+								self:RegisterWatchLua('WatchStateTrigger', function(widget, trigger)
+									if (trigger.matchID) and (not Empty(trigger.matchID)) and (trigger.matchID ~= '0') then
+										widget:SetText(trigger.matchID)
+									end
+								end)
+							" 					
+						/>
+					</panel>
+					
+					<!--<panel name="replays_matchinfo_notes" width="385s" regrow="1" grow="1" growinvis="0" sticky="1" stickyinvis="0" noclick="1">
+						<label width="100%" fity="1" textalign="left" style="labelBase" wrap="1" font="maindyn_22" color=".8 .8 .8 1" noclick="1" 
+								content="This game. So amaze. Much strife. Many jukes. High skills. Wow."
+								onloadlua="
+									self:RegisterWatchLua('WatchStateTrigger', function(widget, trigger)
+									if string.len(trigger.matchComment)>0 then 
+										widget:SetText(trigger.matchComment)
+										widget:SetVisible(true)
+									else
+										widget:SetVisible(false)
+									end
+								end)
+							"
+						/>
+					</panel>-->
+					
+					<panel name="replays_matchinfo_loadscreen" height="220s" width="391s" sticky="1" stickyinvis="0">
+						<frame texture="/ui/elements:squareglow" color="0 0 0 1" borderthickness="10s" bordercolor="0 0 0 1" width="+10s" height="+10s" align="center" valign="center" noclick="1" />
+						<frame texture="/ui/shared/frames/rounded_bg_solid.tga" style="doubleFrameBg" borderthickness="8s" noclick="1"/>			
+						<frame texture="/ui/shared/frames/border_double.tga" style="doubleFrame" borderthickness="8s" color="invisible" noclick="1"/>	
+
+						<panel width="-20s" height="-20s" align="center" valign="center">
+							<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="8s" color=".2 .2 .2 1" noclick="1"/>
+							
+							<panel name="watch_loading_team_1" noclick="1" width="48%" float="right" padding="2s" >									
+								<instance name="watch_loading_team_item_template" teamid="1" playerid="0" hflip="true" />
+								<instance name="watch_loading_team_item_template" teamid="1" playerid="1" hflip="true" />
+								<instance name="watch_loading_team_item_template" teamid="1" playerid="2" hflip="true" />
+								<instance name="watch_loading_team_item_template" teamid="1" playerid="3" hflip="true" />
+								<instance name="watch_loading_team_item_template" teamid="1" playerid="4" hflip="true" />
+							</panel>
+							
+							<panel name="watch_loading_team_2" noclick="1" width="48%" float="right" padding="2s" align="right" >
+								<instance name="watch_loading_team_item_template" teamid="2" playerid="5" hflip="false" />
+								<instance name="watch_loading_team_item_template" teamid="2" playerid="6" hflip="false" />
+								<instance name="watch_loading_team_item_template" teamid="2" playerid="7" hflip="false" />
+								<instance name="watch_loading_team_item_template" teamid="2" playerid="8" hflip="false" />
+								<instance name="watch_loading_team_item_template" teamid="2" playerid="9" hflip="false" />	
+							</panel>
+							
+							<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="2s" color="invisible" bordercolor=".2 .2 .2 1" noclick="1"/>
+							<image texture="/ui/main/shared/textures/grad_vert.tga" color="0 0 0 .6"/>
+							
+							<panel width="40s" height="40s" align="center" valign="center" y="0" noclick="1" >								
+								<piegraph end="-90" start="270" square="0" color="0 0 0 0.7" noclick="true" value="1.0" align="center" valign="center" height="87.2%" width="87.2%" />
+								<label y="-2s" fity="1" color="white" outline="1" outlinecolor="0 0 0 .5" align="center" valign="center" textvalign="center" textalign="center" fitx="1" noclick="1" content="general_vs" font="maindyn_20" />
+								<image noclick="1" texture="/ui/game/loading/textures/loading_disc.tga"/>
+							</panel>
+							
+							<image name="watch_loading_team_1_myteam_indicator" visible="0" texture="/ui/game/loading/textures/team_kablamo_green.tga" width="30%" height="15@" color="1 1 1 0.5" valign="bottom" align="left" hflip="0" noclick="1" />
+							<panel name="loading_team_1_myteam_indicator_logo" align="left" valign="bottom" x="5s" y="-5s" noclick="true" texture="/ui/game/loading/textures/team_logo_glory_red.tga" width="30@" height="30%"/>
+							<label align="left" valign="bottom" x="20%" y="-5s" fity="1" color="white" outline="1" outlinecolor="black" fitypadding="0" fitxpadding="0" textvalign="top" textalign="left" fitx="1" noclick="1" content="general_glory" font="maindyn_36" />
+							<label name="loading_team_1_myteam_indicator_label" align="left" valign="bottom" x="20%" y="-28s" fity="1" color=".8 .8 .8 1" outline="1" outlinecolor="black" fitypadding="0" fitxpadding="0" textvalign="top" textalign="left" fitx="1" noclick="1" content="general_team" font="maindyn_20" />
+			
+							<image name="watch_loading_team_2_myteam_indicator" visible="0" texture="/ui/game/loading/textures/team_kablamo_green.tga" width="30%" height="15@" color="1 1 1 0.5" valign="bottom" align="right" hflip="1" noclick="1" />
+							<panel name="loading_team_2_myteam_indicator_logo" align="right" valign="bottom" x="-1s" y="-5s" noclick="true" texture="/ui/game/loading/textures/team_logo_valor_red.tga" width="30@" height="30%"/>
+							<label align="right" valign="bottom" x="-15%" y="-5s" fity="1" color="white" outline="1" outlinecolor="black" fitypadding="0" fitxpadding="0" textvalign="top" textalign="right" fitx="1" noclick="1" content="general_valor" font="maindyn_36" />
+							<label name="loading_team_2_myteam_indicator_label" align="right" valign="bottom" x="-15%" y="-28s" fity="1" color=".8 .8 .8 1" outline="1" outlinecolor="black" fitypadding="0" fitxpadding="0" textvalign="top" textalign="left" fitx="1" noclick="1" content="general_team" font="maindyn_20" />
+						</panel>
+					</panel>
+					
+					<panel name="replays_matchinfo_details" height="60s" width="385s" float="bottom" noclick="0" sticky="1" stickyinvis="0">
+						<instance name="mini_postgame_scoreboard_row" prefix="replay_mini" index="0" icon="assassin" />
+
+						<panel name="replays_matchinfo_playerinfoandtime" width="450s" align="center" float="bottom" padding="5s" noclick="1">
+							<panel height="26s" noclick="1">
+								<label height="100%" textvalign="center" textalign="left" valign="center" align="center" style="labelBase" font="maindyn_22" noclick="1" content="replayv_label_date_played"/>
+								<label textvalign="center" textalign="right" style="labelBase" font="maindyn_22" color=".8 .8 .8 1" noclick="1" 
+									onloadlua="
+										self:RegisterWatchLua('ReplayInfoGame', function(widget, trigger)
+											widget:SetText(trigger.date)
+											libThread.threadFunc(function()	
+												wait(0)
+												widget:GetWidget('replays_matchinfo_playerinfoandtime'):FadeIn(150)
+											end)
+										end, false, nil, 'date')
+									" 
+								/>
+							</panel>				
+							<panel height="26s" noclick="1">
+								<label height="100%" textvalign="center" textalign="left" valign="center" align="center" style="labelBase" font="maindyn_22" noclick="1" content="replayv_label_match_length"/>
+								<label textvalign="center" textalign="right" style="labelBase" font="maindyn_22" color=".8 .8 .8 1" noclick="1" 
+									onloadlua="
+										self:RegisterWatchLua('ReplayInfoGame', function(widget, trigger)
+											widget:SetText(trigger.hours .. 'h ' .. trigger.minutes .. 'm')
+										end)
+									" 
+								/>
+							</panel>	
+							<panel height="26s" noclick="1">
+								<label height="100%" textvalign="center" textalign="left" valign="center" align="center" style="labelBase" font="maindyn_20" noclick="1" content="watch_comments"/>
+								<label width="350s" height="50s" textvalign="bottom" fity="1" align="right" textalign="right" style="labelBase" wrap="1" font="maindyn_20" color=".8 .8 .8 1" noclick="1" 
+										content="This game. So amaze. Much strife. Many jukes. High skills. Wow."
+										onloadlua="
+										self:RegisterWatchLua('WatchStateTrigger', function(widget, trigger)
+											widget:SetText(trigger.matchComment)
+										end)
+									"
+								/>
+							</panel>
+							<!--
+							<panel width="100%" height="50%" float="right" noclick="1">
+								<panel width="45%" height="100%" noclick="1">
+									<label height="100%" textvalign="center" textalign="left" valign="center" align="center" style="labelBase" font="maindyn_22" noclick="1" content="replayv_label_player_level"/>
+									<label x="-10s" textvalign="center" textalign="right" style="labelBase" font="maindyn_20" color=".8 .8 .8 1" noclick="1" 
+										onloadlua="
+											
+										" 
+									/>
+								</panel>
+								<panel width="45%" height="100%" noclick="1">
+									<label x="10s" height="100%" textvalign="center" textalign="left" valign="center" align="center" style="labelBase" font="maindyn_22" noclick="1" content="replayv_label_player_gpm"/>
+									<label textvalign="center" textalign="right" style="labelBase" font="maindyn_20" color=".8 .8 .8 1" noclick="1" 
+										onloadlua="
+											
+										" 
+									/>
+								</panel>
+							</panel>
+							<panel width="100%" height="50%" float="right" noclick="1">
+								<panel width="45%" height="100%" noclick="1">
+									<label height="100%" textvalign="center" textalign="left" valign="center" align="center" style="labelBase" font="maindyn_22" noclick="1" content="replayv_label_player_kda"/>
+									<label x="-10s" textvalign="center" textalign="right" style="labelBase" font="maindyn_20" color=".8 .8 .8 1" noclick="1" 
+										onloadlua="
+											
+										" 
+									/>
+								</panel>
+								<panel width="45%" height="100%" noclick="1">
+									<label x="10s" height="100%" textvalign="center" textalign="left" valign="center" align="center" style="labelBase" font="maindyn_22" noclick="1" content="replayv_label_match_length"/>
+									<label textvalign="center" textalign="right" style="labelBase" font="maindyn_20" color=".8 .8 .8 1" noclick="1" 
+										onloadlua="
+											self:RegisterWatchLua('ReplayInfoGame', function(widget, trigger)
+												widget:SetText(trigger.hours .. 'h ' .. trigger.minutes .. 'm')
+											end)
+										" 
+									/>
+								</panel>
+							</panel>
+							-->
+						</panel>
+					
+					</panel>
+					
+					<panel name="replays_matchinfo_interaction" y="0s" x="20s" valign="bottom" height="130s" width="450s" noclick="1">
+						<instance name="progress_bar" barstyle="barCommon" id="profile_download_replay_progress_bar" y="-95s" width="280s" align="right" valign="bottom" height="28s" visible="0" />
+						<instance name="progress_bar" barstyle="barCommon" id="profile_compat_replay_progress_bar" y="-95s" width="280s" align="right" valign="bottom" height="28s" visible="0" />
+						<instance name="progress_bar" barstyle="barCommon" id="profile_manifest_replay_progress_bar" y="-95s" width="280s" align="right" valign="bottom" height="28s" visible="0" />
+						<instance name="standardButton" id="watch_gamelist_main_scoreboard_btn" y="0s" width="150s" align="left" valign="bottom" height="40s" borderthickness="8s" font="maindyn_22" label="watch_show_scoreboars" visible="1" enabled="0" />
+						<instance name="standardButton" id="watch_gamelist_main_comment_btn" 	y="-50s" width="150s" align="left" valign="bottom" height="40s" borderthickness="8s" font="maindyn_22" label="watch_comment" visible="1" enabled="0" />
+						<instance name="standardButton" id="watch_gamelist_main_action_btn" 	y="0s" width="280s" align="right" valign="bottom" height="90s" borderthickness="12s" font="maindyn_30" label="player_profile_download_replay" visible="1" enabled="0" />				
+					</panel>
+				</panel>
+				
+			</panel>
+
+			<panel name="watch_content_streams" visible="0" height="100%" float="bottom" padding="2s" noclick="1">
+				<panel noclick="1" group="watch_streams_anim_group">
+					<label style="h1" font="maindyn_40" noclick="1" textalign="center" content="watch_live_streams" />
+					<label y="45s" style="labelBase" font="maindyn_22" color="1 1 1 1 1" noclick="1" textalign="center" content="watch_live_streams_info" />
+				</panel>
+				<panel name="watch_streams_results_parent" noclick="1" y="-35s" height="-150s" width="100%" align="center" valign="bottom" group="watch_streams_anim_group">
+					<listbox
+						name="watch_streams_results_listbox"
+						color="invisible"
+						font="maindyn_16"
+						itemwidth="392s"
+						itemheight="221s"
+						clearselection="true"
+						hoverselect="false"
+						hoverhighlight="false"
+						highlight="under"
+						selectedbordercolor="invisible"
+						backgroundimage="$invis"
+						backgroundimagecolor="#1d2f3b"
+						colortransition="true"
+						colortransitiontime="250"						
+						scrolltexture="/ui/shared/textures/slider.tga"
+						scrollbarsize="32s"
+						scrollbaroffset="0"
+						handleheight="64s"
+						handlewidth="32s"
+						hscrollbar="0"
+						horizontal="false"				
+						onselect=""
+						scrollbarplaceholder="false" wrap="row"
+						exteriorscrollbars="false"
+						select="false" highlightcolor="invisible" highlightbordercolor="invisible"				
+					/>					
+					<label name="watch_streams_label_1" width="100%" height="100%" textalign="center" textvalign="center" style="labelBase" font="maindyn_30" color=".7 .7 .7 1" content="twitch_searching_streams" noclick="true" />					
+					<!-- Throbber -->
+					<panel name="watch_streams_throb" visible="0" y="-80s" width="128s" height="128s" align="center" valign="center" >
+						<animatedimage texture="/ui/shared/throb/throb.tga" noclick="true" loop="1" fps="30" onshow="StartAnim(1);" />
+					</panel>
+				</panel>
+				
+				<panel name="watch_streams_nav_panel" noclick="true" x="15s" y="120s" width="76s" align="right" visible="0">
+					<panel noclick="true" float="bottom" padding="4s">
+						<instance name="watchNavItemRow" id2="5" id1="1"/>
+						<instance name="watchNavItemRow" id2="6" id1="2"/>
+						<instance name="watchNavItemRow" id2="7" id1="3"/>
+						<instance name="watchNavItemRow" id2="8" id1="4"/>						
+						<instance name="watchNavItemRow" id2="13" id1="9"/>
+						<instance name="watchNavItemRow" id2="14" id1="10"/>
+						<instance name="watchNavItemRow" id2="15" id1="11"/>
+						<instance name="watchNavItemRow" id2="16" id1="12"/>						
+						<instance name="watchNavItemRow" id2="21" id1="17"/>
+						<instance name="watchNavItemRow" id2="22" id1="18"/>
+						<instance name="watchNavItemRow" id2="23" id1="19"/>
+						<instance name="watchNavItemRow" id2="24" id1="20"/>
+					</panel>					
+					<frame name="watchNavScrollFrame" noclick="true" texture="/ui/elements:roundframe" color="#FFDD33" borderthickness="10s" height="140s"/>					
+					<label name="watchNavExtraCount" height="34s" valign="bottom" noclick="true" textalign="center" textvalign="center" color="white" outline="true" font="maindyn_16" content="+16"/>					
+					<panel name="watchNavScrollPanel" hover="false" processonlyscroll="true" color="invisible"/>
+				</panel>				
+			</panel>
+			
+			<panel name="watch_content_spectate" visible="0" height="100%" float="bottom" padding="2s" noclick="1" >
+				
+				<panel noclick="1" group="watch_spectate_anim_group">
+					<label style="h1" font="maindyn_40" noclick="1" textalign="center" content="watch_spectate" />
+					<label y="45s" style="labelBase" font="maindyn_22" color="1 1 1 1" noclick="1" textalign="center" content="watch_spectate_info" />
+					<label name="watch_spectate_label_1"  y="-5s" visible="0" width="100%" height="100%" textalign="center" textvalign="center" style="labelBase" font="maindyn_30" content="watch_no_friends_spectate" noclick="true" />
+				</panel>
+				
+				<panel name="watch_content_spectate_0" x="25s" y="126s" visible="1" height="55%" noclick="1" >
+					<panel align="left" grow="1" regrow="1" growinvis="0" width="100%" visible="1" height="100%" noclick="1" sticky="0" stickytoinvis="0" >					
+						<instance name="watch_spectate_item_template" index="1" width="380s" height="225s" align="center" />
+					</panel>
+				</panel>
+				
+				<panel name="watch_content_spectate_1" x="25s" y="410s" width="82%" align="center" visible="1" noclick="1" >
+					<instance name="watch_spectate_item_template" font="maindyn_20" index="2" width="270s" height="160s" align="left" />
+					<instance name="watch_spectate_item_template" font="maindyn_20" index="3" width="270s" height="160s" align="center" />
+					<instance name="watch_spectate_item_template" font="maindyn_20" index="4" width="270s" height="160s" align="right" />
+				</panel>				
+
+			</panel>
+			
+			<panel name="watch_content_howto" visible="0" height="100%" float="bottom" padding="2s" noclick="1" >
+				<panel noclick="1" group="watch_howto_anim_group">
+					<label style="h1" font="maindyn_40" noclick="1" textalign="center" content="watch_howto" />
+					<label y="45s" style="labelBase" font="maindyn_22" color="1 1 1 1 1" noclick="1" textalign="center" content="watch_howto_info" />
+				</panel>
+				<panel name="watch_howto_results_parent" noclick="1" y="-35s" height="-150s" width="100%" align="center" valign="bottom" group="watch_howto_anim_group">
+					<listbox
+						name="watch_howto_results_listbox"
+						color="invisible"
+						font="maindyn_16"
+						itemwidth="392s"
+						itemheight="221s"
+						clearselection="true"
+						hoverselect="false"
+						hoverhighlight="false"
+						highlight="under"
+						selectedbordercolor="invisible"
+						backgroundimage="$invis"
+						backgroundimagecolor="#1d2f3b"
+						colortransition="true"
+						colortransitiontime="250"
+						scrolltexture="/ui/shared/textures/slider.tga"
+						scrollbarsize="32s"
+						scrollbaroffset="0"
+						handleheight="64s"
+						handlewidth="32s"
+						hscrollbar="0"
+						horizontal="false"				
+						onselect=""
+						scrollbarplaceholder="false" wrap="row"
+						exteriorscrollbars="false"
+						select="false" highlightcolor="invisible" highlightbordercolor="invisible"				
+					/>					
+					<label name="watch_howto_label_1" visible="0" width="100%" height="100%" textalign="center" textvalign="center" style="labelBase" font="maindyn_30" color=".7 .7 .7 1" content="twitch_searching_streams" noclick="true" />
+					<!-- Throbber -->
+					<panel name="watch_howto_throb" visible="0" y="-80s" width="128s" height="128s" align="center" valign="center" >
+						<animatedimage texture="/ui/shared/throb/throb.tga" noclick="true" loop="1" fps="30" onshow="StartAnim(1);" />
+					</panel>
+				</panel>				
+				
+			</panel>
+			
+		</panel>
+		
+		<panel name="watch_edit_comment_popup" width="100w" height="100h" color="0 0 0 .5" visible="0" >
+
+			<panel grow="1" width="450s" align="center" valign="center" color="invisible" visible="1" noclick="0" >
+			
+				<panel grow="1" width="100%" float="bottom" padding="12s" hmargin="16s" vmargin="16s" noclick="1">
+				
+					<instance name="dialogWrapper1" outerpadding="+60s" innerpadding="+40s" y="0" />
+					
+					<panel y="0" height="24s" valign="top" noclick="true" >								
+						<label height="100%" textvalign="center" style="h2" content="watch_match_info_title" noclick="true"  />	
+						
+						<instance name="iconButton" id="watch_edit_comment_close_btn"
+							icon="/ui/main/shared/textures/close.tga"
+							align="right" valign="center" borderthickness="4s" colorized="1"
+						/>
+					</panel>			
+
+					<panel height="30s" noclick="true">
+						<frame texture="/ui/shared/frames/text_input.tga" borderthickness="0.4h" noclick="true"/>
+						<textbox 
+							name="watch_edit_comment_rename_textbox"
+							style="textBox1Input"  
+							textcolor="0 0 0 1" y="2s"
+							onesc="Cmd('Script mainUI.watch.RenameInputOnEsc()')"
+							onenter="Cmd('Script mainUI.watch.RenameInputOnEnter()')"
+							maxlength="40"
+						/>
+						<label name="watch_edit_comment_rename_coverup" x="5s" y="-1s" noclick="true" textvalign="center" valign="center" color="0 0 0 0.7" font="maindyn_18" content="watch_match_info_titles"/>
+						<instance name="iconButton" id="watch_edit_comment_rename_close"
+							icon="/ui/main/shared/textures/close.tga"
+							visible="0"
+							align="right" valign="center" borderthickness="4s" colorized="1"
+						/>
+					</panel>			
+					
+					<!-- notes -->
+					
+					<panel height="24s" valign="top" noclick="true" >								
+						<label height="100%" textvalign="center" style="h2" content="watch_match_info_note" noclick="true"  />	
+					</panel>			
+					
+					<panel height="30s" noclick="true">
+						<frame texture="/ui/shared/frames/text_input.tga" borderthickness="0.4h" noclick="true"/>
+						<textbox 
+							name="watch_edit_comment_notes_textbox"
+							style="textBox1Input"
+							textcolor="0 0 0 1" y="2s"
+							onesc="Cmd('Script mainUI.watch.NotesInputOnEsc()')"
+							onenter="Cmd('Script mainUI.watch.NotesInputOnEnter()')"
+							maxlength="40"
+						/>
+						<label name="watch_edit_comment_notes_coverup" x="5s" y="-1s" noclick="true" textvalign="center" valign="center" color="0 0 0 0.7" font="maindyn_18" content="watch_match_info_notes"/>
+						<instance name="iconButton" id="watch_edit_comment_notes_close"
+							icon="/ui/main/shared/textures/close.tga"
+							visible="0"
+							align="right" valign="center" borderthickness="4s" colorized="1"
+						/>
+					</panel>				
+				
+					<panel noclick="1" height="32s">
+						<instance id="watch_edit_comment_btn_1" align="right" width="46%"
+							name="standardButton"
+							label="general_ok"
+							font="maindyn_24"
+						/>					
+						<instance id="watch_edit_comment_btn_2" align="left" width="46%"
+							name="standardButton"
+							rendermode="grayscale"
+							label="general_cancel"
+							font="maindyn_24"
+						/>					
+					</panel>
+
+				</panel>
+				
+			</panel>
+		</panel>		
+
+		<!-- Close -->
+		<instance name="iconButton" id="main_watch_streams_close_button_2" group="watch_animation_widgets"
+			icon="/ui/main/shared/textures/close.tga"
+			y="132s" x="-24s" width="40s" height="40s" align="right" valign="top" borderthickness="5s"
+			onclicklua=""
+		/>
+
+		<!-- Refresh -->
+		<instance
+			id="watch_streams_refresh_button" group="watch_animation_widgets"
+			name="iconButton"
+			icon="/ui/main/shared/textures/refresh.tga" iconsize="76"
+			y="132s" x="-78s" width="40s" height="40s" align="right" valign="top" borderthickness="5s"
+			visible="true"
+			onclicklua="self:SetNoClick(1) mainUI.watch.canGetTwitchStreams = true mainUI.watch.GetTwitchStreams() mainUI.watch.GetTwitchVideos() mainUI.watch.PopulateReplays() mainUI.watch.GetFriendsToSpectate() self:Sleep(15000, function(self) self:SetNoClick(0) end)"
+			onmouseoverlua="
+				simpleTipGrowYUpdate(true, '/ui/main/shared/textures/refresh.tga', Translate('twitch_streams_refresh'), Translate('twitch_streams_refresh_desc'), self:GetWidthFromString('320s'), self:GetXFromString('-330s'))
+			"
+			onmouseoutlua="
+				simpleTipGrowYUpdate(false)
+			"
+		/>		
+			
+		<panel name="replay_detailed" visible="0" noclick="0" width="100%" height="100h" align="left" x="0" color="0 0 0 0.9">
+			
+			<label name="replay_outcome_header" y="135s" height="4h" textalign="center" textvalign="center" style="h1" font="maindyn_40" content="temp_gamelobby_team2"/>
+			
+			<panel name="replay_scoreboard" grow="true" x="2h" y="190s" width="102h" align="center" valign="top" float="bottom" padding="0.4h" noclick="1" visible="1">
+				<instance name="postgame_scoreboard_header" team="temp_gamelobby_team1" />			
+				<instance name="postgame_scoreboard_row" prefix="replay" index="0" icon="assassin" showkarma="0" />
+				<instance name="postgame_scoreboard_row" prefix="replay" index="1" icon="bastion" showkarma="0"  />
+				<instance name="postgame_scoreboard_row" prefix="replay" index="2" icon="chipper" showkarma="0"  />
+				<instance name="postgame_scoreboard_row" prefix="replay" index="3" icon="embermage" showkarma="0"  />
+				<instance name="postgame_scoreboard_row" prefix="replay" index="4" icon="engineer" showkarma="0"  />
+				<panel height="1.8h" noclick="1" />
+				<instance name="postgame_scoreboard_header" team="temp_gamelobby_team2" />			
+				<instance name="postgame_scoreboard_row" prefix="replay" index="5" icon="assassin" showkarma="0"  />
+				
+				<instance name="postgame_scoreboard_row" prefix="replay" index="6" icon="bastion" showkarma="0"  />
+				<instance name="postgame_scoreboard_row" prefix="replay" index="7" icon="chipper" showkarma="0"  />
+				<instance name="postgame_scoreboard_row" prefix="replay" index="8" icon="embermage" showkarma="0"  />
+				<instance name="postgame_scoreboard_row" prefix="replay" index="9" icon="engineer" showkarma="0"  />
+				
+				<panel height="6h">
+					<panel grow="true" growinvis="0" regrow="1" height="100%" align="right" float="right" padding="2h">
+						<instance name="standardButton" id="replay_scoreboard_close" width="32h" font="maindyn_30" label="game_scoreboard_close_results"/>
+						<instance name="standardButton" id="replay_scoreboard_download" width="32h" font="maindyn_30" label="game_scoreboard_download_replay" enabled="0" visible="0"/>
+						<instance name="standardButton" id="replay_scoreboard_share" width="32h" font="maindyn_30" label="game_scoreboard_share_result" enabled="0" visible="0"/>
+					</panel>
+				</panel>
+			</panel>
+		
+		</panel>			
+
+	</panel>
+		
+	<lua file="watch.lua"/>
+
+</package>
