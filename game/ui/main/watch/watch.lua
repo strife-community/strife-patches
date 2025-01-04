@@ -756,36 +756,39 @@ local function WatchRegister(object)
 					-- println('We have a replay with stats')
 					-- println('SetReplayInfo ' .. tostring(selectedReplayInfo.stats.path) )
 					mainUI.watch.GetMatchInfo()
-					mainUI.watch.lastSelectedReplayPath = selectedReplayInfo.stats.path
-					SetReplayInfo(selectedReplayInfo.stats.path)
-					mainUI.watch.GetMatchStats()
-					if (not Empty(ReplayInfoGame.version)) then
-						-- println('We have a version')
-						if (ReplayInfoGame.isCompatible) then			
-							-- println('It is compatible')
-							GetWidget('watch_gamelist_main_action_btn'):SetEnabled(1)
-							GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_watch_replay'))
-							GetWidget('watch_gamelist_main_action_btn'):SetCallback('onclick', function()
-								object:UICmd([[ StartReplay(']] .. selectedReplayInfo.stats.path .. [[') ]])
-							end)
-							if (click) then
-								object:UICmd([[ StartReplay(']] .. selectedReplayInfo.stats.path .. [[') ]])
+					if (mainUI.watch.lastSelectedReplayPath ~= selectedReplayInfo.stats.path) then
+						mainUI.watch.lastSelectedReplayPath = selectedReplayInfo.stats.path
+						SetReplayInfo(selectedReplayInfo.stats.path)
+					else
+						mainUI.watch.GetMatchStats()
+						if (not Empty(ReplayInfoGame.version)) then
+							-- println('We have a version')
+							if (ReplayInfoGame.isCompatible) then
+								-- println('It is compatible')
+								GetWidget('watch_gamelist_main_action_btn'):SetEnabled(1)
+								GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_watch_replay'))
+								GetWidget('watch_gamelist_main_action_btn'):SetCallback('onclick', function()
+									object:UICmd([[ StartReplay(']] .. selectedReplayInfo.stats.path .. [[') ]])
+								end)
+								if (click) then
+									object:UICmd([[ StartReplay(']] .. selectedReplayInfo.stats.path .. [[') ]])
+								end
+							else
+								-- println('It is not compatible')
+								GetWidget('watch_gamelist_main_action_btn'):SetEnabled(1)
+								GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_make_compatible'))
+								GetWidget('watch_gamelist_main_action_btn'):SetCallback('onclick', function()
+									object:UICmd([[ DownloadReplayCompat(']] .. ReplayInfoGame.version .. [[') ]])
+								end)
+								if (click) then
+									object:UICmd([[ DownloadReplayCompat(']] .. ReplayInfoGame.version .. [[') ]])
+								end
 							end
 						else
-							-- println('It is not compatible')
-							GetWidget('watch_gamelist_main_action_btn'):SetEnabled(1)
-							GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_make_compatible'))
-							GetWidget('watch_gamelist_main_action_btn'):SetCallback('onclick', function()
-								object:UICmd([[ DownloadReplayCompat(']] .. ReplayInfoGame.version .. [[') ]])
-							end)	
-							if (click) then
-								object:UICmd([[ DownloadReplayCompat(']] .. ReplayInfoGame.version .. [[') ]])
-							end							
+							-- println('But it has no version information, we cant do anything')
+							GetWidget('watch_gamelist_main_action_btn'):SetEnabled(0)
+							GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_no_version'))
 						end
-					else
-						-- println('But it has no version information, we cant do anything')
-						GetWidget('watch_gamelist_main_action_btn'):SetEnabled(0)
-						GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_no_version'))								
 					end
 				else
 					-- println('We are missing replay info or dont have the replay')
@@ -824,9 +827,9 @@ local function WatchRegister(object)
 			mainUI.watch.UpdateGameListActionButton(true)
 		end)				
 		
-		GetWidget('watch_gamelist_listbox'):SetCallback('onclick', function(widget)
-			mainUI.watch.UpdateGameListActionButton()
-		end)
+		-- GetWidget('watch_gamelist_listbox'):SetCallback('onclick', function(widget)
+			-- mainUI.watch.UpdateGameListActionButton()
+		-- end)
 		
 		-- GetWidget('watch_gamelist_listbox'):SetCallback('ondoubleclick', function(widget)
 			-- mainUI.watch.UpdateGameListActionButton(true)
