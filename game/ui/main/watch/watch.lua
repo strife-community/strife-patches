@@ -700,8 +700,7 @@ local function WatchRegister(object)
 		local playerinfoandtime							= GetWidget('replays_matchinfo_playerinfoandtime')
 	
 		function mainUI.watch.UpdateGameListActionButton(click)
-			playerinfoandtime:FadeOut(150)
-		
+
 			local ReplayDownload 	= LuaTrigger.GetTrigger('ReplayDownload')
 			local ReplayInfoGame 	= LuaTrigger.GetTrigger('ReplayInfoGame')
 			local CompatDownload 	= LuaTrigger.GetTrigger('CompatDownload')
@@ -739,6 +738,7 @@ local function WatchRegister(object)
 				if (selectedReplayInfo) and (selectedReplayInfo.hasReplay) and (selectedReplayInfo.stats) and (selectedReplayInfo.stats.path) then					
 					-- println('We have a replay with stats')
 					-- println('SetReplayInfo ' .. tostring(selectedReplayInfo.stats.path) )
+					playerinfoandtime:FadeIn(150)
 					mainUI.watch.GetMatchInfo()
 					if (mainUI.watch.lastSelectedReplayPath ~= selectedReplayInfo.stats.path) then
 						mainUI.watch.lastSelectedReplayPath = selectedReplayInfo.stats.path
@@ -776,6 +776,7 @@ local function WatchRegister(object)
 					end
 				else
 					-- println('We are missing replay info or dont have the replay')
+					playerinfoandtime:FadeOut(150)
 					if (selectedReplayInfo) and (selectedReplayInfo.match_id) and (not Empty(selectedReplayInfo.match_id)) and (selectedReplayInfo.match_id ~= '0') then
 						-- println('But we do have a match ID, so we could download it')
 						mainUI.watch.GetMatchInfo(nil, selectedReplayInfo.match_id)

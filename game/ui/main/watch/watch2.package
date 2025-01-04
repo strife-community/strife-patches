@@ -298,10 +298,6 @@
 									onloadlua="
 										self:RegisterWatchLua('ReplayInfoGame', function(widget, trigger)
 											widget:SetText(trigger.date)
-											libThread.threadFunc(function()	
-												wait(0)
-												widget:GetWidget('replays_matchinfo_playerinfoandtime'):FadeIn(150)
-											end)
 										end, false, nil, 'date')
 									" 
 								/>
