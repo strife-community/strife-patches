@@ -316,10 +316,10 @@
 	<style name="heroInventoryChargePip" width="114@" height="114%" texture="/ui/game/ability/textures/ability_frame_peg.tga" y="-35%" noclick="true" visible="false"/>
 	<style name="heroInventoryChargePipFirst" style="heroInventoryChargePip" x="25@" y="12%"/>
 
-	<style name="heroInventoryChargeInset" texture="/ui/game/ability/textures/ability_frame_chargebar_frame_default.tga" x="0" y="-1.8h" width="100%" height="3.0h" color="1 1 1 1" noclick="true"/>	
-	<style name="heroInventoryChargeBarEmpty" texture="/ui/game/ability/textures/ability_frame_chargebar_default.tga" color=".3 .3 .3 1" rendermode="grayscale" noclick="true"/>
-	<style name="heroInventoryChargeBarFull" texture="/ui/game/ability/textures/ability_frame_chargebar_default.tga" width="11.6h" noclick="true"/>
-	<style name="heroInventoryChargeBar" width="100%" clip="1" noclick="true"/>	
+	<style name="heroInventoryChargeInset" texture="/ui/game/ability/textures/ability_frame_chargebar_frame_default.tga" x="0" y="0" width="100%" height="3.0h" color="1 1 1 1" noclick="true" valign="bottom"/>
+	<style name="heroInventoryChargeBarEmpty" valign="bottom" x="0.6h" y="-0.4h" height="0.9h" width="90%" color="0 0 0 1" rendermode="grayscale" noclick="true"/>
+	<style name="heroInventoryChargeBarFull" valign="bottom" x="0.6h" y="-0.4h" height="0.9h" width="90%" color="#C59E00" noclick="true"/>
+	<style name="heroInventoryChargeBar" width="100%" clip="1" noclick="true"/>
 
 	<style name="heroInventoryHotkeyButtonSpace" align="right" width="35@" height="36%" x="-12@" y="8%"/>
 	<style name="heroInventoryHotkeyBacker" texture="/ui/elements:key" borderthickness="25@"/>
