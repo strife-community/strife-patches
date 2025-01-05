@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="game_styles">
+
+	<!-- Labels -->
+	<style name="labelBase" outline="true" outlinecolor="0 0 0 .7" color="1 1 1 1"/>
+	<style name="labelClickable" style="labelBase" color="#42D0F4"/>
+	<style name="h1" style="labelBase" color="#ffab13" font="maindyn_26"/>
+	<style name="h2" style="labelBase" color="#ffab13" font="maindyn_24"/>
+	
+	<!-- Frames -->
+	<style name="doubleFrame" borderthickness="8s" bordercolor="#283136" />	
+
+	<!-- Colors! -->
+	<style name="whiteTextColor" color="#f5f2e2"/>
+	<style name="healthBackerColor" color="#001d03" />
+	<style name="healthBackerColorEnemy" color="#1d0100" />
+	<style name="manaBackerColor" color="#000f29" />
+	<style name="healthBarColor" color="#22EE33"/>
+	<style name="healthBarColorEnemy" color="#ff381c"/>
+	<style name="manaBarColor" color="#00CCFF"/>
+	<style name="healthShadowColor" color="#999999"/>
+	<style name="timerBarColor" color="#12c0e8"/>
+	<style name="xpBarColor" color="#ba00ff"/><!-- Also pies, stray Xp text -->
+	<style name="armorColor" color="#da4733"/>
+	<style name="magicArmorColor" color="#2f6ed7"/>
+	<style name="greenTextColor" color="#22EE33"/><!-- As opposed to lime, used for recipes -->
+	<style name="bananaYellow" color="#f8ed35"/>
+	<style name="goldColor" color="#FFDD33"/><!-- Various headings, gold currency -->
+	<style name="boldRedColor" color="#ff391c"/><!-- Just anything other than pure red.  This one has some body to it and compresses well. -->
+	<style name="boldBlueColor" color="#1c71ff"/><!-- A bold readable blue, often used for ability damage -->
+	<style name="lightBlueColor" color="#00CCFF"/><!-- Oft used for components -->
+	<style name="gemLabel" color="#c7daea"/>
+	
+	<style name="paleGrayTextColor" color="#484743"/><!-- Subtext/disclaimer stuff -->
+	<style name="paleGrayTextColor1" color="#6d6c68"/><!-- Subtext stuff, slightly brighter -->
+	
+	<!-- Crafting stuff -->
+	<style name="labelCommon" style="labelBase" color="#3fd149"/>
+	<style name="labelRare" style="labelBase" color="#089cd9"/>
+	<style name="labelLegendary" style="labelBase" color="#b712d6"/>
+	<style name="itemRareColor" style="xpBarColor"/>
+	<style name="itemLegendaryColor" style="goldColor"/>
+	<style name="craftingIconTemper" texture=""/>
+	<style name="craftingIconSalvage" texture=""/>
+	<style name="craftingIconEnchant" texture=""/>
+	<style name="craftedItemOverlayIcon" texture="/ui/shared/textures/itemtype_crafted.tga"/>
+	
+	<style name="playerColor1" color="#1B9E77"/>
+	<style name="playerColor2" color="#D95F02"/>
+	<style name="playerColor3" color="#7570B3"/>
+	<style name="playerColor4" color="#E7298A"/>
+	<style name="playerColor5" color="#66A61E"/>
+	<style name="environmentColor" color="#999999"/>
+	
+	<!-- Main UI Panel Colors (the oft-used ones) -->
+	<style name="backerPanelGray0" color="#0B0B0B"/><!-- Darkest, move up from here -->
+	<style name="backerPanelGray1" color="#191919"/><!-- Intermediary dark colors for certain background elements -->
+	<style name="backerPanelGray2" color="#222222"/><!-- Intermediary dark colors for certain background elements -->
+	<style name="backerPanelGray3" color="#333333"/><!-- Primary for UI elements -->
+	<style name="backerPanelGray4" color="#444444"/><!-- Buttons, often -->
+
+	<style name="backerPanelBlue1" color="#00546F"/><!-- Primary for new UI elements -->
+	<style name="backerPanelBlue2" color="#00384A"/><!-- Primary for new UI elements -->
+	<style name="backerPanelBlue3" color="#00546F"/><!-- Primary for new UI elements -->
+	<style name="backerPanelBlue4" color="#007094"/><!-- Primary for new UI elements -->
+	<style name="backerPanelBlue5" color="#008CBA"/><!-- Primary for new UI elements -->
+	
+	
+	<style name="backerPanelBorder0Dark" color="black"/><!-- Outline on a panel (often backerPanelGray0 surrounded by backerPanelGray3 -->
+	<style name="backerPanelBorder0Light" color="#1A1A1A"/><!-- Emphasize light on rim, should be +width around the panel -->
+	
+	<style name="backerPanelShadow0" color="0 0 0 0.5"/><!-- Least visible shadow color, often for frames behind backerPanelGray3 -->
+	<style name="backerPanelShadow1" color="0 0 0 0.75"/><!-- For when we need a more obvious shadow -->
+	
+	<!-- Screen overlays and frames -->
+	<style name="damageWarning" color="#FF000055"/>
+	<style name="ccWarning" color="#44CCFF77"/>
+
+	<!-- Misc Stuff -->
+	<style name="floatMouseOffset" x="22" y="-22"/><!-- So these are all consistent -->
+	
+	<style name="levelUpModelBoots" model="/ui/_effects/portrait_emitter.mdf" visible="0" onshowlua="self:SetModel('/ui/_effects/portrait_emitter.mdf') self:SetEffect('/ui/_effects/portrait_lvlup.effect')" anim="idle" effect="" camerapos="-1 -58 0" cameraangles="0 0 180" camerafov="60" cameranear="1" camerafar="1000" depthclear="false" depthcompress="true" noclick="true"/>
+	<style name="levelUpModel" onshowlua="self:SetModel('/ui/_effects/portrait_emitter.mdf') self:SetEffect('/ui/_effects/portrait_lvlup.effect')" model="/ui/_effects/portrait_emitter.mdf" visible="false" anim="idle" effect="" camerapos="-1 -40 0" cameraangles="0 0 180" camerafov="60" cameranear="1" camerafar="1000" depthclear="false" depthcompress="true" noclick="true"/>
+	
+	<style name="shopItemArea" align="right" width="-8h" height="-19.5h" y="4h" noclick="true"/>
+	<style name="shopComponentsBackground" color="#ff9054"/>
+	
+	<style name="abilityCastIndicator" texture="/ui/elements:selected" color="#999900" rendermode="additive" noclick="true" visible="false"/>
+	<style name="abilityGloss" texture="/ui/elements:gloss_up" rendermode="additive" color="#AAAAAA" noclick="true"/>
+	<style name="abilityCooldownPie" start="270" end="-90" square="true" color="0 0 0 0.75" noclick="true" value="0"/>
+	<style name="itemDropTarget" texture="/ui/elements:drop" visible="true" rendermode="additive"/>
+	<style name="hotkeyLabel" color="black" outline="true" outlinecolor="#DDDDDD" font="maindyn_12" textalign="center" textvalign="center" noclick="true"/>
+	<style name="abilityAutocastIndicator" noclick="true" model="/ui/_effects/portrait_emitter.mdf" onshowlua="self:SetEffect('/ui/_effects/ability_active.effect')" effect="" camerapos="-1 10 0" cameraangles="0 0 180" camerafov="50" depthclear="false" depthcompress="true" visible="false"/>
+	<style name="abilityTargetingIndicator" noclick="true" model="/ui/_effects/toggle/toggle.mdf" anim="idle" onshowlua="self:SetEffect('/ui/_effects/toggle/toggle.effect')" effect="" camerapos="0 1 0" cameraangles="0 0 180" camerafov="45" cameranear="1" carmerafar="100" depthcompress="true" visible="false"/>
+	<style name="abilityReadyIndicator" visible="false" noclick="true" model="/ui/_models/refresh/refresh.mdf" anim="idle" onshowlua="self:SetEffect('/ui/_models/refresh/refresh.effect')" effect="" camerapos="0 1 0" cameraangles="0 0 180" camerafov="45" cameranear="1" carmerafar="100" depthclear="false" depthcompress="true"/>
+	<style name="purchasedRecentlyIcon" texture="/ui/elements:purchased_recently"/>
+	<style name="recipeScrollOverlay" texture="/ui/elements:scroll_overlay" noclick="true"/>
+	<style name="heroDeadOverlay" color="1 0 0 0.5" rendermode="normal" texture="/ui/game/alt_info/dead_gradient.tga" vspeed="-0.6" vtile="true" noclick="true" visible="false"/>
+	
+	<!-- Hero Vitals -->
+	<style name="heroVitalHealthContainer" valign="bottom" width="30h" x="-16h" height="3.5h" y="-18h" align="center"/>
+	<style name="heroVitalHealthIcon" texture="/ui/elements:itemtype_health" width="5h" height="5h" valign="center"/>
+	<style name="heroVitalHealthBarSpace" vmargin="0.5h" x="6h" width="-14h"/>
+	<style name="heroVitalHealthMaxSpace" align="right" x="-0.5h" vmargin="0.5h" width="7h"/>
+	<style name="heroVitalHealthLabel" font="maindyn_16" outline="true" textalign="center"/>
+	<style name="heroVitalHealthGainSpace" x="0.5h" vmargin="0.5h" width="5h"/>
+	
+	<style name="heroVitalManaContainer" valign="bottom" width="30h" x="16h" height="3.5h" y="-18h" align="center"/>
+	<style name="heroVitalManaIcon" texture="/ui/elements:itemtype_mana" width="4.25h" height="4.25h" valign="center"/>
+	<style name="heroVitalManaBarSpace" style="heroVitalHealthBarSpace"/>
+	<style name="heroVitalManaMaxSpace" style="heroVitalHealthMaxSpace"/>
+	<style name="heroVitalManaGainSpace" style="heroVitalHealthGainSpace"/>
+	<style name="heroVitalManaLabel" style="heroVitalHealthLabel" font="maindyn_14"/>
+	
+	<!-- Team Score -->
+	<style name="teamScoreCrest" width="4.5h" height="3h" y="2h" noclick="true"/>
+	<style name="teamScoreCrestShadow" style="teamScoreCrest,backerPanelShadow0" y="2.25h"/>
+	<style name="teamCrestLegion" texture="/ui/elements:crest_legion" align="right"/>
+	<style name="teamCrestHellbourne" texture="/ui/elements:crest_hellbourne"/>
+	<style name="teamScoreCrestLegion" style="teamScoreCrest,teamCrestLegion" x="-0.25h"/>
+	<style name="teamScoreCrestLegionShadow" style="teamScoreCrestLegion,teamScoreCrestShadow" x="0h"/>
+	<style name="teamScoreCrestHellbourne" style="teamScoreCrest,teamCrestHellbourne" x="0.25h"/>
+	<style name="teamScoreCrestHellbourneShadow" style="teamCrestHellbourne,teamScoreCrestShadow" x="0.5h"/>
+
+	<!-- Alt Info -->
+	<style name="altInfoHeroContainer" width="4h" height="1h" align="center" valign="bottom"/><!-- w100@ h25@ -->
+	<style name="altInfoSelfContainer" width="4h" height="1h" align="center" valign="bottom"/>
+
+	<style name="altInfoHeroIconRow" height="80%" y="-90%" align="center" grow="true" regrow="true" growinvis="false" float="right" padding="25@" />
+
+	<style name="altInfoHeroTalkingIcon" width="100@" height="100%" texture="/ui/shared/textures/megaphone.tga" sticky="true" stickytoinvis="false" visible="false"/>
+	<style name="altInfoHeroTypingIcon" width="100@" height="100%" texture="/ui/shared/textures/edit.tga" sticky="true" stickytoinvis="false" visible="false"/>
+	<style name="altInfoHeroShoppingIcon" width="100@" height="100%" texture="/ui/game/shared/textures/shopping_icon.tga" sticky="true" stickytoinvis="false" visible="false"/>
+	
+	<style name="altInfoHeroCenterOverlay"  width="100%" height="25@" texture="/ui/elements:altinfo_hero2_center" visible="false"/>
+	<style name="altInfoHeroCenterOverlaySmall"  texture="/ui/elements:altinfo_hero2_center_small" height="125%"/>
+	<style name="altInfoHeroCenterGlosPos" width="+8%" height="+8@" align="center" valign="center"/>
+	<style name="altInfoHeroCenterGlow" style="altInfoHeroCenterGlosPos" texture="/ui/elements:altinfo_hero2_center_glow" color="#00CCFF" rendermode="additive"/>
+	<style name="altInfoHeroIconContainer" x="-200@" width="100@" height="100%"/>
+	<style name="AltInfoHeroIconOverlay" style="altInfoHeroIconContainer" texture="/ui/elements:altinfo_hero2_heroframe"/>
+	<style name="AltInfoHeroIcon" align="center" valign="center" width="90@" height="90%"/>
+	
+	<style name="altInfoHeroHealthContainer" align="center" width="-16@" height="44%" y="8%"/>
+	<style name="altInfoHeroManaContainer" align="center" width="-16@" height="24%" y="-8%" valign="bottom"/>
+	<style name="altInfoHeroCombatPiegraph" style="altInfoHeroCenterGlosPos" start="-90" end="270" square="true" rendermode="additive" texture="/ui/game/alt_info/textures/altinfo_hero2_center_glow.tga" />
+	
+	<style name="altInfoHeroVitalLabel" textalign="center" textvalign="center" color="white" outline="true" x="-75@"/>
+	<style name="altInfoHeroHealthLabel" style="altInfoHeroVitalLabel" font="maindyn_14" y="-10%"/>
+	<style name="altInfoHeroManaLabel" style="altInfoHeroVitalLabel" font="maindyn_12"/>
+	
+	<style name="altInfoHeroHealthRegenLabel" style="altInfoHeroHealthLabel" font="maindyn_11" textalign="right" x="-25@"/>
+	<style name="altInfoHeroManaRegenLabel" style="altInfoHeroManaLabel" font="maindyn_10" textalign="right" x="-25@"/>
+	
+	<style name="altInfoHeroStatContainer" width="100@" height="100%" x="-100@"/>
+	<style name="altInfoHeroDamageContainer" width="100@" height="100%" x="100@" align="right"/>
+	<style name="altInfoHeroStatSection" height="47.5%" width="-8%" align="center" />
+	<style name="altInfoHeroStatSectionTop" style="altInfoHeroStatSection" y="3%"/>
+	<style name="altInfoHeroStatSectionBot" style="altInfoHeroStatSection" y="-3%" valign="bottom"/>
+	
+	<style name="altInfoHeroLevelPie" style="altInfoHeroStatSectionTop,xpBarColor" start="-90" end="270" square="true" value="0.5"/>
+	
+	<style name="altInfoHeroShieldContainer" width="100%" height="8@" valign="bottom" y="6.25@"/>
+	<style name="altInfoHeroShieldBarSize" hmargin="10@" vmargin="10%"/>
+	
+	<style name="altInfoHeroNameplate" width="100%" height="50@" y="-48@" texture="/ui/elements:altinfo_hero2_nameplate" />
+	<style name="altInfoHeroNameplateItems" width="100%" height="50@" y="-48@" texture="/ui/elements:altinfo_hero2_nameplate_items" />
+	
+	<style name="altInfoHeroItem" width="55@" height="55%" y="-85%" texture="/ui/shared/textures/pack2.tga"/>
+	<style name="altInfoHeroItem0" style="altInfoHeroItem" x="20@"/>
+	<style name="altInfoHeroItem1" style="altInfoHeroItem" x="80@"/>
+	<style name="altInfoHeroItem2" style="altInfoHeroItem" x="140@"/>
+	<style name="altInfoHeroItem3" style="altInfoHeroItem" x="200@"/>
+	<style name="altInfoHeroItem4" style="altInfoHeroItem" x="260@"/>
+	<style name="altInfoHeroItem5" style="altInfoHeroItem" x="325@"/>
+	
+	<style name="altInfoHeroPlayerName" y="-215%" textalign="center" textvalign="center" font="maindyn_11" color="#FFDD33" shadow="true"/>
+	<style name="altInfoHeroHeroName" y="-165%" textalign="center" textvalign="center" font="maindyn_11" style="whiteTextColor" shadow="true"/>
+
+	
+	<style name="altInfoHeroDamageLabel" textalign="center" textvalign="center" outline="true" font="maindyn_10"/>
+	<style name="altInfoHeroPower" style="altInfoHeroDamageLabel" color="#FFDD33" y="5%"/>
+	<style name="altInfoHeroDamage" style="altInfoHeroDamageLabel,whiteTextColor" y="-5%"/>
+	
+	<style name="altInfoHeroLevel" textalign="center" textvalign="center" style="whiteTextColor" outline="true" font="maindyn_11"/>
+	
+	<style name="altInfoHeroArmorLabel" textalign="center" textvalign="center" outline="true" font="maindyn_9"/>
+	<style name="altInfoHeroArmor" style="altInfoHeroArmorLabel,armorColor" width="45%"/>
+	<style name="altInfoHeroMagicArmor" style="altInfoHeroArmorLabel,magicArmorColor" width="45%" align="right"/>
+	<style name="altInfoHeroArmorSlash" style="altInfoHeroArmorLabel,whiteTextColor"/>
+	
+	<!-- ======================================================= -->
+	
+	<!-- Consumable Items (based on backpack) -->
+	<style name="heroInventoryConsumableContainer2" valign="bottom" x="39h" y="-9.25h" width="12h" height="4h" noclick="true"/>
+	
+	<!-- Shop Buttons -->
+	<style name="shopButtonRow" height="3.5h" width="20h" x="0.5h" y="0.5h" float="right" padding="0.5h" noclick="true"/>
+
+	<!-- Stash (based on backpack) -->
+	<style name="heroInventoryStashContainer" valign="bottom" x="6h" y="-14.75h" width="42h" height="6.25h" float="right" padding="0.15h" noclick="true"/>
+	<style name="heroInventoryStashSlot" width="100@" height="100%" noclick="true"/>
+	<style name="heroInventoryStashInset" hmargin="5@" vmargin="5%" noclick="true"/>
+	<style name="heroInventoryStashChargeSpace" width="35@" height="35%" align="right" x="5@" y="-5@" noclick="true"/>
+	
+	<!-- Primary Skill Bar -->
+	<style name="heroPrimarySkillBar" align="center" valign="bottom" y="-1.5h" grow="true" regrow="true" float="right" padding="0.5h" height="8.5h" noclick="true"/>
+	<style name="heroPrimarySkillBarSection" height="100%" grow="true" regrow="true" growinvis="false" noclick="true"/><!-- Ensures full height for proper float placement -->
+	
+	<!-- Backpack -->
+	<style name="heroInventoryBackpackBackerSize" width="100@" height="100%"/>
+	<style name="heroInventoryBackpackIconSize" width="90@" height="90%"/>
+	<style name="heroInventoryBackpackContainer" valign="bottom" x="2.25h" y="-1.5h" width="45h" height="6.5h" noclick="true"/>
+	
+	<style name="heroInventoryBackpackBootsPosMod" width="74@" height="74%" y="-3%" align="center" valign="center"/>
+	
+	<style name="heroInventoryBackpackPurchasedRecently" style="purchasedRecentlyIcon" width="25@" height="25%" noclick="true" visible="false"/>
+	<style name="heroInventoryBackpackPurchasedRecentlyFirst" style="heroInventoryBackpackPurchasedRecently" x="65@" y="10%"/>
+	
+	<style name="heroInventoryBackpackCrafted" style="craftedItemOverlayIcon" width="38@" height="38%" noclick="true" visible="false"/>
+	<style name="heroInventoryBackpackCraftedFirst" style="heroInventoryBackpackCrafted" x="0@" y="75%"/>
+
+	<!-- Backpack, usable -->
+	<style name="heroInventoryBackpackUsableContainer" height="7h" grow="true" regrow="true" growinvis="false" float="right" padding="0.75h" noclick="true" valign="center"/>
+	<style name="heroInventoryBackpackUsableItemContainer" width="100@" height="100%" sticky="true" stickytoinvis="false" noclick="true"/>
+	<style name="heroInventoryBackpackUsableOverlay" texture="/ui/elements:hero_backpack_overlay" noclick="true"/>
+	<style name="heroInventoryBackpackUsableIconSpace" width="90@" height="90%" x="5@" y="5%" noclick="true"/>
+	<style name="heroInventoryBackpackUsableIcon" align="center" valign="center" noclick="true"/>
+	<style name="heroInventoryBackpackUsableIconGloss" style="abilityGloss" align="center" valign="center"/>
+	
+	<style name="heroInventoryBackpackUsableCastIndicator" style="abilityCastIndicator"/>
+	<style name="heroInventoryBackpackUsableAutocastIndicator" style="heroInventoryBackpackUsableIconSpace,abilityAutocastIndicator"/>
+	<style name="heroInventoryBackpackUsableTargetingIndicator" style="heroInventoryBackpackUsableIconSpace,abilityTargetingIndicator"/>
+	
+	<style name="heroInventoryBackpackUsableCooldownPie" style="heroInventoryBackpackUsableIconSpace,abilityCooldownPie"/>
+	<style name="heroInventoryBackpackUsableCooldown" style="heroInventoryBackpackUsableIconSpace,whiteTextColor" font="maindyn_12" shadow="true" textalign="center" textvalign="center" noclick="true"/>
+	<style name="heroInventoryPrimaryManaTimerLabel" font="maindyn_12" shadow="true" textalign="center" textvalign="center" noclick="true" y="0" color="#00CCFF"/>
+	<style name="heroInventoryManaTimerContainer" texture="/ui/elements:rounded_bg_white" color="#333333" borderthickness="0.35h" align="center" width="65%" height="25%" valign="bottom" y="-15%" noclick="true" passivechildren="true" x="-5%" />
+	<style name="heroInventoryManaTimerInset" hmargin="0.25h" vmargin="0.25h" texture="elements_rounded_bg_white_vert" color="#0B0B0B"/>
+	<style name="heroInventoryManaTimerBar" style="timerBarColor" texture="/ui/elements:rounded_bg_white_vert"/>
+	<style name="heroInventoryManaTimerCorners" texture="/ui/elements:rounded_corner_white" borderthickness="0.25h" color="#333333"/>
+
+	<style name="heroInventoryBackpackUsableTimerBackerColor" color="#222222"/>
+	<style name="heroInventoryBackpackUsableTimerBacker" style="heroInventoryBackpackUsableTimerBackerColor" texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" width="20@" height="80%" valign="bottom" x="-7.5%" visible="false"/>
+	<style name="heroInventoryBackpackUsableTimerInset" hmargin="5@" vmargin="5%" texture="/ui/elements:rounded_bg_white_vert" color="#0B0B0B" noclick="true"/>
+	<style name="heroInventoryBackpackUsableTimerBar" valign="bottom" texture="/ui/elements:rounded_bg_white_horiz" style="timerBarColor" height="55%" noclick="true"/>
+	<style name="heroInventoryBackpackUsableTimerBarCorners" texture="/ui/elements:rounded_corner_white" style="heroInventoryBackpackUsableTimerBackerColor" borderthickness="0.25h" noclick="true"/>
+
+	<style name="heroInventoryBackpackUsableItemDrop" style="itemDropTarget"/>
+	
+	<style name="heroInventoryBackpackUsableChargeSpace" width="35@" height="35%" x="-10.5@" y="-17.5%" noclick="true"/>
+	<style name="heroInventoryBackpackUsableChargeBacker" style="heroInventoryBackpackUsableChargeSpace" texture="/ui/elements:rounded_bg_white" color="#222222" borderthickness="0.5h" visible="false"/>
+	<style name="heroInventoryBackpackUsableCharges" style="heroInventoryBackpackUsableChargeSpace,whiteTextColor" font="maindyn_10" shadow="true" textalign="center" textvalign="center" visible="false"/>
+	
+	<style name="heroInventoryBackpackUsableHotkeySpace" width="40@" height="40%" x="2@" y="-7%" align="right"/>
+	<style name="heroInventoryBackpackUsableHotkeyButton" noclick="false" color="invisible"/>
+	<style name="heroInventoryBackpackUsableHotkeyStyle" texture="/ui/elements:key" borderthickness="25@"/>
+	<style name="heroInventoryBackpackUsableHotkeyButtonWithSpace" style="heroInventoryBackpackUsableHotkeySpace,heroInventoryBackpackUsableHotkeyButton"/>
+	<style name="heroInventoryBackpackUsableHotkeyBacker" style="heroInventoryBackpackUsableHotkeySpace,heroInventoryBackpackUsableHotkeyStyle"/>
+	<style name="heroInventoryBackpackUsableHotkeyLabel" style="heroInventoryBackpackUsableHotkeySpace,hotkeyLabel" font="maindyn_10"/>
+	<style name="heroInventoryBackpackUsableHotkeyHighlight" texture="/ui/elements:rounded_bg_white" color="#FFCC0011" rendermode="additive" visible="false" borderthickness="25@"/>
+	<style name="heroInventoryBackpackUsableHotkeyBody" align="center" valign="center" noclick="true"/>
+	<style name="heroInventoryBackpackUsableCrafted" style="craftedItemOverlayIcon" valign="top" width="38@" height="38%" x="-10@" y="1%" visible="false"/>
+	<style name="heroInventoryBackpackUsablePurchasedRecently" style="purchasedRecentlyIcon" width="35@" height="35%" align="right" valign="bottom" x="0" y="1%" visible="false"/>
+	<!-- Boots! (based on usable) -->
+	<style name="heroInventoryBootsContainer" width="8h" height="8h" valign="center" noclick="true" sticky="true" stickytoinvis="false"/>
+	<style name="heroInventoryBootsIconSpace" width="67@" height="67%" x="14@" y="14%" noclick="true"/>
+	<style name="heroInventoryBootsBacker" style="heroInventoryBootsIconSpace" texture="/ui/elements:rounded_bg_white_vert" color="#0B0B0B"/>
+	<style name="heroInventoryBootsBackerIcon" texture="/ui/elements:itemtype_boots" hmargin="20@" vmargin="20%" color="#444444" noclick="true"/>
+	<style name="heroInventoryBackpackBootsOverlay" texture="/ui/elements:hero_backpack_boots_overlay" noclick="true"/>
+	<style name="heroInventoryBootsCooldownPie" style="heroInventoryBootsIconSpace,abilityCooldownPie"/>
+
+	<!-- Backpack, vertical (based on usable, boots-ish) -->
+	<style name="heroInventoryBackpackVertContainer" width="6.5h" valign="bottom" float="bottom" padding="0.7h" grow="true" noclick="true" x="0.5h"/>
+	<style name="heroInventoryBackpackVertItemContainer" width="100%" height="100@" noclick="true"/>
+	
+	<style name="heroInventoryBackpackShopItemContainer" width="100@" height="100%" noclick="true"/>
+	<style name="heroInventoryBackpackShopContainer" height="6.75h" valign="bottom" float="right" padding="1.25h" noclick="true" x="1h" y="-1h"/>
+	
+	<!-- Primary Hero Abilities (updated 10/2/2012) -->
+	<style name="heroInventoryPrimariesContainer" height="8.5h" grow="true" regrow="true" growinvis="false" float="right" noclick="true"/>
+	<style name="heroInventoryPrimaryAbilContainer" width="145@" height="100%" sticky="true" stickytoinvis="false" noclick="true"/>
+	<style name="heroInventoryPrimaryAbilOverlay" texture="/ui/elements:hero_primary_overlay" noclick="true" width="100%" height="100@"/>
+
+	<style name="heroInventoryPrimaryTimerBackerColor" color="#222222"/>
+	<style name="heroInventoryPrimaryTimerBacker" style="heroInventoryPrimaryTimerBackerColor" texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" x="2.5@" valign="center" height="80%" noclick="true"/>
+	<style name="heroInventoryPrimaryTimerInset" hmargin="5@" vmargin="5%" texture="/ui/elements:rounded_bg_white_vert" color="#0B0B0B" noclick="true"/>
+	<style name="heroInventoryPrimaryTimerBar" valign="bottom" texture="/ui/elements:rounded_bg_white_horiz" style="timerBarColor" height="55%" noclick="true"/>
+	<style name="heroInventoryPrimaryTimerBarCorners" texture="/ui/elements:rounded_corner_white" style="heroInventoryPrimaryTimerBackerColor" borderthickness="0.25h" noclick="true"/>
+	
+	<style name="heroInventoryPrimaryLevelPip" texture="/ui/elements:hero_primary_levelpip" width="26%" height="7@" align="right" x="-7%" valign="bottom" color="#333333" noclick="true"/>
+	<style name="heroInventoryPrimaryLevelPip1" style="heroInventoryPrimaryLevelPip" y="-5@"/>
+	<style name="heroInventoryPrimaryLevelPip2" style="heroInventoryPrimaryLevelPip" y="-13@"/>
+	<style name="heroInventoryPrimaryLevelPip3" style="heroInventoryPrimaryLevelPip" y="-21@"/>
+	<style name="heroInventoryPrimaryLevelPip4" style="heroInventoryPrimaryLevelPip" y="-29@"/>
+	
+	<style name="heroInventoryPrimaryIconXWidth" x="5@" width="90@"/><!-- So charge stuff lines up properly with icon -->
+	<style name="heroInventoryPrimaryIconSpace" style="heroInventoryPrimaryIconXWidth" height="90%" y="5%" noclick="true"/>
+	<style name="heroInventoryPrimaryIconContainer" style="heroInventoryPrimaryIconSpace" texture="/ui/elements:rounded_bg_white_vert" color="#0B0B0B" noclick="true"/>
+	<style name="heroInventoryPrimaryIconGloss" style="abilityGloss" align="center" valign="center"/>
+	<style name="heroInventoryPrimaryIcon" align="center" valign="center" noclick="true"/>
+	<style name="heroInventoryPrimaryCanLevelModel" style="levelUpModel,heroInventoryPrimaryIconSpace"/>
+	
+	<style name="heroInventoryPrimaryCooldown" style="heroInventoryPrimaryIconSpace,whiteTextColor" font="maindyn_12" shadow="true" textalign="center" textvalign="center" noclick="true"/>
+	<style name="heroInventoryPrimaryCooldownPie" style="heroInventoryPrimaryIconSpace,abilityCooldownPie"/>
+	
+	<style name="heroInventoryPrimaryCastIndicator" style="heroInventoryPrimaryIconSpace,abilityCastIndicator"/>
+	<style name="heroInventoryPrimaryAutocastIndicator" style="heroInventoryPrimaryIconSpace,abilityAutocastIndicator"/>
+	<style name="heroInventoryPrimaryTargetingIndicator" style="heroInventoryPrimaryIconSpace,abilityTargetingIndicator"/>
+	<style name="heroInventoryPrimaryRefreshEffect" style="heroInventoryPrimaryIconSpace,abilityReadyIndicator"/>
+
+	<style name="heroInventoryChargeContainerColor" color="#222222"/>
+	<style name="heroInventoryChargeContainer" style="heroInventoryPrimaryIconXWidth,heroInventoryChargeContainerColor" height="15%" valign="bottom" y="14%" texture="/ui/elements:rounded_bg_white" borderthickness="0.25h" float="right" padding="2.5@" noclick="true"/>
+
+	<style name="heroInventoryChargePipExtension" texture="/ui/game/ability/textures/ability_frame_peg_extension.tga" width="142%" height="14.0@" noclick="1"/>
+	<style name="heroInventoryChargePipHole" width="110%" height="55@" valign="bottom" align="center" x="10@" y="-13%" texture="/ui/game/ability/textures/ability_frame_peg_holes.tga" noclick="true" />
+	<style name="heroInventoryChargePip" width="114@" height="114%" texture="/ui/game/ability/textures/ability_frame_peg.tga" y="-35%" noclick="true" visible="false"/>
+	<style name="heroInventoryChargePipFirst" style="heroInventoryChargePip" x="25@" y="12%"/>
+
+	<style name="heroInventoryChargeInset" texture="/ui/game/ability/textures/ability_frame_chargebar_frame_default.tga" x="0" y="-1.8h" width="100%" height="3.0h" color="1 1 1 1" noclick="true"/>	
+	<style name="heroInventoryChargeBarEmpty" texture="/ui/game/ability/textures/ability_frame_chargebar_default.tga" color=".3 .3 .3 1" rendermode="grayscale" noclick="true"/>
+	<style name="heroInventoryChargeBarFull" texture="/ui/game/ability/textures/ability_frame_chargebar_default.tga" width="11.6h" noclick="true"/>
+	<style name="heroInventoryChargeBar" width="100%" clip="1" noclick="true"/>	
+
+	<style name="heroInventoryHotkeyButtonSpace" align="right" width="35@" height="36%" x="-12@" y="8%"/>
+	<style name="heroInventoryHotkeyBacker" texture="/ui/elements:key" borderthickness="25@"/>
+	<style name="heroInventoryHotkeyBody" align="center" valign="center" noclick="true"/>
+	<style name="heroInventoryHotkeyHighlight" texture="/ui/elements:rounded_bg_white" color="#FFCC0011" rendermode="additive" visible="false" borderthickness="25@"/>
+	<style name="heroInventoryHotkeyButton" style="heroInventoryHotkeyButtonSpace" color="invisible" noclick="false"/><!-- Unused atm, this is roughly the size and position of the ability hotkey -->
+	<style name="heroInventoryHotkey" style="hotkeyLabel" align="right" width="25@" height="25%" x="-17@" y="10%"/>
+	
+	<!-- Minimap bound abilities -->
+	<style name="mapAbilitySkillbar" x="13h" align="right" valign="bottom" y="-28.5h" height="6h" grow="true" regrow="true" float="right" padding="1h" noclick="true"/>
+	<style name="mapAbilitySkillbarSection" height="100%" grow="true" regrow="true" noclick="true"/><!-- Ensures full height for proper float placement -->
+	
+	<!-- Secondary Skill Bar (above primary) -->
+	<style name="heroSecondarySkillBar" align="center" valign="bottom" y="-10.5h" height="6h" grow="true" regrow="true" float="right" padding="1h" noclick="true"/>
+	<style name="heroSecondarySkillBarSection" height="100%" grow="true" regrow="true" noclick="true"/><!-- Ensures full height for proper float placement -->
+	
+	<!-- Consumable Items (based on boots, usable items) -->
+	<style name="heroInventoryConsumableContainer" height="100%" grow="true" float="right" padding="0.75h" noclick="true"/>
+	<style name="heroInventoryConsumableEntry" width="100@" height="100%" noclick="true"/>
+	
+	<style name="heroInventoryConsumableBacker" style="heroInventoryBackpackUsableIconSpace" texture="/ui/elements:rounded_bg_white_vert" color="#0B0B0B"/>
+	<style name="heroInventoryConsumableBackerIcon" texture="/ui/elements:itemtype_consumable" hmargin="20@" vmargin="20%" color="#444444" noclick="true"/>
+	
+	<!-- Pet (based on usable -->
+	<style name="heroInventoryPetContainer" height="100%" width="17h" noclick="true"/>
+	<style name="heroInventoryPetAbilityContainer" width="80@" height="80%" y="10%" noclick="true"/>
+	<style name="heroInventoryPetAbility1Container" style="heroInventoryPetAbilityContainer" x="105@"/>
+	<style name="heroInventoryPetAbility2Container" style="heroInventoryPetAbilityContainer" x="195@"/>
+	<style name="heroInventoryPetAbility3Container" style="heroInventoryPetAbilityContainer" x="285@"/>
+	<style name="heroInventoryPetIconSpace" width="90@" height="90%" x="5@" y="5%"/>
+	
+	<!-- Inherent (courier, homeaport) -->
+	<style name="heroInventoryInherentContainer" width="12.5h" height="100%" noclick="true"/>
+	<style name="heroInventoryInherentEntry" width="100@" height="100%" noclick="true"/>
+
+	<style name="abilityContainerCourier" style="heroInventoryInherentEntry"/>
+	<style name="abilityContainerRetreat" style="heroInventoryInherentEntry" align="right"/>
+	
+	<!-- Allies (NEW - 10/01/2012) -->
+	<style name="alliesContainer" width="6.5h" y="8h" x="1h" noclick="true"/>
+	<style name="allyContainer" width="100%" height="100@" noclick="true"/>
+	
+	<style name="ally0Container" style="allyContainer" y="0"/>
+	<style name="ally1Container" style="allyContainer" y="10.5h"/><!-- 0 -->
+	<style name="ally2Container" style="allyContainer" y="21h"/><!-- 1 -->
+	<style name="ally3Container" style="allyContainer" y="31.5h"/><!-- 2 -->
+	<style name="ally4Container" style="allyContainer" y="42h"/><!-- 3 -->
+	
+	<style name="allyBacker" texture="/ui/elements:rounded_bg_white" color="#333333" borderthickness="0.5h" noclick="true"/>
+	<style name="allyShadow" texture="/ui/elements:rounded_bg_white" color="0 0 0 0.5" borderthickness="0.5h" x="0.25h" y="0.25h" noclick="true"/>
+	
+	
+	<style name="allyNameContainer" width="190%" height="40@" y="-40%" x="10%"/>
+	<style name="allyNameBacker" texture="/ui/elements:rounded_bg_white" color="#0B0B0B" borderthickness="0.5h"/>
+	<!--<style name="allyNameShadow" style="allyNameBacker" color="0 0 0 0.75" x="0.25h" y="0.25h"/>-->
+	<style name="allyNameLabel" width="-1.25h" align="center" textvalign="center" font="maindyn_14" shadow="true" style="whiteTextColor"/>
+	
+	<style name="allyGPMContainer" width="100%" height="85@" x="100%" y="7.5%"/>
+	<style name="allyGPMBacker" style="allyNameBacker" color="#0B0B0B"/>
+	<style name="allyGPMGoldIcon" width="35@" height="35%" texture="/ui/elements:gold_coins" y="10%" x="20@"/>
+	<style name="allyGPMTimeIcon" width="35@" height="35%" texture="/ui/elements:icon_loading" y="10%" x="60@"/>
+	<style name="allyGPMPos" height="40%" width="80%" y="-10%" x="10%" valign="bottom"/>
+	<style name="allyGPMInset" style="allyGPMPos" texture="/ui/elements:rounded_bg_white" color="#333333" borderthickness="0.35h"/>
+	<style name="allyGPMLabel" style="allyGPMPos" font="maindyn_14" color="#FFDD33" textalign="center" textvalign="center"/>
+	
+	<style name="allyExpandedBacker" width="210%" height="155%" y="5%" valign="bottom" texture="/ui/elements:rounded_bg_white" borderthickness="0.5h" color="#333333"/>
+	<style name="allyExpandedShadow" style="allyExpandedBacker" color="0 0 0 0.5" x="0.25h" y="0.5h"/>
+	
+	<style name="enemyExpandedBacker" style="allyExpandedBacker" align="right"/>
+	<style name="enemyExpandedShadow" style="allyExpandedShadow" align="right"/>
+	
+	
+	<style name="allyKillsLabel" textalign="center" textvalign="center" font="maindyn_12" outline="true" color="lime" width="100%" height="40@" x="100%" y="7.5%" />
+	<style name="allyAssistsLabel" style="allyKillsLabel" color="yellow" y="40%"/>
+	
+	<style name="allyLevelPos" width="3h" height="2h" x="-0.5h" y="-0.5h"/>
+	<style name="allyLevelBacker" style="allyLevelPos" texture="/ui/elements:rounded_bg_white" color="#0B0B0B" borderthickness="0.5h"/>
+	<style name="allyLevelLabel" style="allyLevelPos" color="white" font="maindyn_12" outline="true" textalign="center" textvalign="center"/>
+	
+	<style name="enemyKillsLabel" style="allyKillsLabel" align="right" x="-100%"/>
+	<style name="enemyAssistsLabel" style="allyAssistsLabel" align="right" x="-100%"/>
+	
+	<style name="enemyLevelPos" style="allyLevelPos" x="0.5h" align="right"/>
+	<style name="enemyLevelBacker" style="allyLevelBacker,enemyLevelPos"/>
+	<style name="enemyLevelLabel" style="allyLevelLabel,enemyLevelPos"/>
+
+	<!-- In case we change these later on -->
+	
+	<style name="enemyNameContainer" style="allyNameContainer" align="right" x="-10%"/>
+	<style name="enemyNameBacker" style="allyNameBacker"/>
+	<style name="enemyNameShadow" style="allyNameShadow"/>
+	<style name="enemyNameLabel" style="allyNameLabel" textalign="right"/>
+
+	<style name="enemyGPMContainer" style="allyGPMContainer" align="right" x="-100%"/>
+	<style name="enemyGPMBacker" style="allyGPMBacker"/>
+	<style name="enemyGPMShadow" style="allyGPMShadow"/>
+	<style name="enemyGPMGoldIcon" style="allyGPMGoldIcon" align="right" y="10%" x="-60@"/>
+	<style name="enemyGPMTimeIcon" style="allyGPMTimeIcon" align="right" y="10%" x="-20@"/>
+	<style name="enemyGPMPos" height="40%" width="80%" y="-10%" x="10%" valign="bottom"/>
+	<style name="enemyGPMInset" style="enemyGPMPos" texture="/ui/elements:rounded_bg_white" color="#333333" borderthickness="0.35h"/>
+	<style name="enemyGPMLabel" style="enemyGPMPos" font="maindyn_14" color="#FFDD33" textalign="center" textvalign="center"/>
+
+	<style name="allyIconInset" hmargin="0.5h" vmargin="0.5h"/>
+	
+	<style name="allyCorners" style="allyIconInset" texture="/ui/elements:rounded_corner_white" borderthickness="0.5h" color="#333333" noclick="true"/>
+	<style name="allyOutline" style="allyIconInset" texture="/ui/elements:thick" borderthickness="0.5h" color="black" noclick="true"/>	
+	<style name="allyDisconnectTime" textalign="center" textvalign="center" font="maindyn_20" outline="1" style="whiteTextColor" shadow="true" noclick="true" x="12%" y="26@" visible="false"/>
+	<style name="enemyDisconnectTime" textalign="center" textvalign="center" font="maindyn_20" outline="1" style="whiteTextColor" shadow="true" noclick="true" x="-8%" y="26@" visible="false"/>	
+	<style name="allyLoadPercent" textalign="center" textvalign="center" font="maindyn_20" outline="1" style="whiteTextColor" shadow="true" noclick="true" x="12%" y="26@" visible="false"/>
+	<style name="enemyLoadPercent" textalign="center" textvalign="center" font="maindyn_20" outline="1" style="whiteTextColor" shadow="true" noclick="true" x="-8%" y="26@" visible="false"/>	
+	<style name="selfRespawnTimer" x="1%" textalign="center" textvalign="center" font="maindyn_20" outline="1" color="#FFAAAA" shadow="true" noclick="true" visible="false"/>
+	<style name="allyRespawnTimer" x="7%" textalign="center" textvalign="center" font="maindyn_20" outline="1" color="#FFAAAA" shadow="true" noclick="true" visible="false"/>
+	<style name="enemyRespawnTimer" x="-7%" textalign="center" textvalign="center" font="maindyn_20" outline="1" color="#FFAAAA" shadow="true" noclick="true" visible="false"/>	
+	
+	<style name="selfAFKIndicator" textalign="center" textvalign="center" font="maindyn_20" outline="1" style="whiteTextColor" shadow="true" noclick="true" visible="false"/>
+	<style name="allyAFKIndicator" x="7%" textalign="center" textvalign="center" font="maindyn_20" outline="1" style="whiteTextColor" shadow="true" noclick="true" visible="false"/>
+	<style name="enemyAFKIndicator" x="-7%" textalign="center" textvalign="center" font="maindyn_20" outline="1" style="whiteTextColor" shadow="true" noclick="true" visible="false"/>
+	
+	<style name="allyDeadOverlay" style="allyIconInset,heroDeadOverlay"/>
+	<style name="allyVOIPIndicator" style="allyIconInset" noclick="true" model="/ui/_models/invis.mdf" anim="idle" camerapos="-5 200 25" cameraangles="2 40 181" camerafov="10" cameranear="1" carmerafar="5000" depthclear="false" depthcompress="true" sunazimuth="-90" sunaltitude="180" suncolor="2 2 2" onshow="SetAnim('idle'); SetEffect('/shared/effects/talking.effect');" visible="false"/>
+	
+	<style name="heroCanLevelModel" style="allyIconInset,levelUpModel"/>
+	<style name="allyLoadIndicator" texture="/ui/elements:icon_loading" width="50%" height="50@" align="center" valign="center" noclick="true" visible="false"/>
+	<style name="allyDisconnectIndicator" texture="/ui/elements:disconnect" width="60%" height="60@" noclick="true" align="center" valign="center" visible="false"/>
+	
+	<!-- Enemies (NEW - 10/01/2012 -->
+	<style name="enemiesContainer" style="alliesContainer" align="right" x="-1h"/>
+	<style name="enemy0Container" style="ally0Container"/>
+	<style name="enemy1Container" style="ally1Container"/>
+	<style name="enemy2Container" style="ally2Container"/>
+	<style name="enemy3Container" style="ally3Container"/>
+	<style name="enemy4Container" style="ally4Container"/>
+
+	<!-- Minimap -->
+	<style name="minimapContainer" align="right" valign="bottom" width="29h" height="29h" noclick="true"/>
+	<style name="minimapSizePos" valign="bottom" width="28h" height="28h" x="0.5h" y="-0.5h"/>
+	<style name="minimapTimePos" x="-0.5h" y="0.5h" width="5h" height="2.75h" align="right"/>
+	<style name="minimapTimeIcon" x="-6h" y="0.5h" width="2.75h" height="2.75h" align="right" texture="/ui/elements:icon_loading" noclick="true"/>
+	<style name="minimapLocationPos" x="3.75h" y="0.5h" width="16h" height="2.75h"/>
+
+	<!-- Hero States -->
+	<style name="heroStateContainer" align="center" valign="bottom" width="40h" height="11h" y="-16.0h" x="0" noclick="true" />
+	<style name="heroStateColumn" width="3h" height="3.5h" y="52h" noclick="true" />
+	<style name="heroStateRow" width="100%" height="50%" y="0" noclick="true" />
+	<style name="heroStateSpacerBacker" float="right" padding="2.0h" noclick="true"/>
+	<style name="heroStateSpacerIcon" float="right" padding="3.1h" noclick="true"/>
+	<style name="heroStateSpacerDuration" float="right" padding="4.6h" noclick="true"/>
+	<style name="heroStateSpacerDurationInset" float="right" padding="4.9h" noclick="true"/>
+	<style name="heroStateBacker" width="100@" height="100%" color="1 1 1 0.1"/>
+	<style name="heroStateIconSize" width="80@" height="80%"/>
+	<style name="heroStateIconSizeFirst" style="heroStateIconSize" x="10@" y="10%"/>
+
+	<!-- Team Score/Base Health stuff -->
+	<style name="teamScoreHealthContainer" width="11h" height="5.5h" y="-7h" noclick="true" x="-5.75h" align="center" visible="false"/><!-- Ally version -->
+	<style name="teamScoreHealthContainerEnemy" style="teamScoreHealthContainer" x="5.75h"/>
+
+	<!-- Selected Unit -->
+	<style name="selectedUnitContainer" valign="top" align="center" height="3.5h" grow="true" regrow="true" noclick="true" visible="false"/>
+	<style name="selectedUnitInterior" noclick="true" height="-0.5h" valign="center" grow="true" regrow="true" growinvis="false" float="right" padding="0.25h"/>
+	
+	<!-- Selected Unit States -->
+	<style name="selectedUnitStateContainer" align="center" width="15h" height="3h" y="6.25h" visible="false"/>
+	<style name="selectedUnitStateIconSize" width="80@" height="80%"/>
+	<style name="selectedUnitStateIconSizeFirst" style="selectedUnitStateIconSize" x="10@" y="10%"/>
+
+	<!-- Chat Styles -->
+	<style name="gameChatContainer" valign="bottom" align="left" width="68h" height="27.0h" x="-3h" y="-1h" noclick="true" />
+
+	<style name="gameChatScrollBar" texture="/ui/shared/textures/slider.tga" handlewidth="2.5h" handleheight="5.0h" scrollbarsize="2.5h" vertical="true" slotwidth="2.5h" slotheight="1" width="2.5h" align="right" x="3h" step="1" visible="false" height="-3.5h"
+		hscrollbar="0"
+		horizontal="false"	
+	/>
+	<style name="gameChatViewArea" clip="true" noclick="true" height="-4h" align="left" />
+	<style name="gameChatBody" hmargin="0.25h" vmargin="0.25h" noclick="true" passivechildren="0" />
+
+	<style name="gameChatEntry" width="100%" grow="true" regrow="true" valign="bottom" passivechildren="0" noclick="false" visible="false"/>
+	<style name="gameChatEntryMessage" width="-5.5h" outline="1" align="center" textvalign="center" wrap="true" fity="true" fitypadding="1h" font="maindyn_14" style="whiteTextColor"/>
+
+	<style name="gameChatEntryMinHeight" noclick="true" height="2.65h"/><!-- Primarily for spacers -->
+	<style name="gameChatEntryIconSpace" height="2.55h" x="19h" valign="top" y="0.55h" width="4h" noclick="true"/>
+	<style name="gameChatEntryMuteSpace" height="2.55h" x="0h" valign="top" y="0.55h" width="4h" noclick="true"/>
+
+	<style name="gameChatTypeSize" width="5.5h" noclick="true" y="0.25h"/>
+	<style name="gameChatEntryTypeSpace" style="gameChatTypeSize" x="19.25h" height="2.15h"/>
+
+	<style name="gameChatInputSpace" valign="bottom" height="3h" align="center" width="-20.5h" visible="false"/>
+	<style name="gameChatInputBox" width="-1.5h" align="right" x="-0.5h" color="invisible" font="maindyn_14" textcolor="white" textvalign="center" height="2h" valign="center"/>
+
+	<!-- Game Events -->
+	<style name="gameEventsContainer" align="right" valign="bottom" width="38h" height="27h" y="-48h" noclick="true" clip="true"/>
+	<style name="gameEventsBody" width="100%" height="100%" noclick="true" passivechildren="true"/>
+	<style name="gameEventEntry" height="3.5h" valign="bottom" noclick="true" passivechildren="true" align="right" width="-9h" x="-0.5h" visible="false"/>
+	<style name="gameEventEntryLabel" textalign="center" textvalign="center" style="whiteTextColor" outline="true" font="maindyn_12"/>
+	
+	<!-- Misc Inventory stuff -->
+	<style name="gameInventoryItemContainer" width="6h" height="6h" valign="bottom" noclick="true" visible="false"/>
+	<style name="inventoryCooldownPie" start="270" end="-90" square="true" color="0 0 0 0.75" noclick="true" value="0"/>
+	<style name="gameInventoryItemIconSpace" hmargin="7.5@" vmargin="7.5%" noclick="true"/>
+	
+	<style name="gameInventoryItemKeySpace" width="40@" height="40%" x="3.5@" y="-3.5@" align="right" noclick="true"/>
+	<style name="gameInventoryItemKey" texture="/ui/elements:key" borderthickness="0.75h"/>
+	<style name="gameInventoryKeyHighlight" texture="/ui/elements:rounded_bg_solid" borderthickness="0.75h" color="#FFCC0011" rendermode="additive" noclick="true" visible="false"/>
+	<style name="inventoryCooldownLabel" textalign="center" textvalign="center" color="white" outline="true" font="maindyn_20" visible="false" noclick="true"/>
+
+	<style name="gameMinimapIconLeft" width="13.2%" height="13.2@" align="center" y="3.2@" x="4.0%" noclick="true"/><!-- Retreat -->
+	<style name="gameMinimapIconCenter" width="13.2%" height="13.2@" y="3.2@" align="center" x="16.6%" noclick="true"/><!-- Send Items -->
+	<style name="gameMinimapIconRight" width="13.2%" height="13.2@" y="3.2@" align="center" x="28.6%" noclick="true"/><!-- Options  -->
+	<style name="gameMinimapIconPing" width="13.2%" height="13.2@" y="3.2@" align="center" x="40.8%" noclick="true"/><!-- Ping -->
+
+	<style name="gameHotkeyLabel" color="black" outline="true" outlinecolor="#DDDDDD" font="maindyn_14" textalign="center" textvalign="center" noclick="true"/>
+	<style name="gameHotkeyLabelDisabled" style="gameHotkeyLabel" color=".65 .65 .65 1" outlinecolor=".4 .4 .4 1" />
+
+	<style name="gameInventoryBasicKeySpace" width="65@" height="65%" y="-70%" align="center"/>
+	<style name="gameInventoryBasicHotkeyLabel" style="gameHotkeyLabel" font="maindyn_9" y="-9%" noclick="true"/>
+	
+	<style name="gameInventoryItemHotkeyLabel" style="gameHotkeyLabel" y="-9%" noclick="true"/>
+</interface>
