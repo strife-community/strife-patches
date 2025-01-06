@@ -3073,7 +3073,7 @@ Ability_Tortus_Passive2_3_description_simple					Increases mana regen
 
 // Zen (Owl)
 Ability_Owl_Passive_name										Wisdom
-Ability_Owl_Passive_description									Increases Cooldown Reduction by 13%.
+Ability_Owl_Passive_description									Increases Cooldown Reduction by $passive$%.
 Ability_Owl_Passive_description_simple							Increases Cooldown Reduction.
 Ability_Owl_TriggeredPassive_name								Revitalize
 Ability_Owl_TriggeredPassive_description						Prevents you from losing Out-of-Combat Regeneration for 5 seconds the next time you enter combat.\n\n^c12 Second Cooldown^*. 
