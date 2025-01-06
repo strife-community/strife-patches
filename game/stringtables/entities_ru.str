@@ -3177,8 +3177,8 @@ Ability_Fiki_Ult_description_simple								Провоцирует бойцов �
 
 // Zen / Owl
 Ability_Owl_Passive_name										Wisdom
-Ability_Owl_Passive_description									Увеличивает регенерацию маны на $passive$ ед./сек. (значение растет с уровнем героя)
-Ability_Owl_Passive_description_simple							Увеличивает регенерацию маны
+Ability_Owl_Passive_description									Уменьшает время перезарядки способностей на $passive$%.
+Ability_Owl_Passive_description_simple							Уменьшает время перезарядки способностей
 Ability_Owl_TriggeredPassive_name								Revitalize
 Ability_Owl_TriggeredPassive_description						Сохраняет бонус регенерации вне боя в течение пяти секунд после начала сражения. Время перезарядки - 18 секунд.
 Ability_Owl_TriggeredPassive_description_simple					Сохраняет бонус вне боя при возвращении в сражение
