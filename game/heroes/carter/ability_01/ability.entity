@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Carter1"
+
+	icon="icon.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetradius="70"
+	casteffecttype="Magic"
+	targetscheme="enemy_units_and_buildings"
+	casteffect="effects/cast.effect"
+	
+	manacost="50,55,60,65"
+	cooldowntime="0"
+	queue="front"
+	inheritmovement="true"
+	noturntotarget="false"
+
+	range="2500"
+	forcerange="2500"
+	allowoutofrangecast="true"
+	allowoutofboundscast="true"
+	
+	showlinecast="true"
+	linecastwidth="90"
+	linecastrange="2600"
+	maxcharges="2"
+	showareacast="false"
+  
+	alwaysshowtimer="true"
+	
+	doubleactivate="false"
+	doubleactivatenoninterrupting="true"
+>
+	<constant name="damage" value="70,95,120,145" adjustment="ability" />
+	<onlearn>
+		<setcharges a="2" />
+		<setaccumulator value="4" />
+	</onlearn>
+	
+	
+	<onimpact>
+		<compare a="charges" b="2" op="eq">
+			<starttimer duration="6000" applycooldownreduction="true" />
+		</compare>
+		
+		<compare a="accumulator" b="4" op="eq">
+			<spawnunit name="Gadget_Carter_Ability1_Reveal" count="1" target="source_position" pushentity="true" />
+			<spawnprojectile name="Projectile_Carter_Ability1_1" source="source_entity" target="target_position" bind="stack_entity" bindturn="true" proxy="stack_entity" offset="0 0 120" />
+			<setaccumulator value="3" />
+		</compare>
+		<else>
+			<compare a="accumulator" b="3" op="eq">
+				<spawnunit name="Gadget_Carter_Ability1_Reveal_2" count="1" target="source_position" pushentity="true" />
+				<spawnprojectile name="Projectile_Carter_Ability1_2" source="source_entity" target="target_position" bind="stack_entity" bindturn="true" proxy="stack_entity" offset="0 0 120" />
+				<setaccumulator value="2" />
+			</compare>
+			<else>
+				<compare a="accumulator" b="2" op="eq">
+					<spawnunit name="Gadget_Carter_Ability1_Reveal_3" count="1" target="source_position" pushentity="true" />
+					<spawnprojectile name="Projectile_Carter_Ability1_3" source="source_entity" target="target_position" bind="stack_entity" bindturn="true" proxy="stack_entity" offset="0 0 120" />
+					<setaccumulator value="1" />
+				</compare>
+				<else>
+					<spawnunit name="Gadget_Carter_Ability1_Reveal_4" count="1" target="source_position" pushentity="true" />
+					<spawnprojectile name="Projectile_Carter_Ability1_4" source="source_entity" target="target_position" bind="stack_entity" bindturn="true" proxy="stack_entity" offset="0 0 120" />
+					<setaccumulator value="4" />
+				</else>
+			</else>
+		</else>
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<setactivemodifierkey name="carterrocketdisabled" />
+		</compare>
+	</onimpact>
+	
+	<ondeath>
+		<setcharges a="2" />
+	</ondeath>
+	
+	<ontimer>
+		<addcharges entity="this_entity" count="1" />
+		<compare a="charges" b="2" op="lt">
+			<starttimer duration="6000" applycooldownreduction="true" />
+		</compare>
+	</ontimer>
+	
+	<ondoubleactivate>
+		<areaofeffect
+			radius="600"
+			targetselection="closest"
+			targetscheme="visible_enemy_heroes"
+			maxtotalimpacts="1"
+			effecttype="Magic"
+		>
+			<useability source="source_entity" slot="0"/>
+		</areaofeffect>
+		<compare a="result" b="0" op="eq">
+			<cancel />
+		</compare>
+	</ondoubleactivate>
+
+
+	<modifier key="carterrocketdisabled" modpriority="100"
+		disabled="true"
+	>
+		<onframe>
+			<compare a="charges" b="0" op="gt">
+				<setactivemodifierkey name="" />
+			</compare>
+		</onframe>
+	</modifier>
+	
+</ability>

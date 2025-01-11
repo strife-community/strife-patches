@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Iah1"
+	icon="icon.tga"
+	
+	anim="ability_1"
+	
+	casttime="250"
+	castactiontime="250"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+
+	casteffecttype="Magic"
+	targetscheme="enemy_units_and_structures"
+	casteffect="effects/cast.effect"
+	
+	manacost="50,55,60,65"
+	cooldowntime="2000"
+	queue="front"
+	
+
+	range="700"
+	showareacast="true"
+
+	allowoutofrangecast="false"
+	allowoutofboundscast="false"
+
+	maxcharges="2,3,4,5"
+
+	alwaysshowtimer="true"
+	
+>
+	<constant name="damage" value="20,25,30,35" adjustment="ability" />
+	<constant name="percent_maxhp" value="35,40,45,50" adjustment="none"  />
+	
+	<onlearn>
+		<setcharges a="2,3,4,5" />
+	</onlearn>
+	
+	<onupgrade>
+		<addcharges entity="this_entity" count="1" />
+	</onupgrade>
+	
+	<onimpact>
+		<compare a="charges" b="2,3,4,5" op="eq">
+			<starttimer duration="14000" applycooldownreduction="true" />
+		</compare>
+
+		<distance />
+		<setvar0 a="result" b="2" op="div" />
+		
+		<compare a="var0" b="200" op="lt" >
+				
+			<setpos0 position="source_entity" offsetspace="source_entity" offset="300 0 0" />
+			<setpos0 position="pos0" positionend="target_position" positionmodifier="pointonline" positionvalue="var0" />
+			<spawnunit name="Pet_Iah_Ability1" count="1" target="pos0" pushentity="true" proxy="target_entity" />
+			<applystate name="State_Iah_Ability1_HP" target="stack_entity" duration="-1" />
+		</compare>
+		<else>
+			<setpos0 position="source_entity" positionend="target_position" positionmodifier="pointonline" positionvalue="var0" pushentity="true" />
+			<spawnunit name="Pet_Iah_Ability1" count="1" target="pos0" pushentity="true" proxy="target_entity"  />
+			<applystate name="State_Iah_Ability1_HP" target="stack_entity" duration="-1" />
+		</else>
+
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<setactivemodifierkey name="Iah_ability1_disabled" />
+		</compare>
+		
+
+	</onimpact>
+	
+	<ondeath>
+		<setcharges a="2,3,4,5" />
+	</ondeath>
+	
+	<ontimer>
+		<addcharges entity="this_entity" count="1" />
+		<compare a="charges" b="2,3,4,5" op="lt">
+			<starttimer duration="14000" applycooldownreduction="true" />
+		</compare>
+	</ontimer>
+
+
+	<modifier key="Iah_ability1_disabled" modpriority="100"
+		disabled="true"
+	>
+		<onframe>
+			<compare a="charges" b="0" op="gt">
+				<setactivemodifierkey name="" />
+			</compare>
+		</onframe>
+	</modifier>
+	
+	
+	
+</ability>
