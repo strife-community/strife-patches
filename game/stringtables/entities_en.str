@@ -1276,7 +1276,7 @@ Hero_Minerva_role
 Hero_Minerva_lore 												Minerva is from the mysterious plane known as Vorbis. Little is known about her or her kind, but it is clear that she is one of the deadliest warriors to ever set foot in the Trials. Her personality is electric and her resolve is unshakable. She emerged from Vorbis seeking a sacred item. Thus she entered the Trials in hopes that one of the valiant warriors there might be able to lead her to it.
 // Ability_Minerva1
 Ability_Minerva1_name											Cyber Stalk
-Ability_Minerva1_description									Target unit to dash behind it, dealing ^o$damage$ Magic damage^* and gaining $attackspeed$ Attack Speed and 15 movement speed for 6 seconds.
+Ability_Minerva1_description									Target unit to dash behind it, dealing ^o$damage$ Magic damage^* and gaining $attackspeed$ Attack Speed and $movespeed$ movement speed for 6 seconds.
 Ability_Minerva1_description_simple								dash that damages and grants attack speed
 // State_Minerva_Ability1_Buff
 State_Minerva_Ability1_Buff_Tooltip_name						Attack Speed

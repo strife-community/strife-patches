@@ -1275,7 +1275,7 @@ Hero_Minerva_role
 Hero_Minerva_lore													Minerva kommt aus der geheimnisvollen Ebene, die als Vorbis gekannt wird. Wenig wird von ihr oder ihrem Kind gewissen aber es ist klar, sie sei eine der tödlichsten Kämpfer in den Proben. Ihre Persönlichkeit ist elektrisch und ihre Entschlossenheit unerschütterlich. Sie entstand aus Vorbis um einen heiligen Gegenstand zu finden. Und nun betrat sie die Proben und wartet darauf, dass einer der mutigen Kämpfer sie zu ihm leiten kann.
 // Ability_Minerva1
 Ability_Minerva1_name												Cyberstalk
-Ability_Minerva1_description										Ziele auf eine Einheit um hinter sie zu stürmen, richte ^o$damage$ Magieschaden^* an und gewinne $attackspeed$ Angriffsgeschwindigkeit und 15 Bewegungsgeschwindigkeit für 6 Sekunden.
+Ability_Minerva1_description										Ziele auf eine Einheit um hinter sie zu stürmen, richte ^o$damage$ Magieschaden^* an und gewinne $attackspeed$ Angriffsgeschwindigkeit und $movespeed$ Bewegungsgeschwindigkeit für 6 Sekunden.
 Ability_Minerva1_description_simple									Stürmt, schädigt und gibt Angriffsgeschwindigkeit
 // State_Minerva_Ability1_Buff
 State_Minerva_Ability1_Buff_Tooltip_name							Angriffsgeschwindigskeit
