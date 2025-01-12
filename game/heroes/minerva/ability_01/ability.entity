@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Minerva1"
+	
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="200"
+	castactiontime="100"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	activatescheme="movement"
+	actiontype="target_entity"
+	casteffecttype="Magic"
+	targetscheme="all_other_units_and_buildings"
+	manacost="45,50,55,60"
+	cooldowntime="0"
+	
+	casteffect="effects/cast.effect"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	maxcharges="2"
+	
+	range="500"
+
+	queue="dropmovement"
+	
+	doubleactivate="true"
+	doubleactivatenoninterrupting="true"
+	
+	alwaysshowtimer="True"
+>
+	<constant name="damage" value="20,35,50,65" adjustment="ability" />
+	<!--Display Only-->
+	<constant name="attackspeed" value="12,18,24,30" adjustment="none" />
+	<onlearn>
+		<setcharges a="2" />
+	</onlearn>
+	
+	<ondeath>
+		<setcharges a="2" />
+	</ondeath>
+	
+	<onimpact>
+		<compare a="charges" b="2" op="eq">
+			<starttimer duration="6000" applycooldownreduction="true" />
+		</compare>
+
+		<resetattackcooldown />
+		<recordheroaggression  />
+		<aggression />
+		<setpos0 position="source_position" positionend="target_position" positionmodifier="pointpastline" positionvalue="100" />
+		<spawnprojectile name="Projectile_Minerva_Ability1" unbindondeath="true" source="source_entity" target="pos0" bind="source_entity" bindstate="State_Minerva_Ability1" bindturn="true" proxy="target_entity" bindpriority="1"/>
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<setactivemodifierkey name="Minervadisabled" />
+		</compare>
+	</onimpact>
+
+	<ontimer>
+		<addcharges entity="this_entity" count="1" />
+		<compare a="charges" b="2" op="lt">
+			<starttimer duration="6000" applycooldownreduction="true" />
+		</compare>
+	</ontimer>
+
+	<ondoubleactivate>
+		<areaofeffect
+				radius="450"
+				targetselection="closest"
+				targetscheme="visible_enemy_heroes"
+				maxtotalimpacts="1"
+				effecttype="Magic"
+			>
+			<useability source="source_entity" slot="0"/>
+		</areaofeffect>
+		<compare a="result" b="0" op="eq">
+			<cancel />
+		</compare>
+	</ondoubleactivate>
+  
+	
+	<modifier key="Minervadisabled" modpriority="100"
+		disabled="true"
+	>
+		<onframe>
+			<compare a="charges" b="0" op="gt">
+				<setactivemodifierkey name="" />
+			</compare>
+		</onframe>
+	</modifier>
+	
+	<modifier key="gear_1" modpriority="1"
+		casteffect="../gear_1/ability_01/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="gear_2" modpriority="1"
+		casteffect="../gear_2/ability_01/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="uber_1" modpriority="1"
+		casteffect="../gear_3/level_1/ability_01/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="uber_2" modpriority="1"
+		casteffect="../gear_3/level_2/ability_01/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="uber_3" modpriority="1"
+		casteffect="../gear_3/level_3/ability_01/effects/cast.effect"
+	>
+	</modifier>
+	
+</ability>

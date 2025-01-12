@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Malph1"
+
+	icon="icon.tga"
+	anim="ability_1" 
+
+	casttime="400"
+	castactiontime="400"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetscheme="enemy_units_and_buildings"
+	
+	casteffecttype="Magic"
+	
+	manacost="95"  
+	range="1200"
+	
+	maxcharges="2"
+	cooldowntime="0"
+
+	forcerange="1200"
+	allowoutofboundscast="true"
+	allowoutofrangecast="true"
+
+	showlinecast="true"
+	linecastrange="1200"
+	linecastwidth="120"
+	
+	hoverareacastrange="1050"
+
+>
+	<constant name="damage" value="65,90,115,140" adjustment="ability" />
+	
+	<onlearn>
+		<setcharges a="2" />
+	</onlearn>
+	
+	<onimpact>
+		<compare a="charges" b="2" op="eq">
+			<starttimer duration="5000" applycooldownreduction="true" />
+		</compare>
+	
+		<spawnprojectile name="Projectile_Malph_Ability1" target="target_position" offset="0 140 0" />
+		
+		<setpos0 position="source_entity" offsetspace="source_entity" offset="0 200 0" />
+		<playeffect effect="effects/cast.effect" target="pos0" source="pos0" occlude="true"/>
+		
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<setactivemodifierkey name="molerocketdisabled" />
+		</compare>
+	</onimpact>
+	
+	<ondeath>
+		<setcharges a="2" />
+	</ondeath>
+	
+	<ontimer>
+		<addcharges entity="this_entity" count="1" />
+		<compare a="charges" b="2" op="lt">
+			<starttimer duration="5000" applycooldownreduction="true" />
+		</compare>
+	</ontimer>
+
+	<modifier key="molerocketdisabled" modpriority="100"
+		disabled="true"
+	>
+		<onframe>
+			<compare a="charges" b="0" op="gt">
+				<setactivemodifierkey name="" />
+			</compare>
+		</onframe>
+	</modifier>
+	
+	<modifier key="Malph_underground" modpriority="100"
+		disabled="false"
+	>	
+		<onimpact>
+			<compare a="charges" b="2" op="eq">
+			<starttimer duration="5000" applycooldownreduction="true" />
+			</compare>
+		
+			<spawnprojectile name="Projectile_Malph_Ability1" target="target_position" offset="0 140 0" />
+			
+			<setpos0 position="source_entity" offsetspace="source_entity" offset="0 200 0" />
+			<playeffect effect="effects/cast.effect" target="pos0" source="pos0" occlude="true"/>
+			
+			<removecharge />
+			<compare a="charges" b="0" op="eq">
+				<setactivemodifierkey name="molerocketdisabled" />
+			</compare>
+			<pushentity searchfortarget="true" searchorigin="target_position" radius="99999" targetscheme="mole_mounds" ignoreinvulnerable="true"/>
+			<teleport source="source_entity" target="stack_entity" />
+
+			<setpos0 position="stack_entity" positionend="target_position" positionmodifier="pointonline" positionvalue="170" />
+			
+			<expirestate name="State_Malph_Ability4_Underground" target="source_entity" />
+
+			<spawnprojectile name="Projectile_Malph_Ability4_Exit" source="source_entity" target="pos0" bind="source_entity" bindstate="State_Malph_Ability4_Exit" />
+		</onimpact>
+	
+	</modifier>
+	
+</ability>
