@@ -29,11 +29,10 @@
 	<constant name="movespeed" value="75" adjustment="none" noshowintooltip="true" />
 	
 	<onimpact>
-		<haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+		<haseffecttype name="CrowdControl StatusDisable">
 			<applystate name="State_Midknight_Ability3_Buff" target="source_entity" duration="5000" />
 			<dispel type="CrowdControl" />
 			<dispel type="StatusDisable" />
-			<dispel type="StatusDebuff" />
 			<popup name="ccbreak" source="source_entity" target="source_entity" />
 			<playeffect effect="effects/shield_explosion.effect" target="source_entity" source="source_entity" />
 		</haseffecttype>
