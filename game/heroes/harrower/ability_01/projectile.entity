@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Harrower_Ability1"
+
+	gravity="0"
+	speed="1500"
+
+	lifetime="275"
+	modelscale="2"
+	model="/shared/models/invis.mdf"
+	
+	pathing="true"
+
+>
+	<onimpact>
+		<resetattackcooldown/>
+		<applystate name="State_Harrower_Ability1_Buff" proxy="this_proxy_entity" target="source_entity" duration="5000" />
+		<starttimer entity="this_proxy_entity" duration="5000" />
+	</onimpact>
+</projectile>
