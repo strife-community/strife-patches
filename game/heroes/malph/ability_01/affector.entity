@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Malph_Ability1"
+
+	radius="350"
+	impactdelay="0"
+	targetselection="all"
+	targetscheme="enemy_units_and_buildings"
+	effecttype="Magic"
+
+	touchpropanim="flamehit"
+>
+
+	<onimpact>
+		<getconstant name="damage" adjustmentsource="this_entity" />
+		<damage effecttype="Magic" significant="true" amount="1" b="result" op="mult"/>
+		<applystate name="State_Malph_Ability1" duration="2000" />
+	</onimpact>
+
+</affector>
