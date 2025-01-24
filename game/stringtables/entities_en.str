@@ -59,6 +59,7 @@ Constant_percent_heal											Percent Heal
 Constant_max_damage_increase									Max Base Damage Increase
 Constant_attackspeed											Attack Speed
 Constant_movespeed												Move Speed
+Constant_movespeed_percent										% Move Speed
 Constant_bonus_attacks											Number Of Attacks
 Constant_resistance												Resistance
 Constant_mitigation												Mitigation
@@ -1350,16 +1351,16 @@ Ability_Nikolai4_description_simple								single target relocation
 
 // Hero_Pal
 Hero_Pal_name													Pal
-Hero_Pal_description											Specializes in crowd control and area damage				
+Hero_Pal_description											Specializes in crowd control and area damage
 Hero_Pal_role													Crowd control and aoe
 Hero_Pal_lore		
 // Ability_Pal1
-Ability_Pal1_name												Trip Beam	
+Ability_Pal1_name												Trip Beam
 Ability_Pal1_description										Target direction to create a beam of energy.  If an enemy touches this beam, it triggers - dealing ^o$damage$ Magic Damage^* and knocking back all nearby enemies with a mini-stun.
 Ability_Pal1_description_simple									damage and knock back
 // Ability_Pal2
 Ability_Pal2_name												Roll Out
-Ability_Pal2_description										Activate to transform instantly into a metal ball, gaining ^o+5/9/13/17%^* movespeed.  If you contact an enemy, deals ^o$damage$ Magic Damage^* and stuns them for 1.3 seconds.  Taking damage will apply a stacking 70% tapering movespeed slow for 0.5 seconds.
+Ability_Pal2_description										Activate to transform instantly into a metal ball, gaining $movespeed_percent$% movespeed.  If you contact an enemy, deals ^o$damage$ Magic Damage^* and stuns them for 1.3 seconds.
 Ability_Pal2_description:pal_roll								Activate to cancel, returning to normal mode.
 Ability_Pal2_description_simple									movement and stun
 // Ability_Pal3

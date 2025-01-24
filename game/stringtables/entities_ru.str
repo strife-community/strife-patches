@@ -59,6 +59,7 @@ Constant_percent_heal											Процент лечения
 Constant_max_damage_increase									Максимальный дополнительный начальный урон
 Constant_attackspeed											Скорость атаки
 Constant_movespeed												Скорость передвижения
+Constant_movespeed_percent										% скорости передвижения
 Constant_bonus_attacks											Количество атак
 Constant_resistance												Сопротивление
 Constant_mitigation												Смягчение
@@ -842,6 +843,29 @@ Hero_Nikolai_role
 Hero_Nikolai_description											Мастер поединков, использующий умения контроля
 Hero_Nikolai_lore													
 												
+// Hero_Pal
+Hero_Pal_name                                                       Pal
+Hero_Pal_description                                                Specializes in crowd control and area damage
+Hero_Pal_role                                                       контроль и урон по области
+Hero_Pal_lore
+// Ability_Pal1
+Ability_Pal1_name                                                   Trip Beam
+Ability_Pal1_description                                            Создаёт в указанном направлении энергетический барьер. Если противник коснётся барьера, тот нанесёт ^o$damage$ магического урона^* и оттолкнёт противника, оглушая его на короткое время.
+Ability_Pal1_description_simple                                     урон и отталкивание противника
+// Ability_Pal2
+Ability_Pal2_name                                                   Roll Out
+Ability_Pal2_description                                            При активации Pal трансформируется в металлический шар, получая бонус скорости передвижения $movespeed_percent$%. Столкнувшись с противником, Pal наносит ему ^o$damage$ магического урона^* и оглушает на 1.3 с.
+Ability_Pal2_description:pal_roll                                   При активации Pal возвращается в обычный режим.
+Ability_Pal2_description_simple                                     скорость передвижения и оглушение
+// Ability_Pal3
+Ability_Pal3_name                                                   Infernal Core
+Ability_Pal3_description                                            Пока способность активна, увеличивает сопротивление на ^c$resistance$^* и наносит ^o$damage_per_second$ магического урона в секунду^* ближайшим противникам. Тратит 20 маны в секунду.
+Ability_Pal3_description:burn_on                                    При использовании отключает способность.
+Ability_Pal3_description_simple                                     урон по области и бонус к защите
+// Ability_Pal4
+Ability_Pal4_name                                                   Energy Reversal
+Ability_Pal4_description                                            Пассивно уменьшает весь получаемый урон на $damage_reduction$%, заряжая способность по от урона противника. При активации выплёскивает накопившийся заряд, нанося ^o$damage$ магического урона^* всем противникам в радиусе 700.
+Ability_Pal4_description_simple                                     урон по области
 
 // Ability_Claudessa1
 Ability_Claudessa1_name												Dragon's Reach
