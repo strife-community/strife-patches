@@ -4743,6 +4743,9 @@ local function shopItemTipRegisterStat(object, statName, heroTriggerName, iconPa
 				item:SetText(libNumber.round(bonusAttackSpeed, 0) .. valueSuffix)
 				change:SetText('+' .. libNumber.round(bonusAttackSpeed - baseAttackSpeed, 0) .. valueSuffix)
 			else
+				widget:SetVisible(1)
+				name:SetColor('#006b93')
+				
 				current:SetText(value1 .. valueSuffix)
 				item:SetText(value2 .. valueSuffix)
 				change:SetText('+' .. value3 .. valueSuffix)
