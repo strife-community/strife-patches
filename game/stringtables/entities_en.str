@@ -1237,7 +1237,7 @@ Ability_Malph2_description										Target ally to grant them a buff which heals
 Ability_Malph2_description_simple								heal over time
 // Ability_Malph3
 Ability_Malph3_name												Mud Field
-Ability_Malph3_description										Target area to create a mud field.  Enemies caught inside are slowed by 25%, have their attack speed reduced by $attackspeedslow$%, and take $damage_scale$% bonus damage from you.
+Ability_Malph3_description										Target area to create a mud field.  Enemies caught inside are slowed by 25%, have their attack speed reduced by $attackspeed_percentreduction$%, and take $percent_bonus_damage$% bonus damage from you.
 Ability_Malph3_description_simple								aoe slow and debuff
 // Ability_Malph4
 Ability_Malph4_name												The Underground

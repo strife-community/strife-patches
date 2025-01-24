@@ -1653,6 +1653,28 @@ Hero_Malady_description											Мастер контроля, наносит 
 Hero_Malady_role												Контроль, магический урон
 Hero_Malady_lore												Malady — безжалостная небесная владычица, глава королевства, парящего в воздушных просторах Нестры. Она привыкла добиваться своего и для достижения своих порой жестоких целей готова прибегнуть к любым средствам. Подчинив себе погодные силы Нестры, она проносится бурей и сеет смерть на своем пути. Немногие могут выдержать ее монарший гнев.
 
+// Hero_Malph
+Hero_Malph_name													Malph
+Hero_Malph_description											Mole power!
+Hero_Malph_role													Манёвренный манипулятор
+// Ability_Malph1
+Ability_Malph1_name												Tunnel Bomb
+Ability_Malph1_description										Запускает в указанном направлении подземную торпеду. При контакте с противником торпеда наносит ^o$damage$ Магического урона^* и замедляет противников в радиусе 350. Если в радиусе 700 есть герой противника, торпеда становится самонаводящейся и его. 
+Ability_Malph1_description_simple								урон и замедление по области
+// Ability_Malph2
+Ability_Malph2_name												Healing Rations
+Ability_Malph2_description										Указанный союзник получает на 6 секунд усиление, дающее ему $resistance$ и восполняющее ему ^g$heal$ здоровья^* за это время.
+Ability_Malph2_description_simple								постепенно исцеляет и защищает союзника
+// Ability_Malph3
+Ability_Malph3_name												Mud Field
+Ability_Malph3_description										Указанная область становится погреблена в грязи. Скорость передвижения противников, находящихся в этой области, уменьшена на 25%, скорость атаки – на $attackspeed_percentreduction$%, а также они получают $percent_bonus_damage$% дополнительного урона от вас.
+Ability_Malph3_description_simple								замедление и увеличение урона в области
+// Ability_Malph4
+Ability_Malph4_name												The Underground
+Ability_Malph4_description										В указанном месте создаётся Кротовая Нора. По нажатию на ней правой кнопкой мыши, Malph после 1.4с. окажется под землёй. Пока Malph под землёй, указав любую Кротовую Нору целью этой способность, он вернётся на поверхность рядом с ней.
+Ability_Malph4_description_simple								перемещение по всей карте
+Ability_Malph4_description:Malph_underground					Malph перемещается к указанному выходу и покидает Кротовую Нору.
+
 
 // Ability_Eanu1
 Ability_Eanu1_name										Trident Charge
