@@ -128,6 +128,7 @@ Constant_execute_threshold										% Предел максимального з
 Constane_attackspeedslow										% Уменьшение скорости атаки
 Constant_splash													Урон по области
 Constant_back_attack                                            Начальный обратный урон
+Constant_malph_max_holes                                        Макс. кол-во нор
 
 CrowdControl_Stun												Оглушение
 CrowdControl_Slow												Замедление
