@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Malph_Ability2_Debuff"
+	passiveeffect="effects/state.effect"
+	movespeedslow="0.25"
+	attackspeedslow="0.1,0.2,0.3,0.4"
+>
+
+	<onattackeddamageevent>
+		<setproxy target="this_inflictor_entity" />
+		<printdebuginfo />
+		<compare a="this_proxy_entity" b="target_entity" op="eq" >
+			<print text="ddaa" />
+			<getconstant name="damage_scale" adjustmentsource="tool_entity"/>
+			<setvar0 a="result" b="100" op="div" />
+			<setvar0 a="1" b="var0" op="add" />
+			<printvalue value="var0" />
+			<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+		</compare>
+	</onattackeddamageevent>
+
+</state>
