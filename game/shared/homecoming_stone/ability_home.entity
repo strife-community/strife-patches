@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_HomecomingStone_Home"
+	
+	icon="icon.tga"
+	
+	actiontype="target_self"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	
+	range="99999"
+
+	doubleactivate="true"
+	noentercombat="true"
+	responsetype="NoResponse"
+	casteffecttype="NoResponse"
+	queue="none"
+>	
+	<onimpact>
+		<pushentitysearch global="true" targetscheme="ally_well" ignoreinvulnerable="true" />
+		<setproxy entity="this_entity" target="stack_entity" />	
+		<playanim name="port_out" target="source_entity" />
+
+		<setpos0 position="stack_position" positionmodifier="minonline" positionend="target_position" positionvalue="400" />
+		<spawnunit name="Gadget_HomecomingStone_Base" count="1" target="pos0" pushentity="true" proxy="stack_entity" />
+		<applystate name="State_HomecomingStone_Source_Base" target="source_entity" proxy="stack_entity" duration="8000"/>
+
+	</onimpact>
+	
+	<modifier key="tutorialmod" modpriority="100"
+		disabled="true"
+	/>
+	
+	<modifier key="Mole_underground" modpriority="100"
+		disabled="true"
+	/>
+	
+</ability>
