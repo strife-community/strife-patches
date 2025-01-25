@@ -7,6 +7,6 @@
 
 >
 	<!-- Tooltip only -->
-	<constant name="healthregen_percent_enchant" value="0.05" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="regenpercent_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 </qualityitem>
