@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Shardplate_Empower_1"
+	
+	cost="1720"
+
+>
+	<!-- Tooltip only -->
+	<constant name="resistance_enchant" value="20" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onframe>
+		<compare a="source_health_percent" b="0.2" op="le" >
+			<setactivemodifierkey entity="this_entity" name="shardplate_legendary" />
+		</compare>
+		<else>
+			<setactivemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+
+</qualityitem>
