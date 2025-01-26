@@ -1227,7 +1227,7 @@ State_Malady_Ability4_Channel_name								Charging..
 
 // Hero_Malph
 Hero_Malph_name													Malph
-Hero_Malph_description											Mole power!
+Hero_Malph_description											Specializes in pushing lanes all over the map
 Hero_Malph_role													Mobile manipulator
 // Ability_Malph1
 Ability_Malph1_name												Tunnel Bomb
