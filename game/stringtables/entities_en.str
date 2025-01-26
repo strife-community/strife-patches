@@ -1405,7 +1405,7 @@ Hero_Rip_lore													Rip, swordsman of the wastes, hails from a mysterious 
 // Ability_Rip1
 Ability_Rip1_name												Smoke Cloud
 Ability_Rip1_description										Target area to create a smoke cloud, reducing enemy resistance by $resistance_reduction$ and drastically lowering their vision, while granting all allies inside the cloud $resistance$ resistance. While inside the cloud, you are stealthed until you deal damage or use an ability.
-Ability_Rip1_description_simple								
+Ability_Rip1_description_simple								    create cloud to confuse enemy and cloak yourself
 // State_Rip_Ability1_Self
 State_Rip_Ability1_Self_Tooltip_name							Smoke Cloud
 State_Rip_Ability1_Self_description_simple						You are cloaked while in the Smoke Cloud.
@@ -1419,7 +1419,7 @@ State_Rip_Ability1_name_FRAME_effect
 // Ability_Rip2
 Ability_Rip2_name												Vanish
 Ability_Rip2_description										Target area to vanish for 1 second, then reappear at the target location.  Upon reappearing, deals ^o$damage$ Magic damage^* in the area.
-Ability_Rip2_description_simple									Vanish and reappear dealing aoe damage
+Ability_Rip2_description_simple									vanish and reappear dealing aoe damage
 // Ability_Rip3
 Ability_Rip3_name												Dark Empowerment
 Ability_Rip3_description										^444Passive Skill^*\nEvery 5th attack charges your blade.  Once charged, your next attack deals ^o$damage_increase$% bonus Attack damage^*.\n\nAvoiding enemy vision instantly charges your blade.
@@ -1427,7 +1427,7 @@ Ability_Rip3_description_simple									attack crit after being unseen
 // Ability_Rip4
 Ability_Rip4_name												Nether Strike
 Ability_Rip4_description										Target direction to dash, attacking all enemies you pass through.  \n\nIf you hit at least 1 enemy, you may cast this ability again for up to 6 seconds - up to a total of 3 times.
-Ability_Rip4_description_simple								
+Ability_Rip4_description_simple								    dash though enemies, attacking each of them
 
  
  // Hero_Rook
