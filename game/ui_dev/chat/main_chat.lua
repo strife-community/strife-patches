@@ -1646,19 +1646,9 @@ function ChatNewChannel(widget, channelID, channelName, isGameChat)
 
 			Windows.Chat.Channel[channelID]:SetSizingBounds((widget:GetWidthFromString(defaultChatWindowWidth) * 0.8), (widget:GetHeightFromString(defaultChatWindowHeight) * 0.6), (widget:GetWidthFromString(defaultChatWindowWidth) * 5.0), (widget:GetHeightFromString(defaultChatWindowHeight) * 5.0))
 			Windows.Chat.Channel[channelID]:SetCloseCallback(function()
+				LeaveChannel(channelID)
 				if (isLobbyChat) or (isPartyChat) then
-					Windows.Chat.Channel[channelID] = nil	
-					for i=1, WINDOW_CHAT_CHANNEL_INSTANCES_MAX, 1 do
-						if (Windows.data.chat.channel.widgets[i] == channelID) then
-							Windows.data.chat.channel.widgets[i] = nil
-							break
-						end
-					end	
-					ChatClient.ForceInterfaceUpdate()
-					RecalculateFooterWidgets()	
 					LeftChannel(channelID)
-				else
-					LeaveChannel(channelID)		
 				end
 			end)
 			
