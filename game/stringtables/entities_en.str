@@ -1215,7 +1215,7 @@ Ability_Malady2_description_simple								Area damage and slow
 // Ability_Malady3
 Ability_Malady3_name											Golden Gate
 Ability_Malady3_description										Target a location and drag to create a wall lasting 4 seconds. This wall is impassable to enemies.  Allies who pass through the wall gain a burst of speed.
-Ability_Malady3_description_simple								Creates a impassable wall
+Ability_Malady3_description_simple								Creates an impassable wall
 // Ability_Malady4
 Ability_Malady4_name											Bolt of Bedlam
 Ability_Malady4_description										Target an enemy unit to deal ^o$damage$ Magic damage^*.
