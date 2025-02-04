@@ -130,7 +130,7 @@
 					<instance name="playScreenOption" id="1" artTexture="gamemode_std" artSize="100" artY="-16%" artX="0" title="pre_play_pvp" details="pre_play_pvp_desc" moreinfo="1" visible="1" />
 					<instance name="playScreenOption" id="2" artTexture="gamemode_bots" artSize="100" artY="-16%" artX="0" title="pre_play_pve" details="pre_play_pve_desc" visible="1" />
 					<instance name="playScreenOption" id="3" artTexture="gamemode_ranked" artSize="100" artY="-16%" artX="0" title="pre_play_ranked" details="pre_play_ranked_desc" moreinfo="1" visible="1" />
-					<instance name="playScreenOption" id="4" artTexture="gamemode_scrim" artSize="100" artY="-16%" artX="0" title="pre_play_scrim" details="pre_play_scrim_desc" soon="1" visible="1" />
+					<instance name="playScreenOption" id="4" artTexture="gamemode_scrim" artSize="100" artY="-16%" artX="0" title="pre_play_scrim" details="pre_play_scrim_desc" visible="1" />
 					<instance name="playScreenOption" id="5" artTexture="gamemode_kq" artSize="100" artY="-16%" artX="0" title="pre_play_khan" details="pre_play_khan_desc" moreinfo="1" visible="1" />
 				</panel>
 			</panel>
