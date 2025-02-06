@@ -76,7 +76,7 @@ local function InitHeroes()
 		-- local border		= GetWidget('selection_hero_entry_item_'..prefix..index..'_border')
 		local hover			= GetWidget('selection_hero_entry_item_'..prefix..index..'Hover')
 		local hoverTexture	= GetWidget('selection_hero_entry_item_'..prefix..index..'HoverTexture')
-		local recommended	= GetWidget('selection_hero_entry_item_'..prefix..index..'Recommended')
+		-- local recommended	= GetWidget('selection_hero_entry_item_'..prefix..index..'Recommended')
 		local mastered		= GetWidget('selection_hero_entry_item_'..prefix..index..'Mastered')
 		local longwait		= GetWidget('selection_hero_entry_item_'..prefix..index..'LongWait')
 		local banned		= GetWidget('selection_hero_entry_item_'..prefix..index..'Banned')
@@ -264,13 +264,13 @@ local function InitHeroes()
 				end
 			end, false, nil, 'hoveringHero')
 
-			registerWatchAndDo(recommended, 'selection_Status', function(widget, trigger)
-				if (triggerStatus.recommendedHero == newIndex) then
-					widget:FadeIn(175)
-				else
-					widget:FadeOut(175)
-				end
-			end, false, nil, 'selectedHero', 'recommendedHero')
+            -- registerWatchAndDo(recommended, 'selection_Status', function(widget, trigger)
+            -- 	if (triggerStatus.recommendedHero == newIndex) then
+            -- 		widget:FadeIn(175)
+            -- 	else
+            -- 		widget:FadeOut(175)
+            -- 	end
+            -- end, false, nil, 'selectedHero', 'recommendedHero')
 
 			local infoTrigger	= GetTrigger('HeroSelectHeroList'..newIndex)
 			infoTrigger:Trigger(true)
