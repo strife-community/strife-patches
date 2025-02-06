@@ -106,14 +106,25 @@ local function InitHeroes()
 			local HeroSelectHeroList_trigger = GetTrigger('HeroSelectHeroList'..newIndex)
 			local trigger_heroSelectInfo 	= GetTrigger('HeroSelectInfo')
 
-			registerWatchAndDo(icon, 'HeroSelectHeroList'..newIndex, function(widget, trigger)
-				widget:SetTexture(trigger.iconPath)
-				if trigger.canSelect and ((trigger_heroSelectInfo.teamID == 1) or (trigger_heroSelectInfo.teamID == 2)) and (not trigger.isBanned) then
-					widget:SetRenderMode('normal')
-				else
-					widget:SetRenderMode('grayscale')
-				end
-			end, false, 'heroSelectHero'..index..'Watch', 'iconPath', 'canSelect', 'isBanned')
+            registerWatchAndDo(icon, 'HeroSelectHeroList'..newIndex, function(widget, trigger)
+                widget:SetTexture(trigger.iconPath)
+                -- Checking if player is spectator
+                if (trigger_heroSelectInfo.teamID <= 0) then
+                    -- For spectators only color picked heroes?
+                    if (trigger.isBanned or ((trigger.pickedByTeam <= 0) and (GetTrigger('HeroSelectPhaseCountdown').phase == 'pick'))) then
+                        widget:SetRenderMode('grayscale')
+                    else
+                        widget:SetRenderMode('normal')
+                    end
+                else
+                    -- For players captains color only heroes avaliable to pick at the moment
+                    if trigger.canSelect and ((trigger_heroSelectInfo.teamID == 1) or (trigger_heroSelectInfo.teamID == 2)) and (not trigger.isBanned) then
+                        widget:SetRenderMode('normal')
+                    else
+                        widget:SetRenderMode('grayscale')
+                    end
+                end
+            end, false, 'heroSelectHero'..index..'Watch', 'iconPath', 'canSelect', 'isBanned')
 
 			registerWatchAndDo(picked, 'HeroSelectHeroList'..newIndex, function(widget, trigger)
 				widget:SetVisible(trigger.isAvailable == -2 and not trigger.canSelect)
@@ -165,21 +176,37 @@ local function InitHeroes()
 				end
 			end, false, nil, 'canSelect', 'pickedByTeam')
 			
-			registerWatchAndDo(frame, 'HeroSelectHeroList'..newIndex, function(widget, trigger)
-				local team = GetTrigger('HeroSelectLocalPlayerInfo').teamID
-				if (not trigger.canSelect) then
-					widget:SetColor('.6 .6 .6 1')
-				else
-					widget:SetColor('1 1 1 1')
-				end
-				if (trigger.pickedByTeam > 0) and (trigger.pickedByTeam == team) then
-					widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_green.tga')
-				elseif (trigger.pickedByTeam > 0) and (trigger.pickedByTeam ~= team) then
-					widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_red.tga')
-				else
-					widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2.tga')
-				end
-			end, false, nil, 'canSelect', 'pickedByTeam')				
+            registerWatchAndDo(frame, 'HeroSelectHeroList'..newIndex, function(widget, trigger)
+                local team = GetTrigger('HeroSelectLocalPlayerInfo').teamID
+                -- First check if we are spectator
+                if (team <= 0) then
+                    -- For spectators base color is always inactive
+                    widget:SetColor('.6 .6 .6 1')
+                    -- choose color depending on team, green for Glory, red for Valor and grey for not picked
+                    if (trigger.pickedByTeam == 1) then
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_green.tga')
+                    elseif (trigger.pickedByTeam == 2) then
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_red.tga')
+                    else
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2.tga')
+                    end
+                else
+                    -- For players 
+                    if (not trigger.canSelect) then
+                        widget:SetColor('.6 .6 .6 1')
+                    else
+                        widget:SetColor('1 1 1 1')
+                    end
+                    -- Choose color: green is their team, red is opponent team, grey for none
+                    if (trigger.pickedByTeam > 0) and (trigger.pickedByTeam == team) then
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_green.tga')
+                    elseif (trigger.pickedByTeam > 0) and (trigger.pickedByTeam ~= team) then
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_red.tga')
+                    else
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2.tga')
+                    end
+                end
+            end, false, nil, 'canSelect', 'pickedByTeam')
 			
 			registerWatchAndDo(banned, 'HeroSelectPhaseCountdown', function(widget, trigger)
 				if (trigger.phase == 'banning') then
@@ -206,16 +233,28 @@ local function InitHeroes()
 				end
 			end, false, nil, 'hoveringHero')
 			
-			registerWatchAndDo(hoverTexture, 'HeroSelectHeroList'..newIndex, function(widget, trigger)
-				local team = GetTrigger('HeroSelectLocalPlayerInfo').teamID
-				if (trigger.pickedByTeam > 0) and (trigger.pickedByTeam == team) then
-					widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_green_hover.tga')
-				elseif (trigger.pickedByTeam > 0) and (trigger.pickedByTeam ~= team) then
-					widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_red_hover.tga')
-				else
-					widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_hover.tga')
-				end
-			end, false, nil, 'canSelect', 'pickedByTeam')					
+            registerWatchAndDo(hoverTexture, 'HeroSelectHeroList'..newIndex, function(widget, trigger)
+                local team = GetTrigger('HeroSelectLocalPlayerInfo').teamID
+                -- First check if we are spectator
+                if (team <= 0) then
+                    -- choose color depending on team, green for Glory, red for Valor and grey for not picked
+                    if (trigger.pickedByTeam == 1) then
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_green_hover.tga')
+                    elseif (trigger.pickedByTeam == 2) then
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_red_hover.tga')
+                    else
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_hover.tga')
+                    end
+                else
+                    if (trigger.pickedByTeam > 0) and (trigger.pickedByTeam == team) then
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_green_hover.tga')
+                    elseif (trigger.pickedByTeam > 0) and (trigger.pickedByTeam ~= team) then
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_red_hover.tga')
+                    else
+                        widget:SetTexture('/ui/main/shared/textures/iconframe_interactive_txt2_hover.tga')
+                    end
+                end
+            end, false, nil, 'canSelect', 'pickedByTeam')
 			
 			registerWatchAndDo(hoverGlow, 'selection_Status', function(widget, trigger)
 				if (triggerStatus.hoveringHero == newIndex) then
@@ -882,43 +921,64 @@ local function InitPlayers()
 end
 
 local function InitTeams()
-	
-	local function RegisterTeam(index, name)
-		local captains_team_myteam_indicator_logo							= GetWidget('captains_team_'..index..'_myteam_indicator_logo')
-		local captains_team_myteam_indicator_teamname						= GetWidget('captains_team_'..index..'_myteam_indicator_teamname')
-		local captains_team_myteam_indicator_label						= GetWidget('captains_team_'..index..'_myteam_indicator_label')
-		
-		captains_team_myteam_indicator_logo:RegisterWatchLua('HeroSelectLocalPlayerInfo', function(widget, trigger)
-			local myTeam = trigger.teamID == index
-			if (myTeam) then
-				widget:SetTexture('/ui/game/loading/textures/team_logo_' .. name .. '_green.tga')
-			else
-				widget:SetTexture('/ui/game/loading/textures/team_logo_' .. name .. '_red.tga')
-			end
-		end, false, nil, 'teamID')
-		
-		captains_team_myteam_indicator_teamname:RegisterWatchLua('HeroSelectLocalPlayerInfo', function(widget, trigger)
-			local myTeam = trigger.teamID == index
-			if (myTeam) then
-				widget:SetColor('#01d823')
-			else
-				widget:SetColor('#d90000')
-			end
-		end, false, nil, 'teamID')
+    local function RegisterTeam(index, name)
+        local captains_team_myteam_indicator_logo           = GetWidget('captains_team_'..index..'_myteam_indicator_logo')
+        local captains_team_myteam_indicator_teamname       = GetWidget('captains_team_'..index..'_myteam_indicator_teamname')
+        local captains_team_myteam_indicator_label          = GetWidget('captains_team_'..index..'_myteam_indicator_label')
+        
+        captains_team_myteam_indicator_logo:RegisterWatchLua('HeroSelectLocalPlayerInfo', function(widget, trigger)
+            -- Checking if player is spectator:
+            if (trigger.teamID <= 0) then
+                -- For spectator Glory is green, Valor is red
+                if (index == 1) then
+                    widget:SetTexture('/ui/game/loading/textures/team_logo_' .. name .. '_green.tga')
+                else
+                    widget:SetTexture('/ui/game/loading/textures/team_logo_' .. name .. '_red.tga')
+                end
+            else
+                -- For players their team is green, opponent is red
+                local myTeam = (trigger.teamID == index)
+                if (myTeam) then
+                    widget:SetTexture('/ui/game/loading/textures/team_logo_' .. name .. '_green.tga')
+                else
+                    widget:SetTexture('/ui/game/loading/textures/team_logo_' .. name .. '_red.tga')
+                end
+            end
+        end, false, nil, 'teamID')
+        
+        captains_team_myteam_indicator_teamname:RegisterWatchLua('HeroSelectLocalPlayerInfo', function(widget, trigger)
+            -- Checking if player is spectator:
+            if (trigger.teamID <= 0) then
+                -- For spectator Glory is green, Valor is red
+                if (index == 1) then
+                    widget:SetColor('#01d823')
+                else
+                    widget:SetColor('#d90000')
+                end
+            else
+                -- For players their team is green, opponent is red
+                local myTeam = (trigger.teamID == index)
+                if (myTeam) then
+                    widget:SetColor('#01d823')
+                else
+                    widget:SetColor('#d90000')
+                end
+            end
+        end, false, nil, 'teamID')
 
-		captains_team_myteam_indicator_label:RegisterWatchLua('HeroSelectLocalPlayerInfo', function(widget, trigger)
-			local myTeam = trigger.teamID == index
-			if (myTeam) then
-				widget:SetText(Translate('general_your_team'))
-			else
-				widget:SetText(Translate('general_team'))
-			end
-		end, false, nil, 'teamID')		
-	end
-	
-	RegisterTeam(1, 'glory')
-	RegisterTeam(2, 'valor')
-	
+        captains_team_myteam_indicator_label:RegisterWatchLua('HeroSelectLocalPlayerInfo', function(widget, trigger)
+            local myTeam = trigger.teamID == index
+            if (myTeam) then
+                widget:SetText(Translate('general_your_team'))
+            else
+                widget:SetText(Translate('general_team'))
+            end
+        end, false, nil, 'teamID')		
+    end
+    
+    RegisterTeam(1, 'glory')
+    RegisterTeam(2, 'valor')
+    
 end
 
 local function InitCaptainsMode()
