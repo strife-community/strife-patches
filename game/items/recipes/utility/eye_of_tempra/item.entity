@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Eye_Of_Tempra"
+	
+	statuseffecttooltip="State_Eye_Of_Tempra"
+	icon="icon.tga"
+	
+	cost="1265"
+	components="Item_Brain Item_Brain Item_Relic"
+	
+	casteffecttype="Magic"
+	targetscheme="all"	
+	actiontype="target_position"
+	targetradius="290"
+	casttime="500"
+	castactiontime="200"	
+	cooldowntime="45000"
+	range="1000"
+	
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	anim="item_1"
+	noentercombat="false"
+  	casteffect="effects/sound.effect"
+	projectile="Projectile_Eye_Of_Tempra"
+	reducedcooldowns="0.10"
+	basemanaregen="10"
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="1200"
+	botitem="TargetEnemyItem"
+	filters="utility,activatable,mana"
+	empoweredeffects="Item_Eye_Of_Tempra_Empower_1"
+	showinpractice="true"
+>
+	<constant name="cd_reduction" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="regen" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+
+	<constant name="legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	
+	<onimpact>
+		<killillusions />
+		<dispel type="StatusStealth" />
+		<breakchannel entity="target_entity" />
+		<spawnaffector name="Affector_Eye_Of_Tempra" target="target_position" />
+		<spawnunit name="Gadget_Eye_Of_Tempra_Reveal" target="target_position" lifetime="2500" />
+		<startcooldown/>
+	</onimpact>
+
+	
+</crafteditem>
