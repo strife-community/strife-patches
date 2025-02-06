@@ -645,67 +645,66 @@ local function InitBreadcrumbs()
 end	
 
 local function InitSpectators()
-	for index=0,9,1 do
-		
-		local container		= GetWidget('lobby_entry_caps_'..index)
-		local button		= GetWidget('lobby_entry_caps_'..index..'UserButton')
-		local playerName	= GetWidget('lobby_entry_caps_'..index..'UserName')
-		local darken		= GetWidget('lobby_entry_caps_'..index..'UserDarken')
-		local dropTarget	= GetWidget('lobby_entry_caps_'..index..'DropTarget')
-		
-		local hasPlayer		= false
-		
-		button:SetCallback('onclick', function(widget)
-			println('onclick')
-			selectedIndex = nil
-			interface:UICmd("Team(0)")
-			ClearDrag()	
-		end)
-		
-		button:RegisterWatchLua('LobbyStatus', function(widget, trigger)
-			widget:SetCallback('onrightclick', function()
-				println('onrightclick LobbySpectators ' .. index)
-				local infoTrigger = LuaTrigger.GetTrigger('LobbySpectators'..index)
-				if trigger.isHost and infoTrigger.identID and IsValidIdent(infoTrigger.identID) then
-					lobbyRightClickOpen(infoTrigger.clientNum, index, 0, infoTrigger.identID)
-				end
-			end)	
-		end)
-		
-		container:SetVisible(1)
-		container:RegisterWatchLua('LobbyTeamInfo0', function(widget, trigger)
-			widget:SetVisible(1)
-		end, false, nil, 'maxPlayers')
-		
-		playerName:RegisterWatchLua('LobbySpectators'..index, function(widget, trigger)
-			if (not Empty(trigger.playerName)) then
-				hasPlayer = true
-				selectedIndex = nil
-			
-				widget:SetText(trigger.playerName)
-				widget:SetColor('1 1 1 1')
-			else
-				hasPlayer = false
-			
-				widget:SetText(Translate('temp_gamelobby_team3_slot', 'value', index))
-				widget:SetColor('.4 .4 .4 1')
-			end
-		end)
-		
-		playerName:SetText(Translate('temp_gamelobby_team3_slot', 'value', index))
-		playerName:SetColor('.4 .4 .4 1')
-		
-		button:SetCallback('onmouseover', function(widget)
-			UpdateCursor(widget, true, { canLeftClick = true, canRightClick = true, canDrag = true })
-		end)
+    for index=0,9,1 do
+        
+        local container		= GetWidget('lobby_entry_caps_'..index)
+        local button		= GetWidget('lobby_entry_caps_'..index..'UserButton')
+        local playerName	= GetWidget('lobby_entry_caps_'..index..'UserName')
+        local darken		= GetWidget('lobby_entry_caps_'..index..'UserDarken')
+        local dropTarget	= GetWidget('lobby_entry_caps_'..index..'DropTarget')
+        
+        local hasPlayer		= false
+        
+        button:SetCallback('onclick', function(widget)
+            selectedIndex = nil
+            widget:UICmd("Team(0)")
+            ClearDrag()	
+        end)
+        
+        button:RegisterWatchLua('LobbyStatus', function(widget, trigger)
+            widget:SetCallback('onrightclick', function()
+                println('onrightclick LobbySpectators ' .. index)
+                local infoTrigger = LuaTrigger.GetTrigger('LobbySpectators'..index)
+                if trigger.isHost and infoTrigger.identID and IsValidIdent(infoTrigger.identID) then
+                    lobbyRightClickOpen(infoTrigger.clientNum, index, 0, infoTrigger.identID)
+                end
+            end)	
+        end)
+        
+        container:SetVisible(1)
+        container:RegisterWatchLua('LobbyTeamInfo0', function(widget, trigger)
+            widget:SetVisible(1)
+        end, false, nil, 'maxPlayers')
+        
+        playerName:RegisterWatchLua('LobbySpectators'..index, function(widget, trigger)
+            if (not Empty(trigger.playerName)) then
+                hasPlayer = true
+                selectedIndex = nil
+            
+                widget:SetText(trigger.playerName)
+                widget:SetColor('1 1 1 1')
+            else
+                hasPlayer = false
+            
+                widget:SetText(Translate('temp_gamelobby_team3_slot', 'value', index))
+                widget:SetColor('.4 .4 .4 1')
+            end
+        end)
+        
+        playerName:SetText(Translate('temp_gamelobby_team3_slot', 'value', index))
+        playerName:SetColor('.4 .4 .4 1')
+        
+        button:SetCallback('onmouseover', function(widget)
+            UpdateCursor(widget, true, { canLeftClick = true, canRightClick = true, canDrag = true })
+        end)
 
-		button:SetCallback('onmouseout', function(widget)
-			UpdateCursor(widget, false, { canLeftClick = true, canRightClick = true, canDrag = true })
-		end)		
-		
-		LuaTrigger.GetTrigger('LobbySpectators'..index):Trigger(true)
-		
-	end
+        button:SetCallback('onmouseout', function(widget)
+            UpdateCursor(widget, false, { canLeftClick = true, canRightClick = true, canDrag = true })
+        end)		
+        
+        LuaTrigger.GetTrigger('LobbySpectators'..index):Trigger(true)
+        
+    end
 end
 
 
