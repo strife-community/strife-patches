@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Buford_Ability2"
+
+	icon=""
+	portrait=""
+	model=""
+	passiveeffect=""
+	deatheffect=""
+	
+	preglobalscale="1.0"
+	modelscale="1.5"
+	effectscale="0.9"
+	boundsheight="0"
+	radiusheight="0"
+	boundsradius="0"
+	isselectable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+	canattack="false"
+
+	sightrangeday="0"
+	sightrangenight="0"
+	
+	buildingwalking="true"
+
+	deathtime="0"
+	corpsetime="0"
+
+	lifetime="6000"
+
+	invulnerable="true"
+	hidealtinfo="true"
+	flying="true"
+	flyheight="150"
+	clearvision="true"
+	drawonmap="false"
+	
+	hazardradius="250"
+
+	alwaystransmitdata="true"
+	
+	
+	
+>
+
+
+	<onframe>
+		<lineofeffect
+			radius="120"
+			start="this_entity"
+			end="this_proxy_entity"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic"
+		>
+				<applystate name="State_Buford_Ability2_Burn" continuous="true" timeout="frametime" />
+		
+				
+			
+		</lineofeffect>
+	
+		<recordheroaggression  />
+				<aggression />
+	</onframe>
+
+
+</gadget>

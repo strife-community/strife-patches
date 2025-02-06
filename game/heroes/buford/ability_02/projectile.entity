@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Buford_Ability2"
+
+	speed="2500"
+	gravity="150"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	
+	
+	canturn="false"
+	flying="true"
+	flyheight="10"
+	
+	impactdistance="25"
+
+	
+	lifetime="-1"
+>
+
+
+</projectile>

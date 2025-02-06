@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Buford_Ability2_Burn"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_enemy.effect"
+	ishidden="false"
+	
+	impactinterval="500"
+
+>
+
+	<onimpact>
+		<cantarget targetscheme="enemy_units" >
+		<pushability target="this_owner_entity" entity="tool_entity" name="Ability_Buford2" />
+		<getconstant name="damage" adjustmentsource="tool_entity" entity="stack_entity" />
+		<setvar0 a="result" b="2" op="div" />
+		<damage effecttype="Magic DOT" amount="1" b="var0" source="source_owner_entity" op="mult" />
+		</cantarget>
+		
+		<cantarget targetscheme="enemy_buildings" >
+		<pushability target="this_owner_entity" entity="tool_entity" name="Ability_Buford2" />
+		<getconstant name="damage" adjustmentsource="tool_entity" entity="stack_entity" />
+		<setvar0 a="result" b="2" op="div" />
+		<damage effecttype="Magic DOT" amount=".5" b="var0" source="source_owner_entity" op="mult" />
+		</cantarget>
+		<recordheroaggression source="source_owner_entity" />
+		<aggression source="source_owner_entity" />
+
+	</onimpact>
+	
+	
+
+</state>
