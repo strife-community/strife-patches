@@ -667,7 +667,7 @@ Ability_Ace2_description_simple									Leap that damages and slows
 // Ability_Ace3
 Ability_Ace3_name												Frostbite
 Ability_Ace3_description										Activate to spawn $number_of_icicles$ icicles, reducing incoming damage by $damage_reduction$%.\n\nWhen damaged by an enemy hero, an icicle is consumed, dealing ^o$damage$ Magic damage^* and slowing attacker by $slow$%.
-Ability_Ace3_description_simple									Slows and damage attackers
+Ability_Ace3_description_simple									Slows and damages attackers
 // Ability_Ace4
 Ability_Ace4_name												Ace in the Hole
 Ability_Ace4_description										Target enemy to deal ^o$damage$ Magic damage^*, or immediately kill them if they are below $execute_threshold$% Max Health.\n\nIf target is killed, restores 25% of Ace's health and mana.
@@ -709,7 +709,7 @@ Ability_Bandito1_description_simple								Minor stun and gold gain
 // Ability_Bandito2
 Ability_Bandito2_name											Searing Cards
 Ability_Bandito2_description									Activate to launch a burning card at each nearby enemy, dealing ^o$damage$ Magic Damage^* instantly, and another ^o$damage_dot$ Magic Damage^* over 3 seconds.
-Ability_Bandito2_description_simple								Launches cards at nearby enemies dealing dmg and dot
+Ability_Bandito2_description_simple								Damages nearby enemies instantly and over time
 // Ability_Bandito3
 Ability_Bandito3_name											Gambler's Fortune
 Ability_Bandito3_description									Target an ally to heal them for ^g$heal$ Health^* and grant 75 bonus movement speed for 3.5 seconds.
@@ -738,7 +738,7 @@ Ability_Bastion2_description_simple								Charges to a location, dealing damage
 // Ability_Bastion3
 Ability_Bastion3_name											Golden Bracers
 Ability_Bastion3_description									Passively gives $maxhp$ Max Health. Activate to apply a shield to nearby allies equal to $shield_percent$% of your Max Health.
-Ability_Bastion3_description_simple								Passively increases max health and can shield nearby allies
+Ability_Bastion3_description_simple								Passively increases maximum health. Activate to shield allies
 // State_Bastion_Ability3
 State_Bastion_Ability3_Tooltip_name								Shield of the Oracles
 State_Bastion_Ability3_description_simple						Bastion provides you a shield.
@@ -779,11 +779,11 @@ State_Blazer_Ability2_name										Tethered
 // Ability_Blazer3
 Ability_Blazer3_name											Overcharge
 Ability_Blazer3_description										Passively adds ^o$attack_bonus$ Attack Damage^*.  While not attacking, Blazer builds up a critical attack that deals $damage_increase$% Bonus Damage.
-Ability_Blazer3_description_simple								Bonus attack damage and charged critical hit
+Ability_Blazer3_description_simple								Bonus attack damage and charged critical strike
 // Ability_Blazer4
 Ability_Blazer4_name											Hunter Mode
 Ability_Blazer4_description										Activate to become shrouded for $duration$ seconds.  While shrouded, Blazer gains +^c100 movespeed^* & +^o10% Attack Damage^* when attacking from stealth.  Hunter Mode detects the position of nearby enemies below 50% health within 3000 range.
-Ability_Blazer4_description_simple								Stealth, speed boost, and weak enemy detection
+Ability_Blazer4_description_simple								Stealth, speed boost and detection of injured enemies
 
 
 // Hero_Bo
@@ -798,7 +798,7 @@ Ability_Bo1_description_simple									Boomerang line damage and slow
 // Ability_Bo2
 Ability_Bo2_name												Inner Rage
 Ability_Bo2_description											Grants Bo 75 bonus movespeed and 10% damage reduction.  After 4 seconds, deals ^o$damage$ Magic damage^* to nearby enemies and stuns for $stun$ seconds.
-Ability_Bo2_description_simple									Speed boost, then AoE damage and stun
+Ability_Bo2_description_simple									Speed boost. Stuns and damages nearby enemies after delay
 // Ability_Bo3
 Ability_Bo3_name												Tranquility Totem
 Ability_Bo3_description											Activate to summon totem.  Totem heals nearby allied heroes for $percent_regen$% Max Health/sec.
@@ -1025,7 +1025,7 @@ Hero_Flak_lore													Flak is the most effective bounty hunter in the Vorbi
 // Ability_Flak1
 Ability_Flak1_name												Extended Barrel	
 Ability_Flak1_description										Activate to gain 400 attack range, $attackspeed$ attack speed and reduce incoming damage by $damage_reduction$%, but move 25% slower.  Reactivate to cancel early.
-Ability_Flak1_description_simple								Range extension, bonus attack speed and self slow
+Ability_Flak1_description_simple								Range extension, bonus attack speed in exchange of move speed
 // Ability_Flak2
 Ability_Flak2_name												Explosive Shot
 Ability_Flak2_description										Target position to launch explosive grenade, dealing ^o$damage$^* Magic Damage, briefly stunning, and knocking away enemies.  Will also knock you away twice as far as enemies.
@@ -1262,11 +1262,11 @@ Ability_Midknight2_description_simple							Area magic damage
 // Ability_Midknight3
 Ability_Midknight3_name											Absorb
 Ability_Midknight3_description									Activate to raise Midknight's shield for 3 seconds, negating the next stun/slow. If a stun or slow is negated, Midknight gains $movespeed$ movespeed and $power$ power for 5 seconds. Can be used while stunned to purge the stun and gain the same effects.
-Ability_Midknight3_description_simple							Block cc and gain movespeed/power
+Ability_Midknight3_description_simple							Cleanses slow and stun, grants move speed and power
 // Ability_Midknight4
 Ability_Midknight4_name											Chains of Judgement
 Ability_Midknight4_description									Activate to attach a link to all nearby enemy heroes pulling them slightly towards Midknight. The chains slow enemies by $slow$% and break if enemies run farther than 1200 range.  Any heroes still linked after 3 seconds take ^o$damage$ Magic Damage^* and are stunned for $stun$ seconds.
-Ability_Midknight4_description_simple							AoE linked damage after delay
+Ability_Midknight4_description_simple							Stuns and damages nearby enemies after delay
 
 
 // Hero_Minerva
@@ -1360,7 +1360,7 @@ Ability_Pal1_description_simple									Damage and knock back
 Ability_Pal2_name												Roll Out
 Ability_Pal2_description										Activate to transform instantly into a metal ball, gaining ^o+5/9/13/17%^* movespeed.  If you contact an enemy, deals ^o$damage$ Magic Damage^* and stuns them for 1.3 seconds.  Taking damage will apply a stacking 70% tapering movespeed slow for 0.5 seconds.
 Ability_Pal2_description:pal_roll								Activate to cancel, returning to normal mode.
-Ability_Pal2_description_simple									Bonus movement and stun
+Ability_Pal2_description_simple									Bonus movement speed and stun
 // Ability_Pal3
 Ability_Pal3_name												Infernal Core
 Ability_Pal3_description										Activate to begin dealing ^o$damage_per_second$ Magic Damage/sec^* to nearby enemies & gain ^c+$resistance$ resistance^* while active.  Drains 20 mana/sec.
@@ -1417,15 +1417,15 @@ State_Rip_Ability1_name_FRAME_effect
 // Ability_Rip2
 Ability_Rip2_name												Vanish
 Ability_Rip2_description										Target area to vanish for 1 second, then reappear at the target location.  Upon reappearing, deals ^o$damage$ Magic damage^* in the area.
-Ability_Rip2_description_simple									Vanish and reappear dealing AoE damage
+Ability_Rip2_description_simple									Vanish and reappear dealing area damage
 // Ability_Rip3
 Ability_Rip3_name												Dark Empowerment
 Ability_Rip3_description										^444Passive Skill^*\nEvery 5th attack charges your blade.  Once charged, your next attack deals ^o$damage_increase$% bonus Attack damage^*.\n\nAvoiding enemy vision instantly charges your blade.
-Ability_Rip3_description_simple									Crit attack after being unseen
+Ability_Rip3_description_simple									Critical strike after being unseen
 // Ability_Rip4
 Ability_Rip4_name												Nether Strike
 Ability_Rip4_description										Target direction to dash, attacking all enemies you pass through.  \n\nIf you hit at least 1 enemy, you may cast this ability again for up to 6 seconds - up to a total of 3 times.
-Ability_Rip4_description_simple								    Dash through enemies and recast up to 3 times if you hit an enemy
+Ability_Rip4_description_simple								    Dash through enemies and recast up to 3 times if an enemy was hit
 
  
  // Hero_Rook
