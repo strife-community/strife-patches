@@ -14,10 +14,6 @@ local globalDragInfo			= GetTrigger('globalDragInfo')
 local GamePhase 				= GetTrigger('GamePhase')
 local teamPlayerInfos 			= GetTrigger('TeamPlayerInfos') or libGeneral.createGroupTrigger('TeamPlayerInfos', {'HeroSelectPlayerInfo0', 'HeroSelectPlayerInfo1', 'HeroSelectPlayerInfo2', 'HeroSelectPlayerInfo3', 'HeroSelectPlayerInfo4', 'HeroSelectLocalPlayerInfo', 'PartyStatus.queue', 'PartyStatus.wins', 'PartyStatus.losses'})
 
-local slot = nil
-local previousSlot = nil
-local teamID = nil
-local selectedIndex = nil
 local lastHero = 1
 local lastPet = 1
 
@@ -656,7 +652,6 @@ local function InitSpectators()
         local hasPlayer		= false
         
         button:SetCallback('onclick', function(widget)
-            selectedIndex = nil
             widget:UICmd("Team(0)")
             ClearDrag()	
         end)
@@ -679,7 +674,6 @@ local function InitSpectators()
         playerName:RegisterWatchLua('LobbySpectators'..index, function(widget, trigger)
             if (not Empty(trigger.playerName)) then
                 hasPlayer = true
-                selectedIndex = nil
             
                 widget:SetText(trigger.playerName)
                 widget:SetColor('1 1 1 1')
@@ -709,214 +703,197 @@ end
 
 
 local function InitPlayers()
-	local function PlayerRegister(index)
-		local parent								= GetWidget('selection_captains_mode_player_entry_parent_'..index)		
-		local background							= GetWidget('selection_captains_mode_player_entry_base_'..index)	
-		local swapHover								= GetWidget('selection_captains_mode_player_entry_swaphover_'..index)	
-		local playerName							= GetWidget('selection_captains_mode_player_'..index)		
-		local playerStatus							= GetWidget('selection_captains_mode_player_status_'..index)		
-		local noHeroParent							= GetWidget('selection_captains_mode_player_nohero_'..index)		
-		local noHeroLabel							= GetWidget('selection_captains_mode_player_status_nohero_'..index)		
-		local heroIcon								= GetWidget('selection_captains_mode_player_hero_'..index)
-		
-		parent:SetCallback('onclick', function(widget)
-			-- Fades out the hover widget
-			swapHover:FadeOut(100)
-			
-			-- Sets the previous slot
-			if (teamID) and (teamID == 1) then
-				previousSlot = slot
-			elseif (teamID) and (teamID == 2) then
-				previousSlot = slot + 5
-			end
-			
-			slot = index
-			selectedIndex = index
-			teamID = 0
-			
-			-- Sets the new slot team and texture (if we wanted to do team specific selection textures or anything, just uncomment this and the setting previous texture back to normal below)
-			if (index >= 0) and (index <= 4) then
-				teamID = 1
-				--background:SetTexture('/ui/main/play/textures/player_entry_highlight_green.tga')
-			elseif (index >= 5) and (index <= 9) then
-				teamID = 2
-				--background:SetTexture('/ui/main/play/textures/player_entry_highlight_red.tga')
-				slot = slot - 5
-			end
-			
-			-- Sets the previous slot texture back to normal
-			-- if (previousSlot) then
-				-- widget:GetWidget('selection_captains_mode_player_entry_base_'..previousSlot):SetTexture('/ui/main/play/textures/player_entry_base.tga')
-			-- end
-			
-			PlaySound('/ui/sounds/ui_joinmatch_%.wav')
-			widget:UICmd("Team(0)")
-			widget:UICmd("Team("..teamID..", "..slot..")")
-			-- JoinTeam(teamID, slot)
-		end)
-		
-		parent:SetCallback('onmouseover', function(widget)
-			swapHover:FadeIn(200)
-		end)
-		
-		parent:SetCallback('onmouseout', function(widget)
-			swapHover:FadeOut(100)
-		end)
-		
-		parent:RegisterWatchLua('LobbyStatus', function(widget, trigger)
-			widget:SetCallback('onrightclick', function()
-				println('onrightclick HeroSelectPlayerInfo ' .. index)
-				local infoTrigger = LuaTrigger.GetTrigger('HeroSelectPlayerInfo'..index)
-				if trigger.isHost and infoTrigger.identID and IsValidIdent(infoTrigger.identID) then
-					lobbyRightClickOpen(infoTrigger.clientNum, index, 0, infoTrigger.identID)
-				end
-			end)	
-		end)		
-		
-		parent:RegisterWatchLua('GamePhase', function(widget, trigger)
-	
-			if (trigger.gamePhase == 3) then		 
+    local function PlayerRegister(index)
+        local parent                                = GetWidget('selection_captains_mode_player_entry_parent_'..index)
+        local background                            = GetWidget('selection_captains_mode_player_entry_base_'..index)
+        local swapHover                             = GetWidget('selection_captains_mode_player_entry_swaphover_'..index)
+        local playerName                            = GetWidget('selection_captains_mode_player_'..index)
+        local playerStatus                          = GetWidget('selection_captains_mode_player_status_'..index)
+        local noHeroParent                          = GetWidget('selection_captains_mode_player_nohero_'..index)
+        local noHeroLabel                           = GetWidget('selection_captains_mode_player_status_nohero_'..index)
+        local heroIcon                              = GetWidget('selection_captains_mode_player_hero_'..index)
+        
+        local thisPlayerTeamID = 0
+        local thisPlayerSlot = -1
+        
+        if (index >= 0) and (index <= 4) then
+            thisPlayerTeamID = 1
+            thisPlayerSlot = index
+        elseif (index >= 5) and (index <= 9) then
+            thisPlayerTeamID = 2
+            thisPlayerSlot = (index - 5)
+        end
+        
+        parent:SetCallback('onclick', function(widget)
+            -- Fades out the hover widget
+            swapHover:FadeOut(100)
+            
+            PlaySound('/ui/sounds/ui_joinmatch_%.wav')
+            widget:UICmd("Team(0)")
+            widget:UICmd("Team("..thisPlayerTeamID..", "..thisPlayerSlot..")")
+        end)
+        
+        parent:SetCallback('onmouseover', function(widget)
+            swapHover:FadeIn(200)
+        end)
+        
+        parent:SetCallback('onmouseout', function(widget)
+            swapHover:FadeOut(100)
+        end)
+        
+        parent:RegisterWatchLua('LobbyStatus', function(widget, trigger)
+            widget:SetCallback('onrightclick', function()
+                local infoTrigger = LuaTrigger.GetTrigger('HeroSelectPlayerInfo'..index)
+                if trigger.isHost and infoTrigger.identID and IsValidIdent(infoTrigger.identID) then
+                    lobbyRightClickOpen(infoTrigger.clientNum, index, thisPlayerTeamID, infoTrigger.identID)
+                end
+            end)
+        end)
+        
+        parent:RegisterWatchLua('GamePhase', function(widget, trigger)
+    
+            if (trigger.gamePhase == 3) then
 
-				background:UnregisterWatchLua('HeroSelectPhaseCountdown')
-				playerName:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
-				playerStatus:UnregisterWatchLua('HeroSelectPhaseCountdown')
-				noHeroParent:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
-				heroIcon:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)	
-				playerName:UnregisterWatchLua('LobbyPlayerInfo' .. index)
-				playerStatus:UnregisterWatchLua('LobbyPlayerInfo' .. index)			
-			
-				local playerTrigger 						= GetTrigger('HeroSelectPlayerInfo' .. index)
-				
-				if playerTrigger and (parent) then
-				
-					local isCaptain = ((index == 0) or (index == 5))
+                background:UnregisterWatchLua('HeroSelectPhaseCountdown')
+                playerName:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
+                playerStatus:UnregisterWatchLua('HeroSelectPhaseCountdown')
+                noHeroParent:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
+                heroIcon:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
+                playerName:UnregisterWatchLua('LobbyPlayerInfo' .. index)
+                playerStatus:UnregisterWatchLua('LobbyPlayerInfo' .. index)
+            
+                local playerTrigger = GetTrigger('HeroSelectPlayerInfo' .. index)
+                
+                if playerTrigger and (parent) then
+                
+                    local isCaptain = ((index == 0) or (index == 5))
 
-					background:RegisterWatchLua('HeroSelectPhaseCountdown', function(widget, trigger)
-						local myTeam 		= GetTrigger('HeroSelectLocalPlayerInfo').teamID
-						local team 			= GetTrigger('HeroSelectPlayerInfo' .. index).teamID
-						local needControl 	= ( (trigger.phase == 'banning') or (trigger.phase == 'captainpick') )
-						local hasControl 	= (team == trigger.Team)
-						local isMyTeam  	= (GetTrigger('HeroSelectPlayerInfo' .. index).teamID == myTeam)
-						
-						if (isCaptain) and (hasControl) then
-							if (isMyTeam) then
-								widget:SetTexture('/ui/main/play/textures/player_entry_highlight_green.tga')
-							else
-								widget:SetTexture('/ui/main/play/textures/player_entry_highlight_red.tga')
-							end
-						else
-							widget:SetTexture('/ui/main/play/textures/player_entry_base.tga')
-						end
-					end, false, nil, 'Team', 'phase')
-					
-					playerName:RegisterWatchLua('HeroSelectPlayerInfo' .. index, function(widget, trigger)
-						if (trigger.playerName) and (not Empty(trigger.playerName)) then
-							widget:SetText(trigger.playerName)
-							widget:SetColor('1 1 1 1')
-						else
-							widget:SetText(Translate('captains_mode_empty_slot'))
-							widget:SetColor('.3 .3 .3 1')
-						end
-					end, false, nil, 'playerName')
-					
-					playerStatus:RegisterWatchLua('HeroSelectPhaseCountdown', function(widget, trigger)
-						local team 			= GetTrigger('HeroSelectPlayerInfo' .. index).teamID
-						local needControl 	= ( (trigger.phase == 'banning') or (trigger.phase == 'captainpick') )
-						local hasControl 	= (team == trigger.Team)
-						
-						if (isCaptain) and (needControl and hasControl) then
-							if (trigger.phase == 'banning') then
-								widget:SetText(Translate('captains_mode_banning'))
-							elseif (trigger.phase == 'captainpick') then
-								widget:SetText(Translate('captains_mode_drafting'))
-							else
-								widget:SetText(Translate('captains_mode_waiting'))
-							end
-						else
-							if (trigger.phase == 'pick') and (playerTrigger.heroEntityName == '') then
-								widget:SetText(Translate('captains_mode_picking'))
-							else
-								widget:SetText(Translate('captains_mode_waiting'))
-							end
-						end
-					end)
-					
-					noHeroParent:RegisterWatchLua('HeroSelectPlayerInfo' .. index, function(widget, trigger)
-						widget:SetVisible(Empty(trigger.heroEntityName))
-					end, false, nil, 'heroEntityName')		
-					
-					heroIcon:RegisterWatchLua('HeroSelectPlayerInfo' .. index, function(widget, trigger)
-						if not Empty(trigger.heroEntityName) then
-							local texture = libGeneral.getCutoutOrRegularIcon(trigger.heroEntityName)		
-							widget:SetTexture(texture or trigger.heroIconPath)
-						end
-						widget:SetVisible(not Empty(trigger.heroEntityName))
-					end, false, nil, 'heroEntityName')
-					
-					playerTrigger:Trigger(true)
-					
-				else
-					println('^r Captains mode could not register player')
-					println("GetTrigger('HeroSelectPlayerInfo' .. index) " .. tostring(GetTrigger('HeroSelectPlayerInfo' .. index)))
-					println("parent " .. tostring(parent))
-				end
-			
-			elseif (trigger.gamePhase == 1) then
-	
-				background:UnregisterWatchLua('HeroSelectPhaseCountdown')
-				playerName:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
-				playerStatus:UnregisterWatchLua('HeroSelectPhaseCountdown')
-				noHeroParent:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
-				heroIcon:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)	
-				playerName:UnregisterWatchLua('LobbyPlayerInfo' .. index)
-				playerStatus:UnregisterWatchLua('LobbyPlayerInfo' .. index)	
-	
-				local playerTrigger 						= GetTrigger('LobbyPlayerInfo' .. index)
-				
-				if playerTrigger and (parent) then
-				
-					local isCaptain = ((index == 0) or (index == 5))
+                    background:RegisterWatchLua('HeroSelectPhaseCountdown', function(widget, trigger)
+                        local myTeam 		= GetTrigger('HeroSelectLocalPlayerInfo').teamID
+                        local team 			= GetTrigger('HeroSelectPlayerInfo' .. index).teamID
+                        local needControl 	= ( (trigger.phase == 'banning') or (trigger.phase == 'captainpick') )
+                        local hasControl 	= (team == trigger.Team)
+                        local isMyTeam  	= (GetTrigger('HeroSelectPlayerInfo' .. index).teamID == myTeam)
+                        
+                        if (isCaptain) and (hasControl) then
+                            if (isMyTeam) then
+                                widget:SetTexture('/ui/main/play/textures/player_entry_highlight_green.tga')
+                            else
+                                widget:SetTexture('/ui/main/play/textures/player_entry_highlight_red.tga')
+                            end
+                        else
+                            widget:SetTexture('/ui/main/play/textures/player_entry_base.tga')
+                        end
+                    end, false, nil, 'Team', 'phase')
+                    
+                    playerName:RegisterWatchLua('HeroSelectPlayerInfo' .. index, function(widget, trigger)
+                        if (trigger.playerName) and (not Empty(trigger.playerName)) then
+                            widget:SetText(trigger.playerName)
+                            widget:SetColor('1 1 1 1')
+                        else
+                            widget:SetText(Translate('captains_mode_empty_slot'))
+                            widget:SetColor('.3 .3 .3 1')
+                        end
+                    end, false, nil, 'playerName')
+                    
+                    playerStatus:RegisterWatchLua('HeroSelectPhaseCountdown', function(widget, trigger)
+                        local team 			= GetTrigger('HeroSelectPlayerInfo' .. index).teamID
+                        local needControl 	= ( (trigger.phase == 'banning') or (trigger.phase == 'captainpick') )
+                        local hasControl 	= (team == trigger.Team)
+                        
+                        if (isCaptain) and (needControl and hasControl) then
+                            if (trigger.phase == 'banning') then
+                                widget:SetText(Translate('captains_mode_banning'))
+                            elseif (trigger.phase == 'captainpick') then
+                                widget:SetText(Translate('captains_mode_drafting'))
+                            else
+                                widget:SetText(Translate('captains_mode_waiting'))
+                            end
+                        else
+                            if (trigger.phase == 'pick') and (playerTrigger.heroEntityName == '') then
+                                widget:SetText(Translate('captains_mode_picking'))
+                            else
+                                widget:SetText(Translate('captains_mode_waiting'))
+                            end
+                        end
+                    end)
+                    
+                    noHeroParent:RegisterWatchLua('HeroSelectPlayerInfo' .. index, function(widget, trigger)
+                        widget:SetVisible(Empty(trigger.heroEntityName))
+                    end, false, nil, 'heroEntityName')
+                    
+                    heroIcon:RegisterWatchLua('HeroSelectPlayerInfo' .. index, function(widget, trigger)
+                        if not Empty(trigger.heroEntityName) then
+                            local texture = libGeneral.getCutoutOrRegularIcon(trigger.heroEntityName)
+                            widget:SetTexture(texture or trigger.heroIconPath)
+                        end
+                        widget:SetVisible(not Empty(trigger.heroEntityName))
+                    end, false, nil, 'heroEntityName')
+                    
+                    playerTrigger:Trigger(true)
+                    
+                else
+                    println('^r Captains mode could not register player')
+                    println("GetTrigger('HeroSelectPlayerInfo' .. index) " .. tostring(GetTrigger('HeroSelectPlayerInfo' .. index)))
+                    println("parent " .. tostring(parent))
+                end
+            
+            elseif (trigger.gamePhase == 1) then
+    
+                background:UnregisterWatchLua('HeroSelectPhaseCountdown')
+                playerName:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
+                playerStatus:UnregisterWatchLua('HeroSelectPhaseCountdown')
+                noHeroParent:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
+                heroIcon:UnregisterWatchLua('HeroSelectPlayerInfo' .. index)
+                playerName:UnregisterWatchLua('LobbyPlayerInfo' .. index)
+                playerStatus:UnregisterWatchLua('LobbyPlayerInfo' .. index)
+    
+                local playerTrigger = GetTrigger('LobbyPlayerInfo' .. index)
+                
+                if playerTrigger and (parent) then
+                
+                    local isCaptain = ((index == 0) or (index == 5))
 
-					background:SetTexture('/ui/main/play/textures/player_entry_base.tga')
-					
-					playerName:RegisterWatchLua('LobbyPlayerInfo' .. index, function(widget, trigger)
-						if (trigger.playerName) and (not Empty(trigger.playerName)) then
-							widget:SetText(trigger.playerName)
-							widget:SetColor('1 1 1 1')
-						else
-							widget:SetText(Translate('captains_mode_empty_slot'))
-							widget:SetColor('.3 .3 .3 1')
-						end
-					end, false, nil, 'playerName')
-					
-					playerStatus:RegisterWatchLua('LobbyPlayerInfo' .. index, function(widget, trigger)
-						if (trigger.ready) then
-							widget:SetText(Translate('captains_mode_status_ready'))
-						else
-							widget:SetText(Translate('captains_mode_status_notready'))
-						end
-					end)
-					
-					noHeroParent:SetVisible(1)	
-					
-					heroIcon:SetVisible(0)
-					
-					playerTrigger:Trigger(true)
-					
-				else
-					println('^r Captains mode could not register player')
-					println("GetTrigger('LobbyPlayerInfo' .. index) " .. tostring(GetTrigger('LobbyPlayerInfo' .. index)))
-					println("parent " .. tostring(parent))
-				end	
-			
-			end
-		end)
-	end
-	
-	for index = 0, 9, 1 do
-		PlayerRegister(index)
-	end	
-	
+                    background:SetTexture('/ui/main/play/textures/player_entry_base.tga')
+                    
+                    playerName:RegisterWatchLua('LobbyPlayerInfo' .. index, function(widget, trigger)
+                        if (trigger.playerName) and (not Empty(trigger.playerName)) then
+                            widget:SetText(trigger.playerName)
+                            widget:SetColor('1 1 1 1')
+                        else
+                            widget:SetText(Translate('captains_mode_empty_slot'))
+                            widget:SetColor('.3 .3 .3 1')
+                        end
+                    end, false, nil, 'playerName')
+                    
+                    playerStatus:RegisterWatchLua('LobbyPlayerInfo' .. index, function(widget, trigger)
+                        if (trigger.ready) then
+                            widget:SetText(Translate('captains_mode_status_ready'))
+                        else
+                            widget:SetText(Translate('captains_mode_status_notready'))
+                        end
+                    end)
+                    
+                    noHeroParent:SetVisible(1)
+                    
+                    heroIcon:SetVisible(0)
+                    
+                    playerTrigger:Trigger(true)
+                    
+                else
+                    println('^r Captains mode could not register player')
+                    println("GetTrigger('LobbyPlayerInfo' .. index) " .. tostring(GetTrigger('LobbyPlayerInfo' .. index)))
+                    println("parent " .. tostring(parent))
+                end	
+            
+            end
+        end)
+    end
+    
+    for index = 0, 9, 1 do
+        PlayerRegister(index)
+    end	
+    
 end
 
 local function InitTeams()
