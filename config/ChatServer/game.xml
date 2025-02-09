@@ -97,7 +97,7 @@
 			<rewards enabled="true" visible="true" />
 		</queue>
 		
-		<queue name="scrim" visible="true" enabled="true" pickmode="captainsmode">
+		<queue name="scrim" visible="true" enabled="true" pickmode="captains_draft">
 			<requirements enabled="true" minpartysize="5" maxpartysize="5" minlevel="1" />
 			<rewards enabled="true" visible="true" />
 		</queue>
