@@ -558,16 +558,16 @@ Hero_Bastion1Bastact1_role
 // Ability_Rook1_Bastact1
 Ability_Rook1_Bastact1_name										Grappling Hook
 Ability_Rook1_Bastact1_description								Target direction to shoot hook which deals ^o$damage$ Magic damage^* to enemies.\n\nReactivate to pull Rook to the impact location.
-Ability_Rook1_Bastact1_description_simple						line damage, reactivate to dash
+Ability_Rook1_Bastact1_description_simple						Shoots a hook that damages enemies; reactivate to dash
 // Ability_Rook2_Bastact1
 Ability_Rook2_Bastact1_name										Hide Then Seek
 Ability_Rook2_Bastact1_description								Channel to become invulnerable for up to 1.5 seconds.\n\nUpon completion, deals up to ^o$damage$ Magic damage^* to the closest enemy, based on channel duration.
-Ability_Rook2_Bastact1_description_simple						invulnerability then damages nearby enemy
+Ability_Rook2_Bastact1_description_simple						Become invulnerable briefly, then damage the nearest enemy
 State_Rook_Ability2_Bastact1_name								Hide Then Seek...
 // Ability_Rook3_Bastact1
 Ability_Rook3_Bastact1_name										Murder of Crows
 Ability_Rook3_Bastact1_description								^444Passive Skill^*\nPassively causes consecutive attacks on a target to deal stacking ^o$damage$ bonus attack damage^*.  Stacks up to 5 times.\n\nActivating abilities gives a burst of attack speed for the next two attacks.
-Ability_Rook3_Bastact1_description_simple						double attack after using abilities
+Ability_Rook3_Bastact1_description_simple						Attacks deal more damage, abilities boost attack speed
 // State_Rook_Ability3_Enemy_Bastact1
 State_Rook_Ability3_Enemy_Bastact1_Tooltip_name					Murder of Crows
 State_Rook_Ability3_Enemy_Bastact1_description_simple			You are taking increased damage from Rook.
@@ -575,7 +575,7 @@ State_Rook_Ability3_Enemy_Bastact1_name							Murder of Crows
 // Ability_Rook4_Bastact1
 Ability_Rook4_Bastact1_name										Deliverance
 Ability_Rook4_Bastact1_description								Launch a crow in target direction, damaging and stunning the first enemy hit.\n\nDeals up to ^o$damage$ Magic damage^* and stuns for up to 3.5 seconds, based on the distance travelled.
-Ability_Rook4_Bastact1_description_simple						global damage and stun skillshot
+Ability_Rook4_Bastact1_description_simple						Skillshot that stuns and deals more damage at longer distances
 // Hero_Rook_Bastact1
  Hero_Rook_Bastact1_name										Rook
  Hero_Rook_Bastact1_description										
@@ -659,19 +659,19 @@ Hero_Ace_lore 													Ace is from Tempra, where he gained his strength and 
 // Ability_Ace1
 Ability_Ace1_name												Spincicle
 Ability_Ace1_description										Activate to deal ^o$damage$ Magic damage^* to enemies around you.
-Ability_Ace1_description_simple									area damage around self
+Ability_Ace1_description_simple									Area damage around self
 // Ability_Ace2
 Ability_Ace2_name												Avalanche
 Ability_Ace2_description										Target position to leap there, dealing ^o$damage$ Magic damage^* and applying a $taperingslow$% tapering movement slow for 3 seconds.
-Ability_Ace2_description_simple									leap that damages and slows
+Ability_Ace2_description_simple									Leap that damages and slows
 // Ability_Ace3
 Ability_Ace3_name												Frostbite
 Ability_Ace3_description										Activate to spawn $number_of_icicles$ icicles, reducing incoming damage by $damage_reduction$%.\n\nWhen damaged by an enemy hero, an icicle is consumed, dealing ^o$damage$ Magic damage^* and slowing attacker by $slow$%.
-Ability_Ace3_description_simple									slows and damage attackers
+Ability_Ace3_description_simple									Slows and damages attackers
 // Ability_Ace4
 Ability_Ace4_name												Ace in the Hole
 Ability_Ace4_description										Target enemy to deal ^o$damage$ Magic damage^*, or immediately kill them if they are below $execute_threshold$% Max Health.\n\nIf target is killed, restores 25% of Ace's health and mana.
-Ability_Ace4_description_simple									damage that heals on kill
+Ability_Ace4_description_simple									Damage that heals on kill
 
 
 // Hero_Aemon
@@ -699,27 +699,27 @@ Ability_Aemon4_description_simple								Heavy AOE damage and back attack
 
 // Hero_Bandito
 Hero_Bandito_name												Bandito
-Hero_Bandito_description										specializes in healing and magic damage						
+Hero_Bandito_description										Specializes in healing and magic damage						
 Hero_Bandito_role
 Hero_Bandito_lore												Bandit.0 is an ex-slot machine droid from Vorbis. After a number of hacking attempts by unscrupulous casino patrons, Bandit.0 gained sentience and adopted a personality based on his most frequent users: brash, bold and competitive. Armed with attitude, random number generation, and years of gambling experience, he sees the Trials of Strife as a bracket tournament that he is destined to win.
 // Ability_Bandito1
 Ability_Bandito1_name											Token Toss	
 Ability_Bandito1_description									Target direction to throw a token, dealing ^o$damage$ Magic damage^* and applying a $stun$ second stun to the first enemy hit.  \n\nIf your target is a hero, gain $bonus_gold$ gold.
-Ability_Bandito1_description_simple								minor stun and gold gain
+Ability_Bandito1_description_simple								Minor stun and gold gain
 // Ability_Bandito2
 Ability_Bandito2_name											Searing Cards
 Ability_Bandito2_description									Activate to launch a burning card at each nearby enemy, dealing ^o$damage$ Magic Damage^* instantly, and another ^o$damage_dot$ Magic Damage^* over 3 seconds.
-Ability_Bandito2_description_simple								area damage
+Ability_Bandito2_description_simple								Damages nearby enemies instantly and over time
 // Ability_Bandito3
 Ability_Bandito3_name											Gambler's Fortune
 Ability_Bandito3_description									Target an ally to heal them for ^g$heal$ Health^* and grant 75 bonus movement speed for 3.5 seconds.
-Ability_Bandito3_description_simple								heal and speed buff
+Ability_Bandito3_description_simple								Heal and speed buff
 // Ability_Bandito4
 Ability_Bandito4_name											Double Down
 Ability_Bandito4_description									Passively grants a $multicast_chance$% chance to refund an ability's cooldown and mana cost on use.\n\nActivate to guarantee your next ability will refund, and double the odds of additional abilities refunding for the next 8 seconds.  Once expired, you lose the passive completely for $cooldown$ seconds.
 Ability_Bandito4_description:doubledown							You've doubled down! Your chances to refund are doubled!
 Ability_Bandito4_description:doubledown_off						Double Down is on cooldown, and will not activate.
-Ability_Bandito4_description_simple								chance to refund ability cooldowns
+Ability_Bandito4_description_simple								Chance to refund ability cooldowns
 
 
 // Hero_Bastion
@@ -730,15 +730,15 @@ Hero_Bastion_lore												Bastion was a slave boy in the Plane of Gael until,
 // Ability_Bastion1
 Ability_Bastion1_name											Breath of Oracles
 Ability_Bastion1_description									Target direction to deal ^o$damage$ Magic damage^*. 
-Ability_Bastion1_description_simple								cone damage
+Ability_Bastion1_description_simple								Deals magic damage in a cone
 // Ability_Bastion2
 Ability_Bastion2_name											Zidek Charge
 Ability_Bastion2_description									Target location to charge there.  Impacts the first enemy hero, dealing ^o$damage$ Magic damage^* and stunning for $stun$ seconds.
-Ability_Bastion2_description_simple								dash that damages and stuns
+Ability_Bastion2_description_simple								Charges to a location, dealing damage and stunning
 // Ability_Bastion3
 Ability_Bastion3_name											Golden Bracers
 Ability_Bastion3_description									Passively gives $maxhp$ Max Health. Activate to apply a shield to nearby allies equal to $shield_percent$% of your Max Health.
-Ability_Bastion3_description_simple								passive health and shields allies
+Ability_Bastion3_description_simple								Passively increases maximum health. Activate to shield allies
 // State_Bastion_Ability3
 State_Bastion_Ability3_Tooltip_name								Shield of the Oracles
 State_Bastion_Ability3_description_simple						Bastion provides you a shield.
@@ -747,7 +747,7 @@ State_Bastion_Ability3_name_FRAME_effect
 // Ability_Bastion4
 Ability_Bastion4_name											The Chosen One
 Ability_Bastion4_description									After 3 seconds, slows and deals ^o$damage$ Magic damage^* to nearby enemies.  For the following 8 seconds, Bastion gains ^o$attack_bonus$ Attack damage^*.
-Ability_Bastion4_description_simple								delayed damage and slow around self
+Ability_Bastion4_description_simple								Delayed damage and slow around self
 // State_Bastion_Ability4_Buildup
 State_Bastion_Ability4_Buildup_Tooltip_name						Charging
 State_Bastion_Ability4_Buildup_description_simple				Bastion is preparing to release a wave of damaging energy.
@@ -768,22 +768,22 @@ Hero_Blazer_lore												Blaise Starpixie was a space sprite who roamed the s
 // Ability_Blazer1
 Ability_Blazer1_name											Ion Cannon
 Ability_Blazer1_description										Activate to charge ion cannon.  Upon selecting target direction, shoots ion beam which deals up to ^o$damage$ Magic Damage^* to enemies.  Damage and range based on charge time (max after 1.2 seconds). If ability is not reactivated, regain half mana back.
-Ability_Blazer1_description_simple								charged line damage
+Ability_Blazer1_description_simple								Charged beam with scaling damage and range
 // Ability_Blazer2
 Ability_Blazer2_name											Tether Shot
 Ability_Blazer2_description										Target area to launch gadget.  Gadget attaches itself to all enemy heroes, dealing ^o$damage$ Magic Damage^* and leashing them to the area for $duration$ seconds.
-Ability_Blazer2_description_simple								bind enemy to area
+Ability_Blazer2_description_simple								Tethers enemies to an area 
 State_Blazer_Ability2											Tethered
 State_Blazer_Ability2_description_simple						Blazer has tethered you to an area temporarily
 State_Blazer_Ability2_name										Tethered
 // Ability_Blazer3
 Ability_Blazer3_name											Overcharge
 Ability_Blazer3_description										Passively adds ^o$attack_bonus$ Attack Damage^*.  While not attacking, Blazer builds up a critical attack that deals $damage_increase$% Bonus Damage.
-Ability_Blazer3_description_simple								bonus attack damage and critical
+Ability_Blazer3_description_simple								Bonus attack damage and charged critical strike
 // Ability_Blazer4
 Ability_Blazer4_name											Hunter Mode
 Ability_Blazer4_description										Activate to become shrouded for $duration$ seconds.  While shrouded, Blazer gains +^c100 movespeed^* & +^o10% Attack Damage^* when attacking from stealth.  Hunter Mode detects the position of nearby enemies below 50% health within 3000 range.
-Ability_Blazer4_description_simple								stealth and enemy detection
+Ability_Blazer4_description_simple								Stealth, speed boost and detection of injured enemies
 
 
 // Hero_Bo
@@ -794,15 +794,15 @@ Hero_Bo_lore													Bo is from an ancient race of Lyrie longhorns called Th
 // Ability_Bo1
 Ability_Bo1_name												Bo Throw
 Ability_Bo1_description											Target direction to deal ^o$damage$ Magic damage^* and apply a slow.  The weapon will return, affecting enemies again on the way back.
-Ability_Bo1_description_simple									boomerang line damage and slow
+Ability_Bo1_description_simple									Boomerang line damage and slow
 // Ability_Bo2
 Ability_Bo2_name												Inner Rage
 Ability_Bo2_description											Grants Bo 75 bonus movespeed and 10% damage reduction.  After 4 seconds, deals ^o$damage$ Magic damage^* to nearby enemies and stuns for $stun$ seconds.
-Ability_Bo2_description_simple									delayed damage and stun around self
+Ability_Bo2_description_simple									Speed boost. Stuns and damages nearby enemies after delay
 // Ability_Bo3
 Ability_Bo3_name												Tranquility Totem
 Ability_Bo3_description											Activate to summon totem.  Totem heals nearby allied heroes for $percent_regen$% Max Health/sec.
-Ability_Bo3_description_simple									creates a healing circle
+Ability_Bo3_description_simple									Summons a healing totem
 State_Bo_Ability3_Regen_Tooltip_name							Tranquility Totem
 State_Bo_Ability3_Regen_description								You are being healed by Bo's totem.
 State_Bo_Ability3_Regen_description_simple						You are being healed by Bo's totem.
@@ -811,7 +811,7 @@ State_Bo_Ability3_Regen_FRAME_effect
 // Ability_Bo4
 Ability_Bo4_name												Bull Rush
 Ability_Bo4_description											Target direction to charge in that direction.  Any unit caught in the path is dealt ^o$damage$ Magic damage^* and pushed to Bo's destination.   \n\nIf a wall is hit, all enemies take 60% additional damage and a 0.8 second stun.
-Ability_Bo4_description_simple									Dash that Damages and Pushes Enemies
+Ability_Bo4_description_simple									Dash that damages and pushes enemies
 
 
 // Hero_Buford
@@ -844,15 +844,15 @@ Hero_Caprice_lore												Caprice is a pirate Queen from the Plane of Lyrie. 
 // Ability_Caprice1
 Ability_Caprice1_name											Fire Lager
 Ability_Caprice1_description									Target direction to deal ^o$damage$ Magic damage^* in a line.  Line explodes after a short delay, dealing half damage.
-Ability_Caprice1_description_simple								area damage
+Ability_Caprice1_description_simple								Line damage with delayed explosion
 // Ability_Caprice2
 Ability_Caprice2_name											Anchors Aweigh
 Ability_Caprice2_description									Target location to deal ^o$damage$ Magic damage^* and stun enemies for $stun$ seconds.
-Ability_Caprice2_description_simple								delayed area stun and damage
+Ability_Caprice2_description_simple								Area stun and damage
 // Ability_Caprice3
 Ability_Caprice3_name											Volatility
 Ability_Caprice3_description									^444Passive Skill^*\nPassively causes every third source of damage you apply to a target to combust, dealing ^o$damage$ bonus Magic damage^*.
-Ability_Caprice3_description_simple								grants bonus damage with multiple hits
+Ability_Caprice3_description_simple								Grants bonus damage with multiple hits
 // State_Caprice_Ability3
 State_Caprice_Ability3_Tooltip_name								Volatility
 State_Caprice_Ability3_description_simple						Upon reaching 3 ignite charges, Caprice will deal bonus damage to you.
@@ -861,7 +861,7 @@ State_Caprice_Ability3_name_FRAME_effect
 // Ability_Caprice4
 Ability_Caprice4_name											Quick Draw
 Ability_Caprice4_description									Target location to leap there, dealing ^o$damage$ Magic damage^* to the nearest enemy.  Prioritizes heroes.
-Ability_Caprice4_description_simple								leap and damages closest enemy
+Ability_Caprice4_description_simple								Leap and damages the nearest enemy
 
 
 // Hero_Carter
@@ -872,19 +872,19 @@ Hero_Carter_lore												Misfit are pyromaniac goblin brothers from Strife wi
 // Ability_Carter1
 Ability_Carter1_name											Rocket Barrage
 Ability_Carter1_description										Target direction to launch a rocket that deals ^o$damage$ Magic damage^* to the first enemy hit.
-Ability_Carter1_description_simple								long range skillshot damage
+Ability_Carter1_description_simple								Long range skillshot damage
 // Ability_Carter2
 Ability_Carter2_name											Yak Attack
 Ability_Carter2_description										Target location to deal ^o$damage$ Magic damage^* and apply a $slow$% Movement Speed slow for 4 seconds.
-Ability_Carter2_description_simple								skillshot area damage and slow
+Ability_Carter2_description_simple								Skillshot area damage and slow
 // Ability_Carter3
 Ability_Carter3_name											Ring of Fire
 Ability_Carter3_description										Cast a ring of fire around you that deals ^o$damage_per_second$ Magic damage^* per second to enemies who stand in it.\n\nYour spells and attacks that pass through the fire will deal $damage_increase$% extra damage.
-Ability_Carter3_description_simple								ring that damages and powers up skills
+Ability_Carter3_description_simple								Fire ring burns enemies and boosts damage 
 // Ability_Carter4
 Ability_Carter4_name											Imminent Boom
 Ability_Carter4_description										Fires an accelerating homing missile at an enemy.  If the missile hits the enemy within 5 seconds, the missile will deal ^o$damage$ Magic damage^* and stun for $stun$ seconds.
-Ability_Carter4_description_simple								homing missile stun and damage
+Ability_Carter4_description_simple								Homing missile that stuns and damages
 
 
 // Hero_Chester
@@ -895,23 +895,23 @@ Hero_Chester_lore 												Chester is a brilliant but smug court jester from 
 // Ability_Chester1
 Ability_Chester1_name											Knight Blitz
 Ability_Chester1_description									Target a direction to send 5 knights. On contact, knights explode for ^o$damage$^* Magic Damage and apply a tapering slow.
-Ability_Chester1_description_simple								explosive minions
+Ability_Chester1_description_simple								Sends knights that explode, dealing damage and slow
 // Ability_Chester2
 Ability_Chester2_name											March On
 Ability_Chester2_description									Target allied hero to grant them maximum movement speed and slow immunity for 2 seconds.  Enemies they pass through take ^o$damage$ Magic Damage^*.
-Ability_Chester2_description_simple								speed burst and damage
+Ability_Chester2_description_simple								Maximum movespeed and damage enemies you pass through
 State_Chester_Ability2_Buff_Tooltip_name						March On
-State_Chester_Ability2_Buff_description_simple					You have maximum movespeed and damage enemies you pass through!
+State_Chester_Ability2_Buff_description_simple					You have maximum movespeed and damage enemies you pass through
 State_Chester_Ability2_Buff_name								March On
 State_Chester_Ability2_Buff_name_FRAME_effect
 // Ability_Chester3
 Ability_Chester3_name											Mimic
 Ability_Chester3_description									Target an enemy or ally hero to create an illusion of them for 4 seconds. Illusion deals $illusion_damage$% of the target's damage and takes double damage.\n\nWhen the illusion expires or is killed, it explodes for ^o$damage$^* Magic Damage.
-Ability_Chester3_description_simple								illusion that explodes
+Ability_Chester3_description_simple								Creates an illusion that deals damage and explodes
 // Ability_Chester4
 Ability_Chester4_name											King Me!
 Ability_Chester4_description									Target an allied hero to grant them 30% damage reduction, and create a link between them and Chester.  Link deals ^o$damage$^* Magic Damage per second to enemies.
-Ability_Chester4_description_simple								ally protection and damage link
+Ability_Chester4_description_simple								Ally protection and damage link
 State_Chester_Ability4_Tooltip_name								King Me!
 State_Chester_Ability4_description_simple						You're taking 30% less damage!
 State_Chester_Ability4_name										King Me!
@@ -990,7 +990,7 @@ Hero_Fetterstone_lore 											Lorne was a miner dwarf in the gem mines of Fet
 // Ability_Fetterstone1
 Ability_Fetterstone1_name										Crystal Shot
 Ability_Fetterstone1_description								Target direction to fire crystal, dealing ^o$damage$ Magic damage^*, slowing slightly, and reducing Resistance by $resistancereduce$.
-Ability_Fetterstone1_description_simple							skillshot damage, slow and resistance reduction
+Ability_Fetterstone1_description_simple							Skillshot damage, slow and resistance reduction
 // State_Fetterstone_Ability1
 State_Fetterstone_Ability1_Tooltip_name							Crystal Shot
 State_Fetterstone_Ability1_description_simple					Fetterstone has increased the damage you take from attacks.
@@ -998,11 +998,11 @@ State_Fetterstone_Ability1_name									Crystal Shot
 // Ability_Fetterstone2
 Ability_Fetterstone2_name										Splinter Shield
 Ability_Fetterstone2_description								Activates a shield equal to $shield_percent$% of your Max Health.  If the shield survives for 3 seconds, it explodes - dealing ^o$damage$ Magic Damage^* to the nearest enemy hero.
-Ability_Fetterstone2_description_simple							shield and damage
+Ability_Fetterstone2_description_simple							Shield and damage
 // Ability_Fetterstone3
 Ability_Fetterstone3_name										Power Hungry
 Ability_Fetterstone3_description								^444Passive Skill^*\nYour basic attacks passively steal $power_steal$% power from enemy heroes, stacking up to 3 times.  \n\nPassively grants $power$ Power
-Ability_Fetterstone3_description_simple							power steal, passive power
+Ability_Fetterstone3_description_simple							Power steal, passive power
 // State_Fetterstone_Ability3
 State_Fetterstone_Ability3_Tooltip_name							Power Hungry
 State_Fetterstone_Ability3_description_simple					Fetterstone has stolen some of your power.
@@ -1010,7 +1010,7 @@ State_Fetterstone_Ability3_name									Power Hungry
 // Ability_Fetterstone4
 Ability_Fetterstone4_name										Explosive Rounds
 Ability_Fetterstone4_description								Activate to equip Fetterstone's special ammunition.  For the next 9 attacks, Fetterstone deals $damage_increase$% bonus attack damage with 50% splash damage.
-Ability_Fetterstone4_description_simple							attack damage, splash buff
+Ability_Fetterstone4_description_simple							Attack damage, splash buff
 // State_Fetterstone_Ability4
 State_Fetterstone_Ability4_Tooltip_name							Explosive Rounds
 State_Fetterstone_Ability4_description_simple					Your attacks deal bonus damage and have 50% splash!
@@ -1025,11 +1025,11 @@ Hero_Flak_lore													Flak is the most effective bounty hunter in the Vorbi
 // Ability_Flak1
 Ability_Flak1_name												Extended Barrel	
 Ability_Flak1_description										Activate to gain 400 attack range, $attackspeed$ attack speed and reduce incoming damage by $damage_reduction$%, but move 25% slower.  Reactivate to cancel early.
-Ability_Flak1_description_simple								range extension
+Ability_Flak1_description_simple								Range extension, bonus attack speed in exchange of move speed
 // Ability_Flak2
 Ability_Flak2_name												Explosive Shot
 Ability_Flak2_description										Target position to launch explosive grenade, dealing ^o$damage$^* Magic Damage, briefly stunning, and knocking away enemies.  Will also knock you away twice as far as enemies.
-Ability_Flak2_description_simple								area knock back and damage
+Ability_Flak2_description_simple								Area knock back and damage
 // Ability_Flak3
 Ability_Flak3_name												Weapon Upgrade
 Ability_Flak3_description										Grants a new upgrade each time you level this ability.^444\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.^*
@@ -1037,11 +1037,11 @@ Ability_Flak3_description:Flak_Ability3_1						Grants a new upgrade each time yo
 Ability_Flak3_description:Flak_Ability3_2						Grants a new upgrade each time you level this ability.\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n^444(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.^*
 Ability_Flak3_description:Flak_Ability3_3						Grants a new upgrade each time you level this ability.\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n^444(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.^*
 Ability_Flak3_description:Flak_Ability3_4						Grants a new upgrade each time you level this ability.\n\n(1) Shield Battery:  Gain a shield equal to 12% of your Max HP by avoiding damage for 7 seconds.\n\n(2) Acceleration Shells:  Basic attacks deal up to 30% bonus damage based on distance.\n\n(3) Radar Attachment:  Activate to gain aerial vision around Flak\n\n(4) Ricochet Rounds:  Basic attacks bounce to the nearest enemy, dealing 50% damage.
-Ability_Flak3_description_simple								assorted weapon upgrades
+Ability_Flak3_description_simple								Assorted weapon upgrades
 // Ability_Flak4
 Ability_Flak4_name												EMP Cannon
 Ability_Flak4_description										Target direction to launch an EMP missle.  Upon reactivation, or contacting an enemy, the EMP explodes - slowing nearby enemies and lowering their Resistance by up to $resistance$.  More potent at closer ranges.
-Ability_Flak4_description_simple								massive slow and resistance reduction
+Ability_Flak4_description_simple								Massive slow and resistance reduction
 
 
 // Hero_GoKong
@@ -1052,15 +1052,15 @@ Hero_GoKong_lore 												Gokong was born white-haired on a night without a m
 // Ability_GoKong1
 Ability_GoKong1_name											Wheel Strike
 Ability_GoKong1_description										Activate to attack all enemies around you, dealing ^o$bonus_damage$ bonus damage^* and knocking them away from you. \n\nThis applies attack-based effects.
-Ability_GoKong1_description_simple								area knock back and damage
+Ability_GoKong1_description_simple								Area knock back and damage
 // Ability_GoKong2
 Ability_GoKong2_name											Rabbit Vault
 Ability_GoKong2_description										Target location to deal ^o$damage$ Magic Damage^* and launch yourself just past that location, slowing vaulted enemies.\n\nAttacking reduces this ability's cooldown by 2 seconds.
-Ability_GoKong2_description_simple								leap and slow
+Ability_GoKong2_description_simple								Leap and slow
  // Ability_GoKong3
 Ability_GoKong3_name											Crane Stance
 Ability_GoKong3_description										Activate to gain 200 bonus attack range and deal ^o$attack_bonus$ Bonus Damage^* for 7 seconds.
-Ability_GoKong3_description_simple								bonus range and damage
+Ability_GoKong3_description_simple								Bonus range and damage
 // Ability_GoKong4
 Ability_GoKong4_name											Monkey Multiplier
 Ability_GoKong4_description										Activate to send an illusion to each nearby enemy hero.  Illusions cannot be killed and deal $illusion_damage$% damage.  \n\nReactive and target location to teleport to nearest illusion, consuming it.
@@ -1074,19 +1074,19 @@ Hero_Hale_lore													Hale, swordsman of the wastes, hails from a mysteriou
 // Ability_Hale1
 Ability_Hale1_name												Sweeping Strikes
 Ability_Hale1_description										Dash forward with two swings.  Each swing deals ^o$damage$ Magic damage^*.  Multiple hits on a target deal 75% damage.\n\nThis ability refreshes when an enemy hero dies near you.
-Ability_Hale1_description_simple								dash and damage
+Ability_Hale1_description_simple								Dash and damage
 // Ability_Hale2
 Ability_Hale2_name												Inertial Sword
 Ability_Hale2_description										Activate to empower next attack with ^o$damage_increase$% bonus damage^* in a line.  \n\nGives short burst of speed on activation.
-Ability_Hale2_description_simple								next attack deals line damage
+Ability_Hale2_description_simple								Next attack deals line damage
 // Ability_Hale3
 Ability_Hale3_name												Sheol Calibur
 Ability_Hale3_description										Activate to grant a bonus $attackspeed$ Attack Speed^* for 5 seconds.  During this time, attacks heal Hale for $percent_heal$% max Health.
-Ability_Hale3_description_simple								attack speed and lifesteal buff
+Ability_Hale3_description_simple								Attack speed and lifesteal buff
 // Ability_Hale4
 Ability_Hale4_name												Earthquake
 Ability_Hale4_description										Activate to deal ^o$damage$ Magic damage^* to nearby enemies, stunning them for $stun$ seconds.
-Ability_Hale4_description_simple								damage and stun nearby enemies
+Ability_Hale4_description_simple								Damage and stun nearby enemies
 
 
 // Hero_Harrower
@@ -1121,20 +1121,20 @@ Ability_Harrower4_description_simple							Transform between melee and ranged
 // Hero_Iah
 Hero_Iah_name													Iah
 Hero_Iah_description											Specializes in pushing and supporting allies
-Hero_Iah_role													specializes in pushing and supporting allies
+Hero_Iah_role													Specializes in pushing and supporting allies
 Hero_Iah_lore 													Centuries ago, Iah was a princess who dabbled in mysticism and sorcery, until her younger brother betrayed her in order to take the throne for himself. Recently resurrected and empowered by the Nestran moon goddess, she has returned as a powerful priestess, and has entered the Trials of Strife with a thirst for vengeance	
 // Ability_Iah1
 Ability_Iah1_name												Sand Elemental	
 Ability_Iah1_description										Target enemy to a summon Sand Elemental to attack them, dealing ^o$damage$ Attack Damage^* per attack. Elementals become slower over time. \n\nElementals have $percent_maxhp$% of Iah's Max Health.
-Ability_Iah1_description_simple									summon minion
+Ability_Iah1_description_simple									Summon minion
 // Ability_Iah2
 Ability_Iah2_name												Quickpit
 Ability_Iah2_description										Target location to create sand pit which sucks enemies in and deals ^o$damage$ Magic Damage^* over 3 seconds.
-Ability_Iah2_description_simple									area damage and slow
+Ability_Iah2_description_simple									Area damage and slow
 // Ability_Iah3
 Ability_Iah3_name												Sandstorm
 Ability_Iah3_description										Creates sandstorm around Iah which buffs all nearby allies, granting them $attack_damage_reduction$% attack damage reduction, $attackspeed$ attack speed, and 40 movement speed.
-Ability_Iah3_description_simple									damage reduction and attack speed
+Ability_Iah3_description_simple									Damage reduction and attack speed
 State_Iah_Ability3_Allies_Tooltip_name							Sandstorm
 State_Iah_Ability3_Allies_description_simple					You take reduced attack damage, have increased attack speed, and are faster!
 State_Iah_Ability3_Allies_name									Sandstorm
@@ -1142,7 +1142,7 @@ State_Iah_Ability3_Allies_name_FRAME_effect
 // Ability_Iah4
 Ability_Iah4_name												Eclipse
 Ability_Iah4_description										Target area to summon a solar eclipse. After a short delay, heals allies for ^o$heal$ Health^* and deals ^o$damage$ Magic Damage^* to enemies.
-Ability_Iah4_description_simple									global range damage and heal
+Ability_Iah4_description_simple									Global range damage and heal
 
 
 // Hero_JinShe
@@ -1153,20 +1153,20 @@ Hero_JinShe_lore 												Jin She is a warrior of the Tao-Ahasna, a remote tr
 // Ability_JinShe1
 Ability_JinShe1_name											Everthirst Flame
 Ability_JinShe1_description										Target a direction to deal ^o$damage$ Magic damage^* and a $stun$ second Stun to enemies in a line.\n\nEverthirst Flame will extend its range after touching an enemy or ally unit.
-Ability_JinShe1_description_simple								skill shot damage and stun
+Ability_JinShe1_description_simple								Skill shot damage and stun
 // Ability_JinShe2
 Ability_JinShe2_name											Whirling Embers
 Ability_JinShe2_description										Activate to deal ^o$damage$ Magic damage^* and apply a stacking -$penetration$ Penetration debuff for 5 seconds to nearby enemies.\n\nEach attack reduces Whirling Embers' cooldown by 2 seconds.
-Ability_JinShe2_description_simple								area magic damage and debuff
+Ability_JinShe2_description_simple								Area magic damage and debuff
 // Ability_JinShe3
 Ability_JinShe3_name											Firefall
 Ability_JinShe3_description										Target a location to launch there after a short channel.\n\nAfter landing, Jin She gains $resistance$ Resistance for 5 seconds.\n\nEnemy hero damage will interrupt channel.
-Ability_JinShe3_description_simple								long range jump
+Ability_JinShe3_description_simple								Long range jump
 State_JinShe_Ability3_Channel_name								Firefall..
 // Ability_JinShe4
 Ability_JinShe4_name											Firestarter
 Ability_JinShe4_description										Passively causes your ability hits to spawn embers. Embers deal ^o$damage_per_second$^* Magic damage per second to enemies.\n\nActivate to call embers to self, each dealing ^o$damage$^* Magic damage to enemies hit.  Each ember restores 2% Max Health to Jin She. 
-Ability_JinShe4_description_simple								passive damage, active heal/damage
+Ability_JinShe4_description_simple								Passive damage, active heal/damage
 
 
 // Hero_Ladytinder
@@ -1178,16 +1178,16 @@ Pet_Ladytinder_Ability4_name									Nature Incarnate
 // Ability_Ladytinder1
 Ability_Ladytinder1_name										Bindweed
 Ability_Ladytinder1_description									Target direction to launch bindweed, stunning and pulling the first enemy hit for $stun$ seconds and dealing ^o$damage$ Magic damage^*.
-Ability_Ladytinder1_description_simple							skillshot stun grab and damage
+Ability_Ladytinder1_description_simple							Skillshot stun grab and damage
 // Ability_Ladytinder2
 Ability_Ladytinder2_name										Tinder Touch
 Ability_Ladytinder2_description									Target ally to heal for ^o$heal$^* Health, bouncing 3 times. \n\nAlternatively, target enemy to deal ^o$damage$ Magic damage^*, bouncing 3 times.\n\nDamage and heal are reduced by $chain_reduce_percent$% on each bounce.
-Ability_Ladytinder2_description_simple							chain heal or chain damage
+Ability_Ladytinder2_description_simple							Chain heal or chain damage
 State_Ladytinder_Ability2_Self_name								Imprison
 // Ability_Ladytinder3
 Ability_Ladytinder3_name										Stonebark Shield
 Ability_Ladytinder3_description									Target an ally to grant a ^o$shield_max$^* Shield.  While active, grants $attackspeed$ attack speed to the target.  Lasts 8 seconds.
-Ability_Ladytinder3_description_simple							shield that grants attack speed
+Ability_Ladytinder3_description_simple							Shield that grants attack speed
 // State_Ladytinder_Ability3
 State_Ladytinder_Ability3_Tooltip_name							Stonebark Shield
 State_Ladytinder_Ability3_description_simple					Lady Tinder has granted you a shield.
@@ -1196,7 +1196,7 @@ State_Ladytinder_Ability3_name_FRAME_effect
 // Ability_Ladytinder4
 Ability_Ladytinder4_name										Nature's Fury
 Ability_Ladytinder4_description									Target position to summon Petals.  Petals has Health equal to 60% of Lady Tinder, deals ^o$damage$ Attack damage^*, and cannot move.
-Ability_Ladytinder4_description_simple							creates an attacking plant
+Ability_Ladytinder4_description_simple							Creates an attacking plant
 
 
 // Hero_Malady
@@ -1207,66 +1207,66 @@ Hero_Malady_lore 												Malady is a ruthless sky queen from a floating real
 // Ability_Malady1
 Ability_Malady1_name											Whirlwind
 Ability_Malady1_description										Target direction to deal ^o$damage$ Magic damage^* and apply a $stun$ second stun.
-Ability_Malady1_description_simple								line damage and stun
+Ability_Malady1_description_simple								Line damage and stun
 // Ability_Malady2
 Ability_Malady2_name											Dark Storm
 Ability_Malady2_description										Target location to slow enemies and deal up to ^o$damage$ Magic damage^* over 7 seconds.
-Ability_Malady2_description_simple								area damage and slow
+Ability_Malady2_description_simple								Area damage and slow
 // Ability_Malady3
 Ability_Malady3_name											Golden Gate
 Ability_Malady3_description										Target a location and drag to create a wall lasting 4 seconds. This wall is impassable to enemies.  Allies who pass through the wall gain a burst of speed.
-Ability_Malady3_description_simple								creates a impassable wall
+Ability_Malady3_description_simple								Creates an impassable wall
 // Ability_Malady4
 Ability_Malady4_name											Bolt of Bedlam
 Ability_Malady4_description										Target an enemy unit to deal ^o$damage$ Magic damage^*.
-Ability_Malady4_description_simple								high damage
+Ability_Malady4_description_simple								High magic damage
 State_Malady_Ability4_Channel_name								Charging..
 
 
 // Hero_Malph
 Hero_Malph_name													Malph
-Hero_Malph_description											Mole power!
+Hero_Malph_description											Master of tunneling and terrain control!
 Hero_Malph_role													Mobile manipulator
 // Ability_Malph1
 Ability_Malph1_name												Tunnel Bomb
-Ability_Malph1_description										Target direction to fire an underground missile.  Upon contacting an enemy, it deals ^o$damage$ Magic Damage^* & applies a minor slow for 2 seconds in a 350 AoE radius.  If enemy heroes are within 700 range, Tunnel Bomb turns into a homing missile & seeks them out. 
-Ability_Malph1_description_simple								aoe slow and damage
+Ability_Malph1_description										Target direction to fire an underground missile.  Upon contacting an enemy, it deals ^o$damage$ Magic Damage^* & applies a minor slow for 2 seconds in a 350 AoE radius.  If enemy heroes are within 700 range, Tunnel Bomb turns into a homing missile & seeks them out.
+Ability_Malph1_description_simple								Homing missile with AoE damage and slow
 // Ability_Malph2
 Ability_Malph2_name												Healing Rations
 Ability_Malph2_description										Target ally to grant them a buff which heals them for ^g$heal$ Health^* over 6 seconds, providing $resistance$ resistance for the duration.
-Ability_Malph2_description_simple								heal over time
+Ability_Malph2_description_simple								Grant healing and resistance over time
 // Ability_Malph3
 Ability_Malph3_name												Mud Field
 Ability_Malph3_description										Target area to create a mud field.  Enemies caught inside are slowed by 25%, have their attack speed reduced by $attackspeedslow$%, and take $damage_scale$% bonus damage from you.
-Ability_Malph3_description_simple								aoe slow and debuff
+Ability_Malph3_description_simple								Create a field that slows and weakens enemies
 // Ability_Malph4
 Ability_Malph4_name												The Underground
 Ability_Malph4_description										Target location to create a Mole Hole.  By right-clicking a Mole Hole, you will channel for 1.4 seconds - entering the underground upon completion.  While underground, you can then target near any Mole Hole to return above ground at that location.
-Ability_Malph4_description_simple								map wide mobility
+Ability_Malph4_description_simple								Tunnel between Mole Holes for map-wide mobility
 Ability_Malph4_description:Malph_underground					Target near Mole Hole to exit the underground.
 
 
 // Hero_Midknight
 Hero_Midknight_name												Midknight
 Hero_Midknight_description										Melee bruiser
-Hero_Midknight_role												sustained damage, tank
+Hero_Midknight_role												Sustained damage, tank
 Hero_Midknight_lore 											MidKnight is part white knight, part black knight. He is seldom what he appears to be. Coming out of the order of the Knights of the Silver Sands of Tempra, he is dominating and set in his archaic ways. The question is, whose side is he on? Most likely, his own.
 // Ability_Midknight1
 Ability_Midknight1_name											Hookshot
 Ability_Midknight1_description									Target a direction to launch polearm. Upon contacting an enemy, pulls Midknight towards them dealing ^o$damage$ Magic Damage^*.
-Ability_Midknight1_description_simple							skill shot damage and mobility
+Ability_Midknight1_description_simple							Skill shot damage and mobility
 // Ability_Midknight2
 Ability_Midknight2_name											Night Blossom
 Ability_Midknight2_description									Activate to spin, dealing ^o$damage$ Magic Damage^* to nearby enemies. Enemies at the edge of the spin are also slowed.  If any enemies are hit along the edge, cooldown is reduced by 3 seconds.
-Ability_Midknight2_description_simple							area magic damage
+Ability_Midknight2_description_simple							Area magic damage
 // Ability_Midknight3
 Ability_Midknight3_name											Absorb
 Ability_Midknight3_description									Activate to raise Midknight's shield for 3 seconds, negating the next stun/slow. If a stun or slow is negated, Midknight gains $movespeed$ movespeed and $power$ power for 5 seconds. Can be used while stunned to purge the stun and gain the same effects.
-Ability_Midknight3_description_simple							block cc and gain movespeed/power
+Ability_Midknight3_description_simple							Cleanses slow and stun, grants move speed and power
 // Ability_Midknight4
 Ability_Midknight4_name											Chains of Judgement
 Ability_Midknight4_description									Activate to attach a link to all nearby enemy heroes pulling them slightly towards Midknight. The chains slow enemies by $slow$% and break if enemies run farther than 1200 range.  Any heroes still linked after 3 seconds take ^o$damage$ Magic Damage^* and are stunned for $stun$ seconds.
-Ability_Midknight4_description_simple							aoe linked damage after delay
+Ability_Midknight4_description_simple							Stuns and damages nearby enemies after delay
 
 
 // Hero_Minerva
@@ -1277,24 +1277,24 @@ Hero_Minerva_lore 												Minerva is from the mysterious plane known as Vorb
 // Ability_Minerva1
 Ability_Minerva1_name											Cyber Stalk
 Ability_Minerva1_description									Target unit to dash behind it, dealing ^o$damage$ Magic damage^* and gaining $attackspeed$ Attack Speed and 15 movement speed for 6 seconds.
-Ability_Minerva1_description_simple								dash that damages and grants attack speed
+Ability_Minerva1_description_simple								Dash that damages and grants attack speed
 // State_Minerva_Ability1_Buff
 State_Minerva_Ability1_Buff_Tooltip_name						Attack Speed
 State_Minerva_Ability1_Buff_description_simple					You have increased attack speed.
-State_Minerva_Ability1_Buff_name								attack speed
+State_Minerva_Ability1_Buff_name								Attack speed
 State_Minerva_Ability1_Buff_name_FRAME_effect
 // Ability_Minerva2
 Ability_Minerva2_name											Hunter's Strike
 Ability_Minerva2_description									Target enemy to deal ^o$damage$ Magic damage^* and apply a $taperingslow$% tapering slow for 3 seconds. \n\Ability does 25% damage to $bounce$ random nearby enemies. 
-Ability_Minerva2_description_simple								damage and slow
+Ability_Minerva2_description_simple								Damage and slow
 // Ability_Minerva3
 Ability_Minerva3_name											Shield of Vorbis
 Ability_Minerva3_description									Upon using an ability, gain a shield equal to $shield$% of your Max Health for 4 seconds.
-Ability_Minerva3_description_simple								grants shield on ability use
+Ability_Minerva3_description_simple								Grants shield on ability use
 // Ability_Minerva4
 Ability_Minerva4_name											Impaling Sting
 Ability_Minerva4_description									Target enemy to deal ^o$damage$ Magic damage^*. Deals +50% bonus damage if behind the target.
-Ability_Minerva4_description_simple								damage, bonus damage from behind
+Ability_Minerva4_description_simple								Damage, bonus damage if behind the target
 
 
 // Hero_Moxie
@@ -1305,21 +1305,21 @@ Hero_Moxie_lore													Moxie is a Lightning Cat from the sky realm of Nestr
 // Ability_Moxie1
 Ability_Moxie1_name												Z Zap
 Ability_Moxie1_description										Target enemy to deal ^o$damage$ Magic damage^*. Consecutive zaps on the same target deal 25% Bonus Damage per stack, up to 100% bonus and zap additional nearby enemies for 25% damage based on number of stacks.
-Ability_Moxie1_description_simple								single target damage
+Ability_Moxie1_description_simple								Single target damage
 State_Moxie_Ability1_name										Static Touch
 State_Moxie_Ability1_description								You are taking increased damage from Moxie's zap.  Stacks multiple times.
 // Ability_Moxie2
 Ability_Moxie2_name												Ball Lightning
 Ability_Moxie2_description										Target direction to deal ^o$damage$ Magic damage^* to enemies along the path.  Restores $mana$ Mana to Moxie for each enemy hero hit, and $manacreeps$ for non-heroes.
-Ability_Moxie2_description_simple								line damage
+Ability_Moxie2_description_simple								Line damage
 // Ability_Moxie3
 Ability_Moxie3_name												Astral Winds
 Ability_Moxie3_description										^444Passive Skill^*\nPassively increases all magic damage by $damage_increase$%. Provides a tapering $movespeed$ speed boost each time you cast an ability, gaining Slow immunity for the duration.
-Ability_Moxie3_description_simple								movespeed on cast and increased spell damage
+Ability_Moxie3_description_simple								Movespeed on cast and increased spell damage
 // Ability_Moxie4
 Ability_Moxie4_name												Catastrophe
 Ability_Moxie4_description										Target area. After a delay, deals ^o$damage$ Magic damage^* and applies a 60% Movement Slow.\n\nEnemies near the center take an additional ^o$bonus_damage$ damage^* and bonus slow.
-Ability_Moxie4_description_simple								delayed area damage and slow
+Ability_Moxie4_description_simple								Delayed area damage and slow
 Ability_Moxie4_effect_header
 Ability_Moxie4_IMPACT_effect
 Ability_Moxie4_tooltip_flavor									Pure Electricity... In my pants..
@@ -1333,19 +1333,19 @@ Hero_Nikolai_lore
 // Ability_Nikolai1
 Ability_Nikolai1_name											Relentless Might
 Ability_Nikolai1_description									Activate to attack faster and dash towards targeted enemies for 3 attacks.  Your 3rd attack will knock target into the air.\n\nWhile active, your attacks deal $percent_damage$% damage.
-Ability_Nikolai1_description_simple								temporary attack buff
+Ability_Nikolai1_description_simple								Temporary attack buff
 // Ability_Nikolai2
 Ability_Nikolai2_name											Earthen Slam
 Ability_Nikolai2_description									Target direction to send 3 shockwaves.  Each shockwave deals ^o$damage$^* Magic Damage and slows targets.  Bonus hits deal 30% damage.
-Ability_Nikolai2_description_simple								line damage and slow
+Ability_Nikolai2_description_simple								Line damage and slow
 // Ability_Nikolai3
 Ability_Nikolai3_name											Bolster
 Ability_Nikolai3_description									Activate to damage all nearby enemies for $percent_maxhp$% of their Max HP and gain a shield equal to the attempted damage.
-Ability_Nikolai3_description_simple								area damage and shield buff
+Ability_Nikolai3_description_simple								Area damage and shield buff
 // Ability_Nikolai4
 Ability_Nikolai4_name											Piledriver
 Ability_Nikolai4_description									Target direction to lunge, grabbing the first enemy hero you contact - launching you both into the air. While airborn you may continue to move.\n\nUpon landing, you deal ^o$damage$^* Magic Damage in a small area.\n\nIf enemy hero use CC Break to avoid being launched into the air, you get mana refunded and ability is put on $cooldown_reset$ second cooldown instead.
-Ability_Nikolai4_description_simple								single target relocation
+Ability_Nikolai4_description_simple								Single target relocation
 
 // Hero_Pal
 Hero_Pal_name													Pal
@@ -1355,21 +1355,21 @@ Hero_Pal_lore
 // Ability_Pal1
 Ability_Pal1_name												Trip Beam	
 Ability_Pal1_description										Target direction to create a beam of energy.  If an enemy touches this beam, it triggers - dealing ^o$damage$ Magic Damage^* and knocking back all nearby enemies with a mini-stun.
-Ability_Pal1_description_simple									damage and knock back
+Ability_Pal1_description_simple									Damage and knock back
 // Ability_Pal2
 Ability_Pal2_name												Roll Out
 Ability_Pal2_description										Activate to transform instantly into a metal ball, gaining ^o+5/9/13/17%^* movespeed.  If you contact an enemy, deals ^o$damage$ Magic Damage^* and stuns them for 1.3 seconds.  Taking damage will apply a stacking 70% tapering movespeed slow for 0.5 seconds.
 Ability_Pal2_description:pal_roll								Activate to cancel, returning to normal mode.
-Ability_Pal2_description_simple									movement and stun
+Ability_Pal2_description_simple									Bonus movement speed and stun
 // Ability_Pal3
 Ability_Pal3_name												Infernal Core
 Ability_Pal3_description										Activate to begin dealing ^o$damage_per_second$ Magic Damage/sec^* to nearby enemies & gain ^c+$resistance$ resistance^* while active.  Drains 20 mana/sec.
 Ability_Pal3_description:burn_on								Activate to turn off Infernal Core.
-Ability_Pal3_description_simple									area damage and defense bonus
+Ability_Pal3_description_simple									Area damage and defense bonus
 // Ability_Pal4
 Ability_Pal4_name												Energy Reversal
 Ability_Pal4_description										Passively reduces incoming damage by $damage_reduction$%, charging this ability as you take damage.  Activate to release all stored charges, dealing up to ^o$damage$ Magic Damage^* to all nearby enemies in a 700 AoE radius.
-Ability_Pal4_description_simple									area damage
+Ability_Pal4_description_simple									Reduces damage and deals AoE damage
 
 
 // Hero_Ray
@@ -1380,7 +1380,7 @@ Hero_Ray_lore													Ray is from the animal kingdom of Lyrie. As a young Ca
 // Ability_Ray1
 Ability_Ray1_name												Burrow Bots
 Ability_Ray1_description										Target location to place mine. Mines activate when an enemy walks nearby, chasing the enemy and exploding for ^o$damage$ Magic damage.^*
-Ability_Ray1_description_simple									lays a mine that damages
+Ability_Ray1_description_simple									Lays a mine that damages
 // Ability_Ray2
 Ability_Ray2_name												Shock Field
 Ability_Ray2_description										Target area to create a circular fence that lasts 3 seconds.\n\nEnemies who walk through the fence are stunned for $stun$ seconds and take ^o$damage$ Magic damage^*.
@@ -1388,22 +1388,22 @@ Ability_Ray2_description_simple									Create a Ring that Damages and Stuns
 // Ability_Ray3
 Ability_Ray3_name												Freeze Ray
 Ability_Ray3_description										^444Passive Skill^*\nPassively charges your next attack with ^o+$damage$ bonus Attack damage^* and tapering 50% Movement Slow.  Cooldown is reset if this skill kills a unit.
-Ability_Ray3_description_simple									boosts attacks with damage and slow
+Ability_Ray3_description_simple									Boosts attacks with damage and slow
 // Ability_Ray4
 Ability_Ray4_name												Death Ray
 Ability_Ray4_description										Target a direction to fire a laser after a brief delay.  Laser deals ^o$damage$ Magic damage^* to enemies along the line.  Damage is reduced by 12% for each enemy hero hit.
-Ability_Ray4_description_simple									short delayed line damage
+Ability_Ray4_description_simple									Short delayed line damage
 
 
 // Hero_Rip
 Hero_Rip_name													Rip
-Hero_Rip_description											illusive melee damage dealer
+Hero_Rip_description											Illusive melee damage dealer
 Hero_Rip_role
 Hero_Rip_lore													Rip, swordsman of the wastes, hails from a mysterious tribe of Elves – the Kenar-Ahdam – that eek out an existence in the ruins of Strife where they have been effectively exiled to by the other races of Gael as a result of suspicions that they are half-Dharkwave/half-Elf. As perpetual outcasts, the Kenar-Ahdam have remained largely insulated from the worlds around them and have preserved many of their old customs including Rhen-Dhit wherein the second son of the family is sent off to find fortune on their own so as not to challenge the first son for inheritance. Tyme, second son of Mhernad, ventured forth to join in the Trials of Strife in order to win himself a place within his tribe, and his tribe a place amongst the rest of the races of the planes.
 // Ability_Rip1
 Ability_Rip1_name												Smoke Cloud
 Ability_Rip1_description										Target area to create a smoke cloud, reducing enemy resistance by $resistance_reduction$ and drastically lowering their vision, while granting all allies inside the cloud $resistance$ resistance. While inside the cloud, you are stealthed until you deal damage or use an ability.
-Ability_Rip1_description_simple								
+Ability_Rip1_description_simple								    Provides stealth and resistance
 // State_Rip_Ability1_Self
 State_Rip_Ability1_Self_Tooltip_name							Smoke Cloud
 State_Rip_Ability1_Self_description_simple						You are cloaked while in the Smoke Cloud.
@@ -1411,21 +1411,21 @@ State_Rip_Ability1_Self_name									Smoke Cloud
 State_Rip_Ability1_Self_name_FRAME_effect
 // State_Rip_Ability1_Self
 State_Rip_Ability1_Tooltip_name									Smoke Cloud
-State_Rip_Ability1_description_simple							You inside Smoke Cloud, you have reduced vision and resistance.
+State_Rip_Ability1_description_simple							You're inside Smoke Cloud, you have reduced vision and resistance.
 State_Rip_Ability1_name											Smoke Cloud
 State_Rip_Ability1_name_FRAME_effect
 // Ability_Rip2
 Ability_Rip2_name												Vanish
 Ability_Rip2_description										Target area to vanish for 1 second, then reappear at the target location.  Upon reappearing, deals ^o$damage$ Magic damage^* in the area.
-Ability_Rip2_description_simple									Vanish and reappear dealing aoe damage
+Ability_Rip2_description_simple									Vanish and reappear dealing area damage
 // Ability_Rip3
 Ability_Rip3_name												Dark Empowerment
 Ability_Rip3_description										^444Passive Skill^*\nEvery 5th attack charges your blade.  Once charged, your next attack deals ^o$damage_increase$% bonus Attack damage^*.\n\nAvoiding enemy vision instantly charges your blade.
-Ability_Rip3_description_simple									attack crit after being unseen
+Ability_Rip3_description_simple									Critical strike after being unseen
 // Ability_Rip4
 Ability_Rip4_name												Nether Strike
 Ability_Rip4_description										Target direction to dash, attacking all enemies you pass through.  \n\nIf you hit at least 1 enemy, you may cast this ability again for up to 6 seconds - up to a total of 3 times.
-Ability_Rip4_description_simple								
+Ability_Rip4_description_simple								    Dash through enemies and recast up to 3 times if an enemy was hit
 
  
  // Hero_Rook
@@ -1436,16 +1436,16 @@ Hero_Rook_lore													Rook is an elven archer from the forests of Gael. See
  // Ability_Rook1
 Ability_Rook1_name												Grappling Hook
 Ability_Rook1_description										Target direction to shoot hook which deals ^o$damage$ Magic damage^* to enemies.\n\nReactivate to pull Rook to the impact location.
-Ability_Rook1_description_simple								line damage, reactivate to dash
+Ability_Rook1_description_simple								Shoots a hook that damages enemies; reactivate to dash
 // Ability_Rook2
 Ability_Rook2_name												Hide Then Seek
 Ability_Rook2_description										Channel to become invulnerable for up to 1.5 seconds.\n\nUpon completion, deals up to ^o$damage$ Magic damage^* to the closest enemy, based on channel duration.
-Ability_Rook2_description_simple								invulnerability then damages nearby enemy
+Ability_Rook2_description_simple								Become invulnerable briefly, then damage the nearest enemy
 State_Rook_Ability2_name										Hide Then Seek...
 // Ability_Rook3
 Ability_Rook3_name												Murder of Crows
 Ability_Rook3_description										^444Passive Skill^*\nPassively causes consecutive attacks on a target to deal stacking ^o$damage$ bonus attack damage^*.  Stacks up to 5 times.\n\nActivating abilities gives a burst of attack speed for the next two attacks.
-Ability_Rook3_description_simple								double attack after using abilities
+Ability_Rook3_description_simple								Attacks deal more damage, abilities boost attack speed
 // State_Rook_Ability3_Enemy
 State_Rook_Ability3_Enemy_Tooltip_name							Murder of Crows
 State_Rook_Ability3_Enemy_description_simple					You are taking increased damage from Rook.
@@ -1453,7 +1453,7 @@ State_Rook_Ability3_Enemy_name									Murder of Crows
 // Ability_Rook4
 Ability_Rook4_name												Deliverance
 Ability_Rook4_description										Launch a crow in target direction, damaging and stunning the first enemy hit.\n\nDeals up to ^o$damage$ Magic damage^* and stuns for up to 3.5 seconds, based on the distance travelled.
-Ability_Rook4_description_simple								global damage and stun skillshot
+Ability_Rook4_description_simple								Skillshot that stuns and deals more damage at longer distances
 
 
 // Hero_Shank
@@ -1464,11 +1464,11 @@ Hero_Shank_lore													Shank was a lone soul. Roving the hills of Strife, h
 // Ability_Shank1
 Ability_Shank1_name												Ground Pound
 Ability_Shank1_description										Activate to smash the ground below you, dealing ^o$damage$ Magic damage^* and applying a $slow$% Slow and Resistance reduction of $resistance$ to all nearby enemies.
-Ability_Shank1_description_simple								slow and damage around self
+Ability_Shank1_description_simple								Slow and damage around self
 // Ability_Shank2
 Ability_Shank2_name												Jailbreak
 Ability_Shank2_description										Target direction to grant allies a burst of movespeed and apply a tapering $taperingslow$% Movement Slow to enemies. 
-Ability_Shank2_description_simple								line speed buff and debuff
+Ability_Shank2_description_simple								Line speed buff and debuff
 // State_Shank_Ability2
 State_Shank_Ability2_Tooltip_name								Jailbreak
 State_Shank_Ability2_description_simple							Shank has provided you with increased movespeed.
@@ -1484,7 +1484,7 @@ Ability_Shank3_description_simple								Resistance and attack speed in combat
 // Ability_Shank4
 Ability_Shank4_name												Manacle
 Ability_Shank4_description										Target direction to launch a chain that attaches to the first enemy hit.  The target is pulled back to Shank and takes ^o$damage$ Magic damage^*. Max drag range is 1500 units.
-Ability_Shank4_description_simple								long range hook
+Ability_Shank4_description_simple								Long range hook
 
 
 // Hero_Trace
@@ -1495,19 +1495,19 @@ Hero_Trace_lore													Trace is a humble but passionate young adventurer fr
 // Ability_Trace1
 Ability_Trace1_name												Boomerang
 Ability_Trace1_description										Throw a boomerang which deals $percent_damage$% of Trace's attack damage to enemies.\n\nCooldown is reset if caught.
-Ability_Trace1_description_simple								ranged attack
+Ability_Trace1_description_simple								Throw a ranged boomerang that resets cooldown if caught.
 // Ability_Trace2
 Ability_Trace2_name												Bomb Toss
 Ability_Trace2_description										Target location to toss bomb, which deals ^o$damage$ Magic Damage^* and stuns enemies for $stun$ seconds after a delay.\n\nBomb can be activated early for half its damage and stun duration by hitting it with your Boomerang.
-Ability_Trace2_description_simple								bomb
+Ability_Trace2_description_simple								Throw a bomb. Stuns and deals damage.
 // Ability_Trace3
 Ability_Trace3_name												Shadowstalk
 Ability_Trace3_description										Activate to gain a burst of speed and ^o$attack_charged$ Bonus Damage^* on your next Basic Attack.  Reactivate to return to your cast location.
-Ability_Trace3_description_simple								stealth and bonus damage
+Ability_Trace3_description_simple								Speed up, empower attack, reactivate to return.
 // Ability_Trace4
 Ability_Trace4_name												Wanderlust
 Ability_Trace4_description										While moving, passively builds up a shield equal to $shield_percent$% of your Max HP.  While the shield is active, gain $percent_power_increase$% bonus power.\n\nTaking damage stops shield generation for 1.5 seconds.
-Ability_Trace4_description_simple								enemy tracking
+Ability_Trace4_description_simple								Shield and power boost.
 
 
 // Hero_Trixie
@@ -1518,19 +1518,19 @@ Hero_Trixie_lore 												Born into a coven of witches that inhabited the Wes
 // Ability_Trixie1
 Ability_Trixie1_name											Pot Shot
 Ability_Trixie1_description										Target location to launch cauldron which deals ^o$damage$ Magic damage^* and slows.  Cauldron will bounce 2 times. \n\nFirst bounce does 50% damage, second bounce does 100% damage and third bounce does 150% damage.
-Ability_Trixie1_description_simple								bouncing area damage and slow
+Ability_Trixie1_description_simple								Bouncing area damage and slow
 // Ability_Trixie2
 Ability_Trixie2_name											Barrel Roll 
 Ability_Trixie2_description										Target direction to dash, removing all slows and applying a ^o$shield$ Shield^* for 4 seconds. \n\nYou may use this ability while Aether Beam is active.
-Ability_Trixie2_description_simple								mobility and shield
+Ability_Trixie2_description_simple								Mobility and shield
 // Ability_Trixie3
 Ability_Trixie3_name											Aether Beam
 Ability_Trixie3_description										Target direction to fire a powerful beam.  Beam impacts the first enemy hit, dealing ^o$damage$ Magic Damage/sec^* for 5 seconds.  \n\nEnemies near target take 25% damage.
-Ability_Trixie3_description_simple								strafe with strong line damage
+Ability_Trixie3_description_simple								Strafe with strong line damage
 // Ability_Trixie4
 Ability_Trixie4_name											Croaking Curse
 Ability_Trixie4_description										Target location to turn all enemies into frogs for $duration$ seconds, slowing them by 35% and reducing their Resistance by $resistance_reduction$. \n\nFrogs cannot attack or use abilities.
-Ability_Trixie4_description_simple								large area disable
+Ability_Trixie4_description_simple								Large area disable
 // State_Trixie_Ability4
 State_Trixie_Ability4_Tooltip_name								Croaking Curse
 State_Trixie_Ability4_description								Trixie has turned you into a Frog!  You are slow, cannot attack, and cannot cast spells!
@@ -1547,19 +1547,19 @@ Hero_Vermillion_lore 											Vermillion is a bounty hunter from the jungles o
 // Ability_Vermillion1
 Ability_Vermillion1_name										Cheese Shot
 Ability_Vermillion1_description									Target location to deal ^o$damage$ Magic damage^* and apply a 35% Movement Speed Slow for $slow_duration$ seconds.
-Ability_Vermillion1_description_simple							area damage and slow
+Ability_Vermillion1_description_simple							Area damage and slow
 // Ability_Vermillion2
 Ability_Vermillion2_name										Piercing Shot
 Ability_Vermillion2_description									^444Passive Skill^*\nOnce every $attacksrequired$ attacks, the attack will pierce through all units in its path and deals +$damage_increase$% Attack Damage.
-Ability_Vermillion2_description_simple							attacks occasionally splash in a line
+Ability_Vermillion2_description_simple							Attacks occasionally splash in a line
 // Ability_Vermillion3
 Ability_Vermillion3_name										Dead Eye
 Ability_Vermillion3_description									^444Passive Skill^*\nPassively increases attack range by $range$ and gives ^o+$attack_bonus$^* Base Attack damage
-Ability_Vermillion3_description_simple							increases attack range and damage
+Ability_Vermillion3_description_simple							Increases attack range and damage
 // Ability_Vermillion4
 Ability_Vermillion4_name										Rocket Jump
 Ability_Vermillion4_description									Target location to deal ^o$damage$ Magic damage^* and stun targets for $stun$ seconds, launching Vermillion backwards.
-Ability_Vermillion4_description_simple							area stun/damage and jump back
+Ability_Vermillion4_description_simple							Area stun/damage and jump back
 State_Vermillion_Ability4_name									Focus Fire
 
 
@@ -1571,15 +1571,15 @@ Hero_Vex_lore                                              		 Vexus 331 has a pa
 // Ability_Vex1
 Ability_Vex1_name												Swarm Shot
 Ability_Vex1_description										Target direction to fire missiles, which deal up to ^o$damage$ Magic damage^* and apply up to $slow$% Movement Speed Slow.
-Ability_Vex1_description_simple									skillshot damage and slow
+Ability_Vex1_description_simple									Skillshot damage and slow
 // Ability_Vex2
 Ability_Vex2_name												Vorbis Seekers
 Ability_Vex2_description										Activate to damage three nearby enemies for ^o$damage$ Magic damage^* over 6 seconds. Deals up to 70% bonus damage if there is only a single target.
-Ability_Vex2_description_simple									damages nearby enemies for a duration
+Ability_Vex2_description_simple									Damages nearby enemies for a duration
 // Ability_Vex3
 Ability_Vex3_name												Anti-Matter Shield
 Ability_Vex3_description										Target ally to cleanse all stuns/slows and grant a ^o$shield$ shield^* that provides 70% resistance to stuns/slows for 3 seconds.
-Ability_Vex3_description_simple									shield and reduces stuns/slows
+Ability_Vex3_description_simple									Shield and reduces stuns/slows
 // State_Vex_Ability3
 State_Vex_Ability3_Tooltip_name									Anti-Matter Shield
 State_Vex_Ability3_description									Shield that provides 70% resistance to stuns/slows while active.
@@ -1589,7 +1589,7 @@ State_Vex_Ability3_name_FRAME_effect
 // Ability_Vex4
 Ability_Vex4_name												Orbital Drop
 Ability_Vex4_description										Target position to teleport, dealing ^o$damage$ Magic damage^* and stunning for 1 second.  \n\n2.0 second Channel Time.  Taking damage will put the skill on a 5 second cooldown.
-Ability_Vex4_description_simple									global teleport with damage and stun
+Ability_Vex4_description_simple									Global teleport with damage and stun
 State_Vex_Ability4_Self_name									Teleporting..
 
 
@@ -1601,7 +1601,7 @@ Hero_Zaku_lore
 // Ability_Zaku1
 Ability_Zaku1_name												Bioswarm
 Ability_Zaku1_description										Target direction to channel Bioswarm, dealing ^o$damage_per_second$ Magic damage^* per second.\n\nRemoves up to $resistance_reduction$ Resistance for 4 seconds.
-Ability_Zaku1_description_simple								channeled damage & resistance reduction
+Ability_Zaku1_description_simple								Channeled damage & resistance reduction
 State_Zaku_Ability1_Channel_name								Bioswarm
 State_Zaku_Ability1_Tooltip_name								Bioswarm
 State_Zaku_Ability1_description									Your Resistance has been reduced.
@@ -1611,15 +1611,15 @@ State_Zaku_Ability1_FRAME_effect
 // Ability_Zaku2
 Ability_Zaku2_name												Sticky Trap
 Ability_Zaku2_description										Target location to spawn an invisible trap. Upon being triggered by an enemy, immobilizes all enemies in the area for $immobilize$ seconds and deals ^o$damage$^* damage.\n\nYou can have 2 active traps.
-Ability_Zaku2_description_simple								immobilizing trap
+Ability_Zaku2_description_simple								Immobilizing trap
 // Ability_Zaku3
 Ability_Zaku3_name												Mending Pod
 Ability_Zaku3_description										Activate to spawn a Mending Pod on the ground. After 6 seconds, an ally can right-click the pod to replenish ^o$heal$ Health^* and $mana$ mana.\n\nYou can have up to 3 active pods.
-Ability_Zaku3_description_simple								health / mana restore
+Ability_Zaku3_description_simple								Health / mana restore
 // Ability_Zaku4
 Ability_Zaku4_name												Death's Embrace
 Ability_Zaku4_description										Target ally to protect them from death for 6 seconds. If they die during this time, they will respawn shortly after pushing away and stunning all nearby enemies for .25 seconds. Target will revive with $percent_hp_mana$% Health / Mana with three roaches to attack nearby enemies.\n\nRoaches deal up to ^o$damage$ Attack Damage^* each and apply a $move_attack_slow$% slow to movement & attack speed.
-Ability_Zaku4_description_simple								protection from death
+Ability_Zaku4_description_simple								Protection from death
 State_Zaku_Ability4_Tooltip_name								Death's Embrace
 State_Zaku_Ability4_description									You will revive shortly after dying.
 State_Zaku_Ability4_description_simple							You will revive shortly after dying.
@@ -3073,7 +3073,7 @@ Ability_Tortus_Passive2_3_description_simple					Increases mana regen
 
 // Zen (Owl)
 Ability_Owl_Passive_name										Wisdom
-Ability_Owl_Passive_description									Increases Cooldown Reduction by $passive$%.
+Ability_Owl_Passive_description									Increases Cooldown Reduction by 13%.
 Ability_Owl_Passive_description_simple							Increases Cooldown Reduction.
 Ability_Owl_TriggeredPassive_name								Revitalize
 Ability_Owl_TriggeredPassive_description						Prevents you from losing Out-of-Combat Regeneration for 5 seconds the next time you enter combat.\n\n^c12 Second Cooldown^*. 
