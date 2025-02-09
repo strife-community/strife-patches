@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qualityitem
-	name="Item_Shardplate_Empower_1"
-	
-	cost="1720"
+    name="Item_Shardplate_Empower_1"
+    
+    cost="1720"
 
 >
 	<!-- Tooltip only -->
@@ -10,7 +10,7 @@
 
 	<onframe>
 		<compare a="source_health_percent" b="0.2" op="le" >
-			<setactivemodifierkey entity="this_entity" name="shardplate_legendary" />
+			<applystate name="State_Shardplate_Empower_1" duration="100" />
 		</compare>
 		<else>
 			<setactivemodifierkey entity="this_entity" name="" />
