@@ -653,6 +653,7 @@
 			<splashimage
 				name="main_pregame_ready_container_background"
 				y="-14s" width="178.777778@" height="100%"
+				view="stretch"
 				align="center"
 				noclick="true"
 				onshowlua="self:SetImage('/ui/main/pregame/textures/ready_background.jpg')"

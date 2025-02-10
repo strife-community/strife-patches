@@ -116,6 +116,14 @@ local function WatchRegister(object)
 		return newSuccessFunction
 	end
 
+	local function FormatMatchID(matchID)
+		if string.find(matchID, '%.') or (matchID == '0') then
+			return matchID
+		else
+			return string.sub(matchID, 1, -4) .. '.' .. string.sub(matchID, -3)
+		end
+	end
+
 	function Strife_Web_Requests:GetWatchStreams(successFunction, failFunction)
 		if (not Client.GetSessionKey()) then
 			printdb('^r Error: GetWatchStreams attempted without session key')
@@ -502,6 +510,7 @@ local function WatchRegister(object)
 		end		
 		
 		local watch_gamelist_listbox = GetWidget('watch_gamelist_listbox')
+		local watch_gamelist_listbox_vscroll = GetWidget('watch_gamelist_listbox_vscroll')
 		
 		if (reloadFromCode) then
 			replayData = GetExtensiveReplayData()
@@ -510,24 +519,20 @@ local function WatchRegister(object)
 		end
 		mainUI.watch.myReplays = {}
 		mainUI.watch.selectedRecentMatchIndex = -1
-		
+
+		for index, replayGameTable in pairs(replayData) do	-- add/reset flag to determine orphaned replays
+			replayGameTable.isMatchedToRecent = false
+		end
+
 		local function GetReplayInformation(recentGameTable, matchID)
 			for index, replayTable in pairs(replayData) do
-				local insertMatchID = replayTable.matchid or '0'
-				if string.find(insertMatchID, '%.') or (insertMatchID == '0') then
-				else
-					insertMatchID = string.sub(insertMatchID, 1, -4) .. '.' .. string.sub(insertMatchID, -3)
-				end					
+				local insertMatchID = FormatMatchID(replayTable.matchid or '0')
 				if (insertMatchID == matchID) and (insertMatchID ~= '0') and (matchID ~= '0') then
 					recentGameTable.hasReplay = true
-					local insertMatchID = matchID or '0'
-					if string.find(insertMatchID, '%.') or (insertMatchID == '0') then
-					else
-						insertMatchID = string.sub(insertMatchID, 1, -4) .. '.' .. string.sub(insertMatchID, -3)
-					end							
+					local insertMatchID = FormatMatchID(matchID or '0')
 					recentGameTable.match_id  = insertMatchID
 					recentGameTable.stats = replayTable
-					replayData[index] = nil
+					replayData[index].isMatchedToRecent = true
 					break
 				end
 			end	
@@ -538,12 +543,8 @@ local function WatchRegister(object)
 			recentGameTable.isRecentGame		= true
 			recentGameTable.hasReplay 			= false
 			recentGameTable.localPlayerInReplay = true	
-			local insertMatchID = recentGameTable.match_id or '0'
-			if string.find(insertMatchID, '%.') or (insertMatchID == '0') then
-			else
-				insertMatchID = string.sub(insertMatchID, 1, -4) .. '.' .. string.sub(insertMatchID, -3)
-			end					
-			recentGameTable.match_id 			= insertMatchID or '0'	
+			local insertMatchID = FormatMatchID(recentGameTable.match_id or '0')
+			recentGameTable.match_id 			= insertMatchID or '0'
 			recentGameTable.date 				= recentGameTable.date or ''
 			recentGameTable.timestamp 			= recentGameTable.timestamp or '1'
 			if (recentGameTable) and (recentGameTable.match_id) and (not Empty(recentGameTable.match_id)) and (recentGameTable.match_id ~= '0') then
@@ -556,28 +557,22 @@ local function WatchRegister(object)
 		end
 
 		for index, replayGameTable in pairs(replayData) do	-- add all remaining replays
-			local tempTable = {}
-			tempTable.isRecentGame			= false
-			tempTable.hasReplay			  	= true
-			tempTable.localPlayerInReplay 	= false
-			tempTable.date 					= replayGameTable.date or ''
-			local insertMatchID = replayGameTable.match_id or '0'
-			if string.find(insertMatchID, '%.') or (insertMatchID == '0') then
-			else
-				insertMatchID = string.sub(insertMatchID, 1, -4) .. '.' .. string.sub(insertMatchID, -3)
-			end					
-			tempTable.match_id 				= insertMatchID
-			tempTable.timestamp 			= replayGameTable.timestamp or '0'
-			tempTable.stats = replayGameTable
-			tinsert(mainUI.watch.myReplays, tempTable)
+			if not replayGameTable.isMatchedToRecent then
+				local tempTable = {}
+				tempTable.isRecentGame			= false
+				tempTable.hasReplay			  	= true
+				tempTable.localPlayerInReplay 	= false
+				tempTable.date 					= replayGameTable.date or ''
+				local insertMatchID = FormatMatchID(replayGameTable.matchid or '0')
+				tempTable.match_id 				= insertMatchID
+				tempTable.timestamp 			= replayGameTable.timestamp or '0'
+				tempTable.stats = replayGameTable
+				tinsert(mainUI.watch.myReplays, tempTable)
+			end
 		end	
 
 		for index, myReplayTable in pairs(mainUI.watch.myReplays) do	-- scan for local player (by name for now, add identid later)
-			local insertMatchID = myReplayTable.match_id or '0'
-			if string.find(insertMatchID, '%.') or (insertMatchID == '0') then
-			else
-				insertMatchID = string.sub(insertMatchID, 1, -4) .. '.' .. string.sub(insertMatchID, -3)
-			end				
+			local insertMatchID = FormatMatchID(myReplayTable.match_id or '0')
 			if mainUI.savedLocally and tempMatchStatsCache and tempMatchStatsCache[insertMatchID] and tempMatchStatsCache[insertMatchID].matchStats and tempMatchStatsCache[insertMatchID].matchStats.stats then
 				local stats = tempMatchStatsCache[insertMatchID].matchStats.stats
 				for i,v in pairs(stats) do
@@ -625,7 +620,10 @@ local function WatchRegister(object)
 			content = string.gsub(content, [[\]], "")
 			return content
 		end
-		
+
+		local lastScrollValue = watch_gamelist_listbox_vscroll:GetValue()
+		watch_gamelist_listbox_vscroll:SetValue(0)
+
 		watch_gamelist_listbox:UICmd([[Clear()]])
 		if (mainUI.watch.myReplays) then
 			for index,myReplayTable in ipairs(mainUI.watch.myReplays) do
@@ -643,12 +641,8 @@ local function WatchRegister(object)
 					end
 				end
 				
-				local insertMatchID = myReplayTable.match_id or '0'
-				if string.find(insertMatchID, '%.') or (insertMatchID == '0') then
-				else
-					insertMatchID = string.sub(insertMatchID, 1, -4) .. '.' .. string.sub(insertMatchID, -3)
-				end				
-				
+				local insertMatchID = FormatMatchID(myReplayTable.match_id or '0')
+
 				if (myReplayTable.localPlayerInReplay) and (myReplayTable.localPlayerInfo) then
 					heroIcon = myReplayTable.localPlayerInfo.heroicon or '$checker'
 					team = myReplayTable.localPlayerInfo.team or 0
@@ -678,6 +672,7 @@ local function WatchRegister(object)
 					)
 				end
 			end
+			watch_gamelist_listbox_vscroll:SetValue(lastScrollValue)
 			libThread.threadFunc(function()	
 				wait(styles_mainSwapAnimationDuration)		
 				if (watchStateTrigger.matchIndex) and (not Empty(watchStateTrigger.matchIndex)) then
@@ -705,8 +700,7 @@ local function WatchRegister(object)
 		local playerinfoandtime							= GetWidget('replays_matchinfo_playerinfoandtime')
 	
 		function mainUI.watch.UpdateGameListActionButton(click)
-			playerinfoandtime:FadeOut(150)
-		
+
 			local ReplayDownload 	= LuaTrigger.GetTrigger('ReplayDownload')
 			local ReplayInfoGame 	= LuaTrigger.GetTrigger('ReplayInfoGame')
 			local CompatDownload 	= LuaTrigger.GetTrigger('CompatDownload')
@@ -744,40 +738,45 @@ local function WatchRegister(object)
 				if (selectedReplayInfo) and (selectedReplayInfo.hasReplay) and (selectedReplayInfo.stats) and (selectedReplayInfo.stats.path) then					
 					-- println('We have a replay with stats')
 					-- println('SetReplayInfo ' .. tostring(selectedReplayInfo.stats.path) )
+					playerinfoandtime:FadeIn(150)
 					mainUI.watch.GetMatchInfo()
-					mainUI.watch.lastSelectedReplayPath = selectedReplayInfo.stats.path
-					SetReplayInfo(selectedReplayInfo.stats.path)
-					mainUI.watch.GetMatchStats()
-					if (not Empty(ReplayInfoGame.version)) then
-						-- println('We have a version')
-						if (ReplayInfoGame.isCompatible) then			
-							-- println('It is compatible')
-							GetWidget('watch_gamelist_main_action_btn'):SetEnabled(1)
-							GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_watch_replay'))
-							GetWidget('watch_gamelist_main_action_btn'):SetCallback('onclick', function()
-								object:UICmd([[ StartReplay(']] .. selectedReplayInfo.stats.path .. [[') ]])
-							end)
-							if (click) then
-								object:UICmd([[ StartReplay(']] .. selectedReplayInfo.stats.path .. [[') ]])
+					if (mainUI.watch.lastSelectedReplayPath ~= selectedReplayInfo.stats.path) then
+						mainUI.watch.lastSelectedReplayPath = selectedReplayInfo.stats.path
+						SetReplayInfo(selectedReplayInfo.stats.path)
+					else
+						mainUI.watch.GetMatchStats()
+						if (not Empty(ReplayInfoGame.version)) then
+							-- println('We have a version')
+							if (ReplayInfoGame.isCompatible) then
+								-- println('It is compatible')
+								GetWidget('watch_gamelist_main_action_btn'):SetEnabled(1)
+								GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_watch_replay'))
+								GetWidget('watch_gamelist_main_action_btn'):SetCallback('onclick', function()
+									object:UICmd([[ StartReplay(']] .. selectedReplayInfo.stats.path .. [[') ]])
+								end)
+								if (click) then
+									object:UICmd([[ StartReplay(']] .. selectedReplayInfo.stats.path .. [[') ]])
+								end
+							else
+								-- println('It is not compatible')
+								GetWidget('watch_gamelist_main_action_btn'):SetEnabled(1)
+								GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_make_compatible'))
+								GetWidget('watch_gamelist_main_action_btn'):SetCallback('onclick', function()
+									object:UICmd([[ DownloadReplayCompat(']] .. ReplayInfoGame.version .. [[') ]])
+								end)
+								if (click) then
+									object:UICmd([[ DownloadReplayCompat(']] .. ReplayInfoGame.version .. [[') ]])
+								end
 							end
 						else
-							-- println('It is not compatible')
-							GetWidget('watch_gamelist_main_action_btn'):SetEnabled(1)
-							GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_make_compatible'))
-							GetWidget('watch_gamelist_main_action_btn'):SetCallback('onclick', function()
-								object:UICmd([[ DownloadReplayCompat(']] .. ReplayInfoGame.version .. [[') ]])
-							end)	
-							if (click) then
-								object:UICmd([[ DownloadReplayCompat(']] .. ReplayInfoGame.version .. [[') ]])
-							end							
+							-- println('But it has no version information, we cant do anything')
+							GetWidget('watch_gamelist_main_action_btn'):SetEnabled(0)
+							GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_no_version'))
 						end
-					else
-						-- println('But it has no version information, we cant do anything')
-						GetWidget('watch_gamelist_main_action_btn'):SetEnabled(0)
-						GetWidget('watch_gamelist_main_action_btnLabel'):SetText(Translate('watch_no_version'))								
 					end
 				else
 					-- println('We are missing replay info or dont have the replay')
+					playerinfoandtime:FadeOut(150)
 					if (selectedReplayInfo) and (selectedReplayInfo.match_id) and (not Empty(selectedReplayInfo.match_id)) and (selectedReplayInfo.match_id ~= '0') then
 						-- println('But we do have a match ID, so we could download it')
 						mainUI.watch.GetMatchInfo(nil, selectedReplayInfo.match_id)
@@ -813,9 +812,9 @@ local function WatchRegister(object)
 			mainUI.watch.UpdateGameListActionButton(true)
 		end)				
 		
-		GetWidget('watch_gamelist_listbox'):SetCallback('onclick', function(widget)
-			mainUI.watch.UpdateGameListActionButton()
-		end)
+		-- GetWidget('watch_gamelist_listbox'):SetCallback('onclick', function(widget)
+			-- mainUI.watch.UpdateGameListActionButton()
+		-- end)
 		
 		-- GetWidget('watch_gamelist_listbox'):SetCallback('ondoubleclick', function(widget)
 			-- mainUI.watch.UpdateGameListActionButton(true)
@@ -1044,7 +1043,7 @@ local function WatchRegister(object)
 		local lastMatchID = -1
 		function mainUI.watch.GetMatchStats(incomingMatchID)
 
-			local matchID = incomingMatchID or LuaTrigger.GetTrigger('ReplayInfoGame').matchID
+			local matchID = FormatMatchID(incomingMatchID or LuaTrigger.GetTrigger('ReplayInfoGame').matchID)
 			local validMatchID = false
 
 			if ((matchID) and (tonumber(matchID)) and (tonumber(matchID) > 0)) and (matchID ~= '0') then
@@ -1083,33 +1082,19 @@ local function WatchRegister(object)
 						SevereError('GetMatchStats (replay) Request Error: ' .. Translate(request:GetError() or ''), 'main_reconnect_thatsucks', '', nil, nil, false)
 						return nil
 					end				
-					
-					local insertMe = matchID
-					if string.find(insertMe, '%.') or (insertMe == '0') then
-					
-					else
-						insertMe = string.sub(insertMe, 1, -4) .. '.' .. string.sub(insertMe, -3)
-					end
-					
-					if mainUI and mainUI.savedLocally and tempMatchStatsCache and (insertMe) and tempMatchStatsCache[insertMe] then
-						println('GetMatchStats from cache ' .. tostring(insertMe))
-						successFunction(tempMatchStatsCache[insertMe])
-					elseif (insertMe) then
-						println('GetMatchStats from web ' .. tostring(insertMe))
-						Strife_Web_Requests:GetMatchStats(insertMe, successFunction, failureFunction)
+
+					if mainUI and mainUI.savedLocally and tempMatchStatsCache and (matchID) and tempMatchStatsCache[matchID] then
+						println('GetMatchStats from cache ' .. tostring(matchID))
+						successFunction(tempMatchStatsCache[matchID])
+					elseif (matchID) then
+						println('GetMatchStats from web ' .. tostring(matchID))
+						Strife_Web_Requests:GetMatchStats(matchID, successFunction, failureFunction)
 					end					
 
 				else
-					local insertMe = matchID
-					if string.find(insertMe, '%.') or (insertMe == '0') then
-					
-					else
-						insertMe = string.sub(insertMe, 1, -4) .. '.' .. string.sub(insertMe, -3)
-					end				
-				
-					if mainUI and mainUI.savedLocally and tempMatchStatsCache and (insertMe) and tempMatchStatsCache[insertMe] then
-						println('GetMatchStats from cache as same matchid ' .. tostring(insertMe))
-						PopulateScoreboardReplay(object, tempMatchStatsCache[insertMe])
+					if mainUI and mainUI.savedLocally and tempMatchStatsCache and (matchID) and tempMatchStatsCache[matchID] then
+						println('GetMatchStats from cache as same matchid ' .. tostring(matchID))
+						PopulateScoreboardReplay(object, tempMatchStatsCache[matchID])
 					end
 					-- println('GetMatchStats skipping ' .. tostring(matchID))				
 				end
@@ -1153,7 +1138,7 @@ local function WatchRegister(object)
 				watchStateMatchID = watchStateTrigger.matchID
 			end
 			
-			local matchID = matchID or watchStateMatchID or LuaTrigger.GetTrigger('ReplayInfoGame').matchID
+			local matchID = FormatMatchID(matchID or watchStateMatchID or LuaTrigger.GetTrigger('ReplayInfoGame').matchID)
 			replayMatchID = matchID
 
 			if ((matchID) and (tonumber(matchID)) and (tonumber(matchID) > 0)) and (matchID ~= '0') and (matchID ~= '.0') then
@@ -1182,7 +1167,7 @@ local function WatchRegister(object)
 				watchStateMatchID = watchStateTrigger.matchID
 			end		
 		
-			local matchID = matchID or watchStateMatchID or LuaTrigger.GetTrigger('ReplayInfoGame').matchID
+			local matchID = FormatMatchID(matchID or watchStateMatchID or LuaTrigger.GetTrigger('ReplayInfoGame').matchID)
 			if ((matchID) and (tonumber(matchID)) and (tonumber(matchID) > 0)) and (matchID ~= '0') and (matchID ~= '.0') then
 				GetWidget('watch_gamelist_main_comment_btn'):SetEnabled(1)
 				if (mainUI.savedRemotely.matchDatabase) and (mainUI.savedRemotely.matchDatabase[matchID]) and (mainUI.savedRemotely.matchDatabase[matchID].matchNameOverride) and (not Empty(mainUI.savedRemotely.matchDatabase[matchID].matchNameOverride)) then
@@ -1210,7 +1195,7 @@ local function WatchRegister(object)
 			end			
 		
 			local matchName, matchNote = '', ''
-			local matchID = matchID or watchStateMatchID or LuaTrigger.GetTrigger('ReplayInfoGame').matchID
+			local matchID = FormatMatchID(matchID or watchStateMatchID or LuaTrigger.GetTrigger('ReplayInfoGame').matchID)
 			if ((matchID) and (tonumber(matchID)) and (tonumber(matchID) > 0)) and (matchID ~= '0') and (matchID ~= '.0') then
 				if (mainUI.savedRemotely.matchDatabase) and (mainUI.savedRemotely.matchDatabase[matchID]) and (mainUI.savedRemotely.matchDatabase[matchID].matchNameOverride) and (not Empty(mainUI.savedRemotely.matchDatabase[matchID].matchNameOverride)) then
 					matchName = mainUI.savedRemotely.matchDatabase[matchID].matchNameOverride
