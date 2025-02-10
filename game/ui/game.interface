@@ -717,11 +717,12 @@
 					<image name="gameInventory{id}ChargeHole6" style="heroInventoryChargePipHole" noclick="true"/>
 					<image name="gameInventory{id}ChargePip6" style="heroInventoryChargePip" noclick="true"/>
 				</panel>				
-				<panel name="gameInventory{id}ChargeBarContainer" style="heroInventoryChargeInset" visible="false">
-					<image style="heroInventoryChargeBarEmpty" />					
+				<panel name="gameInventory{id}ChargeBarContainer" visible="false">
+					<image style="heroInventoryChargeBarEmpty" />
 					<panel name="gameInventory{id}ChargeBar" style="heroInventoryChargeBar">
 						<image style="heroInventoryChargeBarFull" />
 					</panel>
+					<image style="heroInventoryChargeInset" />
 				</panel>
 			</panel>
 			<button name="gameInventory{id}LevelUpButton" align="right" valign="bottom" color="invisible" y="-5%" width="38@" x="-4@" height="45%" interactive="false"/>

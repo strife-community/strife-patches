@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shardplate_Empower_1"
+
+	icon="icon.tga"
+	ishidden="true"
+	resistance="20"
+>
+
+</state>
