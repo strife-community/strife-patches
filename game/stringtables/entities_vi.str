@@ -1373,7 +1373,7 @@ Hero_Waterbender_description									Không thành phố nào thờ phụng 
 
 // Ability_Minerva1
 Ability_Minerva1_name											Cyber Stalk
-Ability_Minerva1_description									Lướt tới sau lưng địch, sát thương ^o$damage$ Magic damage^* và sau đó tăng $attackspeed$ Attack Speed kèm 15 Tốc Độ Chạy trong 6 giây.
+Ability_Minerva1_description									Lướt tới sau lưng địch, sát thương ^o$damage$ Magic damage^* và sau đó tăng $attackspeed$ Attack Speed kèm $movespeed$ Tốc Độ Chạy trong 6 giây.
 Ability_Minerva1_description_simple								Sát Thương, tăng Tốc Độ
 
 // State_Minerva_Ability1_Buff

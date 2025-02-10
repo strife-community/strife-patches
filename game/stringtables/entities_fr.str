@@ -1311,7 +1311,7 @@ Hero_Waterbender_description                                                    
 
 // Ability_Minerva1
 Ability_Minerva1_name                                                             Cybertraque
-Ability_Minerva1_description                                                      Ciblez une unité pour vous ruer derrière elle, causant ^o$damage$ Dégâts Magiques^* et augmentant votre Vitesse d'Attaque de $attackspeed$ ainsi que votre Vitesse de Mouvement de 15, et ce, pendant 6 secondes.
+Ability_Minerva1_description                                                      Ciblez une unité pour vous ruer derrière elle, causant ^o$damage$ Dégâts Magiques^* et augmentant votre Vitesse d'Attaque de $attackspeed$ ainsi que votre Vitesse de Mouvement de $movespeed$, et ce, pendant 6 secondes.
 Ability_Minerva1_description_simple                                               ruée qui inflige des dégâts et accorde de la vitesse de mouvement
 
 // State_Minerva_Ability1_Buff

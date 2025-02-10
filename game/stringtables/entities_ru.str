@@ -1708,7 +1708,7 @@ Hero_Aemon_description										Герой ближнего боя, специа
 
 // Ability_Minerva1
 Ability_Minerva1_name											Cyber Stalk
-Ability_Minerva1_description									Minerva перемещается за спину указанного врага и наносит ^o$damage$ магического урона^*, после чего на 6 секунд скорость ее атаки увеличивается на $attackspeed$, а скорость передвижения — на 15.
+Ability_Minerva1_description									Minerva перемещается за спину указанного врага и наносит ^o$damage$ магического урона^*, после чего на 6 секунд скорость ее атаки увеличивается на $attackspeed$, а скорость передвижения — на $movespeed$.
 Ability_Minerva1_description_simple								рывок, урон и повышение скорости атаки
 
 // State_Minerva_Ability1_Buff

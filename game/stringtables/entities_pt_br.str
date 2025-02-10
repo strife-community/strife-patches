@@ -1507,7 +1507,7 @@ Hero_Waterbender_description									Nenhuma cidade é mais adora Sol que Arasun
 
 // Ability_Minerva1
 Ability_Minerva1_name											Perseguição cibernética
-Ability_Minerva1_description									Corre para trás de uma unidade, causando ^o$damage$ de dano mágico^* e ganhando $attackspeed$ de velocidade de ataque, além de 15 de velocidade de movimento por 6 segundos.
+Ability_Minerva1_description									Corre para trás de uma unidade, causando ^o$damage$ de dano mágico^* e ganhando $attackspeed$ de velocidade de ataque, além de $movespeed$ de velocidade de movimento por 6 segundos.
 Ability_Minerva1_description_simple								lançar com danos e concede velocidade de ataque
 
 // State_Minerva_Ability1_Buff
