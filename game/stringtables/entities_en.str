@@ -59,6 +59,7 @@ Constant_percent_heal											Percent Heal
 Constant_max_damage_increase									Max Base Damage Increase
 Constant_attackspeed											Attack Speed
 Constant_movespeed												Move Speed
+Constant_movespeed_percent										% Move Speed
 Constant_bonus_attacks											Number Of Attacks
 Constant_resistance												Resistance
 Constant_mitigation												Mitigation
@@ -128,6 +129,7 @@ Constant_execute_threshold										% MaxHP Threshold
 Constane_attackspeedslow										% Attack Speed Slow
 Constant_splash													Splash Damage
 Constant_back_attack                                            Base Return Damage
+Constant_malph_max_holes                                        Max Holes
 
 CrowdControl_Stun												Stun
 CrowdControl_Slow												Slow
@@ -1237,7 +1239,7 @@ Ability_Malph2_description										Target ally to grant them a buff which heals
 Ability_Malph2_description_simple								Grant healing and resistance over time
 // Ability_Malph3
 Ability_Malph3_name												Mud Field
-Ability_Malph3_description										Target area to create a mud field.  Enemies caught inside are slowed by 25%, have their attack speed reduced by $attackspeedslow$%, and take $damage_scale$% bonus damage from you.
+Ability_Malph3_description										Target area to create a mud field.  Enemies caught inside are slowed by 25%, have their attack speed reduced by $attackspeed_percentreduction$%, and take $percent_bonus_damage$% bonus damage from you.
 Ability_Malph3_description_simple								Create a field that slows and weakens enemies
 // Ability_Malph4
 Ability_Malph4_name												The Underground
@@ -1349,16 +1351,16 @@ Ability_Nikolai4_description_simple								Single target relocation
 
 // Hero_Pal
 Hero_Pal_name													Pal
-Hero_Pal_description											Specializes in crowd control and area damage				
+Hero_Pal_description											Specializes in crowd control and area damage
 Hero_Pal_role													Crowd control and aoe
 Hero_Pal_lore		
 // Ability_Pal1
-Ability_Pal1_name												Trip Beam	
+Ability_Pal1_name												Trip Beam
 Ability_Pal1_description										Target direction to create a beam of energy.  If an enemy touches this beam, it triggers - dealing ^o$damage$ Magic Damage^* and knocking back all nearby enemies with a mini-stun.
 Ability_Pal1_description_simple									Damage and knock back
 // Ability_Pal2
 Ability_Pal2_name												Roll Out
-Ability_Pal2_description										Activate to transform instantly into a metal ball, gaining ^o+5/9/13/17%^* movespeed.  If you contact an enemy, deals ^o$damage$ Magic Damage^* and stuns them for 1.3 seconds.  Taking damage will apply a stacking 70% tapering movespeed slow for 0.5 seconds.
+Ability_Pal2_description										Activate to transform instantly into a metal ball, gaining $movespeed_percent$% movespeed.  If you contact an enemy, deals ^o$damage$ Magic Damage^* and stuns them for 1.3 seconds.
 Ability_Pal2_description:pal_roll								Activate to cancel, returning to normal mode.
 Ability_Pal2_description_simple									Bonus movement speed and stun
 // Ability_Pal3
@@ -1403,7 +1405,7 @@ Hero_Rip_lore													Rip, swordsman of the wastes, hails from a mysterious 
 // Ability_Rip1
 Ability_Rip1_name												Smoke Cloud
 Ability_Rip1_description										Target area to create a smoke cloud, reducing enemy resistance by $resistance_reduction$ and drastically lowering their vision, while granting all allies inside the cloud $resistance$ resistance. While inside the cloud, you are stealthed until you deal damage or use an ability.
-Ability_Rip1_description_simple								    Provides stealth and resistance
+Ability_Rip1_description_simple									Create cloud to confuse enemy and cloak yourself
 // State_Rip_Ability1_Self
 State_Rip_Ability1_Self_Tooltip_name							Smoke Cloud
 State_Rip_Ability1_Self_description_simple						You are cloaked while in the Smoke Cloud.
@@ -1425,7 +1427,7 @@ Ability_Rip3_description_simple									Critical strike after being unseen
 // Ability_Rip4
 Ability_Rip4_name												Nether Strike
 Ability_Rip4_description										Target direction to dash, attacking all enemies you pass through.  \n\nIf you hit at least 1 enemy, you may cast this ability again for up to 6 seconds - up to a total of 3 times.
-Ability_Rip4_description_simple								    Dash through enemies and recast up to 3 times if an enemy was hit
+Ability_Rip4_description_simple									Dash through enemies and recast up to 3 times if an enemy was hit
 
  
  // Hero_Rook
