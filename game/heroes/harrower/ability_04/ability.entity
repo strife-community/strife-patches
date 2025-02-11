@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Harrower4"
+	
+	statuseffecttooltip="State_Harrower_Ability4"
+	icon="icon.tga"
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_self"
+	queue="front"
+	inheritmovement="true"
+	casteffect="effects/cast.effect"
+
+	casteffecttype="NoResponse BreakStealth"
+	responsetype="NoResponse BreakStealth"
+	
+	manacost="0"
+	cooldowntime="4000"
+	
+	targetscheme=""
+	
+	noentercombat="true"
+>
+
+	<constant name="maxhp" value="300,400,500" adjustment="none" />
+	<!--tooltip only -->
+	<constant name="percent_bonus_damage" value="45,60,75" adjustment="none" />
+	
+
+	<onimpact>
+		<setactivemodifierkey name="harrower_melee" />
+		
+		<!-- save old max health -->
+		<setvar0 a="source_maxhealth" /> 
+		<setvar1 a="source_health_percent" /> 
+		
+		<applystate name="State_Harrower_Ability4" duration="-1" target="source_entity" proxy="this_entity" />
+		
+		<getconstant name="maxhp" />
+		<setvar0 a="var0" b="result" op="add" /> 
+		<setvar0 a="var0" b="var1" op="mult" /> 
+
+		<setvalue source="this_entity" name="source_health" a="var0" />
+	</onimpact>
+	
+	<modifier key="harrower_melee" modpriority="100" icon="icon_b.tga"
+		casteffect="effects/cast2.effect"
+	>
+		<onimpact>
+			<setvar0 a="source_maxhealth" /> 
+			<setvar1 a="source_health_percent" /> 
+		
+			<expirestate name="State_Harrower_Ability4" target="source_entity"/>
+			
+			<getconstant name="maxhp" />
+			<setvar0 a="var0" b="result" op="sub" /> 
+			<setvar0 a="var0" b="var1" op="mult" /> 
+
+			<setvalue source="this_entity" name="source_health" a="var0" />
+		</onimpact>
+		
+		<onupgrade>
+			<!-- save old max health --> 
+			<setvar0 a="source_maxhealth" /> 
+			<setvar1 a="source_health_percent" /> 
+			
+			<applystate name="State_Harrower_Ability4" duration="-1" target="source_entity" proxy="this_entity" />
+			
+			<getconstant name="maxhp" />
+			<setvar0 a="var0" b="result" op="add" /> 
+			<setvar0 a="var0" b="var1" op="mult" /> 
+
+			<setvalue source="this_entity" name="source_health" a="var0" />
+		</onupgrade>
+	</modifier>
+	
+</ability>
