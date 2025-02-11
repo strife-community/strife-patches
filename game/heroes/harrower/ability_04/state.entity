@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Harrower_Ability4"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxhealth="300,400,500"
+	
+	deathpersist="true"
+
+	maxcharges="4"
+	
+	movespeed="35"
+	modifierkey="harrower_morph"
+	ishidden="true"
+
+	propagatetoillusions="true"
+
+
+>
+	<oninflict>
+		<applystate name="State_Harrower_Ability4_Speed" target="source_entity" duration="1000" />
+		<setcharges target="this_entity" a="4" />
+	</oninflict>
+	
+	<onexpired>
+		<setactivemodifierkey name="" entity="this_proxy_entity" />
+	</onexpired>
+	
+	<onattack>
+		<cantarget targetscheme="enemy_units_and_buildings" >
+			<removecharge />
+			<compare a="charges" b="0" op="eq">
+				<setvar0 a="source_attackdamage" b="0.45,0.6,0.75" op="mult" />
+				<bonusdamageadd target="" a="var0" />
+				<applystate name="State_Harrower_Ability4_Slow" target="target_entity" duration="2000" />
+				<playeffect effect="effects/morph_impact_crit.effect" source="target_entity" target="target_entity"/>
+				
+				<setcharges target="this_entity" a="4" />
+			</compare>
+		</cantarget>
+	</onattack>
+
+
+</state>
