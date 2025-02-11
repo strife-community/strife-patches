@@ -1,46 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Harrower_Ability4"
-	
-	icon="icon.tga"
-	passiveeffect=""
+    name="State_Harrower_Ability4"
+    
+    icon="icon.tga"
+    passiveeffect=""
 
-	maxhealth="300,400,500"
-	
-	deathpersist="true"
+    maxhealth="300,400,500"
+    
+    deathpersist="true"
 
-	maxcharges="4"
-	
-	movespeed="35"
-	modifierkey="harrower_morph"
-	ishidden="true"
+    maxcharges="4"
+    
+    movespeed="35"
+    modifierkey="harrower_morph"
+    ishidden="true"
 
-	propagatetoillusions="true"
-
-
+    propagatetoillusions="true"
 >
-	<oninflict>
-		<applystate name="State_Harrower_Ability4_Speed" target="source_entity" duration="1000" />
-		<setcharges target="this_entity" a="4" />
-	</oninflict>
-	
-	<onexpired>
-		<setactivemodifierkey name="" entity="this_proxy_entity" />
-	</onexpired>
-	
-	<onattack>
-		<cantarget targetscheme="enemy_units_and_buildings" >
-			<removecharge />
-			<compare a="charges" b="0" op="eq">
-				<setvar0 a="source_attackdamage" b="0.45,0.6,0.75" op="mult" />
-				<bonusdamageadd target="" a="var0" />
-				<applystate name="State_Harrower_Ability4_Slow" target="target_entity" duration="2000" />
-				<playeffect effect="effects/morph_impact_crit.effect" source="target_entity" target="target_entity"/>
-				
-				<setcharges target="this_entity" a="4" />
-			</compare>
-		</cantarget>
-	</onattack>
+    <!-- When state is applied -->
+    <oninflict>
+        <!-- Temporal move speed bonus -->
+        <applystate name="State_Harrower_Ability4_Speed" target="source_entity" duration="1000" />
+        <!-- Reset charge counter () -->
+        <getconstant name="charges_for_crit" />
+        <setcharges target="this_entity" a="result" />
+    </oninflict>
+    
+    <!-- When expired, we change Harrower back to human form -->
+    <onexpired>
+        <!-- Making sure only real Harrower changes ability, not his illusions expiring -->
+        <targettype target="source_entity" type="illusion" />
+        <else>
+            <!-- Turning Harrower back to human -->
+            <setactivemodifierkey name="" entity="this_proxy_entity" />
+        </else>
+    </onexpired>
+    
+    <!-- On each attack -->
+    <onattack>
+        <!-- Checking we don't count unwanted attacks -->
+        <cantarget targetscheme="enemy_units_and_buildings" >
+            <!-- Decrease counter -->
+            <removecharge />
+            <!-- Checking if counter reached 0 -->
+            <compare a="charges" b="0" op="eq">
+                <!-- Increasing damage -->
+                <getconstant name="percent_bonus_damage" nameb="percent_mult" op="mult" />
+                <setvar0 a="source_attackdamage" b="result" op="mult" />
+                <bonusdamageadd target="" a="var0" />
+                <!-- Adding slow -->
+                <applystate name="State_Harrower_Ability4_Slow" target="target_entity" duration="2000" />
+                <!-- Playing effect -->
+                <playeffect effect="effects/morph_impact_crit.effect" source="target_entity" target="target_entity"/>
+                <!-- Resetting charge counter () -->
+                <getconstant name="charges_for_crit" />
+                <setcharges target="this_entity" a="result" />
+            </compare>
+            <!-- else NOTHING TO DO -->
+        </cantarget>
+    </onattack>
 
 
 </state>

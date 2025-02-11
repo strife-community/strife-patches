@@ -1,82 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Harrower4"
-	
-	statuseffecttooltip="State_Harrower_Ability4"
-	icon="icon.tga"
-	anim="ability_4"
-	casttime="0"
-	castactiontime="0"
+    name="Ability_Harrower4"
+    
+    statuseffecttooltip="State_Harrower_Ability4"
+    icon="icon.tga"
+    anim="ability_4"
+    casttime="0"
+    castactiontime="0"
 
-	maxlevel="3"
-	requiredlevel="6,11,15"
+    maxlevel="3"
+    requiredlevel="6,11,15"
 
-	actiontype="target_self"
-	queue="front"
-	inheritmovement="true"
-	casteffect="effects/cast.effect"
+    actiontype="target_self"
+    queue="front"
+    inheritmovement="true"
+    casteffect="effects/cast.effect"
 
-	casteffecttype="NoResponse BreakStealth"
-	responsetype="NoResponse BreakStealth"
-	
-	manacost="0"
-	cooldowntime="4000"
-	
-	targetscheme=""
-	
-	noentercombat="true"
+    casteffecttype="NoResponse BreakStealth"
+    responsetype="NoResponse BreakStealth"
+    
+    manacost="0"
+    cooldowntime="4000"
+    
+    targetscheme=""
+    
+    noentercombat="true"
 >
+    <!-- Max health added in melee form -->
+    <constant name="maxhp" value="300,400,500" adjustment="none" />
+    <!-- Bonus damage on 4th attack in percents -->
+    <constant name="percent_bonus_damage" value="45,60,75" adjustment="none" />
+    <!-- Number of attacks to activate bonus damage -->
+    <constant name="charges_for_crit" value="4" adjustment="none" noshowintooltip="true" />
+    
+    <!-- Multiplier to get correct bonus damage multiplier -->
+    <constant name="percent_mult" value="0.01" adjustment="none" noshowintooltip="true" />
+    
 
-	<constant name="maxhp" value="300,400,500" adjustment="none" />
-	<!--tooltip only -->
-	<constant name="percent_bonus_damage" value="45,60,75" adjustment="none" />
-	
+    <!-- On ability activation: -->
+    <onimpact>
+        <!-- Modify ability to turn back to normal after -->
+        <setactivemodifierkey name="harrower_melee" />
+        
+        <!-- Saving current max health and health percent to use later -->
+        <setvar0 a="source_maxhealth" /> 
+        <setvar1 a="source_health_percent" /> 
+        
+        <!-- Applying state. It grants bonuses and also changes us back to normal when we use ability again -->
+        <applystate name="State_Harrower_Ability4" duration="-1" target="source_entity" proxy="this_entity" />
+        
+        <!-- Keeping health percent the same despite max health changing -->
+        <getconstant name="maxhp" />
+        <setvar0 a="var0" b="result" op="add" /> 
+        <setvar0 a="var0" b="var1" op="mult" /> 
+        <setvalue source="this_entity" name="source_health" a="var0" />
+    </onimpact>
+    
+    <!-- Now in beast form -->
+    <modifier key="harrower_melee" modpriority="100" icon="icon_b.tga"
+        casteffect="effects/cast2.effect"
+    >
+        <!-- On ability activation: -->
+        <onimpact>
+            <!-- Saving current max health and health percent to use later -->
+            <setvar0 a="source_maxhealth" /> 
+            <setvar1 a="source_health_percent" /> 
 
-	<onimpact>
-		<setactivemodifierkey name="harrower_melee" />
-		
-		<!-- save old max health -->
-		<setvar0 a="source_maxhealth" /> 
-		<setvar1 a="source_health_percent" /> 
-		
-		<applystate name="State_Harrower_Ability4" duration="-1" target="source_entity" proxy="this_entity" />
-		
-		<getconstant name="maxhp" />
-		<setvar0 a="var0" b="result" op="add" /> 
-		<setvar0 a="var0" b="var1" op="mult" /> 
+            <!-- Expire state to remove bonuses and change us back to normal -->
+            <expirestate name="State_Harrower_Ability4" target="source_entity"/>
+            
+            <!-- Keeping health percent the same despite max health changing -->
+            <getconstant name="maxhp" />
+            <setvar0 a="var0" b="result" op="sub" /> 
+            <setvar0 a="var0" b="var1" op="mult" /> 
+            <setvalue source="this_entity" name="source_health" a="var0" />
+        </onimpact>
 
-		<setvalue source="this_entity" name="source_health" a="var0" />
-	</onimpact>
-	
-	<modifier key="harrower_melee" modpriority="100" icon="icon_b.tga"
-		casteffect="effects/cast2.effect"
-	>
-		<onimpact>
-			<setvar0 a="source_maxhealth" /> 
-			<setvar1 a="source_health_percent" /> 
-		
-			<expirestate name="State_Harrower_Ability4" target="source_entity"/>
-			
-			<getconstant name="maxhp" />
-			<setvar0 a="var0" b="result" op="sub" /> 
-			<setvar0 a="var0" b="var1" op="mult" /> 
-
-			<setvalue source="this_entity" name="source_health" a="var0" />
-		</onimpact>
-		
-		<onupgrade>
-			<!-- save old max health --> 
-			<setvar0 a="source_maxhealth" /> 
-			<setvar1 a="source_health_percent" /> 
-			
-			<applystate name="State_Harrower_Ability4" duration="-1" target="source_entity" proxy="this_entity" />
-			
-			<getconstant name="maxhp" />
-			<setvar0 a="var0" b="result" op="add" /> 
-			<setvar0 a="var0" b="var1" op="mult" /> 
-
-			<setvalue source="this_entity" name="source_health" a="var0" />
-		</onupgrade>
-	</modifier>
-	
+        <!-- On ability upgrade we need to adjust bonuses if we are in beast form -->
+        <onupgrade>
+            <!-- Saving current max health and health percent to use later -->
+            <setvar0 a="source_maxhealth" /> 
+            <setvar1 a="source_health_percent" /> 
+            
+            <!-- Re-applying state. It grants bonuses and also changes us back to normal when we use ability again -->
+            <applystate name="State_Harrower_Ability4" duration="-1" target="source_entity" proxy="this_entity" />
+            
+            <!-- Keeping health percent the same despite max health changing -->
+            <getconstant name="maxhp" />
+            <setvar0 a="var0" b="result" op="add" /> 
+            <setvar0 a="var0" b="var1" op="mult" /> 
+            <setvalue source="this_entity" name="source_health" a="var0" />
+        </onupgrade>
+    </modifier>
+    
 </ability>
