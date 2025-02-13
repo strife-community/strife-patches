@@ -1309,7 +1309,7 @@ Hero_Waterbender_description                                                 Nin
 
 // Ability_Minerva1
 Ability_Minerva1_name                                                        Ciber Acecho
-Ability_Minerva1_description                                                 Apunta a una unidad para tirarse detrás de ella, lo que causa ^o$damage$ de daño mágico^* y gana $attackspeed$ de velocidad de ataque y 15 de velocidad de movimiento durante 6 segundos.
+Ability_Minerva1_description                                                 Apunta a una unidad para tirarse detrás de ella, lo que causa ^o$damage$ de daño mágico^* y gana $attackspeed$ de velocidad de ataque y $movespeed$ de velocidad de movimiento durante 6 segundos.
 Ability_Minerva1_description_simple                                          lanzamiento que daña y otorga velocidad de ataque
 
 // State_Minerva_Ability1_Buff

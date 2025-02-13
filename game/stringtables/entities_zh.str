@@ -1586,7 +1586,7 @@ Hero_Malady_lore												Malady is a ruthless sky queen from a floating realm
 
 // Ability_Minerva1
 Ability_Minerva1_name												佐罗之剑
-Ability_Minerva1_description												密涅瓦冲向目标身后，对其造成^o$damage$魔法伤害^*，增加$attackspeed$攻击速度和15移动速度，持续6秒。	 
+Ability_Minerva1_description												密涅瓦冲向目标身后，对其造成^o$damage$魔法伤害^*，增加$attackspeed$攻击速度和$movespeed$移动速度，持续6秒。	 
 Ability_Minerva1_description_simple												造成魔法伤害且增加攻击速度
 
 // State_Minerva_Ability1_Buff
