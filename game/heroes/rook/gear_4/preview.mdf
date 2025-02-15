@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high_3.model" type="K2" >
+	
+	<skin name="black">		<reference mesh="Box001" material="material_black.material"/>	</skin>
+	<skin name="pink">		<reference mesh="Box001" material="material_pink.material"/>	</skin>
+	<skin name="pharoh">	<reference mesh="Box001" material="material_pharoh.material"/>	</skin>
+	<skin name="red">		<reference mesh="Box001" material="material_red.material"/>		</skin>
+	<skin name="legion">	<reference mesh="Box001" material="material_legion.material"/>	</skin>
+	<skin name="hunter">	<reference mesh="Box001" material="material_ranger.material"/>	</skin>
+
+	<anim name="idle" clip="clips/emote_1.clip" blendtime="100" fps="30" loop="true"/>
+	
+	
+</model>
