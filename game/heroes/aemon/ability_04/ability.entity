@@ -18,7 +18,7 @@
     inheritmovement="true"
 
     manacost="75"
-    cooldowntime="10000,8000,6000"
+    cooldowntime="16000,14000,12000"
 
     targetradius="350"
     targetmaterial="/shared/materials/area_cast_indicator_simple.material"
@@ -27,9 +27,9 @@
 
 >
     <!-- Damage dealt in AoE on activation -->
-    <constant name="damage" value="75,100,125" adjustment="ability" />
+    <constant name="damage" value="100,125,150" adjustment="ability" />
     <!-- Damage returned to attacker -->
-    <constant name="back_attack" value="15,25,35" adjustment="ability" />
+    <constant name="back_attack" value="20,35,50" adjustment="ability" />
     <!-- Damage reduction for charge -->
     <!--TODO: since scaledamage can't take variable as attributes, this is for tooltip only for now-->
     <constant name="damage_reduction_percent" value="25" adjustment="none" noshowintooltip="true" />
