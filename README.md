@@ -19,3 +19,5 @@ In the Strife installation folder, you can find the 'game' directory. Inside, th
 
 ## How to Contribute
 If you are ready to contribute, you can either pack the changed files into a new _resourcesXXX.s2z_ archive and share it with us on our [Discord server](https://discord.gg/KuC7ufnRnU), or (if you are familiar with how Git works) create a fork from the "dev" branch and submit a pull request to the "dev" branch.
+
+If you choose to create a pull request and you make changes to files that were not added to repository yet (original file from resources0.s2z is used), please, add an original file in separate commit before applying changes. This serves two goals: it makes review easier for us and keeps history of changes.
