@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Aemon_Ability1_Debuff"
+
+	icon="icon.tga"
+	passiveeffect=""
+
+	modifierkey="Aemon_Ability1_Debuff"
+	
+	impactinterval="1000"
+>
+	
+	<onimpact>
+		<cantarget targetscheme="enemy_units" >
+		</cantarget>
+		<cantarget targetscheme="enemy_buildings" >
+		</cantarget>
+	</onimpact>
+	
+	
+</state>

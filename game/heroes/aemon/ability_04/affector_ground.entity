@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Aemon_Ability4_Ground"
+
+	radius="2500"
+	targetselection="all"
+	targetscheme="own_gadgets"
+	effecttype="Physical"
+	maximpactspertarget="1"
+>
+
+	<onimpact>
+		<playeffect effect="effects/aoe_impact_small.effect" source="target_entity" occlude="true" />
+	</onimpact>
+	
+</affector>
