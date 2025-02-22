@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Aemon_Ability1_Attack"
+
+	radius="99999"
+	targetselection="all"
+	targetscheme="enemy_units_and_buildings"
+	effecttype="Physical"
+	maximpactspertarget="1"
+>
+
+	<onimpact>
+		<hasmodifier entity="target_entity" name="Aemon_Ability1_Debuff">
+		
+			<cantarget targetscheme="enemy_units" >
+				<getconstant name="damage" adjustmentsource="this_entity" />
+				<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+				<playeffect effect="effects/enemy.effect" source="target_entity" occlude="true" />
+			</cantarget>
+			
+			<cantarget targetscheme="enemy_buildings" >
+				<getconstant name="damage" adjustmentsource="this_entity" />
+				<damage effecttype="Magic Splash" amount="0.5" b="result" op="mult" />
+			</cantarget>
+		</hasmodifier>
+	</onimpact>
+	
+</affector>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Aemon1"
+
+	icon="icon.tga"
+	
+	statuseffecttooltip="State_Aemon_Ability1_Debuff"
+	anim="ability_1"
+	casttime="350"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetscheme="all_units"
+	
+	targetradius="350"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	
+	range="650"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	manacost="75"
+	cooldowntime="18000,16000,14000,12000"
+	showrangeandradiusintooltip="true"
+	
+>
+
+	<!--tooltip only -->
+	<constant name="damage" value="10,20,30,40" adjustment="ability" />
+	
+	<onimpact>
+		<spawnunit name="Gadget_Aemon_Ability1" target="target_position" offset="0 0 0" maxactive="1" proxy="this_entity" />
+		<playeffect effect="effects/sound.effect" />
+		<propareaeffect center="target_position" radius="350" anim="flamehit" />		
+		<areaofeffect
+			radius="350"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>	
+			<recordheroaggression  />
+			<aggression />
+		</areaofeffect>
+	</onimpact>
+	
+	<onattackdamageevent>
+		<targettype target="source_entity" type="illusion" />
+		<else>
+			<damagesupertype supertype="attack">
+					<spawnaffector name="Affector_Aemon_Ability1_Attack" target="target_position" proxy="target_entity" param="damage_attempted" />
+			</damagesupertype>
+		</else>
+	</onattackdamageevent>
+	
+
+</ability>
