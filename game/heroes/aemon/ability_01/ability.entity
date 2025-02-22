@@ -4,7 +4,6 @@
 
     icon="icon.tga"
     
-    statuseffecttooltip="State_Aemon_Ability1_Debuff"
     anim="ability_1"
     casttime="350"
     castactiontime="300"

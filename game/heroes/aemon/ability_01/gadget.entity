@@ -41,9 +41,7 @@
     
     hazardradius="400"
 >
-    <!-- Auras to determine targets in consecrated area -->
-    <!-- TODO: won't be required any longer after rework? -->
-    <aura state="State_Aemon_Ability1_Debuff" radius="350" targetscheme="enemy_units_and_buildings" effecttype="Magic" /> 
+    <!-- Auras to determine allies in consecrated area -->
     <aura state="State_Aemon_Ability1_Buff" radius="350" targetscheme="ally_heroes" effecttype="Magic" /> 
     
     <!-- On spawn: play effects for players -->
