@@ -29,14 +29,15 @@
     
     showrangeandradiusintooltip="true"
 >
-
+    <!-- This is TOOLTIP ONLY for now. Source code doesn't allow putting constants into 'maxactive' attribute. -->
+    <!-- Used value is in 'Pet_Malph_Ability4' spawnunit's attribute below -->
     <constant name="malph_max_holes" value="2,3,4" adjustment="none" />
     
     <onimpact>
         <setpos0 position="source_entity" positionend="target_position" positionmodifier="pointonline" positionvalue="200" />
         <printdebuginfo />
-        <getconstant name="malph_max_holes" />
-        <spawnunit name="Pet_Malph_Ability4" count="1" maxactive="result" target="pos0" pushentity="true" proxy="source_entity" />
+        <!--getconstant name="malph_max_holes" /-->
+        <spawnunit name="Pet_Malph_Ability4" count="1" maxactive="2,3,4" target="pos0" pushentity="true" proxy="source_entity" />
     </onimpact>
 
     <modifier key="Malph_underground" casteffect="effects/exit.effect" modpriority="100" targetradius="0" showareacast="false" range="999999" ignorecooldown="true" cooldowntime="0" casttime="0" castactiontime="0" anim="anim_exit" icon="iconb.tga" >
