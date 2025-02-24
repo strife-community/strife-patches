@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creep
+	name="Creep_LegionSiege"
+
+	ignoreteamattackcommands="true"
+	ignoreteammovecommands="true"
+	
+	icon="icons/siege.tga"
+	portrait="icons/siege.tga"
+	model="model.mdf"
+	skin=""
+	gibanim="death_gib_1"
+	deniedanim="death_deny_1"
+	
+	
+	rewardsoundself="receivedgold"
+	rewardsoundteam="seeteamgold"
+	rewardsoundenemy="seeenemygold"  
+	
+	spawneffect="/shared/effects/spawn/spawn.effect"
+	aggrosound="creepaggro"
+  
+	preglobalscale="2.5"
+	modelscale=".9"
+	effectscale=".825"
+	boundsheight="80"
+	searchheight="80"
+	boundsradius="24"
+	collisionradius="12"
+	searchradius="64"
+	minsearchradius="48"
+	selectionradius="76"
+	targetoffset="0 0 32"
+
+	movespeed="300"
+	turnrate="200"
+	noallyheroblock="true"
+
+	maxhealth="880"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	resistance="0"
+	
+
+	cancarryitems="false"
+
+	attackduration="1000"
+	attackactiontime="150"
+	attackcooldown="2700"
+	attackdamagemin="42"
+	attackdamagemax="42"
+	attacknumanims="1"
+	attackoffset="50 0 70"
+	attackprojectile="Projectile_SiegeCreepAttack"
+	attackrange="600"
+	attackstarteffect=""
+	attackactioneffect="effects/onattackaction_right.effect"
+	attackimpacteffect="effects/sound.effect"
+	attacktype="ranged"
+	combattype="Siege2"
+	attacktargetscheme="attack_minus_neutrals"
+	leashaggroscheme="enemy_creeps_and_buildings"
+	attackdamagetype="AttackDamage"
+
+	aggrorange="800"
+	sightrangeday="1000"
+	sightrangenight="1000"
+
+	experiencebounty="64"
+	goldbountymin="0"
+	goldbountymax="0"
+	splitgoldbounty="0"
+
+	maxdivisiblebountyperplayer="60"
+	totaldivisiblebounty="120"
+	
+	
+	corpsetime="500"
+	corpsefadetime="1000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	tiltfactor="1.0"
+	tiltspeed="90.0"
+	
+	maxhealthpercharge="18"
+	attackdamageminpercharge="2.352"
+	attackdamagemaxpercharge="2.352"
+	
+	unittype="SiegeCreep"
+	
+	shadowsize="128"
+	shadowwidth="128"
+	shadowheight="128"
+	
+	showinpractice="true"
+>
+	<onspawn>
+		
+		<areaofeffect
+			radius="2050"
+			targetselection="closest"
+			maxtotalimpacts="1"
+			targetscheme="any_marker"
+			effecttype=""
+			ignoreinvulnerable="true"
+			target_position="source_position"
+		>
+			<areaofeffect
+				radius="500"
+				targetselection="closest"
+				maxtotalimpacts="1"
+				targetscheme="ally_rax"
+				effecttype=""
+				ignoreinvulnerable="true"
+				center="target_entity"
+			>
+			</areaofeffect>
+			<compare a="result" b="0" op="gt">
+				<teleport source="source_entity" positionorigin="target_position" interpolate="false" />
+			</compare>			
+		</areaofeffect>
+	</onspawn>
+
+	
+	<ondamaged>
+		<currentdamageeffecttype effecttype="Splash">
+			<scaledamage scale="0.8" />
+		</currentdamageeffecttype>
+	</ondamaged>
+
+	<onattackeddamageevent >
+		<targettype type="hero">
+			<damagesupertype supertype="attack">
+				<playeffect effect="effects/attacked.effect" target="source_entity" />
+			</damagesupertype>
+		</targettype>
+	</onattackeddamageevent>
+	
+
+	<modifier key="casual" modpriority="100"
+		goldbountymin="50"
+		goldbountymax="68"
+	/>
+
+	<modifier key="grimmscrossingmod" modpriority="100"
+		attacktargetscheme="attack_minus_neutrals"
+	/>
+	
+	<modifier key="promote_brawler" modpriority="110"
+		modelscale="1"
+		unittype="MeleeCreep PromotedCreep"
+		model="siege_pusher/model.mdf"
+		attackprojectile="Projectile_SiegeCreepAttack_Pusher"
+		attackstarteffect="effects/promote_attack.effect"
+		
+	/>
+
+	<modifier key="tutorialmod" modpriority="100" movespeed="350">
+		<ondamaged/>
+	</modifier>
+</creep>
