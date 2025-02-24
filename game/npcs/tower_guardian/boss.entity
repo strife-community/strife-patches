@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neutralboss
+	name="Neutral_BossPowerUp"
+	
+	showinpractice="true"
+	
+	icon="/npcs/Baldir_2/icon.tga"
+	portrait="/npcs/Baldir_2/icon_circle.tga"
+	model="/npcs/Baldir_2/model.mdf"
+	skin=""
+	
+	passiveeffect="/npcs/Baldir_2/effects/body.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	drawonmap="false"
+	
+	preglobalscale=".9"
+	modelscale="1.6"
+	effectscale="1.6"
+	boundsheight="198"
+	radiusheight="198"
+	boundsradius="48"
+	selectionradius="96"
+	targetoffset="0 0 100"
+	searchheight="175"
+	searchradius="90"
+	minsearchradius="64"
+
+	cutouticon="icon_baldir.tga"
+
+	movespeed="270"
+	turnrate="320"
+	unitwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+	buildingwalking="true"
+
+	immobilized="true"
+	
+	infoheight="400"
+
+	maxhealth="3000"
+	maxhealthperlevel="0"
+	healthregen="0"
+	healthproportionregen="0"
+	maxmana="0"
+	manaregen="10"
+
+	resistance="50"
+	immunity="BossImmunity"
+
+	cancarryitems="false"
+	inventory0="Ability_TowerGuardian3"
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+	
+	ismobile="1"
+	
+
+	attackduration="1200"
+	attackactiontime="370"
+	attackcooldown="1200"
+	attacktargetscheme="everything_but_towers"
+	attackdamagemin="62"
+	attackdamagemax="62"
+	attacknumanims="2"
+	attackoffset="00 120 200"
+	attackprojectile="Projectile_BossPowerUpAttack"
+	attackrange="800"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	attackdamagetype="AttackDamage"
+
+	largeunit="true"
+	aggrorange="0"
+	sightrangeday="1400"
+	sightrangenight="1400"
+	
+	experiencebounty="450"
+	goldbountymin="1150"
+	goldbountymax="1150"
+	goldbountyteam="0"
+	goldbountyconsolation="0"
+	goldbountypercentsplit="0.2,0.4,0.6,0.8,1.0"
+	
+	corpsetime="5000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	unittype="Boss Boss2"
+	
+	aggroscheme="neutral_aggro"
+	proximityscheme="neutral_aggro" 
+>
+
+	<onkilled>
+		<compare a="target_team" b="1" op="eq">
+			<spawnunit name="Gadget_TowerMaster_Vision" target="source_position" team="2" fixedposition="true" />
+			<setent0 name="good_well" />
+			<applystate name="State_BaldirTeam1_DharkwaveSpawn" target="ent0" continuous="true" />
+		</compare>
+
+
+		<compare a="target_team" b="2" op="eq">
+			<spawnunit name="Gadget_TowerMaster_Vision" target="source_position" team="1" fixedposition="true" />
+			<setent0 name="bad_well" />
+			<applystate name="State_BaldirTeam2_DharkwaveSpawn" target="ent0" continuous="true" />
+		</compare>	
+
+		<delete target="proxy_entity" />
+		<setproxy target="target_entity" />
+	</onkilled>
+
+	<onattackedpreimpact>
+		<condition test="not_hasstate State_TowerMaster_CanAttack" target="target_entity">
+			<negate />
+			<popup name="miss2" source="source_entity" target="target_entity" />
+		</condition>
+	</onattackedpreimpact>
+	
+	
+	<ondamaged>		
+		<condition test="not_hasstate State_TowerMaster_CanAttack" target="target_entity">
+			<scaledamage scale="0" />
+		</condition>
+		<areaofeffect
+			radius="700"
+			targetselection="all"
+			targetscheme="all_heroes"
+		>
+			<playconductorevent name="Guardian" entity="target_entity" />
+		</areaofeffect>
+	</ondamaged>
+	
+	<onspawn>
+		<applystate name="State_BossPowerUp_Scaling" duration="-1"/>
+		<setpos0 position="source_position" offset="0 100 0" offsetspace="source_entity" />
+		<spawnunit name="Gadget_TowerMaster_SpawnZone2" target="pos0" duration="-1" fixedposition="true" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" />
+		<setaccumulator value="0" />
+	</onspawn>
+	
+	<onframe>
+		<setvar0 a="source_maxhealth" b="0.9" op="mult" />
+		<compare a="source_health" b="var0" op="lt" >
+			<compare a="accumulator" b="1" op="lt" >
+				<!--<playeffect effect="effects/talk.effect" source="source_entity" target="source_entity" occlue="true"/>-->
+				<setaccumulator value="1" />
+				<playsound name="testbaldir" />
+			</compare>
+		</compare>
+	</onframe>
+	
+</neutralboss>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neutralboss
+	name="Neutral_TowerMaster"
+	
+	icon="/npcs/cindara/icon.tga"
+	portrait="icon.tga"
+	model="../cindara/model.mdf"
+	skin=""
+	
+	passiveeffect="../cindara/effects/body.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+
+	drawonmap="false"
+	
+	preglobalscale="1"
+	modelscale="1.5"
+	effectscale="1"
+	boundsheight="198"
+	radiusheight="198"
+	boundsradius="48"
+	selectionradius="96"
+	targetoffset="0 0 100"
+	searchheight="175"
+	searchradius="90"
+	minsearchradius="64"
+
+	cutouticon="icon_cindara.tga"
+
+	immobilized="true"
+
+	movespeed="270"
+	turnrate="320"
+	unitwalking="true"
+	treewalking="true"
+	cliffwalking="true"
+	buildingwalking="true"
+	
+	infoheight="425"
+
+	maxhealth="7000"
+	maxhealthperlevel="0"
+	healthregen="0"
+	healthproportionregen="0"
+	maxmana="0"
+	manaregen="10"
+
+	resistance="50"
+	immunity="BossImmunity"
+	ismobile="1"
+	
+
+	cancarryitems="false"
+	inventory0="Ability_TowerMaster3"
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1000"
+	attackactiontime="300"
+	attackcooldown="1000"
+	attacktargetscheme="everything_but_towers"
+	attackdamagemin="72"
+	attackdamagemax="72"
+	attacknumanims="2"
+	attackoffset="20 175 245"
+	attackprojectile="Projectile_TowerMasterAttack"
+	attackrange="800"
+	attackstarteffect="../cindara/effects/attackaction.effect"
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	attackdamagetype="AttackDamage"
+
+	largeunit="true"
+	aggrorange="0"
+	sightrangeday="1400"
+	sightrangenight="1400"
+	
+	experiencebounty="850"
+	goldbountymin="1500"
+	goldbountymax="1500"
+	goldbountyteam="0"
+	goldbountyconsolation="0"
+	goldbountypercentsplit="0.2,0.4,0.6,0.8,1.0"	
+
+	
+	corpsetime="10000"
+	corpsefadetime="3900"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	unittype="Boss Boss2"
+	
+	aggroscheme="neutral_aggro"
+	proximityscheme="neutral_aggro" 
+>
+	<onkilled>
+		<compare a="target_team" b="1" op="eq">
+			<spawnunit name="Gadget_TowerMaster_Vision" target="source_position" team="2" fixedposition="true" pushentity="true"/>
+			<setaccumulator entity="stack_entity" value="1" />
+			<checkrax name="middle" target="target_entity" />
+			<compare a="result" b="1" op="eq">
+				<pushentitysearch global="true" targetscheme="ally_well" source="target_entity" ignoreinvulnerable="true" />
+				<setproxy target="stack_entity" />
+				<pushentitybyname name="good_creep2" />
+				<areaofeffect
+					radius="2050"
+					targetselection="closest"
+					maxtotalimpacts="1"
+					targetscheme="any_marker"
+					source="target_entity"
+					effecttype=""
+					ignoreinvulnerable="true"
+					center="stack_entity"
+				>
+					<spawnunit name="Marker_KongorSpawn" target="target_position" facing="this_proxy_entity" angle="180" pushentity="true" team="1" />	
+				</areaofeffect>		
+			</compare>
+			<else>
+				<checkrax name="bottom" />
+				<compare a="result" b="1" op="eq">
+					<pushentitysearch global="true" targetscheme="ally_well" source="target_entity" ignoreinvulnerable="true" />
+					<setproxy target="stack_entity" />
+					<pushentitybyname name="good_creep3" />
+					<areaofeffect
+						radius="2050"
+						targetselection="closest"
+						maxtotalimpacts="1"
+						targetscheme="any_marker"
+						source="target_entity"
+						effecttype=""
+						ignoreinvulnerable="true"
+						center="stack_entity"
+					>
+						<spawnunit name="Marker_KongorSpawn" target="target_position" facing="this_proxy_entity" angle="180" pushentity="true" team="1" />	
+					</areaofeffect>		
+				</compare>
+				<else>
+					<checkrax name="top" />
+					<compare a="result" b="1" op="eq">
+						<pushentitysearch global="true" targetscheme="ally_well" source="target_entity" ignoreinvulnerable="true" />
+						<setproxy target="stack_entity" />
+						<pushentitybyname name="good_creep1" />
+						<areaofeffect
+							radius="2050"
+							targetselection="closest"
+							maxtotalimpacts="1"
+							targetscheme="any_marker"
+							source="target_entity"
+							effecttype=""
+							ignoreinvulnerable="true"
+							center="stack_entity"
+						>
+							<spawnunit name="Marker_KongorSpawn" target="target_position" facing="this_proxy_entity" angle="180" pushentity="true" team="1" />	
+						</areaofeffect>		
+					</compare>
+					<else>
+						<pushentitysearch global="true" targetscheme="ally_well" source="target_entity" ignoreinvulnerable="true" />
+						<setproxy target="stack_entity" />
+						<pushentitybyname name="good_creep2" />
+						<areaofeffect
+							radius="2050"
+							targetselection="closest"
+							maxtotalimpacts="1"
+							targetscheme="any_marker"
+							source="target_entity"
+							effecttype=""
+							ignoreinvulnerable="true"
+							center="stack_entity"
+						>
+							<spawnunit name="Marker_KongorSpawn" target="target_position" facing="this_proxy_entity" angle="180" pushentity="true" team="1" />	
+						</areaofeffect>		
+					</else>
+				</else>
+			</else>
+		</compare>
+
+		<compare a="target_team" b="2" op="eq">
+			<spawnunit name="Gadget_TowerMaster_Vision" target="source_position" team="1" fixedposition="true" pushentity="true"/>
+			<setaccumulator entity="stack_entity" value="1" />
+			<checkrax name="middle" target="target_entity" />
+			<compare a="result" b="1" op="eq">
+				<pushentitysearch global="true" targetscheme="ally_well" source="target_entity" ignoreinvulnerable="true" />
+				<setproxy target="stack_entity" />
+				<pushentitybyname name="bad_creep2" />
+				<areaofeffect
+					radius="2050"
+					targetselection="closest"
+					maxtotalimpacts="1"
+					targetscheme="any_marker"
+					source="target_entity"
+					effecttype=""
+					ignoreinvulnerable="true"
+					center="stack_entity"
+				>
+					<spawnunit name="Marker_KongorSpawn" target="target_position" facing="this_proxy_entity" angle="180" pushentity="true" team="2" />	
+				</areaofeffect>			
+			</compare>
+			<else>
+				<checkrax name="bottom" />
+				<compare a="result" b="1" op="eq">
+					<pushentitysearch global="true" targetscheme="ally_well" source="target_entity" ignoreinvulnerable="true" />
+					<setproxy target="stack_entity" />
+					<pushentitybyname name="bad_creep3" />
+					<areaofeffect
+						radius="2050"
+						targetselection="closest"
+						maxtotalimpacts="1"
+						targetscheme="any_marker"
+						source="target_entity"
+						effecttype=""
+						ignoreinvulnerable="true"
+						center="stack_entity"
+					>
+						<spawnunit name="Marker_KongorSpawn" target="target_position" facing="this_proxy_entity" angle="180" pushentity="true" team="2" />	
+					</areaofeffect>		
+				</compare>
+				<else>
+					<checkrax name="top" />
+					<compare a="result" b="1" op="eq">
+						<pushentitysearch global="true" targetscheme="ally_well" source="target_entity" ignoreinvulnerable="true" />
+						<setproxy target="stack_entity" />
+						<pushentitybyname name="bad_creep1" />
+						<areaofeffect
+							radius="2050"
+							targetselection="closest"
+							maxtotalimpacts="1"
+							targetscheme="any_marker"
+							source="target_entity"
+							effecttype=""
+							ignoreinvulnerable="true"
+							center="stack_entity"
+						>
+							<spawnunit name="Marker_KongorSpawn" target="target_position" facing="this_proxy_entity" angle="180" pushentity="true" team="2" />	
+						</areaofeffect>		
+					</compare>
+					<else>
+						<pushentitysearch global="true" targetscheme="ally_well" source="target_entity" ignoreinvulnerable="true" />
+						<setproxy target="stack_entity" />
+						<pushentitybyname name="bad_creep2" />
+						<areaofeffect
+							radius="2050"
+							targetselection="closest"
+							maxtotalimpacts="1"
+							targetscheme="any_marker"
+							source="target_entity"
+							effecttype=""
+							ignoreinvulnerable="true"
+							center="stack_entity"
+						>
+							<spawnunit name="Marker_KongorSpawn" target="target_position" facing="this_proxy_entity" angle="180" pushentity="true" team="2" />	
+						</areaofeffect>		
+					</else>
+				</else>
+			</else>
+		</compare>	
+
+		<delete target="proxy_entity" />
+		
+		<cantarget targetscheme="all_heroes_dead_alive">
+			<pushentitysearch global="true" targetscheme="ally_well_krytos_structure" source="target_entity" ignoreinvulnerable="true" />	
+			<applystate name="State_Kongor_Timeoutspawn" duration="45050" target="stack_entity" proxy="target_entity" />
+		</cantarget>
+		<else>
+			<pushentitysearch global="true" targetscheme="ally_well_krytos_structure" source="target_entity" ignoreinvulnerable="true" />	
+			<applystate name="State_Kongor_Timeoutspawn" duration="45050" target="stack_entity" proxy="target_owner_entity" />
+		</else>
+		
+
+		<areaofeffect
+			radius="2000"
+			targetselection="closest"
+			targetscheme="Kongor_Chained"
+			ignoreinvulnerable="true"
+			maxtotalimpacts="1"
+			effecttype=""
+		>
+			<spawnunit name="Gadget_Propplacement_Respawn" target="target_position" fixedposition="true" />
+			<kill />
+		</areaofeffect>
+	</onkilled>
+
+	<onattackedpreimpact>
+		<condition test="not_hasstate State_TowerMaster_CanAttack" target="target_entity">
+			<negate />
+			<popup name="miss2" source="source_entity" target="target_entity" />
+		</condition>
+	</onattackedpreimpact>
+	
+	<ondamaged>
+		<condition test="not_hasstate State_TowerMaster_CanAttack" target="target_entity">
+			<scaledamage scale="0" />
+		</condition>
+		<compare a="accumulator" b="2" op="eq" >
+			<setaccumulator value="0" />
+		</compare>
+		<areaofeffect
+			radius="700"
+			targetselection="all"
+			targetscheme="all_heroes"
+		>
+			<playconductorevent name="Guardian" entity="target_entity" />
+		</areaofeffect>
+	</ondamaged>
+	
+	<onspawn>
+		<setaccumulator value="2" />
+		<applystate name="State_TowerMaster" duration="-1"/>
+		<setpos0 position="source_position" offset="0 100 0" offsetspace="source_entity" />
+		<spawnunit name="Gadget_TowerMaster_SpawnZone2" target="pos0" duration="-1" fixedposition="true" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" />
+		<areaofeffect
+			radius="2000"
+			targetselection="closest"
+			targetscheme="Kongor_Chained"
+			ignoreinvulnerable="true"
+			maxtotalimpacts="1"
+			effecttype=""
+		>
+			<spawnunit name="Creep_Kongor_Chained" target="target_position" fixedposition="true" facing="source_entity" />
+			<delete />
+		</areaofeffect>
+	</onspawn>
+	
+	<onframe>
+		<setvar0 a="source_maxhealth" b="0.9" op="mult" />
+		<compare a="source_health" b="var0" op="lt" >
+			<compare a="accumulator" b="1" op="lt" >
+				<playeffect effect="effects/talk.effect" source="source_entity" target="source_entity" occlue="true"/>
+				<setaccumulator value="1" />
+			</compare>
+		</compare>
+	</onframe>
+	
+	<modifier key="charged_up" modpriority="100"
+		attackprojectile="Projectile_TowerMasterAttack_ChargedUp"
+	/>
+</neutralboss>
