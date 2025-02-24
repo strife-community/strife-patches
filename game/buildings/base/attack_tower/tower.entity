@@ -38,7 +38,7 @@
 	selectionradius="115"
 	targetoffset="0 0 64"
 
-	maxhealth="6000,8000"
+	maxhealth="4600,6600"
 	healthregen="0"
 
 	resistance="300"
@@ -50,8 +50,8 @@
 	attackduration="1200,1200,1200,1200"
 	attackactiontime="100" 
 	attackcooldown="1200,1200,1200,1200"
-	attackdamagemin="250,350,350,350"
-	attackdamagemax="250,350,350,350"
+	attackdamagemin="190,290,290,290"
+	attackdamagemax="190,290,290,290"
 	attacknumanims="1"
 	attackoffset="0 125 350,0 200 350,100 130 240"
 	attackprojectile="Projectile_Cannon"
