@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building
+	name="Building_HellbourneTower"
+
+	icon="icon.tga,icon_2.tga"
+	portrait="icon.tga"
+	model="/world/sprops/towers/cannon/model.mdf,/world/sprops/towers/5_cannon/model.mdf"
+	mapicon="/shared/icons/minimap_tower.tga"
+	mapiconsize="0.03"
+	skin=""
+	showinpractice="true"
+	
+	ignoreteamattackcommands="true"
+	ignoreteammovecommands="true"
+	
+	effectsignorefog="true"
+	passiveeffect="effects/idle.effect"
+	lowhealtheffect="effects/damage.effect"
+	
+	aggroteamheropassiveeffect="/shared/tower_range_indicators/effects/attack_tower/aoe_1.effect,/shared/tower_range_indicators/effects/attack_tower/aoe.effect"
+	aggromyheropassiveeffect="/shared/tower_range_indicators/effects/attack_tower/aoe_aggroMe_1.effect,/shared/tower_range_indicators/effects/attack_tower/aoe_aggroMe.effect"
+	herothreatradiuspassiveeffect="/shared/tower_range_indicators/effects/attack_tower/aoe_1.effect,/shared/tower_range_indicators/effects/attack_tower/aoe.effect"
+	herothreatradius="1300"
+
+	cutouticon="icon_tower1.tga,icon_tower2.tga"
+	
+	destroyedsound=""
+	lowhealthsound=""
+	selectsound=""	
+	aggrosound="towertestaggro"	
+	
+	preglobalscale="1, 0.9, 1"
+	modelscale="1.0,1.2,1.2"
+	effectscale="1,1.2,1.2"
+	boundsheight="256"
+	radiusheight="256"
+	boundsradius="86"
+	selectionradius="115"
+	targetoffset="0 0 64"
+
+	maxhealth="6000,8000"
+	healthregen="0"
+
+	resistance="300"
+
+	canattack="true"
+	immunity="CrowdControlImmunity"
+	stunnedimmunity="true"
+	
+	attackduration="1200,1200,1200,1200"
+	attackactiontime="100" 
+	attackcooldown="1200,1200,1200,1200"
+	attackdamagemin="250,350,350,350"
+	attackdamagemax="250,350,350,350"
+	attacknumanims="1"
+	attackoffset="0 125 350,0 200 350,100 130 240"
+	attackprojectile="Projectile_Cannon"
+	attackrange="800"
+	attackstarteffect="effects/attack.effect"
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	attackdamagetype="AttackDamage"
+	combattype="Tower"
+	noheroarmorreduction="false,false,false,false"
+	attacktargetscheme="attack_minus_neutrals_plus_mines"
+
+	aggrorange="800"
+	sightrangeday="1600"
+	sightrangenight="1600"
+	revealrange="900"
+	revealtype="tower"
+	
+	goldbountymin="580,685"
+	goldbountymax="580,685"
+	goldbountyteam="0"
+	goldbountyconsolation="0"
+	goldbountypercentsplit="0.2,0.4,0.6,0.8,1.0"
+	unsharedexperiencebounty="150,200,250,250"
+	deadexperience="true"
+	globalexperience="true"
+	
+	hazardradius="850"
+	
+	corpsetime="0"
+	corpsefadetime="3900"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	unittype="Tower"
+	
+	turnrate="320"
+	ismobile="false"
+	canrotate="true"
+	
+	istower="true"
+	isphysical="true"
+	deathtime="0"
+>
+	<onspawn>
+		<spawnunit name="Building_HellbourneTower_Base" target="source_entity" count="1" pushentity="true" />
+		<setproxy target="stack_entity" />
+		<applystate name="State_TowerDamage" target="source_entity" proxy="stack_entity" duration="-1" />
+	</onspawn>
+
+	<ondamaged>
+		<areaofeffect
+			radius="1500"
+			targetselection="all"
+			targetscheme="all_heroes"
+		>
+			<playconductorevent name="TowerDamage" entity="target_entity" />
+		</areaofeffect>
+		<applystate name="State_Tower_Reveal" target="this_entity" source="inflictor_owner_entity" duration="3000" />
+	</ondamaged>
+
+	<ondeath>
+		<kill target="this_proxy_entity" source="" />
+		<areaofeffect
+			global="true"
+			targetselection="all"
+			targetscheme="ally_heroes_deadalive"
+		>
+			<playconductorevent name="OurTowerDestroyed" entity="target_entity" />
+		</areaofeffect>
+		<areaofeffect
+			global="true"
+			targetselection="all"
+			targetscheme="enemy_heroes_deadalive"
+		>
+			<playconductorevent name="EnemyTowerDestroyed" entity="target_entity" />
+		</areaofeffect>
+		<compare a="source_level" b="2" op="ge" >
+			<foreachplayer>
+				<playconductorevent name="Tencitement" />
+			</foreachplayer>
+		</compare>
+	</ondeath>
+
+	<onattackdamageevent >
+		<targettype type="hero">
+			<damagesupertype supertype="attack">
+				<playeffect effect="effects/attacked.effect" target="source_entity" />
+			</damagesupertype>
+		</targettype>
+	</onattackdamageevent>
+
+	<onattack>
+		<targettype type="hero">
+			<applystate name="State_TowerAttackSpeed" duration="2000" target="source_entity" />
+		</targettype>	
+	</onattack>
+	
+	
+	<aura state="State_TowerRegen" radius="800" targetscheme="ally_heroes" ignoreinvulnerable="true" />	
+	
+	<!--
+	<onattackstart>
+		<compare a="proxy_entity" b="source_entity" op="eq">
+			<targettype type="hero">
+				<playanim name="idle" target="source_entity"/>
+				<applystate name="State_TowerDisarm" target="source_entity" duration="500"/>
+			</targettype>
+		</compare>
+		<setproxy/>
+		<applystate name="State_TowerForget" target="source_entity" duration="1200"/>
+	</onattackstart>-->
+
+	<modifier key="krytos_disabled" modpriority="90"
+	>
+		<onframe>
+			<applystate name="State_Kongor_TowerDisarm2" target="this_proxy_entity" duration="100"/>
+		</onframe>
+	</modifier>
+
+	<modifier key="tutorial_hidden" modpriority="100"
+		isselectable="false"
+		sightrangeday="0"
+		sightrangenight="0"
+	>
+
+	</modifier>
+	
+	<modifier key="tutorial3" modpriority="100"
+		maxhealth="2000,3800"
+		healthregen="1,1.5"
+	>
+		<onattack>
+
+		</onattack>
+	</modifier>
+	
+	<modifier key="Tut3_Objective" modpriority="100"
+		unittype="Tower Tut3_Objective"
+	>
+
+	</modifier>
+	
+</building>
