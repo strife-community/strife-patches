@@ -41,7 +41,7 @@
 	
 	infoheight="400"
 
-	maxhealth="3000"
+	maxhealth="2300"
 	maxhealthperlevel="0"
 	healthregen="0"
 	healthproportionregen="0"
@@ -68,8 +68,8 @@
 	attackactiontime="370"
 	attackcooldown="1200"
 	attacktargetscheme="everything_but_towers"
-	attackdamagemin="62"
-	attackdamagemax="62"
+	attackdamagemin="48"
+	attackdamagemax="48"
 	attacknumanims="2"
 	attackoffset="00 120 200"
 	attackprojectile="Projectile_BossPowerUpAttack"
