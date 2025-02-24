@@ -103,7 +103,7 @@
 
 	movespeed="330"
 	
-	maxhealth="783,837,891,945,998,1053,1106,1159,1214,1267,1320,1375,1428,1482,1536"
+	maxhealth="602,656,710,764,817,872,925,978,1033,1086,1139,1194,1247,1301,1355"
 	maxhealthperlevel="0"
 	healthregen="1.8,1.92,2.04,2.16,2.28,2.4,2.52,2.64,2.76,2.88,3,3.12,3.24,3.36,3.48"
 	healthproportionregen="0"
@@ -131,7 +131,7 @@
 	inventory11="Ability_AutomatedCourier"
 
 
-	power="130"
+	power="100"
 	attackduration="500"
 	attackactiontime="200"
 	attackcooldown="1100"
