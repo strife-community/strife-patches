@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neutral
+	name="Neutral_Jungle_Small"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect="/shared/effects/spawn/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.98"
+	modelscale=".75"
+	effectscale=".75"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 54"
+	searchradius="70"
+	minsearchradius="48"
+	searchheight="112"
+
+	movespeed="300"
+	turnrate="320"
+
+	maxhealth="400"
+	healthregen="0.5"
+	maxmana="0"
+	manaregen="0"
+
+	resistance="0"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1000"
+	attackactiontime="600"
+	attackcooldown="1350"
+	attackdamagemin="16"
+	attackdamagemax="16"
+	attacknumanims="2"
+	attackoffset="21 95 90"
+	attackprojectile="Projectile_Jungle_SmallAttack"
+	attackrange="550"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="projectile/effects/impact.effect"
+	attacktype="ranged"
+	combattype="Neutral"
+	attackdamagetype="AttackDamage"
+	attacktargetscheme="player_controlled_units"
+
+	aggrorange="0"
+	sightrangeday="800"
+	sightrangenight="800"
+
+	experiencebounty="26"
+	goldbountymin="0"
+	goldbountymax="0"
+	splitgoldbounty="0"
+  
+	maxdivisiblebountyperplayer="20"
+	totaldivisiblebounty="40"
+	
+	 
+	
+	corpsetime="15000"
+	corpsefadetime="3900"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	aggroscheme="neutral_aggro"
+	proximityscheme="neutral_aggro"
+	
+	showinpractice="true"
+>
+	<onspawn>
+		<applystate name="State_NeutralScaling_Small" duration="-1"/>
+
+		<chance threshold="0.66">
+			<chance threshold="0.5">
+				<setactivemodifierkey name="variation1" />
+			</chance>
+			<else>
+				<setactivemodifierkey name="variation2" />
+			</else>
+		</chance>
+	</onspawn>
+	
+	<ondamaged>
+		<currentdamageeffecttype effecttype="Splash">
+			<scaledamage scale="0.85" />
+		</currentdamageeffecttype>
+	</ondamaged>
+
+	<modifier key="variation1" modpriority="100" modelscale="0.82" attackactiontime="675" model="variation_1/model.mdf"/>
+
+	<modifier key="variation2" modpriority="100" modelscale="0.89" attackactiontime="750" model="variation_2/model.mdf"/>
+
+	<modifier key="variation3" modpriority="100" modelscale="0.68" attackactiontime="525" model="variation_3/model.mdf"/>
+
+
+</neutral>

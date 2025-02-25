@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neutral
+	name="Neutral_Graveyard_Medium"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect="/shared/effects/spawn/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.2"
+	modelscale="1.1"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 54"
+	searchradius="70"
+	minsearchradius="48"
+	searchheight="112"
+
+	movespeed="300"
+	turnrate="320"
+
+	maxhealth="615"
+	healthregen="0.5"
+	maxmana="0"
+	manaregen="0"
+
+	resistance="0"
+
+	cancarryitems="false"
+	inventory0="Ability_Graveyard_Medium_Ability1"
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1000"
+	attackactiontime="535"
+	attackcooldown="1350"
+	attackdamagemin="38"
+	attackdamagemax="38"
+	attacknumanims="2"
+	attackoffset="0 100 130"
+	attackprojectile="Projectile_Graveyard_MediumAttack"
+	attackrange="550"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="/shared/sounds/impacts/impact_medium.effect"
+	attacktype="ranged"
+	combattype="Neutral"
+	attacktargetscheme="player_controlled_units"
+	attackdamagetype="AttackDamage"
+
+	aggrorange="0"
+	sightrangeday="800"
+	sightrangenight="800"
+
+	experiencebounty="58"
+	goldbountymin="0"
+	goldbountymax="0"
+	splitgoldbounty="0"
+  	
+	maxdivisiblebountyperplayer="30"
+	totaldivisiblebounty="60"	
+  
+	 
+	
+	corpsetime="1500"
+	corpsefadetime="3900"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	aggroscheme="neutral_aggro"
+	proximityscheme="neutral_aggro"
+	
+	showinpractice="true"	
+>
+	<onspawn>
+		<applystate name="State_NeutralScaling_Medium" duration="-1"/>
+
+		<chance threshold="0.75">
+			<chance threshold="0.66">
+				<chance threshold="0.5">
+					<setactivemodifierkey name="variation1" />
+				</chance>
+				<else>
+					<setactivemodifierkey name="variation2" />
+				</else>
+			</chance>
+			<else>
+				<setactivemodifierkey name="variation3" />
+			</else>
+		</chance>
+	</onspawn>
+
+	<onattackdamageevent>
+		<chance threshold="0.4">
+			<useability target="target_position" slot="0"/>
+		</chance>
+	</onattackdamageevent>
+	
+	<ondamaged>
+		<currentdamageeffecttype effecttype="Splash">
+			<scaledamage scale="0.85" />
+		</currentdamageeffecttype>
+	</ondamaged>
+
+	<!--Needs updated scale-->
+	<modifier key="variation1" modpriority="100" modelscale="1.18" attackactiontime="625" model="variation_1/model.mdf"/>
+
+	<modifier key="variation2" modpriority="100" modelscale="1.0" attackactiontime="450" model="variation_2/model.mdf"/>
+
+	<modifier key="variation3" modpriority="100" modelscale="1.26" attackactiontime="700" model="variation_3/model.mdf"/>
+
+</neutral>
