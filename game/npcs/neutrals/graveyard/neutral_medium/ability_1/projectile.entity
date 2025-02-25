@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Graveyard_Medium_Ability1"
+
+	speed="900"
+	gravity="0"
+
+	modelscale="2.5"
+	model="/shared/models/invis.mdf"
+
+	effectscale="1.0"
+	traileffect="effects/trail.effect"
+	
+	canturn="false"
+	flying="true"
+	flyheight="50"
+	
+	touchradius="150"
+	touchpropradius="120"
+	touchpropanim="hit"
+	hazardradius="300"
+	hazardoffset="150"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic Splash"
+	touchradiusdiradjust="true"
+	
+	lifetime="-1"
+>
+	<ontouch>	
+		<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />	
+
+		<getconstant name="damage" adjustmentsource="this_entity" />
+		<damage effecttype="Magic Splash" amount="1" b="result" op="mult"/>
+	</ontouch>
+
+</projectile>
