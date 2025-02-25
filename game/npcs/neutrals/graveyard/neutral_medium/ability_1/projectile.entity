@@ -30,8 +30,7 @@
 	<ontouch>	
 		<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />	
 
-		<getconstant name="damage" adjustmentsource="this_entity" />
-		<damage effecttype="Magic Splash" amount="1" b="result" op="mult"/>
+		<damage effecttype="Magic Splash" amount="1" b="param" op="mult"/>
 	</ontouch>
 
 </projectile>
