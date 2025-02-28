@@ -61,7 +61,7 @@
         <!-- AoE damage around Aemon -->
         <areaofeffect
             radius="350"
-            targetselection="closest"
+            targetselection="all"
             targetscheme="enemy_units_and_buildings"
             maxtotalimpacts="-1"
             maximpactspertarget="1"
@@ -70,15 +70,26 @@
             <recordheroaggression  />
             <aggression />
 
-            <!-- Dealing damage enemies -->
+            <!-- Dealing damage to enemies -->
             <getconstant name="damage" adjustmentsource="this_entity" />
             <damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
             <playeffect effect="effects/impact_enemy.effect" source="target_entity" target="target_entity" occlude="true" />
         </areaofeffect>
+
         <!-- Affector for visual effects around Aemon -->
-        <spawnaffector name="Affector_Aemon_Ability4_Consecrated" target="target_position" proxy="target_entity" ignore="target_entity" />
-        <!-- AoE damage on Consecrated Ground -->
-        <spawnaffector name="Affector_Aemon_Ability4_Ground" target="target_position" proxy="target_entity" ignore="target_entity" />
+        <!--spawnaffector name="Affector_Aemon_Ability4_Consecrated" target="target_position" proxy="target_entity" ignore="target_entity" /-->
+        <!-- Searching for consecrated area -->
+        <areaofeffect
+            radius="99999"
+            targetselection="all"
+            targetscheme="AemonOwnConsecration"
+            effecttype="Magic"
+            maxtotalimpacts="1"
+            ignoreinvulnerable="true"
+        >	
+            <!-- Create affector on consecrated area to deal damage -->
+            <spawnaffector name="Affector_Aemon_Ability4_Consecrated" target="target_position" />
+        </areaofeffect>
     </onimpact>
 
     <!-- Passive: Adding charges and projectile spheres -->
