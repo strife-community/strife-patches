@@ -1,39 +1,44 @@
-## Entities
-Entities hierarchy (children have attributes of their parents):
-- affector
-- game
-- linearaffector
-- order (can't be created from xml)
-- projectile
-- slave (can't be created from xml)
-    - state
-        - statenetaccum
-    - tool (can't be created from xml)
-        - ability
-            - proxyability
-            - abilityattribute
-        - item
-            - qualityitem
-                - crafteditem
-- spawner
-- unit
-    - bit (can't be created from xml)
-    - building
-    - creep
-    - critter
-    - familiar
-    - gadget
-        - attachablegadget
-    - hero
-        - heropet
-    - neutral
-        - neutralboss (
-    - pet
-    - powerup
-- waypoint
+# Entities
+## Introduction
+What is entity? Pretty much everything in the game: heroes, pets and other units, their abilities, states they set, projectiles they throw. Everything moving, everything changing values, everything storing information. Enitity is a foundational building block for Strife. All entities has similar structure and mostly they use same elements to describe their behavior.
+Entities are described by files with .entity extension. Those are .xml files with extension changed. An entity file structure follows this general hierarchy:
+- Entity Type: The root element defines the entity's category (e.g., `<hero>`, `<item>`).
+- Events: Nested within the entity, events like `<ondeath>`, `<onframe>`, `<onspawn>`, or `<onupgrade>` represent triggers tied to in-game or system conditions.
+- Actions: Inside each event, one or more action elements specify the operations to perform when the event occurs, such as spawning an object, dealing damage, modifying stats, or playing an visual or sound effect.
 
-neutralboss
-heropet
+## Entity types
+### Entities hierarchy (children inherit all attributes of their parents):
+- [affector](#affector)
+- [game](#game)
+- [linearaffector](#linearaffector)
+- order (can't be created from xml)
+- [projectile](#projectile)
+- [slave](#slave) (can't be created from xml)
+    - [state](#state)
+        - [statenetaccum](#statenetaccum)
+    - [tool](#tool) (can't be created from xml)
+        - [ability](#ability)
+            - [proxyability](#proxyability)
+            - [abilityattribute](#abilityattribute)
+        - [item](#item)
+            - [qualityitem](#qualityitem)
+                - [crafteditem](#crafteditem)
+- [spawner](#spawner)
+- [unit](#unit)
+    - bit (can't be created from xml)
+    - [building](#building)
+    - [creep](#creep)
+    - [critter](#critter)
+    - [familiar](#familiar)
+    - [gadget](#gadget)
+        - [attachablegadget](#attachablegadget)
+    - [hero](#hero)
+        - [heropet](#heropet)
+    - [neutral](#neutral)
+        - [neutralboss](#neutralboss)
+    - [pet](#pet)
+    - [powerup](#powerup)
+- [waypoint](#waypoint)
 
 ### affector
 | attribute name | valid value | default value | description |
