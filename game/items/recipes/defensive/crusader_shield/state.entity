@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_CrusaderShield"
+
+	icon="icon.tga"
+	
+>
+
+	<onattackeddamageevent>
+		<cantarget targetscheme="enemy_towers" >
+			<setvalue name="damage_attempted" a="damage_attempted" b="0.8" op="mult" />
+		</cantarget>
+		<else>
+			<damageeffecttype effecttype="Splash">	
+				<setvalue name="damage_attempted" a="damage_attempted" b="0.6" op="mult" />
+			</damageeffecttype>
+		</else>
+	</onattackeddamageevent>
+
+</state>

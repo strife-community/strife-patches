@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_CrusaderShield_Empower_3"
+
+	icon="icon.tga"
+>
+
+	<onattackeddamageevent>
+		<cantarget targetscheme="enemy_towers" >
+			<setvalue name="damage_attempted" a="damage_attempted" b="0.70" op="mult" />
+		</cantarget>
+	</onattackeddamageevent>
+
+</state>
