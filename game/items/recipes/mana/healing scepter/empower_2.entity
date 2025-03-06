@@ -4,10 +4,11 @@
 
     cost="550"
     range="400"
+    hoverareacastrange="400"
 >
     <!-- Heal base value, adjusted by power -->
     <constant name="enchant_2_heal" value="160" adjustment="power_support" />
-    <!-- TOOLTIP ONLY:  -->
+    <!-- TOOLTIP ONLY: range decrease. Real range value is above -->
     <constant name="enchant_2_range" value="100" adjustment="none" />
 
     <!-- When used: -->

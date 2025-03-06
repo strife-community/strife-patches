@@ -20,8 +20,8 @@
         <heal a="result" />
         
         <!-- Give mana -->
-        <getconstant name="mana_enchant" />
-        <givemana amount="result"/>
+        <getconstant name="enchant_1_mana" />
+        <givemana target="target_entity" amount="result"/>
     </onimpact>
 
 </qualityitem>

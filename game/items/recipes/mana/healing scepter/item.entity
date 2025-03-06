@@ -6,7 +6,7 @@
     
     cost="550"
     components="Item_Mender Item_Blade"
-    anim="item_self"
+    anim="item_1"
     
     actiontype="target_entity"
     targetscheme="ally_units"
