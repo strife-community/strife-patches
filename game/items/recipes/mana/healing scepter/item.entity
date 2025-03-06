@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_HealingScepter"
+	
+	icon="icon.tga"
+	
+	cost="550"
+	components="Item_Mender Item_Blade"
+	anim="item_self"
+	
+	actiontype="target_entity"
+	targetscheme="ally_units"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="30000"
+	casteffect="effects/cast.effect"
+	botitem="HealingScepterItem"
+	noentercombat="true"
+
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="500"
+	range="500"
+	
+	doubleactivate="true"
+	filters="defense,heal,activatable"
+
+	empoweredeffects="Item_HealingScepter_Empower_2,Item_HealingScepter_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="heal" value="110" qualityvalue="11" qualityadjustment="common" adjustment="power_support" op="add"/>
+	<constant name="legendary" value="5" qualityvalue="5" qualityadjustment="legendary" adjustment="none" op="add" />
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+
+	
+	<onimpact>
+		<compare a="target_entity" b="source_entity" op="ne" >
+			<playeffect effect="effects/cast.effect" target="target_entity" source="target_entity" />
+		</compare>
+		
+		<getconstant name="heal" adjustmentsource="this_entity" />
+		<setvar0 a="result" b="1" op="mult" />
+		<heal a="var0" />
+		
+	</onimpact>
+
+	<ondoubleactivate>
+		<useitem source="this_entity" target="source_entity" />
+	</ondoubleactivate>
+	
+</crafteditem>

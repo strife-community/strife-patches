@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_HealingScepter_Empower_3"
+	
+	cost="650"
+
+>
+	<!-- Tooltip only -->
+	<constant name="areaheal_enchant" value="25" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onimpact>
+		<compare a="target_entity" b="source_entity" op="ne" >
+			<playeffect effect="effects/cast.effect" target="target_entity" source="target_entity" />
+		</compare>
+		
+		<getconstant name="heal" adjustmentsource="this_entity" />
+		<setvar0 a="result" b="1" op="mult" />
+		<heal a="var0" />
+		
+		<getconstant name="mana" op="add" />
+		<setvar1 a="result" b="1" op="mult" />
+		<givemana amount="var1" b="1" op="mult" />
+		<setcharges a="0" />
+		
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="other_ally_units"
+			effecttype="Magic"
+		>
+			<getconstant name="heal" adjustmentsource="this_entity" />
+			<setvar0 a="result" b="1" op="mult" />
+			<heal a="var0" b="0.25" op="mult" />
+			
+			<getconstant name="mana" op="add" />
+			<setvar1 a="result" b="1" op="mult" />
+			<givemana amount="0.25" b="var1" op="mult" />
+		</areaofeffect>
+
+	</onimpact>
+
+</qualityitem>

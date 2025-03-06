@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_HealingScepter_Empower_2"
+	
+	cost="700"
+	cooldowntime="25000"
+
+>
+
+</qualityitem>
