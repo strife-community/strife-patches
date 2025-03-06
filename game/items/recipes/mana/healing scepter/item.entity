@@ -33,7 +33,7 @@
 
     <!-- When used: -->
     <onimpact>
-        <!-- play visual effect -->
+        <!-- Play visual effect -->
         <playeffect effect="effects/cast.effect" target="target_entity" source="target_entity" />
         
         <!-- Heal target -->

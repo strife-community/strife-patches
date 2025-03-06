@@ -1,42 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qualityitem
-	name="Item_HealingScepter_Empower_3"
-	
-	cost="650"
-
+    name="Item_HealingScepter_Empower_3"
+    
+    cost="550"
+    targetradius="300"
 >
-	<!-- Tooltip only -->
-	<constant name="areaheal_enchant" value="25" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+    <!-- Tooltip only -->
+    <!-- Cooldown increase -->
+    <constant name="enchant_3_heal" value="100" adjustment="power_support" />
+    <!-- Ability area radius -->
+    <constant name="enchant_3_radius" value="300" adjustment="none" />
 
-	<onimpact>
-		<compare a="target_entity" b="source_entity" op="ne" >
-			<playeffect effect="effects/cast.effect" target="target_entity" source="target_entity" />
-		</compare>
-		
-		<getconstant name="heal" adjustmentsource="this_entity" />
-		<setvar0 a="result" b="1" op="mult" />
-		<heal a="var0" />
-		
-		<getconstant name="mana" op="add" />
-		<setvar1 a="result" b="1" op="mult" />
-		<givemana amount="var1" b="1" op="mult" />
-		<setcharges a="0" />
-		
-		<areaofeffect
-			radius="600"
-			targetselection="all"
-			targetscheme="other_ally_units"
-			effecttype="Magic"
-		>
-			<getconstant name="heal" adjustmentsource="this_entity" />
-			<setvar0 a="result" b="1" op="mult" />
-			<heal a="var0" b="0.25" op="mult" />
-			
-			<getconstant name="mana" op="add" />
-			<setvar1 a="result" b="1" op="mult" />
-			<givemana amount="0.25" b="var1" op="mult" />
-		</areaofeffect>
+    <!-- When used: -->
+    <onimpact>
+        <!-- For every ally unit in radius -->
+        <areaofeffect
+            radius="300"
+            targetselection="all"
+            targetscheme="ally_units"
+            effecttype="Magic"
+        >
+            <!-- Play visual effect -->
+            <playeffect effect="effects/cast.effect" target="target_entity" source="target_entity" />
+            <!-- Heal target -->
+            <getconstant name="enchant_3_heal" adjustmentsource="this_entity" />
+            <heal a="result" />
+        </areaofeffect>
 
-	</onimpact>
+    </onimpact>
 
 </qualityitem>
