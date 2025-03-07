@@ -674,6 +674,7 @@ Ability_Ace4_description_simple										Gibt Extragold für Kills von Helden
 
 
 // Hero_Aemon
+// TheChiprel: add $cc_reduction$ to "Ability_Aemon2_description" (see entities_en.str)!
 Hero_Aemon_name														Aemon
 Hero_Aemon_description												Mobiler Panzer mit AOE-Schaden und Heilung
 Hero_Aemon_role														Mobiler Panzer mit AOE-Schaden und Heilung

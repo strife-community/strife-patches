@@ -1735,7 +1735,7 @@ Ability_Aemon1_description_simple								круг, увеличивающий у
 
 // Ability_Aemon2
 Ability_Aemon2_name											Hope
-Ability_Aemon2_description									На $duration$ секунды увеличивает сопротивление Aemon на $resistance$. \n \nКаждая базовая атака Aemon восстанавливает $heal$ здоровья союзникам, находящимся на освящённой территории.
+Ability_Aemon2_description									На $duration$ секунды увеличивает сопротивление Aemon на $resistance$ и смягчает эффекты оглушения и замедления на $cc_reduction$%. \n \nКаждая базовая атака Aemon восстанавливает $heal$ здоровья союзникам, находящимся на освящённой территории.
 Ability_Aemon2_description_simple								увеличение сопротивления и исцеление при атаке
 
 // Ability_Aemon3
