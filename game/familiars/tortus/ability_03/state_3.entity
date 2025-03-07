@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tortus_Health3"
+	
+	icon="icon.tga"
+	ishidden="true"
+>
+
+	<onframe>
+		<getconstant name="heal" adjustmentsource="this_entity" />
+		<setvar0 a="result" b="frametime" op="mult" />
+		<setvar0 a="var0" b="2" op="mult" />
+		<heal target="source_entity" a="1" b="var0" op="mult"/>
+	</onframe>
+	
+</state>

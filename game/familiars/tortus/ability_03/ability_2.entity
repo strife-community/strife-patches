@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tortus_Ult_2"
+
+	icon="icon.tga"
+	maxlevel="15"
+	actiontype="target_self"
+	manacost="0"
+	casttime="0"
+
+	cooldowntime="120000"
+
+	cooldowntype="familiar3" 
+	casteffecttype="NoResponse"
+	frontqueue="true"
+	inheritmovement="true"
+	responsetype="NoResponse"
+	noninterrupting="true"
+	alwaysshowtimer="true"
+	ispetultimate="true"
+	
+>	
+	<constant name="heal" value="118,131,144,157,170,183,196,209,222,235,248,261,274,287,300" adjustment="none" />
+
+	<checkcost>
+		<compare a="source_health_percent" b="1" op="ge" >
+			<invalidate/>
+		</compare>
+	</checkcost>
+
+	<onimpact>
+		<starttimer duration="500" />
+		<playanim name="ability_1" target="this_proxy_entity" />
+		<playeffect effect="effects/cast.effect" target="source_entity" source="source_entity"/>
+		<playeffect effect="effects/cast_turtle.effect" target="this_proxy_entity" source="this_proxy_entity"/>
+		<applystate name="State_Tortus_Burn_Cast" duration="500" target="this_proxy_entity" proxy="target_entity" />
+		<applystate name="State_Tortus_Health2" duration="500" target="source_entity" />
+	</onimpact>
+
+</ability>
