@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="impact.ogg"
+			/>
+
+			<light
+				position="0 0 75"
+				life="250"
+				startcolor="0 3 10"
+				midcolor="0 3 10"
+				midcolorpos=".1"
+				endcolor="0"
+				falloffstart="50"
+				falloffend="200"
+			/>
+
+			<!-- dummy sprite-->
+			<billboard
+				expirelife="250"
+				startcolor="0 0 0"
+				endcolor="0 0 0"
+				size="5"
+				material="/shared/effects/smaterials/whitedot.material"
+			/>
+
+			<model
+				position="0 0 75"
+				anim="idle"
+				model="turtle_shields/model.mdf"
+				material="/shared/effects/smaterials/shell_sludge.material"
+				startcolor="0 2 10"
+				endcolor="0 0 0"
+				scale="4"
+				yawspeed="720"
+				life="250"
+				alpha=".5"
+			/>
+
+			<template name="Fire">
+
+				<model
+					position="0 0 75"
+					anim="idle"
+					startalpha=".5"
+					endalpha="0"
+					model="turtle_shields/model.mdf"
+					material="turtle_shields/material.material"
+					color="2 1.5 1"
+					scale="4"
+					yawspeed="720"
+					life="450"
+				>
+				
+					<billboard
+						life="200"
+						startcolor="0 .15 .3"
+						endcolor="0 0 0"
+						size="60"
+						depthbias="0"
+						material="/shared/effects/smaterials/swoosh_ring.material"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						rollspeed="-720"
+						minroll="0"
+						maxroll="360"
+					/>
+					
+					<billboard
+						life="300"
+						startcolor="0 .5 1"
+						endcolor="0 0 0"
+						size="75"
+						depthbias="0"
+						material="/shared/effects/smaterials/flare.material"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						rollspeed="-720"
+						minroll="0"
+						maxroll="360"
+					/>
+
+	<!--
+					<billboard
+						life="500"
+						bone="{zbone}"
+						startcolor=".5 .125 0"
+						endcolor="0 0 0"
+						size="50"
+						maxroll="360"
+						material="/shared/effects/smaterials/flare.material"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						depthbias="-50"
+					/>
+	-->
+					<billboard
+						life="250"
+						bone="{zbone}"
+						startcolor="0 .25 1"
+						endcolor="0 0 0"
+						size="25"
+						maxroll="360"
+						material="/shared/effects/smaterials/whitedot.material"
+						lockright="true"
+						lockup="true"
+						pitch="90"
+						depthbias="-50"
+					/>
+
+				</model>
+				
+			</template>
+
+			<instance name="Fire" zbone="_bone_fx_01" />
+			<instance name="Fire" zbone="_bone_fx_02"/>
+			<instance name="Fire" zbone="_bone_fx_03"/>
+
+		</particlesystem>
+	
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" /> 
+</thread>
+
+</effect>
+

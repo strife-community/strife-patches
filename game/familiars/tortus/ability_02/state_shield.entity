@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Tortus_Shield"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_in.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	ishidden="true"
+>
+
+</statenetaccum>
