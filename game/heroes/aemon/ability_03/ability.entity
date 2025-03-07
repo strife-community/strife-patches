@@ -1,43 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Aemon3"
+    name="Ability_Aemon3"
 
-	icon="icon.tga"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	
-	anim="ability_3"
-
-	actiontype="target_self"
-	
-	manacost="55,65,75,85"
-	cooldowntime="7500,7000,6500,6000"
-	
-	queue="front"
-	inheritmovement="true"
+    icon="icon.tga"
     
-	maxcharges="3"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    
+    anim="ability_3"
+
+    actiontype="target_self"
+    
+    manacost="55,65,75,85"
+    cooldowntime="7500,7000,6500,6000"
+    
+    queue="front"
+    inheritmovement="true"
+    
+    maxcharges="3"
 >
-	<constant name="movespeed" value="100,150,200,250" adjustment="none" />
-	<constant name="slow" value="50,60,70,80" adjustment="none" />
-	
-	<onimpact>
-		<condition test="hasstate State_Aemon_Ability1_Buff" target="this_owner_entity" >
-			<applystate name="State_Aemon_Ability3" target="source_entity" duration="3000" />
-			<addcharges count="3" />
-		</condition>
-		<else>
-			<applystate name="State_Aemon_Ability3" target="source_entity" duration="1000" />
-			<addcharges count="3" />
-		</else>
-	</onimpact>
-	
-	<onattackimpact>
-		<compare a="charges" b="0" op="gt">
-			<removecharge />
-			<applystate name="State_Aemon_Ability3_Slow" target="target_entity" duration="1000" />
-		</compare>
-	</onattackimpact>
+    <!-- Movement speed boost value -->
+    <constant name="movespeed" value="100,150,200,250" adjustment="none" />
+    <!-- Duration if activated in concecrated area, seconds -->
+    <constant name="mspeed_duration_inside_s" value="3" adjustment="none" noshowintooltip="true" />
+    <!-- Duration if activated outside of concecrated area, seconds -->
+    <constant name="mspeed_duration_outside_s" value="1.5" adjustment="none" noshowintooltip="true" />
+    <!-- Number of charged attacks slowing enemies -->
+    <constant name="max_charges" value="3" adjustment="none" noshowintooltip="true" />
+    <!-- Slow % value -->
+    <constant name="slow" value="50,60,70,80" adjustment="none" />
+    <!-- Duration if activated outside of concecrated area -->
+    <constant name="slow_duration_s" value="1" adjustment="none" noshowintooltip="true" />
+    
+    <!-- Utility constant: multiplier to get milliseconds from seconds -->
+    <constant name="sec_to_msec_mult" value="1000" adjustment="none" noshowintooltip="true" />
+    
+    <!-- On use: -->
+    <onimpact>
+        <!-- Checking if Aemon is in concecrated area -->
+        <condition test="hasstate State_Aemon_Ability1_Buff" target="this_owner_entity" >
+            <getconstant name="mspeed_duration_inside_s" nameb="sec_to_msec_mult" op="mult" />
+            <applystate name="State_Aemon_Ability3" target="source_entity" duration="result" />
+        </condition>
+        <else>
+            <getconstant name="mspeed_duration_outside_s" nameb="sec_to_msec_mult" op="mult" />
+            <applystate name="State_Aemon_Ability3" target="source_entity" duration="result" />
+        </else>
+        <!-- Adding charges to attack -->
+        <getconstant name="max_charges" />
+        <addcharges count="result" />
+    </onimpact>
+    
+    <!-- On attack: -->
+    <onattackimpact>
+        <!-- Check if still have charges -->
+        <compare a="charges" b="0" op="gt">
+            <!-- Decrease charges -->
+            <removecharge />
+            <!-- Apply slow -->
+            <getconstant name="slow_duration_s" nameb="sec_to_msec_mult" op="mult" />
+            <applystate name="State_Aemon_Ability3_Slow" target="target_entity" duration="result" />
+        </compare>
+    </onattackimpact>
 
 </ability>

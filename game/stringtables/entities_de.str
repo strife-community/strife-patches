@@ -689,7 +689,7 @@ Ability_Aemon2_description											Aemon erhält für $duration$ Sekunden eine
 Ability_Aemon2_description_simple									Erhöhter Widerstand und Verbündetenheilung bei Angriffen
 // Ability_Aemon3
 Ability_Aemon3_name													Mut
-Ability_Aemon3_description											Aemon erhält 1 Sekunde lang einen Ausbruch von $movespeed$ Bewegungsgeschwindigkeit. Bei Aktivierung innerhalb der Weihe verlängert sich die Dauer auf 3 Sekunden.\n\nBei der Aktivierung verlangsamen Aemons nächste drei Angriffe das Ziel um $slow$%.
+Ability_Aemon3_description											Aemon erhält $mspeed_duration_outside_s$ Sekunde lang einen Ausbruch von $movespeed$ Bewegungsgeschwindigkeit. Bei Aktivierung innerhalb der Weihe verlängert sich die Dauer auf $mspeed_duration_inside_s$ Sekunden.\n\nBei der Aktivierung verlangsamen Aemons nächste $max_charges$ Angriffe das Ziel um $slow$%.
 Ability_Aemon3_description_simple									Erhöhte Bewegungsgeschwindigkeit und Verlangsammung bei Angriffen
 // Ability_Aemon4
 Ability_Aemon4_name													Gerechtigkeit
