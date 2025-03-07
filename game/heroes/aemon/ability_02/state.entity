@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Aemon_Ability2"
+
+	icon="icon.tga"
+
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	ishidden="false"
+	
+	resistance="80,100,120,140"
+>
+
+
+</state>
