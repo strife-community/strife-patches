@@ -2152,18 +2152,19 @@ Item_Lasthit_Empower_5_name										A caçada
 Item_Lasthit_Empower_5_description								Matar uma unidade com o machado de arremesso cura $heal_enchant$ de vida.
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name										Bastão de cura
 Item_HealingScepter_description									Ative para curar até ^o$heal$ de vida^* (escalonado com poder) e restaurar até $mana$ de mana com base no número de cargas acumuladas.
 Item_HealingScepter_description_simple							Ative para restaurar vida e mana.
 Item_HealingScepter_bonusdescription							Aumenta a vida e o mana restaurados em $common_increase$%.
 Item_HealingScepter_legendaryname								Maior
 Item_HealingScepter_legendarydescription						Aumenta o mínimo e o máximo de cargas em $legendary$.
-Item_HealingScepter_Empower_1_name								Fortificar 1
-Item_HealingScepter_Empower_1_description						Aumenta o mínimo e o máximo de cargas em $charges_enchant$.
-Item_HealingScepter_Empower_2_name								Diligência
-Item_HealingScepter_Empower_2_description						Armazena cargas 33% mais rápido.
-Item_HealingScepter_Empower_3_name								Generosidade
-Item_HealingScepter_Empower_3_description						Também cura aliados próximos em $areaheal_enchant$% de efetividade.
+//Item_HealingScepter_Empower_1_name								Fortificar 1
+//Item_HealingScepter_Empower_1_description						Aumenta o mínimo e o máximo de cargas em $charges_enchant$.
+//Item_HealingScepter_Empower_2_name								Diligência
+//Item_HealingScepter_Empower_2_description						Armazena cargas 33% mais rápido.
+//Item_HealingScepter_Empower_3_name								Generosidade
+//Item_HealingScepter_Empower_3_description						Também cura aliados próximos em $areaheal_enchant$% de efetividade.
 
 // InfernoBrand
 Item_InfernoBrand_name											Tição infernal

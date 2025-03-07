@@ -1946,18 +1946,19 @@ Item_Lasthit_Empower_5_name                                                  La 
 Item_Lasthit_Empower_5_description                                           Matar una unidad con el hacha arrojadiza te cura $heal_enchant$ de salud.
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name                                                     Varilla de Curación
 Item_HealingScepter_description                                              Activa para curar hasta ^o$heal$ de salud^* (sube con el poder) y restaurar hasta $mana$ de mana, en base a un número cargas acumuladas.
 Item_HealingScepter_description_simple                                       Activa para restaurar salud y mana.
 Item_HealingScepter_bonusdescription                                         Aumenta la salud y el mana restaurados en un $common_increase$%.
 Item_HealingScepter_legendaryname                                            Mayor
 Item_HealingScepter_legendarydescription                                     Aumenta las cargas mín. y máx. por $legendary$.
-Item_HealingScepter_Empower_1_name                                           Poder 1
-Item_HealingScepter_Empower_1_description                                    Aumenta la curación máx. a ^o$heal_enchant$ de salud^* y $mana_enchant$ de mana. El tiempo de recarga aumenta un 50%.
-Item_HealingScepter_Empower_2_name                                           Diligencia
-Item_HealingScepter_Empower_2_description                                    Almacena cargas un 33% más rápido.
-Item_HealingScepter_Empower_3_name                                           Generosidad
-Item_HealingScepter_Empower_3_description                                    También cura a los aliados cercanos con un $areaheal_enchant$% de efectividad.
+//Item_HealingScepter_Empower_1_name                                           Poder 1
+//Item_HealingScepter_Empower_1_description                                    Aumenta la curación máx. a ^o$heal_enchant$ de salud^* y $mana_enchant$ de mana. El tiempo de recarga aumenta un 50%.
+//Item_HealingScepter_Empower_2_name                                           Diligencia
+//Item_HealingScepter_Empower_2_description                                    Almacena cargas un 33% más rápido.
+//Item_HealingScepter_Empower_3_name                                           Generosidad
+//Item_HealingScepter_Empower_3_description                                    También cura a los aliados cercanos con un $areaheal_enchant$% de efectividad.
 
 // InfernoBrand
 Item_InfernoBrand_name                                                       Marca del Infierno

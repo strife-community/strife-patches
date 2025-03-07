@@ -2298,18 +2298,19 @@ Item_Lasthit_Empower_5_name										5
 Item_Lasthit_Empower_5_description								用飞斧击杀一个敌方单位会为英雄提供$heal_enchant$生命回复。
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name												愈合权杖
 Item_HealingScepter_description									^使用: 为目标提供^* ^o$heal$生命值^*的治疗。^0积攒最多$mana$法力。^* 
 Item_HealingScepter_description_simple											使用后立即回复生命值和法力值。
 Item_HealingScepter_bonusdescription												+$common_increase$%回复的生命和法力值
 Item_HealingScepter_legendaryname												卓越
 Item_HealingScepter_legendarydescription												增加$legendary$最小&最大充能数。 
-Item_HealingScepter_Empower_1_name								专注
-Item_HealingScepter_Empower_1_description						增加最大治疗效力，以提供^o$heal_enchant$生命值^*和$mana_enchant$法力值。冷却时间减少一半。 
-Item_HealingScepter_Empower_2_name								勤奋
-Item_HealingScepter_Empower_2_description						储存充能时速度加快33%。 
-Item_HealingScepter_Empower_3_name								慷慨
-Item_HealingScepter_Empower_3_description						为周围盟友提供$areaheal_enchant$%治疗。
+//Item_HealingScepter_Empower_1_name								专注
+//Item_HealingScepter_Empower_1_description						增加最大治疗效力，以提供^o$heal_enchant$生命值^*和$mana_enchant$法力值。冷却时间减少一半。 
+//Item_HealingScepter_Empower_2_name								勤奋
+//Item_HealingScepter_Empower_2_description						储存充能时速度加快33%。 
+//Item_HealingScepter_Empower_3_name								慷慨
+//Item_HealingScepter_Empower_3_description						为周围盟友提供$areaheal_enchant$%治疗。
 
 // InfernoBrand
 Item_InfernoBrand_name												地狱火徽记

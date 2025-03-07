@@ -2270,18 +2270,19 @@ Item_Lasthit_Empower_5_name											Die Jagd
 Item_Lasthit_Empower_5_description									Eine Einheit mit Axt werfen abzuschießen heilt dich für $heal_enchant$ Gesundheit.
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name											Heilstab
 Item_HealingScepter_description										^091Aktivieren: Heile das Ziel für^* ^o$heal$ Gesundheit^*^091.^*
 Item_HealingScepter_description_simple								^091Aktivieren: Gesundheit des Ziels wiederherstellen.^*
 Item_HealingScepter_bonusdescription								Erhöht die wiederhergestellte Gesundheit um $common_increase$%.
 Item_HealingScepter_legendaryname									Größer
 Item_HealingScepter_legendarydescription							Erhöht min. und max. Ladungen um $legendary$.
-Item_HealingScepter_Empower_1_name									Fokus
-Item_HealingScepter_Empower_1_description							Erhöht die Heilung auf ^o$heal_enchant$ Gesundheit^* und gibt $mana_enchant$ Mana. Die Abklingzeit verlängert sich um 50%.
-Item_HealingScepter_Empower_2_name									Sorgfalt
-Item_HealingScepter_Empower_2_description							Abklingzeit reduziert.
-Item_HealingScepter_Empower_3_name									Großzügigkeit
-Item_HealingScepter_Empower_3_description							Heilt auch umliegende Verbündete mit $areaheal_enchant$% Wirksamkeit
+//Item_HealingScepter_Empower_1_name									Fokus
+//Item_HealingScepter_Empower_1_description							Erhöht die Heilung auf ^o$heal_enchant$ Gesundheit^* und gibt $mana_enchant$ Mana. Die Abklingzeit verlängert sich um 50%.
+//Item_HealingScepter_Empower_2_name									Sorgfalt
+//Item_HealingScepter_Empower_2_description							Abklingzeit reduziert.
+//Item_HealingScepter_Empower_3_name									Großzügigkeit
+//Item_HealingScepter_Empower_3_description							Heilt auch umliegende Verbündete mit $areaheal_enchant$% Wirksamkeit
 
 // InfernoBrand
 Item_InfernoBrand_name												Teufelmarke

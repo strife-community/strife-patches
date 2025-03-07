@@ -2183,18 +2183,19 @@ Item_Lasthit_Empower_5_name										The Hunt
 Item_Lasthit_Empower_5_description								ฆ่ายูนิตด้วย Throwing Axe จะฟื้นฟูพลังชีวิต $heal_enchant$
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name										Healing Rod
 Item_HealingScepter_description									กดใช้เพื่อฟื้นฟู^oพลังชีวิต $heal$^*(คิดจาก Power)  และมานา $mana$ จำนวนการฟื้นฟูนั้นขึ้นอยู่กับการสะสมชาร์จ
 Item_HealingScepter_description_simple							กดใช้งานเพื่อทำการฟื้นฟูพลังชีวิตและมานา
 Item_HealingScepter_bonusdescription							เพิ่มจำนวนการฟื้นฟูพลังชีวิตและมานา $common_increase$%
 Item_HealingScepter_legendaryname								Greater
 Item_HealingScepter_legendarydescription						เพิ่มจำนวนชาร์จขั้นต่ำและสูงสุด  $legendary$
-Item_HealingScepter_Empower_1_name								Focus
-Item_HealingScepter_Empower_1_description						เพิ่มการฮีลสูงสุงเป็น $charges_enchant$ และ $mana_enchant$ มานา คูลดาวน์เพิ่มขึ้น 50%
-Item_HealingScepter_Empower_2_name								Diligence
-Item_HealingScepter_Empower_2_description						เก็บชาร์จเร็วขึ้น 33%
-Item_HealingScepter_Empower_3_name								Generosity
-Item_HealingScepter_Empower_3_description						ฮีลให้เพื่อนร่วมทีม $areaheal_enchant$%
+//Item_HealingScepter_Empower_1_name								Focus
+//Item_HealingScepter_Empower_1_description						เพิ่มการฮีลสูงสุงเป็น $charges_enchant$ และ $mana_enchant$ มานา คูลดาวน์เพิ่มขึ้น 50%
+//Item_HealingScepter_Empower_2_name								Diligence
+//Item_HealingScepter_Empower_2_description						เก็บชาร์จเร็วขึ้น 33%
+//Item_HealingScepter_Empower_3_name								Generosity
+//Item_HealingScepter_Empower_3_description						ฮีลให้เพื่อนร่วมทีม $areaheal_enchant$%
 
 // InfernoBrand
 Item_InfernoBrand_name											Inferno Brand

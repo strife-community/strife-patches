@@ -2017,18 +2017,19 @@ Item_Lasthit_Empower_5_name										The Hunt
 Item_Lasthit_Empower_5_description								Dùng item, ném búa giết lính, hồi phục $heal_enchant$ HP.
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name										Healing Rod
 Item_HealingScepter_description									Kích hoạt để hồi phục ^o$heal$ HP^* (dựa trên power) và hồi phục $mana$ mana, nhiều hay ít dựa trên số lượng tích trữ.
 Item_HealingScepter_description_simple							Kích hoạt để hồi phục HP và Mana.
 Item_HealingScepter_bonusdescription							Tăng HP và MP hồi phục $common_increase$%.
 Item_HealingScepter_legendaryname								Greater
 Item_HealingScepter_legendarydescription						Tăng Min & Max số lần tích trữ thêm $legendary$.
-Item_HealingScepter_Empower_1_name								Empower 1
-Item_HealingScepter_Empower_1_description						Tăng Min & Max số lần tích trữ thêm $charges_enchant$.
-Item_HealingScepter_Empower_2_name								Diligence
-Item_HealingScepter_Empower_2_description						Tăng 33% tốc độ lưu trữ.
-Item_HealingScepter_Empower_3_name								Generosity
-Item_HealingScepter_Empower_3_description						Hồi phục cho đồng đội với $areaheal_enchant$% hiểu quả.
+//Item_HealingScepter_Empower_1_name								Empower 1
+//Item_HealingScepter_Empower_1_description						Tăng Min & Max số lần tích trữ thêm $charges_enchant$.
+//Item_HealingScepter_Empower_2_name								Diligence
+//Item_HealingScepter_Empower_2_description						Tăng 33% tốc độ lưu trữ.
+//Item_HealingScepter_Empower_3_name								Generosity
+//Item_HealingScepter_Empower_3_description						Hồi phục cho đồng đội với $areaheal_enchant$% hiểu quả.
 
 // InfernoBrand
 Item_InfernoBrand_name											Inferno Brand

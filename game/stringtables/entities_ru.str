@@ -2468,17 +2468,17 @@ Item_Lasthit_Empower_5_description								Если вы убиваете бой�
 
 // Item_HealingScepter
 Item_HealingScepter_name										Healing Rod
-Item_HealingScepter_description									Примените, чтобы восстановить ^o$heal$ здоровья^*.
+Item_HealingScepter_description									Примените, чтобы восстановить цели ^o$heal$ здоровья^*.
 Item_HealingScepter_description_simple							При использовании восстанавливает здоровье.
 Item_HealingScepter_bonusdescription							Количество восстанавливаемого здоровья увеличено на $common_increase$%.
 Item_HealingScepter_legendaryname								Greater
 Item_HealingScepter_legendarydescription						Минимальное и максимальное количество зарядов увеличено на $legendary$.
-Item_HealingScepter_Empower_1_name								Focus
-Item_HealingScepter_Empower_1_description						Усиливает лечение на ^o$heal_enchant$^* и увеличивает максимальный запас маны на $mana_enchant$. Увеличивает время перезарядки на 50%.
-Item_HealingScepter_Empower_2_name								Diligence
-Item_HealingScepter_Empower_2_description						Уменьшает время перезарядки.
+Item_HealingScepter_Empower_1_name								Utility
+Item_HealingScepter_Empower_1_description						Дополнительно восстанавливает цели $enchant_1_mana$ маны. Время перезарядки увеличено до $enchant_1_cd$ секунд.
+Item_HealingScepter_Empower_2_name								Focus
+Item_HealingScepter_Empower_2_description						Восстанавливает ^o$enchant_2_heal$ здоровья^*, но дальность применения уменьшена на $enchant_2_range$.
 Item_HealingScepter_Empower_3_name								Generosity
-Item_HealingScepter_Empower_3_description						Исцеляет находящихся рядом союзников на $areaheal_enchant$% от количества восстановленного герою здоровья.
+Item_HealingScepter_Empower_3_description						Восстанавливает ^o$enchant_3_heal$ здоровья^*, но также исцеляет союзников в радиусе $enchant_3_radius$ вокруг цели.
 
 // InfernoBrand
 Item_InfernoBrand_name											Inferno Brand
