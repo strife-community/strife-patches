@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <statenetaccum
-	name="State_Tortus_Shield"
+    name="State_Tortus_Shield"
 
-	icon="icon.tga"
-	passiveeffect="effects/state_in.effect"
-	
-	effecttype="StatusBuff"
-	allowtransfer="true"
-	ishidden="true"
+    icon="icon.tga"
+    passiveeffect="effects/state_in.effect"
+    
+    effecttype="StatusBuff"
+    allowtransfer="true"
+    ishidden="true"
 >
-
+    <!-- On damage: -->
+    <onattackeddamageevent>
+        <!-- Only hero can trigger ability -->
+        <targettype type="hero">
+            <!-- Only attacks can trigger ability -->
+            <damagesupertype supertype="attack">
+                <!-- getting damage reduction -->
+                <getconstant name="damage_reduction_percent" nameb="percent_mult" op="mult" />
+                <setvar0 a="damage_attempted" b="result" op="mult" />
+                <!-- Setting new value of damage -->
+                <setvalue name="damage_attempted" a="damage_attempted" b="var0" op="sub" />
+            </damagesupertype>
+            <!--else NOTHING TO DO -->
+        </targettype>
+        <!--else NOTHING TO DO -->
+    </onattackeddamageevent>
 </statenetaccum>

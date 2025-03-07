@@ -15,7 +15,7 @@
 
 			<light
 				position="0 0 75"
-				life="250"
+				life="2000"
 				startcolor="0 3 10"
 				midcolor="0 3 10"
 				midcolorpos=".1"
@@ -26,7 +26,7 @@
 
 			<!-- dummy sprite-->
 			<billboard
-				expirelife="250"
+				expirelife="2000"
 				startcolor="0 0 0"
 				endcolor="0 0 0"
 				size="5"
@@ -42,7 +42,7 @@
 				endcolor="0 0 0"
 				scale="4"
 				yawspeed="720"
-				life="250"
+				life="2000"
 				alpha=".5"
 			/>
 
@@ -57,12 +57,12 @@
 					material="turtle_shields/material.material"
 					color="2 1.5 1"
 					scale="4"
-					yawspeed="720"
-					life="450"
+					yawspeed="360"
+					life="2200"
 				>
 				
 					<billboard
-						life="200"
+						life="1950"
 						startcolor="0 .15 .3"
 						endcolor="0 0 0"
 						size="60"
@@ -77,7 +77,7 @@
 					/>
 					
 					<billboard
-						life="300"
+						life="2050"
 						startcolor="0 .5 1"
 						endcolor="0 0 0"
 						size="75"
@@ -107,7 +107,7 @@
 					/>
 	-->
 					<billboard
-						life="250"
+						life="2000"
 						bone="{zbone}"
 						startcolor="0 .25 1"
 						endcolor="0 0 0"
