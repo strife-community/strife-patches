@@ -3042,7 +3042,7 @@ adaptive_training_feature_desc_pets			You can unlock a new pet!
 
 adaptive_training_feature_title_prompt_newbie_checklist			Newbie Checklist
 adaptive_training_feature_desc_prompt_newbie_checklist			Check out our new player guide for tips and tricks!
-adaptive_training_feature_desc_prompt_newbie_checklist_url		http://www.strife.com/gettingstarted/
+adaptive_training_feature_desc_prompt_newbie_checklist_url		https://playstrife.gg/gettingstarted/
 
 adaptive_training_feature_title_server_regions_changed		Server Regions Changed
 adaptive_training_feature_desc_server_regions_changed		New servers are available!
