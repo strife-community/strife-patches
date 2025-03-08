@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Malph_Ability2"
+	
+	icon="icon.tga"
+
+	passiveeffect="effects/state_heal.effect"
+
+	
+	effecttype="StatusBuff Assist"
+	allowtransfer="true"
+
+	resistance="20,30,40,50"
+
+>
+
+	<onframe>
+		<getconstant name="heal" adjustmentsource="this_entity" />
+		<setvar0 a="result" b="6" op="div" />
+		<setvar0 a="frametime" b="var0" op="mult" />
+		<heal a="result" target="this_owner_entity" />
+	</onframe>
+
+</state>
+ 

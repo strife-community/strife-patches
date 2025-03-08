@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Malph_Ability2"
+
+	useexactlifetime="true"
+	lifetime="600"
+
+	gravity="9000"
+	modelscale="2"
+	model="/shared/models/invis.mdf"
+	canturn="true"
+	impacteffect="effects/impact_heal.effect"
+	traileffect="effects/trail.effect"
+
+>
+	<onimpact>
+		<applystate name="State_Malph_Ability2" duration="6000"/>
+	</onimpact>
+	
+</projectile>
