@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Malph_Ability4"
+
+	model="/shared/models/invis.mdf"
+	icon="icon.tga"
+	portrait="icon.tga"
+	unitwalking="true"
+	cliffwalking="false"
+	buildingwalking="false"
+	
+	
+	canturn="false"
+	
+	passiveeffect="effects/hole_aoe.effect"
+	isselectable="true"
+	iscontrollable="false"
+	preglobalscale="1.8"
+	modelscale="0.6"
+	effectscale="1.1"
+	boundsheight="64"
+	searchheight="100"
+	searchradius="70"
+	minsearchradius="32"
+	boundsradius="16"
+	collisionradius="8"
+	selectionradius="45"
+	targetoffset="0 0 54"	
+
+	sightrangeday="300"
+	sightrangenight="300"
+	drawonmap="true"
+	mapicon="icon_minimap.tga"
+	mapiconsize="0.04"
+	invulnerable="false"
+	canattack="false"
+
+	corpsetime="0"
+	corpsefadetime="0"
+	deathtime="2000"
+	
+	immunity="GadgetImmunity"
+
+	hidealtinfo="false"
+	flying="false"
+	
+	maxhealth="5"
+	
+	canrotate="false"
+	ismobile="false"
+	
+	goldbountymin="30"
+	goldbountymax="30"
+
+	infoheight="275"
+
+	unittype="mole_mounds"
+
+	
+	hasdynamicpower="false"
+	prefertouchtargettrait="owned"
+	prefertouch="true" 
+	touchrange="120"
+
+>
+
+	<ontouched>
+		<cantarget targetscheme="enemy_units">
+			<order command="attack" target="this_entity" source="target_entity" />
+		</cantarget>
+		<else>
+			<printdebuginfo />
+			<cantarget targetscheme="self" source="this_owner_entity">
+				<print text="dd" />
+				<useability target="this_entity" slot="4" source="this_owner_entity" />
+			</cantarget>
+		</else>
+	</ontouched>
+	
+	<ondamaged>
+		<changedamage b="1" op="min"/>
+	</ondamaged>
+	
+	<onkilled>
+		<hasmodifier entity="source_owner_entity" name="Malph_underground" >
+			<areaofeffect
+				radius="9999999"
+				targetselection="all"
+				targetscheme="mole_mounds"
+				ignoreinvulnerable="true"
+				ignore="this_entity"
+			>
+			</areaofeffect>
+			<else>
+				<teleport source="source_owner_entity" target="this_position" />
+				<setpos0 position="source_owner_entity" offset="0 170 0" />
+				<expirestate name="State_Malph_Ability4_Underground" target="source_owner_entity" />
+				<spawnprojectile name="Projectile_Malph_Ability4_Exit" source="source_owner_entity" target="pos0" bind="source_owner_entity" bindstate="State_Malph_Ability4_Exit" />
+			</else>
+		</hasmodifier>
+		
+		<playeffect effect="effects/death.effect" source="this_position" target="this_position"/>
+	</onkilled>
+	
+
+</pet>
