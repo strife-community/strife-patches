@@ -35,7 +35,6 @@
     
     <onimpact>
         <setpos0 position="source_entity" positionend="target_position" positionmodifier="pointonline" positionvalue="200" />
-        <printdebuginfo />
         <!--getconstant name="malph_max_holes" /-->
         <spawnunit name="Pet_Malph_Ability4" count="1" maxactive="2,3,4" target="pos0" pushentity="true" proxy="source_entity" />
     </onimpact>
