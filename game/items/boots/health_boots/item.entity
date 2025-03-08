@@ -31,7 +31,7 @@
 	showinpractice="true"
 >
     <!-- Movespeed granted by the item. TOOLTIP ONLY! Used value is in "boots" modifier! -->
-    <constant name="movespeed" value="55" adjustment="none" />
+    <constant name="movespeed" value="65" adjustment="none" />
     <!-- Max health granted by the item. TOOLTIP ONLY! Used value is in "maxhealth" attribute -->
     <constant name="max_health" value="250" adjustment="none" />
 
@@ -52,7 +52,7 @@
 	</checkcost>
 	
 	<modifier key="boots" modpriority="51" exclusive="true"
-		movespeed="55"
+		movespeed="65"
 		disabled="false"
 	/>
 	
