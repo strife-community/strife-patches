@@ -2496,6 +2496,7 @@ Ability_Pincer_Ult_2_description_simple							Elimina los efectos de Aturdir/Ral
 Ability_Pincer_Ult_3_description_simple							Elimina los efectos de Aturdir/Ralentizar
 
 // Tortus
+// Ability_Tortus_TriggeredPassive was reworked, see entities_en.str!
 Ability_Tortus_Passive_1_name                                                Vitalidad
 Ability_Tortus_Passive_2_name                                                Vitalidad
 Ability_Tortus_Passive_3_name                                                Vitalidad
@@ -2517,18 +2518,18 @@ Ability_Tortus_Passive2_3_description_simple                                 Aum
 Ability_Tortus_TriggeredPassive_1_name                                       Endurecer
 Ability_Tortus_TriggeredPassive_2_name                                       Endurecer
 Ability_Tortus_TriggeredPassive_3_name                                       Endurecer
-Ability_Tortus_TriggeredPassive_1_description                                Bloquea hasta $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de daño de un ataque básico de héroe (sube con el nivel del héroe). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
-Ability_Tortus_TriggeredPassive_2_description                                Bloquea hasta $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de daño de un ataque básico de héroe (sube con el nivel del héroe). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
-Ability_Tortus_TriggeredPassive_3_description                                Bloquea hasta $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de daño de un ataque básico de héroe (sube con el nivel del héroe). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
+//Ability_Tortus_TriggeredPassive_1_description                                Bloquea hasta $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de daño de un ataque básico de héroe (sube con el nivel del héroe). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
+//Ability_Tortus_TriggeredPassive_2_description                                Bloquea hasta $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de daño de un ataque básico de héroe (sube con el nivel del héroe). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
+//Ability_Tortus_TriggeredPassive_3_description                                Bloquea hasta $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ de daño de un ataque básico de héroe (sube con el nivel del héroe). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ segundos de recarga^*.
 Ability_Tortus_TriggeredPassive_1_description_simple                         Bloquea el daño de los ataques básicos
 Ability_Tortus_TriggeredPassive_2_description_simple                         Bloquea el daño de los ataques básicos
 Ability_Tortus_TriggeredPassive_3_description_simple                         Bloquea el daño de los ataques básicos
 Ability_Tortus_Ult_1_name                                                    Rejuvenecimiento
 Ability_Tortus_Ult_2_name                                                    Rejuvenecimiento
 Ability_Tortus_Ult_3_name                                                    Rejuvenecimiento
-Ability_Tortus_Ult_1_description                                             Activa para regenerar $heal$ de salud durante un tiempo (sube con el nivel del héroe). 240 segundos de recarga.
-Ability_Tortus_Ult_2_description                                             Activa para regenerar $heal$ de salud durante un tiempo (sube con el nivel del héroe). ^c160 segundos de recarga^*.
-Ability_Tortus_Ult_3_description                                             Activa para regenerar ^c$heal$ de salud^* durante un tiempo (sube con el nivel del héroe). 160 segundos de recarga.
+Ability_Tortus_Ult_1_description                                             Activa para regenerar $percent_heal$% de salud durante un tiempo. $tooltip_cooldown_sec$ segundos de recarga.
+Ability_Tortus_Ult_2_description                                             Activa para regenerar $percent_heal$% de salud durante un tiempo. $tooltip_cooldown_sec$ segundos de recarga.
+Ability_Tortus_Ult_3_description                                             Activa para regenerar $percent_heal$% de salud durante un tiempo. $tooltip_cooldown_sec$ segundos de recarga.
 Ability_Tortus_Ult_1_description_simple                                      Activa para regenerar salud
 Ability_Tortus_Ult_2_description_simple                                      Activa para regenerar salud
 Ability_Tortus_Ult_3_description_simple                                      Activa para regenerar salud

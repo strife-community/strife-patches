@@ -2899,6 +2899,7 @@ Ability_Pincer_Ult_2_description_simple												移除晕眩/减速效果
 Ability_Pincer_Ult_3_description_simple												移除晕眩/减速效果
 
 // Tortus
+// Ability_Tortus_TriggeredPassive was reworked, see entities_en.str!
 Ability_Tortus_Passive_1_name												活力
 Ability_Tortus_Passive_2_name												活力
 Ability_Tortus_Passive_3_name												活力
@@ -2920,18 +2921,18 @@ Ability_Tortus_Passive2_3_description_simple												增加法力回复
 Ability_Tortus_TriggeredPassive_1_name											援护
 Ability_Tortus_TriggeredPassive_2_name												援护
 Ability_Tortus_TriggeredPassive_3_name												援护
-Ability_Tortus_TriggeredPassive_1_description												 托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
-Ability_Tortus_TriggeredPassive_2_description													  托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
-Ability_Tortus_TriggeredPassive_3_description													 托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
+//Ability_Tortus_TriggeredPassive_1_description												 托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
+//Ability_Tortus_TriggeredPassive_2_description													  托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
+//Ability_Tortus_TriggeredPassive_3_description													 托特斯对你进行援护，减少来自敌方英雄$tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$普通攻击伤害(根据英雄等级而定)。冷却时间^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$秒^*。
 Ability_Tortus_TriggeredPassive_1_description_simple												抵抗来自普攻的伤害 
 Ability_Tortus_TriggeredPassive_2_description_simple												抵抗来自普攻的伤害
 Ability_Tortus_TriggeredPassive_3_description_simple												抵抗来自普攻的伤害
 Ability_Tortus_Ult_1_name												治疗术
 Ability_Tortus_Ult_2_name												治疗术
 Ability_Tortus_Ult_3_name												治疗术
-Ability_Tortus_Ult_1_description											恢复英雄$heal$生命值(根据英雄等级而定)。冷却时间240秒。
-Ability_Tortus_Ult_2_description											恢复英雄$heal$生命值(根据英雄等级而定)。 ^c冷却时间160秒^*。
-Ability_Tortus_Ult_3_description											   恢复英雄$heal$生命值(根据英雄等级而定)。 冷却时间160秒。
+Ability_Tortus_Ult_1_description											恢复英雄$percent_heal$%生命值。冷却时间$tooltip_cooldown_sec$秒。
+Ability_Tortus_Ult_2_description											恢复英雄$percent_heal$%生命值。 冷却时间$tooltip_cooldown_sec$秒。
+Ability_Tortus_Ult_3_description											恢复英雄$percent_heal$%生命值。 冷却时间$tooltip_cooldown_sec$秒。
 Ability_Tortus_Ult_1_description_simple												恢复生命值
 Ability_Tortus_Ult_2_description_simple												恢复生命值
 Ability_Tortus_Ult_3_description_simple												恢复生命值

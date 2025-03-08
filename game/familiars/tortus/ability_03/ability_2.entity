@@ -22,8 +22,14 @@
 >
     <!-- Max health % heal -->
     <constant name="percent_heal" value="15" adjustment="none" />
+    <!-- Heal duration -->
+    <constant name="duration" value="0.5" adjustment="none" />
+
     <!-- Utility constant: percents multiplier -->
     <constant name="percent_mult" value="0.01" adjustment="none" />
+
+    <!-- TOOLTIP ONLY: cooldown -->
+    <constant name="tooltip_cooldown_sec" value="120" adjustment="none" />
 
     <!-- Making ability inactive if hero is full hp -->
     <checkcost>

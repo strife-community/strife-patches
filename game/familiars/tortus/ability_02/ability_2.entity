@@ -20,6 +20,9 @@
     <constant name="percent_mult" value="0.01" adjustment="none" />
     <!-- Utility constant: multiplier to get milliseconds from seconds -->
     <constant name="sec_to_msec_mult" value="1000" adjustment="none" noshowintooltip="true" />
+
+    <!-- TOOLTIP ONLY: cooldown -->
+    <constant name="tooltip_cooldown_sec" value="12" adjustment="none" />
     
     <onframe>
         <setactivemodifierkey entity="this_entity" name="tortusspawned" />
