@@ -14,7 +14,7 @@
 
 >
 	<onimpact>
-		<applystate name="State_Malph_Ability2" duration="6000"/>
+		<applystate name="State_Malph_Ability2" duration="-1"/>
 	</onimpact>
 	
 </projectile>
