@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability4_Malph_Channel"
+
+	statuseffecttooltip=""
+	
+	anim="item_1"
+	casttime="100"
+	castactiontime="100"
+	channeltime="1400"
+	ischanneling="true"
+
+
+	actiontype="target_entity"
+	casteffecttype="" 
+
+	targetscheme="all"
+
+	cooldowntime="0"
+
+	range="865"
+	forcerange="865"
+
+>
+
+	
+	<onchannelstart>
+    <playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+		<playanim name="ability_4_channel" source="source_entity" target="source_entity"/>
+		<applystate name="State_Malph_Ability4_Channel" ischannel="true" target="source_entity" duration="1400" />
+	</onchannelstart>
+
+
+	<onchannelend>
+		<spawnprojectile name="Projectile_Malph_Ability4_Enter" source="source_entity" target="target_entity" bind="source_entity" bindstate="State_Malph_Ability4_Exit" />
+	</onchannelend>
+	
+	<ondamaged>
+		<hasstate name="State_Malph_Ability4_Channel" target="this_owner_entity" >
+		<compare a="source_damage" b="0" op="gt" >
+			<targettype type="player_controlled">
+				<targettype type="self"/>
+				<else>
+					<printdebuginfo/>
+					<delete target="this_proxy_entity" />
+					<breakchannel />
+					<resetcooldown />
+					<startcooldown duration="5000" />
+				</else>
+			</targettype>
+		</compare>
+		</hasstate>
+	</ondamaged>
+	
+	<modifier key="Malph_underground" modpriority="100"
+		disabled="true"
+	/>
+
+</ability>

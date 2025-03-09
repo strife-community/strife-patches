@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Malph_Ability1"
+
+	speed="600"
+	gravity="0"
+
+	modelscale="3"
+	model="/core/null/invis.mdf"
+	
+	effectscale="2"
+	traileffect="effects/trail.effect"
+	deatheffect="effects/death.effect"
+
+	
+	canturn="false"
+	flying="true"
+	flyheight="50"
+	
+	touchradius="90"
+	touchpropradius="90"
+	touchpropanim="hit"
+
+	maxtouchespertarget="1"
+	maxtouches="1"
+	touchtargetscheme="enemy_units_and_buildings"
+	toucheffecttype="Magic Splash"
+	touchradiusdiradjust="true"
+	
+	homing="true"
+	homingturnspeed="0.07"
+	homingspeedmul="1"
+	homingseekrange="670"
+	hominglocktarget="true"
+	homingunlockrange="9999"
+	homingtargetscheme="enemy_heroes"
+	homingseekstealth="false"
+	
+	lifetime="2000"
+	
+>
+
+	<ontouch>	
+		<spawnaffector name="Affector_Malph_Ability1" target="this_position" />
+		<playeffect effect="effects/explosion.effect" source="this_position"  />
+		<kill target="this_entity" />
+	</ontouch>
+	
+	<onimpact>
+		<spawnaffector name="Affector_Malph_Ability1" target="this_position" />
+		<playeffect effect="effects/explosion.effect" source="this_position" />
+		<kill target="this_entity" />
+	</onimpact>
+	
+	<onkilled>
+		<print text="dd" />
+	</onkilled>
+	
+
+</projectile>
