@@ -1235,7 +1235,7 @@ Ability_Malph1_description										Target direction to fire an underground miss
 Ability_Malph1_description_simple								Homing missile with AoE damage and slow
 // Ability_Malph2
 Ability_Malph2_name												Healing Rations
-Ability_Malph2_description										Target ally to grant them a buff which heals them for ^g$heal$ Health^* over 6 seconds, providing $resistance$ resistance for the duration.
+Ability_Malph2_description										Target ally to grant them a buff which heals them for ^o$heal$ Health^* over $duration$ seconds, providing $resistance$ resistance for the duration.
 Ability_Malph2_description_simple								Grant healing and resistance over time
 // Ability_Malph3
 Ability_Malph3_name												Mud Field
@@ -1243,7 +1243,7 @@ Ability_Malph3_description										Target area to create a mud field.  Enemies 
 Ability_Malph3_description_simple								Create a field that slows and weakens enemies
 // Ability_Malph4
 Ability_Malph4_name												The Underground
-Ability_Malph4_description										Target location to create a Mole Hole.  By right-clicking a Mole Hole, you will channel for 1.4 seconds - entering the underground upon completion.  While underground, you can then target near any Mole Hole to return above ground at that location.
+Ability_Malph4_description										Target location to create a Mole Hole.  By right-clicking a Mole Hole, you will channel for 1.4 seconds - entering the underground upon completion.  While underground, you can then target near any Mole Hole to return above ground at that location.\n\nHoles are concealed from enemies until they stay next to it for $hole_reveal_time_sec$ second.
 Ability_Malph4_description_simple								Tunnel between Mole Holes for map-wide mobility
 Ability_Malph4_description:Malph_underground					Target near Mole Hole to exit the underground.
 
