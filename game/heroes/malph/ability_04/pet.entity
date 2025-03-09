@@ -71,10 +71,12 @@
     <!-- Each frame: check reveal conditions -->
     <onframe>
         <!-- First checking if counter exceeded -->
-        <compare a="accumulator" b="3" op="lt" >
+        <getconstant name="hole_reveal_time_sec" entity="this_proxy_entity" adjustmentsource="this_owner_entity" />
+        <compare a="accumulator" b="result" op="lt" >
             <!-- Checking if there is at least one enemy in radius -->
+            <getconstant name="hole_reveal_radius" entity="this_proxy_entity" adjustmentsource="this_owner_entity" />
             <areaofeffect
-                radius="300"
+                radius="result"
                 targetselection="closest"
                 targetscheme="enemy_heroes"
                 ignoreinvulnerable="true"
@@ -82,7 +84,8 @@
                 <!-- Adding frame time to counter -->
                 <changeaccumulator b="frametime" op="add" />
                 <!-- Checking if we should reveal now -->
-                <compare a="accumulator" b="3" op="ge" >
+                <getconstant name="hole_reveal_time_sec" entity="this_proxy_entity" adjustmentsource="this_owner_entity" />
+                <compare a="accumulator" b="result" op="ge" >
                     <applystate target="this_entity" name="State_Pet_Malph_Ability4_Reveal" duration="-1" />
                 </compare>
                 <!--else NOTHING TO DO -->
