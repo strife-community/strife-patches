@@ -3,7 +3,6 @@
     name="State_Pet_Malph_Ability4_Reveal"
 
     revealed="true"
-    sighted="true"
 >
     <!-- NOTHING TO DO: state just reveals hole -->
 </state>

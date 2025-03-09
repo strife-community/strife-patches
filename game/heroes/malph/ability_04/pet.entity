@@ -63,48 +63,63 @@
     touchrange="120"
 
 >
+    <!-- When hole spawns, reset its counter -->
     <onspawn>
         <setaccumulator value="0" />
     </onspawn>
 
+    <!-- Each frame: check reveal conditions -->
     <onframe>
-        <areaofeffect
-            radius="300"
-            targetselection="closest"
-            targetscheme="enemy_heroes"
-            ignoreinvulnerable="true"
-        >
-            <compare a="accumulator" b="3" op="lt" >
+        <!-- First checking if counter exceeded -->
+        <compare a="accumulator" b="3" op="lt" >
+            <!-- Checking if there is at least one enemy in radius -->
+            <areaofeffect
+                radius="300"
+                targetselection="closest"
+                targetscheme="enemy_heroes"
+                ignoreinvulnerable="true"
+            >
+                <!-- Adding frame time to counter -->
                 <changeaccumulator b="frametime" op="add" />
+                <!-- Checking if we should reveal now -->
                 <compare a="accumulator" b="3" op="ge" >
                     <applystate target="this_entity" name="State_Pet_Malph_Ability4_Reveal" duration="-1" />
                 </compare>
-            </compare>
-        </areaofeffect>
-        <else>
-            <compare a="accumulator" b="3" op="ge" >
-                <expirestate name="State_Pet_Malph_Ability4_Reveal" target="this_entity" />
-            </compare>
-            <setaccumulator value="0" />
-        </else>
+                <!--else NOTHING TO DO -->
+            </areaofeffect>
+            <else>
+                <!-- No enemy is in the area, reset counter -->
+                <setaccumulator value="0" />
+            </else>
+        </compare>
+        <!--else NOTHING TO DO: hole is already revealed, no need to check enemies -->
     </onframe>
 
+    <!-- When unit is commanded to interact with hole: -->
     <ontouched>
+        <!-- Checking if the unit is enemy -->
         <cantarget targetscheme="enemy_units">
+            <!-- Enemy must attack hole -->
             <order command="attack" target="this_entity" source="target_entity" />
         </cantarget>
         <else>
+            <!-- Checking if the unit is Malph -->
             <cantarget targetscheme="self" source="this_owner_entity">
+                <!-- Start entering hole -->
                 <useability target="this_entity" slot="4" source="this_owner_entity" />
             </cantarget>
+            <!--else: NOTHING TO DO -->
         </else>
     </ontouched>
     
+    <!-- On damage: deal only 1 point of damage -->
     <ondamaged>
         <changedamage b="1" op="min"/>
     </ondamaged>
     
+    <!-- When hole is destroyed: -->
     <onkilled>
+        <!-- Checking if there is still at least one hole on the map -->
         <hasmodifier entity="source_owner_entity" name="Malph_underground" >
             <areaofeffect
                 radius="9999999"
@@ -113,8 +128,10 @@
                 ignoreinvulnerable="true"
                 ignore="this_entity"
             >
+                <!-- There are other holes, NOTHING TO DO-->
             </areaofeffect>
             <else>
+                <!-- This hole was the last one: teleport Maplh here and get him out of the underground -->
                 <teleport source="source_owner_entity" target="this_position" />
                 <setpos0 position="source_owner_entity" offset="0 170 0" />
                 <expirestate name="State_Malph_Ability4_Underground" target="source_owner_entity" />
@@ -122,6 +139,7 @@
             </else>
         </hasmodifier>
         
+        <!-- Play visual effect -->
         <playeffect effect="effects/death.effect" source="this_position" target="this_position"/>
     </onkilled>
     
