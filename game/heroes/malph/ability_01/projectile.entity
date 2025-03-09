@@ -51,10 +51,5 @@
 		<playeffect effect="effects/explosion.effect" source="this_position" />
 		<kill target="this_entity" />
 	</onimpact>
-	
-	<onkilled>
-		<print text="dd" />
-	</onkilled>
-	
 
 </projectile>

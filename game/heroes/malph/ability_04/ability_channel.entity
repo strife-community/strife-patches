@@ -41,7 +41,6 @@
 			<targettype type="player_controlled">
 				<targettype type="self"/>
 				<else>
-					<printdebuginfo/>
 					<delete target="this_proxy_entity" />
 					<breakchannel />
 					<resetcooldown />
