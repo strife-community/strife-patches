@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_GiantsVisage"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	
+	cost="1200"
+	components="Item_Booster Item_Booster"
+	
+	actiontype="passive"
+
+	resistance="15"
+	filters="magic_armor,armor,defense,health,power,resistance"
+	empoweredeffects="Item_GiantsVisage_Empower_1,Item_GiantsVisage_Empower_2,Item_GiantsVisage_Empower_3"
+
+	powerpercharge="1"
+	powerperchargeperquality="0.1"
+	
+	showinpractice="true"
+>
+
+	<constant name="power" value="0.90" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
+
+	<!-- tool tip only -->
+	<constant name="resistance" value="15" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+
+	<onframe>
+		<getconstant name="power" />
+		<setvar0 a="result" b="100" op="div" />
+		<setcharges a="var0" b="source_maxhealth" op="mult" />
+	</onframe>
+</crafteditem>

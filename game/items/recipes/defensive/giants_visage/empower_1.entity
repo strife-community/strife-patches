@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_GiantsVisage_Empower_1"
+	
+	cost="1470"
+
+>
+	<constant name="hp_enchant" value="2.5" adjustment="none" />
+		
+	<onframe>
+		<getconstant name="power" />
+		<setvar0 a="result" b="100" op="div" />
+		<setcharges a="var0" b="source_maxhealth" op="mult" />
+		
+		<applystate name="State_GiantsVisage_Legendary" target="source_entity" duration="100" pushentity="true" />
+		<getconstant name="hp_enchant" />
+		<setvar0 a="result" b="100" op="div" />
+		<setcharges entity="stack_entity" a="var0" b="source_maxhealth" op="mult" />
+	</onframe>
+</qualityitem>
