@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Trace_Ability2_Timer"
+
+	icon=""
+	portrait=""
+	model="/shared/models/invis.mdf"
+
+	passiveeffect=""
+	isselectable="false"
+	iscontrollable="false"
+	boundsheight="64"
+	searchheight="100"
+	searchradius="70"
+	minsearchradius="32"
+	boundsradius="16"
+	collisionradius="30"
+	selectionradius="45"
+	targetoffset="0 0 54"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+	maxhealth="0"
+	flying="false"
+
+	sightrangeday="300"
+	sightrangenight="300"
+	unitwalking="true"
+	canattack="false"
+	deathtime="0"
+	corpsetime="0"
+	invulnerable="true"
+	hidealtinfo="false"
+	showaltinfowheninvulnerable="true"
+	nothreat="false"
+	drawonmap="false"
+	revealed="true"
+
+	infoheight="275"
+	
+	showlifetime="true"
+	lifetime="2000"
+	unittype="tracebomb"
+	
+	hazardradius="200"
+	hazardthreat="extreme"
+>
+
+	<onspawn>
+		<playeffect effect="effects/ring.effect" source="this_entity" occlude="true" visibility="enemies"/>
+		<playeffect effect="effects/ring_ally.effect" source="this_entity" occlude="true" visibility="allies"/>
+	</onspawn>
+
+	<onexpired>
+		<playeffect effect="effects/explosion.effect" source="this_position" occlude="true" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic Splash"
+		>
+			<recordheroaggression source="this_owner_entity" />
+			<aggression source="this_owner_entity" />
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<cantarget targetscheme="enemy_units" >
+					<getconstant name="damage" entity="tool_entity" adjustmentsource="this_owner_entity" />
+					<damage effecttype="Magic Splash" amount="1" b="result" op="mult" inflictor="this_owner_entity" />
+					<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+					<applystate name="State_Stunned" target="target_entity" duration="1000,1200,1400,1600" />
+					</cantarget >
+						<else>
+						<cantarget targetscheme="enemy_buildings" >
+						<getconstant name="damage" entity="tool_entity" adjustmentsource="this_owner_entity" />
+						<damage effecttype="Magic Splash" amount=".5" b="result" op="mult" inflictor="this_owner_entity" />
+						<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+						</cantarget >
+						</else>
+				</onimpact>
+			</combatevent>
+		</areaofeffect>
+
+	</onexpired>
+	
+	<onkilled>
+		<playeffect effect="effects/explosion.effect" source="this_position" occlude="true" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units_and_buildings"
+			effecttype="Magic Splash"
+		>
+			<recordheroaggression source="this_owner_entity" />
+			<aggression source="this_owner_entity" />
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" entity="tool_entity" adjustmentsource="this_owner_entity" />
+					<damage effecttype="Magic Splash" amount="0.5" b="result" op="mult" inflictor="this_owner_entity" />
+					<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+					<cantarget targetscheme="enemy_units" >
+					<applystate name="State_Stunned" target="target_entity" duration="500,600,700,800" />
+					</cantarget >
+				</onimpact>
+			</combatevent>
+		</areaofeffect>
+
+	</onkilled>
+
+</pet>
