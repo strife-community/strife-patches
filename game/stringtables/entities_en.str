@@ -1422,7 +1422,7 @@ Ability_Rip2_description										Target area to vanish for 1 second, then reapp
 Ability_Rip2_description_simple									Vanish and reappear dealing area damage
 // Ability_Rip3
 Ability_Rip3_name												Dark Empowerment
-Ability_Rip3_description										^444Passive Skill^*\nEvery 5th attack charges your blade.  Once charged, your next attack deals ^o$damage_increase$% bonus Attack damage^*.\n\nAvoiding enemy vision instantly charges your blade.
+Ability_Rip3_description										^444Passive Skill^*\nEvery 5th attack charges your blade.  Once charged, your next attack deals $damage_increase$% bonus Attack damage.\n\nAvoiding enemy vision instantly charges your blade.
 Ability_Rip3_description_simple									Critical strike after being unseen
 // Ability_Rip4
 Ability_Rip4_name												Nether Strike

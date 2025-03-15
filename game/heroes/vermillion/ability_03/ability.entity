@@ -12,7 +12,7 @@
 	actiontype="passive"
 >
 	<!--Display Only-->
-	<constant name="attack_bonus" value="2,4,6,8" adjustment="none" />
+	<constant name="attack_bonus" value="2,4,6,8" adjustment="ability" />
 	<constant name="range" value="35,70,105,140" adjustment="none" />
 	
 	<onframe />

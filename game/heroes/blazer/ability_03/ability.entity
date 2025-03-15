@@ -15,7 +15,7 @@
 >
 
 	<!-- tool tip only -->
-	<constant name="attack_bonus" value="3,6,9,12" adjustment="none" />
+	<constant name="attack_bonus" value="3,6,9,12" adjustment="ability" />
 	<!-- end tool tip only -->
 	
 	<constant name="damage_increase" value="45,60,75,90" adjustment="none" />
