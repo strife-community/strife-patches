@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vermillion3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	attackrange="35,70,105,140"
+	basedamage="2,4,6,8"
+	actiontype="passive"
+>
+	<!--Display Only-->
+	<constant name="attack_bonus" value="2,4,6,8" adjustment="none" />
+	<constant name="range" value="35,70,105,140" adjustment="none" />
+	
+	<onframe />
+	
+</ability>

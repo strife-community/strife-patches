@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Blazer3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	maxcharges="30"
+	
+	basedamage="3,6,9,12"
+
+	actiontype="passive"
+>
+
+	<!-- tool tip only -->
+	<constant name="attack_bonus" value="3,6,9,12" adjustment="none" />
+	<!-- end tool tip only -->
+	
+	<constant name="damage_increase" value="45,60,75,90" adjustment="none" />
+
+	<onattackstart>
+		<setaccumulator value="0" />
+		
+		<compare a="charges" b="25" op="ge">
+			<getconstant name="damage_increase" />
+			<setvar0 a="result" b="100" op="div" />
+			<setvar0 a="source_attackdamage" b="result" op="mult" />
+			
+			<bonusdamageadd target="" a="var0" />
+			<setattackprojectile name="Projectile_Blazer_Attack_Crit" />
+			<playanim name="ability_3" speed="source_attackspeed" target="source_entity" />
+			<setaccumulator value="1" />
+		</compare>
+		
+	</onattackstart>
+	
+	<onattack>
+		<applystate name="State_Blazer_Ability3_Delay" target="source_entity" proxy="this_entity" duration="2000" />
+		<expirestate name="State_Blazer_Ability3_Charging" target="source_entity" />
+		
+		<compare a="accumulator" b="1" op="eq" >
+			<setcharges a="0" />
+		</compare>
+	</onattack>
+	
+	<onrespawn>
+		<applystate name="State_Blazer_Ability3_Delay" target="source_entity" proxy="this_entity" duration="2000" />
+	</onrespawn>
+	
+	<onlearn>
+		<applystate name="State_Blazer_Ability3_Delay" target="source_entity" proxy="this_entity" duration="2000" />
+	</onlearn>
+	
+	
+</ability>
