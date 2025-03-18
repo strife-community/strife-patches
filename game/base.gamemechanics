@@ -582,6 +582,7 @@
 	<targetscheme name="CounterStrife_DharkwaveRunSpot" allow="Gadget_DharkwaveTargetRunSpot" restrict="" />
 	<targetscheme name="Buford_Cage" allow="Pet_Buford_Ability4_Cage" restrict="" />	
 	<targetscheme name="Buford_Fire" allow="Gadget_Buford_Ability2_Path" restrict="" />
+    <targetscheme name="AemonOwnConsecration" allow="AemonConsecrationGadget" restrict="!mine,enemy" />
 
 	<targetscheme name="Chroma_Reactor" allow="unit" restrict="enemy,building,dead,corpse,chest,PseudoPet,!Chroma_Reactor" />
 	<targetscheme name="Vex_Teleport" allow="unit,building" restrict="enemy,dead,corpse,tree,chest,gadget,PseudoPet,self,AntiTP,MedicPet,Unit_Spellblade" />

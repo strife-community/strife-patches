@@ -1419,7 +1419,7 @@ Ability_Rip2_description											Der Zielbereich verschwindet für 1 Sekunde u
 Ability_Rip2_description_simple										Verschwinde und erscheine wieder und verursache Flächenschaden
 // Ability_Rip3
 Ability_Rip3_name													Dunkle Ermächtigung
-Ability_Rip3_description											^444Passive Fertigkeit^*\nJeder 5. Angriff lädt deine Klinge auf. Nach dem Aufladen verursacht Ihr nächster Angriff ^o$damage_increase$% zusätzlichen Angriffsschaden^*.\n\nWenn Sie der Sicht des Feindes ausweichen, wird Ihre Klinge sofort aufgeladen.
+Ability_Rip3_description											^444Passive Fertigkeit^*\nJeder 5. Angriff lädt deine Klinge auf. Nach dem Aufladen verursacht Ihr nächster Angriff $damage_increase$% zusätzlichen Angriffsschaden.\n\nWenn Sie der Sicht des Feindes ausweichen, wird Ihre Klinge sofort aufgeladen.
 Ability_Rip3_description_simple										Angriffskrit, nachdem er unsichtbar war
 // Ability_Rip4
 Ability_Rip4_name													Netherschlag

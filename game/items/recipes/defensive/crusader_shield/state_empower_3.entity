@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_CrusaderShield_Empower_3"
+
+    icon="icon.tga"
+>
+
+    <onattackeddamageevent>
+        <targettype type="building">
+            <!-- Reducing damage. We already reduce damage by 20% in base item, so 80% left. 
+                 To make it 30% we need to take 87.5% from what is left 
+            -->
+            <setvalue name="damage_attempted" a="damage_attempted" b="0.875" op="mult" />
+        </targettype>
+    </onattackeddamageevent>
+
+</state>
