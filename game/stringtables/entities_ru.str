@@ -2652,7 +2652,7 @@ Item_VampiricBlade_Empower_1_description						Добивая бойца или �
 Item_VampiricBlade_Empower_2_name								Desolation
 Item_VampiricBlade_Empower_2_description						Дает $bonusdamage_chance_enchant$% шанс нанести $bonusdamage_enchant$ дополнительного урона бойцу или монстру.
 Item_VampiricBlade_Empower_3_name								Thirst
-Item_VampiricBlade_Empower_3_description						За убийство и помощь в убийстве восстанавливает $healthrestore_kill_enchant$% вашего максимального запаса здоровья в течение $healthrestore_killduration_enchant$ секунд.
+Item_VampiricBlade_Empower_3_description						Убийство и помощь восстанавливают $healthrestore_kill_enchant$% вашего максимального запаса здоровья в течение $healthrestore_killduration_enchant$ секунд, но предмет не даёт сопротивления.
 
 // Item_ThunderClaw
 Item_ThunderClaw_name											Thundercaller

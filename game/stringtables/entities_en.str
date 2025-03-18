@@ -2454,7 +2454,7 @@ Item_VampiricBlade_Empower_1_description						Killing a non-hero with an attack 
 Item_VampiricBlade_Empower_2_name								Desolation
 Item_VampiricBlade_Empower_2_description						Grants a $bonusdamage_chance_enchant$% chance to deal $bonusdamage_enchant$ damage to non-hero units.
 Item_VampiricBlade_Empower_3_name								Thirst
-Item_VampiricBlade_Empower_3_description						Kills and assists restore $healthrestore_kill_enchant$% of your Max Health over $healthrestore_killduration_enchant$ seconds.
+Item_VampiricBlade_Empower_3_description						Kills and assists restore $healthrestore_kill_enchant$% of your Max Health over $healthrestore_killduration_enchant$ seconds, but no longer grants resistance.
 
 // Item_ThunderClaw
 Item_ThunderClaw_name											Thundercaller
