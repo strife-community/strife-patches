@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_VampiricBlade_Empower_3"
+	
+	cost="1305"
+
+>
+	<constant name="healthrestore_kill_enchant" value="12" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<!-- Tooltip only -->
+	<constant name="healthrestore_killduration_enchant" value="3" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<applystate name="State_VampiricBlade_Empower_3" target="source_entity" duration="5000" proxy="this_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<applystate name="State_VampiricBlade_Empower_3" target="source_entity" duration="5000" proxy="this_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
+
+</qualityitem>
