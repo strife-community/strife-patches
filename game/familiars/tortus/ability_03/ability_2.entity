@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+    name="Ability_Tortus_Ult_2"
+
+    icon="icon.tga"
+    maxlevel="15"
+    actiontype="target_self"
+    manacost="0"
+    casttime="0"
+
+    cooldowntime="120000"
+
+    cooldowntype="familiar3" 
+    casteffecttype="NoResponse"
+    frontqueue="true"
+    inheritmovement="true"
+    responsetype="NoResponse"
+    noninterrupting="true"
+    alwaysshowtimer="true"
+    ispetultimate="true"
+    
+>
+    <!-- Max health % heal -->
+    <constant name="percent_heal" value="15" adjustment="none" />
+    <!-- Heal duration -->
+    <constant name="duration" value="0.5" adjustment="none" />
+
+    <!-- Utility constant: percents multiplier -->
+    <constant name="percent_mult" value="0.01" adjustment="none" />
+
+    <!-- TOOLTIP ONLY: cooldown -->
+    <constant name="tooltip_cooldown_sec" value="120" adjustment="none" />
+
+    <!-- Making ability inactive if hero is full hp -->
+    <checkcost>
+        <compare a="source_health_percent" b="1" op="ge" >
+            <invalidate/>
+        </compare>
+    </checkcost>
+
+    <!-- On use: -->
+    <onimpact>
+        <!-- Starting timer (only visual) -->
+        <starttimer duration="500" />
+        <!-- Animations and effects -->
+        <playanim name="ability_1" target="this_proxy_entity" />
+        <playeffect effect="effects/cast.effect" target="source_entity" source="source_entity"/>
+        <playeffect effect="effects/cast_turtle.effect" target="this_proxy_entity" source="this_proxy_entity"/>
+        <!-- ??? -->
+        <applystate name="State_Tortus_Burn_Cast" duration="500" target="this_proxy_entity" proxy="target_entity" />
+        <!-- Adding health restoration state -->
+        <applystate name="State_Tortus_Health" duration="500" target="source_entity" />
+    </onimpact>
+
+</ability>

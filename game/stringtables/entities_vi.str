@@ -2589,6 +2589,7 @@ Ability_Pincer_Ult_2_description_simple							Loại bõ mọi tác động x
 Ability_Pincer_Ult_3_description_simple							Loại bõ mọi tác động xấu trên Hero
 
 // Tortus
+// Ability_Tortus_TriggeredPassive was reworked, see entities_en.str!
 Ability_Tortus_Passive_1_name									Vitality
 Ability_Tortus_Passive_2_name									Vitality
 Ability_Tortus_Passive_3_name									Vitality
@@ -2610,18 +2611,18 @@ Ability_Tortus_Passive2_3_description_simple					Tăng MP Hồi Phục
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
-Ability_Tortus_TriggeredPassive_2_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
-Ability_Tortus_TriggeredPassive_3_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+//Ability_Tortus_TriggeredPassive_1_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+//Ability_Tortus_TriggeredPassive_2_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+//Ability_Tortus_TriggeredPassive_3_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Khóa đòn đánh thường
 Ability_Tortus_TriggeredPassive_2_description_simple			Khóa đòn đánh thường
 Ability_Tortus_TriggeredPassive_3_description_simple			Khóa đòn đánh thường
 Ability_Tortus_Ult_1_name										Rejuvenate
 Ability_Tortus_Ult_2_name										Rejuvenate
 Ability_Tortus_Ult_3_name										Rejuvenate
-Ability_Tortus_Ult_1_description								Kích hoạt để regenerate $heal$ HP từ từ (dựa trên lv Hero).  240 giây Cooldown.
-Ability_Tortus_Ult_2_description								Kích hoạt để regenerate $heal$ HP từ từ (dựa trên lv Hero).  ^c160 giây Cooldown^*.
-Ability_Tortus_Ult_3_description								Kích hoạt để regenerate ^c$heal$ HP^* từ từ (dựa trên lv Hero).  160 giây Cooldown.
+Ability_Tortus_Ult_1_description								Kích hoạt để regenerate $percent_heal$% HP từ từ.  $tooltip_cooldown_sec$ giây Cooldown.
+Ability_Tortus_Ult_2_description								Kích hoạt để regenerate $percent_heal$% HP từ từ.  $tooltip_cooldown_sec$ giây Cooldown.
+Ability_Tortus_Ult_3_description								Kích hoạt để regenerate $percent_heal$% HP từ từ.  $tooltip_cooldown_sec$ giây Cooldown.
 Ability_Tortus_Ult_1_description_simple							Kích hoạt để Hồi Phục HP
 Ability_Tortus_Ult_2_description_simple							Kích hoạt để Hồi Phục HP
 Ability_Tortus_Ult_3_description_simple							Kích hoạt để Hồi Phục HP

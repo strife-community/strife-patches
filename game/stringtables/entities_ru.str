@@ -3112,36 +3112,37 @@ Ability_Tortus_Passive_3_name									Vitality
 Ability_Tortus_Passive_1_description_simple						Увеличивает максимальный запас здоровья.
 Ability_Tortus_Passive_2_description_simple						Увеличивает максимальный запас здоровья.
 Ability_Tortus_Passive_3_description_simple						Увеличивает максимальный запас здоровья.
-Ability_Tortus_Passive_1_description							Увеличивает максимальный запас здоровья до $passive$ на 15-м уровне (значение растет с уровнем героя).
-Ability_Tortus_Passive_2_description							Увеличивает максимальный запас здоровья до $passive$ на 15-м уровне (значение растет с уровнем героя).
+Ability_Tortus_Passive_1_description							Увеличивает максимальный запас здоровья на $passive$%.
+Ability_Tortus_Passive_2_description							Увеличивает максимальный запас здоровья на $passive$%.
 Ability_Tortus_Passive_3_description							Увеличивает максимальный запас здоровья на $passive$%.
-Ability_Tortus_Passive2_1_name									Clarity
-Ability_Tortus_Passive2_2_name									Clarity
-Ability_Tortus_Passive2_3_name									Clarity
-Ability_Tortus_Passive2_1_description							Повышает скорость восстановления маны на $passive$ (значение растет с уровнем героя).
-Ability_Tortus_Passive2_2_description							Повышает скорость восстановления маны на $passive$ (значение растет с уровнем героя).
-Ability_Tortus_Passive2_3_description							Повышает скорость восстановления маны на $passive$ (значение растет с уровнем героя).
-Ability_Tortus_Passive2_1_description_simple					Повышает скорость восстановления маны.
-Ability_Tortus_Passive2_2_description_simple					Повышает скорость восстановления маны.
-Ability_Tortus_Passive2_3_description_simple					Повышает скорость восстановления маны.
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Отражает $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ урона от обычной атаки вражеского героя (значение растет с уровнем героя).\n\n^cВремя перезарядки - $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ секунд.^*
-Ability_Tortus_TriggeredPassive_2_description					Отражает $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ урона от обычной атаки вражеского героя (значение растет с уровнем героя).\n\n^cВремя перезарядки - $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ секунд.^*
-Ability_Tortus_TriggeredPassive_3_description					Отражает $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ урона от обычной атаки вражеского героя (значение растет с уровнем героя).\n\n^cВремя перезарядки - $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ секунд.^*
-Ability_Tortus_TriggeredPassive_1_description_simple			Отражает урон от обычных атак.
-Ability_Tortus_TriggeredPassive_2_description_simple			Отражает урон от обычных атак.
-Ability_Tortus_TriggeredPassive_3_description_simple			Отражает урон от обычных атак.
+Ability_Tortus_TriggeredPassive_1_description					Получение урона от обычной атаки героя активирует на $duration_sec$с щит, который уменьшает урон от обычных атак на $damage_reduction_percent$%.\n\n^cВремя перезарядки - $tooltip_cooldown_sec$с^*.
+Ability_Tortus_TriggeredPassive_2_description					Получение урона от обычной атаки героя активирует на $duration_sec$с щит, который уменьшает урон от обычных атак на $damage_reduction_percent$%.\n\n^cВремя перезарядки - $tooltip_cooldown_sec$с^*.
+Ability_Tortus_TriggeredPassive_3_description					Получение урона от обычной атаки героя активирует на $duration_sec$с щит, который уменьшает урон от обычных атак на $damage_reduction_percent$%.\n\n^cВремя перезарядки - $tooltip_cooldown_sec$с^*.
+Ability_Tortus_TriggeredPassive_1_description_simple			Уменьшает урон от обычных атак.
+Ability_Tortus_TriggeredPassive_2_description_simple			Уменьшает урон от обычных атак.
+Ability_Tortus_TriggeredPassive_3_description_simple			Уменьшает урон от обычных атак.
 Ability_Tortus_Ult_1_name										Rejuvenate
 Ability_Tortus_Ult_2_name										Rejuvenate
 Ability_Tortus_Ult_3_name										Rejuvenate
-Ability_Tortus_Ult_1_description								Примените, чтобы восстановить $heal$ здоровья (значение растет с уровнем героя). Время перезарядки - 240 секунд^*.
-Ability_Tortus_Ult_2_description								Примените, чтобы восстановить $heal$ здоровья (значение растет с уровнем героя). Время перезарядки - ^c160 секунд^*.
-Ability_Tortus_Ult_3_description								Примените, чтобы восстановить $heal$ здоровья (значение растет с уровнем героя). Время перезарядки - ^c160 секунд^*.
+Ability_Tortus_Ult_1_description								Примените, чтобы восстановить $percent_heal$% здоровья в течение $duration$с. ^cВремя перезарядки - $tooltip_cooldown_sec$с.^*
+Ability_Tortus_Ult_2_description								Примените, чтобы восстановить $percent_heal$% здоровья в течение $duration$с. ^cВремя перезарядки - $tooltip_cooldown_sec$с.^*
+Ability_Tortus_Ult_3_description								Примените, чтобы восстановить $percent_heal$% здоровья в течение $duration$с. ^cВремя перезарядки - $tooltip_cooldown_sec$с.^*
 Ability_Tortus_Ult_1_description_simple							Восстанавливает здоровье.
 Ability_Tortus_Ult_2_description_simple							Восстанавливает здоровье.
 Ability_Tortus_Ult_3_description_simple							Восстанавливает здоровье.
+// Unused
+//Ability_Tortus_Passive2_1_name									Clarity
+//Ability_Tortus_Passive2_2_name									Clarity
+//Ability_Tortus_Passive2_3_name									Clarity
+//Ability_Tortus_Passive2_1_description							Повышает скорость восстановления маны на $passive$ (значение растет с уровнем героя).
+//Ability_Tortus_Passive2_2_description							Повышает скорость восстановления маны на $passive$ (значение растет с уровнем героя).
+//Ability_Tortus_Passive2_3_description							Повышает скорость восстановления маны на $passive$ (значение растет с уровнем героя).
+//Ability_Tortus_Passive2_1_description_simple					Повышает скорость восстановления маны.
+//Ability_Tortus_Passive2_2_description_simple					Повышает скорость восстановления маны.
+//Ability_Tortus_Passive2_3_description_simple					Повышает скорость восстановления маны.
 
 
 // Tinker
