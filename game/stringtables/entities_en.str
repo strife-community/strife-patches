@@ -2279,12 +2279,12 @@ Item_HealingScepter_description_simple							^091Activate: restore Health to tar
 Item_HealingScepter_bonusdescription							Increases the Health restored by $common_increase$%.
 Item_HealingScepter_legendaryname								Greater
 Item_HealingScepter_legendarydescription						Increases Min & Max charges by $legendary$.
-Item_HealingScepter_Empower_1_name								Focus
-Item_HealingScepter_Empower_1_description						Increases Heal to ^o$heal_enchant$ Health^* and gives $mana_enchant$ Mana. Cooldown becomes 50% longer.
-Item_HealingScepter_Empower_2_name								Diligence
-Item_HealingScepter_Empower_2_description						Cooldown reduced.
+Item_HealingScepter_Empower_1_name								Utility
+Item_HealingScepter_Empower_1_description						Also gives target $enchant_1_mana$ Mana. Cooldown increased to $enchant_1_cd$ seconds.
+Item_HealingScepter_Empower_2_name								Focus
+Item_HealingScepter_Empower_2_description						Increases Heal to ^o$enchant_2_heal$ Health^*, but range is decreased by $enchant_2_range$.
 Item_HealingScepter_Empower_3_name								Generosity
-Item_HealingScepter_Empower_3_description						Also heals nearby allies for $areaheal_enchant$% effectiveness.
+Item_HealingScepter_Empower_3_description						Decreases heal to ^o$enchant_3_heal$ Health^* but also heals allies in $enchant_3_radius$ radius around target.
 
 // InfernoBrand
 Item_InfernoBrand_name											Inferno Brand

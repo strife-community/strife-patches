@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+    name="Item_HealingScepter_Empower_2"
+
+    cost="550"
+    range="400"
+    hoverareacastrange="400"
+>
+    <!-- Heal base value, adjusted by power -->
+    <constant name="enchant_2_heal" value="160" adjustment="power_support" />
+    <!-- TOOLTIP ONLY: range decrease. Real range value is above -->
+    <constant name="enchant_2_range" value="100" adjustment="none" />
+
+    <!-- When used: -->
+    <onimpact>
+        <!-- Play visual effect -->
+        <playeffect effect="effects/cast.effect" target="target_entity" source="target_entity" />
+        
+        <!-- Heal target -->
+        <getconstant name="enchant_2_heal" adjustmentsource="this_entity" />
+        <heal a="result" />
+    </onimpact>
+
+</qualityitem>
