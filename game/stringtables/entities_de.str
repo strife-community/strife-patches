@@ -674,6 +674,7 @@ Ability_Ace4_description_simple										Gibt Extragold für Kills von Helden
 
 
 // Hero_Aemon
+// TheChiprel: add $cc_reduction$ to "Ability_Aemon2_description" (see entities_en.str)!
 Hero_Aemon_name														Aemon
 Hero_Aemon_description												Mobiler Panzer mit AOE-Schaden und Heilung
 Hero_Aemon_role														Mobiler Panzer mit AOE-Schaden und Heilung
@@ -688,7 +689,7 @@ Ability_Aemon2_description											Aemon erhält für $duration$ Sekunden eine
 Ability_Aemon2_description_simple									Erhöhter Widerstand und Verbündetenheilung bei Angriffen
 // Ability_Aemon3
 Ability_Aemon3_name													Mut
-Ability_Aemon3_description											Aemon erhält 1 Sekunde lang einen Ausbruch von $movespeed$ Bewegungsgeschwindigkeit. Bei Aktivierung innerhalb der Weihe verlängert sich die Dauer auf 3 Sekunden.\n\nBei der Aktivierung verlangsamen Aemons nächste drei Angriffe das Ziel um $slow$%.
+Ability_Aemon3_description											Aemon erhält $mspeed_duration_outside_s$ Sekunde lang einen Ausbruch von $movespeed$ Bewegungsgeschwindigkeit. Bei Aktivierung innerhalb der Weihe verlängert sich die Dauer auf $mspeed_duration_inside_s$ Sekunden.\n\nBei der Aktivierung verlangsamen Aemons nächste $max_charges$ Angriffe das Ziel um $slow$%.
 Ability_Aemon3_description_simple									Erhöhte Bewegungsgeschwindigkeit und Verlangsammung bei Angriffen
 // Ability_Aemon4
 Ability_Aemon4_name													Gerechtigkeit
@@ -1232,7 +1233,7 @@ State_Malady_Ability4_Channel_name									Lädt...
 // Ability_Malph1_description_simple		aoe slow and damage
 // Ability_Malph2
 // Ability_Malph2_name		Healing Rations
-// Ability_Malph2_description		Target ally to grant them a buff which heals them for ^g$heal$ Health^* over 6 seconds, providing $resistance$ resistance for the duration.
+// Ability_Malph2_description		Target ally to grant them a buff which heals them for ^g$heal$ Health^* over $duration$ seconds, providing $resistance$ resistance for the duration.
 // Ability_Malph2_description_simple		heal over time
 // Ability_Malph3
 // Ability_Malph3_name		Mud Field
@@ -2270,18 +2271,19 @@ Item_Lasthit_Empower_5_name											Die Jagd
 Item_Lasthit_Empower_5_description									Eine Einheit mit Axt werfen abzuschießen heilt dich für $heal_enchant$ Gesundheit.
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name											Heilstab
 Item_HealingScepter_description										^091Aktivieren: Heile das Ziel für^* ^o$heal$ Gesundheit^*^091.^*
 Item_HealingScepter_description_simple								^091Aktivieren: Gesundheit des Ziels wiederherstellen.^*
 Item_HealingScepter_bonusdescription								Erhöht die wiederhergestellte Gesundheit um $common_increase$%.
 Item_HealingScepter_legendaryname									Größer
 Item_HealingScepter_legendarydescription							Erhöht min. und max. Ladungen um $legendary$.
-Item_HealingScepter_Empower_1_name									Fokus
-Item_HealingScepter_Empower_1_description							Erhöht die Heilung auf ^o$heal_enchant$ Gesundheit^* und gibt $mana_enchant$ Mana. Die Abklingzeit verlängert sich um 50%.
-Item_HealingScepter_Empower_2_name									Sorgfalt
-Item_HealingScepter_Empower_2_description							Abklingzeit reduziert.
-Item_HealingScepter_Empower_3_name									Großzügigkeit
-Item_HealingScepter_Empower_3_description							Heilt auch umliegende Verbündete mit $areaheal_enchant$% Wirksamkeit
+//Item_HealingScepter_Empower_1_name									Fokus
+//Item_HealingScepter_Empower_1_description							Erhöht die Heilung auf ^o$heal_enchant$ Gesundheit^* und gibt $mana_enchant$ Mana. Die Abklingzeit verlängert sich um 50%.
+//Item_HealingScepter_Empower_2_name									Sorgfalt
+//Item_HealingScepter_Empower_2_description							Abklingzeit reduziert.
+//Item_HealingScepter_Empower_3_name									Großzügigkeit
+//Item_HealingScepter_Empower_3_description							Heilt auch umliegende Verbündete mit $areaheal_enchant$% Wirksamkeit
 
 // InfernoBrand
 Item_InfernoBrand_name												Teufelmarke
@@ -3031,6 +3033,7 @@ Ability_Topps_Passive2_2_description_simple							Verleiht CC-Reduktion.
 Ability_Topps_Passive2_3_description_simple							Verleiht CC-Reduktion.
 
 // Tortus
+// Ability_Tortus_TriggeredPassive was reworked, see entities_en.str!
 Ability_Tortus_Passive_1_name										Vitalität
 Ability_Tortus_Passive_2_name										Vitalität
 Ability_Tortus_Passive_3_name										Vitalität
@@ -3043,18 +3046,18 @@ Ability_Tortus_Passive_3_description								Erhöht max. Gesundheit um $passive$
 Ability_Tortus_TriggeredPassive_1_name								Abhärten
 Ability_Tortus_TriggeredPassive_2_name								Abhärten
 Ability_Tortus_TriggeredPassive_3_name								Abhärten
-Ability_Tortus_TriggeredPassive_1_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
-Ability_Tortus_TriggeredPassive_2_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
-Ability_Tortus_TriggeredPassive_3_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
+//Ability_Tortus_TriggeredPassive_1_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
+//Ability_Tortus_TriggeredPassive_2_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
+//Ability_Tortus_TriggeredPassive_3_description						Blockiert bis zu $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Schaden der Basis-Attacke eines Helden (an das Helden-Level angepasst). ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Sekunden Abkühlung^*.
 Ability_Tortus_TriggeredPassive_1_description_simple				Blockiert den Schaden von Basis-Attacken
 Ability_Tortus_TriggeredPassive_2_description_simple				Blockiert den Schaden von Basis-Attacken
 Ability_Tortus_TriggeredPassive_3_description_simple				Blockiert den Schaden von Basis-Attacken
 Ability_Tortus_Ult_1_name											Verjüngen
 Ability_Tortus_Ult_2_name											Verjüngen
 Ability_Tortus_Ult_3_name											Verjüngen
-Ability_Tortus_Ult_1_description									Aktiviere um $heal$ Gesundheit nach einer Zeitdauer zu regenerieren (an das Helden-Level angepasst). 240 Sekunden abkühlen.
-Ability_Tortus_Ult_2_description									Aktiviere um $heal$ Gesundheit nach einer Zeitdauer zu regenerieren (an das Helden-Level angepasst). ^c160 Sekunden Abkühlen^*.
-Ability_Tortus_Ult_3_description									Aktiviere um ^c$heal$ Health^* nach einer Zeitdauer zu regenerieren. 160 Sekunden Abkühlung.
+Ability_Tortus_Ult_1_description									Aktiviere um $percent_heal$% Gesundheit nach einer Zeitdauer zu regenerieren. $tooltip_cooldown_sec$ Sekunden abkühlen.
+Ability_Tortus_Ult_2_description									Aktiviere um $percent_heal$% Gesundheit nach einer Zeitdauer zu regenerieren. $tooltip_cooldown_sec$ Sekunden Abkühlen.
+Ability_Tortus_Ult_3_description									Aktiviere um $percent_heal$% Gesundheit nach einer Zeitdauer zu regenerieren. $tooltip_cooldown_sec$ Sekunden Abkühlung.
 Ability_Tortus_Ult_1_description_simple								Aktiviere zur Gesundheitsregenerierung
 Ability_Tortus_Ult_2_description_simple								Aktiviere zur Gesundheitsregenerierung
 Ability_Tortus_Ult_3_description_simple								Aktiviere zur Gesundheitsregenerierung

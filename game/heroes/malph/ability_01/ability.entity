@@ -41,13 +41,6 @@
         <setcharges a="2" />
     </onlearn>
     
-    <!--TODO: doesn't work for some reason
-    <onrefresh>
-        <setcharges a="2" />
-        <resettimer />
-    </onrefresh>
-    -->
-    
     <onimpact>
         <compare a="charges" b="2" op="eq">
             <getconstant name="charge_cooldown" nameb="sec_to_msec_mult" op="mult" />

@@ -2183,18 +2183,19 @@ Item_Lasthit_Empower_5_name										The Hunt
 Item_Lasthit_Empower_5_description								ฆ่ายูนิตด้วย Throwing Axe จะฟื้นฟูพลังชีวิต $heal_enchant$
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name										Healing Rod
 Item_HealingScepter_description									กดใช้เพื่อฟื้นฟู^oพลังชีวิต $heal$^*(คิดจาก Power)  และมานา $mana$ จำนวนการฟื้นฟูนั้นขึ้นอยู่กับการสะสมชาร์จ
 Item_HealingScepter_description_simple							กดใช้งานเพื่อทำการฟื้นฟูพลังชีวิตและมานา
 Item_HealingScepter_bonusdescription							เพิ่มจำนวนการฟื้นฟูพลังชีวิตและมานา $common_increase$%
 Item_HealingScepter_legendaryname								Greater
 Item_HealingScepter_legendarydescription						เพิ่มจำนวนชาร์จขั้นต่ำและสูงสุด  $legendary$
-Item_HealingScepter_Empower_1_name								Focus
-Item_HealingScepter_Empower_1_description						เพิ่มการฮีลสูงสุงเป็น $charges_enchant$ และ $mana_enchant$ มานา คูลดาวน์เพิ่มขึ้น 50%
-Item_HealingScepter_Empower_2_name								Diligence
-Item_HealingScepter_Empower_2_description						เก็บชาร์จเร็วขึ้น 33%
-Item_HealingScepter_Empower_3_name								Generosity
-Item_HealingScepter_Empower_3_description						ฮีลให้เพื่อนร่วมทีม $areaheal_enchant$%
+//Item_HealingScepter_Empower_1_name								Focus
+//Item_HealingScepter_Empower_1_description						เพิ่มการฮีลสูงสุงเป็น $charges_enchant$ และ $mana_enchant$ มานา คูลดาวน์เพิ่มขึ้น 50%
+//Item_HealingScepter_Empower_2_name								Diligence
+//Item_HealingScepter_Empower_2_description						เก็บชาร์จเร็วขึ้น 33%
+//Item_HealingScepter_Empower_3_name								Generosity
+//Item_HealingScepter_Empower_3_description						ฮีลให้เพื่อนร่วมทีม $areaheal_enchant$%
 
 // InfernoBrand
 Item_InfernoBrand_name											Inferno Brand
@@ -2784,6 +2785,7 @@ Ability_Pincer_Ult_2_description_simple							ลบสถานะ stuns/slows
 Ability_Pincer_Ult_3_description_simple							ลบสถานะ stuns/slows
 
 // Tortus
+// Ability_Tortus_TriggeredPassive was reworked, see entities_en.str!
 Ability_Tortus_Passive_1_name									Vitality
 Ability_Tortus_Passive_2_name									Vitality
 Ability_Tortus_Passive_3_name									Vitality
@@ -2805,18 +2807,18 @@ Ability_Tortus_Passive2_3_description_simple					เพิ่มการฟื�
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					บล็อค $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ ความเสียหายจากการโจมตีพื้นฐานของฮีโร่ศัตรู (ขึ้นอยู่กับเลเวลของฮีโร่) ^cคูลดาวน์ $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ วินาที^*
-Ability_Tortus_TriggeredPassive_2_description					บล็อค $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ ความเสียหายจากการโจมตีพื้นฐานของฮีโร่ศัตรู (ขึ้นอยู่กับเลเวลของฮีโร่) ^cคูลดาวน์ $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ วินาที^*
-Ability_Tortus_TriggeredPassive_3_description					บล็อค $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ ความเสียหาย^*จากการโจมตีพื้นฐานของฮีโร่ศัตรู (ขึ้นอยู่กับเลเวลของฮีโร่) ^cคูลดาวน์ $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ วินาที^*
+//Ability_Tortus_TriggeredPassive_1_description					บล็อค $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ ความเสียหายจากการโจมตีพื้นฐานของฮีโร่ศัตรู (ขึ้นอยู่กับเลเวลของฮีโร่) ^cคูลดาวน์ $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ วินาที^*
+//Ability_Tortus_TriggeredPassive_2_description					บล็อค $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ ความเสียหายจากการโจมตีพื้นฐานของฮีโร่ศัตรู (ขึ้นอยู่กับเลเวลของฮีโร่) ^cคูลดาวน์ $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ วินาที^*
+//Ability_Tortus_TriggeredPassive_3_description					บล็อค $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ ความเสียหาย^*จากการโจมตีพื้นฐานของฮีโร่ศัตรู (ขึ้นอยู่กับเลเวลของฮีโร่) ^cคูลดาวน์ $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ วินาที^*
 Ability_Tortus_TriggeredPassive_1_description_simple			 บล็อคความเสียหายจากการโจมตีปกติ
 Ability_Tortus_TriggeredPassive_2_description_simple			 บล็อคความเสียหายจากการโจมตีปกติ
 Ability_Tortus_TriggeredPassive_3_description_simple			 บล็อคความเสียหายจากการโจมตีปกติ
 Ability_Tortus_Ult_1_name										Rejuvenate
 Ability_Tortus_Ult_2_name										Rejuvenate
 Ability_Tortus_Ult_3_name										Rejuvenate
-Ability_Tortus_Ult_1_description								กดใช้เพื่อฟื้นฟูพลังชีวิต $heal$ (ขึ้นอยู่กับเลเวลของฮีโร่) คูลดาวน์ 240 วินาที
-Ability_Tortus_Ult_2_description								กดใช้เพื่อฟื้นฟูพลังชีวิต $heal$ (ขึ้นอยู่กับเลเวลของฮีโร่) ^cคูลดาวน์ 160 วินาที^*
-Ability_Tortus_Ult_3_description								กดใช้เพื่อฟื้นฟูพลังชีวิต ^c$heal$^* (ขึ้นอยู่กับเลเวลของฮีโร่) คูลดาวน์ 160 วินาที
+Ability_Tortus_Ult_1_description								กดใช้เพื่อฟื้นฟูพลังชีวิต $percent_heal$% คูลดาวน์ $tooltip_cooldown_sec$ วินาที
+Ability_Tortus_Ult_2_description								กดใช้เพื่อฟื้นฟูพลังชีวิต $percent_heal$% คูลดาวน์ $tooltip_cooldown_sec$ วินาที
+Ability_Tortus_Ult_3_description								กดใช้เพื่อฟื้นฟูพลังชีวิต $percent_heal$% คูลดาวน์ $tooltip_cooldown_sec$ วินาที
 Ability_Tortus_Ult_1_description_simple						กดใช้เพื่อฟื้นฟูพลังชีวิต
 Ability_Tortus_Ult_2_description_simple						กดใช้เพื่อฟื้นฟูพลังชีวิต
 Ability_Tortus_Ult_3_description_simple						กดใช้เพื่อฟื้นฟูพลังชีวิต

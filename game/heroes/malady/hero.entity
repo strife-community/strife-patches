@@ -104,7 +104,7 @@
 	rolemagicdamage="4"
 	roleutility="0"
 	
-	maxhealth="832,889,946,1003,1060,1118,1175,1232,1289,1346,1404,1461,1518,1575,1632"
+	maxhealth="640,697,754,811,868,926,983,1040,1097,1154,1212,1269,1326,1383,1440"
 	maxhealthperlevel="0"
 	healthregen="1.91,2.04,2.17,2.3,2.43,2.56,2.69,2.82,2.95,3.08,3.21,3.34,3.47,3.6,3.73"
 	healthproportionregen="0"
@@ -132,7 +132,7 @@
 	inventory11="Ability_AutomatedCourier"
 
 
-	power="130"
+	power="100"
 	attackduration="500"
 	attackactiontime="200"
 	attackcooldown="1100"

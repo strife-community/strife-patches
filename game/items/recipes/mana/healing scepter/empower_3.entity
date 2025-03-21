@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+    name="Item_HealingScepter_Empower_3"
+    
+    cost="550"
+    
+    targetradius="500"
+    targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+>
+    <!-- Tooltip only -->
+    <!-- Cooldown increase -->
+    <constant name="enchant_3_heal" value="100" adjustment="power_support" />
+    <!-- Ability area radius -->
+    <constant name="enchant_3_radius" value="600" adjustment="none" />
+
+    <!-- When used: -->
+    <onimpact>
+        <!-- For every ally unit in radius -->
+        <getconstant name="enchant_3_radius" />
+        <areaofeffect
+            radius="result"
+            targetselection="all"
+            targetscheme="ally_units"
+            effecttype="Magic"
+        >
+            <!-- Play visual effect -->
+            <playeffect effect="effects/cast.effect" target="target_entity" source="target_entity" />
+            <!-- Heal target -->
+            <getconstant name="enchant_3_heal" adjustmentsource="this_entity" />
+            <heal a="result" target="target_entity" />
+        </areaofeffect>
+
+    </onimpact>
+
+</qualityitem>

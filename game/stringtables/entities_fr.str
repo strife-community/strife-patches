@@ -1948,18 +1948,19 @@ Item_Lasthit_Empower_5_name                                                     
 Item_Lasthit_Empower_5_description                                                Éliminer une unité avec Lancer de la Hache vous restitue $heal_enchant$ PV.
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name                                                          Sceptre de Guérison
 Item_HealingScepter_description                                                   Activez ceci pour régénérer ^o$heal$ PV^* (proportionnellement à la Puissance) et restaurer jusqu'à $mana$ Mana, selon le nombre de charges accumulées.
 Item_HealingScepter_description_simple                                            Activez ceci pour restaurer les PV et le Mana.
 Item_HealingScepter_bonusdescription                                              Augmente les PV et le Mana restaurés de $common_increase$ %.
 Item_HealingScepter_legendaryname                                                 Meilleur
 Item_HealingScepter_legendarydescription                                          Augmente le nombre de charges minimal et maximal de $legendary$.
-Item_HealingScepter_Empower_1_name                                                Puissance 1
-Item_HealingScepter_Empower_1_description                                         Augmente la guérison maximale pour atteindre ^o$heal_enchant$ PV^* et $mana_enchant$ Mana. Le délai de rechargement devient 50 % plus long.
-Item_HealingScepter_Empower_2_name                                                Zèle
-Item_HealingScepter_Empower_2_description                                         Accumule les charges 33 % plus rapidement.
-Item_HealingScepter_Empower_3_name                                                Générosité
-Item_HealingScepter_Empower_3_description                                         Guérit aussi les alliés à proximité avec une efficacité de $areaheal_enchant$ %.
+//Item_HealingScepter_Empower_1_name                                                Puissance 1
+//Item_HealingScepter_Empower_1_description                                         Augmente la guérison maximale pour atteindre ^o$heal_enchant$ PV^* et $mana_enchant$ Mana. Le délai de rechargement devient 50 % plus long.
+//Item_HealingScepter_Empower_2_name                                                Zèle
+//Item_HealingScepter_Empower_2_description                                         Accumule les charges 33 % plus rapidement.
+//Item_HealingScepter_Empower_3_name                                                Générosité
+//Item_HealingScepter_Empower_3_description                                         Guérit aussi les alliés à proximité avec une efficacité de $areaheal_enchant$ %.
 
 // InfernoBrand
 Item_InfernoBrand_name                                                            Marque des Enfers
@@ -2498,6 +2499,7 @@ Ability_Pincer_Ult_2_description_simple							Dissipe les effets d'assommement e
 Ability_Pincer_Ult_3_description_simple							Dissipe les effets d'assommement et de ralentissement.
 
 // Tortus
+// Ability_Tortus_TriggeredPassive was reworked, see entities_en.str!
 Ability_Tortus_Passive_1_name                                                     Vitalité
 Ability_Tortus_Passive_2_name                                                     Vitalité
 Ability_Tortus_Passive_3_name                                                     Vitalité
@@ -2519,18 +2521,18 @@ Ability_Tortus_Passive2_3_description_simple                                    
 Ability_Tortus_TriggeredPassive_1_name                                            Endurcissement
 Ability_Tortus_TriggeredPassive_2_name                                            Endurcissement
 Ability_Tortus_TriggeredPassive_3_name                                            Endurcissement
-Ability_Tortus_TriggeredPassive_1_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
-Ability_Tortus_TriggeredPassive_2_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
-Ability_Tortus_TriggeredPassive_3_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
+//Ability_Tortus_TriggeredPassive_1_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
+//Ability_Tortus_TriggeredPassive_2_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
+//Ability_Tortus_TriggeredPassive_3_description                                     Bloque jusqu'à $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ dégâts de l'Attaque de Base d'un héros (proportionnellement au niveau du héros). ^cDélai de rechargement de $tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ secondes^*.
 Ability_Tortus_TriggeredPassive_1_description_simple                              Bloque les dégâts des attaques de base.
 Ability_Tortus_TriggeredPassive_2_description_simple                              Bloque les dégâts des attaques de base.
 Ability_Tortus_TriggeredPassive_3_description_simple                              Bloque les dégâts des attaques de base.
 Ability_Tortus_Ult_1_name                                                         Jouvence
 Ability_Tortus_Ult_2_name                                                         Jouvence
 Ability_Tortus_Ult_3_name                                                         Jouvence
-Ability_Tortus_Ult_1_description                                                  Activez cette compétence pour régénérer $heal$ PV au fil du temps (proportionnellement au niveau du héros). Délai de rechargement de 240 secondes.
-Ability_Tortus_Ult_2_description                                                  Activez cette compétence pour régénérer $heal$ PV au fil du temps (proportionnellement au niveau du héros). ^cDélai de rechargement de 160 secondes^*.
-Ability_Tortus_Ult_3_description                                                  Activez cette compétence pour régénérer ^c$heal$ PV^* au fil du temps (proportionnellement au niveau du héros). Délai de rechargement de 160 secondes.
+Ability_Tortus_Ult_1_description                                                  Activez cette compétence pour régénérer $percent_heal$% PV au fil du temps. Délai de rechargement de $tooltip_cooldown_sec$ secondes.
+Ability_Tortus_Ult_2_description                                                  Activez cette compétence pour régénérer $percent_heal$% PV au fil du temps. Délai de rechargement de $tooltip_cooldown_sec$ secondes.
+Ability_Tortus_Ult_3_description                                                  Activez cette compétence pour régénérer $percent_heal$% PV au fil du temps. Délai de rechargement de $tooltip_cooldown_sec$ secondes.
 Ability_Tortus_Ult_1_description_simple                                           Activez cette compétence pour régénérer vos PV.
 Ability_Tortus_Ult_2_description_simple                                           Activez cette compétence pour régénérer vos PV.
 Ability_Tortus_Ult_3_description_simple                                           Activez cette compétence pour régénérer vos PV.

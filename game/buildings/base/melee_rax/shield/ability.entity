@@ -10,7 +10,7 @@
 	casteffect="effects/cast.effect"
 	
 >	
-    <constant name="max_shield" value="2500" adjustment="none" />
+    <constant name="max_shield" value="1800" adjustment="none" />
 
 	<aura state="State_Tower_Shield" radius="0" targetscheme="self" ignoreinvulnerable="true" />
 	

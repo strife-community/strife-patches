@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+    name="Ability_Graveyard_Medium_Ability1"
+
+    icon="icon.tga"
+    anim=""
+
+    casttime="1750"
+    castactiontime="1750"
+
+    baselevel="1"
+
+    actiontype="target_position"
+    targetscheme="enemy_units"
+    
+    casteffecttype="Magic"
+    casteffect="effects/cast.effect"
+    
+    manacost="0"
+    cooldowntime="8000"
+    range="1000"
+
+    forcerange="1000"
+    allowoutofboundscast="true"
+    allowoutofrangecast="true"
+    showlinecast="true"
+    linecastwidth="150"
+    linecastrange="1150"
+    hoverareacastrange="1150"
+
+>
+    <constant name="damage_mult" value="2.6"  adjustment="none" />
+    
+    <onimpact>
+        <getconstant name="damage_mult" />
+        <setvar0 a="source_attackdamage" b="result" op="mult" />
+        <spawnprojectile name="Projectile_Graveyard_Medium_Ability1" source="source_entity" target="target_position" bind="stack_entity" offset="0 0 0" param="var0" />
+    </onimpact>
+
+</ability>

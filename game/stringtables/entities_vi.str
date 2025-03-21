@@ -2017,18 +2017,19 @@ Item_Lasthit_Empower_5_name										The Hunt
 Item_Lasthit_Empower_5_description								Dùng item, ném búa giết lính, hồi phục $heal_enchant$ HP.
 
 // Item_HealingScepter
+// Enchantments were updated, check entities_en.str!
 Item_HealingScepter_name										Healing Rod
 Item_HealingScepter_description									Kích hoạt để hồi phục ^o$heal$ HP^* (dựa trên power) và hồi phục $mana$ mana, nhiều hay ít dựa trên số lượng tích trữ.
 Item_HealingScepter_description_simple							Kích hoạt để hồi phục HP và Mana.
 Item_HealingScepter_bonusdescription							Tăng HP và MP hồi phục $common_increase$%.
 Item_HealingScepter_legendaryname								Greater
 Item_HealingScepter_legendarydescription						Tăng Min & Max số lần tích trữ thêm $legendary$.
-Item_HealingScepter_Empower_1_name								Empower 1
-Item_HealingScepter_Empower_1_description						Tăng Min & Max số lần tích trữ thêm $charges_enchant$.
-Item_HealingScepter_Empower_2_name								Diligence
-Item_HealingScepter_Empower_2_description						Tăng 33% tốc độ lưu trữ.
-Item_HealingScepter_Empower_3_name								Generosity
-Item_HealingScepter_Empower_3_description						Hồi phục cho đồng đội với $areaheal_enchant$% hiểu quả.
+//Item_HealingScepter_Empower_1_name								Empower 1
+//Item_HealingScepter_Empower_1_description						Tăng Min & Max số lần tích trữ thêm $charges_enchant$.
+//Item_HealingScepter_Empower_2_name								Diligence
+//Item_HealingScepter_Empower_2_description						Tăng 33% tốc độ lưu trữ.
+//Item_HealingScepter_Empower_3_name								Generosity
+//Item_HealingScepter_Empower_3_description						Hồi phục cho đồng đội với $areaheal_enchant$% hiểu quả.
 
 // InfernoBrand
 Item_InfernoBrand_name											Inferno Brand
@@ -2589,6 +2590,7 @@ Ability_Pincer_Ult_2_description_simple							Loại bõ mọi tác động x
 Ability_Pincer_Ult_3_description_simple							Loại bõ mọi tác động xấu trên Hero
 
 // Tortus
+// Ability_Tortus_TriggeredPassive was reworked, see entities_en.str!
 Ability_Tortus_Passive_1_name									Vitality
 Ability_Tortus_Passive_2_name									Vitality
 Ability_Tortus_Passive_3_name									Vitality
@@ -2610,18 +2612,18 @@ Ability_Tortus_Passive2_3_description_simple					Tăng MP Hồi Phục
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
-Ability_Tortus_TriggeredPassive_2_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
-Ability_Tortus_TriggeredPassive_3_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+//Ability_Tortus_TriggeredPassive_1_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+//Ability_Tortus_TriggeredPassive_2_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
+//Ability_Tortus_TriggeredPassive_3_description					Khóa tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage từ đòn đánh thường của địch (dựa trên lv Hero).  ^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ giây Cooldown^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Khóa đòn đánh thường
 Ability_Tortus_TriggeredPassive_2_description_simple			Khóa đòn đánh thường
 Ability_Tortus_TriggeredPassive_3_description_simple			Khóa đòn đánh thường
 Ability_Tortus_Ult_1_name										Rejuvenate
 Ability_Tortus_Ult_2_name										Rejuvenate
 Ability_Tortus_Ult_3_name										Rejuvenate
-Ability_Tortus_Ult_1_description								Kích hoạt để regenerate $heal$ HP từ từ (dựa trên lv Hero).  240 giây Cooldown.
-Ability_Tortus_Ult_2_description								Kích hoạt để regenerate $heal$ HP từ từ (dựa trên lv Hero).  ^c160 giây Cooldown^*.
-Ability_Tortus_Ult_3_description								Kích hoạt để regenerate ^c$heal$ HP^* từ từ (dựa trên lv Hero).  160 giây Cooldown.
+Ability_Tortus_Ult_1_description								Kích hoạt để regenerate $percent_heal$% HP từ từ.  $tooltip_cooldown_sec$ giây Cooldown.
+Ability_Tortus_Ult_2_description								Kích hoạt để regenerate $percent_heal$% HP từ từ.  $tooltip_cooldown_sec$ giây Cooldown.
+Ability_Tortus_Ult_3_description								Kích hoạt để regenerate $percent_heal$% HP từ từ.  $tooltip_cooldown_sec$ giây Cooldown.
 Ability_Tortus_Ult_1_description_simple							Kích hoạt để Hồi Phục HP
 Ability_Tortus_Ult_2_description_simple							Kích hoạt để Hồi Phục HP
 Ability_Tortus_Ult_3_description_simple							Kích hoạt để Hồi Phục HP

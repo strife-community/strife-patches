@@ -687,11 +687,11 @@ Ability_Aemon1_description										Consecrate an area. The area will grant visi
 Ability_Aemon1_description_simple								Circle of bonus damage on attacks
 // Ability_Aemon2
 Ability_Aemon2_name												Hope
-Ability_Aemon2_description										Aemon gains a powerful buff of $resistance$ Resistance for $duration$ seconds. \n\nPassive: Aemon's attacks heal ally heroes within Consecration for $heal$.
+Ability_Aemon2_description										Aemon gains a powerful buff of $resistance$ Resistance and $cc_reduction$% Crowd Control Reduction for $duration$ seconds. \n\nPassive: Aemon's attacks heal ally heroes within Consecration for $heal$.
 Ability_Aemon2_description_simple								Resistance buff and ally heal on attacks
 // Ability_Aemon3
 Ability_Aemon3_name												Courage
-Ability_Aemon3_description										Aemon gains a burst of $movespeed$ Movement Speed for 1 second. If activated within Consecration, duration extends to 3 seconds. \n\nUpon activation, Aemon's next three attacks slow the target by $slow$%.
+Ability_Aemon3_description										Aemon gains a burst of $movespeed$ Movement Speed for $mspeed_duration_outside_s$ seconds. If activated within Consecration, duration extends to $mspeed_duration_inside_s$ seconds. \n\nUpon activation, Aemon's next $max_charges$ attacks slow the target by $slow$% for $slow_duration_s$ second.
 Ability_Aemon3_description_simple								Movespeed burst and slow on attacks
 // Ability_Aemon4
 Ability_Aemon4_name												Justice
@@ -1235,7 +1235,7 @@ Ability_Malph1_description										Target direction to fire an underground miss
 Ability_Malph1_description_simple								Homing missile with AoE damage and slow
 // Ability_Malph2
 Ability_Malph2_name												Healing Rations
-Ability_Malph2_description										Target ally to grant them a buff which heals them for ^g$heal$ Health^* over 6 seconds, providing $resistance$ resistance for the duration.
+Ability_Malph2_description										Target ally to grant them a buff which heals them for ^o$heal$ Health^* over $duration$ seconds, providing $resistance$ resistance for the duration.
 Ability_Malph2_description_simple								Grant healing and resistance over time
 // Ability_Malph3
 Ability_Malph3_name												Mud Field
@@ -1243,7 +1243,7 @@ Ability_Malph3_description										Target area to create a mud field.  Enemies 
 Ability_Malph3_description_simple								Create a field that slows and weakens enemies
 // Ability_Malph4
 Ability_Malph4_name												The Underground
-Ability_Malph4_description										Target location to create a Mole Hole.  By right-clicking a Mole Hole, you will channel for 1.4 seconds - entering the underground upon completion.  While underground, you can then target near any Mole Hole to return above ground at that location.
+Ability_Malph4_description										Target location to create a Mole Hole.  By right-clicking a Mole Hole, you will channel for 1.4 seconds - entering the underground upon completion.  While underground, you can then target near any Mole Hole to return above ground at that location.\n\nHoles are concealed from enemies until they stay next to it for $hole_reveal_time_sec$ second.
 Ability_Malph4_description_simple								Tunnel between Mole Holes for map-wide mobility
 Ability_Malph4_description:Malph_underground					Target near Mole Hole to exit the underground.
 
@@ -2279,12 +2279,12 @@ Item_HealingScepter_description_simple							^091Activate: restore Health to tar
 Item_HealingScepter_bonusdescription							Increases the Health restored by $common_increase$%.
 Item_HealingScepter_legendaryname								Greater
 Item_HealingScepter_legendarydescription						Increases Min & Max charges by $legendary$.
-Item_HealingScepter_Empower_1_name								Focus
-Item_HealingScepter_Empower_1_description						Increases Heal to ^o$heal_enchant$ Health^* and gives $mana_enchant$ Mana. Cooldown becomes 50% longer.
-Item_HealingScepter_Empower_2_name								Diligence
-Item_HealingScepter_Empower_2_description						Cooldown reduced.
+Item_HealingScepter_Empower_1_name								Utility
+Item_HealingScepter_Empower_1_description						Also gives target $enchant_1_mana$ Mana. Cooldown increased to $enchant_1_cd$ seconds.
+Item_HealingScepter_Empower_2_name								Focus
+Item_HealingScepter_Empower_2_description						Increases Heal to ^o$enchant_2_heal$ Health^*, but range is decreased by $enchant_2_range$.
 Item_HealingScepter_Empower_3_name								Generosity
-Item_HealingScepter_Empower_3_description						Also heals nearby allies for $areaheal_enchant$% effectiveness.
+Item_HealingScepter_Empower_3_description						Decreases heal to ^o$enchant_3_heal$ Health^* but also heals allies in $enchant_3_radius$ radius around target.
 
 // InfernoBrand
 Item_InfernoBrand_name											Inferno Brand
@@ -2454,7 +2454,7 @@ Item_VampiricBlade_Empower_1_description						Killing a non-hero with an attack 
 Item_VampiricBlade_Empower_2_name								Desolation
 Item_VampiricBlade_Empower_2_description						Grants a $bonusdamage_chance_enchant$% chance to deal $bonusdamage_enchant$ damage to non-hero units.
 Item_VampiricBlade_Empower_3_name								Thirst
-Item_VampiricBlade_Empower_3_description						Kills and assists restore $healthrestore_kill_enchant$% of your Max Health over $healthrestore_killduration_enchant$ seconds.
+Item_VampiricBlade_Empower_3_description						Kills and assists restore $healthrestore_kill_enchant$% of your Max Health over $healthrestore_killduration_enchant$ seconds, but no longer grants resistance.
 
 // Item_ThunderClaw
 Item_ThunderClaw_name											Thundercaller
@@ -3046,18 +3046,18 @@ Ability_Tortus_Passive_3_description							Increases Max Health by 15%.
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
-Ability_Tortus_TriggeredPassive_1_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
-Ability_Tortus_TriggeredPassive_2_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
-Ability_Tortus_TriggeredPassive_3_description					Blocks $tooltip_deflection_lvl1$-$tooltip_deflection_lvl15$ Damage from a hero's basic attack (scales with hero level).\n\n^c$tooltip_cooldown_sec_lvl1$-$tooltip_cooldown_sec_lvl15$ Second Cooldown^*.
+Ability_Tortus_TriggeredPassive_1_description					Basic attack from a hero activates shield, that reduces damage from basic attacks by $damage_reduction_percent$% for $duration_sec$ seconds.\n\n^c$tooltip_cooldown_sec$ Second Cooldown^*.
+Ability_Tortus_TriggeredPassive_2_description					Basic attack from a hero activates shield, that reduces damage from basic attacks by $damage_reduction_percent$% for $duration_sec$ seconds.\n\n^c$tooltip_cooldown_sec$ Second Cooldown^*.
+Ability_Tortus_TriggeredPassive_3_description					Basic attack from a hero activates shield, that reduces damage from basic attacks by $damage_reduction_percent$% for $duration_sec$ seconds.\n\n^c$tooltip_cooldown_sec$ Second Cooldown^*.
 Ability_Tortus_TriggeredPassive_1_description_simple			Blocks damage from hero attacks.
 Ability_Tortus_TriggeredPassive_2_description_simple			Blocks damage from hero attacks.
 Ability_Tortus_TriggeredPassive_3_description_simple			Blocks damage from hero attacks.
 Ability_Tortus_Ult_1_name										Rejuvenate
 Ability_Tortus_Ult_2_name										Rejuvenate
 Ability_Tortus_Ult_3_name										Rejuvenate
-Ability_Tortus_Ult_1_description								Regenerate 118-300 Health over 0.5 seconds (scales with hero level).\n\n^c120 Second Cooldown^*. 
-Ability_Tortus_Ult_2_description								Regenerate 118-300 Health over 0.5 seconds (scales with hero level).\n\n^c120 Second Cooldown^*. 
-Ability_Tortus_Ult_3_description								Regenerate 118-300 Health over 0.5 seconds (scales with hero level).\n\n^c120 Second Cooldown^*. 
+Ability_Tortus_Ult_1_description								Regenerate $percent_heal$% of Max Health over $duration$ seconds.\n\n^c$tooltip_cooldown_sec$ Second Cooldown^*. 
+Ability_Tortus_Ult_2_description								Regenerate $percent_heal$% of Max Health over $duration$ seconds.\n\n^c$tooltip_cooldown_sec$ Second Cooldown^*. 
+Ability_Tortus_Ult_3_description								Regenerate $percent_heal$% of Max Health over $duration$ seconds.\n\n^c$tooltip_cooldown_sec$ Second Cooldown^*. 
 Ability_Tortus_Ult_1_description_simple							Activate to regenerate health.
 Ability_Tortus_Ult_2_description_simple							Activate to regenerate health.
 Ability_Tortus_Ult_3_description_simple							Activate to regenerate health.

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+    name="Item_HealingScepter_Empower_1"
+    
+    cost="550"
+    cooldowntime="45000"
+>
+    <!-- Mana restored, adjusted by power -->
+    <constant name="enchant_1_mana" value="50" adjustment="none" />
+    <!-- TOOLTIP ONLY: item cooldown. Real value is above in cooldowntime attribute -->
+    <constant name="enchant_1_cd" value="45"  adjustment="none" />
+
+    <!-- When used: -->
+    <onimpact>
+        <!-- Play visual effect -->
+        <playeffect effect="effects/cast.effect" target="target_entity" source="target_entity" />
+        
+        <!-- Heal target -->
+        <getconstant name="heal" adjustmentsource="this_entity" />
+        <heal a="result" />
+        
+        <!-- Give mana -->
+        <getconstant name="enchant_1_mana" />
+        <givemana target="target_entity" amount="result"/>
+    </onimpact>
+
+</qualityitem>
