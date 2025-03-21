@@ -23,13 +23,13 @@
     areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
     
     manacost="75"
-    cooldowntime="18000,16000,14000,12000"
+    cooldowntime="12000,10000,8000,6000"
     showrangeandradiusintooltip="true"
     
 >
 
     <!-- Damage dealt to enemies in consecrated area when Aemon attacks -->
-    <constant name="damage" value="10,20,30,40" adjustment="ability" />
+    <constant name="damage" value="20,30,40,50" adjustment="ability" />
     <!-- Distance from Aemon on which consecrated is removed -->
     <constant name="max_distance" value="2000" adjustment="none" noshowintooltip="true" />
     
