@@ -1232,7 +1232,7 @@ State_Malady_Ability4_Channel_name									Lädt...
 // Ability_Malph1_description_simple		aoe slow and damage
 // Ability_Malph2
 // Ability_Malph2_name		Healing Rations
-// Ability_Malph2_description		Target ally to grant them a buff which heals them for ^g$heal$ Health^* over 6 seconds, providing $resistance$ resistance for the duration.
+// Ability_Malph2_description		Target ally to grant them a buff which heals them for ^g$heal$ Health^* over $duration$ seconds, providing $resistance$ resistance for the duration.
 // Ability_Malph2_description_simple		heal over time
 // Ability_Malph3
 // Ability_Malph3_name		Mud Field

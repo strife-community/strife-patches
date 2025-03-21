@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+    name="Pet_Malph_Ability4"
+
+    model="/shared/models/invis.mdf"
+    icon="icon.tga"
+    portrait="icon.tga"
+    unitwalking="true"
+    cliffwalking="false"
+    buildingwalking="false"
+    
+    
+    canturn="false"
+    
+    passiveeffect="effects/hole_aoe.effect"
+    isselectable="true"
+    iscontrollable="false"
+    preglobalscale="1.8"
+    modelscale="0.6"
+    effectscale="1.1"
+    boundsheight="64"
+    searchheight="100"
+    searchradius="70"
+    minsearchradius="32"
+    boundsradius="16"
+    collisionradius="8"
+    selectionradius="45"
+    targetoffset="0 0 54"	
+
+    sightrangeday="300"
+    sightrangenight="300"
+    drawonmap="true"
+    mapicon="icon_minimap.tga"
+    mapiconsize="0.04"
+    invulnerable="false"
+    canattack="false"
+
+    corpsetime="0"
+    corpsefadetime="0"
+    deathtime="2000"
+    
+    immunity="GadgetImmunity"
+
+    hidealtinfo="false"
+    flying="false"
+    
+    maxhealth="5"
+    
+    canrotate="false"
+    ismobile="false"
+    
+    goldbountymin="30"
+    goldbountymax="30"
+
+    infoheight="275"
+
+    unittype="mole_mounds"
+    stealthtype="item"
+    
+    hasdynamicpower="false"
+    prefertouchtargettrait="owned"
+    prefertouch="true" 
+    touchrange="120"
+
+>
+    <!-- When hole spawns, reset its counter -->
+    <onspawn>
+        <setaccumulator value="0" />
+    </onspawn>
+
+    <!-- Each frame: check reveal conditions -->
+    <onframe>
+        <!-- First checking if counter exceeded -->
+        <getconstant name="hole_reveal_time_sec" entity="this_proxy_entity" adjustmentsource="this_owner_entity" />
+        <compare a="accumulator" b="result" op="lt" >
+            <!-- Checking if there is at least one enemy in radius -->
+            <getconstant name="hole_reveal_radius" entity="this_proxy_entity" adjustmentsource="this_owner_entity" />
+            <areaofeffect
+                radius="result"
+                targetselection="closest"
+                targetscheme="enemy_heroes"
+                ignoreinvulnerable="true"
+            >
+                <!-- Adding frame time to counter -->
+                <changeaccumulator b="frametime" op="add" />
+                <!-- Checking if we should reveal now -->
+                <getconstant name="hole_reveal_time_sec" entity="this_proxy_entity" adjustmentsource="this_owner_entity" />
+                <compare a="accumulator" b="result" op="ge" >
+                    <applystate target="this_entity" name="State_Pet_Malph_Ability4_Reveal" duration="-1" />
+                </compare>
+                <!--else NOTHING TO DO -->
+            </areaofeffect>
+            <else>
+                <!-- No enemy is in the area, reset counter -->
+                <setaccumulator value="0" />
+            </else>
+        </compare>
+        <!--else NOTHING TO DO: hole is already revealed, no need to check enemies -->
+    </onframe>
+
+    <!-- When unit is commanded to interact with hole: -->
+    <ontouched>
+        <!-- Checking if the unit is enemy -->
+        <cantarget targetscheme="enemy_units">
+            <!-- Enemy must attack hole -->
+            <order command="attack" target="this_entity" source="target_entity" />
+        </cantarget>
+        <else>
+            <!-- Checking if the unit is Malph -->
+            <cantarget targetscheme="self" source="this_owner_entity">
+                <!-- Start entering hole -->
+                <useability target="this_entity" slot="4" source="this_owner_entity" />
+            </cantarget>
+            <!--else: NOTHING TO DO -->
+        </else>
+    </ontouched>
+    
+    <!-- On damage: deal only 1 point of damage -->
+    <ondamaged>
+        <changedamage b="1" op="min"/>
+    </ondamaged>
+    
+    <!-- When hole is destroyed: -->
+    <onkilled>
+        <!-- Checking if there is still at least one hole on the map -->
+        <hasmodifier entity="source_owner_entity" name="Malph_underground" >
+            <areaofeffect
+                radius="9999999"
+                targetselection="all"
+                targetscheme="mole_mounds"
+                ignoreinvulnerable="true"
+                ignore="this_entity"
+            >
+                <!-- There are other holes, NOTHING TO DO-->
+            </areaofeffect>
+            <else>
+                <!-- This hole was the last one: teleport Maplh here and get him out of the underground -->
+                <teleport source="source_owner_entity" target="this_position" />
+                <setpos0 position="source_owner_entity" offset="0 170 0" />
+                <expirestate name="State_Malph_Ability4_Underground" target="source_owner_entity" />
+                <spawnprojectile name="Projectile_Malph_Ability4_Exit" source="source_owner_entity" target="pos0" bind="source_owner_entity" bindstate="State_Malph_Ability4_Exit" />
+            </else>
+        </hasmodifier>
+        
+        <!-- Play visual effect -->
+        <playeffect effect="effects/death.effect" source="this_position" target="this_position"/>
+    </onkilled>
+    
+
+</pet>
