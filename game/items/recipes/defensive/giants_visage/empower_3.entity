@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+    name="Item_GiantsVisage_Empower_3"
+    
+    cost="1430"
+
+>
+    <constant name="power_enchant" value="1.1" adjustment="none"/>
+
+    <onframe>
+        <getconstant name="power_enchant" nameb="percent_mult" op="mult" />
+        <setcharges a="result" b="source_maxhealth" op="mult" />
+    </onframe>
+</qualityitem>

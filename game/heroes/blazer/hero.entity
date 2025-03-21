@@ -103,7 +103,7 @@
 	rolemagicdamage="4"
 	roleutility="2"
 
-	maxhealth="881,941,1002,1063,1123,1184,1244,1305,1366,1426,1487,1548,1608,1669,1730"
+	maxhealth="678,738,799,860,920,981,1041,1102,1163,1223,1284,1345,1405,1466,1527"
 	maxhealthperlevel="0"
 	healthregen="2.02,2.16,2.3,2.44,2.58,2.72,2.86,3,3.14,3.28,3.42,3.56,3.7,3.84,3.98"
 	healthproportionregen="0"
@@ -132,7 +132,7 @@
 
 	
 	
-	power="130"
+	power="100"
 	attackduration="400"
 	attackactiontime="250"
 	attackcooldown="1100"
