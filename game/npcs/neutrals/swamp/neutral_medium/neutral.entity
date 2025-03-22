@@ -48,7 +48,7 @@
 	attackactiontime="550"
 	attackcooldown="1350"
 	attackdamagemin="29"
-	attackdamagemax="329"
+	attackdamagemax="29"
 	attacknumanims="2"
 	attackoffset="15 135 110"
 	attackprojectile="Projectile_Swamp_MediumAttack"
