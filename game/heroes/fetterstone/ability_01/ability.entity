@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Fetterstone1"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="200"
+	castactiontime="150"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units_and_buildings"
+	casteffect="effects/cast.effect"
+	
+	manacost="45,50,55,60"
+	cooldowntime="2000"
+
+	range="800"
+	forcerange="800"
+	allowoutofboundscast="true" 
+	allowoutofrangecast="true"
+	
+	showlinecast="true"
+	linecastwidth="90"
+	linecastrange="870"
+	hoverareacastrange="890"
+	doubleactivatenoninterrupting="true"
+	
+>
+	<constant name="damage" value="50,65,80,95" adjustment="ability" />
+
+	<!-- tool tip only -->
+	<constant name="resistancereduce" value="8,12,16,20" adjustment="none" />
+
+	<onimpact>
+		<playeffect effect="effects/sound.effect" target="source_entity" />
+		<spawnunit name="Gadget_Fetterstone_Ability1" target="target_position" pushentity="true" count="1" />
+		<spawnprojectile name="Projectile_Fetterstone_Ability1"  source="source_entity" target="target_position" bind="stack_entity" offset="-3 180 0" />
+	</onimpact>
+	
+	<modifier key="ult_projectile" modpriority="101" anim="ability_1_main"
+	>	
+
+	</modifier>
+	
+	
+</ability>
