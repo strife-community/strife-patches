@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Dark_Bargain"
+
+	icon="icon.tga"
+	
+	cost="2000"
+	components="Item_Warpcleft Item_GlovesOfHaste Item_Staff"
+	anim="item_self"
+	
+	actiontype="target_self"
+	cooldowntime="0"
+	
+	maxcharges="50"
+
+	queue="front"
+	inheritmovement="true"
+
+	botitem="DarkBargainItem"
+	filters="activatable,attack,attack_damage"
+	alwaysshowtimer="true"
+
+	basedamage="40"
+	basedamagepercharge="20"
+
+	empoweredeffects="Item_Dark_Bargain_Empower_1,Item_Dark_Bargain_Empower_2"
+	
+	showinpractice="true"
+>
+
+	<!--Tooltip Only-->
+	<constant name="damage" value="40" adjustment="item" qualityvalue="0" qualityadjustment="common" op="add"/>
+	<constant name="bonus" value="20" adjustment="item" qualityvalue="0" qualityadjustment="common" op="add"/>
+	<constant name="perm_bonus" value="5" adjustment="item" qualityvalue="0" qualityadjustment="common" op="add"/>
+	<constant name="gold" value="500" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
+	
+	<onimpact>
+		<getconstant name="gold" adjustmentsource="none" />
+		<compare a="target_gold" b="result" op="ge" >
+			<spendgold amount="500" position="source_entity" />
+				<addcharges count="1" />
+				<applystate name="State_Bargain_Timer" duration="8000" proxy="this_entity" />
+				<applystate name="State_Bargain_Permanent" continuous="true" proxy="this_entity" />
+      <playeffect effect="effects/sound.effect" source="source_entity" target="" occlude="true" />
+      <starttimer duration="8000" />
+				<popup name="dark_bargain" source="source_entity" target="source_entity" />
+		</compare>
+	</onimpact>
+
+</crafteditem>

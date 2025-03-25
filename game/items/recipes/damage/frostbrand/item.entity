@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Frostbrand"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Frostbrand"
+	
+	cost="1150"
+	components="Item_GlovesOfHaste Item_Staff"
+	basedamage="10"
+	basedamageperquality="1"
+	
+	actiontype="passive"
+
+	filters="utility,attack,attack_damage,debuff_enemy,attack_mod"
+
+	empoweredeffects="Item_Frostbrand_Empower_1,Item_Frostbrand_Empower_2,Item_Frostbrand_Empower_3"
+
+	
+	showinpractice="true"
+	>
+	<constant name="slow" value="20" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+	<constant name="damage" value="10" adjustment="item" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="movespeed" value="8" adjustment="none" qualityvalue="8" qualityadjustment="legendary" op="add"/>
+	<onattackimpact  >
+		<condition test="bounce_count lt 2">
+			<cantarget targetscheme="enemy_units" effecttype="">			
+				<condition test="target_type melee" target="source_entity">
+					<applystate name="State_Frostbrand" duration="2000" />
+				</condition>
+				<condition test="target_type ranged" target="source_entity">
+					<applystate name="State_FrostbrandRanged" duration="2000" />
+				</condition>
+				
+				<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+
+			</cantarget>
+		</condition>
+	</onattackimpact>
+	
+</crafteditem>

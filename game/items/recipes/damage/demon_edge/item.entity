@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_DemonEdge"
+	
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Blade Item_Blade Item_GlovesOfHaste"
+	craftingmaxcomponents="3"
+	
+	
+	actiontype="passive"
+	basedamage="18"
+	basedamageperquality="1.8"
+
+
+
+	filters="attack_damage,attack"
+
+	empoweredeffects="Item_DemonEdge_Empower_2,Item_DemonEdge_Empower_3"
+	
+	showinpractice="true"
+>
+
+	<!-- tool tip only -->
+	<constant name="damage" value="18" adjustment="item" qualityvalue="1.8" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="damage_legendary" value="2" adjustment="none" qualityvalue="2" qualityadjustment="legendary" op="add"/>
+
+	<modifier key="demonedge_legendary" modpriority="80" basedamage="22"/>
+	
+
+
+</crafteditem>
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_DemonEdge_Empower_3"
+	
+	cost="1255"
+	basedamage="23"
+
+>
+	<!-- Tooltip only -->
+	<constant name="damage_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

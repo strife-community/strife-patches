@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Shieldbreaker"
+	
+	icon="icon.tga"
+	
+	cost="1150"
+	components="Item_Staff Item_Healthstone Item_Healthstone"
+
+	basedamage="5"
+	basedamageperquality="0.5"
+
+	actiontype="passive"
+	filters="attack,attack_mod,attack_damage"
+
+	empoweredeffects="Item_Shieldbreaker_Empower_1,Item_Shieldbreaker_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="attack_damage" value="5" adjustment="item" qualityvalue="0.5" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="40" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="legendary" value="0.5" adjustment="none" qualityvalue="0.5" qualityadjustment="legendary" op="add"/>
+	<onattackimpact />
+
+	<onattackingdamageevent>
+		<cantarget targetscheme="enemy_units">
+			<getconstant name="resistance" />
+			<setvar0 a="result" b="100" op="div" />
+			<setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
+		</cantarget>
+	</onattackingdamageevent>
+
+</crafteditem>

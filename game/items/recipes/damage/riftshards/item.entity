@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Riftshards"
+
+	icon="icon.tga"
+	
+	cost="1500"
+	components="Item_Relic Item_GlovesOfHaste Item_GlovesOfHaste"
+	
+	
+	actiontype="passive"
+	filters="power,attack,crit,attack_damage"
+
+	empoweredeffects="Item_Riftshards_Empower_1,Item_Riftshards_Empower_2"
+	
+	showinpractice="true"
+>
+	<constant name="attack_damage" value="10" adjustment="item" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="critchance" value="20" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="6" adjustment="none" qualityvalue="6" qualityadjustment="legendary" op="add"/>
+	
+	<modifier key="riftshards" modpriority="50" exclusive="true" 
+		basedamage="10"
+		basedamageperquality="1"
+		unitcriticalchance="0.20" 
+		unitcriticalstrikechanceperquality="0.020" 
+	>
+
+	</modifier>
+	
+
+
+</crafteditem>
