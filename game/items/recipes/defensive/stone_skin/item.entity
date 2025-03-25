@@ -21,7 +21,7 @@
 
     cooldowntime="45000"
 
-    basedamage="10"
+    basedamage="9"
 
     filters="defense,utility,cc_resist,activatable,other_mobility"
     alwaysshowtimer="true"
@@ -31,7 +31,7 @@
     showinpractice="true"
 >
     <!-- Base damage bonus. TOOLTIP ONLY! Real value used is set in "basedamage" attribute! -->
-    <constant name="damage" value="10" adjustment="item" />
+    <constant name="damage" value="9" adjustment="item" />
 
     <!-- Ability duration, seconds -->
     <constant name="duration_sec" value="8" adjustment="none" />
