@@ -20,7 +20,7 @@
     nostun="true"
     noperplex="true"
     nosilence="true"
-    basedamage="5"
+    basedamage="6"
     botitem="OraclesTrinketItem"
     filters="utility,activatable,defense,resistance"
     empoweredeffects="Item_OraclesTrinket_Empower_1,Item_OraclesTrinket_Empower_2"
@@ -29,7 +29,7 @@
     <!-- Health restored by the item if debuff was removed (adjusted by power) -->
     <constant name="heal" value="180" adjustment="item" qualityvalue="10" qualityadjustment="common" op="add"/>
     <!-- Base damage bonus. TOOLTIP ONLY! Actual value used is in "basedamage" attribute! -->
-    <constant name="base_damage" value="5" adjustment="item" qualityvalue="1" qualityadjustment="common" op="add" />
+    <constant name="base_damage" value="6" adjustment="item" qualityvalue="1" qualityadjustment="common" op="add" />
     <!-- CC reduction state duration, seconds -->
     <constant name="cc_state_duration_sec" value="2" adjustment="none" />
     
