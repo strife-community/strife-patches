@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Dark_Bargain_Empower_2"
+	
+	cost="2000"
+	
+	basedamagepercharge="8"
+
+	
+>
+	<constant name="perm_bonus" value="2" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
+	<constant name="bonus" value="8" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
+	<constant name="gold_enchant" value="250" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
+	
+	<onimpact>
+		<getconstant name="gold_enchant" adjustmentsource="none" />
+		<compare a="target_gold" b="result" op="ge" >
+			<spendgold amount="250" position="source_entity" />
+				<addcharges count="1" />
+				<applystate name="State_Bargain_Timer" duration="8000" proxy="this_entity" />
+				<applystate name="State_Bargain_Permanent_Empower_2" continuous="true" proxy="this_entity" />
+				<starttimer duration="8000" />
+				<popup name="dark_bargain" source="source_entity" target="source_entity" />
+		</compare>
+	</onimpact>
+</qualityitem>

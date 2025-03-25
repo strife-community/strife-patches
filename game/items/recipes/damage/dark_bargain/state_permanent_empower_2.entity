@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Bargain_Permanent_Empower_2" 
+
+    icon="icon.tga" 
+
+    effecttype="" 
+    deathpersist="true"
+	basedamagepercharge="2"
+    ishidden="true"
+
+>
+    <oninflict>
+        <setcharges a="0" />
+        <addcharges count="1" />
+    </oninflict>
+
+    <onrefresh>
+        <addcharges count="1" />
+    </onrefresh>
+</state>
