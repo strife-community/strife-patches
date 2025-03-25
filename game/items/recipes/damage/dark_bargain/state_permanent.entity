@@ -6,7 +6,7 @@
 
     effecttype="" 
     deathpersist="true"
-	basedamagepercharge="5"
+    basedamagepercharge="6"
     ishidden="true"
 
 >
