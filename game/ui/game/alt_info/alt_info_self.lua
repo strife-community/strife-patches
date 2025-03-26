@@ -260,7 +260,7 @@ local function altInfoSelfRegister(object)
 	local powerEffect		= object:GetWidget('AltInfoSelfPowerEffect')
 
 	object:GetWidget('AltInfoSelfPowerIcon_Parent'):RegisterWatchLua('AltInfoSelf', function(widget, trigger)
-		local scaledPower	= ((trigger.power - 30) * (1 + (trigger.level/15)))
+		local scaledPower	= (trigger.power * (1 + (trigger.level/15)))
 		local dps			= trigger.dps
 
 		if (scaledPower >= 450) or (dps >= 525) then
@@ -269,7 +269,7 @@ local function altInfoSelfRegister(object)
 			powerEffect:SetVisible(1)
 		elseif (scaledPower >= 400) or (dps >= 450) then
 			powerIcon1:SetVisible(1)
-			powerIcon1:SetTexture('/ui/game/alt_info/textures/np_off_5.tga')
+			powerIcon1:SetTexture('/ui/game/alt_info/textures/np_off_4.tga')
 			powerEffect:SetVisible(0)
 		elseif (scaledPower >= 325) or (dps >= 325) then
 			powerIcon1:SetVisible(1)
@@ -296,19 +296,19 @@ local function altInfoSelfRegister(object)
 	object:GetWidget('AltInfoSelfArmorIcon_Parent'):RegisterWatchLua('AltInfoSelf', function(widget, trigger)
 		local totalArmor = trigger.armor + trigger.magicArmor + trigger.mitigation + trigger.resistance
 
-		if (totalArmor >= 230) then 	-- max 302 min 62
+		if (totalArmor >= 150) then 	-- max 302 min 62
 			armorIcon1:SetVisible(1)
 			armorIcon1:SetTexture('/ui/game/alt_info/textures/np_def_5.tga')
-		elseif (totalArmor >= 180) then
-			armorIcon1:SetVisible(1)
-			armorIcon1:SetTexture('/ui/game/alt_info/textures/np_def_4.tga')
 		elseif (totalArmor >= 120) then
 			armorIcon1:SetVisible(1)
+			armorIcon1:SetTexture('/ui/game/alt_info/textures/np_def_4.tga')
+		elseif (totalArmor >= 90) then
+			armorIcon1:SetVisible(1)
 			armorIcon1:SetTexture('/ui/game/alt_info/textures/np_def_3.tga')
-		elseif (totalArmor >= 80) then
+		elseif (totalArmor >= 60) then
 			armorIcon1:SetVisible(1)
 			armorIcon1:SetTexture('/ui/game/alt_info/textures/np_def_2.tga')
-		elseif (totalArmor >= 40) then
+		elseif (totalArmor >= 30) then
 			armorIcon1:SetVisible(1)
 			armorIcon1:SetTexture('/ui/game/alt_info/textures/np_def_1.tga')
 		else
