@@ -34,12 +34,12 @@
         <!-- Checking that health left to restore is less than frame value -->
         <compare a="accumulator" b="var0" op="le">
             <!-- Healing for what is remaining and we are done -->
-            <heal target="source_entity" a="1" b="accumulator" op="mult"/>
+            <heal target="target_entity" a="1" b="accumulator" op="mult"/>
             <expire />
         </compare>
         <else>
             <!-- Healing for frame amount -->
-            <heal target="source_entity" a="1" b="var0" op="mult"/>
+            <heal target="target_entity" a="1" b="var0" op="mult"/>
             <!-- Reducing remaining health -->
             <changeaccumulator b="var0" op="sub" />
         </else>
