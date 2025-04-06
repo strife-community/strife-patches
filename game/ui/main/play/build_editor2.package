@@ -278,7 +278,7 @@
 				</frame>
 			</panel>
 			
-			<panel name="main_build_editor_popup_close_btn" align="center" width="140s" y="320" height="32s">
+			<panel name="main_build_editor_popup_close_btn" align="center" width="140s" y="320s" height="32s">
 				<frame texture="/ui/shared/frames/stnd_btn_up.tga" rendermode="grayscale" borderthickness="4s" noclick="1">
 					<label content="build_editor_close" style="labelBase" font="maindyn_18" textalign="center" textvalign="center" noclick="1"/>
 				</frame>
