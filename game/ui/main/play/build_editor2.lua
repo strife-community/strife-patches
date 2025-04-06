@@ -1500,10 +1500,3 @@ main_build_editor_container:RegisterWatchLua('mainBuildEditor', function(widget,
 	triggerStatus.selectedBuild = trigger.buildNumber
 	
 end, false, nil, 'visible')
-
--- Hide on bg click
-main_build_editor_container:SetCallback('onclick', function()
-	trigger.visible = false
-	trigger:Trigger()
-end)
-
