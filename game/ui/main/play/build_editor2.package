@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<style name="abilityGloss" texture="/ui/elements:gloss_up" rendermode="additive" color="#AAAAAA" noclick="true" visible="0"/>
+	<style name="buildEditorHotkeyLabel" color="black" outline="true" outlinecolor="#DDDDDD" font="subdyn_11" textalign="center" textvalign="center" noclick="true"/>
+	<style name="buildEditorCooldownLabel" textalign="center" textvalign="center" color="white" outline="true" font="subdyn_11" visible="false" noclick="true"/>
+	<style name="buildEditorPrimaryBar" valign="bottom" y="-1h" height="8.4h" grow="true" regrow="true" align="center" float="right" padding="0.4h" x="-0.5h" noclick="true"/>
+	<style name="buildEditorPrimaryContainer" valign="bottom" width="81s" height="60s" sticky="true" stickytoinvis="false" noclick="true"/>	
+	<style name="buildEditorPrimaryBacker" texture="/ui/shared/frames/rounded_bg_white.tga" color="#333333" borderthickness="0.5h" noclick="true"/>
+	<style name="buildEditorPrimaryIconSpace" width="57s" height="57s" x="1s" valign="top" y="1s" noclick="true"/>	
+	
+	<style name="buildEditorPrimaryLevelPipContainer" align="right" width="18s" x="-3s" valign="bottom" grow="true" regrow="true" growinvis="false" float="bottom" padding="2s" y="-3s" noclick="true"/>
+	<style name="buildEditorPrimaryLevelPip" visible="0" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="1s" height="7s" color="#00d1ff" noclick="1"/>
+	<style name="buildEditorPrimaryKeySpace" width="18s" height="18s" align="right" x="-3s" y="3s"/>
+	<style name="buildEditorPrimaryKey" texture="/ui/shared/frames/key.tga" borderthickness="5s" noclick="true"/>
+	<style name="buildEditorPrimaryKeyLabel" style="buildEditorHotkeyLabel" y="-9%"/>
+	<style name="buildEditorPrimaryTimerBar" width="12@" x="1@" valign="center" height="64%" y="1.5%" texture="/ui/shared/frames/rounded_bg_white_horiz.tga" color="#0B0B0B" noclick="true"/>
+	<style name="heroInventoryPrimaryTimerContainer" width="0.168h" height="8.4h" sticky="true" stickytoinvis="false" noclick="true" valign="bottom"/>
+	<style name="buildEditorabilityLevelupIcon" texture="/shared/effects/stextures/plus.tga" align="center" color="1 1 1 1" valign="center" y="0%" width="98%" height="98@" noclick="true"/>
+	
+	<style name="buildEditorItemKey" texture="/ui/shared/frames/key.tga" borderthickness="5s"/>
+	<style name="buildEditorKeyHighlight" texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="0.75h" color="#FFCC0011" rendermode="additive" noclick="true" visible="false"/>
+	<style name="buildEditorItemHotkeyLabel" style="buildEditorHotkeyLabel" y="-9%" noclick="true"/>	
+	
+	<template name="buildEditorPrimaryBackers">		
+		<frame texture="/ui/shared/frames/rounded_bg_solid.tga" color="#0e0e0e" borderthickness="5s" />		
+		<panel group="buildEditor{id}TimerContainers" style="heroInventoryPrimaryTimerContainer"/>
+		<panel group="buildEditor{id}Containers" style="buildEditorPrimaryContainer">
+			<!--<frame style="buildEditorPrimaryBacker" color="red"/>-->
+			<panel style="buildEditorPrimaryIconSpace">
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="buildEditorPrimaryIcons">
+		<panel group="buildEditor{id}TimerContainers" style="heroInventoryPrimaryTimerContainer"/>
+		<panel group="buildEditor{id}Containers" style="buildEditorPrimaryContainer">
+			<panel style="buildEditorPrimaryIconSpace">
+				<button name="buildEditor{id}Button" color="invisible" interactive="false" disabledmouseover="true" disabledmouseout="true" cangrab="true" dragexclusive="false">
+					<image name="buildEditor{id}Icon" texture="/ui/shared/textures/plus_icon.tga" noclick="true" align="center" valign="center"/>
+				</button>
+				<panel  name="buildEditor{id}DropTarget" visible="false" color="#FFCC0044"/>
+				<frame texture="/ui/shared/frames/roundframe_bold.tga" borderthickness="4s" color="invisible" bordercolor="#0e0e0e" width="+3s" height="+3s" align="center" valign="center" noclick="1"/>
+			</panel>
+		</panel>
+		
+	</template>
+	
+	<template name="buildEditorPrimaryOverlays">
+		<panel group="buildEditor{id}Containers" style="buildEditorPrimaryContainer">
+					
+			<panel style="buildEditorPrimaryIconSpace">
+				<image name="buildEditor{id}Gloss" style="abilityGloss"/>				
+			</panel>
+			
+			<panel style="buildEditorPrimaryLevelPipContainer">
+				<frame name="buildEditor{id}LevelPip4" style="buildEditorPrimaryLevelPip"/>
+				<frame name="buildEditor{id}LevelPip3" style="buildEditorPrimaryLevelPip"/>
+				<frame name="buildEditor{id}LevelPip2" style="buildEditorPrimaryLevelPip"/>
+				<frame name="buildEditor{id}LevelPip1" style="buildEditorPrimaryLevelPip"/>
+			</panel>
+
+			<button name="buildEditor{id}HotkeyButton" color="invisible" style="buildEditorPrimaryKeySpace" interactive="false">
+				<panel name="buildEditor{id}HotkeyBody" align="center" valign="center">
+					<frame name="buildEditor{id}HotkeyBacker" style="buildEditorPrimaryKey"/>
+					<frame name="buildEditor{id}HotkeyHighlight" style="buildEditorKeyHighlight"/>
+				</panel>
+			</button>			
+		</panel>
+	</template>
+	
+	<template name="buildEditorPrimaryLabels"><!-- 14 -->
+		<panel group="buildEditor{id}Containers" style="buildEditorPrimaryContainer">
+			<panel style="buildEditorPrimaryKeySpace" noclick="true">
+				<label name="buildEditor{id}Hotkey" style="buildEditorPrimaryKeyLabel" content="?"/>
+			</panel>
+		</panel>
+	</template>
+
+	
+	<template name="main_build_editor_ability_template" >
+		<panel noclick="main_build_editor_ability_{id}" width="81s" height="60s">
+			<instance name="buildEditorPrimaryBackers" id="{id}"/>
+			<instance name="buildEditorPrimaryIcons" id="{id}"/>
+			<instance name="buildEditorPrimaryOverlays" id="{id}"/>
+			<instance name="buildEditorPrimaryLabels12" id="{id}"/>
+			<instance name="buildEditorPrimaryLabels" id="{id}"/>
+		</panel>
+	</template>
+	
+	<template name="main_build_editor_abilityslot_template" >
+		<panel noclick="main_build_editor_abilityslot_{id}" width="58s" height="100%" >
+			<label name="buildEditorSlot{id}Label" style="labelBase" font="maindyn_16" color="white" textalign="center" noclick="1" content="-" /><!-- Content set in lua so it can be properly translated -->
+			<panel noclick="1" width="58s" height="58s" valign="bottom" color="0 0 0 .3">
+				<button name="buildEditorSlot{id}Button" enabled="0" color="invisible" interactive="false" disabledmouseover="true" disabledmouseout="true" cangrab="true" dragexclusive="false">
+					<image name="buildEditorSlot{id}Icon" texture="/ui/shared/textures/drag_target.tga" rendermode="grayscale" width="32s" height="32s" color="1 1 1 .2" align="center" valign="center" noclick="true"/>
+					<frame texture="/ui/shared/frames/roundframe_bold.tga" borderthickness="5s" color="invisible" bordercolor="#0e0e0e" width="+4s" height="+4s" align="center" valign="center" noclick="1"/>
+				</button>
+			</panel>
+			<instance name="DropLand" id="buildEditorSlot{id}DropTarget" align="center" valign="center" width="+2s" height="+2s" />
+		</panel>
+	</template>
+	
+	<template name="build_editor_checkbox_template">
+		<panel name="{id}" x="{x}" y="{y}" visible="1" align="{align}" width="100%" height="30s" color=".1 .1 .1 1">
+			<frame texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="0.4h"  noclick="1"/>
+			<label style="labelBase" font="maindyn_16" x="5s" color="white" textvalign="center" noclick="1" content="{content}" />
+			<frame texture="/ui/shared/frames/blue_btn_up.tga" color=".5 .5 .5" borderthickness="0.6h"  noclick="1" align="right" valign="center" width="18s" height="18s" x="-4s">
+				<image name="{id}Check" texture="/ui/shared/textures/check_mark_white.tga" color="#40cd3c" width="120%" height="120%" x="-2s" y="-4s" noclick="1"/>
+			</frame>
+		</panel>
+	</template>
+	
+	<template name="build_editor_item_slot_template2">
+		<panel name="build_editor_item_slot_{id}" noclick="1" visible="1" align="center" width="44s" height="44s" color=".1 .1 .1 1">
+			<button name="build_editor_item_slot_{id}Button" enabled="1" color="invisible" interactive="false" disabledmouseover="true" disabledmouseout="true" cangrab="true" dragexclusive="false">
+				<image name="build_editor_item_slot_{id}Icon" texture="/ui/shared/textures/pack.tga" width="80@" height="80%" rendermode="grayscale" noclick="true" align="center" valign="center"/>
+				<instance name="iconFrame" />
+			</button>
+			<instance name="DropLand" id="build_editor_item_slot_{id}DropTarget" align="center" valign="center" width="+2s" height="+2s" />
+		</panel>
+	</template>
+
+	<panel name="main_build_editor_sleeper" visible="0"/>
+	<panel name="main_build_editor_container" y="0" height="100%" color="#081015f3" visible="0">
+	
+		<!-- Shop Heading -->		
+		<!--
+		<label x="10s" y="120s" noclick="1" style="labelBase" font="maindyn_30" content="builds_step1"/>
+		<label x="10s" y="152s" noclick="1" wrap="1" style="labelBase" font="maindyn_18" color="#698fa6" content="game_shop_drag_item_to_bookmarks"/>			
+		-->
+		<instance
+			id="build_editor_item_clear"
+			name="standardButton" borderthickness="3s"
+			width="114s" height="50s" y="142s" x="428s"
+			label="game_shop_bookmark_clear_bookmark" wrap="1"
+			font="maindyn_18"
+			enabled="0"
+			onclicklua=""
+		/>
+		<!--<image texture="/ui/main/pregame/textures/corner_arrow.tga" width="52s" height="52s" x="416s" y="140s" noclick="1" rotation="20" />-->
+	
+		<!-- Ability Area -->
+		<panel y="220s" x="558s" width="352s" height="436s" noclick="1">
+			<label y="5s" noclick="1" style="labelBase" font="maindyn_30" content="builds_step2"/>
+			<label y="37s" noclick="1" wrap="1" style="labelBase" font="maindyn_18" color="#698fa6" content="builds_ability_order_info2"/>			
+			<instance
+				id="build_editor_ability_clear"
+				name="standardButton" borderthickness="3s"
+				width="96s" height="30s" align="right" y="30s" x="-3s"
+				label="general_clear"
+				font="maindyn_18"
+				enabled="0"
+				onclicklua=""
+			/>			
+			<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="10s" color="#171717" height="-64s" valign="bottom" noclick="1"/>
+			<frame name="build_editor_ability_frame" texture="/ui/shared/frames/border_double.tga" style="doubleFrame" borderthickness="10s" color="invisible" height="-64s" valign="bottom" noclick="1"/>
+			<!-- Ability Drop Areas -->
+			<panel y="156s" x="13s" float="bottom" padding="12s" grow="1">
+				<panel height="80s" float="right" padding="9s" sticky="0" stickytoinvis="0" noclick="1">
+					<instance name="main_build_editor_abilityslot_template" id="1" />
+					<instance name="main_build_editor_abilityslot_template" id="2" />
+					<instance name="main_build_editor_abilityslot_template" id="3" />
+					<instance name="main_build_editor_abilityslot_template" id="4" />
+					<instance name="main_build_editor_abilityslot_template" id="5" />
+				</panel>
+				<panel height="80s" float="right" padding="9s" sticky="0" stickytoinvis="0" noclick="1">
+					<instance name="main_build_editor_abilityslot_template" id="6" />
+					<instance name="main_build_editor_abilityslot_template" id="7" />
+					<instance name="main_build_editor_abilityslot_template" id="8" />
+					<instance name="main_build_editor_abilityslot_template" id="9" />
+					<instance name="main_build_editor_abilityslot_template" id="10" />
+				</panel>
+				<panel height="80s" float="right" padding="9s" sticky="0" stickytoinvis="0" noclick="1">
+					<instance name="main_build_editor_abilityslot_template" id="11" />
+					<instance name="main_build_editor_abilityslot_template" id="12" />
+					<instance name="main_build_editor_abilityslot_template" id="13" />
+					<instance name="main_build_editor_abilityslot_template" id="14" />
+					<instance name="main_build_editor_abilityslot_template" id="15" />
+				</panel>
+			</panel>
+
+			<!-- Abilities -->
+			<panel y="76s" x="0" grow="1" regrow="1" float="right" align="center" padding="3s" >
+				<instance name="main_build_editor_ability_template" id="0" />
+				<instance name="main_build_editor_ability_template" id="1" />
+				<instance name="main_build_editor_ability_template" id="2" />
+				<instance name="main_build_editor_ability_template" id="3" />
+			</panel>
+			<instance name="hr" y="145s" width="-24s" align="center" />
+
+		</panel>
+		
+		<!-- Items -->
+		<panel y="200s" x="422s" width="50s" height="450s" noclick="1">
+			<image texture="/ui/shared/shop/textures/scroll_bg.tga" vtile="1" vscale="512p" noclick="1" 
+						onevent="SetVScale(GetHeight() # 'p');" onload="DoEvent()"
+					/>
+			<panel y="10s" float="bottom" padding="10s" sticky="1" stickytoinvis="1" >
+				<instance name="build_editor_item_slot_template2" id="1" />
+				<instance name="build_editor_item_slot_template2" id="2" />
+				<instance name="build_editor_item_slot_template2" id="3" />
+				<instance name="build_editor_item_slot_template2" id="4" />
+				<instance name="build_editor_item_slot_template2" id="5" />
+				<instance name="build_editor_item_slot_template2" id="6" />
+				<instance name="build_editor_item_slot_template2" id="7" />
+				<instance name="build_editor_item_slot_template2" id="8" />
+			</panel>
+			<image texture="/ui/shared/shop/textures/scroll_slot.tga" y="-6s" height="6s" noclick="1" />
+			<image texture="/ui/shared/shop/textures/scroll_cap.tga" valign="bottom" y="7.5s" height="15s" noclick="1" />
+		</panel>
+		<panel name="main_build_editor_itemContainer2" y="200s" x="477s" width="50s" height="450s" visible="0" noclick="1">
+			<image texture="/ui/shared/shop/textures/scroll_bg.tga" vtile="1" vscale="512p" noclick="1" 
+						onevent="SetVScale(GetHeight() # 'p');" onload="DoEvent()"
+					/>
+			<panel y="10s" float="bottom" padding="10s" sticky="1" stickytoinvis="1" >
+				<instance name="build_editor_item_slot_template2" id="9" />
+				<instance name="build_editor_item_slot_template2" id="10" />
+				<instance name="build_editor_item_slot_template2" id="11" />
+				<instance name="build_editor_item_slot_template2" id="12" />
+				<instance name="build_editor_item_slot_template2" id="13" />
+				<instance name="build_editor_item_slot_template2" id="14" />
+				<instance name="build_editor_item_slot_template2" id="15" />
+			</panel>
+			<image texture="/ui/shared/shop/textures/scroll_slot.tga" y="-6s" height="6s" noclick="1" />
+			<image texture="/ui/shared/shop/textures/scroll_cap.tga" valign="bottom" y="7.5s" height="15s" noclick="1" />
+		</panel>
+		
+
+		<panel name="main_build_editor_share_container" align="center" valign="bottom" width="450s" x="40s" y="-40s" height="80s" noclick="1">
+			<frame texture="/ui/shared/frames/rounded_bg_solid.tga" borderthickness="10s" color="#171717" height="100%" valign="bottom" noclick="1"/>
+			<frame name="build_editor_ability_frame" texture="/ui/shared/frames/border_double.tga" style="doubleFrame" borderthickness="10s" color="invisible" height="100%" valign="bottom" noclick="1"/>
+			<instance name="DropTarget" x="0" index="main_build_editor_share_droptarget" width="100%" height="100%" visible="0" label="heroselect_share_builds_by_drag" />
+			<label name="main_build_editor_share_label" content="heroselect_share_builds_by_drag" outline="1" font="maindyn_18" textalign="center" textvalign="center" color="white" noclick="1"/>
+		</panel>
+		
+		<panel x="990s" y="290s" width="270s" noclick="1" >
+			<label noclick="1" style="labelBase" font="maindyn_30" content="builds_step3"/>
+			<label y="32s" noclick="1" wrap="1" style="labelBase" font="maindyn_18" color="#698fa6" content="builds_step3_info"/>
+						
+			<panel name="main_build_editor_name_input" align="center" y="60s" height="30s" noclick="1" >
+				<instance name="dialogWrapper2"/>
+				<frame texture="/ui/shared/frames/text_input.tga" borderthickness="4s" noclick="true"/>
+				<textbox
+					name="builds_input_textbox"
+					style="textBox1Input"
+					textcolor="0 0 0 1" y="2s"
+					onesc="Cmd('script Builds.InputOnEsc()')"
+					onenter="Cmd('Script Builds.InputOnEnter()')"
+				/>
+				<label name="builds_input_coverup" x="5s" y="-1s" noclick="true" textvalign="center" valign="center" color="0 0 0 0.7" font="maindyn_18" content="builds_input_coverup"/>
+			</panel>
+			
+			<instance name="build_editor_checkbox_template" id="selection_builds_combobox_auto_btn_1" y="98s" align="center" content="build_editor_bookmark_items"/>
+			<instance name="build_editor_checkbox_template" id="selection_builds_combobox_auto_btn_2" y="136s" align="center" content="build_editor_auto_level_abilities"/>			
+			
+			<panel name="main_build_editor_undo_btn" align="center" width="140s" y="200s" height="32s">
+				<frame texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+					<label content="build_editor_undo" style="labelBase" font="maindyn_18" textalign="center" textvalign="center" noclick="1"/>
+				</frame>
+			</panel>
+			
+			<panel name="main_build_editor_save_btn" align="center" width="212s" y="242s" height="68s">
+				<frame texture="/ui/shared/frames/stnd_btn_up.tga" borderthickness="10s" noclick="1">
+					<label content="build_editor_save" style="labelBase" font="maindyn_40" textalign="center" textvalign="center" noclick="1"/>
+				</frame>
+			</panel>
+		
+			<panel name="main_build_editor_delete_btn" align="center" width="140s" y="240s" height="32s">
+				<frame texture="/ui/shared/frames/stnd_btn_up.tga" borderthickness="4s" noclick="1">
+					<label content="build_editor_delete" outline="1" font="maindyn_18" textalign="center" textvalign="center" color="white" noclick="1"/>
+				</frame>
+			</panel>
+			
+			<panel name="main_build_editor_edit_btn" align="center" width="140s" y="280s" height="32s">
+				<frame texture="/ui/shared/frames/blue_btn_up.tga" borderthickness="4s" noclick="1">
+					<label content="build_editor_edit" style="labelBase" font="maindyn_18" textalign="center" textvalign="center" noclick="1"/>
+				</frame>
+			</panel>
+			
+			<panel name="main_build_editor_popup_close_btn" align="center" width="140s" y="320" height="32s">
+				<frame texture="/ui/shared/frames/stnd_btn_up.tga" rendermode="grayscale" borderthickness="4s" noclick="1">
+					<label content="build_editor_close" style="labelBase" font="maindyn_18" textalign="center" textvalign="center" noclick="1"/>
+				</frame>
+			</panel>
+			
+			<panel name="main_build_editor_combobox_container" noclick="1">
+				<instance name="simple_combobox_textured" id="main_build_editor_combobox" height="32s" y="60s" align="left" width="190s" texturel="/ui/shared/textures/combobox_blue_background_l.tga" texturec="/ui/shared/textures/combobox_blue_background_c.tga" texturer="/ui/shared/textures/combobox_blue_background_r.tga" />
+			</panel>
+			
+			<panel name="main_build_editor_new_btn" align="right" width="70s" y="60s" height="30s">
+				<frame texture="/ui/shared/frames/stnd_btn_up.tga" borderthickness="0.4h" noclick="1">
+					<label content="build_editor_new" outline="1" font="maindyn_18" textalign="center" textvalign="center" color="white" noclick="1"/>
+				</frame>		
+			</panel>
+			
+		</panel>
+	</panel>	
+	
+</package>
