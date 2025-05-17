@@ -1427,6 +1427,29 @@
 										</panel>
 
 										<panel group="options_grow_panel_child" width="45%" align="right" float="bottom" padding="0.8h" noclick="1" reverse="true" grow="true">
+                                            <if condition="StringEquals(host_os,'windows')">
+                                                <instance name="option_slider_integer_v3"
+                                                    category="4" subcategory="1"
+                                                    cvar="vid_cursorSize"
+                                                    round_var="true"
+                                                    percent="false"
+                                                    minvalue="32" maxvalue="256"
+                                                    title="options_label_cursor_size"
+                                                    sub_text1="options_simple_cursor_size"
+                                                    sub_text3="options_simple_cursor_size_dxd9_warning"
+                                                />
+                                            </if>
+                                            <if condition="StringEquals(host_os,'linux')||StringEquals(host_os,'macos')">
+                                                <instance name="option_slider_integer_v3"
+                                                    category="4" subcategory="1"
+                                                    cvar="vid_cursorSize"
+                                                    round_var="true"
+                                                    percent="false"
+                                                    minvalue="32" maxvalue="256"
+                                                    title="options_label_cursor_size"
+                                                    sub_text1="options_simple_cursor_size"
+                                                />
+                                            </if>
 
 											<instance name="option_checkbox_v3"
 												category="4" subcategory="1"
