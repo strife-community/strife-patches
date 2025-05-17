@@ -1463,7 +1463,7 @@ options_always_show_hero_names_tip			If enabled, player names will always be sho
 
 options_label_cursor_size                   In-game Cursor Size
 options_simple_cursor_size                  Sets size of in-game cursor.
-options_simple_cursor_size_dxd9_warning     Warning: Doesn't have effect in Full Screen Mode using DirectX9 Video Driver.
+options_simple_cursor_size_dxd9_warning     Doesn't have effect in Full Screen Mode using DirectX 9 Video Driver.
 
 options_enable_friend_notification_sounds				Friend Online Status Sounds
 options_enable_friend_notification_sounds_tip			If enabled, a sound is played when a friend signs on or off, or returns from a match.
