@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Malevolence"
+	
+	icon="icon.tga"
+	
+	cost="1150"
+	components="Item_Staff Item_Manastone Item_Manaregen1"
+
+	legendaryeffect="Legendary_Malevolence"
+	
+	power="14"
+	powerperquality="1.4"
+	 
+	actiontype="passive"
+	filters="power,ability"
+
+	empoweredeffects="Item_Malevolence_Empower_1,Item_Malevolence_Empower_2"
+	
+	showinpractice="true"
+>
+	<constant name="power" value="14" adjustment="none" qualityvalue="1.4" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="35" adjustment="none" qualityvalue="3.5" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="regen" value="3.5" adjustment="none" qualityvalue="3.5" qualityadjustment="legendary" op="add"/>
+	<onattackimpact />
+
+	<onattackingdamageevent>
+		<cantarget targetscheme="enemy_units">
+			<getconstant name="resistance" />
+			<setvar0 a="result" b="100" op="div" />
+			<setvalue name="damage_magicarmorpiercepercent" a="damage_magicarmorpiercepercent" b="var0" op="add" />
+		</cantarget>
+	</onattackingdamageevent>
+</crafteditem>
