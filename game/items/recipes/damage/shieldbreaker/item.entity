@@ -18,9 +18,7 @@
     showinpractice="true"
 >
     <constant name="attack_damage" value="6" adjustment="item" qualityvalue="0.5" qualityadjustment="common" op="add"/>
-    <constant name="resistance" value="40" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
-    <constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
-    <constant name="legendary" value="0.5" adjustment="none" qualityvalue="0.5" qualityadjustment="legendary" op="add"/>
+    <constant name="resistance" value="50" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
     <onattackimpact />
 
     <onattackingdamageevent>
