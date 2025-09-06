@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+	name="bot_ladytinder"
+	
+	items1="Item_Buckler,Item_Lasthit,Item_FellBlade"
+	items2="Item_WarpBoots,Item_PowerBoots,Item_TeleportBoots"
+	items3="Item_BarrierToken,Item_Spellblade,Item_DesperationsEdge"
+	items4="Item_ScalingPower,Item_Blessed_Orb"
+	items5="Item_SheepStick"
+	items6="Item_Timewarper"
+	items7="Item_Supercharger,Item_ShamanHeaddress"
+	potions="Item_RegenerationPotion,Item_HealthElixir"
+	tomes="Item_Tome_Power,Item_Tome_Health"
+ />
