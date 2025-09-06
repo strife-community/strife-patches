@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world"  scale="2.5">
+			
+			<sound
+				volume="0"
+				falloffstart="500"
+				falloffend="2500"
+				sample="../sounds/sfx_impact.wav"
+			/>
+			
+			<light
+				life="750"
+				startcolor="0 5 10"
+				endcolor="0 0 0"
+				midcolorpos=".5"
+				falloffstart="0"
+				falloffend="150"
+				position="0 0 75"
+			/>
+			
+
+			<groundsprite
+				position="0 0 0"
+				life="1500"
+				material="/shared/effects/smaterials/snowy_groundsprite.material"
+				startsize="75"
+				midsize="145"
+				endsize="145"
+				midsizepos=".05"
+				color=".5 .6 .75"
+				startalpha="1"
+				endalpha="0"
+
+			/>
+
+			<groundsprite
+				position="0 0 0"
+				life="1250"
+				material="/shared/effects/smaterials/snowy_cracks_reveal.material"
+				startsize="145"
+				midsize="145"
+				endsize="145"
+				midsizepos=".2"
+				color=".7 .85 1"
+				startframe="1"
+				endframe=".10"
+				alpha=".35"
+			/>
+
+			<groundsprite
+				delay="1250"
+				position="0 0 0"
+				life="250"
+				material="/shared/effects/smaterials/snowy_cracks.material"
+				startsize="145"
+				midsize="145"
+				endsize="145"
+				midsizepos=".1"
+				color=".7 .85 1"
+				startalpha=".35"
+				endalpha="0"
+			/>
+
+			<model
+				position="0 50 0"
+				minlife="18000"
+				maxlife="22000"
+				model="rocks/model.mdf"
+				anim="idle_slower"
+				color="1 2 3"
+				expirelife="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+				minstartscale=".225"
+				maxstartscale=".275"
+				midscale=".15"
+				endscale=".15"
+				directionalspace="local"
+				minyaw="0"
+				maxyaw="0"
+			/>
+
+			<model
+				position="55 0 -5"
+				minlife="18000"
+				maxlife="22000"
+				model="rocks/model.mdf"
+				anim="idle_slower"
+				color="1 2 3"
+				expirelife="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+				minstartscale=".225"
+				maxstartscale=".275"
+				midscale=".15"
+				endscale=".15"
+				directionalspace="local"
+			/>
+
+			<model
+				position="0 -55 -5"
+				minlife="18000"
+				maxlife="22000"
+				model="rocks/model.mdf"
+				anim="idle_slower"
+				color="1 2 3"
+				expirelife="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+				minstartscale=".225"
+				maxstartscale=".275"
+				midscale=".15"
+				endscale=".15"
+				directionalspace="local"
+			/>
+
+			<model
+				position="-50 -12 -5"
+				minlife="18000"
+				maxlife="22000"
+				model="rocks/model.mdf"
+				anim="idle_slower"
+				color="1 2 3"
+				expirelife="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+				minstartscale=".225"
+				maxstartscale=".275"
+				midscale=".15"
+				endscale=".15"
+				directionalspace="local"
+			/>
+
+			
+			
+
+			<simpleemitter
+			delay="100"
+				count="100"
+				position="0 0 0"
+				spawnrate="100"			
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="0"
+				material="/shared/effects/smaterials/snowy_smoke.material"
+				offsetradial="90 0 12"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				minspeed="0"				
+				maxspeed="175"				
+			>
+				<particle
+					startsize="50"								
+					minendsize="100"
+					maxendsize="100"
+					startcolor="1 1 1"
+					midcolor=".5 .75 1"
+					endcolor=".5 .75 1"
+					startalpha="0"
+					midalpha=".06"
+					endalpha="0"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+				/>
+			</simpleemitter>
+			
+			<model
+				position="0 -10 0"
+				life="1250"
+				model="more_rocks/model.mdf"
+				anim="idle"
+				color=".2 .8 1"
+				expirelife="500"
+				startalpha=".6"
+				midalpha=".6"
+				endalpha="0"
+				midalphapos=".75"
+				scale=".225"
+				directionalspace="local"
+				yaw="-90"
+			>
+			</model>
+
+			<simpleemitter
+				count="100"
+				position="0 0 0"
+				spawnrate="2000"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="50"
+				material="/shared/effects/smaterials/whitedot.material"
+				offsetsphere="12 12 75"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				minspeed="250"
+				maxspeed="500"
+
+			>
+				<particle
+					size="5"
+					startcolor=".5"
+					midcolor=".25 .35 .5"
+					endcolor="0 0 0"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				position="0 0 10"
+				life="1500"
+				material="/shared/effects/smaterials/whitedot.material"
+				startsize="45"
+				midsize="250"
+				endsize="250"
+				midsizepos=".5"
+				startcolor=".1 .5 .7"
+				midcolor=".1 .5 .7"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				depthbias="-50"
+			/>
+
+		</particlesystem>
+		
+		
+		
+		
+		
+		
+		<!-- Particle system with APEX emitter and non-APEX fallback -->
+		<particlesystem name="system0_apex" space="entity" scale="1">
+
+			<apexemitter asset="ace_W" position="0 0 0" />
+
+		</particlesystem>
+
+
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system0_apex" />
+		<camerashake2 scale="25" radius="3000" duration="250" frequency="22" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<wait duration="6000"/>
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

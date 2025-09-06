@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2.25">
+
+			<sound 
+				falloffstart="500"
+				falloffend="2500"
+				volume=".85"
+				sample="../sounds/sfx_impact.wav"
+			/>
+
+			<groundsprite
+				position="0 35 0"
+				life="1000"
+				material="/shared/effects/smaterials/puke.material"
+				startsize="40"
+				midsize="65"
+				endsize="65"
+				midsizepos=".05"
+				color=".7 .8 .7"
+				startalpha=".35"
+				midalpha=".35"
+				endalpha="0"
+			/>
+
+			<groundsprite
+				position="0 -10 0"
+				life="1000"
+				material="/shared/effects/smaterials/puke.material"
+				startsize="50"
+				midsize="105"
+				endsize="105"
+				midsizepos=".15"
+				color=".7 .8 .7"
+				startalpha=".35"
+				midalpha=".35"
+				endalpha="0"
+			/>
+
+			<groundsprite
+				position="0 0 0"
+				life="1000"
+				material="/shared/effects/smaterials/whitedot_ground.material"
+				startsize="40"
+				midsize="142"
+				endsize="142"
+				midsizepos=".1"
+				startcolor=".2 .4 0"
+				midcolor=".2 .4 0"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+			/>
+
+			<simpleemitter
+				life="650"
+				spawnrate="16"		
+				particlelife="1000"					
+				position="0 0 0"
+				offsetsphere="85 85 0"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				minspeed="0"
+				maxspeed="0"
+			>
+				<particle
+				> 
+					<model
+						minlife="300"
+						maxlife="600"
+						position="0 0 0"
+						model="bubble/model.mdf"
+						anim="idle"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						startscale=".4"
+						midscale=".8"
+						endscale="0"
+						midscalepos=".85"
+					/>
+					
+					<billboard
+						position="0 0 0"
+						life="500"
+						material="/shared/effects/smaterials/whitedot.material"
+						startsize="40"
+						midsize="65"
+						endsize="65"
+						startcolor=".25 .5 0"
+						endcolor="0 0 0"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="-50"
+					/>
+					
+					<billboard
+						position="0 0 10"
+						life="200"
+						param="0.1"
+						startsize="75"
+						endsize="150"
+						startalpha=".25"
+						midalpha=".25"
+						endalpha="0"
+						material="/shared/effects/smaterials/refract_swell.material"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						depthbias="-50"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<model
+				position="0 8 -5"
+				life="1250"
+				model="puddle/model.mdf"
+				anim="idle"
+				scale="1.4"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".2"
+			>
+			</model>
+
+			<model
+				position="0 0 0"
+				life="12500"
+				model="junk/model.mdf"
+				anim="idle" 
+				scale=".35"
+				midscalepos=".1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+				minyaw="0"
+				maxyaw="360"
+			/>
+
+		</particlesystem>
+		
+		
+		
+		<!-- Particle system with APEX emitter and non-APEX fallback -->
+		<particlesystem name="system0_apex" space="entity" scale="1">
+
+			<apexemitter asset="carter_W" position="0 0 0"/>
+
+		</particlesystem>
+		
+		
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system0_apex" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<wait duration="6000"/>
+	</thread>
+</effect>
