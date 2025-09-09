@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="true">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<simpleemitter
+				life="1500"
+				spawnrate="22"
+				offsetsphere="24"
+				position="0 0 0"
+				depthbias="0"
+				particlelife="1200"
+				count="4"
+			>
+				<particle
+				>
+					<groundsprite
+						material="/shared/effects/smaterials/ground_splash_blend.material"
+						
+						startsize="40"
+						midsize="70"
+						endsize="80"
+						midsizepos=".1"
+						
+						color="0.4 .3 .1"
+						life="1000"
+						
+						minyaw="0"
+						maxyaw="360"
+						
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".3"
+						
+						minscale="2"
+						maxscale="2"
+						
+					/>
+					
+					<groundsprite
+						material="/shared/effects/smaterials/ground_whitewater_blend.material"						
+						startsize="40"
+						midsize="75"
+						endsize="80"
+						midsizepos=".1"
+						
+						color="0.4 .3 .1"
+						life="2000"
+						
+						minyaw="0"
+						maxyaw="360"
+						
+						minyawspeed="-10"
+						maxyawspeed="10"
+						
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".8"
+						
+						minscale=".6"
+						maxscale=".6"						
+					/>	
+
+				</particle>
+			</simpleemitter>	
+
+		
+
+			
+
+			<model				
+				model="barrel_pop.mdf"
+				material="material.material"
+				anim="idle"				
+				expirelife="200"
+				scale="2.7"
+				life="20000"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".8"
+				position="0 0 -12"
+color="1.5 1.1 1.1"				
+			/>	
+
+	
+			
+			<simpleemitter
+				life="300"
+				particlelife="1600"
+				spawnrate="155"
+				speed="525.0"
+				gravity="32"
+				drag="0.00"
+				material="/shared/effects/smaterials/ground_splash_blend.material"
+				minangle="0"
+				maxangle="21"
+				direction="0 0 1"
+				offsetsphere="40"				
+			>
+				<particle
+					color="0.4 .4 .1"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="0.0"					
+					startsize="10"
+					endsize="0"
+					
+				
+					heightdistort=".03"
+					turn="1"
+			
+				/>
+			</simpleemitter>				
+			<simpleemitter
+				count="12"
+				particlelife="1600"
+				spawnrate="55"
+				speed="425.0"
+				gravity="32"
+				drag="0.00"
+				material="/shared/effects/smaterials/ground_whitewater_blend.material"
+				minangle="0"
+				maxangle="21"
+				direction="0 0 1"
+				offsetsphere="40"				
+			>
+				<particle
+					startcolor=".43 .3 0"
+					midcolor=".4 .25 0"
+					endcolor="0.0 0.0 0.0"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="0.0"					
+					startsize="55"
+					endsize="200"
+					
+					minanglespeed="-50"
+					maxanglespeed="50"
+					
+					minangle="-360"
+					maxangle="360"
+			
+				/>
+			</simpleemitter>			
+		</particlesystem>	
+		
+	
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />	
+		<waitfordeath instance="instance1" />
+		<wait duration="20000"/>
+	</thread>
+
+</effect>
