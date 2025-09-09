@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+	name="bot_hale"
+	
+	items1="Item_EnduringHelm,Item_Buckler,Item_HealingScepter"
+	items2="Item_HealthBoots"
+	items3="Item_FrostfieldPlate,Item_BarrierToken,Item_AncientGem"
+	items4="Item_BarrierToken,Item_ScalingPower"
+	items5="Item_ShamanHeaddress,Item_StoneSkin"
+	items6="Item_Shardplate,Item_Indestructible"
+	items7="Item_InfernoBrand"
+	potions="Item_RegenerationPotion,Item_ClarityPotion"
+	tomes="Item_Tome_Power,Item_Tome_Mana,Item_Tome_Health"
+ />

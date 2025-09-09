@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+	name="bot_harrower"
+
+	items1="Item_Buckler"
+	items2="Item_ASBoots"
+	items3="Item_DemonEdge,Item_Spellblade"
+	items4="Item_Frostbrand"
+	items5="Item_Zealotsblade,Item_Thunderclaw"
+	items6="Item_Indestructible"
+	items7="Item_VampiricBlade"
+ />

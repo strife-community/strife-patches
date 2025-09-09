@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+	name="bot_carter"
+	
+	items1="Item_AncientGem,Item_AncientGem,Item_FellBlade"
+	items2="Item_PowerBoots,Item_SpringBoots"
+	items3="Item_Spellblade"
+	items4="Item_Codex,Item_BarrierToken"
+	items5="Item_DesperationsEdge"
+	items6="Item_SheepStick,Item_Timewarper"
+	items7="Item_Supercharger"
+	potions="Item_RegenerationPotion,Item_ClarityPotion"
+	tomes="Item_Tome_Power,Item_Tome_Mana"
+ />

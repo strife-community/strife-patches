@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+	name="bot_ray"
+	
+	items1="Item_HealingScepter,Item_AncientGem,Item_FellBlade"
+	items2="Item_ASBoots,Item_PowerBoots"
+	items3="Item_Codex,Item_BarrierToken,Item_Spellblade"
+	items4="Item_FrostfieldPlate,Item_Frostbrand"
+	items5="Item_SheepStick,Item_VampiricBlade,Item_MaxManaPower"
+	items6="Item_Supercharger,Item_ThunderClaw,Item_Zealotsblade"
+	potions="Item_RegenerationPotion,Item_ClarityPotion"
+	tomes="Item_Tome_Power"
+ />

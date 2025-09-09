@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+	name="bot_malady"
+	
+	items1="Item_HealingScepter,Item_AncientGem,Item_ScepterOfClearcasting"
+	items2="Item_PowerBoots,Item_RuneBoots"
+	items3="Item_BarrierToken,Item_DesperationsEdge,Item_Timewarper"
+	items4="Item_FrostfieldPlate"
+	items5="Item_SheepStick"
+	items6="Item_Supercharger"
+	items7="Item_Timewarper"
+	potions="Item_RegenerationPotion,Item_ClarityPotion"
+	tomes="Item_Tome_Power,Item_Tome_Mana"
+ />
