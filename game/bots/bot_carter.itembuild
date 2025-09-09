@@ -9,6 +9,6 @@
 	items5="Item_DesperationsEdge"
 	items6="Item_SheepStick,Item_Timewarper"
 	items7="Item_Supercharger"
-	potions="Item_RegenerationPotion,Item_ClarityPotion"
+	potions="Item_ManaElixir,Item_HealthElixir"
 	tomes="Item_Tome_Power,Item_Tome_Mana"
  />

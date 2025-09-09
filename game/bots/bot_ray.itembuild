@@ -8,6 +8,6 @@
 	items4="Item_FrostfieldPlate,Item_Frostbrand"
 	items5="Item_SheepStick,Item_VampiricBlade,Item_MaxManaPower"
 	items6="Item_Supercharger,Item_ThunderClaw,Item_Zealotsblade"
-	potions="Item_RegenerationPotion,Item_ClarityPotion"
+	potions="Item_ManaElixir,Item_HealthElixir"
 	tomes="Item_Tome_Power"
  />

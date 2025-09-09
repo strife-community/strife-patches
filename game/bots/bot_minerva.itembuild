@@ -9,6 +9,6 @@
 	items5="Item_DemonEdge,Item_VampiricBlade,Item_StoneSkin"
 	items6="Item_ZealotsBlade"
 	items7="Item_Riftshards"
-	potions="Item_RegenerationPotion,Item_ClarityPotion"
+	potions="Item_ManaElixir,Item_HealthElixir"
 	tomes="Item_Tome_Power,Item_Tome_Health,Item_Tome_Mana"
  />

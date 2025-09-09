@@ -9,6 +9,6 @@
 	items5="Item_VampiricBlade,Item_Frostbrand,Item_StoneSkin"
 	items6="Item_Zealotsblade,Item_ThunderClaw"
 	items7="Item_Riftshards"
-	potions="Item_RegenerationPotion,Item_HealthElixir"
+	potions="Item_ManaElixir,Item_HealthElixir"
 	tomes="Item_Tome_Power"
  />

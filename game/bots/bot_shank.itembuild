@@ -9,6 +9,6 @@
 	items5="Item_ShamanHeaddress,Item_StoneSkin"
 	items6="Item_Shardplate,Item_Indestructible"
 	items7="Item_GiantsVisage,Item_FrostfieldPlate"
-	potions="Item_RegenerationPotion,Item_ClarityPotion"
+	potions="Item_ManaElixir,Item_HealthElixir"
 	tomes="Item_Tome_Power,Item_Tome_Mana,Item_Tome_Health"
  />
