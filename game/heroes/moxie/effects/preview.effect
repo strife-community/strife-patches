@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectsscale="true">
+<definitions>
+
+<!-- 0 -->
+<particlesystem name="system0" space="entity" scale="1">
+
+
+	<sound delay="300" sample="sounds/v_%.wav" linearfalloff="true" falloffstart="2500" falloffend="7400" volume="0.45" channel="90043" />		
+
+		
+</particlesystem>
+
+</definitions>
+<thread>
+<!-- Order -->
+<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+<waitfordeath instance="instance0"/>
+</thread>
+</effect>
