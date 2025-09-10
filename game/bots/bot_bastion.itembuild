@@ -2,13 +2,13 @@
 <itembuild
 	name="bot_bastion"
 	
-	items1="Item_EnduringHelm,Item_Buckler,Item_HealingScepter"
+	items1="Item_PendantofDefiance,Item_ElderStone,Item_CrusaderShield"
 	items2="Item_HealthBoots"
-	items3="Item_FrostfieldPlate,Item_BarrierToken,Item_AncientGem"
-	items4="Item_BarrierToken,Item_ScalingPower"
-	items5="Item_ShamanHeaddress,Item_StoneSkin"
-	items6="Item_Shardplate,Item_Indestructible"
-	items7="Item_InfernoBrand"
+	items3="Item_FrostfieldPlate,Item_BarrierToken"
+	items4="Item_GiantsVisage"
+	items5="Item_ShamanHeaddress,Item_StoneSkin,Item_InfernoBrand"
+	items6="Item_Shardplate"
+	items7="Item_Indestructible"
 	potions="Item_ManaElixir,Item_HealthElixir"
-	tomes="Item_Tome_Power,Item_Tome_Mana,Item_Tome_Health"
+	tomes="Item_Tome_Power,Item_Tome_Health"
  />
