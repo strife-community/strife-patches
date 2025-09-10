@@ -99,6 +99,11 @@ function HealingScepterItem:Evaluate()
 	return false
 end
 
+function HealingScepterItem:Execute()
+--	Echo(self.item:GetTypeName() .. " fired<E>!")
+	self.owner:OrderItemEntity(self.item, self.owner.hero);
+end
+
 function HealingScepterItem.Create(owner, item)
 	local self = Item.Create(owner, item)
 	ShallowCopy(HealingScepterItem, self)
