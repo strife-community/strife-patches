@@ -1083,7 +1083,13 @@ function playerProfileRegister(object)
 						end
 					end
 				else
-					statsToPullFrom = mainUI.progression.stats.best
+					-- @Necropola
+					-- Make up an entry, because (fake) stats/details appear to be no longer provided.
+					-- We want at least model and voice to match the selected hero and not some other
+					-- hero from a randomly picked "best" stat/details entry that may still exist.
+					-- statsToPullFrom = mainUI.progression.stats.best
+					statsToPullFrom = {}
+					table.insert(statsToPullFrom, {entity = heroEntity, value = 42, stat = 'buildingKills'})
 				end
 				
 				local currentFact 	= math.random(1, #statsToPullFrom)
