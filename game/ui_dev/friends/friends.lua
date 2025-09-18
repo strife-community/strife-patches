@@ -23,6 +23,8 @@ mainUI.savedRemotely.groupExpanded	= mainUI.savedRemotely.groupExpanded or {}
 mainUI.savedRemotely.groupExpanded['recently'] = false
 mainUI.savedRemotely.groupExpanded['ignored'] = false
 mainUI.savedLocally.friendsSettings = mainUI.savedLocally.friendsSettings or {}
+-- @Necropola -- remember-chat-userstatus
+mainUI.savedLocally.friendsSettings.lastUserStatus = mainUI.savedLocally.friendsSettings.lastUserStatus or '0'
 
 Windows = Windows or {}
 Windows.state 			= Windows.state  		or {}
@@ -57,6 +59,53 @@ local globalDragInfo			= LuaTrigger.GetTrigger('globalDragInfo')
 local socialPanelInfo 			= LuaTrigger.GetTrigger('socialPanelInfo')
 local MultiWindowDragInfo 		= LuaTrigger.GetTrigger('MultiWindowDragInfo')
 local socialPanelInfoHovering 	= LuaTrigger.GetTrigger('socialPanelInfoHovering')
+
+-- @Necropola -- remember-chat-userstatus
+local function UserStatusName(userStatus)
+	if (userStatus == '0') then
+		return '0 (ONLINE - default)'
+	elseif (userStatus == '1') then
+		return '1 (LFG)'
+	elseif (userStatus == '2') then
+		return '2 (LFM)'
+	elseif (userStatus == '4') then
+		return '4 (AFK)'
+	elseif (userStatus == '5') then
+		return '5 (DND)'
+	elseif (userStatus == '7') then
+		return '7 (INVISIBLE)'
+	end
+	return tostring(userStatus) .. '(UNKNOWNM)'
+end
+
+local function RestoreChatUserStatus()
+	local userStatus = mainUI.savedLocally.friendsSettings.lastUserStatus
+	if (userStatus == '0') or (userStatus == '3') or (userStatus == '6') then
+		-- userStatus is '0' (online) on launch by default, no need to set this.
+		userStatus = '0'
+	elseif (userStatus == '1') then
+		ChatClient.SetLookingForParty(Translate('friend_online_userstatus_1_desc'))
+	elseif (userStatus == '2') then
+		ChatClient.SetPartyLookingForMore(Translate('friend_online_userstatus_2_desc'))
+	elseif (userStatus == '4') then
+		ChatClient.SetAwayFromKeyboard(Translate('friend_online_userstatus_4_desc'))
+	elseif (userStatus == '5') then
+		ChatClient.SetDoNotDisturb(Translate('friend_online_userstatus_5_desc'))
+	elseif (userStatus == '7') then
+		ChatClient.SetInvisible(Translate('friend_online_userstatus_7_desc'))
+	end
+	println('RestoreChatUserStatus -- userStatus: ' .. UserStatusName(userStatus))
+	return userStatus
+end
+
+local function SaveChatUserStatus(userStatus)
+	if (userStatus == '0') or (userStatus == '3') or (userStatus == '6') then
+		userStatus = '0'
+	end
+	mainUI.savedLocally.friendsSettings.lastUserStatus = userStatus
+	println('SaveChatUserStatus -- userStatus: ' .. UserStatusName(userStatus))
+	return userStatus
+end
 
 local function GetWidget(...)
 	return interface:GetWidget(...)
@@ -2412,6 +2461,9 @@ local function FriendsRegister(object)
 		local main_social_player_card_status_dropdown = GetWidget('main_social_player_card_status_dropdown')
 		local currentStatus = '0'
 		
+		-- @Necropola - remember-chat-userstatus
+		RestoreChatUserStatus()
+
 		main_social_player_card_status_dropdown:SetCallback('onselect', function(widget)
 			local selectedStatus = widget:GetValue()
 			if (currentStatus ~= selectedStatus) then
@@ -2421,17 +2473,18 @@ local function FriendsRegister(object)
 					ChatClient.SetLookingForParty(Translate('friend_online_userstatus_1_desc'))
 				elseif (selectedStatus == '2') then
 					ChatClient.SetPartyLookingForMore(Translate('friend_online_userstatus_2_desc'))
-				elseif (selectedStatus == '3') then
-					ChatClient.SetStreaming(Translate('friend_online_userstatus_3_desc'))
+				--elseif (selectedStatus == '3') then
+				--	ChatClient.SetStreaming(Translate('friend_online_userstatus_3_desc'))
 				elseif (selectedStatus == '4') then
 					ChatClient.SetAwayFromKeyboard(Translate('friend_online_userstatus_4_desc'))
 				elseif (selectedStatus == '5') then
 					ChatClient.SetDoNotDisturb(Translate('friend_online_userstatus_5_desc'))
-				elseif (selectedStatus == '6') then
-					ChatClient.SetStatusesHidden(Translate('friend_online_userstatus_6_desc'))
+				--elseif (selectedStatus == '6') then
+				--	ChatClient.SetStatusesHidden(Translate('friend_online_userstatus_6_desc'))
 				elseif (selectedStatus == '7') then
 					ChatClient.SetInvisible(Translate('friend_online_userstatus_7_desc'))
 				end
+				SaveChatUserStatus(selectedStatus)
 			end
 		end)
 		

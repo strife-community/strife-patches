@@ -2591,6 +2591,9 @@ function Strife_Options:Register(object)
 		
 		if saveUpdate then
 			mainUI.launcherMusicEnabled = launcherMusicEnabled
+			-- @Necropola -- fix-launcher-music
+			mainUI.savedLocally.launcherMusicEnabled = launcherMusicEnabled
+			println('launcherMusicCheckboxUpdate --> launcherMusicEnabled: ' .. tostring(launcherMusicEnabled))
 		end
 		
 		if launcherMusicEnabled then

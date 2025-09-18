@@ -66,13 +66,29 @@ playerRankInfo:Trigger(true)
 
 local triggerPanelStatus = LuaTrigger.GetTrigger('mainPanelStatus')
 
-if mainUI.savedRemotely.launcherMusicEnabled == nil then
-	mainUI.savedRemotely.launcherMusicEnabled = true
-end
+-- @Necropola -- fix-launcher-music
+-- No longer needed and is too early here anyway.
+--if mainUI.savedRemotely.launcherMusicEnabled == nil then
+--	mainUI.savedRemotely.launcherMusicEnabled = true
+--end
 
 triggerPanelStatus.hideSecondaryElements = GetCvarBool('ui_PAXDemo') or false
-triggerPanelStatus.launcherMusicEnabled = mainUI.savedRemotely.launcherMusicEnabled
+-- @Necropola -- fix-launcher-music
+-- No longer needed and is too early here anyway.
+--triggerPanelStatus.launcherMusicEnabled = mainUI.savedRemotely.launcherMusicEnabled
 triggerPanelStatus:Trigger(true)
+
+-- @Necropola -- fix-launcher-music
+local function RestoreLauncherMusicOption(trigger)
+	if (mainUI.savedLocally) then
+		if mainUI.savedLocally.launcherMusicEnabled == nil then
+			mainUI.savedLocally.launcherMusicEnabled = true
+		end
+		mainUI.launcherMusicEnabled = mainUI.savedLocally.launcherMusicEnabled
+		trigger.launcherMusicEnabled = mainUI.savedLocally.launcherMusicEnabled
+		println('RestoreLauncherMusicOption --> launcherMusicEnabled: ' .. tostring(mainUI.savedLocally.launcherMusicEnabled))
+	end
+end
 
 LuaTrigger.CreateGroupTrigger('DatabaseProgressionLoadStateGroupTrigger', {
 	'DatabaseLoadStateTrigger',
@@ -94,7 +110,10 @@ WatchLuaTrigger('DatabaseProgressionLoadStateGroupTrigger', function(groupTrigge
 		elseif (GetCvarBool('ui_testPostgame3')) then
 			TestPostGame()
 		end
-		UnwatchLuaTriggerByKey('DatabaseLoadStateGroupTrigger', 'state_restore_after_login')	
+		-- @Necropola -- fix-launcher-music
+		-- Unwatch the Watched trigger
+		--UnwatchLuaTriggerByKey('DatabaseLoadStateGroupTrigger', 'state_restore_after_login')
+		UnwatchLuaTriggerByKey('DatabaseProgressionLoadStateGroupTrigger', 'state_restore_after_login')
 	end
 end, 'state_restore_after_login')
 
@@ -110,6 +129,11 @@ WatchLuaTrigger('DatabaseLoadStateGroupTrigger', function(groupTrigger)
 			mainUI.savedLocally.notifications = nil
 		end
 		UnwatchLuaTriggerByKey('DatabaseLoadStateGroupTrigger', 'notifications_restore_after_login')	
+	end
+	-- @Necropola -- fix-launcher-music
+	if (DatabaseLoadStateTrigger) and (DatabaseLoadStateTrigger.stateLoaded) and (trigger) then
+		println('DatabaseLoadStateGroupTrigger --> RestoreLauncherMusicOption')
+		RestoreLauncherMusicOption(trigger)
 	end
 end, 'notifications_restore_after_login')
 
