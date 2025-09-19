@@ -1,0 +1,79 @@
+-- Game phases
+GAME_PHASE_INVALID = -1
+GAME_PHASE_IDLE = 0
+GAME_PHASE_WAITING_FOR_PLAYERS = 1
+GAME_PHASE_HERO_BAN = 2
+GAME_PHASE_HERO_SELECT = 3
+GAME_PHASE_HERO_LOADING = 4
+GAME_PHASE_PRE_MATCH = 5
+GAME_PHASE_ACTIVE = 6
+GAME_PHASE_ENDED = 7
+NUM_GAME_PHASES = 8
+
+-- Behavior flags
+-- Keep these in sync with the corresponding declarations in c_botbrain.h
+BF_INIT = 0
+BF_NEED_HEAL = 1
+BF_CHECK_TELEPORT = 2
+BF_DEFEND = 3
+BF_OUTSIDELANE = 4
+BF_RETREAT = 5
+BF_FARM = 6
+BF_TOWER_DIVE = 7
+BF_TRYHARD = 8
+BF_USER1 = 9 -- Bot specific flags, mean different things on different bots, if used at all
+BF_USER2 = 10
+BF_USER3 = 11
+BF_USER4 = 12
+BF_AGGRO_CREEPS = 13
+BF_HAZARD = 14
+BF_ENEMY_BASE = 15
+BF_CALM = 16
+BF_AGGRO_TOWER = 17
+
+-- Order status
+ORDER_STATUS_PENDING = 0
+ORDER_STATUS_ACTIVE = 1
+ORDER_STATUS_COMPLETE = 2
+ORDER_STATUS_INTERRUPTED = 3
+ORDER_STATUS_FAILED = 4
+ORDER_STATUS_INVALID = 5
+
+-- Team target states
+TTS_INVALID = 0
+TTS_DORMANT = 1
+TTS_ACTIVE = 2
+
+-- Team target types
+T3_ATTACK_TARGET = 0
+T3_PUSH_LANE = 1
+T3_DEFEND_TARGET = 2
+T3_LANEPUSHER = 3
+T3_ASSIST = 4
+
+-- Teams
+TEAM_1 = 1
+TEAM_2 = 2
+TEAM_ACTIVE_FIRST = TEAM_1
+TEAM_ACTIVE_LAST = TEAM_2
+NUM_ACTIVE_TEAMS = (TEAM_ACTIVE_LAST - TEAM_ACTIVE_FIRST + 1)
+TEAM_SPECTATOR = 0
+TEAM_INVALID = -4
+TEAM_NEUTRAL = -2
+TEAM_PASSIVE = -1
+
+-- Krytos states
+KRYTOS_INACTIVE = 0
+KRYTOS_SPAWNWAIT = 1
+KRYTOS_ACTIVE = 2
+
+FAR_AWAY = 10e9
+
+function ShallowCopy(source, dest)
+	target = dest or {}
+	for k, v in pairs(source) do
+		target[k] = v
+	end
+
+	return target
+end
