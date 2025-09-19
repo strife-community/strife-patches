@@ -60,7 +60,7 @@ function GrapplingHookAbility:Execute()
 end
 
 function GrapplingHookAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, true)
+	local self = TargetPositionAbility.Create(owner, ability, true, false, false)
 	ShallowCopy(GrapplingHookAbility, self)
 	return self
 end
@@ -120,7 +120,7 @@ function RookBot:State_Init()
 	self:RegisterAbility(self.HSAbility)
 
 	-- Shell Shocker
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3), false)
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3), false, false, false)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

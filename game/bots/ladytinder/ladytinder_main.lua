@@ -15,8 +15,14 @@ function SummonAbility:Evaluate()
 		return false
 	end
 
-	self.targetPos = self.owner:FindSummonPosition(self.ability:GetRange())
-	return self.targetPos ~= nil
+	local target = self.owner:GetAttackTarget()
+	if ((target ~= nil) and (target:IsNeutralBoss())) then
+		self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
+	else
+		self.targetPos = self.owner:FindSummonPosition(self.ability:GetRange())
+	end
+
+	return (self.targetPos ~= nil)
 end
 
 function SummonAbility.Create(owner, ability)

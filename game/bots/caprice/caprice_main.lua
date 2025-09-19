@@ -18,11 +18,11 @@ end
 
 function CapriceBot:State_Init()
 	-- Fire Lager
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
 	self:RegisterAbility(ability)
 
 	-- Anchors
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true)
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, false, true)
 	self:RegisterAbility(ability)
 
 	-- Quick Draw

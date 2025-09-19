@@ -38,19 +38,20 @@ end
 
 function CarterBot:State_Init()
 	-- Rocket Barrage
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, true, true)
 	self:RegisterAbility(ability)
 
 	-- Yak Attack
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true)
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, true)
 	self:RegisterAbility(ability)
 
 	-- Firecrackers
+    -- TODO: allow against bosses
 	ability = RingAbility.Create(self, self.hero:GetAbility(2))
 	self:RegisterAbility(ability)
 
 	-- Grand Finale
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

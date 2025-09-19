@@ -39,11 +39,11 @@ end
 
 function MaladyBot:State_Init()
 	-- Graveyard
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
 	self:RegisterAbility(ability)
 
 	-- Exorcise
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true)
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, false, true)
 	self:RegisterAbility(ability)
 
 	-- Ghostly veil
@@ -51,7 +51,7 @@ function MaladyBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Silver bullet
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

@@ -53,7 +53,7 @@ function LongJumpAbility:Execute()
 end
 
 function LongJumpAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
 	ShallowCopy(LongJumpAbility, self)
 	return self
 end
@@ -65,7 +65,7 @@ function SpinAbility:Evaluate()
 		return false
 	end
 
-	return self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()-75) > 0
+	return ((self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()-75) > 0) or (self.owner:GetNumNeutralBosses(self.ability:GetTargetRadius()-75) > 0))
 end
 
 function SpinAbility.Create(owner, ability)
@@ -117,7 +117,7 @@ end
 
 function JinsheBot:State_Init()
 	-- Line Stun
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
 	self:RegisterAbility(ability)
 
 	-- Spin

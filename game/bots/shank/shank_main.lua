@@ -18,7 +18,10 @@ function StompAbility:Evaluate()
 		return false
 	end
 
-	return self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()-75) > 0
+	local target_num = self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()-75)
+	target_num = target_num + self.owner:GetNumNeutralBosses(self.ability:GetTargetRadius()-75)
+
+	return (target_num > 0)
 end
 
 function StompAbility.Create(owner, ability)
@@ -49,7 +52,7 @@ function ShoutAbility:Evaluate()
 end
 
 function ShoutAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
 	ShallowCopy(ShoutAbility, self)
 	return self
 end
@@ -96,7 +99,7 @@ function HookAbility:Evaluate()
 end
 
 function HookAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, true)
+	local self = TargetPositionAbility.Create(owner, ability, false, true, false)
 	ShallowCopy(HookAbility, self)
 	return self
 end

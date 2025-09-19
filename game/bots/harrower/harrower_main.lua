@@ -8,6 +8,7 @@ local object = getfenv(0).object
 
 local BF_HARROWER_MELEE = BF_USER1
 local BF_HARROWER_ATKBUFF = BF_USER2
+local flag_escape = false
 
 -- Custom Abilities
 
@@ -15,6 +16,7 @@ local LeapAttackAbility = {}
 
 function LeapAttackAbility:Evaluate()
 	if EscapeAbility.Evaluate(self) then
+		flag_escape = true
 		return true
 	end
 
@@ -48,11 +50,15 @@ function LeapAttackAbility:Evaluate()
 end
 
 function LeapAttackAbility:Execute()
-	TargetPositionAbility.Execute(self)
+	if (flag_escape) then
+		EscapeAbility.Execute(self)
+	else
+		TargetPositionAbility.Execute(self)
+	end
 end
 
 function LeapAttackAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, true)
 	ShallowCopy(LeapAttackAbility, self)
 	return self
 end
@@ -66,7 +72,16 @@ function SpiritWolfAbility:Evaluate()
 		return false
 	end
 
-	return self.owner:GetNumEnemyHeroes(self.ability:GetRange()) > 0
+	if (self.owner:GetNumEnemyHeroes(self.ability:GetRange()) <= 0) then
+		return false
+	end
+
+	local target = self.owner:GetAttackTarget()
+	if (target == nil) then
+		return false
+	end
+
+	return target:IsHero()
 end
 
 function SpiritWolfAbility.Create(owner, ability)

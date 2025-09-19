@@ -69,6 +69,13 @@ KRYTOS_ACTIVE = 2
 
 FAR_AWAY = 10e9
 
+function tablelength(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+
+
 function ShallowCopy(source, dest)
 	target = dest or {}
 	for k, v in pairs(source) do

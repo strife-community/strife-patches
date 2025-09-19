@@ -290,19 +290,28 @@ function TeamBot:State_Match()
 		coroutine.yield()
 	end
 
+	--local highest_priority = -999
 	for _,target in ipairs(dormantTargets) do
 		if self:FindTargetUnit(target) then
 			target.priority = target.base_priority + self:GetTargetPriorityModifier(target.unit)
 
-			if target.type == T3_ATTACK_TARGET or target.type == T3_PUSH_LANE then
-				self:CheckOffensiveTarget(target)
-			elseif target.type == T3_DEFEND_TARGET then
-				self:CheckDefensiveTarget(target)
-			elseif target.type == T3_LANEPUSHER then
-				self:CheckLanePusher(target)
-			elseif target.type == T3_ASSIST then
-				self:CheckAssistTarget(target)
-			end
+			--if (target.priority > highest_priority) then
+				local is_Target_Set = false
+				if target.type == T3_ATTACK_TARGET or target.type == T3_PUSH_LANE then
+					is_Target_Set = self:CheckOffensiveTarget(target)
+				elseif target.type == T3_DEFEND_TARGET then
+					is_Target_Set = self:CheckDefensiveTarget(target)
+				elseif target.type == T3_LANEPUSHER then
+					is_Target_Set = self:CheckLanePusher(target)
+				elseif target.type == T3_ASSIST then
+					is_Target_Set = self:CheckAssistTarget(target)
+				end
+
+				if (is_Target_Set) then
+					println("Target priority: "..target.priority)
+					--highest_priority = target.priority
+				end
+			--end
 		end
 
 		coroutine.yield()
@@ -401,13 +410,13 @@ function TeamBot:CheckOffensiveTarget(target)
 	if target.nodeType == "boss" then
 		local health = self:GetLastSeenHealthPercent(target.unit)
 		if health == nil or health <= 0 then
-			return
+			return false
 		end
 
 		if target.priority == target.base_priority then
 			local desire, numCloseEnemies = self:CheckBossTarget(target.unit, 1000, 3000, 500)
 			if desire == nil or (numCloseEnemies < 3 and desire > -1.0) then
-				return
+				return false
 			end
 		end
 
@@ -456,12 +465,12 @@ function TeamBot:CheckOffensiveTarget(target)
 
 		if target.nodeType == "base" then
 			if not self:CheckBaseConditions() then
-				return
+				return false
 			end
 
 			target.lane = self:DetermineBaseLane()
 			if target.lane == nil then
-				return
+				return false
 			end
 		end
 
@@ -487,6 +496,7 @@ function TeamBot:CheckOffensiveTarget(target)
 			self.nextPingTarget.time = Game.GetGameTime() + 1000
 		end
 		target.state = TTS_ACTIVE
+		println("Offensive Target Active: "..target.name)
 		if target.nodeType ~= "base" or self:GetEnemyGeneratorCount() > 1 then
 			target.timeout = Game.GetGameTime() + 45000
 		else
@@ -505,12 +515,15 @@ function TeamBot:CheckOffensiveTarget(target)
 		if target.scriptvar ~= nil and not self:IsAllBots() then
 			GameInfo.SetScriptValue(target.scriptvar, "1", false)
 		end
+
+		return true
 	end
+	return false
 end
 
 function TeamBot:CheckDefensiveTarget(target)
 	if target.unit == nil then
-		return
+		return false
 	end
 
 	local attackers,defenders,threat
@@ -526,7 +539,7 @@ function TeamBot:CheckDefensiveTarget(target)
 		end
 
 		if target.unit:GetHealthPercent() <= target.min_health then
-			return
+			return false
 		end
 
 		local enemydist = 5000
@@ -540,11 +553,11 @@ function TeamBot:CheckDefensiveTarget(target)
 
 --	Echo(target.name .. " has " .. attackers .. " attackers and " .. defenders .. " defenders.")
 	if attackers == nil or attackers == 0 or (defenders > 0 and threat <= defenders + 1) then
-		return
+		return false
 	end
 
 	if target.priority < 30 and attackers < 3 then
-		return
+		return false
 	end
 
 
@@ -585,27 +598,30 @@ function TeamBot:CheckDefensiveTarget(target)
 			self.nextPingTarget.pinger = pinger
 			self.nextPingTarget.time = Game.GetGameTime() + 1000
 		end
+		println("Defensive Target Active: "..target.name)
 		target.state = TTS_ACTIVE
 		target.participants = participants
 		target.quitters = 0
 --	else
 --		Echo("Rejected target " .. target.name)
+		return true
 	end
+	return false
 end
 
 function TeamBot:CheckLanePusher(target)
 	local lanepusher = target.unit
 	if lanepusher == nil then
-		return
+		return false
 	end
 	local health = lanepusher:GetHealthPercent()
 	if health ~= nil and lanepusher:GetHealthPercent() <= 0.1 then
-		return
+		return false
 	end
 
 	local pos = lanepusher:GetPosition()
 	if pos == nil then
-		return
+		return false
 	end
 	target.lane = self:GetNearestLane(pos, 600)
 	local team = self:GetTeam()
@@ -617,13 +633,15 @@ function TeamBot:CheckLanePusher(target)
 		end
 	end
 
+	println("Push Target Active: "..target.name)
 	target.state = TTS_ACTIVE
+	return true
 end
 
 function TeamBot:CheckAssistTarget(target)
 	local enemies, allies = self:NeedsAssist(target.unit)
 	if enemies == nil or enemies == 0  or enemies <= allies then
-		return
+		return false
 	end
 
 	local candidates = {}
@@ -652,11 +670,15 @@ function TeamBot:CheckAssistTarget(target)
 			num = num + 1
 		end
 
+		println("Assist Target Active: "..target.name)
 		target.state = TTS_ACTIVE
 		target.activateTime = Game.GetGameTime()
 
+		return true
+
 --		Echo("Activating " .. target.name)
 	end
+	return false
 end
 
 function TeamBot:FindEmptyEnemyLane()

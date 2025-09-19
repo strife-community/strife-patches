@@ -36,7 +36,7 @@ function BreathAbility:Evaluate()
 end
 
 function BreathAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, true)
 	ShallowCopy(BreathAbility, self)
 	return self
 end
@@ -82,7 +82,7 @@ function GlowingBracersAbility:Evaluate()
 		return false
 	end
 
-	if self.owner:GetNumEnemyHeroes(1000) < 2 then
+	if (self.owner:GetNumEnemyHeroes(1000) < 2) and (self.owner:GetNumNeutralBosses(1000) < 1) then
 		return false
 	end
 

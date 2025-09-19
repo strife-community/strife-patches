@@ -43,7 +43,7 @@ function StompAbility:Evaluate()
 end
 
 function StompAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, true)
 	ShallowCopy(StompAbility, self)
 	return self
 end
@@ -87,7 +87,7 @@ function BodySlamAbility:Evaluate()
 end
 
 function BodySlamAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
 	ShallowCopy(BodySlamAbility, self)
 	return self
 end

@@ -19,7 +19,15 @@ function SwiftStrikesAbility:Evaluate()
 		return false
 	end
 
-	if self.owner:GetNumEnemyHeroesInCone(self.ability:GetRange(), 30) < 2 then
+	local cone_condition = (self.owner:GetNumEnemyHeroesInCone(self.ability:GetRange(), 30) < 2)
+	local target_high_hp_condition = true
+
+	local target = self.owner:GetAttackTarget()
+	if target ~= nil and target:IsValid() then
+		target_high_hp_condition = (self.owner:GetAttackTarget().GetHealthPercent() > 0.4)
+	end
+
+	if (cone_condition and target_high_hp_condition) then
 		return false
 	end
 
@@ -34,7 +42,7 @@ function SwiftStrikesAbility:Evaluate()
 end
 
 function SwiftStrikesAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, true, false)
+	local self = TargetPositionAbility.Create(owner, ability, true, false, false)
 	ShallowCopy(SwiftStrikesAbility, self)
 	return self
 end

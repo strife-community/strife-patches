@@ -1,5 +1,10 @@
 
 -- Behavior tree logic for bots
+local print  =_G['print']
+
+function println(stringVar)
+	print(tostring(stringVar)..'\n')
+end
 
 runfile "/bots/globals.lua"
 runfile "/bots/btree.lua"
@@ -315,7 +320,7 @@ function Bot:AcceptTeamTarget(target)
 
 	self.moveToTarget = true
 
---	Echo(self:GetName() .. " accepted team target " .. target.name)
+	println(self:GetName() .. " accepted team target " .. target.name)
 
 	if target.lane ~= nil then
 --		Echo("  in lane " .. target.lane)
@@ -328,6 +333,7 @@ function Bot:ClearTeamTarget(target)
 	if self.teamTarget ~= nil and target.name == self.teamTarget.name then
 		self:SetTeamTarget(nil)
 		self.teamTarget = nil
+		println(self:GetName() .. " cleared team target " .. target.name)
 
 		if self.standbyTarget ~= nil then
 			self:AcceptTeamTarget(self.standbyTarget)

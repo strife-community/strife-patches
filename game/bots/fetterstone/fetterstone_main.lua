@@ -17,7 +17,7 @@ function CrystalShieldAbility:Evaluate()
 		return false
 	end
 
-	return self.owner:GetNumEnemyHeroes(1000) > 0
+	return ((self.owner:GetNumEnemyHeroes(1000) > 0) or (self.owner:GetNumNeutralBosses(1000) > 0))
 end
 
 function CrystalShieldAbility:Execute()

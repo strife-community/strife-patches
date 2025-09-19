@@ -68,7 +68,7 @@ end
 
 function ClaudessaBot:State_Init()
 	-- Dragon Knockback
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
 	self:RegisterAbility(ability)
 
 	-- Heal+Shield

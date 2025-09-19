@@ -16,7 +16,9 @@ function WhirlingBladeAbility:Evaluate()
 	end
 
 	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange())
-	return num ~= nil and num > 1
+	local num_Boss = self.owner:GetNumNeutralBosses(self.ability:GetRange())
+
+	return (num ~= nil) and (num_Boss ~= nil) and ((num + num_Boss) > 1)
 end
 
 function WhirlingBladeAbility.Create(owner, ability)
@@ -51,7 +53,7 @@ function AceBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- The Axe
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

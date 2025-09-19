@@ -19,7 +19,7 @@ function MinervaAbility:Evaluate()
 end
 
 function MinervaAbility.Create(owner, ability)
-	local self = TargetEnemyAbility.Create(owner, ability, true)
+	local self = TargetEnemyAbility.Create(owner, ability, true, true)
 	ShallowCopy(MinervaAbility, self)
 	return self
 end
@@ -42,11 +42,11 @@ function MinervaBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Heartstrike Arrow
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(1), true)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(1), true, true)
 	self:RegisterAbility(ability)
 
 	-- Eviscerate
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

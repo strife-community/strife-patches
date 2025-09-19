@@ -8,7 +8,7 @@ local object = getfenv(0).object
 
 local BF_GOKONG_ULT = BF_USER1
 local BF_GOKONG_ULT_TWO = BF_USER2
-local valueTrack = 0
+--local valueTrack = 0
 
 SpinAbility = {}
 
@@ -36,7 +36,7 @@ function BuffAbility:Evaluate()
 		return false
 	end
 
-	return self.owner:GetNumEnemyHeroes(600) > 0
+	return ((self.owner:GetNumEnemyHeroes(600) > 0) and (self.owner:GetNumNeutralBosses(600) > 0))
 end
 
 function BuffAbility.Create(owner, ability)
@@ -48,9 +48,14 @@ end
 local MonkeyAbility = {}
 
 function MonkeyAbility:Evaluate()
+	if not Ability.Evaluate(self) then
+		return false
+	end 
 
 	if self.owner:HasBehaviorFlag(BF_GOKONG_ULT) then
-		if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_TWO) then
+		-- Ultimate is active
+		if not self.owner:HasBehaviorFlag(BF_GOKONG_ULT_TWO) then
+			-- 
 			if not TargetPositionAbility.Evaluate(self) then
 				return false
 			end
@@ -59,11 +64,12 @@ function MonkeyAbility:Evaluate()
 			if threat < 1.2 then
 				return true
 			end
-		end
-	end
+		-- else: not enough time have passed, NOTHING TO DO
 
-	if not self.owner:HasBehaviorFlag(BF_GOKONG_ULT) then
-		if valueTrack == 0.0 then
+		end
+	else
+		-- Ultimate is ready but not active
+		--if valueTrack == 0.0 then
 			if self.owner:GetNumEnemyHeroes(2000) > 0 then
 				if self.owner.hero:GetHealthPercent() < 0.6 then
 					return false
@@ -73,10 +79,10 @@ function MonkeyAbility:Evaluate()
 					return false
 				end
 
-				valueTrack = 1
+				--valueTrack = 1
 				return true
 			end
-		end
+		--end
 	end
 
 	return false
@@ -133,12 +139,12 @@ function GoKongBot:UpdateBehaviorFlags()
 		self:SetBehaviorFlag(BF_GOKONG_ULT)
 	else
 		self:ClearBehaviorFlag(BF_GOKONG_ULT)
-		valueTrack = 0
+		--valueTrack = 0
 	end
 
 	if self.hero:HasState("State_GoKong_Ability4_Bot") then
 		self:SetBehaviorFlag(BF_GOKONG_ULT_TWO)
-		valueTrack = 1
+		--valueTrack = 1
 	else
 		self:ClearBehaviorFlag(BF_GOKONG_ULT_TWO)
 	end

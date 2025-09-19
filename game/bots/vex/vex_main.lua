@@ -17,7 +17,7 @@ function MissileBarrageAbility:Evaluate()
 		return false
 	end
 
-	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange())
+	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange()) + self.owner:GetNumNeutralBosses(self.ability:GetRange())
 	return nul ~= nil and num  > 1
 end
 
@@ -81,7 +81,7 @@ function WormHoleAbility:Execute()
 end
 
 function WormHoleAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
 	ShallowCopy(WormHoleAbility, self)
 	return self
 end
@@ -100,7 +100,7 @@ end
 
 function VexBot:State_Init()
 	-- Seeker Gun
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, false)
 	self:RegisterAbility(ability)
 
 	-- Missile Barrage
