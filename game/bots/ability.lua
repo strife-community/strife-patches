@@ -101,11 +101,15 @@ function JumpToPositionAbility:Evaluate()
         return false
     end
 
+    if (not self.owner:HasBehaviorFlag(BF_TRYHARD)) and self.owner:IsPositionUnderEnemyTower(self.targetPos) then
+		return false
+	end
+
     return true
 end
 
-function JumpToPositionAbility.Create(owner, ability, targetCreeps, needClearPath)
-    local self = TargetPositionAbility.Create(owner, ability, targetCreeps, needClearPath)
+function JumpToPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses)
+    local self = TargetPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses)
     ShallowCopy(JumpToPositionAbility, self)
     return self
 end
