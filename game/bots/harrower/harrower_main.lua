@@ -8,7 +8,6 @@ local object = getfenv(0).object
 
 local BF_HARROWER_MELEE = BF_USER1
 local BF_HARROWER_ATKBUFF = BF_USER2
-local flag_escape = false
 
 -- Custom Abilities
 
@@ -16,7 +15,6 @@ local LeapAttackAbility = {}
 
 function LeapAttackAbility:Evaluate()
 	if EscapeAbility.Evaluate(self) then
-		flag_escape = true
 		return true
 	end
 
@@ -50,11 +48,7 @@ function LeapAttackAbility:Evaluate()
 end
 
 function LeapAttackAbility:Execute()
-	if (flag_escape) then
-		EscapeAbility.Execute(self)
-	else
-		TargetPositionAbility.Execute(self)
-	end
+	TargetPositionAbility.Execute(self)
 end
 
 function LeapAttackAbility.Create(owner, ability)
