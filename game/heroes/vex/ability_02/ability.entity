@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vex2"
+
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+	casteffect="effects/cast.effect"
+	casteffecttype=""
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetscheme="enemy_units_and_buildings"
+	
+	manacost="85,95,105,115"
+	cooldowntime="11000"
+	hoverareacastrange="600"
+	queue="front"
+    inheritmovement="true"
+
+    alwaysshowtimer="true"
+>
+	<constant name="damage" value="130,180,230,280" adjustment="ability" />
+	<onimpact>
+		<applystate name="State_Vex_Ability2_Bolts" target="source_entity" duration="6000" />
+		<starttimer duration="6000" />
+	</onimpact>
+</ability>

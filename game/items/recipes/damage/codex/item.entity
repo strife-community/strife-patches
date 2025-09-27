@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Codex"
+	
+	casttime="100"
+	castactiontime="100"
+	anim="item_1"
+	
+	icon="icon.tga"
+	
+	cost="1150"
+	components="Item_Staff Item_Manastone Item_Manastone"
+	craftingmaxcomponents="3"
+	maxlevel="1"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	range="600"
+	cooldowntime="45000"
+	cooldowntype="codex"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="600"
+	
+	impacteffect="effects/impact.effect"
+	
+	doubleactivate="true"
+	botitem="TargetEnemyItem"
+
+	filters="activatable,ability"
+
+	empoweredeffects="Item_Codex_Empower_1,Item_Codex_Empower_2,Item_Codex_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="damage" value="200" adjustment="item" qualityvalue="20.00" qualityadjustment="common" op="add"/>
+	<constant name="cooldown" value="4" adjustment="none" qualityvalue="8" qualityadjustment="legendary" op="add" />
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<ondoubleactivate>
+		<areaofeffect
+			radius="600"
+			targetselection="closest"
+			targetscheme="visible_enemy_heroes"
+			maxtotalimpacts="1"
+			effecttype=""
+		>
+			<useitem source="this_entity" />
+		</areaofeffect>
+		<compare a="result" b="0" op="eq">
+			<cancel />
+		</compare>
+	</ondoubleactivate>
+	
+	<onimpact effectdescription="true">
+		<startcooldown/>
+		<getconstant name="damage" adjustmentsource="this_entity" />
+		<damage effecttype="Magic" amount="1" b="result" op="mult" />
+		<recordheroaggression  />
+		<aggression />
+		<playeffect effect="effects/cast.effect"/>
+		<entitytype type="Hero_Carter" target="source_entity" source="source_entity">
+			<playeffect effect="effects/cast_carter.effect"/>
+		</entitytype>
+		
+		<spawnprojectile name="Projectile_Codex_Art" source="source_entity" target="target_entity" offset="0 100 0" />
+
+		
+	</onimpact>
+</crafteditem>
