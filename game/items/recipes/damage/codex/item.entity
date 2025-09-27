@@ -27,7 +27,7 @@
 	impacteffect="effects/impact.effect"
 	
 	doubleactivate="true"
-	botitem="TargetEnemyItem"
+	botitem="TargetEnemyHeroItem"
 
 	filters="activatable,ability"
 

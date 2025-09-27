@@ -70,6 +70,22 @@ function TargetEnemyItem.Create(owner, item)
 	return self
 end
 
+TargetEnemyHeroItem = {}
+
+function TargetEnemyHeroItem:Evaluate()
+	if not TargetEnemyItem.Evaluate(self) then
+		return false
+	end
+
+	return self.target:IsHero()
+end
+
+function TargetEnemyHeroItem.Create(owner, item)
+	local self = TargetEnemyItem.Create(owner, item)
+	ShallowCopy(TargetEnemyHeroItem, self)
+	return self
+end
+
 -- Healing Scepter
 
 HealingScepterItem = {}
@@ -457,7 +473,7 @@ function HealthElixirItem:Evaluate()
 		return false
 	end
 
-	return self.owner.hero:GetHealthPercent() < 0.5 and self.owner:GetNumEnemyHeroes(750) == 0
+	return ((self.owner.hero:GetHealthPercent() < 0.5) and (self.owner:GetNumEnemyHeroes(1000) == 0))
 end
 
 function HealthElixirItem.Create(owner, item)
@@ -479,7 +495,7 @@ function ManaElixirItem:Evaluate()
 		return false
 	end
 
-	return self.owner.hero:GetManaPercent() < 0.5 and self.owner:GetNumEnemyHeroes(750) == 0
+	return ((self.owner.hero:GetManaPercent() < 0.5) and (self.owner:GetNumEnemyHeroes(1000) == 0))
 end
 
 function ManaElixirItem.Create(owner, item)
