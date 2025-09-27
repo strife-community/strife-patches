@@ -18,7 +18,7 @@ function WhirlingBladeAbility:Evaluate()
 	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange())
 	local num_Boss = self.owner:GetNumNeutralBosses(self.ability:GetRange())
 
-	return (num ~= nil) and (num_Boss ~= nil) and ((num + num_Boss) > 1)
+	return ((num + num_Boss) > 0)
 end
 
 function WhirlingBladeAbility.Create(owner, ability)
@@ -45,11 +45,11 @@ function AceBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Staggering Leap
-	ability = JumpToPositionAbility.Create(self, self.hero:GetAbility(1), false, false)
+	ability = JumpToPositionAbility.Create(self, self.hero:GetAbility(1), false, false, false)
 	self:RegisterAbility(ability)
 
 	-- Undying Rage
-	ability = SelfHealAbility.Create(self, self.hero:GetAbility(2))
+	ability = SelfShieldAbility.Create(self, self.hero:GetAbility(2))
 	self:RegisterAbility(ability)
 
 	-- The Axe

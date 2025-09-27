@@ -47,9 +47,6 @@ function LeapAttackAbility:Evaluate()
 	return false
 end
 
-function LeapAttackAbility:Execute()
-	TargetPositionAbility.Execute(self)
-end
 
 function LeapAttackAbility.Create(owner, ability)
 	local self = TargetPositionAbility.Create(owner, ability, false, false, true)

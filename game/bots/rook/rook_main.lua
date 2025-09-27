@@ -67,33 +67,14 @@ end
 
 local HideThenSeekAbility = {}
 
-function HideThenSeekAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
-
-	if self.owner.hero:GetHealthPercent() > 0.6 then
-		return false
-	end
-
-	local num = self.owner:GetNumAttackers()
-	if num > 2 then
-		return true
-	elseif num > 0 and self.owner.hero:GetHealthPercent() < 0.4 then
-		return true
-	end
-
-	return false
-end
-
 function HideThenSeekAbility:Execute()
 	self.owner:OrderEntity(self.owner.hero, "hold")
 
-	return Ability.Execute(self)
+	SelfShieldAbility.Execute(self)
 end
 
 function HideThenSeekAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = SelfShieldAbility.Create(owner, ability)
 	ShallowCopy(HideThenSeekAbility, self)
 	return self
 end

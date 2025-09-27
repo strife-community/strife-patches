@@ -48,10 +48,6 @@ function LongJumpAbility:Evaluate()
 	return false
 end
 
-function LongJumpAbility:Execute()
-	TargetPositionAbility.Execute(self)
-end
-
 function LongJumpAbility.Create(owner, ability)
 	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
 	ShallowCopy(LongJumpAbility, self)

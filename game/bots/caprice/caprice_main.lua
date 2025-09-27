@@ -6,7 +6,7 @@ runfile "/bots/ability.lua"
 
 local object = getfenv(0).object
 
-local QUICK_DRAW_MIN_DISTANCE_TO_TARGET = 200
+local QUICK_DRAW_MIN_DISTANCE_TO_TARGET = 300
 
 -- Custom Behavior Tree Functions
 

@@ -190,6 +190,32 @@ function TargetAllyAbility.Create(owner, ability, favorCC)
     return self
 end
 
+SelfShieldAbility = {}
+function SelfShieldAbility:Evaluate()
+    if not Ability.Evaluate(self) then
+        return false
+    end
+
+    local num = self.owner:GetNumAttackers()
+    if num > 2 then
+        return true
+    elseif num > 0 and self.owner.hero:GetHealthPercent() < 0.6 then
+        return true
+    end
+
+    return false
+end
+
+function SelfShieldAbility:Execute()
+    Ability.Execute(self)
+end
+
+function SelfShieldAbility.Create(owner, ability)
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(SelfShieldAbility, self)
+    return self
+end
+
 -- Self healing ability
 
 SelfHealAbility = {}

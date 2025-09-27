@@ -10,27 +10,6 @@ local BF_FETTERSTONE_AGGRO = BF_USER1
 
 -- Custom Abilities
 
-local CrystalShieldAbility = {}
-
-function CrystalShieldAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
-
-	return ((self.owner:GetNumEnemyHeroes(1000) > 0) or (self.owner:GetNumNeutralBosses(1000) > 0))
-end
-
-function CrystalShieldAbility:Execute()
-	self.owner:OrderAbility(self.ability)
-end
-
-function CrystalShieldAbility.Create(owner, ability)
-	local self = TargetEnemyAbility.Create(owner, ability, false)
-	ShallowCopy(CrystalShieldAbility, self)
-	return self
-end
-
---------
 
 local ShardAbility = {}
 
@@ -65,7 +44,7 @@ function FetterstoneBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Crystal Shield
-	ability = CrystalShieldAbility.Create(self, self.hero:GetAbility(1))
+	ability = SelfShieldAbility.Create(self, self.hero:GetAbility(1))
 	self:RegisterAbility(ability)
 
 	-- Shard Attack

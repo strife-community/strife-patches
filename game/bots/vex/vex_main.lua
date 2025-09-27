@@ -18,7 +18,7 @@ function MissileBarrageAbility:Evaluate()
 	end
 
 	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange()) + self.owner:GetNumNeutralBosses(self.ability:GetRange())
-	return nul ~= nil and num  > 1
+	return (num > 0)
 end
 
 function MissileBarrageAbility.Create(owner, ability)
