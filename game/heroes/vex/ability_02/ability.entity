@@ -19,6 +19,7 @@
 	manacost="85,95,105,115"
 	cooldowntime="11000"
 	hoverareacastrange="600"
+    range="600"
 	queue="front"
     inheritmovement="true"
 
