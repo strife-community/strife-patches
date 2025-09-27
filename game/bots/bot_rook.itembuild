@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <itembuild
-	name="bot_rook"
-	
-	items1="Item_AncientGem,Item_HealingScepter,Item_AncientGem"
-	items2="Item_ASBoots,Item_PowerBoots"
-	items3="Item_DemonEdge,Item_BarrierToken,Item_ScalingPower"
-	items4="Item_DesperationsEdge,Item_Spellblade"
-	items5="Item_VampiricBlade,Item_Sheepstick"
-	items6="Item_ZealotsBlade,Item_Thunderclaw"
-	items7="Item_Riftshards"
-	potions="Item_ManaElixir,Item_HealthElixir"
-	tomes="Item_Tome_Power,Item_Tome_Mana,Item_Tome_Health"
- />
+    name="bot_rook"
+    
+    items1="Item_FellBlade,Item_Lasthit"
+    items2="Item_ASBoots,Item_PowerBoots"
+    items3="Item_DemonEdge,Item_Spellblade,Item_ThunderClaw"
+    items4="Item_BarrierToken,Item_StoneSkin"
+    items5="Item_Riftshards"
+    items6="Item_Timewarper,Item_Titanslayer"
+    items7="Item_Dark_Bargain,Item_Shieldbreaker"
+    potions="Item_HealthElixir"
+    tomes="Item_Tome_Power,Item_Tome_Health"
+/>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <itembuild
-	name="bot_harrower"
+    name="bot_harrower"
 
-	items1="Item_Buckler"
-	items2="Item_ASBoots"
-	items3="Item_DemonEdge,Item_Spellblade"
-	items4="Item_Frostbrand"
-	items5="Item_Zealotsblade,Item_Thunderclaw"
-	items6="Item_Indestructible"
-	items7="Item_VampiricBlade"
-    potions="Item_ManaElixir,Item_HealthElixir"
+    items1="Item_Buckler,Item_FellBlade"
+    items2="Item_ASBoots"
+    items3="Item_DemonEdge,Item_ThunderClaw"
+    items4="Item_StoneSkin,Item_BarrierToken"
+    items5="Item_Zealotsblade,Item_Frostbrand,Item_VampiricBlade"
+    items6="Item_Riftshards"
+    items7="Item_Indestructible,Item_Shieldbreaker"
+    potions="Item_HealthElixir"
     tomes="Item_Tome_Power,Item_Tome_Health"
- />
+/>

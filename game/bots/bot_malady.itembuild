@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <itembuild
-	name="bot_malady"
-	
-	items1="Item_HealingScepter,Item_AncientGem,Item_ScepterOfClearcasting"
-	items2="Item_PowerBoots,Item_RuneBoots"
-	items3="Item_BarrierToken,Item_DesperationsEdge,Item_Timewarper"
-	items4="Item_FrostfieldPlate"
-	items5="Item_SheepStick"
-	items6="Item_Supercharger"
-	items7="Item_Timewarper"
-	potions="Item_ManaElixir,Item_HealthElixir"
-	tomes="Item_Tome_Power,Item_Tome_Mana"
- />
+    name="bot_malady"
+    
+    items1="Item_AncientGem,Item_FellBlade,Item_CircletOfTheSage"
+    items2="Item_PowerBoots,Item_RuneBoots"
+    items3="Item_TwinFang,Item_DesperationsEdge,Item_ScepterOfClearcasting"
+    items4="Item_Codex,Item_BarrierToken,Item_Malevolence"
+    items5="Item_SheepStick,Item_Timewarper,Item_MaxManaPower"
+    items6="Item_Supercharger"
+    items7="Item_Unstable_Shard"
+    potions="Item_ManaElixir,Item_HealthElixir"
+    tomes="Item_Tome_Power"
+/>
