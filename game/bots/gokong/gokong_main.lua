@@ -6,9 +6,14 @@ runfile "/bots/ability.lua"
 
 local object = getfenv(0).object
 
-local BF_GOKONG_ULT = BF_USER1
-local BF_GOKONG_ULT_TWO = BF_USER2
---local valueTrack = 0
+local MIN_ULT_BLINK_DISTANCE = 300
+
+local BF_GOKONG_ULT_IN_PROGRESS = BF_USER1
+local BF_GOKONG_ULT_CAN_BLINK = BF_USER2
+--  TheChiprel: For some reason ability manages to trigger again after ultimate was used but before state was properly applied.
+--              I was considering adjusting ability instead to add a small cooldown but instead decided to stick to creating stub here.
+--              This flag is set when ability activates and is cleared once state is set.
+local BF_GOKONG_ULT_STUB_FRAME = BF_USER3 
 
 SpinAbility = {}
 
@@ -36,7 +41,7 @@ function BuffAbility:Evaluate()
 		return false
 	end
 
-	return ((self.owner:GetNumEnemyHeroes(600) > 0) and (self.owner:GetNumNeutralBosses(600) > 0))
+	return ((self.owner:GetNumEnemyHeroes(600) > 0) or (self.owner:GetNumNeutralBosses(600) > 0))
 end
 
 function BuffAbility.Create(owner, ability)
@@ -52,37 +57,24 @@ function MonkeyAbility:Evaluate()
 		return false
 	end 
 
-	if self.owner:HasBehaviorFlag(BF_GOKONG_ULT) then
+	if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_IN_PROGRESS) then
 		-- Ultimate is active
-		if not self.owner:HasBehaviorFlag(BF_GOKONG_ULT_TWO) then
-			-- 
-			if not TargetPositionAbility.Evaluate(self) then
-				return false
-			end
-
-			local threat = self.owner:CalculateThreatLevel(self.targetPos)
-			if threat < 1.2 then
-				return true
-			end
+		if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_CAN_BLINK) then
+            local target = self.owner:GetAttackTarget()
+            self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
+            println("Evaluate: BLINK")
+			return true
 		-- else: not enough time have passed, NOTHING TO DO
 
 		end
-	else
+	elseif (not self.owner:HasBehaviorFlag(BF_GOKONG_ULT_STUB_FRAME)) then
 		-- Ultimate is ready but not active
-		--if valueTrack == 0.0 then
-			if self.owner:GetNumEnemyHeroes(2000) > 0 then
-				if self.owner.hero:GetHealthPercent() < 0.6 then
-					return false
-				end
-
-				if not Ability.Evaluate(self) then
-					return false
-				end
-
-				--valueTrack = 1
-				return true
-			end
-		--end
+        if self.owner:GetNumEnemyHeroes(self.ability:GetRange()) > 1 then
+            if self.owner.hero:GetHealthPercent() > 0.4 then
+                println("Evaluate: START")
+                return true
+            end
+        end
 	end
 
 	return false
@@ -90,10 +82,11 @@ function MonkeyAbility:Evaluate()
 end
 
 function MonkeyAbility:Execute()
-	if self.owner:HasBehaviorFlag(BF_GOKONG_ULT) then
+	if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_IN_PROGRESS) then
 		TargetPositionAbility.Execute(self)
 	else
 		Ability.Execute(self)
+        self.owner:SetBehaviorFlag(BF_GOKONG_ULT_STUB_FRAME)
 	end
 end
 
@@ -134,22 +127,38 @@ function GoKongBot:State_Init()
 end
 
 function GoKongBot:UpdateBehaviorFlags()
+    local can_blink = false
 
-	if self.hero:HasState("State_GoKong_Ability4") then
-		self:SetBehaviorFlag(BF_GOKONG_ULT)
-	else
-		self:ClearBehaviorFlag(BF_GOKONG_ULT)
-		--valueTrack = 0
-	end
+    if self.hero:HasState("State_GoKong_Ability4") then
+        self:SetBehaviorFlag(BF_GOKONG_ULT_IN_PROGRESS)
+        self:ClearBehaviorFlag(BF_GOKONG_ULT_STUB_FRAME)
+    else
+        self:ClearBehaviorFlag(BF_GOKONG_ULT_IN_PROGRESS)
+    end
 
-	if self.hero:HasState("State_GoKong_Ability4_Bot") then
-		self:SetBehaviorFlag(BF_GOKONG_ULT_TWO)
-		--valueTrack = 1
-	else
-		self:ClearBehaviorFlag(BF_GOKONG_ULT_TWO)
-	end
+    if self.hero:HasState("State_GoKong_Ability4_Bot") then
+        local target = self:GetAttackTarget()
+        if (target ~= nil) then
+            local target_position = self.teambot:GetLastSeenPosition(target)
+            local distance_to_target = Vector2.Distance(target_position, self.hero:GetPosition())
 
-	Bot.UpdateBehaviorFlags(self)
+            if (distance_to_target > MIN_ULT_BLINK_DISTANCE) then
+                local threat = self:CalculateThreatLevel(target_position)
+                if (threat < 1.2) then
+                    can_blink = true
+                    --MonkeyAbility.targetPos = target_position
+                end
+            end
+        end
+    end
+
+    if (can_blink) then
+        self:SetBehaviorFlag(BF_GOKONG_ULT_CAN_BLINK)
+    else
+        self:ClearBehaviorFlag(BF_GOKONG_ULT_CAN_BLINK)
+    end
+
+    Bot.UpdateBehaviorFlags(self)
 end
 
 -- End Custom Behavior Tree Functions
