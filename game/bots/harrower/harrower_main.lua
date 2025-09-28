@@ -93,16 +93,14 @@ function ShapeshiftAbility:Evaluate()
 
 	local threat = self.owner:CalculateThreatLevel(self.owner.hero:GetPosition())
 	if self.owner:HasBehaviorFlag(BF_HARROWER_MELEE) then
-		return self.owner:GetNumEnemyHeroes(300) < 1
+		return (self.owner:GetNumEnemyHeroes(300) < 1)
 	else
-		if self.owner:GetNumEnemyHeroes(300) > 0 then
+		if (self.owner:GetNumEnemyHeroes(300) > 0) or (threat > 1.25) then
 			return true
-		elseif threat > 1.25 then
-			return true
-		else
-			return false
 		end
 	end
+
+    return false
 end
 
 function ShapeshiftAbility.Create(owner, ability)

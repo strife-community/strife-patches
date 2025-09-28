@@ -118,7 +118,7 @@ function ChosenAbility:Evaluate()
 	end
 
 	local allies, enemies = self.owner:CheckEngagement(2000)
-	if allies == nil or allies < 2 or enemies < 2 then
+	if allies == nil or allies < 1 or enemies < 2 then
 		return false
 	end
 
@@ -145,12 +145,14 @@ function BastionBot.Create(object)
 end
 
 function BastionBot:State_Init()
-	-- Breath of the Oracles
-	local ability = BreathAbility.Create(self, self.hero:GetAbility(0))
+    local ability
+
+    -- Ramming Speed
+	ability = RammingSpeedAbility.Create(self, self.hero:GetAbility(1))
 	self:RegisterAbility(ability)
 
-	-- Ramming Speed
-	ability = RammingSpeedAbility.Create(self, self.hero:GetAbility(1))
+	-- Breath of the Oracles
+	ability = BreathAbility.Create(self, self.hero:GetAbility(0))
 	self:RegisterAbility(ability)
 
 	-- Glowing Bracers

@@ -28,12 +28,12 @@ function GrapplingHookAbility:Evaluate()
 			return false
 		end
 
-		if self.owner.teambot:PositionInTeamHazard(self.targetPos) then
+		if self.owner.teambot:PositionInTeamHazard(self.hook_posistion) then
 			return false
 		end
 
-		local threat = self.owner:CalculateThreatLevel(self.targetPos)
-		if threat < 0.8 then
+		local threat = self.owner:CalculateThreatLevel(self.hook_posistion)
+		if threat < 1.2 then
 			return true
 		end
 
@@ -41,10 +41,12 @@ function GrapplingHookAbility:Evaluate()
 	end
 
 	if EscapeAbility.Evaluate(self) then
+        self.hook_posistion = self.targetPos
 		return true
 	end
 
 	if TargetPositionAbility.Evaluate(self) then
+        self.hook_posistion = self.targetPos
 		return true
 	end
 		
@@ -62,6 +64,7 @@ end
 function GrapplingHookAbility.Create(owner, ability)
 	local self = TargetPositionAbility.Create(owner, ability, true, false, false)
 	ShallowCopy(GrapplingHookAbility, self)
+    self.hook_posistion = nil
 	return self
 end
 

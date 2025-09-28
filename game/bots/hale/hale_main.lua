@@ -6,8 +6,38 @@ runfile "/bots/ability.lua"
 
 local object = getfenv(0).object
 
+local SWIFT_STRIKE_MIN_DISTANCE = 200
+
 -- Custom Abilities
 
+local SwiftStrikeAbility = {}
+
+function SwiftStrikeAbility:Evaluate()
+    -- If we need to escape, ignore rest, evaluate
+    if EscapeAbility.Evaluate(self) then
+        return true
+    end
+
+    if not JumpToPositionAbility.Evaluate(self) then
+		return false
+	end
+
+	local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
+    if (distance_to_target < SWIFT_STRIKE_MIN_DISTANCE) then
+        return false
+    end
+
+    return true
+end
+
+function SwiftStrikeAbility.Create(owner, ability)
+    local self = JumpToPositionAbility.Create(owner, ability, false, false, false)
+    ShallowCopy(SwiftStrikeAbility, self)
+    return self
+end
+
+--
+--[[
 local SwiftStrikesAbility = {}
 
 function SwiftStrikesAbility:Evaluate()
@@ -46,7 +76,7 @@ function SwiftStrikesAbility.Create(owner, ability)
 	ShallowCopy(SwiftStrikesAbility, self)
 	return self
 end
-
+]]
 --
 
 local InertialSwordAbility = {}
@@ -55,6 +85,11 @@ function InertialSwordAbility:Evaluate()
 	if not Ability.Evaluate(self) then
 		return false
 	end
+
+    -- If we need to escape, ignore rest, evaluate
+    if EscapeAbility.Evaluate(self) then
+        return true
+    end
 
 	local target = self.owner:GetAttackTarget()
 	if target == nil then
@@ -137,7 +172,7 @@ end
 
 function HaleBot:State_Init()
 	-- Swift Strikes
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+	local ability = SwiftStrikeAbility.Create(self, self.hero:GetAbility(0))
 	self:RegisterAbility(ability)
 
 	-- Inertial Sword
