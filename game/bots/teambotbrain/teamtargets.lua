@@ -21,19 +21,19 @@ standard.cindara.level = 9
 standard.cindara.scriptvar = "bot_cindara"
 
 standard.baldir = {}
-standard.baldir.priority = 35
+standard.baldir.priority = 50
 standard.baldir.attackers = 3
-standard.baldir.level = 4
+standard.baldir.level = 7
 
 standard.base = {}
-standard.base.priority = 60
+standard.base.priority = 30
 standard.base.defend_priority = 100
 standard.base.attackers = 4
 standard.base.level = 9
 standard.base.defend_level = 1
 
 standard.generator = {}
-standard.generator.priority = 50
+standard.generator.priority = 30
 standard.generator.defend_priority = 60
 standard.generator.attackers = 4
 standard.generator.level = 9
@@ -47,7 +47,7 @@ standard.tower2.level = 8
 standard.tower2.defend_level = 1
 
 standard.tower1 = {}
-standard.tower1.priority = 10
+standard.tower1.priority = 30
 standard.tower1.defend_priority = 20
 standard.tower1.attackers = 1
 standard.tower1.level = 7
