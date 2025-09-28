@@ -70,12 +70,14 @@ function AceBot.Create(object)
 end
 
 function AceBot:State_Init()
-	-- Whirling Blade
-	local ability = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
+    local ability
+
+    -- Staggering Leap
+	ability = AvalancheAbility.Create(self, self.hero:GetAbility(1), false, false, false)
 	self:RegisterAbility(ability)
 
-	-- Staggering Leap
-	ability = AvalancheAbility.Create(self, self.hero:GetAbility(1), false, false, false)
+	-- Whirling Blade
+	ability = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
 	self:RegisterAbility(ability)
 
 	-- Undying Rage

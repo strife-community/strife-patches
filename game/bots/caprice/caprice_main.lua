@@ -45,16 +45,18 @@ function CapriceBot.Create(object)
 end
 
 function CapriceBot:State_Init()
-	-- Fire Lager
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
+    local ability
+
+    -- Quick Draw
+	ability = QuickDrawAbility.Create(self, self.hero:GetAbility(3), false)
 	self:RegisterAbility(ability)
 
-	-- Anchors
+    -- Anchors
 	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, false, true)
 	self:RegisterAbility(ability)
 
-	-- Quick Draw
-	ability = QuickDrawAbility.Create(self, self.hero:GetAbility(3), false)
+	-- Fire Lager
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

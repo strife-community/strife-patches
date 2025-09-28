@@ -93,6 +93,7 @@ end
 
 function RookBot:State_Init()
 	-- Grappling Hook
+    -- TODO: only launches hook, doesn't move to it
 	local ability = GrapplingHookAbility.Create(self, self.hero:GetAbility(0))
 	self:RegisterAbility(ability)
 

@@ -15,7 +15,7 @@ function RingAbility:Evaluate()
 		return false
 	end
 
-	return self.owner:GetNumEnemyHeroes(self.ability:GetRange()) > 1
+	return (self.owner:GetNumEnemyHeroes(2 * self.ability:GetRange()) > 1) or (self.owner:GetNumNeutralBosses(2 * self.ability:GetRange()) > 0)
 end
 
 function RingAbility.Create(owner, ability)
@@ -37,17 +37,18 @@ function CarterBot.Create(object)
 end
 
 function CarterBot:State_Init()
-	-- Rocket Barrage
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, true, true)
+    local ability
+
+    -- Firecrackers
+	ability = RingAbility.Create(self, self.hero:GetAbility(2))
 	self:RegisterAbility(ability)
 
 	-- Yak Attack
 	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, true)
 	self:RegisterAbility(ability)
 
-	-- Firecrackers
-    -- TODO: allow against bosses
-	ability = RingAbility.Create(self, self.hero:GetAbility(2))
+    -- Rocket Barrage
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, true, true)
 	self:RegisterAbility(ability)
 
 	-- Grand Finale
