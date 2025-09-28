@@ -53,7 +53,7 @@ function LadyTinderBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Stonebark Shield
-	ability = TargetAllyAbility.Create(self, self.hero:GetAbility(2))
+	ability = ShieldAbility.Create(self, self.hero:GetAbility(2))
 	self:RegisterAbility(ability)
 
 	-- Nature's Fury

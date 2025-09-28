@@ -24,10 +24,6 @@ function QuickDrawAbility:Evaluate()
 		return false
 	end
 
-	if (self.targetPos == nil) then
-		return false
-	end
-
 	local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
     if (distance_to_target < QUICK_DRAW_MIN_DISTANCE_TO_TARGET) then
         return false

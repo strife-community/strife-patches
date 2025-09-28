@@ -6,6 +6,8 @@ runfile "/bots/ability.lua"
 
 local object = getfenv(0).object
 
+local AVALANCHE_MIN_DISTANCE_TO_TARGET = 200
+
 -- Custom Abilities
 
 local WhirlingBladeAbility = {}
@@ -27,6 +29,34 @@ function WhirlingBladeAbility.Create(owner, ability)
 	return self
 end
 
+--
+
+local AvalancheAbility = {}
+
+function AvalancheAbility:Evaluate()
+    -- If we need to escape, ignore rest, evaluate
+    if EscapeAbility.Evaluate(self) then
+        return true
+    end
+
+    if not JumpToPositionAbility.Evaluate(self) then
+		return false
+	end
+
+	local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
+    if (distance_to_target < AVALANCHE_MIN_DISTANCE_TO_TARGET) then
+        return false
+    end
+
+    return true
+end
+
+function AvalancheAbility.Create(owner, ability)
+    local self = JumpToPositionAbility.Create(owner, ability, false, false, false)
+    ShallowCopy(AvalancheAbility, self)
+    return self
+end
+
 -- End Custom Abilities
 
 -- Custom Behavior Tree Functions
@@ -45,7 +75,7 @@ function AceBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Staggering Leap
-	ability = JumpToPositionAbility.Create(self, self.hero:GetAbility(1), false, false, false)
+	ability = AvalancheAbility.Create(self, self.hero:GetAbility(1), false, false, false)
 	self:RegisterAbility(ability)
 
 	-- Undying Rage

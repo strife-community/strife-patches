@@ -29,25 +29,6 @@ end
 
 --
 
-ShieldAbility = {}
-
-function ShieldAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
-
-	self.target = self.owner:FindShieldTarget(self.ability:GetRange(), 0.8)
-	return self.target ~= nil
-end
-
-function ShieldAbility.Create(owner, ability)
-	local self = TargetAllyAbility.Create(owner, ability, true)
-	ShallowCopy(ShieldAbility, self)
-	return self
-end
-
---
-
 local WormHoleAbility = {}
 
 function WormHoleAbility:Evaluate()
