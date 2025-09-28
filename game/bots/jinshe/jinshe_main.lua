@@ -83,13 +83,18 @@ function EmberAbility:Evaluate()
 	local num = self.ability:GetCharges()
 	if num < 6 then
 		return false
-	else
-		if self.owner:GetNumEnemyHeroes(350) > 1 then
-			return true
-		end
-	end
+    end
 
-	return false
+    local enemy_heroes = self.owner:GetNumEnemyHeroes(350)
+    if enemy_heroes == 0 then
+        return false
+    end
+    
+    if ((enemy_heroes == 1) and (self.hero:GetHealthPercent() > 0.5)) then
+        return false
+    end
+
+	return true
 	
 end
 
@@ -113,7 +118,7 @@ end
 
 function JinsheBot:State_Init()
 	-- Line Stun
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, false)
 	self:RegisterAbility(ability)
 
 	-- Spin

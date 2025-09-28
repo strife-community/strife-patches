@@ -73,7 +73,7 @@ function AceBot:State_Init()
     local ability
 
     -- Staggering Leap
-	ability = AvalancheAbility.Create(self, self.hero:GetAbility(1), false, false, false)
+	ability = AvalancheAbility.Create(self, self.hero:GetAbility(1))
 	self:RegisterAbility(ability)
 
 	-- Whirling Blade
@@ -85,7 +85,7 @@ function AceBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- The Axe
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false, false)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

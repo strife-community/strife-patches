@@ -21,13 +21,16 @@ function RayBot.Create(object)
 end
 
 function RayBot:State_Init()
-	-- Burrow Bots
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
-	self:RegisterAbility(ability)
+    local ability
 
 	-- Shock Field
 	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), false, false, false)
 	self:RegisterAbility(ability)
+
+	-- Burrow Bots
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
+	self:RegisterAbility(ability)
+
 
 	-- Death Ray
 	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3), false, false, false)

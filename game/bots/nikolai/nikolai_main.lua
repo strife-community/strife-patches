@@ -71,15 +71,18 @@ end
 local BodySlamAbility = {}
 
 function BodySlamAbility:Evaluate()
+    if (self.owner:HasBehaviorFlag(BF_NIKOLAI_BASH)) then
+        return false
+    end
 
 	if self.owner.threat > 1.3 then
 		return false
 	end
 
-	local allies, enemies = self.owner:CheckEngagement(600)
-	if enemies < 2 then
-		return false
-	end
+	--local allies, enemies = self.owner:CheckEngagement(600)
+	--if enemies < 2 then
+	--	return false
+	--end
 
 	if TargetPositionAbility.Evaluate(self) then
 		return true
