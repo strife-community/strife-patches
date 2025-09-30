@@ -8,6 +8,22 @@ local object = getfenv(0).object
 
 -- Custom Abilities
 
+local TinderTouchAbility = {}
+
+function TinderTouchAbility:Evaluate()
+	if not TargetAllyAbility.Evaluate(self) then
+		return false
+	end
+
+    return TargetEnemyAbility.Evaluate(self)
+end
+
+function TinderTouchAbility.Create(owner, ability)
+	local self = TargetAllyAbility.Create(owner, ability, false)
+	ShallowCopy(TinderTouchAbility, self)
+	return self
+end
+
 local SummonAbility = {}
 
 function SummonAbility:Evaluate()
@@ -49,7 +65,7 @@ function LadyTinderBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Tinder Touch
-	ability = TargetAllyAbility.Create(self, self.hero:GetAbility(1))
+	ability = TinderTouchAbility.Create(self, self.hero:GetAbility(1))
 	self:RegisterAbility(ability)
 
 	-- Stonebark Shield

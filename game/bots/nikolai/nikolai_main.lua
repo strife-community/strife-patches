@@ -75,18 +75,13 @@ function BodySlamAbility:Evaluate()
         return false
     end
 
-	if self.owner.threat > 1.3 then
-		return false
-	end
+    if self.owner.threat > 1.3 then
+        return false
+    end
 
-	--local allies, enemies = self.owner:CheckEngagement(600)
-	--if enemies < 2 then
-	--	return false
-	--end
-
-	if TargetPositionAbility.Evaluate(self) then
-		return true
-	end
+    if TargetPositionAbility.Evaluate(self) then
+        return true
+    end
 end
 
 function BodySlamAbility.Create(owner, ability)

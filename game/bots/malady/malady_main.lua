@@ -15,7 +15,7 @@ function GhostlyVeilAbility:Evaluate()
 		return false
 	end
 
-	self.v1, self.v2 = self.owner:FindWallVectors(500)
+	self.v1, self.v2 = self.owner:FindWallVectors(self.ability:GetRange())
 	return self.v1 ~= nil
 end
 
