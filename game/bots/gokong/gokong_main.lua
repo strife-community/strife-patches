@@ -53,41 +53,39 @@ end
 local MonkeyAbility = {}
 
 function MonkeyAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end 
+    if not Ability.Evaluate(self) then
+        return false
+    end 
 
-	if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_IN_PROGRESS) then
-		-- Ultimate is active
-		if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_CAN_BLINK) then
+    if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_IN_PROGRESS) then
+        -- Ultimate is active
+        if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_CAN_BLINK) then
             local target = self.owner:GetAttackTarget()
             self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
-            println("Evaluate: BLINK")
-			return true
-		-- else: not enough time have passed, NOTHING TO DO
+            return true
+        -- else: not enough time have passed, NOTHING TO DO
 
-		end
-	elseif (not self.owner:HasBehaviorFlag(BF_GOKONG_ULT_STUB_FRAME)) then
-		-- Ultimate is ready but not active
+        end
+    elseif (not self.owner:HasBehaviorFlag(BF_GOKONG_ULT_STUB_FRAME)) then
+        -- Ultimate is ready but not active
         if self.owner:GetNumEnemyHeroes(self.ability:GetRange()) > 1 then
             if self.owner.hero:GetHealthPercent() > 0.4 then
-                println("Evaluate: START")
                 return true
             end
         end
-	end
+    end
 
-	return false
-	
+    return false
+    
 end
 
 function MonkeyAbility:Execute()
-	if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_IN_PROGRESS) then
-		TargetPositionAbility.Execute(self)
-	else
-		Ability.Execute(self)
+    if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_IN_PROGRESS) then
+        TargetPositionAbility.Execute(self)
+    else
+        Ability.Execute(self)
         self.owner:SetBehaviorFlag(BF_GOKONG_ULT_STUB_FRAME)
-	end
+    end
 end
 
 function MonkeyAbility.Create(owner, ability)
