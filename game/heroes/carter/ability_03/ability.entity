@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Carter3"
-	
-	icon="icon.tga"
-	
-	anim="ability_3"
-	casttime="0"
-	castactiontime="0"
+    name="Ability_Carter3"
+    
+    icon="icon.tga"
+    
+    anim="ability_3"
+    casttime="0"
+    castactiontime="0"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="no_target"
-	hoverareacastrange="325"
-	targetscheme="enemy_units"
-	casteffecttype="Magic"
-	
-	queue="front"
-	inheritmovement="true"
-	
-	manacost="40"
-	cooldowntime="5000"
-	casteffect="effects/sound.effect"
-	modifierkey="carter3_1,carter3_2,carter3_3,carter3_4"
+    actiontype="no_target"
+    range="325"
+    hoverareacastrange="325"
+    targetscheme="enemy_units"
+    casteffecttype="Magic"
+    
+    queue="front"
+    inheritmovement="true"
+    
+    manacost="40"
+    cooldowntime="5000"
+    casteffect="effects/sound.effect"
+    modifierkey="carter3_1,carter3_2,carter3_3,carter3_4"
 
 >
 	<constant name="damage_per_second" value="25,35,45,55" adjustment="ability" />
