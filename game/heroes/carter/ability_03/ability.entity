@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Carter3"
+	
+	icon="icon.tga"
+	
+	anim="ability_3"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="no_target"
+	hoverareacastrange="325"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	queue="front"
+	inheritmovement="true"
+	
+	manacost="40"
+	cooldowntime="5000"
+	casteffect="effects/sound.effect"
+	modifierkey="carter3_1,carter3_2,carter3_3,carter3_4"
+
+>
+	<constant name="damage_per_second" value="25,35,45,55" adjustment="ability" />
+	<constant name="damage_increase" value="10,15,20,25" adjustment="none" />
+	
+	<onimpact>
+		<spawnaffector name="Affector_Carter_Ability3" target="source_position" />
+		<playeffect effect="effects/ring.effect" source="source_position" occlude="true" visibility="enemies"/>
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="270 0" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="250 105" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="198 198" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="105 250" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="0 270" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="-105 250" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="-198 198" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="-250 105" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="-270 0" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="-250 -105" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="-198 -198" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="-105 -250" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="0 -270" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="105 -250" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="198 -198" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<spawnunit name="Gadget_Carter_Ability3" target="source_position" owner="this_owner_entity" count="1" offset="250 -105" facing="source_entity" angle="180" fixedposition="true" snaptargettogrid="32" />
+		<playeffect effect="pet/effects/cast.effect"  source="target_position" target="target_position" occlude="true" />
+	</onimpact>
+	
+	<onattack>
+		<spawnprojectile name="Projectile_Carter_Ability3_FakeAttack" source="source_entity" target="target_entity" proxy="target_entity" offset="0 -15 200" />
+	</onattack>
+</ability>
