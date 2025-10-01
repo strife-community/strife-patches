@@ -114,24 +114,24 @@ end
 local SoulCaliburAbility = {}
 
 function SoulCaliburAbility:Evaluate()
-	if self.owner.hero:GetHealthPercent() > 0.9 then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if self.owner.hero:GetHealthPercent() > 0.9 then
+        return false
+    end
 
-	local target = self.owner:GetAttackTarget()
-	if target == nil or not target:IsValid() then
-		return false
-	end
+    local target = self.owner:GetAttackTarget()
+    if (target == nil) or (not target:IsValid()) or (not (target:IsHero() or target:IsNeutralBoss())) then
+        return false
+    end
 
-	if self.owner.teambot:UnitDistance(target, self.owner.hero:GetPosition()) > 500 then
-		return false
-	end
+    if (self.owner.teambot:UnitDistance(target, self.owner.hero:GetPosition()) > 500) then
+        return false
+    end
 
-	return true
+    return true
 end
 
 function SoulCaliburAbility.Create(owner, ability)

@@ -90,7 +90,7 @@ function EmberAbility:Evaluate()
         return false
     end
     
-    if ((enemy_heroes == 1) and (self.hero:GetHealthPercent() > 0.5)) then
+    if ((enemy_heroes == 1) and (self.owner.hero:GetHealthPercent() > 0.5)) then
         return false
     end
 

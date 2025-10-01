@@ -54,7 +54,7 @@ function TargetPositionAbility:Evaluate()
     end
 
     self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
-    if self.targetPos == nil or Vector2.Distance(self.targetPos, self.owner.hero:GetPosition()) > self.ability:GetRange() then
+    if ((self.targetPos == nil) or (Vector2.Distance(self.targetPos, self.owner.hero:GetPosition()) > self.ability:GetRange())) then
         return false
     end
 
@@ -260,13 +260,12 @@ function EscapeAbility:Evaluate()
         return false
     end
 
-    local escapePos = self.owner:GetEscapePosition(self.ability:GetRange())
-    if escapePos == nil then
+    self.targetPos = self.owner:GetEscapePosition(self.ability:GetRange())
+    if self.targetPos == nil then
         return false
     end
 
-    if self.owner:CalculateThreatLevel(escapePos) < self.owner.threat then
-        self.targetPos = escapePos
+    if self.owner:CalculateThreatLevel(self.targetPos) < self.owner.threat then
         return true
     end
 
