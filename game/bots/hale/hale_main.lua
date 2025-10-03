@@ -36,49 +36,6 @@ function SwiftStrikeAbility.Create(owner, ability)
     return self
 end
 
---
---[[
-local SwiftStrikesAbility = {}
-
-function SwiftStrikesAbility:Evaluate()
-	if self.owner.hero:GetHealthPercent() < 0.7 then
-		return false
-	end
-
-	if not TargetPositionAbility.Evaluate(self) then
-		return false
-	end
-
-	local cone_condition = (self.owner:GetNumEnemyHeroesInCone(self.ability:GetRange(), 30) < 2)
-	local target_high_hp_condition = true
-
-	local target = self.owner:GetAttackTarget()
-	if target ~= nil and target:IsValid() then
-		target_high_hp_condition = (self.owner:GetAttackTarget().GetHealthPercent() > 0.4)
-	end
-
-	if (cone_condition and target_high_hp_condition) then
-		return false
-	end
-
-	local heroPos = self.owner.hero:GetPosition()
-	local dir = Vector2.Normalize(self.targetPos - heroPos)
-	local targetPos = heroPos + dir * self.ability:GetRange()
-	if self.owner:CalculateThreatLevel(targetPos) > 1.25 then
-		return false
-	end
-
-	return true
-end
-
-function SwiftStrikesAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, true, false, false)
-	ShallowCopy(SwiftStrikesAbility, self)
-	return self
-end
-]]
---
-
 local InertialSwordAbility = {}
 
 function InertialSwordAbility:Evaluate()
@@ -104,7 +61,7 @@ function InertialSwordAbility:Evaluate()
 end
 
 function InertialSwordAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(InertialSwordAbility, self)
 	return self
 end
@@ -135,7 +92,7 @@ function SoulCaliburAbility:Evaluate()
 end
 
 function SoulCaliburAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(SoulCaliburAbility, self)
 	return self
 end
@@ -153,7 +110,7 @@ function EarthquakeAbility:Evaluate()
 end
 
 function EarthquakeAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(EarthquakeAbility, self)
 	return self
 end

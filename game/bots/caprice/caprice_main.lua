@@ -52,11 +52,11 @@ function CapriceBot:State_Init()
 	self:RegisterAbility(ability)
 
     -- Anchors
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, false, true)
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, false, true, true)
 	self:RegisterAbility(ability)
 
 	-- Fire Lager
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true, true)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

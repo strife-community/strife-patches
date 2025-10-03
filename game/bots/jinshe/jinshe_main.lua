@@ -49,7 +49,7 @@ function LongJumpAbility:Evaluate()
 end
 
 function LongJumpAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false, false)
 	ShallowCopy(LongJumpAbility, self)
 	return self
 end
@@ -65,7 +65,7 @@ function SpinAbility:Evaluate()
 end
 
 function SpinAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(SpinAbility, self)
 	return self
 end
@@ -99,7 +99,7 @@ function EmberAbility:Evaluate()
 end
 
 function EmberAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(EmberAbility, self)
 	return self
 end
@@ -118,7 +118,7 @@ end
 
 function JinsheBot:State_Init()
 	-- Line Stun
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, false)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, false, true)
 	self:RegisterAbility(ability)
 
 	-- Spin

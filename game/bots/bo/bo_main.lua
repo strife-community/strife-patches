@@ -37,7 +37,7 @@ function EnrageAbility:Evaluate()
 end
 
 function EnrageAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(EnrageAbility, self)
 	return self
 end
@@ -84,7 +84,7 @@ function RamAbility:Evaluate()
 end
 
 function RamAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false, true)
 	ShallowCopy(RamAbility, self)
 	return self
 end
@@ -103,7 +103,7 @@ end
 
 function BoBot:State_Init()
 	-- Power Throw
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true, true)
 	self:RegisterAbility(ability)
 
 	-- Enrage

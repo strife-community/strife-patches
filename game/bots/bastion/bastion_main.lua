@@ -36,7 +36,7 @@ function BreathAbility:Evaluate()
 end
 
 function BreathAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, true)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, true, true)
 	ShallowCopy(BreathAbility, self)
 	return self
 end
@@ -68,7 +68,7 @@ function RammingSpeedAbility:Evaluate()
 end
 
 function RammingSpeedAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, true)
 	ShallowCopy(RammingSpeedAbility, self)
 	return self
 end
@@ -94,12 +94,8 @@ function GlowingBracersAbility:Evaluate()
 	return self.target ~= nil
 end
 
-function GlowingBracersAbility:Execute()
-	self.owner:OrderAbility(self.ability)
-end
-
 function GlowingBracersAbility.Create(owner, ability)
-	local self = TargetEnemyAbility.Create(owner, ability, false)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(GlowingBracersAbility, self)
 	return self
 end
@@ -113,9 +109,9 @@ function ChosenAbility:Evaluate()
 		return false
 	end
 
-	--if self.owner.threat > 1.2 then
-	--	return false
-	--end
+    if self.owner:HasBehaviorFlag(BF_RETREAT) or self.owner:HasBehaviorFlag(BF_CALM) then
+        return false
+    end
 
 	local allies, enemies = self.owner:CheckEngagement(2000)
 	if allies == nil or allies < 1 or enemies < 2 then
@@ -126,7 +122,7 @@ function ChosenAbility:Evaluate()
 end
 
 function ChosenAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(ChosenAbility, self)
 	return self
 end

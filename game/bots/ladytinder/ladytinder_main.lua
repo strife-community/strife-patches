@@ -42,7 +42,7 @@ function SummonAbility:Evaluate()
 end
 
 function SummonAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, true, false)
 	ShallowCopy(SummonAbility, self)
 	return self
 end
@@ -61,7 +61,7 @@ end
 
 function LadyTinderBot:State_Init()
 	-- Bindweed
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, false, true)
 	self:RegisterAbility(ability)
 
 	-- Tinder Touch

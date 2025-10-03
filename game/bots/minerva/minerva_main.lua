@@ -48,11 +48,11 @@ function MinervaBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Heartstrike Arrow
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(1), true, true)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(1), true, true, true)
 	self:RegisterAbility(ability)
 
 	-- Eviscerate
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false, true)
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

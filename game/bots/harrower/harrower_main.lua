@@ -49,7 +49,7 @@ end
 
 
 function LeapAttackAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, true)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, true, false)
 	ShallowCopy(LeapAttackAbility, self)
 	return self
 end
@@ -76,7 +76,7 @@ function SpiritWolfAbility:Evaluate()
 end
 
 function SpiritWolfAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(SpiritWolfAbility, self)
 	return self
 end
@@ -104,7 +104,7 @@ function ShapeshiftAbility:Evaluate()
 end
 
 function ShapeshiftAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(ShapeshiftAbility, self)
 	return self
 end

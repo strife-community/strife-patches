@@ -26,7 +26,7 @@ function SpinAbility:Evaluate()
 end
 
 function SpinAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(SpinAbility, self)
 	return self
 end
@@ -45,7 +45,7 @@ function BuffAbility:Evaluate()
 end
 
 function BuffAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(BuffAbility, self)
 	return self
 end
@@ -89,7 +89,7 @@ function MonkeyAbility:Execute()
 end
 
 function MonkeyAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(MonkeyAbility, self)
 	return self
 end

@@ -25,7 +25,7 @@ function BashAbility:Evaluate()
 end
 
 function BashAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(BashAbility, self)
 	return self
 end
@@ -43,7 +43,7 @@ function StompAbility:Evaluate()
 end
 
 function StompAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, true)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, true, true)
 	ShallowCopy(StompAbility, self)
 	return self
 end
@@ -61,7 +61,7 @@ function BolsterAbility:Evaluate()
 end
 
 function BolsterAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(BolsterAbility, self)
 	return self
 end
@@ -85,7 +85,7 @@ function BodySlamAbility:Evaluate()
 end
 
 function BodySlamAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false, true)
 	ShallowCopy(BodySlamAbility, self)
 	return self
 end

@@ -22,7 +22,7 @@ function ShardAbility:Evaluate()
 end
 
 function ShardAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(ShardAbility, self)
 	return self
 end
@@ -40,7 +40,7 @@ end
 
 function FetterstoneBot:State_Init()
 	-- Pistol
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, true, true)
 	self:RegisterAbility(ability)
 
 	-- Crystal Shield
@@ -54,19 +54,19 @@ function FetterstoneBot:State_Init()
 	Bot.State_Init(self)
 end
 
-function FetterstoneBot:UpdateBehaviorFlags()
-	if self.hero:HasState("State_Fetterstone_Ability2") or self.hero:HasState("State_Fetterstone_Ability4") then
-		self:SetBehaviorFlag(BF_FETTERSTONE_AGGRO)
-	else
-		self:ClearBehaviorFlag(BF_FETTERSTONE_AGGRO)
-	end
+-- function FetterstoneBot:UpdateBehaviorFlags()
+-- 	if self.hero:HasState("State_Fetterstone_Ability2") or self.hero:HasState("State_Fetterstone_Ability4") then
+-- 		self:SetBehaviorFlag(BF_FETTERSTONE_AGGRO)
+-- 	else
+-- 		self:ClearBehaviorFlag(BF_FETTERSTONE_AGGRO)
+-- 	end
 
-	Bot.UpdateBehaviorFlags(self)
+-- 	Bot.UpdateBehaviorFlags(self)
 
-	if self:HasBehaviorFlag(BF_FETTERSTONE_AGGRO) then
-		self:SetBehaviorFlag(BF_TRYHARD)
-	end
-end
+-- 	if self:HasBehaviorFlag(BF_FETTERSTONE_AGGRO) then
+-- 		self:SetBehaviorFlag(BF_TRYHARD)
+-- 	end
+-- end
 
 
 -- End Custom Behavior Tree Functions

@@ -17,12 +17,12 @@ function MissileBarrageAbility:Evaluate()
 		return false
 	end
 
-	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange()) + self.owner:GetNumNeutralBosses(self.ability:GetRange())
+	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange() - 75) + self.owner:GetNumNeutralBosses(self.ability:GetRange())
 	return (num > 0)
 end
 
 function MissileBarrageAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(MissileBarrageAbility, self)
 	return self
 end
@@ -32,28 +32,28 @@ end
 local WormHoleAbility = {}
 
 function WormHoleAbility:Evaluate()
-	if not self.owner:HasBehaviorFlag(BF_CALM) or self.owner.hero:GetHealthPercent() < 0.8 then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
+    
+    if not self.owner:HasBehaviorFlag(BF_CALM) or self.owner.hero:GetHealthPercent() < 0.8 then
+        return false
+    end
 
-	if self.owner.teamTarget ~= nil and self.owner.teamTarget.priority >= 50 and self.owner:GetDistanceToTeamTarget() < 2000 then
-		return false
-	end
+    --if self.owner.teamTarget ~= nil and self.owner.teamTarget.priority >= 50 and self.owner:GetDistanceToTeamTarget() < 2000 then
+    --    return false
+    --end
 
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not self.owner:CanTeleport(500) then
+        return false
+    end
 
-	if not self.owner:CanTeleport(500) then
-		return false
-	end
+    self.targetPos = self.owner.teambot:FindOffensiveTeleportTarget(self.owner.hero:GetPosition(), 1, 1, 500, self.ability:GetRange(), 0.3, 1.0)
+    if self.targetPos ~= nil then
+        return true
+    end
 
-	self.targetPos = self.owner.teambot:FindOffensiveTeleportTarget(self.owner.hero:GetPosition(), 1, 1, 2000, self.ability:GetRange(), 0.3, 1.0)
-	if self.targetPos ~= nil then
-		return true
-	end
-
-	return false
+    return false
 end
 
 function WormHoleAbility:Execute()
@@ -62,7 +62,7 @@ function WormHoleAbility:Execute()
 end
 
 function WormHoleAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false, false)
 	ShallowCopy(WormHoleAbility, self)
 	return self
 end
@@ -81,7 +81,7 @@ end
 
 function VexBot:State_Init()
 	-- Seeker Gun
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, false)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, false, true)
 	self:RegisterAbility(ability)
 
 	-- Missile Barrage

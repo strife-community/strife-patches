@@ -32,7 +32,7 @@ function MystikAbility:Evaluate()
 end
 
 function MystikAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(MystikAbility, self)
 	return self
 end
@@ -67,7 +67,7 @@ function PincerAbility:Execute()
 end
 
 function PincerAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(PincerAbility, self)
 	return self
 end
@@ -105,7 +105,7 @@ function TortusAbility:Evaluate()
 end
 
 function TortusAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(TortusAbility, self)
 	return self
 end
@@ -134,7 +134,7 @@ function ToppsAbility:Evaluate()
 end
 
 function ToppsAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(ToppsAbility, self)
 	return self
 end
@@ -168,7 +168,7 @@ function BounderAbility:Evaluate()
 end
 
 function BounderAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false, false)
 	ShallowCopy(BounderAbility, self)
 	return self
 end
@@ -229,7 +229,7 @@ function RazerAbility:Evaluate()
 end
 
 function RazerAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, false)
 	ShallowCopy(RazerAbility, self)
 	return self
 end

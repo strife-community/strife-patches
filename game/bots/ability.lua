@@ -7,18 +7,34 @@ runfile "/bots/globals.lua"
 Ability = {}
 
 function Ability:Evaluate()
-    return self.ability:CanActivate()
+    if not self.ability:CanActivate() then
+        return false
+    end
+
+    if (self.hasAggro) then
+        local selfPosition = self.owner.hero:GetPosition()
+        if ((selfPosition == nil) or (self.owner:IsPositionUnderEnemyTower(selfPosition) and (not self.owner:HasBehaviorFlag(BF_TOWER_DIVE)))) then
+            return false
+        end
+    end
+
+    return true
 end
 
 function Ability:Execute()
     self.owner:OrderAbility(self.ability)
 end
 
-function Ability.Create(owner, ability)
+function Ability.Create(owner, ability, hasAggro)
     local self = ShallowCopy(Ability)
 
     self.ability = ability
     self.owner = owner
+    self.hasAggro = false
+
+    if (hasAggro ~= nill) then 
+        self.hasAggro = hasAggro
+    end
 
     return self
 end
@@ -41,7 +57,7 @@ function TargetPositionAbility:Evaluate()
     end
 
     local target = self.owner:GetAttackTarget()
-    if target == nil then
+    if (target == nil) or (target:IsInvulnerable()) then
         return false
     end
 
@@ -65,8 +81,13 @@ function TargetPositionAbility:Execute()
     self.owner:OrderAbilityPosition(self.ability, self.targetPos)
 end
 
-function TargetPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses)
-    local self = Ability.Create(owner, ability)
+function TargetPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses, hasAggro)
+    local local_hasAggro = true
+    if (hasAggro ~= nil) then
+        local_hasAggro = hasAggro
+    end
+
+    local self = Ability.Create(owner, ability, local_hasAggro)
     ShallowCopy(TargetPositionAbility, self)
 
     if (doTargetBosses == nil) then
@@ -109,7 +130,7 @@ function JumpToPositionAbility:Evaluate()
 end
 
 function JumpToPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses)
-    local self = TargetPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses)
+    local self = TargetPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses, false)
     ShallowCopy(JumpToPositionAbility, self)
     return self
 end
@@ -152,8 +173,13 @@ function TargetEnemyAbility:Execute()
     self.owner:OrderAbilityEntity(self.ability, self.target)
 end
 
-function TargetEnemyAbility.Create(owner, ability, targetCreeps, doTargetBosses)
-    local self = Ability.Create(owner, ability)
+function TargetEnemyAbility.Create(owner, ability, targetCreeps, doTargetBosses, hasAggro)
+    local local_hasAggro = true
+    if (hasAggro ~= nil) then
+        local_hasAggro = hasAggro
+    end
+
+    local self = Ability.Create(owner, ability, local_hasAggro)
     ShallowCopy(TargetEnemyAbility, self)
 
     if (doTargetBosses == nil) then
@@ -228,7 +254,7 @@ function SelfShieldAbility:Execute()
 end
 
 function SelfShieldAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability)
+    local self = Ability.Create(owner, ability, false)
     ShallowCopy(SelfShieldAbility, self)
     return self
 end
@@ -246,7 +272,7 @@ function SelfHealAbility:Evaluate()
 end
 
 function SelfHealAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability)
+    local self = Ability.Create(owner, ability, false)
     ShallowCopy(SelfHealAbility, self)
     return self
 end
@@ -273,7 +299,7 @@ function EscapeAbility:Evaluate()
 end
 
 function EscapeAbility.Create(owner, ability, targetCreeps)
-    local self = TargetPositionAbility.Create(owner, ability, targetCreeps)
+    local self = TargetPositionAbility.Create(owner, ability, targetCreeps, false, false, false)
     ShallowCopy(EscapeAbility, self)
     return self
 end
@@ -296,7 +322,7 @@ function VectorAbility:Execute()
 end
 
 function VectorAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability)
+    local self = Ability.Create(owner, ability, false)
     ShallowCopy(VectorAbility, self)
     return self
 end
@@ -338,7 +364,7 @@ function HomeTeleportAbility:Execute()
 end
 
 function HomeTeleportAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability)
+    local self = Ability.Create(owner, ability, false)
     ShallowCopy(HomeTeleportAbility, self)
     return self
 end

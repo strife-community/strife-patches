@@ -24,7 +24,7 @@ function WhirlingBladeAbility:Evaluate()
 end
 
 function WhirlingBladeAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(WhirlingBladeAbility, self)
 	return self
 end

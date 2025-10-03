@@ -27,13 +27,12 @@ function ScorchAbility:Evaluate()
 		return false
 	end
 
-	--if self.owner.threat > 1.2 then
-	--	return false
-	--end
+	if self.owner:HasBehaviorFlag(BF_RETREAT) or self.owner:HasBehaviorFlag(BF_CALM) then
+        return false
+    end
 
 	local allies, enemies = self.owner:CheckEngagement(2000)
 	if allies == nil or allies < 1 or enemies < 2 then
-    --if (enemies == nil) or (enemies < 2) then
 		return false
 	end
 
@@ -41,7 +40,7 @@ function ScorchAbility:Evaluate()
 end
 
 function ScorchAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(ScorchAbility, self)
 	return self
 end
@@ -50,7 +49,7 @@ end
 
 function ClaudessaBot:State_Init()
 	-- Dragon Knockback
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, false, true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, false, true, true)
 	self:RegisterAbility(ability)
 
 	-- Heal+Shield

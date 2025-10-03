@@ -25,7 +25,7 @@ function StompAbility:Evaluate()
 end
 
 function StompAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
+	local self = Ability.Create(owner, ability, true)
 	ShallowCopy(StompAbility, self)
 	return self
 end
@@ -52,7 +52,7 @@ function ShoutAbility:Evaluate()
 end
 
 function ShoutAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false, true)
 	ShallowCopy(ShoutAbility, self)
 	return self
 end
@@ -74,7 +74,7 @@ function ShoutAbility:Evaluate()
 end
 
 function ShoutAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, false, false, false)
 	ShallowCopy(ShoutAbility, self)
 	return self
 end
@@ -99,7 +99,7 @@ function HookAbility:Evaluate()
 end
 
 function HookAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, true, false)
+	local self = TargetPositionAbility.Create(owner, ability, false, true, false, true)
 	ShallowCopy(HookAbility, self)
 	return self
 end
