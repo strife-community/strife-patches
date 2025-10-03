@@ -113,9 +113,9 @@ function ChosenAbility:Evaluate()
 		return false
 	end
 
-	if self.owner.threat > 1.2 then
-		return false
-	end
+	--if self.owner.threat > 1.2 then
+	--	return false
+	--end
 
 	local allies, enemies = self.owner:CheckEngagement(2000)
 	if allies == nil or allies < 1 or enemies < 2 then

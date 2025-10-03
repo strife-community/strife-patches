@@ -27,12 +27,13 @@ function ScorchAbility:Evaluate()
 		return false
 	end
 
-	if self.owner.threat > 1.2 then
-		return false
-	end
+	--if self.owner.threat > 1.2 then
+	--	return false
+	--end
 
 	local allies, enemies = self.owner:CheckEngagement(2000)
-	if allies == nil or allies < 2 or enemies < 2 then
+	if allies == nil or allies < 1 or enemies < 2 then
+    --if (enemies == nil) or (enemies < 2) then
 		return false
 	end
 
@@ -49,7 +50,7 @@ end
 
 function ClaudessaBot:State_Init()
 	-- Dragon Knockback
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, false, true)
 	self:RegisterAbility(ability)
 
 	-- Heal+Shield

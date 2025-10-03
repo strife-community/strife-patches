@@ -36,7 +36,7 @@ function TargetPositionAbility:Evaluate()
         local boss_target = self.owner.teamTarget.unit
         if (boss_target:IsNeutralBoss()) then
             self.targetPos = self.owner.teambot:GetLastSeenPosition(boss_target)
-            return true
+            return (self.targetPos ~= nil)
         end
     end
 

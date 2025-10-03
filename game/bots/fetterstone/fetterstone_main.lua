@@ -40,7 +40,7 @@ end
 
 function FetterstoneBot:State_Init()
 	-- Pistol
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, true)
 	self:RegisterAbility(ability)
 
 	-- Crystal Shield
