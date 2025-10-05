@@ -8,23 +8,18 @@ local object = getfenv(0).object
 
 local QUICK_DRAW_MIN_DISTANCE_TO_TARGET = 300
 
--- Custom Behavior Tree Functions
-
 local CapriceBot = {}
+
+-- Custom Behavior Tree Functions
 
 local QuickDrawAbility = {}
 
 function QuickDrawAbility:Evaluate()
-	-- If we need to escape, ignore rest, evaluate
-	if EscapeAbility.Evaluate(self) then
-		return true
-	end
+    if not JumpToPositionAbility.Evaluate(self) then
+        return false
+    end
 
-	if not JumpToPositionAbility.Evaluate(self) then
-		return false
-	end
-
-	local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
+    local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
     if (distance_to_target < QUICK_DRAW_MIN_DISTANCE_TO_TARGET) then
         return false
     end
@@ -33,9 +28,12 @@ function QuickDrawAbility:Evaluate()
 end
 
 function QuickDrawAbility.Create(owner, ability)
-	local self = JumpToPositionAbility.Create(owner, ability, false, false, false)
-	ShallowCopy(QuickDrawAbility, self)
-	return self
+    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
+    ability_settings.doAddRadiusToRange = true
+
+    local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
+    ShallowCopy(QuickDrawAbility, self)
+    return self
 end
 
 function CapriceBot.Create(object)
@@ -46,17 +44,26 @@ end
 
 function CapriceBot:State_Init()
     local ability
+    local ability_settings
 
-    -- Quick Draw
-	ability = QuickDrawAbility.Create(self, self.hero:GetAbility(3), false)
+    -- Fire Lager
+    ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
 	self:RegisterAbility(ability)
 
     -- Anchors
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, false, true, true)
+    ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), ability_settings)
 	self:RegisterAbility(ability)
 
-	-- Fire Lager
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true, true)
+    -- Quick Draw
+	ability = QuickDrawAbility.Create(self, self.hero:GetAbility(3))
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

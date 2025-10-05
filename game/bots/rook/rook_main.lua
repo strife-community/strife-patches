@@ -15,57 +15,53 @@ local BF_ROOK_ATKBUFF = BF_USER3
 local GrapplingHookAbility = {}
 
 function GrapplingHookAbility:Evaluate()
-	if self.owner:HasBehaviorFlag(BF_ROOK_GRAPPLE) then
-		if EscapeAbility.Evaluate(self) then
-			return true
-		end
+    if self.owner:HasBehaviorFlag(BF_ROOK_GRAPPLE) then
+        if not Ability.Evaluate(self) then
+            return false
+        end
 
-		if self.owner.hero:GetHealthPercent() < 0.7 then
-			return false
-		end
+        if self.owner.teambot:PositionInTeamHazard(self.hook_position) then
+            return false
+        end
 
-		if not TargetPositionAbility.Evaluate(self) then
-			return false
-		end
+        if self.owner:NeedToRetreat() then
+            if self.owner:CalculateThreatLevel(self.hook_position) >= self.owner.threat then
+                return true
+            end
 
-		if self.owner.teambot:PositionInTeamHazard(self.hook_posistion) then
-			return false
-		end
+            return false
+        end
 
-		local threat = self.owner:CalculateThreatLevel(self.hook_posistion)
-		if threat < 1.2 then
-			return true
-		end
-
-		return false
-	end
-
-	if EscapeAbility.Evaluate(self) then
-        self.hook_posistion = self.targetPos
-		return true
-	end
-
-	if TargetPositionAbility.Evaluate(self) then
-        self.hook_posistion = self.targetPos
-		return true
-	end
-		
-	return false
+        local threat = self.owner:CalculateThreatLevel(self.hook_position)
+        if threat < 1.5 then
+            return true
+        end
+    else
+        if TargetPositionAbility.Evaluate(self) then
+            self.hook_position = self.targetPos
+            return true
+        end
+    end
+        
+    return false
 end
 
 function GrapplingHookAbility:Execute()
-	if self.owner:HasBehaviorFlag(BF_ROOK_GRAPPLE) then
-		Ability.Execute(self)
-	else
-		TargetPositionAbility.Execute(self)
-	end
+    if self.owner:HasBehaviorFlag(BF_ROOK_GRAPPLE) then
+        Ability.Execute(self)
+    else
+        TargetPositionAbility.Execute(self)
+    end
 end
 
 function GrapplingHookAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, true, false, false, true)
-	ShallowCopy(GrapplingHookAbility, self)
-    self.hook_posistion = nil
-	return self
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetBosses = true
+
+    local self = TargetPositionAbility.Create(owner, ability, ability_settings)
+    ShallowCopy(GrapplingHookAbility, self)
+    self.hook_position = nil
+    return self
 end
 
 local HideThenSeekAbility = {}
@@ -96,16 +92,15 @@ end
 
 function RookBot:State_Init()
 	-- Grappling Hook
-    -- TODO: only launches hook, doesn't move to it
 	local ability = GrapplingHookAbility.Create(self, self.hero:GetAbility(0))
 	self:RegisterAbility(ability)
 
 	-- Hide Then Seek
-	self.HSAbility = HideThenSeekAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(self.HSAbility)
+	ability = HideThenSeekAbility.Create(self, self.hero:GetAbility(1))
+	self:RegisterAbility(ability)
 
 	-- Shell Shocker
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3), false, false, false, true)
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

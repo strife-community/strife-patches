@@ -13,11 +13,6 @@ local SWIFT_STRIKE_MIN_DISTANCE = 200
 local SwiftStrikeAbility = {}
 
 function SwiftStrikeAbility:Evaluate()
-    -- If we need to escape, ignore rest, evaluate
-    if EscapeAbility.Evaluate(self) then
-        return true
-    end
-
     if not JumpToPositionAbility.Evaluate(self) then
 		return false
 	end
@@ -31,7 +26,10 @@ function SwiftStrikeAbility:Evaluate()
 end
 
 function SwiftStrikeAbility.Create(owner, ability)
-    local self = JumpToPositionAbility.Create(owner, ability, false, false, false)
+    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
+    ability_settings.doForceMaxRange = true
+
+    local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
     ShallowCopy(SwiftStrikeAbility, self)
     return self
 end
@@ -39,29 +37,24 @@ end
 local InertialSwordAbility = {}
 
 function InertialSwordAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
-
-    -- If we need to escape, ignore rest, evaluate
-    if EscapeAbility.Evaluate(self) then
-        return true
+    if not Ability.Evaluate(self) then
+        return false
     end
 
-	local target = self.owner:GetAttackTarget()
-	if target == nil then
-		return false
-	end
+    local target = self.owner:GetAttackTarget()
+    if target == nil then
+        return false
+    end
 
-	if self.owner.teambot:UnitDistance(target, self.owner.hero:GetPosition()) > 500 then
-		return false
-	end
+    if self.owner.teambot:UnitDistance(target, self.owner.hero:GetPosition()) > 500 then
+        return false
+    end
 
-	return true
+    return true
 end
 
 function InertialSwordAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(InertialSwordAbility, self)
 	return self
 end
@@ -92,7 +85,10 @@ function SoulCaliburAbility:Evaluate()
 end
 
 function SoulCaliburAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+    local ability_settings = GetSettingsCopy(Ability)
+    ability_settings.hasAggro = false
+
+	local self = Ability.Create(owner, ability, ability_settings)
 	ShallowCopy(SoulCaliburAbility, self)
 	return self
 end
@@ -110,7 +106,7 @@ function EarthquakeAbility:Evaluate()
 end
 
 function EarthquakeAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(EarthquakeAbility, self)
 	return self
 end

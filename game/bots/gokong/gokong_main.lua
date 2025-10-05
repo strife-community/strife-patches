@@ -11,7 +11,7 @@ local MIN_ULT_BLINK_DISTANCE = 300
 local BF_GOKONG_ULT_IN_PROGRESS = BF_USER1
 local BF_GOKONG_ULT_CAN_BLINK = BF_USER2
 --  TheChiprel: For some reason ability manages to trigger again after ultimate was used but before state was properly applied.
---              I was considering adjusting ability instead to add a small cooldown but instead decided to stick to creating stub here.
+--              I was considering adjusting ability to add a small cooldown but instead decided to stick to creating stub here.
 --              This flag is set when ability activates and is cleared once state is set.
 local BF_GOKONG_ULT_STUB_FRAME = BF_USER3 
 
@@ -26,7 +26,7 @@ function SpinAbility:Evaluate()
 end
 
 function SpinAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(SpinAbility, self)
 	return self
 end
@@ -45,7 +45,7 @@ function BuffAbility:Evaluate()
 end
 
 function BuffAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(BuffAbility, self)
 	return self
 end
@@ -89,7 +89,7 @@ function MonkeyAbility:Execute()
 end
 
 function MonkeyAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(MonkeyAbility, self)
 	return self
 end
@@ -105,19 +105,19 @@ function GoKongBot.Create(object)
 end
 
 function GoKongBot:State_Init()
-	-- Leap
+	-- Spin
 	local ability = SpinAbility.Create(self, self.hero:GetAbility(0))
 	self:RegisterAbility(ability)
 
-	-- Spirit Wolf
+	-- Leap
 	ability = JumpToPositionAbility.Create(self, self.hero:GetAbility(1))
 	self:RegisterAbility(ability)
 
-	-- Shapeshift
+	-- Buff
 	ability = BuffAbility.Create(self, self.hero:GetAbility(2))
 	self:RegisterAbility(ability)
 
-	-- Shapeshift
+	-- Monkeys
 	ability = MonkeyAbility.Create(self, self.hero:GetAbility(3))
 	self:RegisterAbility(ability)
 

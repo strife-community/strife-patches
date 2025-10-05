@@ -22,11 +22,11 @@ end
 
 function VermillionBot:State_Init()
 	-- Explosive flare
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, false, true)
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
 	self:RegisterAbility(ability)
 
 	-- Rocket Jump
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3), false, false, false, true)
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

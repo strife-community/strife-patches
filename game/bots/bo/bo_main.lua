@@ -37,7 +37,7 @@ function EnrageAbility:Evaluate()
 end
 
 function EnrageAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(EnrageAbility, self)
 	return self
 end
@@ -61,7 +61,10 @@ function WellAbility:Evaluate()
 end
 
 function WellAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+    local ability_settings = GetSettingsCopy(Ability)
+    ability_settings.hasAggro = false
+    
+	local self = Ability.Create(owner, ability, ability_settings)
 	ShallowCopy(WellAbility, self)
 	return self
 end
@@ -84,7 +87,7 @@ function RamAbility:Evaluate()
 end
 
 function RamAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false, true)
+	local self = TargetPositionAbility.Create(owner, ability)
 	ShallowCopy(RamAbility, self)
 	return self
 end
@@ -103,7 +106,11 @@ end
 
 function BoBot:State_Init()
 	-- Power Throw
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true, true)
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
 	self:RegisterAbility(ability)
 
 	-- Enrage

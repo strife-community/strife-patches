@@ -22,7 +22,7 @@ function MissileBarrageAbility:Evaluate()
 end
 
 function MissileBarrageAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(MissileBarrageAbility, self)
 	return self
 end
@@ -36,13 +36,9 @@ function WormHoleAbility:Evaluate()
         return false
     end
     
-    if not self.owner:HasBehaviorFlag(BF_CALM) or self.owner.hero:GetHealthPercent() < 0.8 then
+    if --[[not self.owner:HasBehaviorFlag(BF_CALM) or ]]self.owner.hero:GetHealthPercent() < 0.6 then
         return false
     end
-
-    --if self.owner.teamTarget ~= nil and self.owner.teamTarget.priority >= 50 and self.owner:GetDistanceToTeamTarget() < 2000 then
-    --    return false
-    --end
 
     if not self.owner:CanTeleport(500) then
         return false
@@ -62,7 +58,10 @@ function WormHoleAbility:Execute()
 end
 
 function WormHoleAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false, false)
+    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
+    ability_settings.isEscapeAbility = false
+
+	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(WormHoleAbility, self)
 	return self
 end
@@ -81,7 +80,10 @@ end
 
 function VexBot:State_Init()
 	-- Seeker Gun
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, false, true)
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.needClearPath = true
+
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
 	self:RegisterAbility(ability)
 
 	-- Missile Barrage

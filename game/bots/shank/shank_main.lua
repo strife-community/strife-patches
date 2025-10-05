@@ -6,7 +6,7 @@ runfile "/bots/ability.lua"
 
 local object = getfenv(0).object
 
-local BF_SHANK_AGGRO = BF_USER1
+--local BF_SHANK_AGGRO = BF_USER1
 
 
 -- Custom Abilities
@@ -25,7 +25,7 @@ function StompAbility:Evaluate()
 end
 
 function StompAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(StompAbility, self)
 	return self
 end
@@ -34,47 +34,11 @@ end
 
 ShoutAbility = {}
 
-function ShoutAbility:Evaluate()
-
-	if EscapeAbility.Evaluate(self) then
-		return true
-	end
-	
-	if self.owner.hero:GetHealthPercent() < 0.6 then
-		return false
-	end
-
-	if not TargetPositionAbility.Evaluate(self) then
-		return false
-	end
-
-	return true
-end
-
 function ShoutAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false, true)
-	ShallowCopy(ShoutAbility, self)
-	return self
-end
+    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
+    ability_settings.hasAggro = false
 
---
-
-ShoutAbility = {}
-
-function ShoutAbility:Evaluate()
-	if self.owner.hero:GetHealthPercent() < 0.6 then
-		return false
-	end
-
-	if not TargetPositionAbility.Evaluate(self) then
-		return false
-	end
-
-	return true
-end
-
-function ShoutAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false, false)
+	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(ShoutAbility, self)
 	return self
 end
@@ -85,7 +49,6 @@ end
 HookAbility = {}
 
 function HookAbility:Evaluate()
-
 	if not TargetPositionAbility.Evaluate(self) then
 		return false
 	end
@@ -99,7 +62,10 @@ function HookAbility:Evaluate()
 end
 
 function HookAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, true, false, true)
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.needClearPath = true
+
+	local self = TargetPositionAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(HookAbility, self)
 	return self
 end
@@ -136,6 +102,7 @@ function ShankBot:State_Init()
 	Bot.State_Init(self)
 end
 
+--[[
 function ShankBot:UpdateBehaviorFlags()
 	if self.hero:HasState("State_Shank_Ability2") then
 		self:SetBehaviorFlag(BF_SHANK_AGGRO)
@@ -149,6 +116,7 @@ function ShankBot:UpdateBehaviorFlags()
 		self:SetBehaviorFlag(BF_TRYHARD)
 	end
 end
+]]
 
 -- End Custom Behavior Tree Functions
 

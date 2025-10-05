@@ -13,43 +13,29 @@ local BF_JINSHE_LONGJUMP = BF_USER1
 local LongJumpAbility = {}
 
 function LongJumpAbility:Evaluate()
-	if not TargetPositionAbility.Evaluate(self) then
+    if not JumpToPositionAbility.Evaluate(self) then
 		return false
 	end
 
-	if self.owner:GetNumEnemyHeroes(700) > 0 then
+    if self.owner:GetNumEnemyHeroes(700) > 0 then
 		return false
 	end
 
-	-- Push target position out to the maximum ability range
-	if self.targetPos == nil or Vector2.Distance(self.targetPos, self.owner.hero:GetPosition()) < 700 then
-		return false
-	end
+    return true
+end
 
-	local threat = self.owner:CalculateThreatLevel(self.targetPos)
-	if self.owner:HasBehaviorFlag(BF_TRYHARD) then
-		if threat < 1.4 then
-			return true
-		end
-	end
+function LongJumpAbility.Execute()
+    self.owner:OrderEntity(self.owner.hero, "hold")
 
-	if self.owner.hero:GetHealthPercent() < 0.6 then
-		return false
-	end
-
-	if self.owner.teambot:PositionInTeamHazard(self.targetPos) then
-		return false
-	end
-
-	if threat < 1.2 then
-		return true
-	end
-
-	return false
+    LongJumpAbility.Execute(self)
 end
 
 function LongJumpAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false, false)
+    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
+    ability_settings.isEscapeAbility = false
+    ability_settings.doForceMaxRange = true
+
+	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(LongJumpAbility, self)
 	return self
 end
@@ -65,7 +51,7 @@ function SpinAbility:Evaluate()
 end
 
 function SpinAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(SpinAbility, self)
 	return self
 end
@@ -99,7 +85,7 @@ function EmberAbility:Evaluate()
 end
 
 function EmberAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(EmberAbility, self)
 	return self
 end
@@ -118,7 +104,10 @@ end
 
 function JinsheBot:State_Init()
 	-- Line Stun
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, false, true)
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetCreeps = false
+
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
 	self:RegisterAbility(ability)
 
 	-- Spin
@@ -126,7 +115,7 @@ function JinsheBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Leap
-	ability = LongJumpAbility.Create(self, self.hero:GetAbility(2), true)
+	ability = LongJumpAbility.Create(self, self.hero:GetAbility(2))
 	self:RegisterAbility(ability)
 
 	-- Embers

@@ -27,7 +27,7 @@ function ScorchAbility:Evaluate()
 		return false
 	end
 
-	if self.owner:HasBehaviorFlag(BF_RETREAT) or self.owner:HasBehaviorFlag(BF_CALM) then
+	if self.owner:HasBehaviorFlag(BF_RETREAT)--[[ or self.owner:HasBehaviorFlag(BF_CALM)]] then
         return false
     end
 
@@ -40,7 +40,7 @@ function ScorchAbility:Evaluate()
 end
 
 function ScorchAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(ScorchAbility, self)
 	return self
 end
@@ -48,19 +48,23 @@ end
 --
 
 function ClaudessaBot:State_Init()
-	-- Dragon Knockback
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, false, true, true)
-	self:RegisterAbility(ability)
+    -- Dragon Knockback
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetBosses = true
+    ability_settings.doTargetCreeps = true
 
-	-- Heal+Shield
-	ability = ShieldAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
+    local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
+    self:RegisterAbility(ability)
 
-	-- Ground Scorch
-	ability = ScorchAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    -- Heal+Shield
+    ability = ShieldAbility.Create(self, self.hero:GetAbility(1))
+    self:RegisterAbility(ability)
 
-	Bot.State_Init(self) 
+    -- Ground Scorch
+    ability = ScorchAbility.Create(self, self.hero:GetAbility(3))
+    self:RegisterAbility(ability)
+
+    Bot.State_Init(self) 
 end
 
 function ClaudessaBot:UpdateBehaviorFlags()

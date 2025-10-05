@@ -13,43 +13,12 @@ local BF_HARROWER_ATKBUFF = BF_USER2
 
 local LeapAttackAbility = {}
 
-function LeapAttackAbility:Evaluate()
-	if EscapeAbility.Evaluate(self) then
-		return true
-	end
-
-	if not TargetPositionAbility.Evaluate(self) then
-		return false
-	end
-
-	if self.owner.hero:GetHealthPercent() < 0.6 then
-		return false
-	end
-
-	if self.owner:HasBehaviorFlag(BF_TRYHARD) then
-		return true
-	end
-
-	-- Push target position out to the maximum ability range
-	local heroPos = self.owner.hero:GetPosition()
-	local dir = Vector2.Normalize(self.targetPos - heroPos)
-	self.targetPos = heroPos + dir * self.ability:GetRange()
-
-	if self.owner.teambot:PositionInTeamHazard(self.targetPos) then
-		return false
-	end
-
-	local threat = self.owner:CalculateThreatLevel(self.targetPos)
-	if threat < 1.0 then
-		return true
-	end
-
-	return false
-end
-
-
 function LeapAttackAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, true, false)
+    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
+    ability_settings.doTargetBosses = true
+    ability_settings.doForceMaxRange = true
+
+	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(LeapAttackAbility, self)
 	return self
 end
@@ -76,7 +45,7 @@ function SpiritWolfAbility:Evaluate()
 end
 
 function SpiritWolfAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(SpiritWolfAbility, self)
 	return self
 end
@@ -86,7 +55,6 @@ end
 local ShapeshiftAbility = {}
 
 function ShapeshiftAbility:Evaluate()
-
 	if not Ability.Evaluate(self) then
 		return false
 	end
@@ -95,7 +63,7 @@ function ShapeshiftAbility:Evaluate()
 	if self.owner:HasBehaviorFlag(BF_HARROWER_MELEE) then
 		return (self.owner:GetNumEnemyHeroes(300) < 1)
 	else
-		if (self.owner:GetNumEnemyHeroes(300) > 0) or (threat > 1.25) then
+		if (self.owner:GetNumEnemyHeroes(300) > 0) or (self.owner:GetNumNeutralBosses(300) > 0) or (threat > 1.25) then
 			return true
 		end
 	end
@@ -104,7 +72,10 @@ function ShapeshiftAbility:Evaluate()
 end
 
 function ShapeshiftAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+    local ability_settings = GetSettingsCopy(Ability)
+    ability_settings.hasAggro = false
+
+	local self = Ability.Create(owner, ability, ability_settings)
 	ShallowCopy(ShapeshiftAbility, self)
 	return self
 end

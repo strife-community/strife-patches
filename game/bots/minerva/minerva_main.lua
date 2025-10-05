@@ -17,7 +17,7 @@ function MinervaAbility:Evaluate()
         return false
     end
 
-	if self.owner.hero:GetHealthPercent() < 0.75 then
+	if self.owner.hero:GetHealthPercent() < 0.25 then
 		return false
 	end
 
@@ -25,7 +25,11 @@ function MinervaAbility:Evaluate()
 end
 
 function MinervaAbility.Create(owner, ability)
-	local self = TargetEnemyAbility.Create(owner, ability, true, true)
+    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+
+	local self = TargetEnemyAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(MinervaAbility, self)
 	return self
 end
@@ -48,11 +52,14 @@ function MinervaBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Heartstrike Arrow
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(1), true, true, true)
+    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
+    ability_settings.doTargetBosses =    true
+
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(1), ability_settings)
 	self:RegisterAbility(ability)
 
 	-- Eviscerate
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false, true)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

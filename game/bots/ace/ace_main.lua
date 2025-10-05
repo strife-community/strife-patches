@@ -24,7 +24,7 @@ function WhirlingBladeAbility:Evaluate()
 end
 
 function WhirlingBladeAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(WhirlingBladeAbility, self)
 	return self
 end
@@ -34,11 +34,6 @@ end
 local AvalancheAbility = {}
 
 function AvalancheAbility:Evaluate()
-    -- If we need to escape, ignore rest, evaluate
-    if EscapeAbility.Evaluate(self) then
-        return true
-    end
-
     if not JumpToPositionAbility.Evaluate(self) then
 		return false
 	end
@@ -52,7 +47,10 @@ function AvalancheAbility:Evaluate()
 end
 
 function AvalancheAbility.Create(owner, ability)
-    local self = JumpToPositionAbility.Create(owner, ability, false, false, false)
+    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
+    ability_settings.doAddRadiusToRange = true
+
+    local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
     ShallowCopy(AvalancheAbility, self)
     return self
 end
@@ -71,24 +69,25 @@ end
 
 function AceBot:State_Init()
     local ability
+    local ability_settings
+
+    -- Whirling Blade
+    ability = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
+    self:RegisterAbility(ability)
 
     -- Staggering Leap
-	ability = AvalancheAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
+    ability = AvalancheAbility.Create(self, self.hero:GetAbility(1))
+    self:RegisterAbility(ability)
 
-	-- Whirling Blade
-	ability = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
-	self:RegisterAbility(ability)
+    -- Undying Rage
+    ability = SelfShieldAbility.Create(self, self.hero:GetAbility(2))
+    self:RegisterAbility(ability)
 
-	-- Undying Rage
-	ability = SelfShieldAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
+    -- The Axe
+    ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
+    self:RegisterAbility(ability)
 
-	-- The Axe
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false, false)
-	self:RegisterAbility(ability)
-
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 -- End Custom Behavior Tree Functions

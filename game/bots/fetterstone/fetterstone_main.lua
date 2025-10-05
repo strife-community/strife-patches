@@ -18,11 +18,17 @@ function ShardAbility:Evaluate()
 		return false
 	end
 
-	return self.owner:GetNumEnemyHeroes(700) > 0
+    --local _, enemies = self.owner:CheckEngagement(2000)
+	--if enemies == nil or enemies < 2 then
+	--	return false
+	--end
+    
+    --return true
+	return self.owner:GetNumEnemyHeroes(700) > 1
 end
 
 function ShardAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(ShardAbility, self)
 	return self
 end
@@ -39,19 +45,23 @@ function FetterstoneBot.Create(object)
 end
 
 function FetterstoneBot:State_Init()
-	-- Pistol
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, true, true)
-	self:RegisterAbility(ability)
+    -- Pistol
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.needClearPath = true
+    ability_settings.doTargetBosses = true
 
-	-- Crystal Shield
-	ability = SelfShieldAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
+    local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
+    self:RegisterAbility(ability)
 
-	-- Shard Attack
-	ability = ShardAbility.Create(self, self.hero:GetAbility(3), false)
-	self:RegisterAbility(ability)
+    -- Crystal Shield
+    ability = SelfShieldAbility.Create(self, self.hero:GetAbility(1))
+    self:RegisterAbility(ability)
 
-	Bot.State_Init(self)
+    -- Shard Attack
+    ability = ShardAbility.Create(self, self.hero:GetAbility(3))
+    self:RegisterAbility(ability)
+
+    Bot.State_Init(self)
 end
 
 -- function FetterstoneBot:UpdateBehaviorFlags()

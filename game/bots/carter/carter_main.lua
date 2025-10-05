@@ -19,7 +19,7 @@ function RingAbility:Evaluate()
 end
 
 function RingAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(RingAbility, self)
 	return self
 end
@@ -38,21 +38,29 @@ end
 
 function CarterBot:State_Init()
     local ability
+    local ability_settings
+    -- Rocket Barrage
+    ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.needClearPath = true
+    ability_settings.doTargetBosses = true
+
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
+	self:RegisterAbility(ability)
+
+	-- Yak Attack
+    ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetCreeps = false
+    ability_settings.doTargetBosses = true
+
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), ability_settings)
+	self:RegisterAbility(ability)
 
     -- Firecrackers
 	ability = RingAbility.Create(self, self.hero:GetAbility(2))
 	self:RegisterAbility(ability)
 
-	-- Yak Attack
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, true, false, true)
-	self:RegisterAbility(ability)
-
-    -- Rocket Barrage
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, true, true, true)
-	self:RegisterAbility(ability)
-
 	-- Grand Finale
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false, true)
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

@@ -36,7 +36,11 @@ function BreathAbility:Evaluate()
 end
 
 function BreathAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, true, true)
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+
+	local self = TargetPositionAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(BreathAbility, self)
 	return self
 end
@@ -45,6 +49,7 @@ end
 
 local RammingSpeedAbility = {}
 
+--[[
 function RammingSpeedAbility:Evaluate()
 	if EscapeAbility.Evaluate(self) then
 		return true
@@ -66,9 +71,13 @@ function RammingSpeedAbility:Evaluate()
 
 	return false
 end
+]]
 
 function RammingSpeedAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, true)
+    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
+    ability_settings.doForceMaxRange = true
+
+	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(RammingSpeedAbility, self)
 	return self
 end
@@ -82,20 +91,23 @@ function GlowingBracersAbility:Evaluate()
 		return false
 	end
 
-	if (self.owner:GetNumEnemyHeroes(1000) < 2) and (self.owner:GetNumNeutralBosses(1000) < 1) then
+	if (self.owner:GetNumEnemyHeroes(1000) < 1) and (self.owner:GetNumNeutralBosses(500) < 1) then
 		return false
 	end
 
-	if self.owner:GetNumAllyHeroes(1000) < 2 then
-		return false
-	end
+	--if self.owner:GetNumAllyHeroes(self.ability:GetRange()) < 2 then
+	--	return false
+	--end
 
 	self.target = self.owner:FindHealTarget(self.ability:GetRange(), 0.8)
 	return self.target ~= nil
 end
 
 function GlowingBracersAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+    local ability_settings = GetSettingsCopy(Ability)
+    ability_settings.hasAggro = false
+
+	local self = Ability.Create(owner, ability, ability_settings)
 	ShallowCopy(GlowingBracersAbility, self)
 	return self
 end
@@ -109,12 +121,12 @@ function ChosenAbility:Evaluate()
 		return false
 	end
 
-    if self.owner:HasBehaviorFlag(BF_RETREAT) or self.owner:HasBehaviorFlag(BF_CALM) then
+    if self.owner:HasBehaviorFlag(BF_RETREAT) --[[or self.owner:HasBehaviorFlag(BF_CALM)]] then
         return false
     end
 
 	local allies, enemies = self.owner:CheckEngagement(2000)
-	if allies == nil or allies < 1 or enemies < 2 then
+	if (allies == nil) or (allies < 1) or (enemies < 2) then
 		return false
 	end
 
@@ -122,7 +134,7 @@ function ChosenAbility:Evaluate()
 end
 
 function ChosenAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, true)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(ChosenAbility, self)
 	return self
 end
@@ -143,12 +155,12 @@ end
 function BastionBot:State_Init()
     local ability
 
-    -- Ramming Speed
-	ability = RammingSpeedAbility.Create(self, self.hero:GetAbility(1))
+    -- Breath of the Oracles
+	ability = BreathAbility.Create(self, self.hero:GetAbility(0))
 	self:RegisterAbility(ability)
 
-	-- Breath of the Oracles
-	ability = BreathAbility.Create(self, self.hero:GetAbility(0))
+    -- Ramming Speed
+	ability = RammingSpeedAbility.Create(self, self.hero:GetAbility(1))
 	self:RegisterAbility(ability)
 
 	-- Glowing Bracers

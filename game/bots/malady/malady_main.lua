@@ -20,7 +20,10 @@ function GhostlyVeilAbility:Evaluate()
 end
 
 function GhostlyVeilAbility.Create(owner, ability)
-	local self = VectorAbility.Create(owner, ability)
+    local ability_settings = GetSettingsCopy(VectorAbility)
+    ability_settings.hasAggro = false
+
+	local self = VectorAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(GhostlyVeilAbility, self)
 	return self
 end
@@ -38,12 +41,22 @@ function MaladyBot.Create(object)
 end
 
 function MaladyBot:State_Init()
+    local ability_settings
+
 	-- Graveyard
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), true, false, true, true)
+    ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
 	self:RegisterAbility(ability)
 
 	-- Exorcise
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), true, false, true, true)
+    ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+
+	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), ability_settings)
 	self:RegisterAbility(ability)
 
 	-- Ghostly veil
@@ -51,7 +64,9 @@ function MaladyBot:State_Init()
 	self:RegisterAbility(ability)
 
 	-- Silver bullet
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3), false, false, true)
+    ability_settings = GetSettingsCopy(TargetEnemyAbility)
+
+	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
 	self:RegisterAbility(ability)
 
 	Bot.State_Init(self)

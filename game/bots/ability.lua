@@ -5,15 +5,21 @@ runfile "/bots/globals.lua"
 -- Base ability class
 
 Ability = {}
+Ability.settings = {}
+Ability.settings.hasAggro = true        -- Determines if ability is agressive (to determine if it would aggro towers)
+
+function GetSettingsCopy(src)
+    return ShallowCopy(src.settings)
+end
 
 function Ability:Evaluate()
     if not self.ability:CanActivate() then
         return false
     end
 
-    if (self.hasAggro) then
+    if (self.settings.hasAggro) then
         local selfPosition = self.owner.hero:GetPosition()
-        if ((selfPosition == nil) or (self.owner:IsPositionUnderEnemyTower(selfPosition) and (not self.owner:HasBehaviorFlag(BF_TOWER_DIVE)))) then
+        if self.owner:IsPositionUnderEnemyTower(self.owner.hero:GetPosition()) then
             return false
         end
     end
@@ -25,15 +31,14 @@ function Ability:Execute()
     self.owner:OrderAbility(self.ability)
 end
 
-function Ability.Create(owner, ability, hasAggro)
+function Ability.Create(owner, ability, settings)
     local self = ShallowCopy(Ability)
 
     self.ability = ability
     self.owner = owner
-    self.hasAggro = false
 
-    if (hasAggro ~= nill) then 
-        self.hasAggro = hasAggro
+    if (settings ~= nil) then
+        self.settings = settings
     end
 
     return self
@@ -42,13 +47,18 @@ end
 -- Position targetting ability
 
 TargetPositionAbility = {}
+TargetPositionAbility.settings = ShallowCopy(Ability.settings)
+TargetPositionAbility.settings.doTargetCreeps =     false   -- Determines if ability would be used for pushing lane
+TargetPositionAbility.settings.needClearPath =      false   -- Determines if ability requires check if no creeps in line
+TargetPositionAbility.settings.doTargetBosses =     false   -- Determines if bosses should be targeted by the ability
+TargetPositionAbility.settings.doAddRadiusToRange = false   -- Determines if radius is supposed to be added to ability range in calculations
 
 function TargetPositionAbility:Evaluate()
     if not Ability.Evaluate(self) then
         return false
     end
 
-    if (self.doTargetBosses and (self.owner.state == "Root:Match:TeamCombat:AttackTeamTarget")) then
+    if (self.settings.doTargetBosses and (self.owner.state == "Root:Match:TeamCombat:AttackTeamTarget")) then
         local boss_target = self.owner.teamTarget.unit
         if (boss_target:IsNeutralBoss()) then
             self.targetPos = self.owner.teambot:GetLastSeenPosition(boss_target)
@@ -61,16 +71,21 @@ function TargetPositionAbility:Evaluate()
         return false
     end
 
-    if (self.owner:HasBehaviorFlag(BF_FARM) or not self.targetCreeps) and target:IsCreep() then
+    if (self.owner:HasBehaviorFlag(BF_FARM) or not self.settings.doTargetCreeps) and target:IsCreep() or (self.owner.hero:GetManaPercent() < 0.5) then
         return false
     end
 
-    if self.needClearPath and not self.owner:CheckClearPath(target, false) then
+    if self.settings.needClearPath and not self.owner:CheckClearPath(target, false) then
         return false
     end
 
     self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
-    if ((self.targetPos == nil) or (Vector2.Distance(self.targetPos, self.owner.hero:GetPosition()) > self.ability:GetRange())) then
+    local ability_range = self.ability:GetRange()
+    if (self.settings.doAddRadiusToRange) then
+        ability_range = ability_range + self.ability:GetTargetRadius()
+    end
+
+    if ((self.targetPos == nil) or (Vector2.Distance(self.targetPos, self.owner.hero:GetPosition()) > ability_range)) then
         return false
     end
 
@@ -81,56 +96,81 @@ function TargetPositionAbility:Execute()
     self.owner:OrderAbilityPosition(self.ability, self.targetPos)
 end
 
-function TargetPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses, hasAggro)
-    local local_hasAggro = true
-    if (hasAggro ~= nil) then
-        local_hasAggro = hasAggro
-    end
-
-    local self = Ability.Create(owner, ability, local_hasAggro)
+function TargetPositionAbility.Create(owner, ability, settings)
+    local self = Ability.Create(owner, ability, settings)
     ShallowCopy(TargetPositionAbility, self)
 
-    if (doTargetBosses == nil) then
-        self.doTargetBosses = false
-    else
-        self.doTargetBosses = doTargetBosses
+    if (settings ~= nil) then
+        self.settings = settings
     end
 
-    if owner:GetAbilitiesCanTargetCreeps() then
-        self.targetCreeps = targetCreeps
-    else
-        self.targetCreeps = false
-    end
-    self.needClearPath = needClearPath
     return self
 end
 
 -- Jump To Position ability
 
 JumpToPositionAbility = {}
+JumpToPositionAbility.settings = ShallowCopy(TargetPositionAbility.settings)
+JumpToPositionAbility.settings.isEscapeAbility =    true   -- Determines if ability should be used for escape
+JumpToPositionAbility.settings.doForceMaxRange =    false  -- Determines if ability should always use maximum range instead of target position
+-- Inherited. Jump abilities should usually check target position for aggro, not current position 
+JumpToPositionAbility.settings.hasAggro = false
+
+function JumpToPositionAbility:EvaluateEscape()
+    if (not Ability.Evaluate(self)) or (not self.owner:NeedToRetreat()) then
+        return false
+    end
+
+    self.targetPos = self.owner:GetEscapePosition(self.ability:GetRange())
+    if self.targetPos == nil then
+        return false
+    end
+
+    if self.owner:CalculateThreatLevel(self.targetPos) >= self.owner.threat then
+        return false
+    end
+
+    return true
+end
 
 function JumpToPositionAbility:Evaluate()
-    if not self.owner:NeedToRetreat() and self.owner.hero:GetHealthPercent() < 0.7 then
-        return false
+    if (self.settings.isEscapeAbility) then
+        if (self:EvaluateEscape()) then
+            return true
+        end
     end
 
     if not TargetPositionAbility.Evaluate(self) then
         return false
     end
 
-    if self.owner:CalculateThreatLevel(self.targetPos) > 0.9 then
+    if (self.settings.doForceMaxRange) then
+        local heroPos = self.owner.hero:GetPosition()
+	    local dir = Vector2.Normalize(self.targetPos - heroPos)
+	    self.targetPos = heroPos + dir * self.ability:GetRange()
+    end
+
+    if self.owner.teambot:PositionInTeamHazard(self.targetPos) then
+		return false
+	end
+
+    if (self.owner:HasBehaviorFlag(BF_TRYHARD)) then
+        return true
+    end
+
+    if self.owner:CalculateThreatLevel(self.targetPos) > 1.2 then
         return false
     end
 
-    if (not self.owner:HasBehaviorFlag(BF_TRYHARD)) and self.owner:IsPositionUnderEnemyTower(self.targetPos) then
+    if (self.owner:IsPositionUnderEnemyTower(self.targetPos)) then
 		return false
 	end
 
     return true
 end
 
-function JumpToPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses)
-    local self = TargetPositionAbility.Create(owner, ability, targetCreeps, needClearPath, doTargetBosses, false)
+function JumpToPositionAbility.Create(owner, ability, settings)
+    local self = TargetPositionAbility.Create(owner, ability, settings)
     ShallowCopy(JumpToPositionAbility, self)
     return self
 end
@@ -138,13 +178,16 @@ end
 -- Entity targetting ability
 
 TargetEnemyAbility = {}
+TargetEnemyAbility.settings = ShallowCopy(Ability.settings)
+TargetEnemyAbility.settings.doTargetCreeps =    false   -- Determines if ability would be used for pushing lane
+TargetEnemyAbility.settings.doTargetBosses =    false   -- Determines if bosses should be targeted by the ability
 
 function TargetEnemyAbility:Evaluate()
     if not Ability.Evaluate(self) then
         return false
     end
 
-    if (self.doTargetBosses and (self.owner.state == "Root:Match:TeamCombat:AttackTeamTarget")) then
+    if (self.settings.doTargetBosses and (self.owner.state == "Root:Match:TeamCombat:AttackTeamTarget")) then
         local boss_target = self.owner.teamTarget.unit
         if (boss_target:IsNeutralBoss()) then
             self.target = boss_target
@@ -157,7 +200,7 @@ function TargetEnemyAbility:Evaluate()
         return false
     end
 
-    if (self.owner:HasBehaviorFlag(BF_FARM) or not self.targetCreeps) and self.target:IsCreep() and (not self.target:IsNeutralBoss()) then
+    if ((self.owner:HasBehaviorFlag(BF_FARM) or not self.settings.doTargetCreeps) and self.target:IsCreep()) or (self.owner.hero:GetManaPercent() < 0.5) then
         return false
     end
 
@@ -169,54 +212,56 @@ function TargetEnemyAbility:Evaluate()
 end
 
 function TargetEnemyAbility:Execute()
---	Echo(self.owner:GetName())
     self.owner:OrderAbilityEntity(self.ability, self.target)
 end
 
-function TargetEnemyAbility.Create(owner, ability, targetCreeps, doTargetBosses, hasAggro)
-    local local_hasAggro = true
-    if (hasAggro ~= nil) then
-        local_hasAggro = hasAggro
-    end
-
-    local self = Ability.Create(owner, ability, local_hasAggro)
+function TargetEnemyAbility.Create(owner, ability, settings)
+    local self = Ability.Create(owner, ability, settings)
     ShallowCopy(TargetEnemyAbility, self)
 
-    if (doTargetBosses == nil) then
-        self.doTargetBosses = false
-    else
-        self.doTargetBosses = doTargetBosses
+    if (settings ~= nil) then
+        self.settings = settings
     end
 
-    if owner:GetAbilitiesCanTargetCreeps() then
-        self.targetCreeps = targetCreeps
-    else
-        self.targetCreeps = false
-    end
     return self
 end
 
 -- Ally targetting ability
 
 TargetAllyAbility = {}
+TargetAllyAbility.settings = ShallowCopy(Ability.settings)
+TargetAllyAbility.settings.favorCC =    false   -- Determines if hero with CC state should have higher priority
+TargetAllyAbility.settings.hasAggro =   false   -- Inherited. Ally abilities are unlikely to be aggressive
 
 function TargetAllyAbility:Evaluate()
     if not Ability.Evaluate(self) then
         return false
     end
 
-    self.target = self.owner:FindHealTarget(self.ability:GetRange(), 0.8, self.favorCC)
+    self.target = self.owner:FindHealTarget(self.ability:GetRange(), 0.8, self.settings.favorCC)
     return self.target ~= nil
 end
 
-function TargetAllyAbility.Create(owner, ability, favorCC)
-    local self = TargetEnemyAbility.Create(owner, ability, false)
+function TargetAllyAbility:Execute()
+    self.owner:OrderAbilityEntity(self.ability, self.target)
+end
+
+function TargetAllyAbility.Create(owner, ability, settings)
+    local self = Ability.Create(owner, ability, settings)
     ShallowCopy(TargetAllyAbility, self)
-    self.favorCC = favorCC
+
+    if (settings ~= nil) then
+        self.settings = settings
+    end
+
     return self
 end
 
+-- Shield target ability
+
 ShieldAbility = {}
+ShieldAbility.settings = ShallowCopy(Ability.settings) -- Only has inherited settings
+ShieldAbility.settings.hasAggro =   false   -- Inherited. Ally abilities are unlikely to be aggressive
 
 function ShieldAbility:Evaluate()
 	if not Ability.Evaluate(self) then
@@ -227,13 +272,27 @@ function ShieldAbility:Evaluate()
 	return self.target ~= nil
 end
 
-function ShieldAbility.Create(owner, ability)
-	local self = TargetAllyAbility.Create(owner, ability, true)
+function ShieldAbility:Execute()
+    self.owner:OrderAbilityEntity(self.ability, self.target)
+end
+
+function ShieldAbility.Create(owner, ability, settings)
+	local self = Ability.Create(owner, ability, settings)
 	ShallowCopy(ShieldAbility, self)
+
+    if (settings ~= nil) then
+        self.settings = settings
+    end
+
 	return self
 end
 
+-- Self shield ability
+
 SelfShieldAbility = {}
+SelfShieldAbility.settings = ShallowCopy(Ability.settings) -- Only has inherited settings
+SelfShieldAbility.settings.hasAggro =   false   -- Inherited. Shield abilities are unlikely to be aggressive
+
 function SelfShieldAbility:Evaluate()
     if not Ability.Evaluate(self) then
         return false
@@ -250,18 +309,25 @@ function SelfShieldAbility:Evaluate()
 end
 
 function SelfShieldAbility:Execute()
-    Ability.Execute(self)
+    self.owner:OrderAbility(self.ability)
 end
 
-function SelfShieldAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability, false)
+function SelfShieldAbility.Create(owner, ability, settings)
+    local self = Ability.Create(owner, ability, settings)
     ShallowCopy(SelfShieldAbility, self)
+
+    if (settings ~= nil) then
+        self.settings = settings
+    end
+
     return self
 end
 
 -- Self healing ability
 
 SelfHealAbility = {}
+SelfHealAbility.settings = ShallowCopy(Ability.settings) -- Only has inherited settings
+SelfHealAbility.settings.hasAggro = false   -- Inherited. Shield abilities are unlikely to be aggressive
 
 function SelfHealAbility:Evaluate()
     if not Ability.Evaluate(self) then
@@ -271,42 +337,21 @@ function SelfHealAbility:Evaluate()
     return self.owner.hero:GetHealthPercent() < 0.6
 end
 
-function SelfHealAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability, false)
+function SelfHealAbility.Create(owner, ability, settings)
+    local self = Ability.Create(owner, ability, settings)
     ShallowCopy(SelfHealAbility, self)
-    return self
-end
 
--- Escape ability
-
-EscapeAbility = {}
-
-function EscapeAbility:Evaluate()
-    if self.owner:HasBehaviorFlag(BF_CALM) or self.owner:HasBehaviorFlag(BF_TRYHARD) or not self.owner:HasBehaviorFlag(BF_NEED_HEAL) or not Ability.Evaluate(self) then
-        return false
+    if (settings ~= nil) then
+        self.settings = settings
     end
 
-    self.targetPos = self.owner:GetEscapePosition(self.ability:GetRange())
-    if self.targetPos == nil then
-        return false
-    end
-
-    if self.owner:CalculateThreatLevel(self.targetPos) < self.owner.threat then
-        return true
-    end
-
-    return false
-end
-
-function EscapeAbility.Create(owner, ability, targetCreeps)
-    local self = TargetPositionAbility.Create(owner, ability, targetCreeps, false, false, false)
-    ShallowCopy(EscapeAbility, self)
     return self
 end
 
 -- Vector ability
 
 VectorAbility = {}
+VectorAbility.settings = ShallowCopy(Ability.settings) -- Only has inherited settings
 
 function VectorAbility:Evaluate()
     if not Ability.Evaluate(self) then
@@ -321,15 +366,22 @@ function VectorAbility:Execute()
     self.owner:OrderAbilityVector(self.ability, self.v1, self.v2)
 end
 
-function VectorAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability, false)
+function VectorAbility.Create(owner, ability, settings)
+    local self = Ability.Create(owner, ability, settings)
     ShallowCopy(VectorAbility, self)
+
+    if (settings ~= nil) then
+        self.settings = settings
+    end
+
     return self
 end
 
 -- Home Teleport Ability
 
 HomeTeleportAbility = {}
+HomeTeleportAbility.settings = ShallowCopy(Ability.settings) -- Only has inherited settings
+HomeTeleportAbility.settings.hasAggro = false   -- Inherited. Unlikely to be aggressive
 
 function HomeTeleportAbility:Evaluate()
     if not self.owner:HasBehaviorFlag(BF_CHECK_TELEPORT) then
@@ -363,9 +415,14 @@ function HomeTeleportAbility:Execute()
     Ability.Execute(self)
 end
 
-function HomeTeleportAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability, false)
+function HomeTeleportAbility.Create(owner, ability, settings)
+    local self = Ability.Create(owner, ability, settings)
     ShallowCopy(HomeTeleportAbility, self)
+
+    if (settings ~= nil) then
+        self.settings = settings
+    end
+
     return self
 end
 

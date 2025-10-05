@@ -11,15 +11,20 @@ local object = getfenv(0).object
 local TinderTouchAbility = {}
 
 function TinderTouchAbility:Evaluate()
-	if not TargetAllyAbility.Evaluate(self) then
-		return false
+	if TargetAllyAbility.Evaluate(self) then
+		return true
 	end
 
     return TargetEnemyAbility.Evaluate(self)
 end
 
 function TinderTouchAbility.Create(owner, ability)
-	local self = TargetAllyAbility.Create(owner, ability, false)
+    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+    ability_settings.favorCC = false
+
+	local self = TargetEnemyAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(TinderTouchAbility, self)
 	return self
 end
@@ -42,7 +47,7 @@ function SummonAbility:Evaluate()
 end
 
 function SummonAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, true, false)
+	local self = TargetPositionAbility.Create(owner, ability)
 	ShallowCopy(SummonAbility, self)
 	return self
 end
@@ -61,7 +66,10 @@ end
 
 function LadyTinderBot:State_Init()
 	-- Bindweed
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), false, true, false, true)
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.needClearPath = true
+
+	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
 	self:RegisterAbility(ability)
 
 	-- Tinder Touch

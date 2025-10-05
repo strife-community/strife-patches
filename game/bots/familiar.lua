@@ -32,7 +32,10 @@ function MystikAbility:Evaluate()
 end
 
 function MystikAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+    local ability_settings = GetSettingsCopy(Ability)
+    ability_settings.hasAggro = false
+
+	local self = Ability.Create(owner, ability, ability_settings)
 	ShallowCopy(MystikAbility, self)
 	return self
 end
@@ -67,7 +70,10 @@ function PincerAbility:Execute()
 end
 
 function PincerAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local ability_settings = GetSettingsCopy(Ability)
+    ability_settings.hasAggro = false
+
+	local self = Ability.Create(owner, ability, ability_settings)
 	ShallowCopy(PincerAbility, self)
 	return self
 end
@@ -105,7 +111,10 @@ function TortusAbility:Evaluate()
 end
 
 function TortusAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local ability_settings = GetSettingsCopy(Ability)
+    ability_settings.hasAggro = false
+
+	local self = Ability.Create(owner, ability, ability_settings)
 	ShallowCopy(TortusAbility, self)
 	return self
 end
@@ -134,7 +143,7 @@ function ToppsAbility:Evaluate()
 end
 
 function ToppsAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(ToppsAbility, self)
 	return self
 end
@@ -168,7 +177,10 @@ function BounderAbility:Evaluate()
 end
 
 function BounderAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability, false, false, false, false)
+    local ability_settings = GetSettingsCopy(TargetPositionAbility)
+    ability_settings.hasAggro = false
+
+	local self = TargetPositionAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(BounderAbility, self)
 	return self
 end
@@ -205,7 +217,12 @@ function LusterAbility:Evaluate()
 end
 
 function LusterAbility.Create(owner, ability)
-	local self = TargetEnemyAbility.Create(owner, ability)
+    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
+    ability_settings.hasAggro = false
+    ability_settings.doTargetCreeps = true
+    ability_settings.doTargetBosses = true
+
+	local self = TargetEnemyAbility.Create(owner, ability, ability_settings)
 	ShallowCopy(LusterAbility, self)
 	return self
 end
@@ -229,7 +246,10 @@ function RazerAbility:Evaluate()
 end
 
 function RazerAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability, false)
+	local ability_settings = GetSettingsCopy(Ability)
+    ability_settings.hasAggro = false
+
+	local self = Ability.Create(owner, ability, ability_settings)
 	ShallowCopy(RazerAbility, self)
 	return self
 end
