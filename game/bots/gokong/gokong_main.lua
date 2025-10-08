@@ -68,11 +68,15 @@ function MonkeyAbility:Evaluate()
         end
     elseif (not self.owner:HasBehaviorFlag(BF_GOKONG_ULT_STUB_FRAME)) then
         -- Ultimate is ready but not active
-        if self.owner:GetNumEnemyHeroes(self.ability:GetRange()) > 1 then
-            if self.owner.hero:GetHealthPercent() > 0.4 then
-                return true
-            end
-        end
+        local allies, enemies = self.owner:CheckEngagement(2000)
+	    if (allies == nil) or (allies < 1) or (enemies < 2) then
+		    return false
+	    end
+        --if self.owner:GetNumEnemyHeroes(self.ability:GetRange()) > 1 then
+        --    if self.owner.hero:GetHealthPercent() > 0.4 then
+        --        return true
+        --    end
+        --end
     end
 
     return false

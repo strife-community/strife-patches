@@ -6,7 +6,8 @@ runfile "/bots/globals.lua"
 
 Ability = {}
 Ability.settings = {}
-Ability.settings.hasAggro = true        -- Determines if ability is agressive (to determine if it would aggro towers)
+Ability.settings.hasAggro = true            -- Determines if ability is agressive (to determine if it would aggro towers)
+Ability.settings.abilityManaSaver = nill    -- Ability to save mana for if it is ready
 
 function GetSettingsCopy(src)
     return ShallowCopy(src.settings)
@@ -20,6 +21,16 @@ function Ability:Evaluate()
     if (self.settings.hasAggro) then
         local selfPosition = self.owner.hero:GetPosition()
         if self.owner:IsPositionUnderEnemyTower(self.owner.hero:GetPosition()) then
+            return false
+        end
+    end
+
+    if (self.settings.abilityManaSaver ~= nil) then
+        if (
+            self.settings.abilityManaSaver.ability:IsReady() and 
+            (self.owner.hero:GetMana() < (self.ability:GetManaCost() + self.settings.abilityManaSaver.ability:GetManaCost())) and
+            (not self.owner:HasBehaviorFlag(BF_NEED_HEAL))
+        ) then
             return false
         end
     end
@@ -117,7 +128,7 @@ JumpToPositionAbility.settings.doForceMaxRange =    false  -- Determines if abil
 JumpToPositionAbility.settings.hasAggro = false
 
 function JumpToPositionAbility:EvaluateEscape()
-    if (not Ability.Evaluate(self)) or (not self.owner:NeedToRetreat()) then
+    if (not Ability.Evaluate(self)) or (not self.owner:HasBehaviorFlag(BF_NEED_HEAL)) then
         return false
     end
 
@@ -140,6 +151,10 @@ function JumpToPositionAbility:Evaluate()
         end
     end
 
+    if (self.owner:NeedToRetreat()) then
+        return false
+    end
+
     if not TargetPositionAbility.Evaluate(self) then
         return false
     end
@@ -158,7 +173,7 @@ function JumpToPositionAbility:Evaluate()
         return true
     end
 
-    if self.owner:CalculateThreatLevel(self.targetPos) > 1.2 then
+    if self.owner:CalculateThreatLevel(self.targetPos) > 0.9 then
         return false
     end
 
@@ -167,6 +182,10 @@ function JumpToPositionAbility:Evaluate()
 	end
 
     return true
+end
+
+function JumpToPositionAbility:Execute()
+    TargetPositionAbility.Execute(self)
 end
 
 function JumpToPositionAbility.Create(owner, ability, settings)

@@ -121,12 +121,12 @@ function ChosenAbility:Evaluate()
 		return false
 	end
 
-    if self.owner:HasBehaviorFlag(BF_RETREAT) --[[or self.owner:HasBehaviorFlag(BF_CALM)]] then
+    if self.owner:HasBehaviorFlag(BF_RETREAT) or self.owner:HasBehaviorFlag(BF_NEED_HEAL) then
         return false
     end
 
-	local allies, enemies = self.owner:CheckEngagement(2000)
-	if (allies == nil) or (allies < 1) or (enemies < 2) then
+	local _, enemies = self.owner:CheckEngagement(2000)
+	if (enemies == nil) or (enemies < 2) then
 		return false
 	end
 
@@ -153,23 +153,18 @@ function BastionBot.Create(object)
 end
 
 function BastionBot:State_Init()
-    local ability
+    local abilityQ = BreathAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = RammingSpeedAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = GlowingBracersAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = ChosenAbility.Create(self, self.hero:GetAbility(3))
 
-    -- Breath of the Oracles
-	ability = BreathAbility.Create(self, self.hero:GetAbility(0))
-	self:RegisterAbility(ability)
+    abilityQ.settings.abilityManaSaver = abilityR
+    abilityW.settings.abilityManaSaver = abilityR
 
-    -- Ramming Speed
-	ability = RammingSpeedAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
-
-	-- Glowing Bracers
-	ability = GlowingBracersAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Chosen
-	ability = ChosenAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+	self:RegisterAbility(abilityQ)
+	self:RegisterAbility(abilityW)
+	self:RegisterAbility(abilityE)
+	self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 end

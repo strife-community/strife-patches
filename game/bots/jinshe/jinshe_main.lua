@@ -24,10 +24,10 @@ function LongJumpAbility:Evaluate()
     return true
 end
 
-function LongJumpAbility.Execute()
+function LongJumpAbility:Execute()
     self.owner:OrderEntity(self.owner.hero, "hold")
 
-    LongJumpAbility.Execute(self)
+    JumpToPositionAbility.Execute(self)
 end
 
 function LongJumpAbility.Create(owner, ability)

@@ -18,13 +18,13 @@ function ShardAbility:Evaluate()
 		return false
 	end
 
-    --local _, enemies = self.owner:CheckEngagement(2000)
-	--if enemies == nil or enemies < 2 then
-	--	return false
-	--end
+    local _, enemies = self.owner:CheckEngagement(2000)
+	if enemies == nil or enemies < 2 then
+		return false
+	end
     
-    --return true
-	return self.owner:GetNumEnemyHeroes(700) > 1
+    return true
+	--return self.owner:GetNumEnemyHeroes(700) > 1
 end
 
 function ShardAbility.Create(owner, ability)

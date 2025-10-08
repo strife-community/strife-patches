@@ -36,7 +36,7 @@ function WormHoleAbility:Evaluate()
         return false
     end
     
-    if --[[not self.owner:HasBehaviorFlag(BF_CALM) or ]]self.owner.hero:GetHealthPercent() < 0.6 then
+    if self.owner:HasBehaviorFlag(BF_NEED_HEAL) then
         return false
     end
 
@@ -44,12 +44,16 @@ function WormHoleAbility:Evaluate()
         return false
     end
 
-    self.targetPos = self.owner.teambot:FindOffensiveTeleportTarget(self.owner.hero:GetPosition(), 1, 1, 500, self.ability:GetRange(), 0.3, 1.0)
-    if self.targetPos ~= nil then
-        return true
+    self.targetPos = self.owner.teambot:FindOffensiveTeleportTarget(self.owner.hero:GetPosition(), 1, 1, 500, self.ability:GetRange(), 0.7, 1.2)
+    if self.targetPos == nil then
+        return false
     end
 
-    return false
+    if self.owner:IsPositionUnderEnemyTower(self.targetPos) then
+        return false
+    end
+
+    return true
 end
 
 function WormHoleAbility:Execute()
@@ -79,24 +83,22 @@ function VexBot.Create(object)
 end
 
 function VexBot:State_Init()
-	-- Seeker Gun
     local ability_settings = GetSettingsCopy(TargetPositionAbility)
     ability_settings.needClearPath = true
 
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+	local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
+	local abilityW = MissileBarrageAbility.Create(self, self.hero:GetAbility(1))
+	local abilityE = ShieldAbility.Create(self, self.hero:GetAbility(2))
+	local abilityR = WormHoleAbility.Create(self, self.hero:GetAbility(3))
+    
+    abilityQ.settings.abilityManaSaver = abilityR
+    abilityW.settings.abilityManaSaver = abilityR
+    abilityE.settings.abilityManaSaver = abilityR
 
-	-- Missile Barrage
-	ability = MissileBarrageAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
-
-	-- Energy Shield
-	ability = ShieldAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Worm Hole
-	ability = WormHoleAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 end

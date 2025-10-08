@@ -23,18 +23,22 @@ end
 local ScorchAbility = {}
 
 function ScorchAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
-
-	if self.owner:HasBehaviorFlag(BF_RETREAT)--[[ or self.owner:HasBehaviorFlag(BF_CALM)]] then
+    if not Ability.Evaluate(self) then
         return false
     end
 
-	local allies, enemies = self.owner:CheckEngagement(2000)
-	if allies == nil or allies < 1 or enemies < 2 then
+    if self.owner:HasBehaviorFlag(BF_RETREAT) or self.owner:HasBehaviorFlag(BF_NEED_HEAL) then
+        return false
+    end
+
+	local _, enemies = self.owner:CheckEngagement(2000)
+	if (enemies == nil) or (enemies < 2) then
 		return false
 	end
+
+    if (self.owner:GetNumEnemyHeroes(self.ability:GetRange()) < 1) then
+        return false
+    end
 
 	return true
 end
@@ -51,18 +55,17 @@ function ClaudessaBot:State_Init()
     -- Dragon Knockback
     local ability_settings = GetSettingsCopy(TargetPositionAbility)
     ability_settings.doTargetBosses = true
-    ability_settings.doTargetCreeps = true
 
-    local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-    self:RegisterAbility(ability)
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
+    local abilityW = ShieldAbility.Create(self, self.hero:GetAbility(1))
+    local abilityR = ScorchAbility.Create(self, self.hero:GetAbility(3))
 
-    -- Heal+Shield
-    ability = ShieldAbility.Create(self, self.hero:GetAbility(1))
-    self:RegisterAbility(ability)
+    abilityQ.settings.abilityManaSaver = abilityR
+    abilityW.settings.abilityManaSaver = abilityR
 
-    -- Ground Scorch
-    ability = ScorchAbility.Create(self, self.hero:GetAbility(3))
-    self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityR)
 
     Bot.State_Init(self) 
 end
