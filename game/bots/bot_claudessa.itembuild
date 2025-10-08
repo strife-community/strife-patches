@@ -2,7 +2,7 @@
 <itembuild
     name="bot_claudessa"
     
-    items1="Item_EnduringHelm,Item_Buckler,Item_FellBlade"
+    items1="Item_PendantofDefiance,Item_Buckler,Item_FellBlade"
     items2="Item_HealthBoots,Item_PowerBoots"
     items3="Item_PendantofDefiance,Item_FrostfieldPlate,Item_Kingsmail"
     items4="Item_GiantsVisage"
