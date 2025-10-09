@@ -33,7 +33,7 @@ function GrapplingHookAbility:Evaluate()
         end
 
         local threat = self.owner:CalculateThreatLevel(self.hook_position)
-        if threat < 1.5 then
+        if threat < 0.9 then
             return true
         end
     else
