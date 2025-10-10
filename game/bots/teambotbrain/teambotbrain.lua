@@ -448,7 +448,7 @@ function TeamBot:CheckOffensiveTarget(target)
 		end
 	end
 
-	if engaged or #candidates + numParticipants >= target.min then
+	if engaged or ((#candidates + numParticipants) >= target.min) then
 		local levelSum = 0
 		for _,hero in ipairs(participants) do
 			levelSum = levelSum + hero:GetLevel()
@@ -466,10 +466,6 @@ function TeamBot:CheckOffensiveTarget(target)
 		end
 
 		for _,hero in ipairs(candidates) do
-			if numParticipants >= target.min then
-				break
-			end
-
 			levelSum = levelSum + hero:GetLevel()
 			local bot = hero:GetBotBrain()
 			if bot ~= nil then
@@ -795,7 +791,7 @@ function TeamBot:UpdateGatherNode(target)
 		end
 	end
 
-	if gathered >= target.min - 1 then
+	if gathered >= target.min then
 		target.gatherNode = nil
 		target.timeout = nil
 		return
