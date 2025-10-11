@@ -44,7 +44,7 @@ function WormHoleAbility:Evaluate()
         return false
     end
 
-    self.targetPos = self.owner.teambot:FindOffensiveTeleportTarget(self.owner.hero:GetPosition(), 1, 1, 500, self.ability:GetRange(), 0.7, 1.2)
+    self.targetPos = self.owner.teambot:FindOffensiveTeleportTarget(self.owner.hero:GetPosition(), 1, 500, self.ability:GetRange(), 0.7, 1.2)
     if self.targetPos == nil then
         return false
     end
