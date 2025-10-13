@@ -76,7 +76,7 @@ function MonkeyAbility:Evaluate()
         end
     elseif (not self.owner:HasBehaviorFlag(BF_GOKONG_ULT_STUB_FRAME)) then
         -- Ultimate is ready but not active
-        local allies, enemies = self.owner:CheckEngagement(2000)
+        local allies, enemies = self.owner:CheckEngagement(self.ability:GetRange())
         if (allies ~= nil) and (allies >= 1) or (enemies >= 2) then
             return true
         end

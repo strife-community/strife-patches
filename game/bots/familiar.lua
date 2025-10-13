@@ -112,7 +112,9 @@ end
 function TortusAbility.Create(owner, ability)
     local self = Ability.Create(owner, ability)
     ShallowCopy(TortusAbility, self)
+
     self.settings.hasAggro = false
+
     return self
 end
 

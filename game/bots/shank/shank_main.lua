@@ -6,9 +6,6 @@ runfile "/bots/ability.lua"
 
 local object = getfenv(0).object
 
---local BF_SHANK_AGGRO = BF_USER1
-
-
 -- Custom Abilities
 
 -- Q --

@@ -51,6 +51,7 @@ function AvalancheAbility.Create(owner, ability)
     ShallowCopy(AvalancheAbility, self)
 
     self.settings.doAddRadiusToRange = true
+
     return self
 end
 

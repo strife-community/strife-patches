@@ -103,10 +103,6 @@ function TargetPositionAbility.Create(owner, ability)
     local self = Ability.Create(owner, ability)
     ShallowCopy(TargetPositionAbility, self)
 
-    if (settings ~= nil) then
-        self.settings = settings
-    end
-
     return self
 end
 
@@ -153,13 +149,13 @@ function JumpToPositionAbility:Evaluate()
 
     if (self.settings.doForceMaxRange) then
         local heroPos = self.owner.hero:GetPosition()
-	    local dir = Vector2.Normalize(self.targetPos - heroPos)
-	    self.targetPos = heroPos + dir * self.ability:GetRange()
+        local dir = Vector2.Normalize(self.targetPos - heroPos)
+        self.targetPos = heroPos + dir * self.ability:GetRange()
     end
 
     if self.owner.teambot:PositionInTeamHazard(self.targetPos) then
-		return false
-	end
+        return false
+    end
 
     if (self.owner:HasBehaviorFlag(BF_TRYHARD)) then
         return true
@@ -170,8 +166,8 @@ function JumpToPositionAbility:Evaluate()
     end
 
     if (self.owner:IsPositionUnderEnemyTower(self.targetPos)) then
-		return false
-	end
+        return false
+    end
 
     return true
 end
@@ -230,10 +226,6 @@ function TargetEnemyAbility.Create(owner, ability)
     local self = Ability.Create(owner, ability)
     ShallowCopy(TargetEnemyAbility, self)
 
-    if (settings ~= nil) then
-        self.settings = settings
-    end
-
     return self
 end
 
@@ -261,10 +253,6 @@ function TargetAllyAbility.Create(owner, ability)
     local self = Ability.Create(owner, ability)
     ShallowCopy(TargetAllyAbility, self)
 
-    if (settings ~= nil) then
-        self.settings = settings
-    end
-
     return self
 end
 
@@ -275,12 +263,12 @@ ShieldAbility.settings = ShallowCopy(Ability.settings) -- Only has inherited set
 ShieldAbility.settings.hasAggro =   false   -- Inherited. Ally abilities are unlikely to be aggressive
 
 function ShieldAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	self.target = self.owner:FindShieldTarget(self.ability:GetRange(), 0.8)
-	return self.target ~= nil
+    self.target = self.owner:FindShieldTarget(self.ability:GetRange(), 0.8)
+    return self.target ~= nil
 end
 
 function ShieldAbility:Execute()
@@ -290,10 +278,6 @@ end
 function ShieldAbility.Create(owner, ability)
 	local self = Ability.Create(owner, ability)
 	ShallowCopy(ShieldAbility, self)
-
-    if (settings ~= nil) then
-        self.settings = settings
-    end
 
 	return self
 end
@@ -327,10 +311,6 @@ function SelfShieldAbility.Create(owner, ability)
     local self = Ability.Create(owner, ability)
     ShallowCopy(SelfShieldAbility, self)
 
-    if (settings ~= nil) then
-        self.settings = settings
-    end
-
     return self
 end
 
@@ -351,10 +331,6 @@ end
 function SelfHealAbility.Create(owner, ability)
     local self = Ability.Create(owner, ability)
     ShallowCopy(SelfHealAbility, self)
-
-    if (settings ~= nil) then
-        self.settings = settings
-    end
 
     return self
 end
@@ -380,10 +356,6 @@ end
 function VectorAbility.Create(owner, ability)
     local self = Ability.Create(owner, ability)
     ShallowCopy(VectorAbility, self)
-
-    if (settings ~= nil) then
-        self.settings = settings
-    end
 
     return self
 end
@@ -429,10 +401,6 @@ end
 function HomeTeleportAbility.Create(owner, ability)
     local self = Ability.Create(owner, ability)
     ShallowCopy(HomeTeleportAbility, self)
-
-    if (settings ~= nil) then
-        self.settings = settings
-    end
 
     return self
 end
