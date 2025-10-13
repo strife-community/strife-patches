@@ -10,14 +10,15 @@ local SWIFT_STRIKE_MIN_DISTANCE = 200
 
 -- Custom Abilities
 
+-- Q --
 local SwiftStrikeAbility = {}
 
 function SwiftStrikeAbility:Evaluate()
     if not JumpToPositionAbility.Evaluate(self) then
-		return false
-	end
+        return false
+    end
 
-	local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
+    local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
     if (distance_to_target < SWIFT_STRIKE_MIN_DISTANCE) then
         return false
     end
@@ -34,6 +35,7 @@ function SwiftStrikeAbility.Create(owner, ability)
     return self
 end
 
+-- W --
 local InertialSwordAbility = {}
 
 function InertialSwordAbility:Evaluate()
@@ -54,13 +56,12 @@ function InertialSwordAbility:Evaluate()
 end
 
 function InertialSwordAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(InertialSwordAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(InertialSwordAbility, self)
+    return self
 end
 
---
-
+-- E --
 local SoulCaliburAbility = {}
 
 function SoulCaliburAbility:Evaluate()
@@ -93,22 +94,21 @@ function SoulCaliburAbility.Create(owner, ability)
     return self
 end
 
---
-
+-- R --
 local EarthquakeAbility = {}
 
 function EarthquakeAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	return self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()) > 1
+    return self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()) > 1
 end
 
 function EarthquakeAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(EarthquakeAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(EarthquakeAbility, self)
+    return self
 end
 
 -- End Custom Abilities
@@ -118,29 +118,23 @@ end
 local HaleBot = {}
 
 function HaleBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(HaleBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(HaleBot, self)
+    return self
 end
 
 function HaleBot:State_Init()
-	-- Swift Strikes
-	local ability = SwiftStrikeAbility.Create(self, self.hero:GetAbility(0))
-	self:RegisterAbility(ability)
+    local abilityQ = SwiftStrikeAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = InertialSwordAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = SoulCaliburAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = EarthquakeAbility.Create(self, self.hero:GetAbility(3))
 
-	-- Inertial Sword
-	ability = InertialSwordAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
-	-- Soul Calibur
-	ability = SoulCaliburAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Earthquake
-	ability = EarthquakeAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
-
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 -- End Custom Behavior Tree Functions

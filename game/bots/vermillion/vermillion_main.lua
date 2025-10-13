@@ -15,21 +15,21 @@ local object = getfenv(0).object
 local VermillionBot = {}
 
 function VermillionBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(VermillionBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(VermillionBot, self)
+    return self
 end
 
 function VermillionBot:State_Init()
-	-- Explosive flare
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
-	self:RegisterAbility(ability)
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    -- W ability is passive
+    -- E ability is passive
+    local abilityR = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
 
-	-- Rocket Jump
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 -- End Custom Behavior Tree Functions

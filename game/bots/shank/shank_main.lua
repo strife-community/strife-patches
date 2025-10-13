@@ -11,27 +11,27 @@ local object = getfenv(0).object
 
 -- Custom Abilities
 
+-- Q --
 StompAbility = {}
 
 function StompAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	local target_num = self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()-75)
-	target_num = target_num + self.owner:GetNumNeutralBosses(self.ability:GetTargetRadius()-75)
+    local target_num = self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()-75)
+    target_num = target_num + self.owner:GetNumNeutralBosses(self.ability:GetTargetRadius()-75)
 
-	return (target_num > 0)
+    return (target_num > 0)
 end
 
 function StompAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(StompAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(StompAbility, self)
+    return self
 end
 
---
-
+-- W --
 ShoutAbility = {}
 
 function ShoutAbility.Create(owner, ability)
@@ -43,21 +43,19 @@ function ShoutAbility.Create(owner, ability)
     return self
 end
 
---
-
-
+-- R --
 HookAbility = {}
 
 function HookAbility:Evaluate()
-	if not TargetPositionAbility.Evaluate(self) then
-		return false
-	end
-	
-	if self.owner.hero:GetHealthPercent() < 0.4 then
-		return false
-	end
-	
-	return true
+    if not TargetPositionAbility.Evaluate(self) then
+        return false
+    end
+    
+    if self.owner.hero:GetHealthPercent() < 0.4 then
+        return false
+    end
+    
+    return true
 
 end
 
@@ -70,9 +68,6 @@ function HookAbility.Create(owner, ability)
     return self
 end
 
---
-
-
 -- End Custom Abilities
 
 -- Custom Behavior Tree Functions
@@ -80,43 +75,23 @@ end
 local ShankBot = {}
 
 function ShankBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(ShankBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(ShankBot, self)
+    return self
 end
 
 function ShankBot:State_Init()
-	-- Stomp
-	local ability = StompAbility.Create(self, self.hero:GetAbility(0))
-	self:RegisterAbility(ability)
-	
-	-- Shout
-	local ability = ShoutAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
-	
-	-- Hook
-	local ability = HookAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    local abilityQ = StompAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = ShoutAbility.Create(self, self.hero:GetAbility(1))
+    -- E ability is passive
+    local abilityR = HookAbility.Create(self, self.hero:GetAbility(3))
 
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
-
---[[
-function ShankBot:UpdateBehaviorFlags()
-	if self.hero:HasState("State_Shank_Ability2") then
-		self:SetBehaviorFlag(BF_SHANK_AGGRO)
-	else
-		self:ClearBehaviorFlag(BF_SHANK_AGGRO)
-	end
-
-	Bot.UpdateBehaviorFlags(self)
-
-	if self:HasBehaviorFlag(BF_SHANK_AGGRO) then
-		self:SetBehaviorFlag(BF_TRYHARD)
-	end
-end
-]]
 
 -- End Custom Behavior Tree Functions
 

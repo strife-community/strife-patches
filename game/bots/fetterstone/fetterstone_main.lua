@@ -10,8 +10,8 @@ local BF_FETTERSTONE_AGGRO = BF_USER1
 
 -- Custom Abilities
 
+-- R --
 local ShardAbility = {}
-
 function ShardAbility:Evaluate()
     if not Ability.Evaluate(self) then
         return false
@@ -26,10 +26,11 @@ function ShardAbility:Evaluate()
 end
 
 function ShardAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(ShardAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(ShardAbility, self)
+    return self
 end
+
 -- End Custom Abilities
 
 -- Custom Behavior Tree Functions
@@ -37,9 +38,9 @@ end
 local FetterstoneBot = {}
 
 function FetterstoneBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(FetterstoneBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(FetterstoneBot, self)
+    return self
 end
 
 function FetterstoneBot:State_Init()

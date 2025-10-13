@@ -12,6 +12,7 @@ local BF_ROOK_ATKBUFF = BF_USER3
 
 -- Custom Abilities
 
+-- Q --
 local GrapplingHookAbility = {}
 
 function GrapplingHookAbility:Evaluate()
@@ -65,18 +66,19 @@ function GrapplingHookAbility.Create(owner, ability)
     return self
 end
 
+-- W --
 local HideThenSeekAbility = {}
 
 function HideThenSeekAbility:Execute()
-	self.owner:OrderEntity(self.owner.hero, "hold")
+    self.owner:OrderEntity(self.owner.hero, "hold")
 
-	SelfShieldAbility.Execute(self)
+    SelfShieldAbility.Execute(self)
 end
 
 function HideThenSeekAbility.Create(owner, ability)
-	local self = SelfShieldAbility.Create(owner, ability)
-	ShallowCopy(HideThenSeekAbility, self)
-	return self
+    local self = SelfShieldAbility.Create(owner, ability)
+    ShallowCopy(HideThenSeekAbility, self)
+    return self
 end
 
 -- End Custom Abilities
@@ -86,99 +88,96 @@ end
 local RookBot = {}
 
 function RookBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(RookBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(RookBot, self)
+    return self
 end
 
 function RookBot:State_Init()
-	-- Grappling Hook
-	local ability = GrapplingHookAbility.Create(self, self.hero:GetAbility(0))
-	self:RegisterAbility(ability)
+    local abilityQ = GrapplingHookAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = HideThenSeekAbility.Create(self, self.hero:GetAbility(1))
+    -- E ability is passive
+    local abilityR = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
 
-	-- Hide Then Seek
-	ability = HideThenSeekAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityR)
 
-	-- Shell Shocker
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
-
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 function RookBot:Choose_Match()
-	if self:HasBehaviorFlag(BF_ROOK_INVULNERABLE) then
-		-- Ensure the bot does nothing that invalidates its hold order for the duration of the ability
-		return "Idle"
-	elseif self:HasBehaviorFlag(BF_ROOK_ATKBUFF) and self:UpdateAttackTarget(1500, 2000, self.threat) then
-		return "AttackTarget"
-	end
+    if self:HasBehaviorFlag(BF_ROOK_INVULNERABLE) then
+        -- Ensure the bot does nothing that invalidates its hold order for the duration of the ability
+        return "Idle"
+    elseif self:HasBehaviorFlag(BF_ROOK_ATKBUFF) and self:UpdateAttackTarget(1500, 2000, self.threat) then
+        return "AttackTarget"
+    end
 
-	return Bot.Choose_Match(self)
+    return Bot.Choose_Match(self)
 end
 
 function RookBot:UpdateBehaviorFlags()
-	if self.hero:HasState("State_Rook_Ability1_Self_Buff") then
-		self:SetBehaviorFlag(BF_ROOK_GRAPPLE)
-	else
-		self:ClearBehaviorFlag(BF_ROOK_GRAPPLE)
-	end
+    if self.hero:HasState("State_Rook_Ability1_Self_Buff") then
+        self:SetBehaviorFlag(BF_ROOK_GRAPPLE)
+    else
+        self:ClearBehaviorFlag(BF_ROOK_GRAPPLE)
+    end
 
-	if self.hero:HasState("State_Rook_Ability3_Buff") then
-		self:SetBehaviorFlag(BF_ROOK_ATKBUFF)
-	else
-		self:ClearBehaviorFlag(BF_ROOK_ATKBUFF)
-	end
+    if self.hero:HasState("State_Rook_Ability3_Buff") then
+        self:SetBehaviorFlag(BF_ROOK_ATKBUFF)
+    else
+        self:ClearBehaviorFlag(BF_ROOK_ATKBUFF)
+    end
 
-	if self.hero:HasState("State_Rook_Ability2") then
-		self:SetBehaviorFlag(BF_ROOK_INVULNERABLE)
-		return
-	else
-		self:ClearBehaviorFlag(BF_ROOK_INVULNERABLE)
-	end
+    if self.hero:HasState("State_Rook_Ability2") then
+        self:SetBehaviorFlag(BF_ROOK_INVULNERABLE)
+        return
+    else
+        self:ClearBehaviorFlag(BF_ROOK_INVULNERABLE)
+    end
 
-	Bot.UpdateBehaviorFlags(self)
+    Bot.UpdateBehaviorFlags(self)
 end
 
 function RookBot:CheckAbilities()
-	if self:HasBehaviorFlag(BF_ROOK_INVULNERABLE) then
-		return
-	end
+    if self:HasBehaviorFlag(BF_ROOK_INVULNERABLE) then
+        return
+    end
 
-	local time = Game.GetGameTime()
-	if time > self.nextAbilityCheck then
-		if not self:HasBehaviorFlag(BF_ROOK_ATKBUFF) then
-			for slot,ability in ipairs(self.abilities) do
-				if ability.ability == nil then
-					Echo(self:GetName() .. " has nil ability in slot " .. slot)
-				elseif ability:Evaluate() then
-					ability:Execute()
-					self.lastAbilityTime = time
+    local time = Game.GetGameTime()
+    if time > self.nextAbilityCheck then
+        if not self:HasBehaviorFlag(BF_ROOK_ATKBUFF) then
+            for slot,ability in ipairs(self.abilities) do
+                if ability.ability == nil then
+                    Echo(self:GetName() .. " has nil ability in slot " .. slot)
+                elseif ability:Evaluate() then
+                    ability:Execute()
+                    self.lastAbilityTime = time
 
-					-- Make sure we don't do anything else if we just activated invulnerability
-					if self.hero:HasState("State_Rook_Ability2") then
-						self:SetBehaviorFlag(BF_ROOK_INVULNERABLE)
-						return
-					end
+                    -- Make sure we don't do anything else if we just activated invulnerability
+                    if self.hero:HasState("State_Rook_Ability2") then
+                        self:SetBehaviorFlag(BF_ROOK_INVULNERABLE)
+                        return
+                    end
 
-					break
-				end
-			end
-		end
+                    break
+                end
+            end
+        end
 
-		for _,item in ipairs(self.items) do
-			if item:Evaluate() then
-				item:Execute()
-				break
-			end
-		end
+        for _,item in ipairs(self.items) do
+            if item:Evaluate() then
+                item:Execute()
+                break
+            end
+        end
 
-		self.nextAbilityCheck = time + self:GetAbilityCheckTime()
-		if self.clearTeleport then
-			self:ClearBehaviorFlag(BF_CHECK_TELEPORT)
-		end
-	end
+        self.nextAbilityCheck = time + self:GetAbilityCheckTime()
+        if self.clearTeleport then
+            self:ClearBehaviorFlag(BF_CHECK_TELEPORT)
+        end
+    end
 end
 
 -- End Custom Behavior Tree Functions

@@ -15,9 +15,9 @@ local object = getfenv(0).object
 local RayBot = {}
 
 function RayBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(RayBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(RayBot, self)
+    return self
 end
 
 function RayBot:State_Init()

@@ -8,12 +8,13 @@ local object = getfenv(0).object
 
 -- Custom Abilities
 
+-- W --
 local TinderTouchAbility = {}
 
 function TinderTouchAbility:Evaluate()
-	if TargetAllyAbility.Evaluate(self) then
-		return true
-	end
+    if TargetAllyAbility.Evaluate(self) then
+        return true
+    end
 
     return TargetEnemyAbility.Evaluate(self)
 end
@@ -29,27 +30,28 @@ function TinderTouchAbility.Create(owner, ability)
     return self
 end
 
+-- R --
 local SummonAbility = {}
 
 function SummonAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	local target = self.owner:GetAttackTarget()
-	if ((target ~= nil) and (target:IsNeutralBoss())) then
-		self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
-	else
-		self.targetPos = self.owner:FindSummonPosition(self.ability:GetRange())
-	end
+    local target = self.owner:GetAttackTarget()
+    if ((target ~= nil) and (target:IsNeutralBoss())) then
+        self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
+    else
+        self.targetPos = self.owner:FindSummonPosition(self.ability:GetRange())
+    end
 
-	return (self.targetPos ~= nil)
+    return (self.targetPos ~= nil)
 end
 
 function SummonAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability)
-	ShallowCopy(SummonAbility, self)
-	return self
+    local self = TargetPositionAbility.Create(owner, ability)
+    ShallowCopy(SummonAbility, self)
+    return self
 end
 
 -- End Custom Abilities
@@ -59,9 +61,9 @@ end
 local LadyTinderBot = {}
 
 function LadyTinderBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(LadyTinderBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(LadyTinderBot, self)
+    return self
 end
 
 function LadyTinderBot:State_Init()
@@ -72,12 +74,12 @@ function LadyTinderBot:State_Init()
 
     abilityQ.settings.needClearPath = true
 
-	self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityQ)
     self:RegisterAbility(abilityW)
     self:RegisterAbility(abilityE)
     self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 -- End Custom Behavior Tree Functions

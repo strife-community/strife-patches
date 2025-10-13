@@ -10,6 +10,7 @@ local BF_MINERVA_ZIG_ZAG_ACTIVE = BF_USER1
 
 -- Custom Abilities
 
+-- Q --
 local MinervaAbility = {}
 
 function MinervaAbility:Evaluate()
@@ -17,11 +18,11 @@ function MinervaAbility:Evaluate()
         return false
     end
 
-	if self.owner.hero:GetHealthPercent() < 0.25 then
-		return false
-	end
+    if self.owner.hero:GetHealthPercent() < 0.25 then
+        return false
+    end
 
-	return TargetEnemyAbility.Evaluate(self)
+    return TargetEnemyAbility.Evaluate(self)
 end
 
 function MinervaAbility.Create(owner, ability)
@@ -41,9 +42,9 @@ end
 local MinervaBot = {}
 
 function MinervaBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(MinervaBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(MinervaBot, self)
+    return self
 end
 
 function MinervaBot:State_Init()
@@ -60,7 +61,7 @@ function MinervaBot:State_Init()
     self:RegisterAbility(abilityW)
     self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 function MinervaBot:UpdateBehaviorFlags()

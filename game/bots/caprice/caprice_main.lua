@@ -8,10 +8,9 @@ local object = getfenv(0).object
 
 local QUICK_DRAW_MIN_DISTANCE_TO_TARGET = 300
 
-local CapriceBot = {}
-
 -- Custom Behavior Tree Functions
 
+-- R --
 local QuickDrawAbility = {}
 
 function QuickDrawAbility:Evaluate()
@@ -36,10 +35,14 @@ function QuickDrawAbility.Create(owner, ability)
     return self
 end
 
+-- End Custom Abilities
+
+local CapriceBot = {}
+
 function CapriceBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(CapriceBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(CapriceBot, self)
+    return self
 end
 
 function CapriceBot:State_Init()
@@ -55,10 +58,10 @@ function CapriceBot:State_Init()
     abilityW.settings.doTargetBosses = true
 
     self:RegisterAbility(abilityQ)
-	self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityW)
     self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 -- End Custom Behavior Tree Functions

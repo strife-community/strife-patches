@@ -8,15 +8,16 @@ local object = getfenv(0).object
 
 -- Custom Abilities
 
+-- E --
 local GhostlyVeilAbility = {}
 
 function GhostlyVeilAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	self.v1, self.v2 = self.owner:FindWallVectors(self.ability:GetRange())
-	return self.v1 ~= nil
+    self.v1, self.v2 = self.owner:FindWallVectors(self.ability:GetRange())
+    return self.v1 ~= nil
 end
 
 function GhostlyVeilAbility.Create(owner, ability)
@@ -35,9 +36,9 @@ end
 local MaladyBot = {}
 
 function MaladyBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(MaladyBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(MaladyBot, self)
+    return self
 end
 
 function MaladyBot:State_Init()
@@ -52,12 +53,12 @@ function MaladyBot:State_Init()
     abilityW.settings.doTargetCreeps = true
     abilityW.settings.doTargetBosses = true
 
-	self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityQ)
     self:RegisterAbility(abilityW)
     self:RegisterAbility(abilityE)
     self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 -- End Custom Behavior Tree Functions

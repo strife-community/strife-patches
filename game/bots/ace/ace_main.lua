@@ -68,9 +68,9 @@ end
 
 function AceBot:State_Init()
     local abilityQ = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
-    local abilityW = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
-    local abilityE = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
-    local abilityR = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = AvalancheAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = SelfShieldAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
 
     self:RegisterAbility(abilityQ)
     self:RegisterAbility(abilityW)

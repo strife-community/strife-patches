@@ -10,36 +10,36 @@ local BF_NIKOLAI_BASH = BF_USER1
 
 -- Custom Abilities
 
+-- Q --
 local BashAbility = {}
 
 function BashAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	if self.owner.threat > 1.2 then
-		return false
-	end
+    if self.owner.threat > 1.2 then
+        return false
+    end
 
-	return self.owner:GetNumEnemyHeroes(300) > 0
+    return self.owner:GetNumEnemyHeroes(300) > 0
 end
 
 function BashAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(BashAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(BashAbility, self)
+    return self
 end
 
---Gound Stomp
-
+-- W --
 local StompAbility = {}
 
 function StompAbility:Evaluate()
-	if not TargetPositionAbility.Evaluate(self) then
-		return false
-	end
+    if not TargetPositionAbility.Evaluate(self) then
+        return false
+    end
 
-	return self.owner:GetNumEnemyHeroes(200) > 0
+    return self.owner:GetNumEnemyHeroes(200) > 0
 end
 
 function StompAbility.Create(owner, ability)
@@ -52,25 +52,25 @@ function StompAbility.Create(owner, ability)
     return self
 end
 
---Bolster
+-- E --
 
 local BolsterAbility = {}
 
 function BolsterAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	return self.owner:GetNumEnemyHeroes(self.ability:GetRange()) > 1 
+    return self.owner:GetNumEnemyHeroes(self.ability:GetRange()) > 1 
 end
 
 function BolsterAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(BolsterAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(BolsterAbility, self)
+    return self
 end
 
--- Body Slam
+-- R --
 
 local BodySlamAbility = {}
 
@@ -79,19 +79,15 @@ function BodySlamAbility:Evaluate()
         return false
     end
 
-    --if self.owner.threat > 1.3 then
-    --    return false
-    --end
-
     if TargetPositionAbility.Evaluate(self) then
         return true
     end
 end
 
 function BodySlamAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability)
-	ShallowCopy(BodySlamAbility, self)
-	return self
+    local self = TargetPositionAbility.Create(owner, ability)
+    ShallowCopy(BodySlamAbility, self)
+    return self
 end
 
 -- End Custom Abilities
@@ -101,53 +97,45 @@ end
 local NikolaiBot = {}
 
 function NikolaiBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(NikolaiBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(NikolaiBot, self)
+    return self
 end
 
 function NikolaiBot:State_Init()
-	-- Bash
-	local ability = BashAbility.Create(self, self.hero:GetAbility(0))
-	self:RegisterAbility(ability)
+    local abilityQ = BashAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = StompAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = BolsterAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = BodySlamAbility.Create(self, self.hero:GetAbility(3))
 
-	-- Ground Slam
-	ability = StompAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
-	-- Bolster
-	ability = BolsterAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Body Slam
-	ability = BodySlamAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
-
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 function NikolaiBot:Choose_Match()
-	if self:HasBehaviorFlag(BF_NIKOLAI_BASH) and self:UpdateAttackTarget(1500, 2000, self.threat) then
-		return "AttackTarget"
-	end
+    if self:HasBehaviorFlag(BF_NIKOLAI_BASH) and self:UpdateAttackTarget(1500, 2000, self.threat) then
+        return "AttackTarget"
+    end
 
-	return Bot.Choose_Match(self)
+    return Bot.Choose_Match(self)
 end
 
---
-
 function NikolaiBot:UpdateBehaviorFlags()
-	if self.hero:HasState("State_Nikolai_Ability1") or self.hero:HasState("State_Nikolai_Ability4") then
-		self:SetBehaviorFlag(BF_NIKOLAI_BASH)
-	else
-		self:ClearBehaviorFlag(BF_NIKOLAI_BASH)
-	end
+    if self.hero:HasState("State_Nikolai_Ability1") or self.hero:HasState("State_Nikolai_Ability4") then
+        self:SetBehaviorFlag(BF_NIKOLAI_BASH)
+    else
+        self:ClearBehaviorFlag(BF_NIKOLAI_BASH)
+    end
 
-	Bot.UpdateBehaviorFlags(self)
+    Bot.UpdateBehaviorFlags(self)
 
-	if self:HasBehaviorFlag(BF_NIKOLAI_BASH) then
-		self:SetBehaviorFlag(BF_TRYHARD)
-	end
+    if self:HasBehaviorFlag(BF_NIKOLAI_BASH) then
+        self:SetBehaviorFlag(BF_TRYHARD)
+    end
 end
 
 -- End Custom Behavior Tree Functions

@@ -8,18 +8,9 @@ local object = getfenv(0).object
 
 local BF_CLAUDESSA_SCORCH = BF_USER1
 
--- Custom Behavior Tree Functions
+-- Custom Abilities
 
-local ClaudessaBot = {}
-
-function ClaudessaBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(ClaudessaBot, self)
-	return self
-end
-
---
-
+-- R --
 local ScorchAbility = {}
 
 function ScorchAbility:Evaluate()
@@ -44,12 +35,22 @@ function ScorchAbility:Evaluate()
 end
 
 function ScorchAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(ScorchAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(ScorchAbility, self)
+    return self
 end
 
---
+-- End Custom Abilities
+
+-- Custom Behavior Tree Functions
+
+local ClaudessaBot = {}
+
+function ClaudessaBot.Create(object)
+    local self = Bot.Create(object)
+    ShallowCopy(ClaudessaBot, self)
+    return self
+end
 
 function ClaudessaBot:State_Init()
     local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
@@ -70,17 +71,17 @@ function ClaudessaBot:State_Init()
 end
 
 function ClaudessaBot:UpdateBehaviorFlags()
-	if self.hero:HasState("State_Claudessa_Ability4_Linger") then
-		self:SetBehaviorFlag(BF_CLAUDESSA_SCORCH)
-	else
-		self:ClearBehaviorFlag(BF_CLAUDESSA_SCORCH)
-	end
+    if self.hero:HasState("State_Claudessa_Ability4_Linger") then
+        self:SetBehaviorFlag(BF_CLAUDESSA_SCORCH)
+    else
+        self:ClearBehaviorFlag(BF_CLAUDESSA_SCORCH)
+    end
 
-	Bot.UpdateBehaviorFlags(self)
+    Bot.UpdateBehaviorFlags(self)
 
-	if self:HasBehaviorFlag(BF_CLAUDESSA_SCORCH) then
-		self:SetBehaviorFlag(BF_TRYHARD)
-	end
+    if self:HasBehaviorFlag(BF_CLAUDESSA_SCORCH) then
+        self:SetBehaviorFlag(BF_TRYHARD)
+    end
 end
 
 -- End Custom Behavior Tree Functions

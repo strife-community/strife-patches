@@ -11,7 +11,7 @@ local BF_BASTION_CHOSEN = BF_USER1
 -- Custom Abilities
 
 -- Q --
-BreathAbility = {}
+local BreathAbility = {}
 
 function BreathAbility:Evaluate()
     if not Ability.Evaluate(self) then
@@ -108,7 +108,6 @@ function ChosenAbility.Create(owner, ability)
     ShallowCopy(ChosenAbility, self)
     return self
 end
-
 
 -- End Custom Abilities
 

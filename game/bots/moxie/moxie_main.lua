@@ -15,9 +15,9 @@ local object = getfenv(0).object
 local MoxieBot = {}
 
 function MoxieBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(MoxieBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(MoxieBot, self)
+    return self
 end
 
 function MoxieBot:State_Init()

@@ -10,54 +10,54 @@ local BF_BO_ENRAGED = BF_USER1
 
 -- Custom Abilities
 
-CHARGE_RANGE_SQ = 300 * 300
+-- W --
+local CHARGE_RANGE_SQ = 300 * 300
 
 local EnrageAbility = {}
 
 function EnrageAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	local target = self.owner:GetAttackTarget()
-	if target == nil or not target:IsHero() then
-		return false
-	end
+    local target = self.owner:GetAttackTarget()
+    if target == nil or not target:IsHero() then
+        return false
+    end
 
-	local pos = self.owner.teambot:GetLastSeenPosition(target, true)
-	if pos == nil then
-		return false
-	end
+    local pos = self.owner.teambot:GetLastSeenPosition(target, true)
+    if pos == nil then
+        return false
+    end
 
-	if Vector2.DistanceSq(self.owner.hero:GetPosition(), pos) < CHARGE_RANGE_SQ then
-		return false
-	end
+    if Vector2.DistanceSq(self.owner.hero:GetPosition(), pos) < CHARGE_RANGE_SQ then
+        return false
+    end
 
-	return true
+    return true
 end
 
 function EnrageAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(EnrageAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(EnrageAbility, self)
+    return self
 end
 
---
-
+-- E -- 
 local WellAbility = {}
 
 function WellAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	local target = self.owner:FindHealTarget(self.ability:GetRange(), 0.5)
-	if target ~= nil then
-		self.targetPos = target:GetPosition()
-		return true
-	end
+    local target = self.owner:FindHealTarget(self.ability:GetRange(), 0.5)
+    if target ~= nil then
+        self.targetPos = target:GetPosition()
+        return true
+    end
 
-	return false
+    return false
 end
 
 function WellAbility.Create(owner, ability)
@@ -69,27 +69,26 @@ function WellAbility.Create(owner, ability)
     return self
 end
 
---
-
+-- R --
 local RamAbility = {}
 
 function RamAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	self.targetPos = self.owner:FindRamTarget(self.ability:GetRange(), 200)
-	if self.targetPos == nil then
-		return false
-	end
+    self.targetPos = self.owner:FindRamTarget(self.ability:GetRange(), 200)
+    if self.targetPos == nil then
+        return false
+    end
 
-	return true
+    return true
 end
 
 function RamAbility.Create(owner, ability)
-	local self = TargetPositionAbility.Create(owner, ability)
-	ShallowCopy(RamAbility, self)
-	return self
+    local self = TargetPositionAbility.Create(owner, ability)
+    ShallowCopy(RamAbility, self)
+    return self
 end
 
 -- End Custom Abilities
@@ -118,29 +117,29 @@ function BoBot:State_Init()
     self:RegisterAbility(abilityE)
     self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 function BoBot:UpdateBehaviorFlags()
-	if self.hero:HasState("State_Bo_Ability2") then
-		self:SetBehaviorFlag(BF_BO_ENRAGED)
-	else
-		self:ClearBehaviorFlag(BF_BO_ENRAGED)
-	end
+    if self.hero:HasState("State_Bo_Ability2") then
+        self:SetBehaviorFlag(BF_BO_ENRAGED)
+    else
+        self:ClearBehaviorFlag(BF_BO_ENRAGED)
+    end
 
-	Bot.UpdateBehaviorFlags(self)
+    Bot.UpdateBehaviorFlags(self)
 
-	if self:HasBehaviorFlag(BF_BO_ENRAGED) then
-		self:SetBehaviorFlag(BF_TRYHARD)
-	end
+    if self:HasBehaviorFlag(BF_BO_ENRAGED) then
+        self:SetBehaviorFlag(BF_TRYHARD)
+    end
 end
 
 function BoBot:State_AttackTarget()
-	if self.enrageAbility:Evaluate() then
-		self.enrageAbility:Execute()
-	end
+    if self.enrageAbility:Evaluate() then
+        self.enrageAbility:Execute()
+    end
 
-	Bot.State_AttackTarget(self)
+    Bot.State_AttackTarget(self)
 end
 
 -- End Custom Behavior Tree Functions
