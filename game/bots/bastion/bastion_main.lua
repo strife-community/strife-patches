@@ -70,7 +70,7 @@ function GlowingBracersAbility:Evaluate()
         return false
     end
 
-    self.target = self.owner:FindHealTarget(self.ability:GetRange(), 0.8)
+    self.target = self.owner:FindShieldTarget(self.ability:GetRange(), 0.8)
     return self.target ~= nil
 end
 
