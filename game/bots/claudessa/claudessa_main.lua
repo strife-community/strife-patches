@@ -36,7 +36,7 @@ function ScorchAbility:Evaluate()
 		return false
 	end
 
-    if (self.owner:GetNumEnemyHeroes(self.ability:GetRange()) < 1) then
+    if (self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius()) < 1) then
         return false
     end
 

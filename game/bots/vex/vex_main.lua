@@ -17,7 +17,7 @@ function MissileBarrageAbility:Evaluate()
 		return false
 	end
 
-	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange() - 75) + self.owner:GetNumNeutralBosses(self.ability:GetRange())
+	local num = self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius() - 75) + self.owner:GetNumNeutralBosses(self.ability:GetTargetRadius())
 	return (num > 0)
 end
 

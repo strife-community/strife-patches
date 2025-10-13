@@ -17,8 +17,8 @@ function WhirlingBladeAbility:Evaluate()
 		return false
 	end
 
-	local num = self.owner:GetNumEnemyHeroes(self.ability:GetRange())
-	local num_Boss = self.owner:GetNumNeutralBosses(self.ability:GetRange())
+	local num = self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius())
+	local num_Boss = self.owner:GetNumNeutralBosses(self.ability:GetTargetRadius())
 
 	return ((num + num_Boss) > 0)
 end

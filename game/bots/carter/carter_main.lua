@@ -15,7 +15,7 @@ function RingAbility:Evaluate()
 		return false
 	end
 
-	return (self.owner:GetNumEnemyHeroes(2 * self.ability:GetRange()) > 1) or (self.owner:GetNumNeutralBosses(2 * self.ability:GetRange()) > 0)
+	return (self.owner:GetNumEnemyHeroes(2 * self.ability:GetTargetRadius()) > 1) or (self.owner:GetNumNeutralBosses(2 * self.ability:GetTargetRadius()) > 0)
 end
 
 function RingAbility.Create(owner, ability)

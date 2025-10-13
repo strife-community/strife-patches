@@ -17,7 +17,7 @@
     inheritmovement="true"
 
     manacost="90,105,120"
-    range="350"
+    targetradius="350"
     hoverareacastrange="350"
     alwaysshowtimer="true"
     
