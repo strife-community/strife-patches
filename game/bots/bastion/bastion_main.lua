@@ -10,133 +10,103 @@ local BF_BASTION_CHOSEN = BF_USER1
 
 -- Custom Abilities
 
+-- Q --
 BreathAbility = {}
 
 function BreathAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	local target = self.owner:GetAttackTarget()
-	if target == nil then
-		return false
-	end
+    local target = self.owner:GetAttackTarget()
+    if target == nil then
+        return false
+    end
 
-	if target:IsCreep() then
-		self.targetPos = self.owner.teambot:GetCenterOfCreeps(target, 200, 2)
-	else
-		self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
-	end
+    if target:IsCreep() then
+        self.targetPos = self.owner.teambot:GetCenterOfCreeps(target, 200, 2)
+    else
+        self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
+    end
 
-	if self.targetPos == nil or Vector2.Distance(self.targetPos, self.owner.hero:GetPosition()) > self.ability:GetRange() then
-		return false
-	end
+    if self.targetPos == nil or Vector2.Distance(self.targetPos, self.owner.hero:GetPosition()) > self.ability:GetRange() then
+        return false
+    end
 
-	return true
+    return true
 end
 
 function BreathAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
+    local self = TargetPositionAbility.Create(owner, ability)
+    ShallowCopy(BreathAbility, self)
 
-	local self = TargetPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(BreathAbility, self)
-	return self
+    self.settings.doTargetCreeps = true
+    self.settings.doTargetBosses = true
+
+    return self
 end
 
---
-
+-- W --
 local RammingSpeedAbility = {}
 
---[[
-function RammingSpeedAbility:Evaluate()
-	if EscapeAbility.Evaluate(self) then
-		return true
-	end
-
-	if not TargetPositionAbility.Evaluate(self) then
-		return false
-	end
-
-	-- Push target position out to the maximum ability range
-	local heroPos = self.owner.hero:GetPosition()
-	local dir = Vector2.Normalize(self.targetPos - heroPos)
-	self.targetPos = heroPos + dir * self.ability:GetRange()
-
-	local threat = self.owner:CalculateThreatLevel(self.targetPos)
-	if self.owner.hero:GetHealthPercent() > 0.4 and threat < 1.2 then
-		return true
-	end
-
-	return false
-end
-]]
-
 function RammingSpeedAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
-    ability_settings.doForceMaxRange = true
+    local self = JumpToPositionAbility.Create(owner, ability)
+    ShallowCopy(RammingSpeedAbility, self)
 
-	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(RammingSpeedAbility, self)
-	return self
+    self.settings.doForceMaxRange = true
+
+    return self
 end
 
---
-
+-- E --
 local GlowingBracersAbility = {}
 
 function GlowingBracersAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	if (self.owner:GetNumEnemyHeroes(1000) < 1) and (self.owner:GetNumNeutralBosses(500) < 1) then
-		return false
-	end
+    if (self.owner:GetNumEnemyHeroes(1000) < 1) and (self.owner:GetNumNeutralBosses(500) < 1) then
+        return false
+    end
 
-	--if self.owner:GetNumAllyHeroes(self.ability:GetRange()) < 2 then
-	--	return false
-	--end
-
-	self.target = self.owner:FindHealTarget(self.ability:GetRange(), 0.8)
-	return self.target ~= nil
+    self.target = self.owner:FindHealTarget(self.ability:GetRange(), 0.8)
+    return self.target ~= nil
 end
 
 function GlowingBracersAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(Ability)
-    ability_settings.hasAggro = false
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(GlowingBracersAbility, self)
 
-	local self = Ability.Create(owner, ability, ability_settings)
-	ShallowCopy(GlowingBracersAbility, self)
-	return self
+    self.settings.hasAggro = false
+
+    return self
 end
 
---
-
+-- R --
 local ChosenAbility = {}
 
 function ChosenAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
     if self.owner:HasBehaviorFlag(BF_RETREAT) or self.owner:HasBehaviorFlag(BF_NEED_HEAL) then
         return false
     end
 
-	local _, enemies = self.owner:CheckEngagement(2000)
-	if (enemies == nil) or (enemies < 2) then
-		return false
-	end
+    local _, enemies = self.owner:CheckEngagement(2000)
+    if (enemies == nil) or (enemies < 2) then
+        return false
+    end
 
-	return true
+    return true
 end
 
 function ChosenAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(ChosenAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(ChosenAbility, self)
+    return self
 end
 
 
@@ -147,9 +117,9 @@ end
 local BastionBot = {}
 
 function BastionBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(BastionBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(BastionBot, self)
+    return self
 end
 
 function BastionBot:State_Init()
@@ -161,26 +131,26 @@ function BastionBot:State_Init()
     abilityQ.settings.abilityManaSaver = abilityR
     abilityW.settings.abilityManaSaver = abilityR
 
-	self:RegisterAbility(abilityQ)
-	self:RegisterAbility(abilityW)
-	self:RegisterAbility(abilityE)
-	self:RegisterAbility(abilityR)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 function BastionBot:UpdateBehaviorFlags()
-	if self.hero:HasState("State_Bastion_Ability4_Buildup") or self.hero:HasState("State_Bastion_Ability4_Immolation") then
-		self:SetBehaviorFlag(BF_BASTION_CHOSEN)
-	else
-		self:ClearBehaviorFlag(BF_BASTION_CHOSEN)
-	end
+    if self.hero:HasState("State_Bastion_Ability4_Buildup") or self.hero:HasState("State_Bastion_Ability4_Immolation") then
+        self:SetBehaviorFlag(BF_BASTION_CHOSEN)
+    else
+        self:ClearBehaviorFlag(BF_BASTION_CHOSEN)
+    end
 
-	Bot.UpdateBehaviorFlags(self)
+    Bot.UpdateBehaviorFlags(self)
 
-	if self:HasBehaviorFlag(BF_BASTION_CHOSEN) then
-		self:SetBehaviorFlag(BF_TRYHARD)
-	end
+    if self:HasBehaviorFlag(BF_BASTION_CHOSEN) then
+        self:SetBehaviorFlag(BF_TRYHARD)
+    end
 end
 
 -- End Custom Behavior Tree Functions

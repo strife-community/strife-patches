@@ -55,12 +55,13 @@ function GrapplingHookAbility:Execute()
 end
 
 function GrapplingHookAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetBosses = true
-
-    local self = TargetPositionAbility.Create(owner, ability, ability_settings)
+    local self = TargetPositionAbility.Create(owner, ability)
     ShallowCopy(GrapplingHookAbility, self)
+
+    self.settings.doTargetBosses = true
+
     self.hook_position = nil
+
     return self
 end
 

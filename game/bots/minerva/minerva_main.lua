@@ -25,13 +25,13 @@ function MinervaAbility:Evaluate()
 end
 
 function MinervaAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
+    local self = TargetEnemyAbility.Create(owner, ability)
+    ShallowCopy(MinervaAbility, self)
 
-	local self = TargetEnemyAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(MinervaAbility, self)
-	return self
+    self.settings.doTargetCreeps = true
+    self.settings.doTargetBosses = true
+    
+    return self
 end
 
 -- End Custom Abilities
@@ -47,27 +47,23 @@ function MinervaBot.Create(object)
 end
 
 function MinervaBot:State_Init()
-	-- Zig and Zag
-	local ability = MinervaAbility.Create(self, self.hero:GetAbility(0))
-	self:RegisterAbility(ability)
+    local abilityQ = MinervaAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = TargetEnemyAbility.Create(self, self.hero:GetAbility(1)) 
+    -- ability E is passive
+    local abilityR = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
 
-	-- Heartstrike Arrow
-    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
-    ability_settings.doTargetBosses =    true
+    abilityQ.doTargetBosses = true
 
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(1), ability_settings)
-	self:RegisterAbility(ability)
+    abilityW.doTargetBosses = true
 
-	-- Eviscerate
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 end
 
 function MinervaBot:UpdateBehaviorFlags()
-    local can_blink = false
-
     if self.hero:HasState("State_Minerva_Ability1_Buff") then
         self:SetBehaviorFlag(BF_MINERVA_ZIG_ZAG_ACTIVE)
     else

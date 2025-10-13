@@ -61,12 +61,12 @@ function WellAbility:Evaluate()
 end
 
 function WellAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(Ability)
-    ability_settings.hasAggro = false
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(WellAbility, self)
+
+    self.settings.hasAggro = false
     
-	local self = Ability.Create(owner, ability, ability_settings)
-	ShallowCopy(WellAbility, self)
-	return self
+    return self
 end
 
 --
@@ -105,25 +105,18 @@ function BoBot.Create(object)
 end
 
 function BoBot:State_Init()
-	-- Power Throw
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    self.enrageAbility = EnrageAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = WellAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = RamAbility.Create(self, self.hero:GetAbility(3))
 
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+    abilityQ.settings.doTargetCreeps = true
+    abilityQ.settings.doTargetBosses = true
 
-	-- Enrage
-	self.enrageAbility = EnrageAbility.Create(self, self.hero:GetAbility(1))
-	-- DO NOT REGISTER - Checked manually on attack
-
-	-- Well of Tranquility
-	ability = WellAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Ram
-	ability = RamAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    -- DO NOT REGISTER W ABILITY - Checked manually on attack
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 end

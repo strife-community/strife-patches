@@ -26,11 +26,11 @@ function SwiftStrikeAbility:Evaluate()
 end
 
 function SwiftStrikeAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
-    ability_settings.doForceMaxRange = true
-
-    local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
+    local self = JumpToPositionAbility.Create(owner, ability)
     ShallowCopy(SwiftStrikeAbility, self)
+
+    self.settings.doForceMaxRange = true
+
     return self
 end
 
@@ -85,12 +85,12 @@ function SoulCaliburAbility:Evaluate()
 end
 
 function SoulCaliburAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(Ability)
-    ability_settings.hasAggro = false
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(SoulCaliburAbility, self)
 
-	local self = Ability.Create(owner, ability, ability_settings)
-	ShallowCopy(SoulCaliburAbility, self)
-	return self
+    self.settings.hasAggro = false
+
+    return self
 end
 
 --

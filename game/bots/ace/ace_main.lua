@@ -10,35 +10,35 @@ local AVALANCHE_MIN_DISTANCE_TO_TARGET = 200
 
 -- Custom Abilities
 
+-- Q --
 local WhirlingBladeAbility = {}
 
 function WhirlingBladeAbility:Evaluate()
-	if not Ability.Evaluate(self) then
-		return false
-	end
+    if not Ability.Evaluate(self) then
+        return false
+    end
 
-	local num = self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius())
-	local num_Boss = self.owner:GetNumNeutralBosses(self.ability:GetTargetRadius())
+    local num = self.owner:GetNumEnemyHeroes(self.ability:GetTargetRadius())
+    local num_Boss = self.owner:GetNumNeutralBosses(self.ability:GetTargetRadius())
 
-	return ((num + num_Boss) > 0)
+    return ((num + num_Boss) > 0)
 end
 
 function WhirlingBladeAbility.Create(owner, ability)
-	local self = Ability.Create(owner, ability)
-	ShallowCopy(WhirlingBladeAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(WhirlingBladeAbility, self)
+    return self
 end
 
---
-
+-- W --
 local AvalancheAbility = {}
 
 function AvalancheAbility:Evaluate()
     if not JumpToPositionAbility.Evaluate(self) then
-		return false
-	end
+        return false
+    end
 
-	local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
+    local distance_to_target = Vector2.Distance(self.targetPos, self.owner.hero:GetPosition())
     if (distance_to_target < AVALANCHE_MIN_DISTANCE_TO_TARGET) then
         return false
     end
@@ -47,11 +47,10 @@ function AvalancheAbility:Evaluate()
 end
 
 function AvalancheAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
-    ability_settings.doAddRadiusToRange = true
-
-    local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
+    local self = JumpToPositionAbility.Create(owner, ability)
     ShallowCopy(AvalancheAbility, self)
+
+    self.settings.doAddRadiusToRange = true
     return self
 end
 
@@ -62,30 +61,21 @@ end
 local AceBot = {}
 
 function AceBot.Create(object)
-	local self = Bot.Create(object)
-	ShallowCopy(AceBot, self)
-	return self
+    local self = Bot.Create(object)
+    ShallowCopy(AceBot, self)
+    return self
 end
 
 function AceBot:State_Init()
-    local ability
-    local ability_settings
+    local abilityQ = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
+    local abilityE = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
+    local abilityR = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
 
-    -- Whirling Blade
-    ability = WhirlingBladeAbility.Create(self, self.hero:GetAbility(0))
-    self:RegisterAbility(ability)
-
-    -- Staggering Leap
-    ability = AvalancheAbility.Create(self, self.hero:GetAbility(1))
-    self:RegisterAbility(ability)
-
-    -- Undying Rage
-    ability = SelfShieldAbility.Create(self, self.hero:GetAbility(2))
-    self:RegisterAbility(ability)
-
-    -- The Axe
-    ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
-    self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
     Bot.State_Init(self)
 end

@@ -32,12 +32,11 @@ function MystikAbility:Evaluate()
 end
 
 function MystikAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(Ability)
-    ability_settings.hasAggro = false
-
-	local self = Ability.Create(owner, ability, ability_settings)
-	ShallowCopy(MystikAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(MystikAbility, self)
+    
+    self.settings.hasAggro = false
+    return self
 end
 
 FamiliarAbilities["Familiar_Mystik"] = MystikAbility
@@ -70,12 +69,12 @@ function PincerAbility:Execute()
 end
 
 function PincerAbility.Create(owner, ability)
-	local ability_settings = GetSettingsCopy(Ability)
-    ability_settings.hasAggro = false
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(PincerAbility, self)
 
-	local self = Ability.Create(owner, ability, ability_settings)
-	ShallowCopy(PincerAbility, self)
-	return self
+    self.settings.hasAggro = false
+    
+    return self
 end
 
 FamiliarAbilities["Familiar_Pincer"] = PincerAbility
@@ -111,12 +110,10 @@ function TortusAbility:Evaluate()
 end
 
 function TortusAbility.Create(owner, ability)
-	local ability_settings = GetSettingsCopy(Ability)
-    ability_settings.hasAggro = false
-
-	local self = Ability.Create(owner, ability, ability_settings)
-	ShallowCopy(TortusAbility, self)
-	return self
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(TortusAbility, self)
+    self.settings.hasAggro = false
+    return self
 end
 
 FamiliarAbilities["Familiar_Tortus"] = TortusAbility
@@ -177,12 +174,12 @@ function BounderAbility:Evaluate()
 end
 
 function BounderAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.hasAggro = false
+    local self = TargetPositionAbility.Create(owner, ability)
+    ShallowCopy(BounderAbility, self)
 
-	local self = TargetPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(BounderAbility, self)
-	return self
+    self.settings.hasAggro = false
+
+    return self
 end
 
 FamiliarAbilities["Familiar_Bounder"] = BounderAbility
@@ -217,14 +214,14 @@ function LusterAbility:Evaluate()
 end
 
 function LusterAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
-    ability_settings.hasAggro = false
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
+    local self = TargetEnemyAbility.Create(owner, ability)
+    ShallowCopy(LusterAbility, self)
 
-	local self = TargetEnemyAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(LusterAbility, self)
-	return self
+    self.settings.hasAggro = false
+    self.settings.doTargetCreeps = true
+    self.settings.doTargetBosses = true
+
+    return self
 end
 
 FamiliarAbilities["Familiar_Luster"] = LusterAbility
@@ -246,12 +243,12 @@ function RazerAbility:Evaluate()
 end
 
 function RazerAbility.Create(owner, ability)
-	local ability_settings = GetSettingsCopy(Ability)
-    ability_settings.hasAggro = false
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(RazerAbility, self)
 
-	local self = Ability.Create(owner, ability, ability_settings)
-	ShallowCopy(RazerAbility, self)
-	return self
+    self.settings.hasAggro = false
+
+    return self
 end
 
 FamiliarAbilities["Familiar_Razer"] = RazerAbility

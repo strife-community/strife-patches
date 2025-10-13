@@ -20,12 +20,12 @@ function GhostlyVeilAbility:Evaluate()
 end
 
 function GhostlyVeilAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(VectorAbility)
-    ability_settings.hasAggro = false
+    local self = VectorAbility.Create(owner, ability)
+    ShallowCopy(GhostlyVeilAbility, self)
 
-	local self = VectorAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(GhostlyVeilAbility, self)
-	return self
+    self.settings.hasAggro = false
+
+    return self
 end
 
 -- End Custom Abilities
@@ -41,33 +41,21 @@ function MaladyBot.Create(object)
 end
 
 function MaladyBot:State_Init()
-    local ability_settings
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = TargetPositionAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = GhostlyVeilAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
 
-	-- Graveyard
-    ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
+    abilityQ.settings.doTargetCreeps = true
+    abilityQ.settings.doTargetBosses = true
 
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+    abilityW.settings.doTargetCreeps = true
+    abilityW.settings.doTargetBosses = true
 
-	-- Exorcise
-    ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
-
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), ability_settings)
-	self:RegisterAbility(ability)
-
-	-- Ghostly veil
-	ability = GhostlyVeilAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Silver bullet
-    ability_settings = GetSettingsCopy(TargetEnemyAbility)
-
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+	self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 end

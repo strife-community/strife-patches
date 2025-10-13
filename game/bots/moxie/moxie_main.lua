@@ -21,26 +21,22 @@ function MoxieBot.Create(object)
 end
 
 function MoxieBot:State_Init()
-	-- Zap
-    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
-    ability_settings.doTargetBosses = true
+    local abilityQ = TargetEnemyAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = TargetPositionAbility.Create(self, self.hero:GetAbility(1))
+    -- ability E is passive
+    local abilityR = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
 
-	local ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+    abilityQ.settings.doTargetBosses = true
 
-	-- Lightning Blast
-    ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetBosses = true
-    ability_settings.doTargetCreeps = true
+    abilityW.settings.doTargetBosses = true
+    abilityW.settings.doTargetCreeps = true
 
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), ability_settings)
-	self:RegisterAbility(ability)
 
-	-- Rolling Thunder
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 -- End Custom Behavior Tree Functions

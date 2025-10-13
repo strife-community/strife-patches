@@ -9,10 +9,6 @@ Ability.settings = {}
 Ability.settings.hasAggro = true            -- Determines if ability is agressive (to determine if it would aggro towers)
 Ability.settings.abilityManaSaver = nill    -- Ability to save mana for if it is ready
 
-function GetSettingsCopy(src)
-    return ShallowCopy(src.settings)
-end
-
 function Ability:Evaluate()
     if not self.ability:CanActivate() then
         return false
@@ -42,15 +38,11 @@ function Ability:Execute()
     self.owner:OrderAbility(self.ability)
 end
 
-function Ability.Create(owner, ability, settings)
+function Ability.Create(owner, ability)
     local self = ShallowCopy(Ability)
 
     self.ability = ability
     self.owner = owner
-
-    if (settings ~= nil) then
-        self.settings = settings
-    end
 
     return self
 end
@@ -107,8 +99,8 @@ function TargetPositionAbility:Execute()
     self.owner:OrderAbilityPosition(self.ability, self.targetPos)
 end
 
-function TargetPositionAbility.Create(owner, ability, settings)
-    local self = Ability.Create(owner, ability, settings)
+function TargetPositionAbility.Create(owner, ability)
+    local self = Ability.Create(owner, ability)
     ShallowCopy(TargetPositionAbility, self)
 
     if (settings ~= nil) then
@@ -188,8 +180,8 @@ function JumpToPositionAbility:Execute()
     TargetPositionAbility.Execute(self)
 end
 
-function JumpToPositionAbility.Create(owner, ability, settings)
-    local self = TargetPositionAbility.Create(owner, ability, settings)
+function JumpToPositionAbility.Create(owner, ability)
+    local self = TargetPositionAbility.Create(owner, ability)
     ShallowCopy(JumpToPositionAbility, self)
     return self
 end
@@ -234,8 +226,8 @@ function TargetEnemyAbility:Execute()
     self.owner:OrderAbilityEntity(self.ability, self.target)
 end
 
-function TargetEnemyAbility.Create(owner, ability, settings)
-    local self = Ability.Create(owner, ability, settings)
+function TargetEnemyAbility.Create(owner, ability)
+    local self = Ability.Create(owner, ability)
     ShallowCopy(TargetEnemyAbility, self)
 
     if (settings ~= nil) then
@@ -265,8 +257,8 @@ function TargetAllyAbility:Execute()
     self.owner:OrderAbilityEntity(self.ability, self.target)
 end
 
-function TargetAllyAbility.Create(owner, ability, settings)
-    local self = Ability.Create(owner, ability, settings)
+function TargetAllyAbility.Create(owner, ability)
+    local self = Ability.Create(owner, ability)
     ShallowCopy(TargetAllyAbility, self)
 
     if (settings ~= nil) then
@@ -295,8 +287,8 @@ function ShieldAbility:Execute()
     self.owner:OrderAbilityEntity(self.ability, self.target)
 end
 
-function ShieldAbility.Create(owner, ability, settings)
-	local self = Ability.Create(owner, ability, settings)
+function ShieldAbility.Create(owner, ability)
+	local self = Ability.Create(owner, ability)
 	ShallowCopy(ShieldAbility, self)
 
     if (settings ~= nil) then
@@ -331,8 +323,8 @@ function SelfShieldAbility:Execute()
     self.owner:OrderAbility(self.ability)
 end
 
-function SelfShieldAbility.Create(owner, ability, settings)
-    local self = Ability.Create(owner, ability, settings)
+function SelfShieldAbility.Create(owner, ability)
+    local self = Ability.Create(owner, ability)
     ShallowCopy(SelfShieldAbility, self)
 
     if (settings ~= nil) then
@@ -356,8 +348,8 @@ function SelfHealAbility:Evaluate()
     return self.owner.hero:GetHealthPercent() < 0.6
 end
 
-function SelfHealAbility.Create(owner, ability, settings)
-    local self = Ability.Create(owner, ability, settings)
+function SelfHealAbility.Create(owner, ability)
+    local self = Ability.Create(owner, ability)
     ShallowCopy(SelfHealAbility, self)
 
     if (settings ~= nil) then
@@ -385,8 +377,8 @@ function VectorAbility:Execute()
     self.owner:OrderAbilityVector(self.ability, self.v1, self.v2)
 end
 
-function VectorAbility.Create(owner, ability, settings)
-    local self = Ability.Create(owner, ability, settings)
+function VectorAbility.Create(owner, ability)
+    local self = Ability.Create(owner, ability)
     ShallowCopy(VectorAbility, self)
 
     if (settings ~= nil) then
@@ -434,8 +426,8 @@ function HomeTeleportAbility:Execute()
     Ability.Execute(self)
 end
 
-function HomeTeleportAbility.Create(owner, ability, settings)
-    local self = Ability.Create(owner, ability, settings)
+function HomeTeleportAbility.Create(owner, ability)
+    local self = Ability.Create(owner, ability)
     ShallowCopy(HomeTeleportAbility, self)
 
     if (settings ~= nil) then

@@ -14,13 +14,13 @@ local BF_HARROWER_ATKBUFF = BF_USER2
 local LeapAttackAbility = {}
 
 function LeapAttackAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
-    ability_settings.doTargetBosses = true
-    ability_settings.doForceMaxRange = true
+    local self = JumpToPositionAbility.Create(owner, ability)
+    ShallowCopy(LeapAttackAbility, self)
 
-	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(LeapAttackAbility, self)
-	return self
+    self.settings.doTargetBosses = true
+    self.settings.doForceMaxRange = true
+
+    return self
 end
 
 --Spirit Wolf
@@ -72,12 +72,12 @@ function ShapeshiftAbility:Evaluate()
 end
 
 function ShapeshiftAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(Ability)
-    ability_settings.hasAggro = false
+    local self = Ability.Create(owner, ability)
+    ShallowCopy(ShapeshiftAbility, self)
 
-	local self = Ability.Create(owner, ability, ability_settings)
-	ShallowCopy(ShapeshiftAbility, self)
-	return self
+    self.settings.hasAggro = false
+
+    return self
 end
 
 -- End Custom Abilities

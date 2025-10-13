@@ -37,31 +37,21 @@ function CarterBot.Create(object)
 end
 
 function CarterBot:State_Init()
-    local ability
-    local ability_settings
-    -- Rocket Barrage
-    ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.needClearPath = true
-    ability_settings.doTargetBosses = true
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = TargetPositionAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = RingAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
+    
+    abilityQ.settings.needClearPath = true
+    abilityQ.settings.doTargetBosses = true
 
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+    abilityW.doTargetCreeps = true
+    abilityW.doTargetBosses = true
 
-	-- Yak Attack
-    ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = false
-    ability_settings.doTargetBosses = true
-
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), ability_settings)
-	self:RegisterAbility(ability)
-
-    -- Firecrackers
-	ability = RingAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Grand Finale
-	ability = TargetEnemyAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 

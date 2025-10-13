@@ -19,14 +19,14 @@ function TinderTouchAbility:Evaluate()
 end
 
 function TinderTouchAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(TargetEnemyAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
-    ability_settings.favorCC = false
+    local self = TargetEnemyAbility.Create(owner, ability)
+    ShallowCopy(TinderTouchAbility, self)
 
-	local self = TargetEnemyAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(TinderTouchAbility, self)
-	return self
+    self.settings.doTargetCreeps = true
+    self.settings.doTargetBosses = true
+    self.settings.favorCC = false
+
+    return self
 end
 
 local SummonAbility = {}
@@ -65,24 +65,17 @@ function LadyTinderBot.Create(object)
 end
 
 function LadyTinderBot:State_Init()
-	-- Bindweed
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.needClearPath = true
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = TinderTouchAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = ShieldAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = SummonAbility.Create(self, self.hero:GetAbility(3))
 
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+    abilityQ.settings.needClearPath = true
 
-	-- Tinder Touch
-	ability = TinderTouchAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
-
-	-- Stonebark Shield
-	ability = ShieldAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Nature's Fury
-	ability = SummonAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+	self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 end

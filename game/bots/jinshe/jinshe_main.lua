@@ -31,13 +31,13 @@ function LongJumpAbility:Execute()
 end
 
 function LongJumpAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
-    ability_settings.isEscapeAbility = false
-    ability_settings.doForceMaxRange = true
+    local self = JumpToPositionAbility.Create(owner, ability)
+    ShallowCopy(LongJumpAbility, self)
 
-	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(LongJumpAbility, self)
-	return self
+    self.settings.isEscapeAbility = false
+    self.settings.doForceMaxRange = true
+
+    return self
 end
  
 SpinAbility = {}
@@ -103,24 +103,17 @@ function JinsheBot.Create(object)
 end
 
 function JinsheBot:State_Init()
-	-- Line Stun
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = false
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = SpinAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = LongJumpAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = EmberAbility.Create(self, self.hero:GetAbility(3))
 
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+    abilityQ.settings.doTargetCreeps = false
 
-	-- Spin
-	ability = SpinAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
-
-	-- Leap
-	ability = LongJumpAbility.Create(self, self.hero:GetAbility(2))
-	self:RegisterAbility(ability)
-
-	-- Embers
-	ability = EmberAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityE)
+    self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 end

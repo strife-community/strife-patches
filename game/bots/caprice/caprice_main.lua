@@ -28,11 +28,11 @@ function QuickDrawAbility:Evaluate()
 end
 
 function QuickDrawAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
-    ability_settings.doAddRadiusToRange = true
-
-    local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
+    local self = JumpToPositionAbility.Create(owner, ability)
     ShallowCopy(QuickDrawAbility, self)
+
+    self.settings.doAddRadiusToRange = true
+
     return self
 end
 
@@ -43,28 +43,20 @@ function CapriceBot.Create(object)
 end
 
 function CapriceBot:State_Init()
-    local ability
-    local ability_settings
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = TargetPositionAbility.Create(self, self.hero:GetAbility(1))
+    -- E is passive
+    local abilityR = QuickDrawAbility.Create(self, self.hero:GetAbility(3))
 
-    -- Fire Lager
-    ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
+    abilityQ.settings.doTargetCreeps = true
+    abilityQ.settings.doTargetBosses = true	
 
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+    abilityW.settings.doTargetCreeps = true
+    abilityW.settings.doTargetBosses = true
 
-    -- Anchors
-    ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
-
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1), ability_settings)
-	self:RegisterAbility(ability)
-
-    -- Quick Draw
-	ability = QuickDrawAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+	self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityR)
 
 	Bot.State_Init(self)
 end

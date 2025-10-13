@@ -43,13 +43,13 @@ function StompAbility:Evaluate()
 end
 
 function StompAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
+    local self = TargetPositionAbility.Create(owner, ability)
+    ShallowCopy(StompAbility, self)
 
-	local self = TargetPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(StompAbility, self)
-	return self
+    self.settings.doTargetCreeps = true
+    self.settings.doTargetBosses = true
+
+    return self
 end
 
 --Bolster

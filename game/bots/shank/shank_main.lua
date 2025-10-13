@@ -35,12 +35,12 @@ end
 ShoutAbility = {}
 
 function ShoutAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
-    ability_settings.hasAggro = false
+    local self = JumpToPositionAbility.Create(owner, ability)
+    ShallowCopy(ShoutAbility, self)
 
-	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(ShoutAbility, self)
-	return self
+    self.settings.hasAggro = false
+
+    return self
 end
 
 --
@@ -62,12 +62,12 @@ function HookAbility:Evaluate()
 end
 
 function HookAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.needClearPath = true
+    local self = TargetPositionAbility.Create(owner, ability)
+    ShallowCopy(HookAbility, self)
 
-	local self = TargetPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(HookAbility, self)
-	return self
+    self.settings.needClearPath = true
+
+    return self
 end
 
 --

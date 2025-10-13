@@ -62,12 +62,12 @@ function WormHoleAbility:Execute()
 end
 
 function WormHoleAbility.Create(owner, ability)
-    local ability_settings = GetSettingsCopy(JumpToPositionAbility)
-    ability_settings.isEscapeAbility = false
+    local self = JumpToPositionAbility.Create(owner, ability)
+    ShallowCopy(WormHoleAbility, self)
 
-	local self = JumpToPositionAbility.Create(owner, ability, ability_settings)
-	ShallowCopy(WormHoleAbility, self)
-	return self
+    self.settings.isEscapeAbility = false
+
+    return self
 end
 
 -- End Custom Abilities
@@ -83,16 +83,16 @@ function VexBot.Create(object)
 end
 
 function VexBot:State_Init()
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.needClearPath = true
-
-	local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	local abilityW = MissileBarrageAbility.Create(self, self.hero:GetAbility(1))
-	local abilityE = ShieldAbility.Create(self, self.hero:GetAbility(2))
-	local abilityR = WormHoleAbility.Create(self, self.hero:GetAbility(3))
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = MissileBarrageAbility.Create(self, self.hero:GetAbility(1))
+    local abilityE = ShieldAbility.Create(self, self.hero:GetAbility(2))
+    local abilityR = WormHoleAbility.Create(self, self.hero:GetAbility(3))
     
+    abilityQ.settings.needClearPath = true
     abilityQ.settings.abilityManaSaver = abilityR
+
     abilityW.settings.abilityManaSaver = abilityR
+    
     abilityE.settings.abilityManaSaver = abilityR
 
     self:RegisterAbility(abilityQ)
@@ -100,7 +100,7 @@ function VexBot:State_Init()
     self:RegisterAbility(abilityE)
     self:RegisterAbility(abilityR)
 
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 function VexBot:Choose_Match()

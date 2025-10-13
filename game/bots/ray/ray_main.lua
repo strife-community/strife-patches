@@ -21,23 +21,19 @@ function RayBot.Create(object)
 end
 
 function RayBot:State_Init()
-    -- Burrow Bots
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetCreeps = true
-    ability_settings.doTargetBosses = true
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
+    local abilityW = TargetPositionAbility.Create(self, self.hero:GetAbility(1))
+    -- ability E is passive
+    local abilityR = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
 
-	local ability = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
-	self:RegisterAbility(ability)
+    abilityQ.settings.doTargetCreeps = true
+    abilityQ.settings.doTargetBosses = true
 
-	-- Shock Field
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(1))
-	self:RegisterAbility(ability)
+    self:RegisterAbility(abilityQ)
+    self:RegisterAbility(abilityW)
+    self:RegisterAbility(abilityR)
 
-	-- Death Ray
-	ability = TargetPositionAbility.Create(self, self.hero:GetAbility(3))
-	self:RegisterAbility(ability)
-
-	Bot.State_Init(self)
+    Bot.State_Init(self)
 end
 
 -- End Custom Behavior Tree Functions

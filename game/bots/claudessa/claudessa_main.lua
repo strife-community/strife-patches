@@ -52,15 +52,14 @@ end
 --
 
 function ClaudessaBot:State_Init()
-    -- Dragon Knockback
-    local ability_settings = GetSettingsCopy(TargetPositionAbility)
-    ability_settings.doTargetBosses = true
-
-    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0), ability_settings)
+    local abilityQ = TargetPositionAbility.Create(self, self.hero:GetAbility(0))
     local abilityW = ShieldAbility.Create(self, self.hero:GetAbility(1))
+    -- ability E is passive
     local abilityR = ScorchAbility.Create(self, self.hero:GetAbility(3))
 
+    abilityQ.settings.doTargetBosses = true
     abilityQ.settings.abilityManaSaver = abilityR
+
     abilityW.settings.abilityManaSaver = abilityR
 
     self:RegisterAbility(abilityQ)
