@@ -61,24 +61,13 @@ end
 -- E --
 local GlowingBracersAbility = {}
 
-function GlowingBracersAbility:Evaluate()
-    if not Ability.Evaluate(self) then
-        return false
-    end
-
-    if (self.owner:GetNumEnemyHeroes(1000) < 1) and (self.owner:GetNumNeutralBosses(500) < 1) then
-        return false
-    end
-
-    self.target = self.owner:FindShieldTarget(self.ability:GetRange(), 0.8)
-    return self.target ~= nil
+function GlowingBracersAbility:Execute()
+    Ability.Execute(self)
 end
 
 function GlowingBracersAbility.Create(owner, ability)
-    local self = Ability.Create(owner, ability)
+    local self = ShieldAbility.Create(owner, ability)
     ShallowCopy(GlowingBracersAbility, self)
-
-    self.settings.hasAggro = false
 
     return self
 end
@@ -95,7 +84,7 @@ function ChosenAbility:Evaluate()
         return false
     end
 
-    local _, enemies = self.owner:CheckEngagement(2000)
+    local _, enemies = self.owner:CheckEngagement(1500)
     if (enemies == nil) or (enemies < 2) then
         return false
     end
@@ -149,6 +138,8 @@ function BastionBot:UpdateBehaviorFlags()
 
     if self:HasBehaviorFlag(BF_BASTION_CHOSEN) then
         self:SetBehaviorFlag(BF_TRYHARD)
+    else
+        self:ClearBehaviorFlag(BF_TRYHARD)
     end
 end
 

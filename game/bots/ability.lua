@@ -267,7 +267,14 @@ function ShieldAbility:Evaluate()
         return false
     end
 
-    self.target = self.owner:FindShieldTarget(self.ability:GetRange(), 0.8)
+    -- TheChiprel: FindShieldTarget current implementation only checks for enemy hero damage, not bosses.
+    --             So we use FindHealTarget as a workaround.
+    if (self.owner:GetNumNeutralBosses(1000) > 0) then
+        self.target = self.owner:FindHealTarget(self.ability:GetRange(), 0.8)
+    else
+        self.target = self.owner:FindShieldTarget(self.ability:GetRange(), 0.8)
+    end
+
     return self.target ~= nil
 end
 

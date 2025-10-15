@@ -135,6 +135,8 @@ function NikolaiBot:UpdateBehaviorFlags()
 
     if self:HasBehaviorFlag(BF_NIKOLAI_BASH) then
         self:SetBehaviorFlag(BF_TRYHARD)
+    else
+        self:ClearBehaviorFlag(BF_TRYHARD)
     end
 end
 

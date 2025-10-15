@@ -22,7 +22,7 @@ function ScorchAbility:Evaluate()
         return false
     end
 
-	local _, enemies = self.owner:CheckEngagement(2000)
+	local _, enemies = self.owner:CheckEngagement(1500)
 	if (enemies == nil) or (enemies < 2) then
 		return false
 	end
@@ -81,6 +81,8 @@ function ClaudessaBot:UpdateBehaviorFlags()
 
     if self:HasBehaviorFlag(BF_CLAUDESSA_SCORCH) then
         self:SetBehaviorFlag(BF_TRYHARD)
+    else
+        self:ClearBehaviorFlag(BF_TRYHARD)
     end
 end
 

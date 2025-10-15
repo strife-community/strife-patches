@@ -131,6 +131,8 @@ function BoBot:UpdateBehaviorFlags()
 
     if self:HasBehaviorFlag(BF_BO_ENRAGED) then
         self:SetBehaviorFlag(BF_TRYHARD)
+    else
+        self:ClearBehaviorFlag(BF_TRYHARD)
     end
 end
 

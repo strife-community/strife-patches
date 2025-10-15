@@ -137,6 +137,16 @@ function HaleBot:State_Init()
     Bot.State_Init(self)
 end
 
+function HaleBot:UpdateBehaviorFlags()
+    Bot.UpdateBehaviorFlags(self)
+
+    if self.hero:HasState("State_Hale_Ability2") then
+        self:SetBehaviorFlag(BF_TRYHARD)
+    else
+        self:ClearBehaviorFlag(BF_TRYHARD)
+    end
+end
+
 -- End Custom Behavior Tree Functions
 
 HaleBot.Create(object)
