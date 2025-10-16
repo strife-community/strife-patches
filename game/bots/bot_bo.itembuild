@@ -9,6 +9,6 @@
     items5="Item_InfernoBrand"
     items6="Item_ShamanHeaddress,Item_Shardplate"
     items7="Item_Indestructible"
-    potions="Item_ManaElixir,Item_HealthElixir"
+    potions="Item_HealthElixir,Item_ManaElixir"
     tomes="Item_Tome_Health,Item_Tome_Power"
 />
