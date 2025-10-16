@@ -184,62 +184,57 @@ function Bot:ClearTeleport()
 end
 
 function Bot:EvaluateTeamTarget(target)
---	if target.nodeType == "boss" and target.priority < 55 then
---	if self:GetTeamBotBrain():GetTeam() == 1 then
---		return self:EvaluateTeamTarget_Debug(target)
---	else
---		return self:EvaluateTeamTarget_Normal(target)
---	end
---end
---
---function Bot:EvaluateTeamTarget_Normal(target)
-	local hero = self:GetHeroUnit()
-	local unit = target.unit
-	local dist = Vector2.Distance(hero:GetPosition(), unit:GetPosition())
+    local hero = self:GetHeroUnit()
+    local unit = target.unit
 
-	if self:HasBehaviorFlag(BF_NEED_HEAL) then
-		return false
-	end
+    if (unit == nil) then 
+        return false
+    end
+    local dist = Vector2.Distance(hero:GetPosition(), unit:GetPosition())
 
-	if target == self.teamTarget then
-		return false
-	end
+    if self:HasBehaviorFlag(BF_NEED_HEAL) then
+        return false
+    end
 
-	if self.teamTarget ~= nil and math.ceil(target.priority) <= math.ceil(self.teamTarget.priority) then
-		return false
-	end
+    if target == self.teamTarget then
+        return false
+    end
 
-	if target.type == T3_ASSIST and dist < 3000 then
-		return true
-	end
+    if self.teamTarget ~= nil and math.ceil(target.priority) <= math.ceil(self.teamTarget.priority) then
+        return false
+    end
 
-	if target.priority > 50 or target.type == "boss" then
-		return true
-	end
+    if target.type == T3_ASSIST and dist < 3000 then
+        return true
+    end
 
-	if self:HasBehaviorFlag(BF_RETREAT) or self:HasBehaviorFlag(BF_AGGRO_CREEPS) then
-		return false
-	end
+    if target.priority > 50 or target.type == "boss" then
+        return true
+    end
+
+    if self:HasBehaviorFlag(BF_RETREAT) or self:HasBehaviorFlag(BF_AGGRO_CREEPS) then
+        return false
+    end
 
 
-	local teambot = self:GetTeamBotBrain()
-	if hero:GetLevel() < teambot:GetTeamLevel() then
-		return false
-	end
+    local teambot = self:GetTeamBotBrain()
+    if hero:GetLevel() < teambot:GetTeamLevel() then
+        return false
+    end
 
-	if self.teamTarget ~= nil and target.type ~= T3_DEFEND_TARGET then
-		return false
-	end
+    if self.teamTarget ~= nil and target.type ~= T3_DEFEND_TARGET then
+        return false
+    end
 
-	if target.type == T3_DEFEND_TARGET and target.priority < 40 and dist > 6000 then
-		return false
-	end
+    if target.type == T3_DEFEND_TARGET and target.priority < 40 and dist > 6000 then
+        return false
+    end
 
-	if target.lane == self.lane and self.teamTarget == nil then
-		return true
-	end
+    if target.lane == self.lane and self.teamTarget == nil then
+        return true
+    end
 
-	return self.availableForTeamTarget
+    return self.availableForTeamTarget
 end
 
 --function Bot:EvaluateTeamTarget_Debug(target)
@@ -322,6 +317,19 @@ function Bot:AcceptTeamTarget(target)
 		self.lane = target.lane
 		self.lastRelaneTime = Game.GetGameTime()
 	end
+end
+
+function Bot:GetTargetUnitIfBoss()
+    if ((self.state == "Root:Match:TeamCombat:AttackTeamTarget") and (self.teamTarget ~= nil) and self.teamTarget.unit:IsNeutralBoss()) then
+        return self.teamTarget.unit
+    else
+        local target = self:GetAttackTarget()
+        if ((target ~= nil) and (target:IsNeutralBoss())) then
+            return target
+        end
+    end
+
+    return nil
 end
 
 function Bot:ClearTeamTarget(target)

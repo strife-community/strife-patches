@@ -38,9 +38,9 @@ function SummonAbility:Evaluate()
         return false
     end
 
-    local target = self.owner:GetAttackTarget()
-    if ((target ~= nil) and (target:IsNeutralBoss())) then
-        self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
+    local boss_target = self.owner:GetTargetUnitIfBoss()
+    if (boss_target ~= nil) then
+        self.targetPos = self.owner.teambot:GetLastSeenPosition(boss_target)
     else
         self.targetPos = self.owner:FindSummonPosition(self.ability:GetRange())
     end

@@ -16,7 +16,7 @@ function Ability:Evaluate()
 
     if (self.settings.hasAggro) then
         local selfPosition = self.owner.hero:GetPosition()
-        if self.owner:IsPositionUnderEnemyTower(self.owner.hero:GetPosition()) then
+        if self.owner.teambot:IsPositionUnderEnemyTower(self.owner.hero:GetPosition()) then
             return false
         end
     end
@@ -61,9 +61,9 @@ function TargetPositionAbility:Evaluate()
         return false
     end
 
-    if (self.settings.doTargetBosses and (self.owner.state == "Root:Match:TeamCombat:AttackTeamTarget")) then
-        local boss_target = self.owner.teamTarget.unit
-        if (boss_target:IsNeutralBoss()) then
+    if self.settings.doTargetBosses then
+        local boss_target = self.owner:GetTargetUnitIfBoss()
+        if (boss_target ~= nil) then
             self.targetPos = self.owner.teambot:GetLastSeenPosition(boss_target)
             return (self.targetPos ~= nil)
         end
@@ -165,7 +165,7 @@ function JumpToPositionAbility:Evaluate()
         return false
     end
 
-    if (self.owner:IsPositionUnderEnemyTower(self.targetPos)) then
+    if (self.owner.teambot:IsPositionUnderEnemyTower(self.targetPos)) then
         return false
     end
 
@@ -194,9 +194,9 @@ function TargetEnemyAbility:Evaluate()
         return false
     end
 
-    if (self.settings.doTargetBosses and (self.owner.state == "Root:Match:TeamCombat:AttackTeamTarget")) then
-        local boss_target = self.owner.teamTarget.unit
-        if (boss_target:IsNeutralBoss()) then
+    if self.settings.doTargetBosses then
+        local boss_target = self.owner:GetTargetUnitIfBoss()
+        if (boss_target ~= nil) then
             self.target = boss_target
             return true
         end

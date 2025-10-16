@@ -33,10 +33,15 @@ function GrapplingHookAbility:Evaluate()
             return false
         end
 
+        if (self.owner.teambot:IsPositionUnderEnemyTower(self.hook_position)) then
+            return false
+        end
+
         local threat = self.owner:CalculateThreatLevel(self.hook_position)
         if threat < 0.9 then
             return true
         end
+
     else
         if TargetPositionAbility.Evaluate(self) then
             self.hook_position = self.targetPos

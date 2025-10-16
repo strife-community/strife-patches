@@ -49,7 +49,7 @@ function WormHoleAbility:Evaluate()
         return false
     end
 
-    if self.owner:IsPositionUnderEnemyTower(self.targetPos) then
+    if self.owner.teambot:IsPositionUnderEnemyTower(self.targetPos) then
         return false
     end
 

@@ -68,7 +68,7 @@ function MonkeyAbility:Evaluate()
         if self.owner:HasBehaviorFlag(BF_GOKONG_ULT_CAN_BLINK) then
             local target = self.owner:GetAttackTarget()
             self.targetPos = self.owner.teambot:GetLastSeenPosition(target)
-            if (not self.owner:IsPositionUnderEnemyTower(self.targetPos)) then
+            if (not self.owner.teambot:IsPositionUnderEnemyTower(self.targetPos)) then
                 return true
             end
         -- else: not enough time have passed, NOTHING TO DO
