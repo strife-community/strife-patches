@@ -73,8 +73,12 @@ function SoulCaliburAbility:Evaluate()
         return false
     end
 
+    if (self.owner:GetNumNeutralBosses(300) > 0) then
+        return true
+    end
+
     local target = self.owner:GetAttackTarget()
-    if (target == nil) or (not target:IsValid()) or (not (target:IsHero() or target:IsNeutralBoss())) then
+    if (target == nil) or (not target:IsValid()) or (not target:IsHero()) then
         return false
     end
 
@@ -135,16 +139,6 @@ function HaleBot:State_Init()
     self:RegisterAbility(abilityR)
 
     Bot.State_Init(self)
-end
-
-function HaleBot:UpdateBehaviorFlags()
-    Bot.UpdateBehaviorFlags(self)
-
-    if self.hero:HasState("State_Hale_Ability2") then
-        self:SetBehaviorFlag(BF_TRYHARD)
-    else
-        self:ClearBehaviorFlag(BF_TRYHARD)
-    end
 end
 
 -- End Custom Behavior Tree Functions
