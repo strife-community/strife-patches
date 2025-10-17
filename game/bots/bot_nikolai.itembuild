@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+    name="bot_nikolai"
+    
+    items1="Item_ElderStone,Item_Buckler"
+    items2="Item_HealthBoots"
+    items3="Item_PendantofDefiance,Item_Frostbrand,Item_Kingsmail"
+    items4="Item_GiantsVisage"
+    items5="Item_ShamanHeaddress,Item_StoneSkin"
+    items6="Item_Shardplate,Item_InfernoBrand"
+    items7="Item_Indestructible"
+    potions="Item_HealthElixir,Item_ManaElixir"
+    tomes="Item_Tome_Power,Item_Tome_Health"
+/>

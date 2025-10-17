@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+    name="bot_vex"
+    
+    items1="Item_HealingScepter,Item_AncientGem,Item_FellBlade"
+    items2="Item_ASBoots,Item_PowerBoots,Item_RuneBoots"
+    items3="Item_ScepterOfClearcasting,Item_PendantofDefiance,Item_TwinFang"
+    items4="Item_GiantsVisage,Item_InfernoBrand,Item_MaxManaPower"
+    items5="Item_SheepStick,Item_ShamanHeaddress,Item_Shardplate"
+    items6="Item_Timewarper,Item_Malevolence,Item_Codex"
+    items7="Item_Indestructible,Item_Supercharger"
+    potions="Item_ManaElixir,Item_HealthElixir"
+    tomes="Item_Tome_Power"
+/>

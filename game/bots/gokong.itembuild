@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+	name="bot_gokong"
+	
+	items1="Item_FellBlade,Item_Lasthit,Item_Buckler"
+	items2="Item_ASBoots"
+	items3="Item_DemonEdge,Item_ThunderClaw"
+	items4="Item_Frostbrand"
+	items5="Item_StoneSkin,Item_BarrierToken"
+	items6="Item_Riftshards"
+	items7="Item_Shieldbreaker,Item_VampiricBlade"
+	potions="Item_HealthElixir"
+	tomes="Item_Tome_Power"
+ />
