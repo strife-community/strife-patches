@@ -7382,6 +7382,7 @@ profile_fun_fact_goldEarned				Average Gold Earned
 profile_fun_fact_actions				Average Actions
 profile_fun_fact_games					Games Played
 profile_fun_fact_deaths					Average Deaths
+profile_fun_fact_fail                   No Fun Facts Found
 
 profile_fun_fact_gpm_desc				Your average GPM is {value} while playing as {hero}
 profile_fun_fact_kills_desc				Your average hero score is {value} while playing as {hero}
@@ -7400,7 +7401,8 @@ profile_fun_fact_goldSpent_desc			The average gold you spent is {value} while pl
 profile_fun_fact_goldEarned_desc		The average gold you earned is {value} while playing as {hero}
 profile_fun_fact_actions_desc			While playing as {hero} you average {value} actions
 profile_fun_fact_games_desc				You've played {value} games as {hero}
-profile_fun_fact_deaths_desc			You die {value} times  on average as {hero}
+profile_fun_fact_deaths_desc			You die {value} times on average as {hero}
+profile_fun_fact_fail_desc              There are {value} fun facts about {hero}. We are dead serious
 
 profile_leaves							Leaves
 proifile_leaves_standing_good			Good Standing. 

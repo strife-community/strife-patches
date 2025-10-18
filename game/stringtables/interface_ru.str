@@ -7174,6 +7174,7 @@ profile_fun_fact_goldEarned				Среднее кол-во заработанно
 profile_fun_fact_actions				Среднее кол-во действий
 profile_fun_fact_games					Сыграно игр
 profile_fun_fact_deaths					Среднее кол-во смертей
+profile_fun_fact_fail                   Не найдены интересные факты
 
 profile_fun_fact_gpm_desc				Ваш средний GPM за {hero}: {value}
 profile_fun_fact_kills_desc				Играя за {hero} в среднем вы убиваете {value} героев
@@ -7193,6 +7194,7 @@ profile_fun_fact_goldEarned_desc		Играя за {hero} в среднем вы 
 profile_fun_fact_actions_desc			Играя за {hero} в среднем вы делаете {value} действий
 profile_fun_fact_games_desc				Вы сыграли {value} игр за {hero}
 profile_fun_fact_deaths_desc			Играя за {hero} в среднем вы умираете {value} раз
+profile_fun_fact_fail_desc              Мы нашли {value} интересных фактов о {hero}. Интересно...
 
 profile_leaves							Дезерт.
 proifile_leaves_standing_good			Надежный союзник

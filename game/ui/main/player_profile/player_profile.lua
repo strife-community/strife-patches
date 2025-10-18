@@ -1087,7 +1087,7 @@ function playerProfileRegister(object)
 			-- or (if not even those exist, becasue it's a fresh account) the default "Moxie" model
 			-- with "Label1" and "Label2" being the "fun facts".
 			if (#statsToPullFrom == 0) then
-				table.insert(statsToPullFrom, {entity = heroEntity, value = 42, stat = 'buildingKills'})
+				table.insert(statsToPullFrom, {entity = heroEntity, value = 0, stat = 'fail'})
 			end
 
 			local currentFact 	= math.random(1, #statsToPullFrom)
