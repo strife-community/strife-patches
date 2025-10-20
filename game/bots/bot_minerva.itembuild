@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+    name="bot_minerva"
+    
+    items1="Item_Buckler,Item_Lasthit,Item_ElderStone"
+    items2="Item_PowerBoots,Item_ASBoots"
+    items3="Item_ScepterOfClearcasting,Item_DemonEdge,Item_Spellblade"
+    items4="Item_BarrierToken,Item_ShamanHeaddress,Item_StoneSkin"
+    items5="Item_Riftshards,Item_InfernoBrand"
+    items6="Item_Supercharger,Item_Timewarper"
+    items7="Item_Titanslayer"
+    potions="Item_HealthElixir,Item_ManaElixir"
+    tomes="Item_Tome_Power,Item_Tome_Health"
+/>

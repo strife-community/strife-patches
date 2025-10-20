@@ -1072,80 +1072,73 @@ function playerProfileRegister(object)
 			
 			local funzoneparent	= GetWidget('playerProfileHeroFunzone')
 	
-			if (mainUI) and (mainUI.progression) and (mainUI.progression.stats) and (mainUI.progression.stats.best) and (#mainUI.progression.stats.best > 0) then
-
-				local statsToPullFrom
-				if (mainUI.progression.stats.heroes) and (mainUI.progression.stats.heroes[heroEntity]) and (mainUI.progression.stats.heroes[heroEntity].details) then
-					statsToPullFrom = {}
-					for i,v in pairs(mainUI.progression.stats.heroes[heroEntity].details) do
-						if (i == 'apm') or (i == 'creepDamage') or (i == 'heroDamage') or (i == 'kills') or (i == 'bossKills')  or (i == 'buildingDamage')  or (i == 'goldSpent')  or (i == 'creepKills')  or (i == 'goldEarned')  or (i == 'actions')  or (i == 'bossDamage')  or (i == 'assists')  or (i == 'games')  or (i == 'buildingKills')  or (i == 'killstreak')  or (i == 'winner')  or (i == 'deaths')  or (i == 'gpm') then
-							table.insert(statsToPullFrom, {entity = heroEntity, value = v, stat = i})
-						end
-					end
-				else
-					-- @Necropola
-					-- Make up an entry, because (fake) stats/details appear to be no longer provided.
-					-- We want at least model and voice to match the selected hero and not some other
-					-- hero from a randomly picked "best" stat/details entry that may still exist.
-					-- statsToPullFrom = mainUI.progression.stats.best
-					statsToPullFrom = {}
-					table.insert(statsToPullFrom, {entity = heroEntity, value = 42, stat = 'buildingKills'})
-				end
-				
-				local currentFact 	= math.random(1, #statsToPullFrom)
-				local hero_model  	= GetWidget('playerProfileHeroFunzone_Model')
-				local next_btn  	= GetWidget('playerProfileHeroFunzone_next_btn')
-				local label_1  		= GetWidget('playerProfileHeroFunzone_label_1')
-				local label_2  		= GetWidget('playerProfileHeroFunzone_label_2')
-				local label_3  		= GetWidget('playerProfileHeroFunzone_next_btnLabel')
-
-				local function ShowFunFact(entityName, stat, value)
-					-- println('^y ShowFunFact ' .. entityName .. ' | ' .. stat .. ' | ' .. value)
-					if (entityName) and ValidateEntity(entityName) and (GetEntityIconPath(entityName)) then
-						if (stat ~= 'games') and (games) and (tonumber(games)) and (tonumber(games) > 0) then
-							value = value / games
-						end						
-						if (stat == 'winner') then
-							value = math.floor(100 * value) .. '%'
-						else
-							value = math.floor(value)
-						end
-						funzoneparent:FadeIn(250)
-						hero_model:SetVisible(1)
-						hero_model:SetModel(GetPreviewModel(entityName))
-						hero_model:SetEffect(GetPreviewPassiveEffect(entityName))
-						hero_model:SetModelOrientation(GetPreviewAngles(entityName))
-						hero_model:SetModelPosition(GetPreviewPos(entityName))
-						hero_model:SetModelScale(GetPreviewScale(entityName) * 0.8)
-						hero_model:SetModelSkin(entityName) -- rmm get get and dye info
-						if (entityName == 'Hero_Moxie') and GetCvarBool('_ui_catfacts') then
-							label_1:SetText(Translate('profile_fun_fact_'..stat))
-							label_2:SetText(Translate('profile_fun_fact_catfact') .. ' ' .. Translate('profile_fun_fact_'..stat..'_desc', 'value', value, 'hero', GetEntityDisplayName(entityName)))
-							label_3:SetText(Translate('general_unsubscribe'))
-						else
-							label_1:SetText(Translate('profile_fun_fact_'..stat))
-							label_2:SetText(Translate('profile_fun_fact_'..stat..'_desc', 'value', value, 'hero', GetEntityDisplayName(entityName)))
-							label_3:SetText(Translate('player_profile_show_another'))
-						end
+			local statsToPullFrom = {}
+			if (mainUI) and (mainUI.progression) and (mainUI.progression.stats) and (mainUI.progression.stats.heroes) and (mainUI.progression.stats.heroes[heroEntity]) and (mainUI.progression.stats.heroes[heroEntity].details) then
+				for i,v in pairs(mainUI.progression.stats.heroes[heroEntity].details) do
+					if (i == 'apm') or (i == 'creepDamage') or (i == 'heroDamage') or (i == 'kills') or (i == 'bossKills')  or (i == 'buildingDamage')  or (i == 'goldSpent')  or (i == 'creepKills')  or (i == 'goldEarned')  or (i == 'actions')  or (i == 'bossDamage')  or (i == 'assists')  or (i == 'games')  or (i == 'buildingKills')  or (i == 'killstreak')  or (i == 'winner')  or (i == 'deaths')  or (i == 'gpm') then
+						table.insert(statsToPullFrom, {entity = heroEntity, value = v, stat = i})
 					end
 				end
+			end
+			-- @Necropola
+			-- Make up a (fallback) entry, because (fake) stats/details appear to be no longer provided.
+			-- We want at least model and voice to match the selected hero and not some other
+			-- hero from a randomly picked "best" stat/details entry that may still exist
+			-- or (if not even those exist, becasue it's a fresh account) the default "Moxie" model
+			-- with "Label1" and "Label2" being the "fun facts".
+			if (#statsToPullFrom == 0) then
+				table.insert(statsToPullFrom, {entity = heroEntity, value = 0, stat = 'fail'})
+			end
 
+			local currentFact 	= math.random(1, #statsToPullFrom)
+			local hero_model  	= GetWidget('playerProfileHeroFunzone_Model')
+			local next_btn  	= GetWidget('playerProfileHeroFunzone_next_btn')
+			local label_1  		= GetWidget('playerProfileHeroFunzone_label_1')
+			local label_2  		= GetWidget('playerProfileHeroFunzone_label_2')
+			local label_3  		= GetWidget('playerProfileHeroFunzone_next_btnLabel')
+
+			local function ShowFunFact(entityName, stat, value)
+				-- println('^y ShowFunFact ' .. entityName .. ' | ' .. stat .. ' | ' .. value)
+				if (entityName) and ValidateEntity(entityName) and (GetEntityIconPath(entityName)) then
+					if (stat ~= 'games') and (games) and (tonumber(games)) and (tonumber(games) > 0) then
+						value = value / games
+					end
+					if (stat == 'winner') then
+						value = math.floor(100 * value) .. '%'
+					else
+						value = math.floor(value)
+					end
+					funzoneparent:FadeIn(250)
+					hero_model:SetVisible(1)
+					hero_model:SetModel(GetPreviewModel(entityName))
+					hero_model:SetEffect(GetPreviewPassiveEffect(entityName))
+					hero_model:SetModelOrientation(GetPreviewAngles(entityName))
+					hero_model:SetModelPosition(GetPreviewPos(entityName))
+					hero_model:SetModelScale(GetPreviewScale(entityName) * 0.8)
+					hero_model:SetModelSkin(entityName) -- rmm get get and dye info
+					if (entityName == 'Hero_Moxie') and GetCvarBool('_ui_catfacts') then
+						label_1:SetText(Translate('profile_fun_fact_'..stat))
+						label_2:SetText(Translate('profile_fun_fact_catfact') .. ' ' .. Translate('profile_fun_fact_'..stat..'_desc', 'value', value, 'hero', GetEntityDisplayName(entityName)))
+						label_3:SetText(Translate('general_unsubscribe'))
+					else
+						label_1:SetText(Translate('profile_fun_fact_'..stat))
+						label_2:SetText(Translate('profile_fun_fact_'..stat..'_desc', 'value', value, 'hero', GetEntityDisplayName(entityName)))
+						label_3:SetText(Translate('player_profile_show_another'))
+					end
+				end
+			end
+
+			local factTable = statsToPullFrom[currentFact]
+			ShowFunFact(factTable.entity, factTable.stat, factTable.value)
+
+			next_btn:SetCallback('onclick', function()
+				currentFact = currentFact + 1
+				if (currentFact > #statsToPullFrom) then
+					currentFact = 1
+				end
 				local factTable = statsToPullFrom[currentFact]
 				ShowFunFact(factTable.entity, factTable.stat, factTable.value)
-
-				next_btn:SetCallback('onclick', function()
-					currentFact = currentFact + 1
-					if (currentFact > #statsToPullFrom) then
-						currentFact = 1
-					end
-					local factTable = statsToPullFrom[currentFact]
-					ShowFunFact(factTable.entity, factTable.stat, factTable.value)
-				end)
-
-			else
-				println('^r playerProfileHeroFunzone ')
-				funzoneparent:FadeOut(250)
-			end			
+			end)
 			
 		end
 

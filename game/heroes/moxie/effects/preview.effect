@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectsscale="true">
+<definitions>
+
+	<particlesystem name="system0" space="entity" scale="1">
+
+		<light
+			life="150"
+			startcolor="2.5 2.5 2.5"
+			midcolor="0 2 8"
+			endcolor="0 0 0"
+			midcolorpos=".75"
+			falloffstart="0"
+			falloffend="250"
+			position="0 0 50"
+		/>
+
+		<light
+			delay="150"
+			life="150"
+			startcolor="2.5 2.5 2.5"
+			midcolor="0 2 8"
+			endcolor="0 0 0"
+			midcolorpos=".75"
+			falloffstart="0"
+			falloffend="250"
+			position="0 0 50"
+		/>
+
+		<template name="lightning">
+
+			<billboard
+				delay="{zdelay}"
+				life="350"
+				position="0 -2 500"
+				height="1000"
+				width="75"
+				color="0 .3 .7"
+				material="/shared/effects/smaterials/animated_lightning.material"
+				startframe="0"
+				endframe="1"
+				framespeed=".25"
+				lockup="true"
+				lockright="true"
+				yaw="180"
+			/>
+
+			<billboard
+				delay="{zdelay}"
+				life="350"
+				position="0 2 500"
+				height="1000"
+				width="75"
+				color="0 .3 1"
+				material="/shared/effects/smaterials/animated_lightning.material"
+				startframe="0"
+				endframe="1"
+				framespeed=".25"
+				lockup="true"
+				lockright="true"
+				yaw="180"
+			/>
+
+			<billboard
+				delay="{zdelay}"
+				life="350"
+				position="0 0 500"
+				height="1000"
+				width="75"
+				color=".65"
+				material="/shared/effects/smaterials/animated_lightning.material"
+				startframe="0"
+				endframe="1"
+				framespeed=".25"
+				lockup="true"
+				lockright="true"
+				yaw="180"
+			/>
+
+			<billboard
+				delay="{zdelay}"
+				life="300"
+				position="20 0 200"
+				height="85"
+				width="40"
+				startcolor="1 1 1"
+				midcolor="0 .3 1"
+				endcolor="0 .3 1"
+				midcolorpos=".8"
+				material="/shared/effects/smaterials/animated_lightning.material"
+				startframe="0"
+				endframe="1"
+				framespeed=".25"
+				lockup="true"
+				lockright="true"
+				roll="65"
+			/>
+
+			<billboard
+				delay="{zdelay}"
+				life="300"
+				position="45 0 360"
+				height="100"
+				width="50"
+				startcolor="1 1 1"
+				midcolor="0 .3 1"
+				endcolor="0 .3 1"
+				midcolorpos=".8"
+				material="/shared/effects/smaterials/animated_lightning.material"
+				startframe="0"
+				endframe="1"
+				framespeed=".25"
+				lockup="true"
+				lockright="true"
+				roll="45"
+			/>
+
+		</template>
+
+		<instance name="lightning" zdelay="0"/>
+		<instance name="lightning" zdelay="200"/>
+
+		<billboard
+			delay="75"
+			life="300"
+			position="-65 0 100"
+			height="175"
+			width="85"
+			startcolor="1 1 1"
+			midcolor="0 .3 1"
+			endcolor="0 .3 1"
+			midcolorpos=".8"
+			material="/shared/effects/smaterials/animated_lightning.material"
+			startframe="0"
+			endframe="1"
+			framespeed=".25"
+			lockup="true"
+			lockright="true"
+			roll="135"
+		/>
+
+		<billboard
+			delay="275"
+			life="300"
+			position="-65 0 100"
+			height="175"
+			width="85"
+			startcolor="1 1 1"
+			midcolor="0 .3 1"
+			endcolor="0 .3 1"
+			midcolorpos=".8"
+			material="/shared/effects/smaterials/animated_lightning.material"
+			startframe="0"
+			endframe="1"
+			framespeed=".25"
+			lockup="true"
+			lockright="true"
+			roll="135"
+		/>
+
+		<billboard
+			delay="200"
+			life="200"
+			position="0 0 50"
+			startcolor="0 .15 .6"
+			endcolor="0 0 0"
+			material="/shared/effects/smaterials/whitedot.material"
+			size="250"
+		/>
+
+		<billboard
+			delay="100"
+			life="200"
+			position="0 0 300"
+			startcolor=".25"
+			midcolor="0 .1 .2"
+			endcolor="0 0 0"
+			material="/shared/effects/smaterials/whitedot.material"
+			width="200"
+			height="500"
+		/>
+
+		<billboard
+			delay="100"
+			life="200"
+			position="0 10 320"
+			startcolor="0 .2 .6"
+			endcolor="0 0 0"
+			material="/shared/effects/smaterials/whitedot.material"
+			size="250"
+		/>
+
+		<sound delay="0" sample="../ability_04/sounds/sfx_impact_4.wav" linearfalloff="true" falloffstart="600" falloffend="1000" volume="0.45" channel="90043" />
+		<sound delay="1000" sample="sounds/v_%.wav" linearfalloff="true" falloffstart="2500" falloffend="7400" volume="0.45" channel="90043" />
+
+	</particlesystem>
+
+</definitions>
+
+<thread>
+
+	<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+	<waitfordeath instance="instance0"/>
+
+</thread>
+
+</effect>

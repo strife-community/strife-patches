@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itembuild
+    name="bot_hale"
+    
+    items1="Item_AncientGem,Item_Buckler,Item_HealingScepter"
+    items2="Item_HealthBoots,Item_PowerBoots"
+    items3="Item_FrostfieldPlate,Item_PendantofDefiance,Item_Spellblade"
+    items4="Item_InfernoBrand,Item_Frostbrand"
+    items5="Item_GiantsVisage,Item_ShamanHeaddress,Item_StoneSkin"
+    items6="Item_Shardplate,Item_Indestructible"
+    items7="Item_Riftshards"
+    potions="Item_HealthElixir,Item_ManaElixir"
+    tomes="Item_Tome_Power,Item_Tome_Health"
+/>
