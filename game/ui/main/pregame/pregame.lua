@@ -1990,11 +1990,19 @@ readyButtonCheck = function()
 							if(queue["queue"] == currentQueue) then
 								for _,party in pairs(queue["parties"]) do
 									for _ in pairs(party["members"]) do queuePlayerCount = queuePlayerCount + 1 end
-								end				
+								end
 							end
 						end
-						local countText = (currentQueue=='pvp' and queuePlayerCount < 5) and "< 5" or tostring(queuePlayerCount)
-						GetWidget('main_pregame_queue_size_label'):SetText(Translate('pregame_queue_size') .. " " .. countText)
+						local playersInMatches = 0
+						local matchInfo = Chat_Web_Requests:GetGamesInfo()
+						for _,match in pairs(matchInfo) do
+							for _,players in pairs(match["members"]) do
+								playersInMatches = playersInMatches + 1
+							end
+						end
+						local countInQueueText = (currentQueue=='pvp' and queuePlayerCount < 5) and "< 5" or tostring(queuePlayerCount)
+						GetWidget('main_pregame_queue_size_label'):SetText(Translate('pregame_queue_size') .. " " .. countInQueueText)
+						GetWidget('main_pregame_ingame_count_label'):SetText(Translate('pregame_ingame_count') .. " " .. tostring(playersInMatches))
 						wait(5000)
 					else
 						break
