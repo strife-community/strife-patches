@@ -45,6 +45,7 @@
 	manaregen="0"
 
 	resistance="80"
+	mitigation="80"
 	immunity="KongorImmunity"
 
 	cancarryitems="false" 

@@ -45,7 +45,7 @@
 	manaregen="0"
 
 	resistance="50"
-	mitigation="20"
+	mitigation="50"
 	immunity=""
 
 	cancarryitems="false" 

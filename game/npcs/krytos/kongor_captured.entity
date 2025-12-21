@@ -49,6 +49,7 @@
 	ismobile="false"
 
 	resistance="20"
+	mitigation="20"
 	immunity="KongorImmunity"
 
 	cancarryitems="false" 
