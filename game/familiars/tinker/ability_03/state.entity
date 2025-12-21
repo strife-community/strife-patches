@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tinker_Ult_1"
+
+	icon="icon.tga"
+	resistance="100"	
+	passiveeffect="effects/state_8.effect"
+	
+>
+	<oninflict>
+		<setcharges a="8" />
+	</oninflict>
+
+	<onrefresh>
+		<setcharges a="8" />
+		<setactivemodifierkey name="" />
+	</onrefresh>
+
+	<onattackstart>
+		<entitytype type="Building_HellbourneMeleeBarracks" source="source_entity" target="source_entity">
+			<setattackprojectile name="Projectile_Generator_Boost" />
+		</entitytype>
+		<entitytype type="Building_LegionBase" source="source_entity" target="source_entity">
+			<setattackprojectile name="Projectile_EvilTowerAttack_Boost" />
+		</entitytype>
+		<entitytype type="Building_HellbourneTower" source="source_entity" target="source_entity">
+			<setattackprojectile name="Projectile_Cannon_Boost" />
+		</entitytype>
+	</onattackstart>
+
+	<onattack>	
+		<targettype type="hero">
+			<addattackimpactactions>
+				<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="1.5" op="mult" radius="300" effecttype="AttackDamage Splash" targetscheme="enemy_creeps" />
+				<setpos0 position="target_position" positionend="source_position" positionmodifier="pointonline" positionvalue="50" />
+				<placehazard target="pos0" hazardthreat="extreme" radius="350" duration="1500" />
+				<applystate name="State_Tinker_KillCredit" target="source_entity" proxy="this_proxy_entity" duration="100" />
+				<compare a="charges" b="1" op="le" >
+					<expire />
+				</compare>
+				<removecharge />
+			</addattackimpactactions>
+		</targettype >
+		<else>
+			<bonusdamagemult a="0.5" target=""/>
+			<addattackimpactactions>
+				<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="1" op="mult" radius="300" effecttype="AttackDamage Splash" targetscheme="enemy_creeps" />
+				<setpos0 position="target_position" positionend="source_position" positionmodifier="pointonline" positionvalue="50" />
+				<placehazard target="pos0" hazardthreat="extreme" radius="350" duration="1500" />
+				<applystate name="State_Tinker_KillCredit" target="source_entity" proxy="this_proxy_entity" duration="100" />
+				<compare a="charges" b="1" op="le" >
+					<expire />
+				</compare>
+				<removecharge />
+			</addattackimpactactions>
+		</else>
+		<compare a="charges" b="8" op="eq">	<setactivemodifierkey name="tower_ammo_7" />	</compare>
+		<compare a="charges" b="7" op="eq">	<setactivemodifierkey name="tower_ammo_6" />	</compare>
+		<compare a="charges" b="6" op="eq">	<setactivemodifierkey name="tower_ammo_5" />	</compare>
+		<compare a="charges" b="5" op="eq">	<setactivemodifierkey name="tower_ammo_4" />	</compare>
+		<compare a="charges" b="4" op="eq">	<setactivemodifierkey name="tower_ammo_3" />	</compare>
+		<compare a="charges" b="3" op="eq">	<setactivemodifierkey name="tower_ammo_2" />	</compare>
+		<compare a="charges" b="2" op="eq">	<setactivemodifierkey name="tower_ammo_1" />	</compare>
+	</onattack>
+
+	<modifier key="tower_ammo_7" modpriority="100" passiveeffect="effects/state_7.effect"/>
+	<modifier key="tower_ammo_6" modpriority="100" passiveeffect="effects/state_6.effect"/>
+	<modifier key="tower_ammo_5" modpriority="100" passiveeffect="effects/state_5.effect"/>
+	<modifier key="tower_ammo_4" modpriority="100" passiveeffect="effects/state_4.effect"/>
+	<modifier key="tower_ammo_3" modpriority="100" passiveeffect="effects/state_3.effect"/>
+	<modifier key="tower_ammo_2" modpriority="100" passiveeffect="effects/state_2.effect"/>
+	<modifier key="tower_ammo_1" modpriority="100" passiveeffect="effects/state_1.effect"/>
+
+</state>
