@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building
+	name="Creep_Kongor_Chained"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/npcs/Krytos/Krytos_chained/model.mdf"
+	skin=""
+	drawonmap="false"
+
+	
+	effectsignorefog="true"
+	passiveeffect="/npcs/Krytos/Krytos_chained/effects/body.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	hidealtinfo="true"
+	
+	preglobalscale="0.7"
+	modelscale="1.8"
+	effectscale="1.8"
+	boundsheight="198"
+	radiusheight="198"
+	boundsradius="48"
+	selectionradius="96"
+	targetoffset="0 0 100"
+
+	movespeed="300"
+	turnrate="320"
+	unitwalking="true"
+	treewalking="true"
+
+
+
+	isselectable="false"
+	buildingwalking="true"
+	
+	infoheight="225"
+
+	healthproportionregen="0"
+	maxhealth="4986"
+	maxhealthperlevel="0"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+	invulnerable="true"
+	canattack="false"
+	ismobile="false"
+
+	resistance="20"
+	immunity="KongorImmunity"
+
+	cancarryitems="false" 
+
+	largeunit="true"
+	
+	unittype="Kongor_Chained"
+
+>
+
+</building>

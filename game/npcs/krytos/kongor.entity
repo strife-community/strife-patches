@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creep
+	name="Creep_Kongor"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/npcs/Krytos/model.mdf" 
+	skin=""
+	mapicon="icon_circle.tga"
+	mapiconsize="0.08"
+	mapiconcolor="1 1 1 1"
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="0.7"
+	modelscale="1.8"
+	effectscale="1.8"
+	boundsheight="198"
+	radiusheight="198"
+	boundsradius="47"
+	searchheight="175"
+	searchradius="175"
+	minsearchradius="64"
+	selectionradius="96"
+	targetoffset="0 0 100"
+
+	cutouticon="icon_krytos.tga"
+
+	movespeed="350"
+	turnrate="320"
+	unitwalking="true"
+	treewalking="true"
+	
+	infoheight="380"
+
+	healthproportionregen="0"
+	maxhealth="3300"
+	maxhealthperlevel="0"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	resistance="80"
+	immunity="KongorImmunity"
+
+	cancarryitems="false" 
+	inventory0="Ability_Kongor1"
+	inventory1="Ability_Kongor2"
+	inventory2="Ability_Kongor_Shield"
+	inventory3="Ability_Kongor4"
+	inventory4="Ability_Kongor5"
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1500"
+	attackactiontime="1150"
+	attackcooldown="1500"
+	attackdamagemin="183"
+	attackdamagemax="183"
+	attacknumanims="3"
+	attackoffset="0 0 100"
+	attackprojectile=""
+	attackrange="128"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/ground_impact.effect"
+	attacktype="melee"
+	combattype="Siege2"
+	attackdamagetype="AttackDamage"
+	leashaggroscheme="enemy_creeps_and_buildings"
+	deathnumanims="1"
+	deathanim="death_1"
+	gibanim="death_1"
+	deniedanim="death_1"
+
+	largeunit="true"
+	
+	aggrorange="500"
+	proximityrange="200"
+	sightrangeday="1400"
+	sightrangenight="1400"
+	
+	experiencebounty="0"
+	goldbountymin="0"
+	goldbountymax="0"
+	goldbountyteam="0"
+	goldbountyconsolation="0"
+	
+	deathtime="8000"
+	
+	unittype="Kongor Boss"
+>
+	<onattackstart>
+		<targettype type="building">	
+			<applystate name="State_Kongor_AttackOrder" target="source_entity" duration="5000" />
+			<compare a="accumulator" b="1" op="eq">
+				<order command="stop" force="true"  />
+				<order command="attack" force="true" forceduration="2100" />
+				<setaccumulator value="0" />
+			</compare>
+			<else>
+				<playanim name="attack_4" speed="source_attackspeed" target="source_entity" />
+				<addattackimpactactions> 
+					<targettype type="building">	
+						<applystate name="State_Kongor_TowerDisarm" target="target_entity" duration="2000" />
+						<damage effecttype="" amount="0.5" b="source_attackdamage" op="mult" />
+						<damage effecttype="" target="source_entity" amount="0.06" b="source_maxhealth" op="mult" />
+					</targettype>
+				</addattackimpactactions>
+			</else>
+		</targettype>
+		<else>
+			<expirestate name="State_Kongor_AttackOrder" target="source_entity" />
+			<setaccumulator value="1" />
+		</else>
+	</onattackstart>
+	
+	<onspawn>
+		<pushentitysearch global="true" targetscheme="ally_well_krytos_structure" ignoreinvulnerable="true" />
+		<expirestate name="State_Kongor_LaneWasManuallySelected_Mid" target="source_entity" />
+		<expirestate name="State_Kongor_LaneWasManuallySelected_Top" target="source_entity" />
+		<expirestate name="State_Kongor_LaneWasManuallySelected_Bottom" target="source_entity" />
+		<applystate name="State_Kongor" duration="-1"/>
+		
+		<areaofeffect radius="2050" targetselection="closest" maxtotalimpacts="1" targetscheme="any_marker" effecttype="" ignoreinvulnerable="true" target_position="source_position" >
+			<teleport source="source_entity" positionorigin="target_position" interpolate="false" />		
+		</areaofeffect>
+			
+		<foreachplayer>
+			<playconductorevent name="KrytosSpawn" />
+			<pushhero target="target_entity" />
+			<setvar1 a="target_team" target="source_entity" />
+			<setvar2 a="target_team" target="stack_entity" />
+			<compare a="var1" b="var2" op="eq">
+				<giveability name="" slot="15" target="stack_entity" />
+			</compare>
+		</foreachplayer>
+		<pushentitysearch global="true" targetscheme="ally_well_krytos_structure" source="source_entity" ignoreinvulnerable="true" />	
+		<condition target="stack_entity" test="hasstate State_Kongor_Timeoutspawn" />
+		<else>
+			<delete target="this_entity" />
+		</else>
+		<expirestate name="State_Kongor_Timeoutspawn" target="stack_entity" />
+		<compare a="source_team" b="1" op="eq">
+			<spawnunit name="Gadget_Kongor_Vision" owner="this_entity" target="source_entity" bind="source_entity" team="2" />
+		</compare>
+		<compare a="source_team" b="2" op="eq">
+			<spawnunit name="Gadget_Kongor_Vision" owner="this_entity" target="source_entity" bind="source_entity" team="1" />
+		</compare>
+	</onspawn>
+
+	<ondeath>
+		<foreachplayer>
+			<playconductorevent name="KrytosDeath" />
+		</foreachplayer>
+	</ondeath>
+	
+	<onkill>
+		<targettype type="building"/>
+		<else>
+			<targettype type="hero"/>
+			<else>
+				<setvar0 a="source_max_gold_split_bounty_per_player" source="target_entity"  />
+				<setvar1 a="source_max_gold_split_bounty_per_player" source="target_entity" />
+				<setvar0 a="2" b="var0" op="mult" />
+				<pushentity entity="target_entity" />
+				<areaofeffect radius="800" targetselection="all" targetscheme="ally_heroes" ignoreinvulnerable="true" center="source_entity"/> 
+				<compare a="var0" b="0" op="ne" >
+					<setvar0 a="var0" b="result" op="div" />
+					<setvar0 a="var0" b="var1" op="min" />
+					<areaofeffect radius="800" targetselection="all" targetscheme="ally_heroes" ignoreinvulnerable="true" center="source_entity" >
+						<givegold amount="var0" position="stack_entity" target="target_entity" />
+					</areaofeffect>
+				</compare>
+			</else>
+		</else>
+	</onkill>
+	 
+	<onattackedpreimpact>
+		<targettype type="Tower">
+			<condition test="not_hasstate State_Kongor_TowerTargeted" target="source_entity" >
+				<condition test="not_hasstate State_Kongor_AttackOrder" target="source_entity" >
+					<applystate name="State_Kongor_AttackOrder" target="source_entity" duration="5000" />
+					<order command="attack" force="true" forceduration="60000" />
+				</condition>
+			</condition>
+			<setproxy />
+		</targettype>
+		<targettype type="MainBaseStructure">
+			<condition test="not_hasstate State_Kongor_TowerTargeted" target="source_entity" >
+				<condition test="not_hasstate State_Kongor_AttackOrder" target="source_entity" >
+					<applystate name="State_Kongor_AttackOrder" target="source_entity" duration="5000" />
+					<order command="attack" force="true" forceduration="60000" />
+				</condition>
+			</condition>
+			<setproxy />
+		</targettype>
+	</onattackedpreimpact>
+
+
+	<modifier key="lanepusher_aggrotower" modpriority="100" attackduration="2000" attackactiontime="1000" attackcooldown="2000"	 attacknumanims="1" attackrange="75" attackanim="attack_building"/>
+	
+	<modifier key="tutorial3mod" modpriority="99">
+		<aura state="State_Tutorial_KrytosTowerRange" radius="2500" notooltip="true" ignoreinvulnerable="true" effecttype="NoResponse" targetscheme="enemy_towers_not_mbs" /> 
+	</modifier>
+
+</creep>
