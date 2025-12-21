@@ -8,7 +8,7 @@
 
 	ishidden="false"
 	
-	resistance="5,10,15,20"
+	mitigation="5,10,15,20"
 >
 
 </state>

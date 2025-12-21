@@ -9,7 +9,7 @@
 	morphsightrangeday="300"
 	morphsightrangenight="300"
 	
-	resistance="-10,-20,-30,-40"
+	mitigation="-10,-20,-30,-40"
 
 	effecttype="StatusDebuff"
 >

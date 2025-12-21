@@ -32,6 +32,7 @@
 	healthregen="1"
 
 	resistance="60"
+    mitigation="60"
 	
 	immunity="CrowdControlImmunity"
 	lifetime="20000"

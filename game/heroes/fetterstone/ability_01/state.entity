@@ -5,7 +5,7 @@
 	icon="icon.tga"
 	passiveeffect="effects/state.effect"
 	
-	resistance="-8,-12,-16,-20"
+	mitigation="-8,-12,-16,-20"
 	
 	effecttype="StatusDebuff"
 	allowtransfer="true"

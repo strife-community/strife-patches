@@ -8,7 +8,7 @@
 	
 	ishidden="true"
 	
-	resistancepercharge="-1"
+	mitigationpercharge="-1"
 	maxcharges="30,40,50"
 	
 	impactinterval="200"

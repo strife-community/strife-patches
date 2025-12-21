@@ -7,7 +7,7 @@
 
 	effecttype="StatusDebuff"
 	
-	resistance="-10,-15,-20,-25"
+	mitigation="-10,-15,-20,-25"
 	
 	movespeedslow="0.15,0.20,0.25,0.30"
 >
