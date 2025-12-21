@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riftshards_Legendary"
+
+	icon="icon.tga"
+
+	resistance="-12"
+	ishidden="true"
+>
+		
+</state>

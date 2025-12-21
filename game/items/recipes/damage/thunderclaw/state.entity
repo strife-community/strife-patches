@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Thunderclaw_Legendary"
+
+	
+	
+	icon="icon.tga"
+	
+	resistance="-6"
+
+	ishidden="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+
+</state>

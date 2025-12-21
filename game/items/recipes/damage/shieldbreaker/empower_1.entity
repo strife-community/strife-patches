@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Shieldbreaker_Empower_1"
+	
+	cost="1500"
+
+>
+	<constant name="damagebonus_enchant" value=".8" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onattackingdamageevent>
+		<damageeffecttype effecttype="AttackDamage" >
+			<cantarget targetscheme="enemy_nonboss_units">
+				<getconstant name="resistance" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
+
+				<getconstant name="damagebonus_enchant" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="target_maxhealth" b="var0" op="mult" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="result" op="add" />
+			</cantarget>
+		</damageeffecttype>
+	</onattackingdamageevent>
+
+</qualityitem>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_FrostfieldPlate"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_FrostfieldPlate"
+	cost="1100"
+	components="Item_Booster Item_Diamond"
+	anim="item_self_1"
+	
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	targetradius="450"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	queue="front"
+	inheritmovement="true"
+	noninterrupting="true" 
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="30000"
+	cooldowntype="frostfieldplate"
+	casteffect="effects/cast.effect"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="500"
+	botitem="FrostfieldPlateItem"
+
+	resistance="5"
+
+	filters="utility,activatable,debuff_enemy,ability,defense,armor,magic_armor,resistance"
+
+	empoweredeffects="Item_FrostfieldPlate_Empower_1,Item_FrostfieldPlate_Empower_2,Item_FrostfieldPlate_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="damage" value="65" adjustment="item" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="5" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="armorlegendary" value="3" adjustment="none" qualityvalue="3" qualityadjustment="legendary" op="add"/>
+	<checkcost>
+		<targettype target="source_entity" type="Courier" >
+			<invalidate />
+		</targettype>
+	</checkcost>
+	
+	<onimpact>
+		<spawnaffector name="Affector_FrostfieldPlate" target="source_entity"/>
+		<spawnunit name="Gadget_FrostfieldPlate_Reveal" count="1" pushentity="true" target="source_position" />
+	</onimpact>
+</crafteditem>

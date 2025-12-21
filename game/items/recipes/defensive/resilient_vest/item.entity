@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_ResilientVest"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	
+	cost="775"
+	components="Item_Healthstone Item_Healthstone Item_Mender"
+	
+	maxcharges="3"
+	actiontype="passive"
+
+	filters="defense,health"
+
+	resistance="10"
+	maxhealth="225"
+	maxhealthperquality="22.5"
+
+	empoweredeffects="Item_ResilientVest_Empower_1,Item_ResilientVest_Empower_2,Item_ResilientVest_Empower_3"
+	
+	showinpractice="true"
+>
+	<!-- Tooltip Only -->
+	<constant name="resistance" value="10" adjustment="none" op="add"/>
+	<constant name="hp" value="225" adjustment="none" qualityvalue="20.0" qualityadjustment="common" op="add"/>
+	<constant name="legendary" value="2" adjustment="none" qualityvalue="2" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+
+	<constant name="block" value="15" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
+	<constant name="damage" value="10" adjustment="none" />
+
+
+	<onattackedpredamage> 
+		<targettype type="Tower"/>
+		<else>
+			<targettype type="player_controlled"/>
+			<else>
+				<combateffecttype effecttype="Attack">
+					<getconstant name="block" />
+					<setvalue name="combat_deflection" a="combat_deflection" b="result" op="add" />
+				</combateffecttype>
+			</else>
+		</else>
+	</onattackedpredamage>
+
+	<onattackingdamageevent>
+
+			<cantarget targetscheme="enemy_creeps">
+				<getconstant name="damage" adjustmentsource="tool_entity"/>
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="var0" b="1" op="add" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+			</cantarget>
+	</onattackingdamageevent>
+	
+  
+</crafteditem>

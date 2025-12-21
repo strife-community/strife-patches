@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_CrusaderShield"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	
+	cost="650"
+	components="Item_Blade Item_Healthstone"
+	
+	resistance="10"
+	mitigation="5"
+	
+	maxcharges="3"
+	actiontype="passive"
+
+	filters="defense,utility,armor,resistance,mitigation"
+
+	empoweredeffects="Item_CrusaderShield_Empower_1,Item_CrusaderShield_Empower_2,Item_CrusaderShield_Empower_3"
+	
+	showinpractice="true"
+>
+	<!--Tooltip Only-->
+	<constant name="resistance" value="10" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+	<constant name="mitigation" value="5" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+	<constant name="regen_aura" value="6" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>
+	<constant name="tower_buff" value="20" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>
+	<constant name="splash_buff" value="40" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="legendary" value="4" adjustment="none" qualityvalue="4" qualityadjustment="legendary" op="add"/>
+
+	<aura state="State_CrusaderShield" radius="800" targetscheme="ally_creeps" effecttype="Buff" />
+  
+</crafteditem>

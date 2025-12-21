@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Buckler"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	
+	cost="270"
+	
+	components="Item_Mender"
+	
+	resistance="8"
+	mitigation="3"
+	
+	actiontype="passive"
+	filters="armor,defense,resistance,mitigation"
+	empoweredeffects="Item_Buckler_Empower_1,Item_Buckler_Empower_3"
+	showinpractice="true"
+>
+	<!-- tool tip only -->
+	<constant name="resistance" value="8" adjustment="none" qualityvalue="0.8" qualityadjustment="common" op="add"/>
+	<constant name="mitigation" value="3" adjustment="none" qualityvalue="0.6" qualityadjustment="common" op="add"/>
+
+	<constant name="regen" value="1.5" adjustment="none" qualityvalue="1.5" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	
+	<onattackedpredamage> 
+		<targettype type="hero">
+			<combateffecttype effecttype="Attack">
+				<hasmodifier name="buckler_empower_1" target="source_entity">
+					<applystate name="State_Buckler_Legendary" target="source_entity" duration="3000" />
+				</hasmodifier>
+			</combateffecttype>
+		</targettype>
+	</onattackedpredamage>
+
+</crafteditem>

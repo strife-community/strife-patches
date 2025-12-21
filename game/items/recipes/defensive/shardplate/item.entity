@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Shardplate"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	
+	cost="1350"
+	components="Item_Heart Item_Healthstone Item_Sustainer"
+	
+	
+	actiontype="passive"
+	resistance="15"
+	mitigation="30"
+
+	filters="defense,armor,debuff_enemy,resistance,mitigation"
+
+	empoweredeffects="Item_Shardplate_Empower_1,Item_Shardplate_Empower_2,Item_Shardplate_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="resistance" value="15" adjustment="none" op="add"/>
+	<constant name="attackspeedslow" value="20" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
+	<constant name="mitigation" value="30" adjustment="none" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	
+	<onattackedpostimpact>
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Shardplate" duration="1500" />
+		</cantarget>
+	</onattackedpostimpact>
+
+
+
+</crafteditem>

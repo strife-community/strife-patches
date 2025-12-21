@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_CrusaderShield_Empower_3"
+	
+	cost="650"
+	resistance="5"
+>
+	<!-- Tooltip only -->
+	<constant name="sacrifice_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="tower_reduction_enchant" value="30" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<aura state="State_CrusaderShield_Empower_3" radius="800" targetscheme="ally_creeps" effecttype="Buff" />
+
+</qualityitem>
