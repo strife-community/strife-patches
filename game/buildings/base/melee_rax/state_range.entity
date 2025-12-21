@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Enemy_Range"
+	icon=""
+	ishidden="true"
+	
+	resistance="-300"
+>
+
+
+
+</state>
