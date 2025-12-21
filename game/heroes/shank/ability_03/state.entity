@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shank_Ability3"
+	
+	icon="icon.tga"
+	effecttype=""
+	allowtransfer=""
+	attackspeedpercharge="0.08,0.11,0.14,0.17"
+	resistancepercharge="3,4,5,6"
+	maxcharges="3"
+	ishidden="true"
+>
+	<oninflict>
+		<hasstate name="State_Shank_Ability3_Press" target="this_owner_entity" >
+			<setcharges a="3" />
+			<setactivemodifierkey entity="this_entity" name="Shank_Hit3" />
+		</hasstate>
+	</oninflict>
+	
+	<onrefresh>
+		<hasstate name="State_Shank_Ability3_Press" target="this_owner_entity" >
+			<setcharges a="3" />
+			<setactivemodifierkey entity="this_entity" name="Shank_Hit3" />
+		</hasstate>
+	</onrefresh>
+	
+	<onattackstart>
+			<compare a="charges" b="0" op="eq" >
+			</compare>
+			<else>
+				<compare a="charges" b="1" op="eq" >
+					<playanim name="ability_3_atk1" speed="source_attackspeed" target="source_entity" />
+				</compare>
+				<else>
+					<compare a="charges" b="2" op="eq" >
+						<playanim name="ability_3_atk2" speed="source_attackspeed" target="source_entity" />
+					</compare>
+					<else>
+						<compare a="accumulator" b="0" op="eq" >
+							<playanim name="ability_3_atk3" speed="source_attackspeed" target="source_entity" />
+							<setaccumulator value="1" />
+						</compare>
+						<else>
+							<playanim name="ability_3_atk4" speed="source_attackspeed" target="source_entity" />
+							<setaccumulator value="0" />
+						</else>
+					</else>
+				</else>
+			</else>
+
+	</onattackstart>
+	
+	<onattackimpact>
+		<addcharges />
+
+		<compare a="charges" b="1" op="eq" >
+			<setactivemodifierkey entity="this_entity" name="Shank_Hit1" />
+		</compare>
+		<else>
+			<compare a="charges" b="2" op="eq" >
+				<setactivemodifierkey entity="this_entity" name="Shank_Hit2" />
+			</compare>
+			<else>
+				<compare a="charges" b="3" op="eq" >
+					<setactivemodifierkey entity="this_entity" name="Shank_Hit3" />
+				</compare>
+			</else>
+		</else>
+
+		
+		<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+
+	</onattackimpact>
+
+	<modifier key="Shank_Hit1" modpriority="100"
+		passiveeffect="effects/passive1.effect"
+	>
+	</modifier>
+	
+	<modifier key="Shank_Hit2" modpriority="100"
+		passiveeffect="effects/passive2.effect"
+	/>
+	
+	<modifier key="Shank_Hit3" modpriority="100"
+		passiveeffect="effects/passive4.effect"
+	/>
+
+</state>

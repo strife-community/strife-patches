@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_JinShe_Ability3"
+
+	icon="icon.tga"
+
+	effecttype="StatusBuff"
+	passiveeffect="effects/state_self.effect"
+	
+	resistance="5,10,15,20"
+	ishidden="true"
+>
+
+<!--	<onimpact>
+		<areaofeffect
+			radius="500"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic Splash"
+		>
+			<recordheroaggression  />
+			<aggression />
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<damage effecttype="Magic Splash" amount="1" b="result" op="mult" />
+					<playeffect effect="effects/lightning.effect" source="source_entity" target="target_entity"/>
+					
+					<cantarget targetscheme="enemy_heroes">
+						<reducecooldown entity="proxy_entity" duration="1500" />
+					</cantarget>
+				</onimpact>
+			</combatevent>
+		</areaofeffect>
+		<areaofeffect
+			radius="500"
+			targetselection="all"
+			targetscheme="enemy_units"
+			maxtotalimpacts="1"
+			effecttype="Magic Splash"
+		>
+			<playeffect effect="effects/zap.effect" source="source_entity" target="source_entity"/>
+		</areaofeffect>
+	</onimpact>
+-->
+
+</state>

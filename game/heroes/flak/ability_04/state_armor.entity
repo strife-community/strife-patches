@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Flak_Ability4_Armor"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	effecttype=""
+	
+	ishidden="true"
+	
+	resistancepercharge="-1"
+	maxcharges="30,40,50"
+	
+	impactinterval="200"
+>
+
+	<oninflict>
+		<distance source="this_proxy_entity" target="this_owner_entity" />
+
+		<setvar0 a="result" b="150" op="max" />
+		<setvar0 a="var0" b="150" op="sub" />
+
+		<setvar0 a="var0" b="450" op="div" />
+
+		<setvar0 a="1" b="var0" op="sub" />
+		<setvar0 a="var0" b="30,40,50" op="mult" />
+		
+		<setvar0 a="var0" b="6,8,10" op="max" />
+		<setcharges a="var0" />
+	</oninflict>
+	
+	<onimpact>
+		<printvalue value="charges" />
+		<removecharge />
+		
+		<compare a="charges" b="0" op="le" >
+			<expire />
+		</compare>
+	</onimpact>
+
+
+</state>
+

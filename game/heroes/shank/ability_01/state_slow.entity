@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shank_Ability1"
+	
+	movespeedslow="0.20,0.25,0.30,0.35"
+	resistance="-5,-10,-15,-20"
+
+	effecttype="StatusDebuff CrowdControl StatusSlow"
+	passiveeffect="effects/state.effect"
+	ishidden="true"
+>
+
+
+
+</state>

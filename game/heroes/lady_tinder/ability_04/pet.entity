@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Ladytinder_Ability4"
+
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="pet/top/model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	iscontrollable="false"
+	preglobalscale=".45"
+	modelscale="1.65"
+	effectscale="1.65"
+	boundsheight="112"
+	radiusheight="112"
+	boundsradius="24"
+	selectionradius="64"
+	targetoffset="0 0 0"
+	
+	movespeed="0"
+	turnrate="600"
+	turnsmoothing="0.05"
+	
+	maxhealth="1"
+	maxhealthpercharge="50,75,100"
+	healthregen="1"
+
+	resistance="60"
+	
+	immunity="CrowdControlImmunity"
+	lifetime="20000"
+	showlifetime="true"
+	
+	searchradius="70"
+	minsearchradius="48"
+	searchheight="112"
+
+	attackduration="500"
+	attackactiontime="150"
+	attackcooldown="800"
+	attackdamagemin="45,60,75"
+	attackdamagemax="45,60,75"
+	attacknumanims="1"
+	attackoffset="0 220 120"
+	attackprojectile="Projectile_LadytinderSummon"
+	attackrange="700"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	attackdamagetype="AttackDamage"
+	combattype="Structure"
+	hasdynamicpower="false"
+
+	stunnedimmunity="true"
+	
+	aggrorange="700"
+	sightrangeday="800"
+	sightrangenight="800"
+
+	hazardradius="700"
+	
+	goldbountymin="75"
+	goldbountymax="75"
+	experiencebounty="150"
+	
+	tiltfactor="0"
+	tiltspeed="90.0"
+	
+	continuousmodifiers="true"
+	deniablepercent="0.1"
+	
+	unittype=""
+	relayexperience="true"
+	
+	corpsetime="0"
+	deathtime="1500"
+
+	maxcharges="127"
+>
+	
+	<onattackingdamageevent>
+		<damageeffecttype effecttype="Indirect" />
+		<else>
+			<cantarget targetscheme="enemy_towers" >
+				<getconstant name="damage" adjustmentsource="this_owner_entity" />
+				<setvar0 a="0.85" b="result" op="mult" />
+				<setvalue name="damage_attempted" a="0" b="result" op="mult" />
+
+				<damage effecttype="AttackDamage Indirect" amount="1" b="var0" op="mult" target="target_entity" source="this_owner_entity" />
+			</cantarget>
+			<else>
+				<getconstant name="damage" adjustmentsource="this_owner_entity" />
+				<setvar0 a="1" b="result" op="mult" />
+				<setvalue name="damage_attempted" a="0" b="result" op="mult" />
+
+				<damage effecttype="AttackDamage Indirect" amount="1" b="var0" op="mult" target="target_entity" source="this_owner_entity" />
+			</else>
+		</else>
+	</onattackingdamageevent>
+	
+
+	<onframe>
+		<compare a="proxy_entity" b="source_entity" op="eq" >
+		</compare>
+		<else>
+			<distance source="proxy_entity" target="this_entity" />
+			<compare a="result" b="700" op="gt" >
+				<order command="attack" force="true" source="this_entity" />
+				<setproxy target="this_entity" />
+			</compare>
+		</else>
+	</onframe>
+	
+	<onspawn>
+		<setproxy target="this_entity" />
+		<spawnunit name="Pet_Ladytinder_Ability4_Base" target="this_position" pushentity="true" proxy="this_entity"/>
+
+		<applystate name="State_Ladytinder_Ability4_HP" duration="-1" proxy="this_owner_entity"/>
+		<playeffect effect="effects/aoe.effect" target="this_entity" source="this_entity" occlude="true" visibility="enemies"/>
+
+	</onspawn>
+	
+	<onkill>
+		<setproxy target="this_entity" />
+	</onkill>
+	
+	<ondamaged>
+		<currentdamageeffecttype effecttype="Splash">
+			<scaledamage scale="0.8" />
+		</currentdamageeffecttype>
+	</ondamaged>
+	
+</pet>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Buford_Ability1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+
+	effecttype="StatusDebuff"
+	
+	resistance="-10,-15,-20,-25"
+	
+	movespeedslow="0.15,0.20,0.25,0.30"
+>
+	
+	
+</state>

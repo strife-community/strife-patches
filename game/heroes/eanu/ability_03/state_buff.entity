@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Eanu_Ability3_Buff"
+
+	icon="icon.tga"
+	
+	passiveeffect="effects/state_self.effect"
+
+	ishidden="false"
+	
+	resistance="5,10,15,20"
+>
+
+</state>
