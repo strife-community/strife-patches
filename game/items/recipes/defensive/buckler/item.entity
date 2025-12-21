@@ -10,8 +10,8 @@
 	
 	components="Item_Mender"
 	
-	resistance="8"
-	mitigation="3"
+	resistance="3"
+	mitigation="8"
 	
 	actiontype="passive"
 	filters="armor,defense,resistance,mitigation"

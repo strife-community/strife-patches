@@ -6,7 +6,7 @@
 	
 	icon="icon.tga"
 	
-	resistance="-6"
+	mitigation="-6"
 
 	ishidden="true"
 	

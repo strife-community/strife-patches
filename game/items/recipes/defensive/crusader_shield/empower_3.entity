@@ -3,7 +3,7 @@
 	name="Item_CrusaderShield_Empower_3"
 	
 	cost="650"
-	resistance="5"
+	mitigation="5"
 >
 	<!-- Tooltip only -->
 	<constant name="sacrifice_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />

@@ -11,8 +11,7 @@
 	
 	
 	actiontype="passive"
-	resistance="15"
-	mitigation="30"
+	mitigation="45"
 
 	filters="defense,armor,debuff_enemy,resistance,mitigation"
 

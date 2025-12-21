@@ -9,8 +9,8 @@
 	cost="650"
 	components="Item_Blade Item_Healthstone"
 	
-	resistance="10"
-	mitigation="5"
+	resistance="5"
+	mitigation="10"
 	
 	maxcharges="3"
 	actiontype="passive"
@@ -22,8 +22,8 @@
 	showinpractice="true"
 >
 	<!--Tooltip Only-->
-	<constant name="resistance" value="10" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
-	<constant name="mitigation" value="5" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="5" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+	<constant name="mitigation" value="10" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
 	<constant name="regen_aura" value="6" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>
 	<constant name="tower_buff" value="20" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>
 	<constant name="splash_buff" value="40" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>

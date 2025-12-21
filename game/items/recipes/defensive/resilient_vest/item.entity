@@ -14,7 +14,7 @@
 
 	filters="defense,health"
 
-	resistance="10"
+	mitigation="10"
 	maxhealth="225"
 	maxhealthperquality="22.5"
 

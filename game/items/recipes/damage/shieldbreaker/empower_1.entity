@@ -10,7 +10,7 @@
 	<onattackingdamageevent>
 		<damageeffecttype effecttype="AttackDamage" >
 			<cantarget targetscheme="enemy_nonboss_units">
-				<getconstant name="resistance" />
+				<getconstant name="mitigation" />
 				<setvar0 a="result" b="100" op="div" />
 				<setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
 

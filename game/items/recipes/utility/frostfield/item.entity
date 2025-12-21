@@ -27,6 +27,7 @@
 	botitem="FrostfieldPlateItem"
 
 	resistance="5"
+	mitigation="5"
 
 	filters="utility,activatable,debuff_enemy,ability,defense,armor,magic_armor,resistance"
 
