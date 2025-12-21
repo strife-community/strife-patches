@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creep
+	name="Creep_PusherDharkWave"
+
+	showinpractice="true"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	mapicon="creep.tga"
+	mapiconsize="0.04"
+	
+	passiveeffect="effects/creep_passive.effect"
+	spawneffect="effects/creep_spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.4"
+	modelscale="1.1"
+	effectscale="1"
+	boundsheight="198"
+	radiusheight="198"
+	boundsradius="47"
+	searchheight="175"
+	searchradius="175"
+	minsearchradius="64"
+	selectionradius="96"
+	targetoffset="0 0 92"
+
+	movespeed="500"
+	turnrate="1000"
+	unitwalking="false"
+	treewalking="true"
+	noallyheroblock="true"
+	
+	infoheight="250"
+
+	healthproportionregen="0"
+	maxhealth="1000"
+	maxhealthperlevel="30"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	resistance="50"
+	mitigation="20"
+	immunity=""
+
+	cancarryitems="false" 
+	inventory0="Ability_DharkwaveHeroDash"
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	power="100"
+	attackduration="1200"
+	attackactiontime="450"
+	attackcooldown="1200"
+	attackdamagemin="50"
+	attackdamagemax="50"
+	attackdamageminperlevel="3"
+	attackdamagemaxperlevel="3"
+	attacknumanims="2"
+	attackoffset="0 0 100"
+	attackprojectile=""
+	attackrange="128"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Siege2"
+	leashaggroscheme="enemy_nonneutral_units"
+	
+	powerperlevel="10"
+
+	largeunit="false"
+	
+	aggrorange="700"
+	proximityrange="200"
+	sightrangeday="1400"
+	sightrangenight="1400"
+	
+	experiencebounty="97"
+	
+	corpsetime="2000"
+	corpsefadetime="2000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	unittype="Pusher"
+>
+	<onspawn>
+		<applystate name="State_DharkwaveSpawnLogic" target="this_entity" duration="1500" />
+		<applystate name="State_DharkwaveMusic" target="this_entity" continuous="true" />
+		<playanim name="spawn" source="this_entity" target="this_entity" />
+	</onspawn>
+
+	<onkill>
+		<targettype type="building"/>
+		<else>
+			<targettype type="hero"/>
+			<else>
+				<setvar0 a="source_max_gold_split_bounty_per_player" source="target_entity"  />
+				<setvar1 a="source_max_gold_split_bounty_per_player" source="target_entity" />
+				<setvar0 a="2" b="var0" op="mult" />
+
+				<pushentity entity="target_entity" />
+				<areaofeffect
+					radius="1000"
+					targetselection="all"
+					targetscheme="ally_heroes"
+					ignoreinvulnerable="true"
+					center="source_entity"
+				>
+				</areaofeffect>
+				<compare a="var0" b="0" op="ne" >
+					<setvar0 a="var0" b="result" op="div" />
+
+					<setvar0 a="var0" b="var1" op="min" />
+
+					<areaofeffect
+						radius="1000"
+						targetselection="all"
+						targetscheme="ally_heroes"
+						ignoreinvulnerable="true"
+						center="source_entity"
+					>
+						<givegold amount="var0" position="stack_entity" target="target_entity" />
+					</areaofeffect>
+				</compare>
+			</else>
+		</else>
+	</onkill>
+	
+	<modifier name="dashing" modpriority="10"
+		passiveeffect=""
+		model="/shared/models/invis.mdf"
+	>
+		
+	</modifier>
+
+</creep>
