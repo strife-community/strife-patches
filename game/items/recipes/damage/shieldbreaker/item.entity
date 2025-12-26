@@ -23,7 +23,7 @@
 
     <onattackingdamageevent>
         <cantarget targetscheme="enemy_units">
-            <getconstant name="mitigation" />
+            <getconstant name="resistance" />
             <setvar0 a="result" b="100" op="div" />
             <setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
         </cantarget>
