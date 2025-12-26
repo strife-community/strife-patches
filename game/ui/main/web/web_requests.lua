@@ -2263,3 +2263,11 @@ function Chat_Web_Requests:GetQueueInfo()
 	request:Wait()
 	return JSON:decode(request:GetResponse())
 end
+
+function Chat_Web_Requests:GetGamesInfo()
+	local request = HTTP.SpawnRequest()
+	request:SetTargetURL(GetCvarString('cl_chatAddress')..":7155/games.json")
+	request:SendRequest('GET')
+	request:Wait()
+	return JSON:decode(request:GetResponse())
+end

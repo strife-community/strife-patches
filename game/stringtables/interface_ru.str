@@ -469,7 +469,8 @@ pregame_ready_start_over					Начать сначала
 pregame_general_tab_for_stats				для более детальной информации
 pregame_customize_need_tips					Нужна помощь
 pregame_customize_watch_howto				Смотреть видео
-pregame_queue_size                          Игроков в очереди:
+pregame_queue_size                          Игроки в очереди:
+pregame_ingame_count                        Игроки в матчах:
 
 pregame_breadcrumb_mustunready				Нужно выйти из поиска игр
 pregame_breadcrumb_mustunready_desc			Необходимо выйти из поиска игр, чтобы внести изменения.

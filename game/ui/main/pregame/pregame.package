@@ -766,6 +766,7 @@
 				<animatedimage texture="/ui/shared/throb/throb.tga" width="70s" height="70s" noclick="true" loop="1" fps="30" onshow="StartAnim(1);" />
 				<label x="80s" y="16s" align="left" textvalign="top" textalign="left" style="labelBase" color="#bef8ff" oulinecolor="#122735" wrap="1" lineheight="18s" font="maindyn_18" content="mm_queue_finding" />
 				<label name="main_pregame_queue_size_label" x="80s" y="36s" align="left" textvalign="top" textalign="left" style="labelBase" color="#bef8ff" oulinecolor="#122735" wrap="1" lineheight="18s" font="maindyn_14"/>
+				<label name="main_pregame_ingame_count_label" x="80s" y="54s" align="left" textvalign="top" textalign="left" style="labelBase" color="#bef8ff" oulinecolor="#122735" wrap="1" lineheight="18s" font="maindyn_14"/>
 			</panel>
 
 			<!-- Web Link -->
