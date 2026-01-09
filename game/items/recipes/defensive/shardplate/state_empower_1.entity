@@ -4,7 +4,7 @@
 
 	icon="icon.tga"
 	ishidden="true"
-	mitigation="20"
+	resistance="20"
 >
 
 </state>
