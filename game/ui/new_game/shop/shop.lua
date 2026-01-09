@@ -1020,48 +1020,37 @@ local function gameShopRegisterBuyQueueEntry(object, index)
 
 	local playerGold = GetTrigger('PlayerGold')
 
-    local function UpdatePieGraph(widget, itemInfo)
-        if (itemInfo.isOnCourier) then      -- courier
-            widget:SetColor('#efd056')
-        elseif (itemInfo.isInStash) then    -- stash
-            widget:SetColor('#efd056')
-        elseif (itemInfo.isOwned) and (itemInfo.isRecipe) then  -- otherwise owned
-            widget:SetColor('0.3 0.3 0.3 1')
-        else                                -- to be bought
-            local remainingCost = itemInfo.cost
-            if itemInfo.isRecipe then
-                for i=0,3,1 do
-                    local itemPrefix = 'recipeComponentDetail'..i
-                    local componentInfo = 
-                    {
-                        doExist = itemInfo[itemPrefix..'exists'],
-                        cost = itemInfo[itemPrefix..'cost'],
-                        isOwned = itemInfo[itemPrefix..'isOwned']
-                    }
-                    if (componentInfo and componentInfo.doExist and componentInfo.isOwned) then
-                        remainingCost = remainingCost - componentInfo.cost
-                    end
-                end
-            end
-            if (remainingCost <= playerGold.gold) then  -- can purchase
-                widget:SetColor('#5fc851')
-            else                                        -- too broke
-                widget:SetColor('#a82222')
-            end
-        end
-    end
-
 	piegraph:SetValue(1)
 	piegraph:SetVisible(true)
+	piegraph:RegisterWatchLua('BookmarkQueue'..index, function(widget, trigger)
+		if (trigger.isOnCourier) then	-- courier
+			widget:SetColor('#efd056')
+		elseif (trigger.isInStash) then	-- stash
+			widget:SetColor('#efd056')
+		elseif (trigger.isOwned) and (trigger.isRecipe) then	-- otherwise owned
+			widget:SetColor('0.3 0.3 0.3 1')
+		elseif (trigger.cost <= playerGold.gold) then	-- can purchase
+			widget:SetColor('#5fc851')
+		else										-- too broke
+			widget:SetColor('#a82222')
+		end
+	end)
 
-    piegraph:RegisterWatchLua('BookmarkQueue'..index, function(widget, trigger)
-        UpdatePieGraph(widget, trigger)
-    end)
+	piegraph:RegisterWatchLua('PlayerGold', function(widget, trigger)
+		local itemInfo = GetTrigger('BookmarkQueue'..index)
 
-    piegraph:RegisterWatchLua('PlayerGold', function(widget, trigger)
-        local itemInfo = GetTrigger('BookmarkQueue'..index)
-        UpdatePieGraph(widget, itemInfo)
-    end)
+		if (itemInfo.isOnCourier) then	-- courier
+			widget:SetColor('#efd056')
+		elseif (itemInfo.isInStash) then	-- stash
+			widget:SetColor('#efd056')
+		elseif (itemInfo.isOwned) and (itemInfo.isRecipe) then	-- otherwise owned
+			widget:SetColor('0.3 0.3 0.3 1')
+		elseif (itemInfo.cost <= trigger.gold) then	-- can purchase
+			widget:SetColor('#5fc851')
+		else										-- too broke
+			widget:SetColor('#a82222')
+		end
+	end)
 
 	globalDraggerRegisterSource(button, 3, 'gameDragLayer', function()
 		Shop.RemoveBookmark(index)
