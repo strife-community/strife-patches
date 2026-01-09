@@ -10,7 +10,7 @@
     allowtransfer="true"
     ishidden="false"
 
-    mitigation="80,100,120,140"
+    resistance="80,100,120,140"
 
     stunneddurationmultiplier="-0.25,-0.30,-0.35,-0.40"
     slowresistance="0.25,0.30,0.35,0.40"
