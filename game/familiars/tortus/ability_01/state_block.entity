@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="Block"
+
+	icon="icon.tga"
+	ishidden="true"
+	
+>
+
+    <constant name="damage_reduction" value="15" adjustment="none" noshowintooltip="false"/>
+
+	<onattackeddamageevent>
+		<getconstant name="damage_reduction" adjustmentsource="tool_entity"/>
+		<setvar0 a="result" b="100" op="div" />
+		<setvar0 a="1" b="var0" op="sub" />
+		<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+		
+	</onattackeddamageevent>  
+	
+</state>

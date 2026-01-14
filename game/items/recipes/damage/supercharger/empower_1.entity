@@ -2,11 +2,11 @@
 <qualityitem
 	name="Item_Supercharger_Empower_1"
 	
-	cost="1840"
-	powermultiplier="0.04"
+	cost="2485"
+	powermultiplier="0.10"
 
 >
 	<!-- Tooltip only -->
-	<constant name="powerpercent_enchant" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="powerpercent_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 </qualityitem>

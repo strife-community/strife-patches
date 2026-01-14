@@ -15,8 +15,95 @@
 >
 	<!-- Tooltip Only -->
 	<constant name="ooc_movespeed" value="10" adjustment="none" />
+	<constant name="cd_lower" value="30" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
 
 	<aura state="Ability_Ganker_Passive_OOCBoost_3" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
+	
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<pushability entity="source_entity" slot="0"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="1"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="2"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="3"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<pushability entity="source_entity" slot="0"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="1"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="2"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="3"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
 
 
 </ability>

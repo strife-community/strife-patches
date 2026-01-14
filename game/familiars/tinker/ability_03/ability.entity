@@ -13,7 +13,7 @@
 	hoverareacastrange="550"
 	manacost="0"
 	
-	cooldowntime="115000"
+	cooldowntime="100000"
 	
 	cooldowntype="familiar3" 
 	casteffect="" 

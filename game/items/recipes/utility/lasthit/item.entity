@@ -34,8 +34,9 @@
 	<constant name="cooldown" value="2" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
 	<constant name="gold" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
 	<constant name="heal" value="15" qualityvalue="0" adjustment="none" qualityadjustment="common" op="add"/>
+	<aura state="Item_Lasthit_Splash" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
 
-	<constant name="damage" value="15" adjustment="none" />
+	<constant name="damage" value="10" adjustment="none" />
 	<constant name="throw_damage" value="20" adjustment="none" />
 	
 	<onimpact effectdescription="true">

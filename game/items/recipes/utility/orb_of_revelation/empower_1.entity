@@ -6,7 +6,7 @@
 
 >
 	<!-- Tooltip only -->
-	<constant name="slow_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="slow_enchant" value="25" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 	<constant name="slow_duration_enchant" value="3" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 	<onimpact>

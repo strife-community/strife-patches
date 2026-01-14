@@ -9,9 +9,9 @@
 	actiontype="target_position"
 	targetscheme="enemy_creeps"
 	
-	range="3500"
+	range="4500"
 	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
-	hoverareacastrange="3500"
+	hoverareacastrange="4500"
 	
 	targetradius="700"
 	targetmaterial="/shared/materials/area_cast_indicator.material"

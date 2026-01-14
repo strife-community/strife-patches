@@ -12,7 +12,7 @@
 	frontqueue="true"
 
 	manacost="0"
-	cooldowntime="110000"
+	cooldowntime="90000"
 
 	cooldowntype="familiar3" 
 	casteffect="" 
@@ -23,7 +23,7 @@
 	ispetultimate="true"
 	
 >
-	<constant name="cooldown" value="110" adjustment="none" />
+	<constant name="cooldown" value="90" adjustment="none" />
 	<aura state="State_Razer_Effects" radius="10" notooltip="true" ignoreinvulnerable="true" targetscheme="self" /> 
 
 	<onpreimpact>

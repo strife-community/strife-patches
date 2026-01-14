@@ -12,6 +12,8 @@
 	anim="ability_4"
 	casttime="250"
 	castactiontime="250"
+	
+	magiclifesteal="0.09,0.12,0.15"
 
 	maxlevel="3"
 	requiredlevel="6,11,15"
@@ -23,6 +25,11 @@
 	<!--Display Only-->
 	<constant name="multicast_chance" value="18,24,30" adjustment="none" />
 	<constant name="cooldown" value="50" adjustment="none" noshowintooltip="true" />
+	<constant name="magiclifesteal" value="9,12,15" adjustment="none" noshowintooltip="true" />
+	
+	
+	
+	
 
 	<onimpact>
 		<setactivemodifierkey entity="this_entity" name="doubledown" />

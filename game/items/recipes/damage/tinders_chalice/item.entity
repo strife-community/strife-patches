@@ -19,8 +19,12 @@
 	
 	showinpractice="true"
 	
+	reducedcooldowns=".05"
+	
+    supportmultiplier="0.10"
+	
 >
-	<constant name="percent" value="40" qualityvalue="4" adjustment="support" qualityadjustment="common" op="add"/>
+	<constant name="percent" value="40" qualityvalue="0" adjustment="support" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" qualityvalue="10" adjustment="none" qualityadjustment="common" op="add"/>
 	<constant name="legendary" value="2.5" qualityvalue="2.5" adjustment="none" qualityadjustment="legendary" op="add"/>
 

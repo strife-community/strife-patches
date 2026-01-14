@@ -2,13 +2,13 @@
 <qualityitem
 	name="Item_ShamanHeaddress_Empower_2"
 	
-	cost="1550"
+	cost="2350"
 
 >
 	<!-- Tooltip only -->
-	<constant name="heal_enchant" value="2" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="heal_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
-	<constant name="magichealenchant" value="22" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+	<constant name="magichealenchant" value="30" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 
 	<ondamaged>
 		<compare a="source_damage" b="0" op="gt">

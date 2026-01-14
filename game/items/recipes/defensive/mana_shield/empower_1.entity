@@ -2,11 +2,12 @@
 <qualityitem
 	name="Item_Mana_Shield_Empower_1"
 	
-	cost="1150"
+	cost="1475"
 
 >
+
 	<!-- Tooltip only -->
-	<constant name="mana_restore_enchant" value="12" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="shield_healthpercent" value="30" adjustment="support" qualityvalue="0" qualityadjustment="common" op="add"/>
 
 	<onimpact>
 		<starttimer duration="6000" />

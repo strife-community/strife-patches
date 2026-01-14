@@ -19,6 +19,7 @@
 
 	cooldowntime="16000"
 	manacost="55,60,65,70"
+	baseattackspeed="0.05,0.10,0.15,0.20"
 
 	alwaysshowtimer="true"
 
@@ -27,6 +28,7 @@
 	<!--Display Only-->
 	<constant name="percent_heal" value="1.7,2.0,2.3,2.6" adjustment="support" floatprecision="1" />
 	<constant name="attackspeed" value="20,30,40,50" adjustment="none" />
+	<constant name="baseattackspeed" value="5,10,15,20" adjustment="none" />
 
 	<onimpact>
 		<starttimer duration="5000" />

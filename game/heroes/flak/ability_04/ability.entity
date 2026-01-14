@@ -11,6 +11,9 @@
 
 	maxlevel="3"
 	requiredlevel="6,11,15"
+	
+	criticalchance="0.07,0.11,0.15"
+    criticalmultiplier="2.0"
 
 	actiontype="target_position"
 	targetscheme="enemy_units"
@@ -32,6 +35,8 @@
 >
 	<!-- tooltip only -->
 	<constant name="resistance" value="30,40,50" adjustment="ability" />
+	<constant name="criticalchance" value="7,11,15" adjustment="ability" />
+	
 	
 	<!--Slow Only-->
 	<constant name="slow" value="24,32,40" adjustment="none" />

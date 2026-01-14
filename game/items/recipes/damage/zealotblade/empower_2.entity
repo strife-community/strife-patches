@@ -2,10 +2,10 @@
 <qualityitem
 	name="Item_Zealotsblade_Empower_2"
 	
-	cost="1650"
-	attacklifesteal="0.04"
+	cost="1770"
+	criticalchance="0.05"
+    criticalmultiplier="2.0"
 >
-	<!-- Tooltip only -->
-	<constant name="lifesteal_enchant" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	
 
 </qualityitem>

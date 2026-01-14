@@ -7,8 +7,9 @@
 	components="Item_Staff Item_Manastone"
 	cooldowntime="0"
 	
-	power="6"
-	powerperquality="0.8"
+	power="10"
+	powerperquality="1"
+	reducedcooldowns=".10"
 	
 	actiontype="passive"
 	maxcharges="1"
@@ -20,7 +21,7 @@
 	showinpractice="true"
 >
 
-	<constant name="power" value="6" adjustment="none" qualityvalue="0.8" qualityadjustment="common" op="add"/>
+	<constant name="power" value="10" adjustment="none" qualityvalue="0.8" qualityadjustment="common" op="add"/>
 	<constant name="damage" value="45" adjustment="item" qualityvalue="5" qualityadjustment="common" op="add" />
 
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add" />

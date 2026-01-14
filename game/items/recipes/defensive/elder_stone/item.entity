@@ -17,6 +17,7 @@
 	maxmanapercharge="6"
 	maxmanaperquality="4"
 	maxmanaperchargeperquality="0.6"
+	powerpercharge="1.5"
 	actiontype="passive"
 	maxcharges="10"
 
@@ -30,6 +31,7 @@
 	<constant name="mp" value="40" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
 	<constant name="hp_gain" value="13" adjustment="none" qualityvalue="1.3" qualityadjustment="common" op="add"/>
 	<constant name="mp_gain" value="6" adjustment="none" qualityvalue="0.6" qualityadjustment="common" op="add"/>
+	<constant name="power_gain" value="1.5" adjustment="none" qualityvalue="0.15" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="armor_legendary" value="2.5" adjustment="none" qualityvalue="2.5" qualityadjustment="legendary" op="add"/>
 

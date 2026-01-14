@@ -10,6 +10,9 @@
 	
 	actiontype="passive"
 	maxcharges="3"
+	
+	criticalchance="0.05"
+	criticalmultiplier="2.0"
 
 	filters="other_mobility,attack_speed,attack"
 
@@ -21,6 +24,7 @@
 	<constant name="movespeed" value="35" adjustment="none" qualityvalue="3.5" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="power" value="2" adjustment="none" qualityvalue="2" qualityadjustment="legendary" op="add"/>
+	<constant name="baseattackspeed" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
 	<modifier key="zealotsblade" modpriority="75" exclusive="true" legendaryeffect="Legendary_Zealotsblade"
 		baseattackspeed="0.27" 
 		movespeed="35"

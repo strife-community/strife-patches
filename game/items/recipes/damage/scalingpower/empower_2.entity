@@ -4,7 +4,7 @@
 	
 	cost="705"
 	power="5"
-	maxcharges="5"
+	maxcharges="8"
 
 >
 	<!-- Tooltip only -->

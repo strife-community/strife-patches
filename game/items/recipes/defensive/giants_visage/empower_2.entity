@@ -2,10 +2,10 @@
 <qualityitem
 	name="Item_GiantsVisage_Empower_2"
 	
-	cost="1500"
-	healthproportionregen="0.001"
+	cost="2100"
+	healthproportionregen="0.003"
 >
-	<constant name="regen_enchant" value="0.1" adjustment="none"/>
+	<constant name="regen_enchant" value="0.3" adjustment="none"/>
 
 
 </qualityitem>

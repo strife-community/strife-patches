@@ -10,7 +10,8 @@
 	
 	actiontype="passive"
 
-	resistance="40"
+	resistance="45"
+    maxhealth="300"
 
 	filters="defense,magic_armor,health_regen,resistance"
 
@@ -18,8 +19,8 @@
 	
 	showinpractice="true"
 	>
-	<constant name="resistance" value="40" adjustment="none" qualityvalue="4.5" qualityadjustment="common" op="add"/>
-	<constant name="magicheal" value="20" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="45" adjustment="none" qualityvalue="4.5" qualityadjustment="common" op="add"/>
+	<constant name="magicheal" value="30" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
 
 	<ondamaged>
 		<compare a="source_damage" b="0" op="gt">

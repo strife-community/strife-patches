@@ -9,7 +9,7 @@
 	actiontype="target_entity"
 	targetscheme="enemy_nonboss_units"
 	manacost="0"
-	cooldowntime="90000"
+	cooldowntime="45000"
 	range="900"
 
 	showareacast="true"

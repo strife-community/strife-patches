@@ -11,7 +11,7 @@
 	iconvisibility="clear"
 	
 	firstspawntime="30000"
-	spawninterval="80000"
+	spawninterval="110000"
 	spawnintervalvariation="0"
 	spawntimercondition="death"
 	

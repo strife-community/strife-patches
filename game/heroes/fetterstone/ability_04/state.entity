@@ -22,7 +22,7 @@
 		<bonusdamageadd target="" a="var0" />
 	
 		<addattackimpactactions>
-			<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.5" op="mult" radius="300" effecttype="AttackDamage Splash" targetscheme="enemy_units" />
+			<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.3,0.4,0.5" op="mult" radius="300" effecttype="AttackDamage Splash" targetscheme="enemy_units" />
 			<setpos0 position="target_position" positionend="source_position" positionmodifier="pointonline" positionvalue="50" />
 			<placehazard target="pos0" hazardthreat="extreme" radius="350" duration="1500" />
 		</addattackimpactactions>

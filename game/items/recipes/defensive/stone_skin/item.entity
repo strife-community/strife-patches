@@ -18,10 +18,11 @@
     manacost="0"
     noninterrupting="true"
     botitem="StoneSkinItem"
+	baseattackspeed="0.15"
 
     cooldowntime="45000"
 
-    basedamage="9"
+    basedamage="8"
 
     filters="defense,utility,cc_resist,activatable,other_mobility"
     alwaysshowtimer="true"
@@ -31,10 +32,10 @@
     showinpractice="true"
 >
     <!-- Base damage bonus. TOOLTIP ONLY! Real value used is set in "basedamage" attribute! -->
-    <constant name="damage" value="9" adjustment="item" />
+    <constant name="damage" value="8" adjustment="item" />
 
     <!-- Ability duration, seconds -->
-    <constant name="duration_sec" value="8" adjustment="none" />
+    <constant name="duration_sec" value="6" adjustment="none" />
     <!-- Stun and slow duration reduction percent. TOOLTIP ONLY! Real value used is set in state.entity file! -->
     <constant name="ccreduction" value="30" adjustment="none" />
     <!-- Resistance granted by the ability. TOOLTIP ONLY! Real value used is set in state.entity file! -->

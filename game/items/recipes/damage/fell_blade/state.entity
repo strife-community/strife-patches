@@ -14,7 +14,7 @@
     
     <!--getconstant name="speed_boost_percent" /-->
     <!--setvar0 a="speed_boost_percent" b="100" op="div" /-->
-    <modifier key="fell_blade_ooc_speed_boost" modpriority="100" movespeedmultiplier="0.05">
+    <modifier key="fell_blade_ooc_speed_boost" modpriority="100" movespeedmultiplier="0.10">
         <onframe>
             <hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
             </hasmodifier>
@@ -23,6 +23,8 @@
             </else>
         </onframe>
     </modifier>
+	
+	
 
     
 </state>

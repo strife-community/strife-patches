@@ -2,11 +2,10 @@
 <qualityitem
 	name="Item_Shieldbreaker_Empower_3"
 	
-	cost="1375"
-	attacklifesteal="0.024"
+	cost="2150"
+	baseattackspeed="0.20"
 
 >
-	<!-- Tooltip only -->
-	<constant name="lifesteal_enchant" value="2.4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	
 
 </qualityitem>

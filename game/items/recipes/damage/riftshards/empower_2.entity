@@ -2,12 +2,11 @@
 <qualityitem
 	name="Item_Riftshards_Empower_2"
 	
-	cost="1680"
-
-	unitcriticalchance="0.22" 
+	cost="2500"
+	attacklifesteal="0.10"
 
 >
 	<!-- Tooltip only -->
-	<constant name="crit_enchant" value="2" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="lifesteal_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 </qualityitem>

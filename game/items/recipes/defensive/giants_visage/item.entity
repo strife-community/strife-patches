@@ -11,7 +11,10 @@
     
     actiontype="passive"
 
-    resistance="15"
+    resistance="10"
+	mitigation="10"
+	reducedcooldowns=".10"
+	
     filters="defense,health,power,resistance"
     empoweredeffects="Item_GiantsVisage_Empower_1,Item_GiantsVisage_Empower_2,Item_GiantsVisage_Empower_3"
 
@@ -25,7 +28,9 @@
     <constant name="percent_mult" value="0.01" adjustment="none" />
 
     <!-- tool tip only -->
-    <constant name="resistance" value="15" adjustment="none" op="add"/>
+    <constant name="resistance" value="10" adjustment="none" op="add"/>
+	<constant name="mitigation" value="10" adjustment="none" op="add"/>
+	
 
     <onframe>
         <getconstant name="power" nameb="percent_mult" op="mult" />

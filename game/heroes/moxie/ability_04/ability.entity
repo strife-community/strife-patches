@@ -21,6 +21,8 @@
 	manacost="115,125,135"
 	cooldowntime="90000"
 	
+	powermultiplier="0.09,0.12,0.15"
+	
 	hoverareacastrange="1200"
 	range="1200"
 	
@@ -32,6 +34,7 @@
 >
 	<constant name="damage" value="140,185,230" adjustment="ability" />
 	<constant name="bonus_damage" value="75,100,125" adjustment="ability" />
+	<constant name="powermultiplier" value="9,12,15" adjustment="none" />
 
 
 	<onimpact>

@@ -2,12 +2,12 @@
 <qualityitem
 	name="Item_SheepStick_Empower_3"
 	
-	cost="1800"
-	reducedcooldowns="0.05"
+	cost="2000"
+
 
 >
 	<!-- Tooltip only -->
-	<constant name="slow_enchant" value="25" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="slow_enchant" value="35" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 	<onimpact>
 

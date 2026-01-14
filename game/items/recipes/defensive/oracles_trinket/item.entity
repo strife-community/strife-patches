@@ -20,10 +20,12 @@
     nostun="true"
     noperplex="true"
     nosilence="true"
-    basedamage="6"
+    maxhealth="150"
+	maxmana="100"
+	reducedcooldowns=".10"
     botitem="OraclesTrinketItem"
     filters="utility,activatable,defense,resistance"
-    empoweredeffects="Item_OraclesTrinket_Empower_1,Item_OraclesTrinket_Empower_2"
+    empoweredeffects="Item_OraclesTrinket_Empower_1"
     showinpractice="true"
 >
     <!-- Health restored by the item if debuff was removed (adjusted by power) -->
@@ -34,14 +36,26 @@
     <constant name="cc_state_duration_sec" value="2" adjustment="none" />
     
     <onimpact>
-        <!-- Checking if any CC or debuff is applied -->
-        <haseffecttype name="CrowdControl StatusDisable StatusDebuff">
-            <!-- Heal hero -->
-            <getconstant name="heal" adjustmentsource="this_entity" />
-            <heal a="result" />
-            <playeffect effect="effects/heal.effect" source="source_entity" target="" occlude="true" />
-        </haseffecttype>
+ <!-- For each ally in area remove CC or debuff -->
+        <areaofeffect radius="500" targetselection="all" targetscheme="ally_heroes" effecttype="Magic">
+            <!-- Checking if any CC or debuff is applied -->
+            <haseffecttype name="CrowdControl StatusDisable StatusDebuff">
+                <!-- Play visual effect -->
+                <playeffect effect="effects/heal.effect" source="target_entity" target="target_entity" occlude="true" />
+            </haseffecttype>
 
+            <!-- Dispell negative effects -->
+            <dispel type="CrowdControl" />
+            <dispel type="StatusDisable" />
+            <dispel type="StatusDebuff" />
+            <popup name="ccbreak" source="target_entity" target="target_entity" />
+
+            <!-- Apply CC reduction state -->
+            <getconstant name="cc_state_duration_sec" />
+            <setvar0 a="result" b="1000" op="mult" />
+            <applystate name="State_OraclesTrinket" target="target_entity" duration="var0" />
+        </areaofeffect> 
+		
         <!-- Dispell negative effects -->
         <dispel type="CrowdControl" />
         <dispel type="StatusDisable" />
@@ -55,3 +69,4 @@
     </onimpact>
     
 </crafteditem>
+

@@ -9,7 +9,7 @@
 	
 	actiontype="passive"
 
-	maxcharges="5"
+	maxcharges="8"
 
 	powerpercharge="3.0"
 	powerperchargeperquality="0.3"
@@ -63,7 +63,7 @@
 		</else>
 	</onframe>
 
-	<modifier key="scalingpower_legendary" modpriority="80" movespeed="10"  icon="icon_2.tga"
+	<modifier key="scalingpower_legendary" modpriority="80" movespeed="20"  icon="icon_2.tga"
 	>
 
 	</modifier>

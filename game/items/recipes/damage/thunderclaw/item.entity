@@ -4,13 +4,13 @@
 	
 	icon="icon.tga"
 	
-	cost="950"
+	cost="350"
 	components="Item_Blade Item_Manastone Item_GlovesOfHaste"
 	
 	actiontype="passive"
 	
-	maxcharges="4"
-	
+	maxcharges="2"
+	baseattackspeed="0.10"
 	alwaysshowonskillbar="false"
 
 	filters="attack_mod,attack,ability"
@@ -19,20 +19,20 @@
 	
 	showinpractice="true"
 >	
-	<constant name="damage" value="60" adjustment="item" qualityvalue="4.5" qualityadjustment="common" op="add"/>
+	<constant name="damage" value="30" adjustment="item" qualityvalue="4.5" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 
 	<!--Tooltip only-->
 	<constant name="resistance" value="3" adjustment="none" qualityvalue="3" qualityadjustment="legendary" op="add" />
 	
 	<ontimer>
-		<removecharges count="5"/>
+		<removecharges count="3"/>
 	</ontimer>
 	
 	<modifier key="chainlightningproc" modpriority="75" exclusive="true"  >
 		<onattack effectdescription="true" propagatetoillusions="false">
 			<cantarget targetscheme="enemy_units">
-				<compare a="charges" b="4" op="eq">
+				<compare a="charges" b="2" op="eq">
 					<spawnaffector name="Affector_ThunderClaw" />
 					<setcharges a="0" />
 					<starttimer duration="10000" />

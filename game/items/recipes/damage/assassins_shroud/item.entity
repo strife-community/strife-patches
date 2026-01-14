@@ -20,7 +20,9 @@
 	casteffect="effects/cast.effect"
 	botitem="AssassinsShroudItem"
 	
+	
 	maxhealth="100"
+	reducedcooldowns=".10"
 
 	alwaysshowtimer="true"
 

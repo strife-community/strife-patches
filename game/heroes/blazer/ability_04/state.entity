@@ -19,7 +19,7 @@
 
 >
 
-	<aura gadget="Gadget_Blazer_Ability4" radius="3000" targetscheme="enemy_heroes" condition="target_health_percent lt 0.5"/>
+	<aura gadget="Gadget_Blazer_Ability4" radius="999999" targetscheme="enemy_heroes" condition="target_health_percent lt 0.5"/>
 
 	<oninflict> 
 		<forgetattacks />

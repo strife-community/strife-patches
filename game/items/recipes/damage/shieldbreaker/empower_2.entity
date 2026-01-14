@@ -6,7 +6,7 @@
 
 >
 	<!-- Tooltip only -->
-	<constant name="armorpierce_enchant" value="20" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="armorpierce_enchant" value="30" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 
 </qualityitem>

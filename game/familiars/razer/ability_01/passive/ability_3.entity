@@ -6,9 +6,21 @@
 	
 	maxlevel="15"
 	actiontype="passive"
-	basedamage="2.7,3.15,3.6,4.05,4.5,4.95,5.4,5.85,6.3,6.75,7.2,7.65,8.1,8.55,9"
+	basedamage="9"
+	attacklifesteal="0.05" 
+	attacklifestealperquality="0.02" 
 	propagatetoillusion="true"
 >
-	<constant name="passive" value="2.7,3.15,3.6,4.05,4.5,4.95,5.4,5.85,6.3,6.75,7.2,7.65,8.1,8.55,9" adjustment="none" />
+	<constant name="passive" value="9" adjustment="none" />
+	<constant name="penetration" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="attacklifesteal" value="5" adjustment="none" qualityvalue="2" qualityadjustment="rare" op="add" />
+	
+	 <onattackingdamageevent>
+        <cantarget targetscheme="enemy_units">
+            <getconstant name="penetration" />
+            <setvar0 a="result" b="100" op="div" />
+            <setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
+        </cantarget>
+    </onattackingdamageevent>
 
 </ability>

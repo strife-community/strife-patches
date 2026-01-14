@@ -10,8 +10,8 @@
 	iconcolor="0.6 0.6 0.6 1.0"
 	iconvisibility="clear"
 	
-	firstspawntime="30000"
-	spawninterval="90000"
+	firstspawntime="20000"
+	spawninterval="100000"
 	spawnintervalvariation="0"
 	spawntimercondition="death"
 	

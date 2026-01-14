@@ -24,24 +24,24 @@
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="amp_legendary" value="2.5" qualityvalue="2.5" adjustment="none" qualityadjustment="legendary" op="add"/>
 
-	<onattackingdamageevent>
+	<ondamage>
 		<damageeffecttype effecttype="Indirect" />
-		<else>
+		
 			<damageeffecttype effecttype="Splash" />
-			<else>
+			
 				<damageeffecttype effecttype="DOT" />
-				<else>
+				
 					<condition test="bounce_count lt 2">
 						<cantarget targetscheme="enemy_units" effecttype="">
 							<applystate name="State_Slayer" duration="5000" />
 						</cantarget>
 					</condition>
-				</else>
-			</else>
-		</else>
+				
+			
+		
 <!--
 		<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
 -->
-	</onattackingdamageevent>
+	</ondamage>
 	
 </crafteditem>

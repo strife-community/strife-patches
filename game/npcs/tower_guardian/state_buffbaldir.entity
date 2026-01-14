@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Baldir_Buff"
+
+	icon="icon.tga"
+	ishidden="false"
+	
+	actiontype="passive"
+	maxhealthmultiplier="0.10"
+	maxmanamultiplier="0.15"
+	resistance="10"
+    mitigation="10"
+	
+
+	
+	propagatetoillusion="true"
+	
+	 
+>
+   
+
+		
+
+	
+</state>

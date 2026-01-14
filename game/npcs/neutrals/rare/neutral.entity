@@ -113,6 +113,14 @@
 		<applystate name="State_Neutral_Rare_Busy" duration="10000" target="source_entity" />
 	</onattack>
 	
+		
+	<onkilled>   
+    <targettype target="target_entity" type="hero">
+        <applystate name="State_Rare_Buff" target="target_entity" duration="120000"/>
+    </targettype>
+  </onkilled>
+		
+	
 	<modifier key="in_ground" condition="idle !player_controlled" modpriority="101"
 		passiveeffect="effects/body_underground.effect"
 	/>

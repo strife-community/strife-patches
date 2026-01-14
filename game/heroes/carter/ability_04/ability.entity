@@ -27,6 +27,7 @@
 >
 	<constant name="damage" value="150,200,250" adjustment="ability" />
 	<constant name="stun" value="1.4,1.7,2.0" adjustment="none" floatprecision="1" />
+	<constant name="percent" value="50,60,70" qualityvalue="0" adjustment="support" qualityadjustment="common" op="add"/>
 
 	<onimpact>
 		<starttimer duration="5000" />
@@ -34,5 +35,19 @@
 		<applystate name="State_Carter_Ability4_Delay" target="stack_entity" proxy="target_entity" duration="500" />
 		<applystate name="State_Carter_Ability4" duration="5500" />
 	</onimpact>
+
+	<onactivatestart>
+		<setaccumulator value="source_mana" />
+	</onactivatestart>
+
+	<onactivateimpact>
+		<setaccumulator value="accumulator" valueb="source_mana" valueop="sub" />
+		<getconstant name="percent" />
+		<setvar0 a="result" b="100" op="div" />
+		<heal target="source_entity" a="accumulator" b="var0" op="mult" />
+		<compare a="accumulator" b="25" op="ge" >
+			<playeffect effect="effects/restore.effect" target="source_entity"/>
+		</compare>
+	</onactivateimpact>
 
 </ability>

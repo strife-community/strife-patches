@@ -102,22 +102,24 @@
     roleutility="0"
 
     
-    maxhealth="765,837,908,981,1053,1125,1197,1270,1341,1414,1486,1557,1630,1701,1774"
-    maxhealthperlevel="0"
-    healthregen="4.11,4.4,4.69,4.98,5.27,5.56,5.85,6.14,6.43,6.72,7.01,7.3,7.59,7.88,8.17"
-    healthproportionregen="0"
+    maxhealth="1000"
+    maxhealthperlevel="125"
+    healthregen="10,10.15,10.30,10.45,10.60,10.75,10.90,11.05,11.20,11.35,11.50,11.65,11.80,11.95,12"
+    healthproportionregen="0.001"
 
     infoheight="250"
     
     unitcriticalmultiplier="1.0"
     
-    maxmana="320"
-    maxmanaperlevel="15"
-    manaregen="1.89,1.92,1.96,2.00,2.04,2.08,2.12,2.16,2.20,2.24,2.27,2.31,2.35,2.39,2.43"
+    maxmana="280"
+    maxmanaperlevel="19"
+    manaregen="1.5,1.6,1.7,1.8,1.9,2.0,2.1,2.2,2.3,2.4,2.5,2.6.2.7,2.8,3.0"
     manaproportionregen="0.0"
 
-    resistance="20"
-    mitigation="10"
+    resistance="15"
+	resistanceperlevel="1"
+    mitigation="30"
+	mitigationperlevel="1"
 
     inventory0="Ability_Shank1"
     inventory1="Ability_Shank2"
@@ -134,13 +136,13 @@
 
 
     power="100"
-    attackduration="400"
+    attackduration="600"
     attackactiontime="350"
     attackcooldown="1100"
-    attackdamagemin="63,65.93,68.86,71.79,74.71,77.64,80.57,83.5,86.43,89.36,92.29,95.21,98.14,101.07,104"
-    attackdamageminperlevel="0"
-    attackdamagemax="63,65.93,68.86,71.79,74.71,77.64,80.57,83.5,86.43,89.36,92.29,95.21,98.14,101.07,104"
-    attackdamagemaxperlevel="0"
+    attackdamagemin="65"
+    attackdamageminperlevel="3.21"
+    attackdamagemax="65"
+    attackdamagemaxperlevel="3.21"
     attacknumanims="3"
     attackoffset="0 30 100"
     attackprojectile=""

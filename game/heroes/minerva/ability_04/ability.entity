@@ -18,6 +18,13 @@
 	doubleactivate="true"
 	doubleactivatenoninterrupting="true"
 	
+	powerpercharge="3.0"
+	powerperchargeperquality="0.3"
+	maxhealthpercharge="30"
+	maxhealthperchargeperquality="3.0"
+	
+	maxcharges="10"
+	
 	manacost="70,80,90"
 	cooldowntime="20000"
 	novoiceresponse="true"
@@ -28,6 +35,7 @@
 	hoverareacastrange="200"
 >
 	<constant name="damage" value="150,185,220" adjustment="ability" />
+	
 	
 	<onimpact>
 		<recordheroaggression  />
@@ -58,6 +66,30 @@
 			</combatevent>
 		</else>
 	</onimpact>
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
 
   <ondoubleactivate>
     <areaofeffect

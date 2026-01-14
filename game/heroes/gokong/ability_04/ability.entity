@@ -16,7 +16,10 @@
 	castactiontime="300"
 	inheritmovement="true"
 	casteffect="effects/cast.effect"
+	
 
+	modifierkey="Lustergoldpassive3"
+	
 	range="1500"
 	
 	targetradius="1500"
@@ -29,6 +32,10 @@
 >
 	<!--tooltip only -->
 	<constant name="illusion_damage" value="25,30,35" adjustment="none" />
+	<constant name="gold" value="2,3,4" adjustment="none" />
+	
+	<aura state="State_Gokong_Gold_Aura" radius="1200" targetscheme="enemy_creeps" ignoreinvulnerable="true" />
+	
 	
 	
 	<onimpact>
@@ -51,6 +58,8 @@
 	<ontimer>
 		<setactivemodifierkey name="" />
 	</ontimer>
+	
+	
 	
 	
 	<modifier key="teleport" modpriority="100" anim="" cooldowntime="0" icon="icon_b.tga" actiontype="target_position" targetscheme="my_illusions" allowoutofrangecast="true" range="99999" manacost="25" casttime="0" castactiontime="0" dontshowhovercast="true" ignorecooldown="true" targetmaterial="">

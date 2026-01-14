@@ -17,8 +17,10 @@
 	inheritmovement="true"
 	queue="front"
 	castactiontime="0"
+	maxmana="150"
+	supportmultiplier="0.15"
 	
-	resistance="5"
+
 	
 	hoverareacastrange="500"
 
@@ -33,7 +35,7 @@
 	<constant name="shield_manapercent" value="40" adjustment="support" qualityvalue="4.0" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="legendary" value="6" adjustment="none" qualityvalue="6" qualityadjustment="legendary" op="add"/>
-	<constant name="resistance" value="5" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add" />
+	
 	
 	<onimpact>
 		<starttimer duration="6000" />

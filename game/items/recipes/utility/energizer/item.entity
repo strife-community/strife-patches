@@ -19,7 +19,8 @@
 	cooldowntime="35000"
 	casteffect=""
 
-	movespeed="10"
+	movespeed="20"
+	maxhealth="125"
 	
 	hoverareacastrange="750"
 
@@ -31,7 +32,7 @@
 >
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="5" qualityadjustment="common" op="add"/>
 	<!--Tooltip Only-->
-	<constant name="movespeed" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="movespeed" value="20" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
 	<constant name="legendary" value="10" adjustment="none" qualityvalue="10" qualityadjustment="legendary" op="add"/>
 	
 	<onimpact>

@@ -23,7 +23,7 @@
 	
 	manacost="50,55,60,65"
 	cooldowntime="25000"
-	maxhealth="40,80,120,160"
+	maxhealthmultiplier="0.05,0.10,0.15,0.20"
 	
 	range="600"
 	
@@ -31,7 +31,7 @@
 	doubleactivatenoninterrupting="true"
 
 >
-	<constant name="maxhp" value="40,80,120,160" adjustment="support" />
+	<constant name="maxhp" value="5,10,15,20" adjustment="support" />
 	<constant name="shield_percent" value="10,12,14,16" adjustment="support" />
 	
 	<onimpact>

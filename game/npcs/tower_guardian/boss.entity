@@ -37,19 +37,19 @@
     treewalking="true"
     buildingwalking="true"
 
-    immobilized="true"
+    immobilized="false"
     
     infoheight="400"
 
-    maxhealth="2300"
+    maxhealth="1800"
     maxhealthperlevel="0"
     healthregen="0"
     healthproportionregen="0"
     maxmana="0"
     manaregen="10"
 
-    resistance="50"
-    mitigation="50"
+    resistance="40"
+    mitigation="40"
     immunity="BossImmunity"
 
     cancarryitems="false"
@@ -69,8 +69,8 @@
     attackactiontime="370"
     attackcooldown="1200"
     attacktargetscheme="everything_but_towers"
-    attackdamagemin="48"
-    attackdamagemax="48"
+    attackdamagemin="30"
+    attackdamagemax="30"
     attacknumanims="2"
     attackoffset="00 120 200"
     attackprojectile="Projectile_BossPowerUpAttack"
@@ -87,9 +87,9 @@
     sightrangeday="1400"
     sightrangenight="1400"
     
-    experiencebounty="450"
-    goldbountymin="1150"
-    goldbountymax="1150"
+    experiencebounty="550"
+    goldbountymin="1500"
+    goldbountymax="1500"
     goldbountyteam="0"
     goldbountyconsolation="0"
     goldbountypercentsplit="0.2,0.4,0.6,0.8,1.0"
@@ -105,6 +105,9 @@
 >
 
     <onkilled>
+	    <targettype target="target_entity" type="hero">
+            <applystate name="State_Baldir_Buff" target="target_entity" duration="-1"/>
+		</targettype>
         <compare a="target_team" b="1" op="eq">
             <spawnunit name="Gadget_TowerMaster_Vision" target="source_position" team="2" fixedposition="true" />
             <setent0 name="good_well" />
@@ -121,6 +124,9 @@
         <delete target="proxy_entity" />
         <setproxy target="target_entity" />
     </onkilled>
+	
+	
+		
 
     <onattackedpreimpact>
         <condition test="not_hasstate State_TowerMaster_CanAttack" target="target_entity">

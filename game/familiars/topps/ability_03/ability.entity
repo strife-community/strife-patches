@@ -7,7 +7,7 @@
 	actiontype="target_self"
 	manacost="0"
 
-	cooldowntime="105000"
+	cooldowntime="80000"
 
 	casteffecttype="NoResponse"
 	frontqueue="true"
@@ -17,7 +17,7 @@
 	ispetultimate="true"
 	
 >
-	<constant name="cooldown" value="105" adjustment="none" />
+	<constant name="cooldown" value="80" adjustment="none" />
 	
 	<onimpact>
 		<areaofeffect radius="500" targetselection="closest" targetscheme="enemy_heroes" maxtotalimpacts="5" maximpactspertarget="1" effecttype="Magic"> 

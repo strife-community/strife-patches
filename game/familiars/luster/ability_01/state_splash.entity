@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Luster_Aura_Splash"
+
+    icon="icon.tga"
+    ishidden="true"
+    
+>
+
+	<onattack>
+        <addattackimpactactions>
+			<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.35" op="mult" radius="300" effecttype="AttackDamage" targetscheme="enemy_units" />
+		</addattackimpactactions>
+	</onattack>
+
+    
+</state>

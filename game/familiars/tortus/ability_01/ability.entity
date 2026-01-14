@@ -11,5 +11,8 @@
 >
 
 	<constant name="passive" value="15" adjustment="none" />
+	<constant name="damage_reduction" value="10" adjustment="none" noshowintooltip="false"/>
+	
+    <aura state="Block" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
 
 </ability>

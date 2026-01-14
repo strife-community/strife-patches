@@ -9,7 +9,8 @@
 	cost="845"
 	components="Item_Booster Item_Mender"
 	
-	mitigation="20"
+	mitigation="25"
+	maxhealth="150"
 	
 	maxcharges="4"
 	actiontype="passive"
@@ -20,7 +21,7 @@
 	
 	showinpractice="true"
 >
-	<constant name="mitigation" value="20" adjustment="none" op="add"/>
+	<constant name="mitigation" value="25" adjustment="none" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="hp_regen" value="5" adjustment="none" qualityvalue="0.35" qualityadjustment="common" op="add"/>
 

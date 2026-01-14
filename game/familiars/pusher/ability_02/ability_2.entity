@@ -7,12 +7,12 @@
 	maxlevel="15"
 	actiontype="passive"
 	manacost="0"
-	cooldowntime="18000"
+	cooldowntime="30000"
 	
 >
 
-	<constant name="gold" value="20" adjustment="none" />
-	<constant name="cooldown" value="18" adjustment="none" />
+	<constant name="gold" value="40" adjustment="none" />
+	<constant name="cooldown" value="30" adjustment="none" />
 	
 	<onattackimpact propagatetoillusions="false" >
 		<isready>

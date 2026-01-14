@@ -5,7 +5,7 @@
 >
 
 	<!-- Tooltip only -->
-	<constant name="gold_enchant" value="15" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
+	<constant name="gold_enchant" value="35" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
 
 	<onkill propagatetoillusions="false" >
 		<targettype type="hero">
@@ -13,7 +13,7 @@
 			<else>
 				<targettype type="self" />
 				<else>
-					<givegold amount="15" target="source_entity" position="source_entity" />
+					<givegold amount="35" target="source_entity" position="source_entity" />
 				</else>
 			</else>
 		</targettype>
@@ -25,7 +25,7 @@
 			<else>                
 				<targettype type="self" />
 				<else>
-					<givegold amount="15" target="source_entity" position="source_entity" />
+					<givegold amount="35" target="source_entity" position="source_entity" />
 				</else>
 			</else>
 		</targettype>

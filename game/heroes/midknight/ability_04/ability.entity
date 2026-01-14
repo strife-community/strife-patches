@@ -25,14 +25,18 @@
 	manacost="110,120,130"
 	cooldowntime="105000,95000,85000" 
 	
+
+	
 	
 >
 
 	<constant name="damage" value="150,200,250" adjustment="ability" />
+	<constant name="attackspeedslow" value="15,20,25" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
 	<!-- tooltiponly -->
 	<constant name="stun" value="1.4,1.7,2" adjustment="None" floatprecision="1" />
 	<constant name="slow" value="20" adjustment="none" noshowintooltip="true" />
 	
+	<aura state="State_Ice" radius="1200" targetscheme="enemy_units" ignoreinvulnerable="true" />
 
 	<onimpact>
 		<areaofeffect radius="550" targetselection="all" targetscheme="enemy_heroes" effecttype="Magic">

@@ -6,9 +6,12 @@
 
 	maxcharges="3"
 	powerpercharge="4"
+	baseattackspeedpercharge="0.05"
+	
 >
 	<!-- Tooltip only -->
 	<constant name="power_enchant" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="baseattackspeed" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 	<constant name="power_duration_enchant" value="3" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 	<onattack>

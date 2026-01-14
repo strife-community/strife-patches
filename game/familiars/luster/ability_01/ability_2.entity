@@ -6,10 +6,10 @@
 	
 	actiontype="passive"
 	propagatetoillusion="true"
-	modifierkey="Lustergoldpassive2"
+	modifierkey="Lustergoldpassive3"
 >
-	<constant name="passive" value="3" adjustment="none" />
+	<constant name="passive" value="4" adjustment="none" />
 	<aura state="State_Luster_Aura" radius="1200" targetscheme="enemy_creeps" ignoreinvulnerable="true" />
-
-	
+    <aura state="State_Luster_Aura_Splash" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
+		
 </ability>

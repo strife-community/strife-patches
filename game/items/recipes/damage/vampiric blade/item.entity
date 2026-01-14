@@ -8,7 +8,10 @@
 	
 	actiontype="passive"
 	
+	baseattackspeed="0.10"
 	resistance="10"
+	
+	
 	
 	filters="lifesteal,attack"
 
@@ -17,8 +20,8 @@
 	showinpractice="true"
 >	
 	<constant name="vamp" value="12" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
-	<constant name="resistance" value="10" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
-	<constant name="heal" value="2.5" adjustment="none" qualityvalue="2.5" qualityadjustment="legendary" op="add"/>
+    <constant name="heal" value="2.5" adjustment="none" qualityvalue="2.5" qualityadjustment="legendary" op="add"/>
+	
 	
 	<modifier key="vampiricblade" modpriority="50" exclusive="true"
 		attacklifesteal="0.12"	  

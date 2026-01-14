@@ -4,7 +4,7 @@
 	
 	cost="1615"
 
-	hoverareacastrange="575"
+	hoverareacastrange="675"
 
 >
 	<!-- Tooltip only -->
@@ -14,7 +14,7 @@
 		<getconstant name="radius" adjustmentsource="this_entity"/>
 		<targettype target="source_entity" type="alive" >
 			<areaofeffect
-				radius="575"
+				radius="675"
 				targetselection="all"
 				targetscheme="enemy_units"
 				effecttype="Magic DOT Splash"

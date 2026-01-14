@@ -2,7 +2,7 @@
 <qualityitem
 	name="Item_ThunderClaw_Empower_2"
 	
-	cost="1050"
+	cost="450"
 
 >
 	<!-- Tooltip only -->

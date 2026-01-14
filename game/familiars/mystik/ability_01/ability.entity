@@ -8,11 +8,21 @@
 
 	actiontype="passive"
 
-	powerratiomultiplier="0.06"
+	powerratiomultiplier="0.07"
+	magiclifesteal="0.08"
+	magiclifestealperquality="0.0312"
 	propagatetoillusion="true"
 	
 >
 
-	<constant name="passive" value="6" floatprecision="0" adjustment="none" />
+	<constant name="passive" value="7" floatprecision="0" adjustment="none" />
+	<constant name="magiclifesteal" value="80" adjustment="none" qualityvalue="8" qualityadjustment="rare" op="add" />
+	<constant name="penetration" value="15" adjustment="none" qualityvalue="1.0" qualityadjustment="common" op="add"/>
+	
+	<onattackingdamageevent>
+		<getconstant name="penetration" adjustmentsource="none" />
+		<setvalue name="damage_magicarmorpierce" a="damage_magicarmorpierce" b="result" op="add" />
+	</onattackingdamageevent>
+	
 
 </ability>

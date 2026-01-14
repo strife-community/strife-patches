@@ -9,12 +9,17 @@
 
 	actiontype="passive"
 	filters="attack,attack_damage"
+	
+	baseattackspeed="0.15"
+	basedamage="8"
 
 	empoweredeffects="Item_Titanslayer_Empower_1,Item_Titanslayer_Empower_2,Item_Titanslayer_Empower_3"
 	
 	showinpractice="true"
 >
 	<constant name="healthdamage" value="1.5" adjustment="item" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="basedamage" value="8" adjustment="item" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="baseattackspeed" value="15" adjustment="item" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 	<onattackingdamageevent>
 		<damageeffecttype effecttype="AttackDamage" >

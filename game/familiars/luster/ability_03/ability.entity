@@ -7,7 +7,7 @@
 	actiontype="target_entity"
 	targetscheme="enemy_creeps"
 	manacost="0"
-	cooldowntime="75000"
+	cooldowntime="50000"
 	range="749"
 
 	showareacast="true"
@@ -22,10 +22,19 @@
 	
 >
 	<constant name="damage" value="700,722,744,766,788,810,832,854,876,898,920,942,964,986,1008" adjustment="none" />
+	<constant name="cooldown" value="50" adjustment="none" />
+	
+	
+	
+
+	
+	
 	
 	<onimpact>
 		<playeffect effect="effects/cast.effect" source="this_proxy_entity" target="this_proxy_entity"/>
 		<spawnprojectile name="Projectile_Luster" source="this_proxy_entity" target="target_entity" offset="0 10 5"/>
+		<applystate name="State_Luster_Ability3" duration="frametime" proxy="source_entity" />
 	</onimpact>
+	
 	
 </ability>

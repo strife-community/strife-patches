@@ -18,7 +18,12 @@
 	filters="other_mobility,attack_speed,activatable,attack"
 	alwaysshowtimer="true"
 
-	attacklifesteal="0.08"
+	attacklifesteal="0.10"
+	baseattackspeed="0.20"
+	criticalchance="0.05"
+    criticalmultiplier="2.0"
+	
+	
 
 	empoweredeffects="Item_Mask_Of_Madman_Empower_1,Item_Mask_Of_Madman_Empower_2,Item_Mask_Of_Madman_Empower_3"
 	
@@ -28,9 +33,9 @@
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 
 	<!--Tooltip Only-->
-	<constant name="vamp" value="8" adjustment="none" qualityvalue="1.0" qualityadjustment="common" op="add"/>
-	<constant name="attackspeed" value="45" adjustment="none" qualityvalue="4.5" qualityadjustment="common" op="add"/>
-	<constant name="movespeed" value="40" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
+	<constant name="vamp" value="10" adjustment="none" qualityvalue="1.0" qualityadjustment="common" op="add"/>
+	<constant name="attackspeed" value="60" adjustment="none" qualityvalue="6.0" qualityadjustment="common" op="add"/>
+	<constant name="movespeed" value="50" adjustment="none" qualityvalue="5" qualityadjustment="common" op="add"/>
 	
 	<onimpact>
 		<starttimer duration="6000" />

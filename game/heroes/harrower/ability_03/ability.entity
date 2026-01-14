@@ -10,10 +10,10 @@
 
 >
 
-	<constant name="percentdamagehealed" value="4,6,8,10" adjustment="none" />
+	<constant name="percentdamagehealed" value="6,8,10,12" adjustment="none" />
 
 	<!-- tool tip only -->
-	<constant name="damage_increase" value="3,6,9,12" adjustment="none" />
+	<constant name="damage_increase" value="6,9,12,15" adjustment="none" />
 
 
 	<onattackpreimpact>

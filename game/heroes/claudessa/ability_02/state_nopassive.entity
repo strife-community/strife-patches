@@ -10,7 +10,9 @@
 	effecttype="StatusBuff"
 	allowtransfer="true"
 
-	mitigation="6,9,12,15"
+	mitigation="5,10,15,20"
+	resistance="5,10,15,20"
+
 
 	modifierkey="shield"
 

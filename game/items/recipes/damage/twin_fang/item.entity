@@ -10,15 +10,15 @@
 	
 	actiontype="passive"
 	
-	power="5"
+	power="7"
 	filters="power,ability"
 
 	empoweredeffects="Item_TwinFang_Empower_1,Item_TwinFang_Empower_2,Item_TwinFang_Empower_3"
 	
 	showinpractice="true"
 >
-	<constant name="power" value="5" adjustment="none" qualityvalue="0.5" qualityadjustment="common" op="add"/>
-	<constant name="penetration" value="18" adjustment="none" qualityvalue="1.8" qualityadjustment="common" op="add"/>
+	<constant name="power" value="7" adjustment="none" qualityvalue="0.7" qualityadjustment="common" op="add"/>
+	<constant name="penetration" value="20" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>
 	
 	<onattackingdamageevent>
 		<getconstant name="penetration" adjustmentsource="none" />

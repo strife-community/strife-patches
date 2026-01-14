@@ -28,6 +28,8 @@
 	<constant name="percent_hp_mana" value="30,40,50" adjustment="support" />
 	<constant name="damage" value="100,150,200" adjustment="ability" />
 
+	<constant name="heal_enchant" value="50,100,150" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+    <constant name="heal_chance_enchant" value="80,90,100" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 	<!-- tool tip only -->
 	<constant name="move_attack_slow" value="30" adjustment="none" noshowintooltip="true" />
 
@@ -36,4 +38,27 @@
 		<applystate name="State_Zaku_Ability4" duration="6000" />
 		<popup name="deathprotect" source="target_entity" target="target_entity" />
 	</onimpact>
+	
+	<onabilityimpact ignoreresponsetype="NoResponse">
+		<casteffecttype entity="inflictor_entity" effecttype="NoResponse" />
+		<else>
+			<chance threshold="0.80,0.90,1">
+				<setaccumulator value="source_health_percent" />
+				<setproxy target="source_entity"/>
+					<areaofeffect
+						radius="800"
+						center="source_entity"
+						targetselection="all"
+						targetscheme="ally_heroes"
+					>
+						<compare a="target_health_percent" b="accumulator" op="lt" >
+							<setproxy target="target_entity" />
+							<setaccumulator value="target_health_percent" />
+						</compare>
+					</areaofeffect>
+						<getconstant name="heal_enchant" />
+						<heal target="proxy_entity" a="result" b="1" op="mult" />
+			</chance>
+		</else>
+	</onabilityimpact>
 </ability>

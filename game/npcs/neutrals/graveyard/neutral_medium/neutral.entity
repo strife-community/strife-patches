@@ -113,6 +113,12 @@
 			<scaledamage scale="0.85" />
 		</currentdamageeffecttype>
 	</ondamaged>
+	<onkilled>   
+    <targettype target="target_entity" type="hero">
+        <applystate name="State_Graveyard_Buff" target="target_entity" duration="60000"/>
+    </targettype>
+  </onkilled>
+
 
 	<!--Needs updated scale-->
 	<modifier key="variation1" modpriority="100" modelscale="1.18" attackactiontime="625" model="variation_1/model.mdf"/>

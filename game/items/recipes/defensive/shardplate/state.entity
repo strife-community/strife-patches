@@ -7,7 +7,7 @@
 	effecttype="StatusDebuff"
 	allowtransfer="true"
 	
-	attackspeedslow="0.20"
+	attackspeedslow="0.30"
 	ishidden="true"
 >
 	<oninflict>

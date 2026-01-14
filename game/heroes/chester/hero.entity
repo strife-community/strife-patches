@@ -103,20 +103,21 @@
 
     movespeed="330"
     
-    maxhealth="602,656,710,764,817,872,925,978,1033,1086,1139,1194,1247,1301,1355"
-    maxhealthperlevel="0"
-    healthregen="1.8,1.92,2.04,2.16,2.28,2.4,2.52,2.64,2.76,2.88,3,3.12,3.24,3.36,3.48"
+    maxhealth="550"
+    maxhealthperlevel="46.42"
+    healthregen="1.5,1.57,1.64,1,71,1.78,1.85,1.92,1.99,2.06,2.13,2.20,2.27,2.34,2.41,2.50"
     healthproportionregen="0"
     
     unitcriticalmultiplier="1.0"
     
-    maxmana="380"
-    maxmanaperlevel="15"
-    manaregen="2.11,2.16,2.20,2.24,2.29,2.33,2.37,2.42,2.46,2.51,2.55,2.59,2.64,2.68,2.72"
-    manaproportionregen="0.0"
+    maxmana="350"
+    maxmanaperlevel="39.28"
+    manaregen="3.0,3.3,3.6,3.9,4.2,4.5,4.8,5.1,5.4,5.7,6.0,6.3,6.6,6.9,7.5"
+    manaproportionregen="0.002"
 
-    resistance="10"
-    mitigation="10"
+    resistance="5"
+	mitigation="0"
+
 
     inventory0="Ability_Chester1"
     inventory1="Ability_Chester2"
@@ -132,14 +133,15 @@
     inventory11="Ability_AutomatedCourier"
 
 
-    power="100"
+    power="95"
+	powerperlevel="2"
     attackduration="500"
-    attackactiontime="200"
+    attackactiontime="350"
     attackcooldown="1100"
-    attackdamagemin="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamageminperlevel="0"
-    attackdamagemax="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamagemaxperlevel="0"
+    attackdamagemin="42"
+    attackdamageminperlevel="2.7"
+    attackdamagemax="42"
+    attackdamagemaxperlevel="2.7"
     attacknumanims="2"
     attackrange="500"
     attackstarteffect="effects/attack_start.effect"

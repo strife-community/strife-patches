@@ -9,8 +9,8 @@
 	
 	actiontype="passive"
 
-	supportmultiplier="0.15"
-	supportmultiplierperquality="0.015"
+	supportmultiplier="0.30"
+	supportmultiplierperquality="0.30"
 	power="10"
 	powerperquality="1"
 
@@ -22,9 +22,9 @@
 >
 	<!-- tool tip only -->
 	<constant name="power" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
-	<constant name="amp" value="15" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
+	<constant name="amp" value="30" adjustment="none" qualityvalue="3.0" qualityadjustment="common" op="add"/>
 
-	<constant name="legendary" value="15" adjustment="power_support" qualityvalue="30" qualityadjustment="legendary" op="add"/>
+	<constant name="legendary" value="30" adjustment="power_support" qualityvalue="30" qualityadjustment="legendary" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	
 </crafteditem>

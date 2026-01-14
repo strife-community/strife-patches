@@ -9,7 +9,8 @@
 	cost="750"
 	components="Item_Manaregen1 Item_Blade Item_Blade"
 	maxhealth="125"
-	resistance="10"
+    reducedcooldowns=".10"
+
 
 	maxcharges="2"
 	
@@ -38,7 +39,7 @@
 >
 	<constant name="cooldown" value="0" adjustment="none" qualityvalue="8" qualityadjustment="common" op="add"/>
 	<constant name="health" value="125" adjustment="none" qualityvalue="10.0" qualityadjustment="common" op="add"/>
-	<constant name="resistance" value="10" adjustment="none" op="add"/>
+
 
 	<constant name="legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>

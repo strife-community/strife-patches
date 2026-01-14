@@ -17,7 +17,7 @@
 	noninterrupting="true" 
 	casttime="0"
 	castactiontime="0"
-	cooldowntime="30000"
+	cooldowntime="15000"
 	cooldowntype="frostfieldplate"
 	casteffect="effects/cast.effect"
 	
@@ -26,8 +26,9 @@
 	hoverareacastrange="500"
 	botitem="FrostfieldPlateItem"
 
-	resistance="5"
-	mitigation="5"
+	resistance="10"
+	mitigation="10"
+	maxhealth="100"
 
 	filters="utility,activatable,debuff_enemy,ability,defense,armor,magic_armor,resistance"
 
@@ -35,8 +36,9 @@
 	
 	showinpractice="true"
 >
-	<constant name="damage" value="65" adjustment="item" qualityvalue="10" qualityadjustment="common" op="add"/>
-	<constant name="resistance" value="5" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="damage" value="25" adjustment="item" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="mitigation" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="armorlegendary" value="3" adjustment="none" qualityvalue="3" qualityadjustment="legendary" op="add"/>
 	<checkcost>

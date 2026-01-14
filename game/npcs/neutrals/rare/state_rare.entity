@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rare_Buff" 
+
+	icon="icon.tga"
+	ishidden="false"
+	
+	actiontype="passive"
+
+	
+	
+>
+  <constant name="gold_enchant" value="50" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
+  
+    <onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<givegold amount="50" target="source_entity" position="source_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<givegold amount="50" target="source_entity" position="source_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
+	
+
+	
+</state>

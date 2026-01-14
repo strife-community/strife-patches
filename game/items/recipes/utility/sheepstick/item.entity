@@ -6,7 +6,7 @@
 	
 	icon="icon.tga"
 	
-	cost="1400"
+	cost="1800"
 	components="Item_Brain Item_Manaregen2 Item_Staff"
 	
 
@@ -34,6 +34,9 @@
 	empoweredeffects="Item_SheepStick_Empower_1,Item_SheepStick_Empower_2,Item_SheepStick_Empower_3"
 	
 	showinpractice="true"
+	maxcharges="5"
+	
+
 >
 	<constant name="cooldown" value="0" adjustment="none" qualityvalue="5" qualityadjustment="common" op="add"/>
 	<constant name="resistance" value="15" adjustment="none" qualityvalue="7.5" qualityadjustment="legendary" op="add"/>
@@ -53,12 +56,13 @@
 	</ondoubleactivate>
 	
 	<onimpact>
-
 		<killillusions />
 		<dispel type="StatusStealth" />
 		<breakchannel entity="target_entity" />
 		<!--<playeffect effect="/heroes/pollywogpriest/effects/ability_02/effects/poof.effect" source="target_entity" />-->
-		<applystate name="State_SheepStick" duration="3500" />
+		<applystate name="State_SheepStick" duration="3000" />
+
+		<applystate name="State_SheepStick_Slow" duration="3000" />
 
 		<playanim name="item_1" target="source_entity" />
 
@@ -67,4 +71,9 @@
 		<setvar0 a="result" b="1000" op="mult" />
 		<reducecooldown duration="var0" />
 	</onimpact>
+	
+	
+	<onframe>
+	<applystate name="State_Stack"  target="source_entity" />
+	</onframe>
 </crafteditem>

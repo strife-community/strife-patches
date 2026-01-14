@@ -15,7 +15,7 @@
 	deathannouncementenemyteam="guardian_bottom_own_killed"
 	deathannouncementownteam="guardian_bottom_killed"
   
-	firstspawntime="60000"
+	firstspawntime="0"
 	spawninterval="180000"
 	spawnintervalpercharge="0"
 	spawnintervalvariation="0"
@@ -45,6 +45,7 @@
 		<spawnunit name="Building_PowerUpBossRespawn_0" offset="-30 -5 0" target="this_position" angle="310" fixedposition="true" source="stack_entity" owner="stack_entity"  />
 	</onspawnerdormant>	
 
+	
 
   
 </spawner>

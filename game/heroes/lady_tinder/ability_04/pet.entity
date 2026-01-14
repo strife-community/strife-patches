@@ -28,11 +28,11 @@
 	turnsmoothing="0.05"
 	
 	maxhealth="1"
-	maxhealthpercharge="50,75,100"
+	maxhealthpercharge="5,7.5,10"
 	healthregen="1"
 
-	resistance="60"
-    mitigation="60"
+	resistance="10"
+    mitigation="10"
 	
 	immunity="CrowdControlImmunity"
 	lifetime="20000"
@@ -45,8 +45,8 @@
 	attackduration="500"
 	attackactiontime="150"
 	attackcooldown="800"
-	attackdamagemin="45,60,75"
-	attackdamagemax="45,60,75"
+	attackdamagemin="6,8,10"
+	attackdamagemax="6,8,10"
 	attacknumanims="1"
 	attackoffset="0 220 120"
 	attackprojectile="Projectile_LadytinderSummon"
@@ -67,9 +67,9 @@
 
 	hazardradius="700"
 	
-	goldbountymin="75"
-	goldbountymax="75"
-	experiencebounty="150"
+	goldbountymin="20"
+	goldbountymax="20"
+	experiencebounty="30"
 	
 	tiltfactor="0"
 	tiltspeed="90.0"

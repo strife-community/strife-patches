@@ -34,6 +34,7 @@
 	
 	<constant name="execute_threshold" value="18,22,26" adjustment="none" />
 	<constant name="percent_hp_mana" value="25" adjustment="support" noshowintooltip="true" />
+	<constant name="gold" value="50,100,150" adjustment="none" />
 	
 	
 	<onimpact>

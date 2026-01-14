@@ -88,7 +88,7 @@
 
     category="cc magic"
     difficulty="2"
-    movespeed="330"
+    movespeed="335"
     turnrate="900"
     turnsmoothing="0.01"
     
@@ -99,20 +99,20 @@
     roleutility="4"
     
     
-    maxhealth="678,738,799,860,920,981,1041,1102,1163,1223,1284,1345,1405,1466,1527"
-    maxhealthperlevel="0"
-    healthregen="2.02,2.16,2.3,2.44,2.58,2.72,2.86,3,3.14,3.28,3.42,3.56,3.7,3.84,3.98"
+    maxhealth="880"
+    maxhealthperlevel="76"
+    healthregen="2.5,2.75,3.0,3.25,3.50,3.75,4.0,4.25,4.50,4.75,5.0,5.25,5.50,5.75,6.0"
     healthproportionregen="0"
 
     unitcriticalmultiplier="1.0"
     
     maxmana="380"
-    maxmanaperlevel="15"
-    manaregen="2.11,2.16,2.20,2.24,2.29,2.33,2.37,2.42,2.46,2.51,2.55,2.59,2.64,2.68,2.72"
-    manaproportionregen="0.0"
+    maxmanaperlevel="37"
+    manaregen="3.0,3.35,3.70,4.05,4.40,4.75,5.10,5.45,5.80,6.15,6.50,6.85,7.20,7.55,8.0"
+    manaproportionregen="0.002"
 
-    resistance="10"
-    mitigation="10"
+    resistance="20"
+    mitigation="20"
 
     inventory0="Ability_Bandito1"
     inventory1="Ability_Bandito2"
@@ -129,17 +129,18 @@
 
 
     power="100"
-    attackduration="500"
-    attackactiontime="300"
+	powerperlevel="2"
+    attackduration="280"
+    attackactiontime="180"
     attackcooldown="1100"
-    attackdamagemin="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamageminperlevel="0"
-    attackdamagemax="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamagemaxperlevel="0"
+    attackdamagemin="52"
+    attackdamageminperlevel="3.78"
+    attackdamagemax="52"
+    attackdamagemaxperlevel="3.78"
     attacknumanims="2"
     attackoffset="-50 75 115"
     attackprojectile="Projectile_Bandito_Attack"
-    attackrange="500"
+    attackrange="450"
     attackstarteffect="projectile/effects/attackaction.effect"
     attackactioneffect=""
     attackimpacteffect=""

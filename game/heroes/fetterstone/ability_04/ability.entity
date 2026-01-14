@@ -7,28 +7,41 @@
 	anim="ability_4"
 	
 	maxlevel="3"
-	requiredlevel="6,11,15"
-	cooldowntime="75000"
+	requiredlevel="2,7,12"
+
 	actiontype="target_self"
-	manacost="90,100,110"
+	
 	queue="front"
 	inheritmovement="true"
 	maxcharges="0"
 	alwaysshowtimer="true"
 	
+	maxhealthpercharge="4,5,6"
+	
 	
 >
 
-	<constant name="damage_increase" value="30,40,50" adjustment="none" />
+	<constant name="damage_increase" value="5,15,25" adjustment="none" />
+	<constant name="hp_bonus" value="4,5,6" adjustment="none" />
+
+	<constant name="power_req" value="3,3,3" adjustment="none" />
 
 	<onimpact>
-		<applystate name="State_Fetterstone_Ability4" duration="15000" />
-		<starttimer duration="15000" />
+		<applystate name="State_Fetterstone_Ability4" duration="-1" />
+		<starttimer duration="-1" />
 		<setcharges a="9" />
 		<setactivemodifierkey name="active" />
 	</onimpact>
 	
-	<modifier key="active" modpriority="101" maxcharges="9"
+	<onframe>
+		<setvar0 a="source_power" b="100" op="sub" />
+		<getconstant name="power_req" />
+		<setvar0 a="var0" b="result" op="div" />
+		<setvar0 a="var0" b="1" op="div" />
+		<setcharges a="var0" />
+	</onframe>
+	
+	<modifier key="active" modpriority="101" maxcharges="-1"
 	>	
 		<onattackpreimpact>
 			<removecharge />

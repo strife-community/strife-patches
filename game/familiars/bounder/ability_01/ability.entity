@@ -15,8 +15,13 @@
 	cooldowntype="familiar" 
 	
 	movespeedmultiplier="0.04"
+	baseattackspeed="0.10"
+	criticalchance="0.10"
+    criticalmultiplier="2.0"
 	propagatetoillusion="true"
 >
 
 	<constant name="passive" value="4" adjustment="none" />
+	<constant name="passive_criticalchance" value="10" adjustment="none" />
+	
 </ability>

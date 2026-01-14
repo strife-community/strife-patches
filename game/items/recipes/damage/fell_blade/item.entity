@@ -9,6 +9,7 @@
 	components="Item_Blade"
 	
 	actiontype="passive"
+	powermultiplier="0.04"
 
 	filters="power,ability,attack"
 	empoweredeffects="Item_FellBlade_Empower_1,Item_FellBlade_Empower_3" 
@@ -16,10 +17,10 @@
 	showinpractice="true"
 >
     <!-- All these are tooltip only! -->
-	<constant name="power" value="8" qualityvalue="0.8" adjustment="none" qualityadjustment="common" op="add"/>
+	
 	<constant name="common_increase" value="0" qualityvalue="10" adjustment="none" qualityadjustment="common" op="add"/>
 	<constant name="power_legendary" value="2" qualityvalue="2" adjustment="none" qualityadjustment="legendary" op="add"/>
-    <constant name="speed_boost_percent" value="5" adjustment="none" />
+    <constant name="speed_boost_percent" value="10" adjustment="none" />
 	
     <aura state="Item_FellBlade_OOCBoost" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
 	<modifier key="fellblade" modpriority="25" exclusive="true" power="8" powerperquality="0.8"/>

@@ -10,7 +10,7 @@
 	actiontype="target_self"
 	manacost="0"
 	casttime="0"
-	cooldowntime="105000"
+	cooldowntime="60000"
 	cooldowntype="familiar3" 
 	casteffecttype="NoResponse"
 	
@@ -26,6 +26,7 @@
 >
 	<!-- Tooltip Only -->
 	<constant name="mana" value="93,96,99,102,105,108,111,114,117,120,123,126,129,132,135" adjustment="none" />
+	<constant name="cooldown" value="60" adjustment="none" />
 
 	<checkcost>
 		<compare a="source_mana_percent" b="1" op="ge" >

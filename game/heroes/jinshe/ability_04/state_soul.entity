@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="Soulstealer" 
+
+	icon="icon.tga"
+	ishidden="false"
+	
+	maxcharges="10,13,16"
+	powerpercharge="1,1.5,2"
+	maxhealthpercharge="10,15,20"
+>
+
+    <onkill>
+		<targettype type="Tower"/>
+		<else>
+			<targettype type="enemy">
+				<addcharges/>
+			</targettype>
+		</else>
+	</onkill>
+
+	<ondeath>
+		<setcharges a="0" />
+	</ondeath>
+	
+	
+</state>

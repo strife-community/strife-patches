@@ -9,6 +9,10 @@
 	
 	passiveeffect="effects/state.effect"
 	powermultiplier="0.1,0.14,0.18"
+	
+	actiontype="passive"
+	maxcharges="1"
+	alwaysshowonskillbar="false"
 >
 
 

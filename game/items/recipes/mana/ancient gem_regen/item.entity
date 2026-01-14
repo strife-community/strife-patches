@@ -10,8 +10,9 @@
 	
 	actiontype="passive"
 
-	basemanaregen="1.7"
-	basemanaregenperquality="0.17"
+	basemanaregen="2.0"
+	basemanaregenperquality="0.20"
+	reducedcooldowns=".08"
 
 	filters="mana,mana_regen"
 
@@ -19,7 +20,7 @@
 	
 	showinpractice="true"
 >
-	<constant name="regen" value="1.7" adjustment="none" qualityvalue="0.17" qualityadjustment="common" op="add"/>
+	<constant name="regen" value="2.0" adjustment="none" qualityvalue="0.20" qualityadjustment="common" op="add"/>
 	<constant name="regen_legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 

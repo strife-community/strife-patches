@@ -4,7 +4,7 @@
 	
 	icon="icon.tga"
 	passiveeffect="effects/state.effect"
-	incomingdamagemultiplier="0.03,0.06,0.09,0.12"
+	incomingdamagemultiplier="0.06,0.09,0.12,0.15"
 	effecttype="StatusDebuff"
 
 >

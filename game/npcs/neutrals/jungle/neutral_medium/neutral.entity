@@ -107,6 +107,13 @@
 			<scaledamage scale="0.85" />
 		</currentdamageeffecttype>
 	</ondamaged>
+	
+	<onkilled>   
+    <targettype target="target_entity" type="hero">
+        <applystate name="State_Jungle_Buff" target="target_entity" duration="60000"/>
+    </targettype>
+  </onkilled>
+
 
 	<modifier key="variation1" modpriority="100" modelscale="1.1" attackactiontime="725" model="variation_1/model.mdf"/>
 

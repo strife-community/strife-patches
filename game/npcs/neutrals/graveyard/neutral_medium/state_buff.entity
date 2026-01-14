@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Graveyard_Buff"
+
+	icon="icon.tga"
+	ishidden="false"
+	
+	basehealthregen="4"
+	basemanaregen="3.0"
+	 
+>
+
+		
+
+	
+</state>

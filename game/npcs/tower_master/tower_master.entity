@@ -40,15 +40,15 @@
     
     infoheight="425"
 
-    maxhealth="5400"
+    maxhealth="3500"
     maxhealthperlevel="0"
     healthregen="0"
     healthproportionregen="0"
     maxmana="0"
     manaregen="10"
 
-    resistance="50"
-    mitigation="50"
+    resistance="40"
+    mitigation="40"
     immunity="BossImmunity"
     ismobile="1"
     
@@ -67,8 +67,8 @@
     attackactiontime="300"
     attackcooldown="1000"
     attacktargetscheme="everything_but_towers"
-    attackdamagemin="55"
-    attackdamagemax="55"
+    attackdamagemin="37"
+    attackdamagemax="37"
     attacknumanims="2"
     attackoffset="20 175 245"
     attackprojectile="Projectile_TowerMasterAttack"
@@ -85,9 +85,9 @@
     sightrangeday="1400"
     sightrangenight="1400"
     
-    experiencebounty="850"
-    goldbountymin="1500"
-    goldbountymax="1500"
+    experiencebounty="1000"
+    goldbountymin="2000"
+    goldbountymax="2000"
     goldbountyteam="0"
     goldbountyconsolation="0"
     goldbountypercentsplit="0.2,0.4,0.6,0.8,1.0"	
@@ -103,6 +103,9 @@
     proximityscheme="neutral_aggro" 
 >
     <onkilled>
+	 <targettype target="target_entity" type="hero">
+        <applystate name="State_Cindara_Buff" target="target_entity" duration="-1"/>
+		</targettype>
         <compare a="target_team" b="1" op="eq">
             <spawnunit name="Gadget_TowerMaster_Vision" target="source_position" team="2" fixedposition="true" pushentity="true"/>
             <setaccumulator entity="stack_entity" value="1" />
@@ -287,6 +290,8 @@
             <kill />
         </areaofeffect>
     </onkilled>
+	
+	
 
     <onattackedpreimpact>
         <condition test="not_hasstate State_TowerMaster_CanAttack" target="target_entity">

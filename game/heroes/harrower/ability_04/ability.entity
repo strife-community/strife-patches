@@ -9,7 +9,7 @@
     castactiontime="0"
 
     maxlevel="3"
-    requiredlevel="6,11,15"
+    requiredlevel="1,11,15"
 
     actiontype="target_self"
     queue="front"
@@ -27,9 +27,9 @@
     noentercombat="true"
 >
     <!-- Max health added in melee form -->
-    <constant name="maxhp" value="300,400,500" adjustment="none" />
+    <constant name="maxhp" value="400,500,600" adjustment="none" />
     <!-- Bonus damage on 4th attack in percents -->
-    <constant name="percent_bonus_damage" value="45,60,75" adjustment="none" />
+    <constant name="percent_bonus_damage" value="80,90,100" adjustment="none" />
     <!-- Number of attacks to activate bonus damage -->
     <constant name="charges_for_crit" value="4" adjustment="none" noshowintooltip="true" />
     

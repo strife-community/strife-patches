@@ -91,7 +91,7 @@
 
     category="magic"
     difficulty="4"
-    movespeed="330"
+    movespeed="355"
     turnrate="900"
     turnsmoothing="0.01"
     
@@ -101,20 +101,20 @@
     rolemagicdamage="4"
     roleutility="0"
 
-    maxhealth="678,738,799,860,920,981,1041,1102,1163,1223,1284,1345,1405,1466,1527"
-    maxhealthperlevel="0"
-    healthregen="2.02,2.16,2.3,2.44,2.58,2.72,2.86,3,3.14,3.28,3.42,3.56,3.7,3.84,3.98"
+    maxhealth="620"
+    maxhealthperlevel="55.71"
+    healthregen="1.80,1.88,1.96,2.04,2.12,2.10,2.28,2.34,2.42,2.50,2.58,2.66,2.74,2.82,3.0"
     healthproportionregen="0"
     
     unitcriticalmultiplier="1.0"
     
     maxmana="320"
-    maxmanaperlevel="15"
-    manaregen="2.11,2.16,2.20,2.24,2.29,2.33,2.37,2.42,2.46,2.51,2.55,2.59,2.64,2.68,2.72"
-    manaproportionregen="0.0"
+    maxmanaperlevel="27"
+    manaregen="2.,2.2,2.4,2.6,2.8,3.0,3.2,3.4,3.6,3.8,4.0,4.2,4.4,4.6,5.0"
+    manaproportionregen="0.002"
 
-    resistance="10"
-    mitigation="10"
+    resistance="5"
+    mitigation="0"
 
     inventory0="Ability_Trixie1"
     inventory1="Ability_Trixie2"
@@ -132,19 +132,20 @@
     
     
     power="100"
+	powerperlevel="2"
     attackduration="300"
     attackactiontime="200"
     attackcooldown="1100"
-    attackdamagemin="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamageminperlevel="0"
-    attackdamagemax="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamagemaxperlevel="0"
+    attackdamagemin="48"
+    attackdamageminperlevel="3"
+    attackdamagemax="48"
+    attackdamagemaxperlevel="3"
     attacknumanims="2"
     tiltfactor="0.0"
     tiltspeed="90.0"
     attackoffset="18 185 150"
     attackprojectile="Projectile_Trixie_Attack"
-    attackrange="550"
+    attackrange="535"
     attackstarteffect=""
     attackactioneffect="projectile/effects/attack_action.effect"
     attackimpacteffect=""

@@ -3,7 +3,7 @@
 	name="Item_ScalingPower_Empower_3"
 	
 	cost="640"
-	maxcharges="7"
+	maxcharges="10"
 >
 	<!-- Tooltip only -->
 	<constant name="charges_enchant" value="2" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />

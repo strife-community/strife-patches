@@ -15,7 +15,7 @@
 	hoverareacastrange="900"
 	
 	manacost="0"
-	cooldowntime="120000"
+	cooldowntime="100000"
 	cooldowntype="familiar3" 
 	casteffect="effects/cast.effect" 
 	casteffecttype="NoResponse BreakStealth"
@@ -27,7 +27,7 @@
 	
 >
 
-	<constant name="cooldown" value="120" adjustment="none" />
+	<constant name="cooldown" value="100" adjustment="none" />
 	<constant name="damage" value="118,131,144,157,170,183,196,209,222,235,248,261,274,287,300" adjustment="none" />
 
 	<onimpact>

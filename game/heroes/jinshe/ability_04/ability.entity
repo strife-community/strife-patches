@@ -27,6 +27,10 @@
 	<constant name="damage_per_second" value="18,24,30" adjustment="ability" />
 	<constant name="percent_hp" value="2" adjustment="support" noshowintooltip="true" />
 	
+	<constant name="power_enchant" value="1,1.5,2" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="maxhealth_enchant" value="1,1.5,2" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="stacks_enchant" value="10,13,16" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<aura state="Soulstealer" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
 
 	<checkcost>
 		<areaofeffect

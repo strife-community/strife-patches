@@ -6,8 +6,8 @@
 
 	passiveeffect="effects/state.effect"
 	
-	movespeedslow="0.2"
-	movespeedslowpercharge="0.002"
+	movespeedslow="0.25"
+	movespeedslowpercharge="0.0025"
 	
 	effecttype="StatusDebuff CrowdControl"
 	allowtransfer="true"
@@ -22,7 +22,7 @@
 	</modifier>
 
 	<modifier key="frostbrand_empower_3" modpriority="100"
-		movespeedslow="0.25"
+		movespeedslow="0.30"
 		>
 	</modifier>
 </state>

@@ -15,8 +15,8 @@
 	
 	actiontype="target_self"
 	
-	manacost="100"
-	cooldowntime="20000"
+	manacost="10"
+	cooldowntime="1000"
 	
 	hoverareacastrange="960"
 	
@@ -30,8 +30,8 @@
 	<constant name="attackspeed" value="5,10,15,20" adjustment="none" />
 
 	<onimpact>
-		<applystate name="State_Flak_Ability1" target="source_entity" duration="4000,5000,8000,10000" />
-		<starttimer duration="4000,5000,8000,10000" />
+		<applystate name="State_Flak_Ability1" target="source_entity" duration="-1" />
+		<starttimer duration="-1" />
 		<setactivemodifierkey name="active" />
 		
 		
@@ -50,6 +50,14 @@
 			<setactivemodifierkey name="" />
 			<delete target="this_proxy_entity" />
 		</onimpact>
+		
+		<onframe>
+			<compare a="source_mana" b="5" op="le">
+				<setactivemodifierkey entity="this_entity" name="" /> 
+			</compare>
+			<setvar0 a="8,10,12,14" b="frametime" op="mult" />
+			<takemana target="source_entity" amount="1" b="var0" op="mult" />
+		</onframe>
 
 	</modifier>
 

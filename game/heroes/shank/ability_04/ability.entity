@@ -46,5 +46,9 @@
 		<spawnunit name="Gadget_Shank_Ability4" target="source_position" pushentity="true" />
 		<spawnprojectile name="Projectile_Shank_Ability4" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" offset="0 100 0"/>
 	</onimpact>
+	
+	<onattackeddamageevent>
+		<applystate name="Shank_Mitig" duration="5000" target="source_entity" />
+	</onattackeddamageevent>
 
 </ability>

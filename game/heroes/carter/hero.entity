@@ -93,7 +93,7 @@
 
     category="magic"
     difficulty="4"
-    movespeed="335"
+    movespeed="330"
     turnrate="900"
     turnsmoothing="0.01"
     
@@ -103,20 +103,20 @@
     rolemagicdamage="5"
     roleutility="0"
 
-    maxhealth="602,656,710,764,817,872,925,978,1033,1086,1139,1194,1247,1301,1355"
-    maxhealthperlevel="0"
-    healthregen="1.8,1.92,2.04,2.16,2.28,2.4,2.52,2.64,2.76,2.88,3,3.12,3.24,3.36,3.48"
+    maxhealth="780"
+    maxhealthperlevel="65.7"
+    healthregen="2.0,2.15,2.30,2.45,2.60,2.75,2.90,3.05,3.20,3.35,3.50,3.65,3.80,3.95,4.10"
     healthproportionregen="0"
     
     unitcriticalmultiplier="1.0"
     
     maxmana="380"
-    maxmanaperlevel="15"
-    manaregen="2.11,2.16,2.20,2.24,2.29,2.33,2.37,2.42,2.46,2.51,2.55,2.59,2.64,2.68,2.72"
-    manaproportionregen="0.0"
+    maxmanaperlevel="44.2"
+    manaregen="2.5,2.75,3.0,3.25,3.50,3.75,4.0,4.25,4.50,4.75,5.0,5.25,5.50,5.75,6.0"
+    manaproportionregen="0.002"
 
     resistance="10"
-    mitigation="10"
+    mitigation="5"
 
     inventory0="Ability_Carter1"
     inventory1="Ability_Carter2"
@@ -133,20 +133,21 @@
 
     
     
-    power="100"
+    power="95"
+	powerperlevel="2"
     attackduration="500"
-    attackactiontime="200"
+    attackactiontime="350"
     attackcooldown="1100"
-    attackdamagemin="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamageminperlevel="0"
-    attackdamagemax="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamagemaxperlevel="0"
+    attackdamagemin="48"
+    attackdamageminperlevel="4.28"
+    attackdamagemax="48"
+    attackdamagemaxperlevel="4.28"
     attacknumanims="2"
     tiltfactor="0.0"
     tiltspeed="90.0"
     attackoffset="0 -15 160"
     attackprojectile="Projectile_CarterAttack"
-    attackrange="500"
+    attackrange="550"
     attackstarteffect="effects/attack_start.effect"
     attackactioneffect=""
     attackimpacteffect=""

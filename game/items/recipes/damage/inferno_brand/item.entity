@@ -9,19 +9,19 @@
 	
 	
 	actiontype="passive"
-	hoverareacastrange="500"
+	hoverareacastrange="600"
 	passiveeffect=""
 
-	resistance="10"
+	resistance="20"
 	filters="magic_armor,armor,defense,ability,resistance"
 
 	empoweredeffects="Item_InfernoBrand_Empower_1,Item_InfernoBrand_Empower_3,Item_InfernoBrand_Empower_4"
 	
 	showinpractice="true"
 >
-	<constant name="damage" value="25" adjustment="item" qualityvalue="3" qualityadjustment="common" op="add"/>
-	<constant name="resistance" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
-	<constant name="radius" value="500" adjustment="none" qualityvalue="50" qualityadjustment="legendary" op="add"/>
+	<constant name="damage" value="35" adjustment="item" qualityvalue="3" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="20" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="radius" value="600" adjustment="none" qualityvalue="50" qualityadjustment="legendary" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<onframe>
 		<getconstant name="radius" adjustmentsource="this_entity"/>

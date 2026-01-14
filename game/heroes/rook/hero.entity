@@ -93,7 +93,7 @@
 
     category="magic"
     difficulty="4"
-    movespeed="330"
+    movespeed="355"
     turnrate="900"
     turnsmoothing="0.01"
     
@@ -103,20 +103,20 @@
     rolemagicdamage="0"
     roleutility="2"
 
-    maxhealth="640,697,754,811,868,926,983,1040,1097,1154,1212,1269,1326,1383,1440"
-    maxhealthperlevel="0"
-    healthregen="1.91,2.04,2.17,2.3,2.43,2.56,2.69,2.82,2.95,3.08,3.21,3.34,3.47,3.6,3.73"
+    maxhealth="780"
+    maxhealthperlevel="77.14"
+    healthregen="2.0,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,3.0,3.1,3.2,3.3,3.5"
     healthproportionregen="0"
     
     unitcriticalmultiplier="1.0"
     
-    maxmana="320"
-    maxmanaperlevel="15"
-    manaregen="2.11,2.16,2.20,2.24,2.29,2.33,2.37,2.42,2.46,2.51,2.55,2.59,2.64,2.68,2.72"
+    maxmana="300"
+    maxmanaperlevel="21.42"
+    manaregen="1.5,1.65,1.80,1.95,2.10,2.25,2.40,2.55,2.70,2.85,3.0,3.15,3.30,3.45,3.60"
     manaproportionregen="0.0"
 
-    resistance="10"
-    mitigation="10"
+    resistance="5"
+    mitigation="5"
 
     inventory0="Ability_Rook1"
     inventory1="Ability_Rook2"
@@ -133,20 +133,20 @@
 
     
     
-    power="100"
-    attackduration="500"
-    attackactiontime="200"
-    attackcooldown="1100"
-    attackdamagemin="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamageminperlevel="0"
-    attackdamagemax="54,56.49,58.97,61.46,63.94,66.43,68.91,71.4,73.89,76.37,78.86,81.34,83.83,86.31,88.8"
-    attackdamagemaxperlevel="0"
+    power="120"
+    attackduration="450"
+    attackactiontime="250"
+    attackcooldown="916.67"
+    attackdamagemin="74"
+    attackdamageminperlevel="2.57"
+    attackdamagemax="74"
+    attackdamagemaxperlevel="2.57"
     attacknumanims="2"
     tiltfactor="0.0"
     tiltspeed="90.0"
     attackoffset="0 50 80"
     attackprojectile="Projectile_Rook_Attack"
-    attackrange="550"
+    attackrange="590"
     attackstarteffect="effects/attack.effect"
     attackactioneffect=""
     attackimpacteffect="projectile/effects/impact.effect"

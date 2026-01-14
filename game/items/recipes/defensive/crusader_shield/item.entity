@@ -11,6 +11,7 @@
 	
 	resistance="5"
 	mitigation="10"
+	maxhealth="100"
 	
 	maxcharges="3"
 	actiontype="passive"

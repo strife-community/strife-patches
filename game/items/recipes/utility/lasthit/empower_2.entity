@@ -4,10 +4,10 @@
 	
 	cost="380"
 >
-	<constant name="damage" value="25" adjustment="none" />
+	<constant name="damage" value="15" adjustment="none" />
 
 	<!--Tooltip only-->
-	<constant name="damage_enchant" value="10" adjustment="none" qualityadjustment="common" op="add"/>
+	<constant name="damage_enchant" value="5" adjustment="none" qualityadjustment="common" op="add"/>
 
 
 </qualityitem>

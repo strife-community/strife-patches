@@ -10,11 +10,16 @@
 
 	actiontype="passive"
 	
-	mitigation="6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"
+	mitigation="20"
+		
+	
 	propagatetoillusion="true"
 	
 >
 
-	<constant name="passive" value="6,7,8,9,10,11,12,13,14,15,16,17,18,19,20" adjustment="none" />
+	<constant name="passive" value="20" adjustment="none" />
+	<constant name="cc_reduction" value="25" adjustment="none" />
+	<aura state="CC_Reduction" radius="1200" targetscheme="self" ignoreinvulnerable="true" /> 
+	
 
 </ability>

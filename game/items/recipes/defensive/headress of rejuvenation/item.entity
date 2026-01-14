@@ -13,12 +13,29 @@
 	actiontype="passive"
 	filters="defense,health_regen"
 
-	empoweredeffects="Item_HeadressOfRejuvenation_Empower_3,Item_HeadressOfRejuvenation_Empower_4"
+	empoweredeffects="Item_HeadressOfRejuvenation_Empower_3,Item_HeadressOfRejuvenation_Empower_4,Item_HeadressOfRejuvenation_Empower_1,Item_HeadressOfRejuvenation_Empower_2"
 	
 	showinpractice="true"
 >
 	<constant name="regen" value="2.7" adjustment="none" qualityvalue="0.27" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="regen_legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+	
+    <constant name="passive" value="30" adjustment="none" floatprecision="1" />
 
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+			<setactivemodifierkey name="ooc_boost" />
+		</hasmodifier>
+	</onframe>
+	
+	<modifier key="ooc_boost" modpriority="100" passiveeffect="effects/state.effect" healthregen="3.0">
+		<onframe>
+			<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onframe>
+	 </modifier>
 </crafteditem>

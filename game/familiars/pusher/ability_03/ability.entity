@@ -15,7 +15,7 @@
 	hoverareacastrange="550"
 	
 	manacost="0"
-	cooldowntime="105000"
+	cooldowntime="90000"
 	cooldowntype="familiar3" 
 	casteffect="" 
 	casteffecttype="NoResponse"
@@ -30,7 +30,7 @@
 	
 >
 	<!-- Tooltip Only -->
-	<constant name="cooldown" value="105" adjustment="none" />
+	<constant name="cooldown" value="90" adjustment="none" />
 	<constant name="health" value="300,309,327,354,390,435,489,552,624,705,795,894,1002,1119,1245" adjustment="none" />
 	<constant name="attackspeed" value="35" adjustment="none" />
 	<constant name="damage_increase" value="75" adjustment="none" />

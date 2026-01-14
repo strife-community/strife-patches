@@ -12,6 +12,7 @@
 	
 	actiontype="passive"
 	mitigation="45"
+	maxhealth="300"
 
 	filters="defense,armor,debuff_enemy,resistance,mitigation"
 
@@ -19,9 +20,9 @@
 	
 	showinpractice="true"
 >
-	<constant name="resistance" value="15" adjustment="none" op="add"/>
-	<constant name="attackspeedslow" value="20" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
-	<constant name="mitigation" value="30" adjustment="none" op="add"/>
+	
+	<constant name="attackspeedslow" value="30" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="45" adjustment="none" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	
 	<onattackedpostimpact>

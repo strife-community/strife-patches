@@ -13,11 +13,11 @@
 	powerpercharge="1"
 	maxcharges="100"
 
-	power="3,5,7,9"
+	power="6,9,12,15"
 	
 >
 	<constant name="power_steal" value="2,3,4,5" adjustment="none" />
-	<constant name="power" value="3,5,7,9" adjustment="none" />
+	<constant name="power" value="6,9,12,15" adjustment="none" />
 	
 	
 	<onattackdamageevent >

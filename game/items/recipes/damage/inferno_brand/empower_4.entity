@@ -4,18 +4,18 @@
 	
 	cost="1400"
 
-	hoverareacastrange="350"
+	hoverareacastrange="450"
 >
 	<!-- Tooltip only -->
 	<constant name="damage_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
-	<constant name="damage_real" value="35" adjustment="item" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="damage_real" value="45" adjustment="item" qualityvalue="0" qualityadjustment="legendary" op="add" />
 	<constant name="area_enchant" value="150" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 	<onframe>
 		<getconstant name="radius" adjustmentsource="this_entity"/>
 		<targettype target="source_entity" type="alive" >
 			<areaofeffect
-				radius="350"
+				radius="450"
 				targetselection="all"
 				targetscheme="enemy_units"
 				effecttype="Magic DOT Splash"

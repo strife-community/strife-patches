@@ -3,7 +3,7 @@
 	name="Item_ScalingPower_Empower_1"
 	
 	cost="470"
-	maxcharges="5"
+	maxcharges="8"
 
 >
 	<onkill propagatetoillusions="false" >
