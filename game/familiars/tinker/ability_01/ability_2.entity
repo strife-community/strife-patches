@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tinker_Passive_2"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	actiontype="passive"
+	modifierkey="TinkerPassive"
+
+	
+>
+	<!-- tool tip only -->
+	<constant name="passive" value="55" adjustment="none" />
+
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+			<setactivemodifierkey name="ooc_boost" />
+		</hasmodifier>
+	</onframe>
+		
+	<modifier key="ooc_boost" modpriority="100" passiveeffect="effects/state.effect" healthregen="3.0" manaregen="1.5">
+		<onframe>
+			<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onframe>
+	 </modifier>
+	 
+</ability>

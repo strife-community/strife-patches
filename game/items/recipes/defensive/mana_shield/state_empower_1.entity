@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Mana_Shield_Empower_1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	displaylevel="true"
+>
+
+	<oninflict>
+		<getconstant name="shield_manapercent" adjustmentsource="tool_entity" />
+		<setvar0 a="source_maxmana" b="result" op="mult" />
+		<setvar0 a="var0" b="100" op="div" />
+		<setvalue source="this_entity" name="source_max_shield" a="var0" b="source_max_shield" op="add"/>
+		<setvalue source="this_owner_entity" name="source_shield" a="source_shield" b="var0" op="add" />
+	</oninflict>
+
+	<onattackeddamageevent>
+		<compare source="this_owner_entity" a="source_shield" b="damage_attempted" op="le">
+			<expire />
+		</compare>
+		
+		<getconstant name="mana_restore_enchant" />
+		<setvar0 a="result" b="100" op="div" />
+		<setvar0 a="damage_attempted" b="var0" op="mult" />
+		<givemana target="source_entity" amount="var0" />
+	</onattackeddamageevent>
+
+	<onexpired>
+		<starttimer duration="0" entity="this_proxy_entity" />
+	</onexpired>
+
+	
+</statenetaccum>

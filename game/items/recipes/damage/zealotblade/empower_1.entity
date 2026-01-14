@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Zealotsblade_Empower_1"
+	
+	cost="1590"
+
+	maxcharges="3"
+	powerpercharge="4"
+>
+	<!-- Tooltip only -->
+	<constant name="power_enchant" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="power_duration_enchant" value="3" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onattack>
+		<addcharges/>
+		<starttimer duration="3000" />
+	</onattack>
+
+	<ontimer>
+		<setcharges a="0" />
+	</ontimer>
+
+</qualityitem>

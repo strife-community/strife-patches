@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_ShamanHeaddress"
+
+	icon="icon.tga"
+	
+	cost="1350"
+	components="Item_Booster Item_Booster Item_Sustainer"
+	
+	
+	actiontype="passive"
+
+	resistance="40"
+
+	filters="defense,magic_armor,health_regen,resistance"
+
+	empoweredeffects="Item_ShamanHeaddress_Empower_1,Item_ShamanHeaddress_Empower_2"
+	
+	showinpractice="true"
+	>
+	<constant name="resistance" value="40" adjustment="none" qualityvalue="4.5" qualityadjustment="common" op="add"/>
+	<constant name="magicheal" value="20" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+
+	<ondamaged>
+		<compare a="source_damage" b="0" op="gt">
+			<currentdamageeffecttype effecttype="Magic">
+				<getconstant name="magicheal" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="damage_applied" b="var0" op="mult" />
+				<applystate name="State_ShamanHeaddress" duration="-1" target="source_entity" pushentity="true" />
+				<setaccumulator value="var0" entity="stack_entity" />
+			</currentdamageeffecttype>
+		</compare>
+	</ondamaged>
+
+
+	<modifier key="shamanheaddress_active" modpriority="50"
+	>
+		<ondamaged />
+	</modifier>
+
+
+</crafteditem>

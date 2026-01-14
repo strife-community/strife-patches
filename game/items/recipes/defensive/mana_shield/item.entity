@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Mana_Shield"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	anim="item_self"
+	
+	cost="975"
+	components="Item_Diamond Item_Diamond"
+	maxcharges="100"
+	casteffect="cast.effect"
+	actiontype="target_self"
+	cooldowntime="40000"
+	noninterrupting="true"
+	inheritmovement="true"
+	queue="front"
+	castactiontime="0"
+	
+	resistance="5"
+	
+	hoverareacastrange="500"
+
+	filters="defense,activatable"
+	alwaysshowtimer="true"
+
+	empoweredeffects="Item_Mana_Shield_Empower_1,Item_Mana_Shield_Empower_2,Item_Mana_Shield_Empower_3"
+	
+	showinpractice="true"
+>
+
+	<constant name="shield_manapercent" value="40" adjustment="support" qualityvalue="4.0" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="legendary" value="6" adjustment="none" qualityvalue="6" qualityadjustment="legendary" op="add"/>
+	<constant name="resistance" value="5" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add" />
+	
+	<onimpact>
+		<starttimer duration="6000" />
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Mana_Shield" duration="6000" />
+		</areaofeffect>
+		<playeffect effect="effects/cast.effect" target="source_entity" />
+	</onimpact>
+	
+
+
+</crafteditem>

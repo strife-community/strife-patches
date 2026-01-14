@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hale3"
+	
+	icon="icon.tga"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_self"
+
+	casteffect="effects/cast.effect"
+	
+	anim="ability_3"
+	casttime="0"
+	castactiontime="0"
+	inheritmovement="true"
+	queue="front"
+
+	cooldowntime="16000"
+	manacost="55,60,65,70"
+
+	alwaysshowtimer="true"
+
+
+>
+	<!--Display Only-->
+	<constant name="percent_heal" value="1.7,2.0,2.3,2.6" adjustment="support" floatprecision="1" />
+	<constant name="attackspeed" value="20,30,40,50" adjustment="none" />
+
+	<onimpact>
+		<starttimer duration="5000" />
+		<applystate name="State_Hale_Ability3_Buff" target="source_entity" proxy="this_entity" pushentity="true" duration="5000" />
+	</onimpact>
+
+
+
+</ability>

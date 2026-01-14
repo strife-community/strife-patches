@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Topps_Ult_3"
+
+	icon="icon.tga"
+	baselevel="1"
+	actiontype="target_self"
+	manacost="0"
+
+	cooldowntime="105000"
+
+	casteffecttype="NoResponse"
+	frontqueue="true"
+	inheritmovement="true"
+	responsetype="NoResponse"
+	noninterrupting="true"
+	ispetultimate="true"
+	
+>
+	<constant name="cooldown" value="105" adjustment="none" />
+	
+	<onimpact>
+		<areaofeffect radius="500" targetselection="closest" targetscheme="enemy_heroes" maxtotalimpacts="5" maximpactspertarget="1" effecttype="Magic">
+			<aggression />
+			<applystate name="State_Topps_Ult" duration="2250" />
+			<playeffect effect="effects/fire.effect" source="this_proxy_entity" target="target_entity"/>
+			<playanim name="ability_1" target="this_proxy_entity" />
+			<playeffect effect="effects/impact.effect" source="target_entity" target=""/>
+		</areaofeffect>
+		<compare a="result" b="0" op="gt">
+			<playeffect effect="effects/sound.effect" source="source_entity" target="source_entity" />
+		</compare>
+	</onimpact>
+
+</ability>

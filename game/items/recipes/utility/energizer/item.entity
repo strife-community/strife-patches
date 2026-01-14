@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Energizer"
+	
+	icon="icon.tga"
+	cost="750"
+	components="Item_Blade Item_Healthstone Item_Manastone"
+	anim="item_self"
+	
+	actiontype="self_position"
+	targetscheme="ally_units"
+	targetradius="750"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	queue="front"
+	inheritmovement="true"
+	noninterrupting="true" 
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="35000"
+	casteffect=""
+
+	movespeed="10"
+	
+	hoverareacastrange="750"
+
+	filters="utility,other_mobility,activatable,buff_team"
+
+	empoweredeffects="Item_Energizer_Empower_1,Item_Energizer_Empower_2,Item_Energizer_Empower_4"
+	
+	showinpractice="true"
+>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="5" qualityadjustment="common" op="add"/>
+	<!--Tooltip Only-->
+	<constant name="movespeed" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="legendary" value="10" adjustment="none" qualityvalue="10" qualityadjustment="legendary" op="add"/>
+	
+	<onimpact>
+		<playeffect effect="effects/aoe.effect" source="source_position" target="" occlude="true" />
+
+		<areaofeffect
+			radius="750"
+			targetselection="all"
+			targetscheme="ally_units"
+			effecttype=""
+			ignoreinvulnerable="true"
+		>
+			<applystate name="State_Energizer_Buff" duration="4000" pushentity="true" />
+		</areaofeffect>
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</crafteditem>

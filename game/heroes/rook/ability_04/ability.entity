@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rook4"
+
+	icon="icon.tga"
+	
+	anim="ability_4_start"
+	casttime="550"
+	castactiontime="550"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_position"
+	targetradius="100"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	casteffect=""
+	
+	manacost="110,125,140"
+	cooldowntime="90000"
+
+	range="20000"
+	forcerange="20000"
+	allowoutofboundscast="true"
+	allowoutofrangecast="true"
+	
+	showlinecast="true"
+	dontshowhovercast="true"
+	linecastrange="20000"
+	linecastwidth="150"
+>
+	<constant name="damage" value="200,265,330" adjustment="ability" />
+	
+	<onimpact>
+		<playeffect effect="effects/cast.effect" />
+		<playanim name="ability_4_end" target="source_entity"/>
+		<spawnunit name="Gadget_Rook_Ability4_Reveal" count="1" target="source_position" pushentity="true" />
+		<spawnprojectile name="Projectile_Rook_Ability4" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" offset="0 130 0" pushentity="true"/>
+		<playeffect effect="effects/projectile/trail_ally.effect" source="stack_entity" visibility="allies"/>
+   		<playeffect effect="effects/projectile/trail_enemy.effect" source="stack_entity" visibility="enemies"/>
+	</onimpact>
+	
+	<onstart>
+		<playeffect effect="effects/cast_start.effect" />
+	</onstart>
+	
+</ability>

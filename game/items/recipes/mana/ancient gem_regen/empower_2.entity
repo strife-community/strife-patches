@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_AncientGem_Empower_2"
+	basemanaregen="2.7"
+	cost="515"
+>
+	<constant name="regen_bonus" value="1.0" adjustment="none" />
+
+</qualityitem>

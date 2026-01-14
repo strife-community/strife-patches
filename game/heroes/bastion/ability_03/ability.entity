@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bastion3"
+
+	icon="icon.tga"
+	
+	anim="ability_3"
+	casttime="200"
+	castactiontime="200"
+	casteffect="effects/cast.effect"
+	passiveeffect=""
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_self"
+	targetscheme="enemy_units"
+	casteffecttype=""
+	queue="front"
+	
+	manacost="50,55,60,65"
+	cooldowntime="25000"
+	maxhealth="40,80,120,160"
+	
+	range="600"
+	
+	doubleactivate="true"
+	doubleactivatenoninterrupting="true"
+
+>
+	<constant name="maxhp" value="40,80,120,160" adjustment="support" />
+	<constant name="shield_percent" value="10,12,14,16" adjustment="support" />
+	
+	<onimpact>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Bastion_Ability3" duration="8000" pushentity="true" />
+			<getconstant name="shield_percent" />
+			<setvar0 a="result" b="100" op="div" />
+			<setvar0 a="var0" b="source_maxhealth" op="mult" />
+			<setaccumulator entity="stack_entity" value="var0" />
+		</areaofeffect>
+
+		<setaccumulator value="0" />
+		<setcharges a="0" />
+	</onimpact>
+
+</ability>

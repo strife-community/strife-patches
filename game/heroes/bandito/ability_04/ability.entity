@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bandito4"
+
+	
+	
+	
+	icon="icon.tga"
+
+	actiontype="target_self"
+	cooldowntime="50000"
+	anim="ability_4"
+	casttime="250"
+	castactiontime="250"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+	modifierkey="Bandito_Ability4_1,Bandito_Ability4_2,Bandito_Ability4_3"
+	alwaysshowtimer="true"
+
+
+>
+	<!--Display Only-->
+	<constant name="multicast_chance" value="18,24,30" adjustment="none" />
+	<constant name="cooldown" value="50" adjustment="none" noshowintooltip="true" />
+
+	<onimpact>
+		<setactivemodifierkey entity="this_entity" name="doubledown" />
+		<playeffect effect="effects/ultimatecast.effect" target="source_entity" />
+		<starttimer duration="8000" />
+		
+		<applystate name="State_Bandito_Ability4_ForceMulti" duration="8000" target="source_entity" />
+	</onimpact>
+
+	<modifier key="doubledown" modpriority="100"
+		ignorecooldown="true"
+		actiontype="passive"
+		icon="icon_b.tga"
+		modifierkey="Bandito_Ability4_1B,Bandito_Ability4_2B,Bandito_Ability4_3B"
+		passiveeffect="effects/state_self.effect" 
+	>
+		
+		
+		<ontimer>
+			<setactivemodifierkey entity="this_entity" name="doubledown_off" />
+			<expirestate name="State_Bandito_Ability4_ForceMulti" target="source_entity" />
+		</ontimer>
+		
+		<ondoubleactivate/>
+	</modifier>
+
+	<modifier key="doubledown_off" modpriority="100"
+		icon="icon_off.tga"
+		modifierkey=""
+	>
+		
+		
+		<onframe>
+			<isready>
+				<setactivemodifierkey entity="this_entity" name="" />
+			</isready>
+		</onframe>
+		
+		<ondoubleactivate/>
+	</modifier>
+
+</ability>

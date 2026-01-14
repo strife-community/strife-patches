@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Timewarper_Empower_3"
+	
+	cost="1730"
+	magiclifesteal="0.05"
+
+>
+	<!-- Tooltip only -->
+	<constant name="spellsteal_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

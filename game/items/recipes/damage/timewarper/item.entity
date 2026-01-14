@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Timewarper"
+
+	icon="icon.tga"
+	
+	cost="1425"
+	components="Item_Staff Item_Manaregen2 Item_Booster"
+	
+	
+	actiontype="passive"
+
+	reducedcooldowns="0.25"
+	reducedcooldownsperquality="0.025"
+	power="15"
+	powerperquality="1.5"
+
+	filters="ability,cd_reduction,power"
+
+	empoweredeffects="Item_Timewarper_Empower_1,Item_Timewarper_Empower_3"
+	
+	showinpractice="true"
+>
+	<!--Tooltip only-->
+	<constant name="power" value="15" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add" />
+	<constant name="cd" value="25" adjustment="none" qualityvalue="2.5" qualityadjustment="common" op="add"/>
+	<constant name="legendary" value="1.5" adjustment="none" qualityvalue="1.5" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+
+	
+</crafteditem>

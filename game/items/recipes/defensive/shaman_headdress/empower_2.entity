@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_ShamanHeaddress_Empower_2"
+	
+	cost="1550"
+
+>
+	<!-- Tooltip only -->
+	<constant name="heal_enchant" value="2" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<constant name="magichealenchant" value="22" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+
+	<ondamaged>
+		<compare a="source_damage" b="0" op="gt">
+			<currentdamageeffecttype effecttype="Magic">
+				<getconstant name="magichealenchant" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="damage_applied" b="var0" op="mult" />
+				<applystate name="State_ShamanHeaddress_Empower_2" duration="-1" target="source_entity" pushentity="true" />
+				<setaccumulator value="var0" entity="stack_entity" />
+			</currentdamageeffecttype>
+		</compare>
+	</ondamaged>
+
+</qualityitem>

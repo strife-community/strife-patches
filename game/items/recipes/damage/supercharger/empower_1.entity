@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Supercharger_Empower_1"
+	
+	cost="1840"
+	powermultiplier="0.04"
+
+>
+	<!-- Tooltip only -->
+	<constant name="powerpercent_enchant" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

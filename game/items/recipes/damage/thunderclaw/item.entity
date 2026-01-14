@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_ThunderClaw"
+	
+	icon="icon.tga"
+	
+	cost="950"
+	components="Item_Blade Item_Manastone Item_GlovesOfHaste"
+	
+	actiontype="passive"
+	
+	maxcharges="4"
+	
+	alwaysshowonskillbar="false"
+
+	filters="attack_mod,attack,ability"
+
+	empoweredeffects="Item_ThunderClaw_Empower_1,Item_ThunderClaw_Empower_2,Item_ThunderClaw_Empower_3"
+	
+	showinpractice="true"
+>	
+	<constant name="damage" value="60" adjustment="item" qualityvalue="4.5" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+
+	<!--Tooltip only-->
+	<constant name="resistance" value="3" adjustment="none" qualityvalue="3" qualityadjustment="legendary" op="add" />
+	
+	<ontimer>
+		<removecharges count="5"/>
+	</ontimer>
+	
+	<modifier key="chainlightningproc" modpriority="75" exclusive="true"  >
+		<onattack effectdescription="true" propagatetoillusions="false">
+			<cantarget targetscheme="enemy_units">
+				<compare a="charges" b="4" op="eq">
+					<spawnaffector name="Affector_ThunderClaw" />
+					<setcharges a="0" />
+					<starttimer duration="10000" />
+				</compare>
+				<else>
+					<addcharges a="1"/>
+					<compare a="charges" b="0" op="gt">
+						<starttimer duration="10000" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattack>
+	</modifier>
+</crafteditem>

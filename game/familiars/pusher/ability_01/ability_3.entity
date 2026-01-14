@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pusher_Passive_3"
+
+	icon="icon.tga"
+	
+	
+	maxlevel="15"
+	
+
+	actiontype="passive"
+	
+	manacost="0"
+
+	resistance="6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"
+	propagatetoillusion="true"
+	
+>
+
+	<constant name="passive" value="6,7,8,9,10,11,12,13,14,15,16,17,18,19,20" adjustment="none" />
+</ability>

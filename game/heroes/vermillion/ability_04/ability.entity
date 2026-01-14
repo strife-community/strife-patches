@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vermillion4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="300"
+	castactiontime="150"
+	casteffect="effects/cast.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_position"
+	targetradius="200"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	targetscheme="enemy_units_and_buildings"
+	casteffecttype="Magic"
+	
+	range="600"
+	manacost="130,150,170"
+	cooldowntime="90000"
+
+	queue="dropmovement"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+>
+	<constant name="damage" value="140,180,220" adjustment="ability" />
+
+	<!-- tooltiponly -->
+	<constant name="stun" value="1,1.3,1.6" adjustment="None" floatprecision="1" />
+	
+	<onimpact>
+		<spawnprojectile name="Projectile_Vermillion_Ability4" target="target_position" offset="0 0 0" pushentity="true" noresponse="true" />
+		<spawnprojectile name="Projectile_Vermillion_Ability4_Art" target="target_position" offset="20 35 180" pushentity="true" noresponse="true" />
+		<placehazard target="target_position" hazardthreat="extreme" radius="200" duration="1500" />
+		
+		<distance source="source_entity" target="target_position" />
+		<setvar0 a="result" />
+		<compare a="var0" b="200" op="le" >
+			<setpos0 position="target_position" positionend="source_position" positionmodifier="pointpastline" positionvalue="550" snaptoterrain="true"/>
+			<spawnprojectile name="Projectile_Vermillion_Ability4_Push" target="pos0" bind="source_entity" bindstate="State_Vermillion_Ability4" unbindondeath="true" noresponse="true" bindpriority="1"/>
+		</compare>
+		<else>
+			<setvar0 a="550" b="var0" op="sub" />
+			<setvar0 a="var0" b="350" op="div" />
+			<setvar0 a="var0" b="250" op="mult" />
+			<setvar0 a="var0" b="300" op="add" />
+			<setpos0 position="target_position" positionend="source_position" positionmodifier="pointpastline" positionvalue="var0" snaptoterrain="true"/>
+			<spawnprojectile name="Projectile_Vermillion_Ability4_Push" target="pos0" bind="source_entity" bindstate="State_Vermillion_Ability4" unbindondeath="true" noresponse="true" bindpriority="1"/>
+		</else>
+
+	</onimpact>
+	
+	<modifier key="gear_1" modpriority="1"
+		casteffect="../gear_1/ability_04/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="gear_2" modpriority="1"
+		casteffect="../gear_2/ability_04/effects/cast.effect"
+	>
+	</modifier>
+
+</ability>

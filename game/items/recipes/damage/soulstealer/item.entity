@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Soulstealer"
+	
+	
+	icon="icon.tga"
+	cost="1250"
+	components="Item_Manastone Item_Relic"
+	magiclifesteal="0.25"
+
+	actiontype="passive"
+
+	maxmana="100"
+	maxmanaperquality="10.0"
+
+	filters="ability,spell_vamp,lifesteal,maxmana,mana"
+
+	empoweredeffects="Item_Soulstealer_Empower_1,Item_Soulstealer_Empower_2,Item_Soulstealer_Empower_3"
+	
+	showinpractice="true"
+>	
+	<constant name="vamp" value="25" adjustment="none" qualityvalue="2.5" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="manamax" value="100" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="mana" value="3" adjustment="none" qualityvalue="3" qualityadjustment="legendary" op="add"/>
+
+
+
+</crafteditem>

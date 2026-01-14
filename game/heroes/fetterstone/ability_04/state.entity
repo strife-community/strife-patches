@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Fetterstone_Ability4"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	modifierkey="ult_projectile"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	ishidden="true"
+>
+
+	<onexpired>
+		<setactivemodifierkey name="" entity="tool_entity" />
+		<playeffect effect="effects/sound.effect" source="source_entity" target="source_entity" occlude="true" />
+	</onexpired>
+
+	<onattack>	
+		<getconstant name="damage_increase" adjustmentsource="none" />
+		<setvar0 a="result" b=".01" op="mult" />
+		<setvar0 a="var0" b="source_attackdamage" op="mult" />
+		<bonusdamageadd target="" a="var0" />
+	
+		<addattackimpactactions>
+			<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.5" op="mult" radius="300" effecttype="AttackDamage Splash" targetscheme="enemy_units" />
+			<setpos0 position="target_position" positionend="source_position" positionmodifier="pointonline" positionvalue="50" />
+			<placehazard target="pos0" hazardthreat="extreme" radius="350" duration="1500" />
+		</addattackimpactactions>
+	</onattack>
+
+
+</state>

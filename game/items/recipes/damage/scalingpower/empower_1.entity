@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_ScalingPower_Empower_1"
+	
+	cost="470"
+	maxcharges="5"
+
+>
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+		<targettype type="Boss">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+		<targettype type="Boss">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
+</qualityitem>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bounder_Ult_2"
+
+	icon="icon.tga"
+	
+	
+	maxlevel="1"
+	
+
+	actiontype="target_position"
+	casttime="0"
+
+	manacost="0"
+	cooldowntime="100000"
+	casteffect="effects/cast.effect"
+	casteffecttype="NoResponse BreakStealth"
+	
+	showlinecast="true"
+	linecastwidth="50"
+	linecastrange="520"
+	
+	
+	range="500"
+	forcerange="500"
+	allowoutofrangecast="true"
+	noturntotarget="true"
+	responsetype="NoResponse BreakStealth"
+	inheritmovement="true"
+	noninterrupting="true"
+	noentercombat="true"
+
+	queue="dropmovement"
+	ispetultimate="true"
+>
+
+	<constant name="cooldown" value="100" adjustment="none" />
+	
+	<onimpact>
+		<spawnprojectile name="Projectile_Bounder_Ult" source="source_entity" target="target_position" bind="source_entity" bindstate="State_Bounder_Ult" bindturn="true" unbindondeath="true" pushentity="true" bindpriority="1"/>
+	</onimpact>
+	
+</ability>

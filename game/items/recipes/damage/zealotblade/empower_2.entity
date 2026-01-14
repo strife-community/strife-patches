@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Zealotsblade_Empower_2"
+	
+	cost="1650"
+	attacklifesteal="0.04"
+>
+	<!-- Tooltip only -->
+	<constant name="lifesteal_enchant" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

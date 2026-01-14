@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Kingsmail"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	
+	cost="845"
+	components="Item_Booster Item_Mender"
+	
+	mitigation="20"
+	
+	maxcharges="4"
+	actiontype="passive"
+
+	filters="defense,armor,health_regen,resistance,mitigation"
+
+	empoweredeffects="Item_Kingsmail_Empower_1,Item_Kingsmail_Empower_2,Item_Kingsmail_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="mitigation" value="20" adjustment="none" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="hp_regen" value="5" adjustment="none" qualityvalue="0.35" qualityadjustment="common" op="add"/>
+
+	<modifier key="kingsmail" modpriority="25" exclusive="true"
+		basehealthregen="5"
+		basehealthregenperquality="0.5"
+	>	
+	</modifier>
+	
+  
+</crafteditem>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_ScalingPower"
+	
+	icon="icon.tga"
+	
+	cost="440"
+	components="Item_Mender Item_Blade"
+	
+	actiontype="passive"
+
+	maxcharges="5"
+
+	powerpercharge="3.0"
+	powerperchargeperquality="0.3"
+	maxhealthpercharge="30"
+	maxhealthperchargeperquality="3.0"
+	filters="power,ability,health,attack"
+
+	empoweredeffects="Item_ScalingPower_Empower_1,Item_ScalingPower_Empower_2,Item_ScalingPower_Empower_3" 
+	
+	showinpractice="true"
+>
+	<!--Tooltip only-->
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="5" qualityadjustment="common" op="add"/>
+	<constant name="power_scale" value="3.0" adjustment="none" qualityvalue="0.3" qualityadjustment="common" op="add"/>
+	<constant name="health_scale" value="30" adjustment="none" qualityvalue="3.0" qualityadjustment="common" op="add"/>
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	<ondeath>
+		<removecharges count="1" />
+	</ondeath>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
+	
+	<onframe>
+		<compare a="charges" b="5" op="ge" >
+			<setactivemodifierkey entity="this_entity" name="scalingpower_legendary" />
+		</compare>
+		<else>
+			<setactivemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+
+	<modifier key="scalingpower_legendary" modpriority="80" movespeed="10"  icon="icon_2.tga"
+	>
+
+	</modifier>
+	
+</crafteditem> 

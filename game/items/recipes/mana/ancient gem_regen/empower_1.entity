@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_AncientGem_Empower_1"
+	cost="345"
+>
+	<constant name="ooc_bonus" value="5" adjustment="none" />
+
+	<modifier key="out_of_combat_regen" modpriority="25" 
+		manaregenmultiplier="0.05"
+		manaregenmultiplierperlegendaryquality="0.05"
+	/>
+
+</qualityitem>

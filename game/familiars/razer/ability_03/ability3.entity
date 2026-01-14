@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Razer_Ult_1"
+
+	icon="icon.tga"
+	
+	maxlevel="1"
+	baselevel="1"
+
+	actiontype="target_self"
+	inheritmovement="true"
+	frontqueue="true"
+
+	manacost="0"
+	cooldowntime="110000"
+
+	cooldowntype="familiar3" 
+	casteffect="" 
+	casteffecttype="NoResponse BreakStealth"
+	responsetype="NoResponse BreakStealth"
+
+	noninterrupting="true"
+	ispetultimate="true"
+	
+>
+	<constant name="cooldown" value="110" adjustment="none" />
+	<aura state="State_Razer_Effects" radius="10" notooltip="true" ignoreinvulnerable="true" targetscheme="self" /> 
+
+	<onpreimpact>
+		<applystate name="State_Razer_Unitwalking" target="source_entity" duration="frametime"  />
+	</onpreimpact>
+
+	<onimpact>
+		<setpos0 position="source_position" offsetspace="source_entity" offset="0 10000 0" />
+		<spawnillusion target="this_owner_entity" owner="source_entity" source="source_entity" count="1" lifetime="2250" receivedamagemultiplier="3.5" inflictdamagemultiplier="0.0" spawneffect="" deatheffect="" pushentity="true" uncontrollable="true" fixedposition="true" />
+		<setpos1 position="source_position" offsetspace="source_entity" offset="0 100 0" />
+		<order command="move" source="stack_entity" target="pos1" />
+		<spawnprojectile name="Projectile_Razer" target="pos0" proxy="stack_entity" offset="0 200 0"/>
+		<applystate name="State_Razer_Revealed" duration="1500" target="stack_entity" />
+		<applystate name="State_Razer_Invis" duration="1500" target="source_entity" proxy="stack_entity" />
+		<areaofeffect targetscheme="enemy_buildings" effecttype="" ignoreinvulnerable="true" targetselection="all" radius="700" maximpactspertarget="1">
+			<applystate name="State_Razer_Aggro" proxy="stack_entity" duration="1500" /> 
+		</areaofeffect>
+	</onimpact>
+	
+</ability>

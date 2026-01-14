@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Harrower_Ability3"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	incomingdamagemultiplier="0.03,0.06,0.09,0.12"
+	effecttype="StatusDebuff"
+
+>
+	
+	<onattackeddamageevent>
+		<cantarget targetscheme="self" source="this_inflictor_entity" >
+			<getconstant name="percentdamagehealed" adjustmentsource="this_entity" />
+			<setvar0 a="result" b="100" op="div" />
+			<setvar0 a="var0" b="damage_attempted" op="mult" />
+			
+			<heal a="var0" target="target_entity" />
+			
+			<playeffect effect="effects/heal.effect" target="source_entity" source="target_entity" occlude="true"/>
+		</cantarget>
+	</onattackeddamageevent>
+	
+</state>

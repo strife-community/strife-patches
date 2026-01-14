@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_ThunderClaw_Empower_4"
+	
+	cost="1120"
+
+>
+	<!-- Tooltip only -->
+	<constant name="mana_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<ontimer>
+		<removecharges count="5"/>
+	</ontimer>
+	
+		<onattack effectdescription="true" propagatetoillusions="false">
+			<cantarget targetscheme="enemy_units">
+				<compare a="charges" b="4" op="eq">
+					<spawnaffector name="Affector_ThunderClaw" />
+					<givemana target="source_entity" amount="5" />
+					<setcharges a="0" />
+					<starttimer duration="10000" />
+				</compare>
+				<else>
+					<addcharges a="1"/>
+					<compare a="charges" b="0" op="gt">
+						<starttimer duration="10000" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattack>
+	
+
+</qualityitem>

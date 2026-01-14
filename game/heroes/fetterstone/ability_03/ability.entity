@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Fetterstone3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	actiontype="passive"
+	
+	passiveeffect=""
+
+	powerpercharge="1"
+	maxcharges="100"
+
+	power="3,5,7,9"
+	
+>
+	<constant name="power_steal" value="2,3,4,5" adjustment="none" />
+	<constant name="power" value="3,5,7,9" adjustment="none" />
+	
+	
+	<onattackdamageevent >
+		<damagesupertype supertype="attack">
+			<cantarget targetscheme="enemy_heroes">
+				<applystate name="State_Fetterstone_Ability3" duration="4000" proxy="this_entity" source="target_entity"/>
+				<playeffect effect="effects/powersteal.effect" target="target_entity" source="source_entity"/>
+			</cantarget>
+		</damagesupertype>
+	</onattackdamageevent>
+
+	<onframe>
+		<compare a="charges" b="100" op="gt">
+			<setcharges a="0" />
+		</compare>
+		
+		<compare a="charges" b="35" op="gt">
+			<setactivemodifierkey name="Fetterstone_Ability3_Buff_3" />
+		</compare>
+		<else>
+			<compare a="charges" b="15" op="gt">
+				<setactivemodifierkey name="Fetterstone_Ability3_Buff_2" />
+			</compare>
+			<else>
+				<compare a="charges" b="0" op="gt">
+					<setactivemodifierkey name="Fetterstone_Ability3_Buff_1" />
+				</compare>
+				<else>
+					<setactivemodifierkey name="" />
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<modifier key="Fetterstone_Ability3_Buff_1" modpriority="100" passiveeffect="effects/state_self_1.effect"
+	>
+	
+	</modifier>
+	
+	<modifier key="Fetterstone_Ability3_Buff_2" modpriority="100" passiveeffect="effects/state_self_2.effect"
+	>
+	
+	</modifier>
+	
+	<modifier key="Fetterstone_Ability3_Buff_3" modpriority="100" passiveeffect="effects/state_self_3.effect"
+	>
+	
+	</modifier>
+
+</ability>

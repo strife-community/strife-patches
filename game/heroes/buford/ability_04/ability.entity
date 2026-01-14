@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Buford4"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Buford_Ability4_Slow"
+	
+	anim="ability_4"
+	casttime="300"
+	castactiontime="300"
+	channeltime="2000"
+	ischanneling="true"
+
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_entity"
+	targetscheme="enemy_heroes"
+	casteffecttype="Magic"
+
+	
+	range="1800"
+	manacost="80,90,100"
+	cooldowntime="60000,55000,50000"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+>
+	<constant name="percent_maxhp" value="15,19,23" adjustment="none" />
+	<constant name="duration" value="4,5,6" adjustment="none" />
+
+	<onchannelend>
+		<spawnprojectile name="Projectile_Buford_Ability4" source="source_entity" offset="0 155 200" target="target_entity" proxy="this_entity" noresponse="true" />
+		<playeffect effect="effects/channel_end.effect" source="source_entity"/>
+		<expirestate name="State_Buford_Ability1" target="source_entity" /> 
+		<kill target="this_proxy_entity" source="" />
+		<playanim name="ability_4Fire" variations="0" target="source_entity" />
+	</onchannelend>
+	
+	<onchannelstart>
+		<showchannelbar duration="2000"/>
+		<applystate name="State_Buford_Ability4" target="target_entity" duration="2500" />
+		<applystate name="Self_State_Buford_Ability4" target="source_entity" proxy="this_entity" ischannel="true"/>
+		<spawnunit name="Gadget_Buford_Ability4" target="target_entity" bind="target_entity" pushentity="true" ischannel="true" />
+		<setproxy entity="this_entity" target="stack_entity" />	
+	</onchannelstart>
+	
+	<onchannelframe>
+		<distance />
+		<compare a="result" b="2400" op="gt">
+			<breakchannel />
+		</compare>
+	</onchannelframe>
+	
+	<onchannelbreak>
+		<kill target="this_proxy_entity" source="" />
+		<resetcooldown />
+		<startcooldown duration="30000" />
+	</onchannelbreak>
+	
+
+	<ondamaged>
+		<hasstate name="Self_State_Buford_Ability4" target="this_owner_entity" >
+		<compare a="source_damage" b="0" op="gt" >
+			<targettype type="player_controlled">
+				<targettype type="self"/>
+				<else>
+					<delete target="this_proxy_entity" />
+					<breakchannel />
+					<resetcooldown />
+					<startcooldown duration="10000" />
+				</else>
+			</targettype>
+		</compare>
+		</hasstate>
+	</ondamaged>
+
+	<modifier key="buford_cage" modpriority="100">
+		<ondamaged>
+			<compare a="source_damage" b="0" op="gt" >
+				<targettype type="player_controlled">
+					<targettype type="self"/>
+					<else>
+						<delete target="this_proxy_entity" />
+						<breakchannel />
+						<resetcooldown />
+						<startcooldown duration="10000" />
+					</else>
+				</targettype>
+			</compare>
+		</ondamaged>
+	</modifier>
+	
+</ability>

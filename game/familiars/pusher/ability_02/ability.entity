@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pusher_TriggeredPassive_1"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	actiontype="passive"
+	manacost="0"
+	cooldowntime="18000"
+	
+>
+
+	<constant name="gold" value="20" adjustment="none" />
+	<constant name="cooldown" value="18" adjustment="none" />
+	
+	<onattackimpact propagatetoillusions="false" >
+		<isready>
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>
+					<targettype type="self" />
+					<else>
+						<startcooldown />
+						<getconstant name="gold" />
+						<givegold amount="result" target="source_entity" position="this_proxy_entity" />
+						<playeffect effect="/shared/effects/lasthit/lasthit_pusher.effect" source="this_proxy_entity" target="this_proxy_entity" occlude="true" />
+					</else>
+				</else>
+			</targettype>
+			<else>
+				<targettype type="building">
+					<startcooldown />
+					<getconstant name="gold" />
+					<givegold amount="result" target="source_entity" position="this_proxy_entity" />
+					<playeffect effect="/shared/effects/lasthit/lasthit_pusher.effect" source="this_proxy_entity" target="this_proxy_entity" occlude="true" />
+				</targettype>
+			</else>
+		</isready>
+	</onattackimpact>
+	
+
+
+</ability>

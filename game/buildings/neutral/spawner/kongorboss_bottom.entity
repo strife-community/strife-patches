@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spawner
+	name="Spawner_BossKongor_Bottom"
+
+	visibility="all"
+	lifetime="-1"
+  
+	iconsize="0.06"
+	icon="/shared/icons/minimap_circle.tga"
+	iconcolor="1.0000 0.4000 0.0000 1.0"
+	iconvisibility="alive"
+	
+	alwaysannounceteamless="false"
+	deathannouncementteamless="guardian_bottom_killed"
+	deathannouncementenemyteam="guardian_bottom_own_killed"
+	deathannouncementownteam="guardian_bottom_killed"
+  
+	firstspawntime="60000"
+	spawninterval="180000"
+	spawnintervalpercharge="0"
+	spawnintervalvariation="0"
+	spawntimercondition="death"
+	
+	pickmethod="random"
+	maxspawnsuntildeath="0"
+	
+	overrideunitguardrules="false"
+	guardchasetime="3000"
+	guardchasedistance="1500"
+	guardreaggrochasetime="2000"
+	guardreaggrochasedistance="1000"
+	aggrorange="1000"
+	
+	blockedbyunits="false"
+	blockedbyunitcorpses="false"
+	blockedbyunitsradius="1"
+  
+	showinui="true"
+	teamtapping="true"
+>
+
+
+	<onspawnerdormant>
+		<pushentitybyname name="good_base" />	
+		<spawnunit name="Building_PowerUpBossRespawn_0" offset="-30 -5 0" target="this_position" angle="310" fixedposition="true" source="stack_entity" owner="stack_entity"  />
+	</onspawnerdormant>	
+
+
+  
+</spawner>

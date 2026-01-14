@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_JinShe4"
+
+	icon="icon.tga"
+	
+	casttime="300"
+	castactiontime="300"
+	
+	anim="ability_4"
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+	casteffect="effects/cast.effect"
+	
+	modifierkey="fireballz"
+	actiontype="target_self"
+	
+	cooldowntime="60000"
+ 
+	manacost="0"
+	
+	maxcharges="12"
+	
+>
+	<constant name="damage" value="45,60,75" adjustment="ability" />
+	<constant name="damage_per_second" value="18,24,30" adjustment="ability" />
+	<constant name="percent_hp" value="2" adjustment="support" noshowintooltip="true" />
+	
+
+	<checkcost>
+		<areaofeffect
+			radius="9999999"
+			targetselection="all"
+			targetscheme="jinshefire"
+			ignoreinvulnerable="true"
+		>
+		</areaofeffect>
+		<setvar0 a="result" />
+		<setcharges a="var0" />
+		<compare a="var0" b="0" op="le">
+			<invalidate />
+			<setactivemodifierkey name="JinShe4_Empty" />
+		</compare>
+		<else>
+			<setactivemodifierkey name="" />
+		</else>
+	</checkcost>
+
+
+	<onimpact>
+		<areaofeffect
+			radius="9999999"
+			targetselection="all"
+			targetscheme="jinshefire"
+			ignoreinvulnerable="true"
+		>
+			
+			<kill target="target_entity" source="" />
+			<spawnunit name="Gadget_JinShe_Ability4_Raise" target="target_position" pushentity="true" />
+			<applystate name="State_JinShe_Ability4_Raise" duration="-1" target="stack_entity" pushentity="true" />
+			
+			<setaccumulator entity="stack_entity" value="charges" />
+		</areaofeffect>
+
+	</onimpact>
+
+
+	<modifier key="JinShe4_Empty" modpriority="100"
+		maxcharges="0"
+	>
+	</modifier>
+
+
+</ability>

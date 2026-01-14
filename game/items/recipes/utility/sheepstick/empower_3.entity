@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_SheepStick_Empower_3"
+	
+	cost="1800"
+	reducedcooldowns="0.05"
+
+>
+	<!-- Tooltip only -->
+	<constant name="slow_enchant" value="25" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onimpact>
+
+		<killillusions />
+		<dispel type="StatusStealth" />
+		<breakchannel entity="target_entity" />
+		<!--<playeffect effect="/heroes/pollywogpriest/effects/ability_02/effects/poof.effect" source="target_entity" />-->
+		<applystate name="State_SheepStick" duration="3000" />
+
+		<applystate name="State_SheepStick_Empower_3" duration="3000" />
+
+		<playanim name="item_1" target="source_entity" />
+
+		<startcooldown/>
+		<getconstant name="cooldown" />
+		<setvar0 a="result" b="1000" op="mult" />
+		<reducecooldown duration="var0" />
+	</onimpact>
+
+</qualityitem>

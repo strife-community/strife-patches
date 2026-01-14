@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shardplate"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	attackspeedslow="0.20"
+	ishidden="true"
+>
+	<oninflict>
+		<setcharges a="item_quality" b="10" op="mult"/>
+	</oninflict>
+	
+</state>

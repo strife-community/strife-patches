@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Orb_Of_Revelation"
+	
+	statuseffecttooltip="State_Orb_Of_Revelation"
+	
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_Manaregen1 Item_Blade Item_Blade"
+	maxhealth="125"
+	resistance="10"
+
+	maxcharges="2"
+	
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	casttime="0"
+	castactiontime="0"
+	anim="item_1"
+	cooldowntime="30000"
+	range="99900"
+	noentercombat="true"
+	
+	targetradius="700"
+	targetmaterial="/shared/materials/area_cast_indicator.material"
+	
+	hoverareacastrange="3500"
+	botitem="TargetEnemyItem"	
+
+
+	filters="utility,mana,activatable"
+
+	empoweredeffects="Item_Orb_Of_Revelation_Empower_1,Item_Orb_Of_Revelation_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="cooldown" value="0" adjustment="none" qualityvalue="8" qualityadjustment="common" op="add"/>
+	<constant name="health" value="125" adjustment="none" qualityvalue="10.0" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="10" adjustment="none" op="add"/>
+
+	<constant name="legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	
+	<onimpact>
+		<compare a="source_team" b="1" op="eq" >
+			<spawnunit name="Gadget_Orb_Of_Revelation" target="target_position" team="1" pushentity="true" lifetime="8000" />
+			<playeffect effect="effects/aoe.effect" target="stack_entity" source="stack_entity" occlude="true" visibility="allies"/>
+
+			<spawnunit name="Gadget_Orb_Of_Revelation" target="target_position" team="2" pushentity="true" lifetime="8000" />
+			<setactivemodifierkey name="red" entity="stack_entity"/>
+			<playeffect effect="effects/aoe_red.effect" target="stack_entity" source="stack_entity" occlude="true" visibility="enemies"/>
+		</compare>
+		<else>
+			<spawnunit name="Gadget_Orb_Of_Revelation" target="target_position" team="2" pushentity="true" lifetime="8000" />
+			<playeffect effect="effects/aoe.effect" target="stack_entity" source="stack_entity" occlude="true" visibility="allies"/>
+
+			<spawnunit name="Gadget_Orb_Of_Revelation" target="target_position" team="1" pushentity="true" lifetime="8000" />
+			<setactivemodifierkey name="red" entity="stack_entity"/>
+			<playeffect effect="effects/aoe_red.effect" target="stack_entity" source="stack_entity" occlude="true" visibility="enemies"/>
+		</else>
+
+	</onimpact>
+</crafteditem>

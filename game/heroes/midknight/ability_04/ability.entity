@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Midknight4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="300"
+	castactiontime="300"
+	
+	casteffect="effects/cast.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+	
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	queue="front"
+
+	allowoutofrangecast="true"
+	
+	targetradius="550"
+	
+	casteffecttype="Magic"
+	manacost="110,120,130"
+	cooldowntime="105000,95000,85000" 
+	
+	
+>
+
+	<constant name="damage" value="150,200,250" adjustment="ability" />
+	<!-- tooltiponly -->
+	<constant name="stun" value="1.4,1.7,2" adjustment="None" floatprecision="1" />
+	<constant name="slow" value="20" adjustment="none" noshowintooltip="true" />
+	
+
+	<onimpact>
+		<areaofeffect radius="550" targetselection="all" targetscheme="enemy_heroes" effecttype="Magic">
+			<spawnprojectile name="Projectile_Midknight_Ability4" source="source_entity" target="target_entity" />
+			<applystate name="State_Midknight_Ability4_Pull" duration="3000" />
+		</areaofeffect>
+	</onimpact>
+	
+	
+</ability>

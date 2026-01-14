@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Mystik_Passive2_3"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+
+	actiontype="passive"
+
+	magiclifesteal="0.1"
+	propagatetoillusion="true"
+	
+>
+	<constant name="passive" value="10" adjustment="none" />
+</ability>

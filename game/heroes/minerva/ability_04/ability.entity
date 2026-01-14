@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Minerva4"
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="600"
+	castactiontime="300"
+	casteffect="effects/cast.effect"
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units_and_buildings"
+	casteffecttype="Magic"
+	doubleactivate="true"
+	doubleactivatenoninterrupting="true"
+	
+	manacost="70,80,90"
+	cooldowntime="20000"
+	novoiceresponse="true"
+	
+	range="200"
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="200"
+>
+	<constant name="damage" value="150,185,220" adjustment="ability" />
+	
+	<onimpact>
+		<recordheroaggression  />
+		<aggression />
+	
+		<condition test="target_angle lt 105">
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<setvar0 a="result" />
+					<damage effecttype="Magic" amount="1.5" b="var0" op="mult" />
+					<popup name="execution" source="target_entity" target="target_entity" a="var0" b="0.5" op="mult" />
+					<playeffect effect="effects/impact_behind.effect" source="target_entity"/>
+					<propareaeffect center="this_position" radius="200" anim="flamehit" />
+				</onimpact>
+			</combatevent>
+		</condition>
+		
+		<else>
+			<combatevent effecttype="Counterable">
+				<onimpact>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<setvar0 a="result" />
+					<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+					<playeffect effect="effects/impact.effect" source="target_entity"/>
+					<propareaeffect center="this_position" radius="200" anim="flamehit" />
+				</onimpact>
+			</combatevent>
+		</else>
+	</onimpact>
+
+  <ondoubleactivate>
+    <areaofeffect
+		radius="600"
+		targetselection="closest"
+		targetscheme="visible_enemy_heroes"
+		maxtotalimpacts="1"
+		effecttype="Magic"
+	>
+		<useability slot="3" source="source_entity" />
+    </areaofeffect>
+	<compare a="result" b="0" op="eq">
+		<cancel />
+	</compare>
+  </ondoubleactivate>
+  
+	<modifier key="gear_1" modpriority="1"
+		casteffect="../gear_1/ability_04/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="gear_2" modpriority="1"
+		casteffect="../gear_2/ability_04/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="uber_1" modpriority="1"
+		casteffect="../gear_3/level_1/ability_04/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="uber_2" modpriority="1"
+		casteffect="../gear_3/level_1/ability_04/effects/cast.effect"
+	>
+	</modifier>
+	
+	<modifier key="uber_3" modpriority="1"
+		casteffect="../gear_3/level_3/ability_04/effects/cast.effect"
+	>
+	</modifier>
+
+</ability>

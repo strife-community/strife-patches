@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Slayer"    
+	
+	statuseffecttooltip="" 
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_GlovesOfHaste Item_Blade Item_Healthstone"  
+	maxhealth="150"
+	
+	actiontype="passive"
+	legendaryeffect="Legendary_Slayer"
+	filters="attack,attack_mod"
+
+	empoweredeffects="Item_Slayer_Empower_1,Item_Slayer_Empower_2,Item_Slayer_Empower_3"
+	
+	showinpractice="true"
+>
+	<!--tooltip only -->
+	<constant name="power_reduction" value="25" qualityvalue="0.7" adjustment="none" qualityadjustment="common" op="add"/>
+	<constant name="health" value="150" qualityvalue="15" adjustment="none" qualityadjustment="common" op="add"/>
+
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="amp_legendary" value="2.5" qualityvalue="2.5" adjustment="none" qualityadjustment="legendary" op="add"/>
+
+	<onattackingdamageevent>
+		<damageeffecttype effecttype="Indirect" />
+		<else>
+			<damageeffecttype effecttype="Splash" />
+			<else>
+				<damageeffecttype effecttype="DOT" />
+				<else>
+					<condition test="bounce_count lt 2">
+						<cantarget targetscheme="enemy_units" effecttype="">
+							<applystate name="State_Slayer" duration="5000" />
+						</cantarget>
+					</condition>
+				</else>
+			</else>
+		</else>
+<!--
+		<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+-->
+	</onattackingdamageevent>
+	
+</crafteditem>

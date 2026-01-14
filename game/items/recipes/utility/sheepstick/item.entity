@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_SheepStick"
+	
+	statuseffecttooltip="State_SheepStick"
+	
+	icon="icon.tga"
+	
+	cost="1400"
+	components="Item_Brain Item_Manaregen2 Item_Staff"
+	
+
+	
+	actiontype="target_entity"
+	targetscheme="enemy_heroes"
+	casteffecttype="CrowdControl"
+	casttime="500"
+	castactiontime="0"
+	anim="item_1"
+	cooldowntime="45000"
+	cooldowntype="morph"
+	range="500"
+	doubleactivate="true"
+	
+	projectile="Projectile_Sheepstick"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="500"
+	botitem="TargetEnemyItem"
+
+	filters="utility,activatable,defense,health"
+
+	empoweredeffects="Item_SheepStick_Empower_1,Item_SheepStick_Empower_2,Item_SheepStick_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="cooldown" value="0" adjustment="none" qualityvalue="5" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="15" adjustment="none" qualityvalue="7.5" qualityadjustment="legendary" op="add"/>
+	<ondoubleactivate>
+		<areaofeffect
+			radius="600"
+			targetselection="closest"
+			targetscheme="visible_enemy_heroes"
+			maxtotalimpacts="1"
+			effecttype=""
+		>
+			<useitem source="this_entity" />
+		</areaofeffect>
+		<compare a="result" b="0" op="eq">
+			<cancel />
+		</compare>
+	</ondoubleactivate>
+	
+	<onimpact>
+
+		<killillusions />
+		<dispel type="StatusStealth" />
+		<breakchannel entity="target_entity" />
+		<!--<playeffect effect="/heroes/pollywogpriest/effects/ability_02/effects/poof.effect" source="target_entity" />-->
+		<applystate name="State_SheepStick" duration="3500" />
+
+		<playanim name="item_1" target="source_entity" />
+
+		<startcooldown/>
+		<getconstant name="cooldown" />
+		<setvar0 a="result" b="1000" op="mult" />
+		<reducecooldown duration="var0" />
+	</onimpact>
+</crafteditem>

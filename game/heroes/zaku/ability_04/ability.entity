@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Zaku4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="300"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_entity"
+	targetscheme="ally_heroes"
+	casteffecttype="Magic"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	manacost="100,110,120"
+	cooldowntime="120000,90000,60000"
+	casteffect="effects/sound.effect"
+	range="1000"
+	doubleactivate="true"
+	doubleactivatenoninterrupting="true"
+>
+	<constant name="percent_hp_mana" value="30,40,50" adjustment="support" />
+	<constant name="damage" value="100,150,200" adjustment="ability" />
+
+	<!-- tool tip only -->
+	<constant name="move_attack_slow" value="30" adjustment="none" noshowintooltip="true" />
+
+	<onimpact>
+		<spawnprojectile name="Projectile_Zaku_Ability4" source="source_entity" target="target_entity"  />
+		<applystate name="State_Zaku_Ability4" duration="6000" />
+		<popup name="deathprotect" source="target_entity" target="target_entity" />
+	</onimpact>
+</ability>

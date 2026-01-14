@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spawner
+	name="Spawner_NeutralCampPicker_Large"
+
+	visibility="all"
+	lifetime="-1"
+  
+	iconsize="0.045"
+	icon="/shared/icons/minimap_circle.tga"
+	iconcolor="1.0000 1.000 0.0000 1.0"
+	iconvisibility="clear"
+	
+	firstspawntime="30000"
+	spawninterval="80000"
+	spawnintervalvariation="0"
+	spawntimercondition="death"
+	
+	pickmethod="random"
+	maxspawnsuntildeath="0"
+	
+	perteamherotapping="true"	
+>
+  
+  
+</spawner>

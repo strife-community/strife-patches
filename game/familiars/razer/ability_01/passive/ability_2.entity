@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Razer_Passive2_2"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	actiontype="passive"
+	basedamage="2.7,3.15,3.6,4.05,4.5,4.95,5.4,5.85,6.3,6.75,7.2,7.65,8.1,8.55,9"
+	propagatetoillusion="true"
+>
+	<constant name="passive" value="2.7,3.15,3.6,4.05,4.5,4.95,5.4,5.85,6.3,6.75,7.2,7.65,8.1,8.55,9" adjustment="none" />
+
+</ability>

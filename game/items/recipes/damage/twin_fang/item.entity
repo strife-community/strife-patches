@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_TwinFang"
+
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_Blade Item_Blade Item_Blade"
+	craftingmaxcomponents="3"
+	
+	actiontype="passive"
+	
+	power="5"
+	filters="power,ability"
+
+	empoweredeffects="Item_TwinFang_Empower_1,Item_TwinFang_Empower_2,Item_TwinFang_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="power" value="5" adjustment="none" qualityvalue="0.5" qualityadjustment="common" op="add"/>
+	<constant name="penetration" value="18" adjustment="none" qualityvalue="1.8" qualityadjustment="common" op="add"/>
+	
+	<onattackingdamageevent>
+		<getconstant name="penetration" adjustmentsource="none" />
+		<setvalue name="damage_magicarmorpierce" a="damage_magicarmorpierce" b="result" op="add" />
+	</onattackingdamageevent>	
+	
+	<modifier key="twinfang_empower_2" modpriority="80" 
+	>
+		<onattackingdamageevent>
+			<getconstant name="penetration" adjustmentsource="none" />
+			<setvar0 a="result" />
+			<getconstant name="penetration_enchant" />
+			<setvar0 a="var0" b="result" op="add" />
+			<setvalue name="damage_magicarmorpierce" a="damage_magicarmorpierce" b="var0" op="add" />
+		</onattackingdamageevent>	
+	
+	</modifier> 
+
+</crafteditem>

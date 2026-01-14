@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_AssasinsShroud"    
+	
+	statuseffecttooltip="" 
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_Manastone Item_Staff"  
+	anim="item_self"
+	
+	actiontype="target_self" 
+	queue="front"
+	inheritmovement="true"
+	noninterrupting="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="30000" 
+	cooldowntype="stealth"
+	casteffect="effects/cast.effect"
+	botitem="AssassinsShroudItem"
+	
+	maxhealth="100"
+
+	alwaysshowtimer="true"
+
+	filters="activatable,other_mobility,stealth,utility,defense,hp"
+	empoweredeffects="Item_AssasinsShroud_Empower_1,Item_AssasinsShroud_Empower_2"
+	
+	showinpractice="true"
+>
+	<aura state="State_Assassin_Effects" radius="10" notooltip="true" ignoreinvulnerable="true" targetscheme="self" /> 
+
+	<constant name="duration" value="8" adjustment="none" qualityvalue="0.8" qualityadjustment="common" op="add"/>
+
+	<!--Tooltip only-->
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="movespeed" value="40" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
+	
+
+	<onimpact>
+		<getconstant name="duration" />
+		<setvar0 a="1000" b="result" op="mult" />
+		<starttimer duration="var0" />
+		<applystate name="State_Assassin" duration="var0" proxy="stack_entity" occlude="true"/>
+	</onimpact>
+	
+</crafteditem>

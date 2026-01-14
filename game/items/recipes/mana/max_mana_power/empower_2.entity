@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_MaxManaPower_Empower_2"
+	
+	cost="1420"
+	powerratiomultiplier="0.03"
+>
+	<!-- Tooltip only -->
+	<constant name="magicdamage_enchant" value="3" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

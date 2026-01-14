@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Soulstealer_Empower_2"
+	
+	cost="1550"
+	maxcharges="20"
+	powerpercharge="0.5"
+>
+	<!-- Tooltip only -->
+	<constant name="power_enchant" value="0.5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="stacks_enchant" value="20" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onkill>
+		<targettype type="Tower"/>
+		<else>
+			<targettype type="enemy">
+				<addcharges/>
+			</targettype>
+		</else>
+	</onkill>
+
+	<ondeath>
+		<setcharges a="0" />
+	</ondeath>
+
+</qualityitem>

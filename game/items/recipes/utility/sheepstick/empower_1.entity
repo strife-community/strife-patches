@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_SheepStick_Empower_1"
+	
+	cost="1000"
+	cooldowntime="60000"
+>
+	<!-- Tooltip only -->
+	<constant name="cd_enchant" value="60" adjustment="none"  />
+
+</qualityitem>

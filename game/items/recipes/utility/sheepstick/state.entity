@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_SheepStick"
+	
+	icon="icon.tga"
+	
+	morphpriority="101"
+	morphmodel="effects/puppet/model.mdf"
+	passiveeffect="effects/body.effect"
+	morphpreglobalscale="1.75"
+	morpheffectscale="1"
+	morphmodelscale="1"
+	
+	silenced="true"
+	disarmed="true"
+	perplexed="true"
+
+	ishidden="true"
+	
+	effecttype="StatusDebuff StatusDisable CrowdControl"
+	allowtransfer="true"
+>
+	<onframe />
+	
+	<onattackedpreimpact priority="-9999">
+		<setvalue name="combat_evasion" a="0" />
+	</onattackedpreimpact>
+	
+	<onattackedpredamage priority="-9999">
+		<setvalue name="combat_deflection" a="0" />
+	</onattackedpredamage>
+
+	<onexpired>
+		<playeffect effect="effects/transition_out.effect" source="this_owner_entity" target="this_owner_entity" />
+	</onexpired>
+
+</state>

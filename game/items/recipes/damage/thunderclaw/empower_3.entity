@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_ThunderClaw_Empower_3"
+	
+	cost="1250"
+
+>
+	<!-- Tooltip only -->
+	<constant name="chance_enchant" value="1" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<ontimer>
+		<removecharges count="5"/>
+	</ontimer>
+	
+		<onattack effectdescription="true" propagatetoillusions="false">
+			<cantarget targetscheme="enemy_units">
+				<compare a="charges" b="3" op="eq">
+					<spawnaffector name="Affector_ThunderClaw" />
+					<setcharges a="0" />
+					<starttimer duration="10000" />
+				</compare>
+				<else>
+					<addcharges a="1"/>
+					<compare a="charges" b="0" op="gt">
+						<starttimer duration="10000" />
+					</compare>
+				</else>
+			</cantarget>
+		</onattack>
+
+</qualityitem>

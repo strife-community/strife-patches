@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_ScalingPower_Empower_2"
+	
+	cost="705"
+	power="5"
+	maxcharges="5"
+
+>
+	<!-- Tooltip only -->
+	<constant name="power_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

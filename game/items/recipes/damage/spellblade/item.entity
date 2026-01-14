@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Spellblade"
+	
+	icon="icon.tga"
+	cost="1000"
+	components="Item_Staff Item_Manastone"
+	cooldowntime="0"
+	
+	power="6"
+	powerperquality="0.8"
+	
+	actiontype="passive"
+	maxcharges="1"
+	alwaysshowonskillbar="false"
+
+	filters="attack,attack_mod,ability,power"
+	empoweredeffects="Item_Spellblade_Empower_1,Item_Spellblade_Empower_3"
+	
+	showinpractice="true"
+>
+
+	<constant name="power" value="6" adjustment="none" qualityvalue="0.8" qualityadjustment="common" op="add"/>
+	<constant name="damage" value="45" adjustment="item" qualityvalue="5" qualityadjustment="common" op="add" />
+
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add" />
+
+	<ontimer>
+		<kill source="" target="proxy_entity" experiencebountymul="0" goldbountymult="0" nocorpse="false" nodeathanim="false"/>
+		<setproxy target=""/>
+		<setaccumulator value="0" />
+	</ontimer>
+
+	<onabilityimpact ignoreresponsetype="NoResponse">
+		<casteffecttype entity="inflictor_entity" effecttype="NoResponse" />
+		<else>
+			<isready>
+				<spawnunit name="Pet_Spellblade" target="source_position" count="1" offsetspace="source_entity" offset="-50 50" maxactive="1" pushentity="true" />
+				<setproxy target="stack_entity" />
+				<setaccumulator value="1" />
+				<startcooldown/>
+			</isready>
+			<starttimer duration="12000" />
+		</else>
+	</onabilityimpact>
+
+	<onattackstart>
+		<compare a="accumulator" b="1" op="eq" >
+			<addattackimpactactions>
+				<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" occlude="true"/>
+				<playeffect effect="effects/link.effect" target="target_entity" source="this_proxy_position" occlude="true"/>
+			</addattackimpactactions>
+		</compare>
+	</onattackstart>
+	
+	<onattack>
+		<compare a="accumulator" b="1" op="eq" >
+			<cantarget targetscheme="enemy_units">
+				<getconstant name="damage" entity="this_entity" />
+				<bonusdamageadd target="" a="result" />
+				<starttimer duration="0" />
+				<spawnprojectile name="Projectile_Spellblade" source="this_proxy_entity" target="target_entity" proxy="this_proxy_entity" noresponse="true" />
+				<setaccumulator value="0" />
+			</cantarget >
+		</compare>
+	</onattack>
+
+
+</crafteditem>

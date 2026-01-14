@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ganker_Ult_1"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+
+	actiontype="target_entity"
+	targetscheme="enemy_heroes"
+	
+	range="900"
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="900"
+	
+	manacost="0"
+	cooldowntime="120000"
+	cooldowntype="familiar3" 
+	casteffect="effects/cast.effect" 
+	casteffecttype="NoResponse BreakStealth"
+	
+
+	responsetype="NoResponse BreakStealth"
+
+	ispetultimate="true"
+	
+>
+
+	<constant name="cooldown" value="120" adjustment="none" />
+	<constant name="damage" value="118,131,144,157,170,183,196,209,222,235,248,261,274,287,300" adjustment="none" />
+
+	<onimpact>
+		<spawnprojectile name="Projectile_Ganker_Ult_1" param="source_level" bind="this_proxy_entity" bindturn="true" proxy="this_proxy_entity" target="target_entity" />
+	</onimpact>
+	
+</ability>

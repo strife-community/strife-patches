@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Eanu3"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Eanu_Ability3"
+	
+	anim="ability_3"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="target_self"
+	casteffecttype="Magic"
+	
+	casteffect=""
+	
+	manacost="0"
+	cooldowntime="10000"
+	
+	maxcharges="1"
+>
+
+	<constant name="mana" value="100,150,200,250" adjustment="none" />
+	<!-- tooltip only -->
+	<constant name="resistance" value="5,10,15,20" adjustment="none" />
+	<constant name="resistance_reduction" value="10,20,30,40" adjustment="none" />
+	
+	<onimpact>
+		
+		<compare a="charges" b="0" op="gt">
+			<!-- outward -->
+			<removecharges count="1" />
+			<setactivemodifierkey entity="this_entity" name="" />
+			<playeffect effect="effects/splash_aoe.effect"/>
+			
+			<areaofeffect
+				radius="500"
+				targetselection="all"
+				maximpactspertarget="1"
+				targetscheme="enemy_units_and_buildings"
+				effecttype="Magic"
+			>
+				<applystate name="State_Eanu_Ability3_Enemy_Debuff" duration="5000" />
+				<applystate name="State_Eanu_Wet" target="target_entity" duration="5000"/>
+			</areaofeffect>
+			<expirestate name="State_Eanu_Ability3_Buff" source="source_entity" />
+		</compare>
+		<else>
+			<!-- inward -->
+			<addcharges count="1" />
+			<setactivemodifierkey entity="this_entity" name="inward" />
+			
+			<getconstant name="mana" adjustmentsource="this_entity" />
+			<givemana amount="result" target="source_entity"/>
+			
+			<applystate name="State_Eanu_Ability3_Buff" duration="-1" />
+			<playeffect effect="effects/splash_self.effect"/>
+			
+		</else>
+	
+	
+	</onimpact>
+	
+	<modifier key="inward" modpriority="100"
+		icon="icon_b.tga"
+	>
+		
+	</modifier>
+
+</ability>

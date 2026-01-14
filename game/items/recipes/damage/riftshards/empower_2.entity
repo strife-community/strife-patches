@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Riftshards_Empower_2"
+	
+	cost="1680"
+
+	unitcriticalchance="0.22" 
+
+>
+	<!-- Tooltip only -->
+	<constant name="crit_enchant" value="2" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

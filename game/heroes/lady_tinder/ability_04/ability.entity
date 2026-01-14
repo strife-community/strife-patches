@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ladytinder4"
+
+	
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="300"
+	casteffect="effects/cast.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+
+	targetradius="700"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	
+	manacost="115,130,145"
+	cooldowntime="120000"
+
+	range="600"
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="590"
+>
+	<constant name="damage" value="60,80,100" adjustment="item" />
+
+	<onimpact>
+
+		<spawnunit name="Pet_Ladytinder_Ability4" count="1" target="target_position" pushentity="true"  />
+		<setproxy target="stack_entity" />
+		<applystate name="State_Ladytinder_Ability4" target="stack_entity" duration="-1" />
+
+	</onimpact>
+	
+	<onattack>
+	
+		<distance source="proxy_entity" target="target_entity" />
+		<compare a="result" b="700" op="le" >
+			<order command="attack" source="proxy_entity" target="target_entity" />
+			<setproxy entity="proxy_entity" target="target_entity" />
+		</compare>
+	</onattack>
+	
+
+</ability>

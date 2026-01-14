@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Trace4"
+
+	
+	icon="icon.tga"
+	
+	maxlevel="3"
+	anim="ability_4"
+	
+	requiredlevel="6,11,15"
+	actiontype="passive"
+	
+	dontshowhovercast="true"
+>
+
+	<constant name="shield_percent" value="15,20,25" adjustment="none"  />
+	
+	<!-- tooltip only -->
+	<constant name="percent_power_increase" value="10,14,18" adjustment="none"  />
+	
+	<aura state="State_Trace_Ability4" radius="100" targetscheme="self"/>
+
+</ability>

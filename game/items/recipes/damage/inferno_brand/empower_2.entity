@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_InfernoBrand_Empower_2"
+	
+	cost="1450"
+	movespeed="10"
+
+>
+	<!-- Tooltip only -->
+	<constant name="healthregen_enchant" value="50" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onframe>
+		<getconstant name="radius" adjustmentsource="this_entity"/>
+		<targettype target="source_entity" type="alive" >
+			<areaofeffect
+				radius="result"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic DOT Splash"
+			>
+				<applystate target="target_entity" name="State_InfernoBrand" duration="100"  />
+
+				<getconstant name="healthregen_enchant" adjustmentsource="none" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="result" b="source_healthregen" op="mult" />
+
+				<getconstant name="damage" adjustmentsource="none" />
+				<setvar0 a="result" b="var0" op="add" />
+				
+				<setvar0 a="result" b="frametime" op="mult" />
+				<targettype target="source_entity" type="Courier" />
+				<else>
+					<cantarget targetscheme="neutral_units">
+						<cantarget targetscheme="idle_units"/>
+						<else>
+							<damage effecttype="Magic DOT Indirect Splash" amount="1" b="var0" op="mult"/>
+						</else>
+					</cantarget>
+					<cantarget targetscheme="enemy_nonneutral_units">
+						<damage effecttype="Magic DOT Indirect Splash" amount="1" b="var0" op="mult"/>
+					</cantarget>
+				</else>
+			</areaofeffect>
+		</targettype>
+	</onframe>
+
+</qualityitem>

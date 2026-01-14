@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Mystik_Ult_2"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	
+
+	actiontype="target_self"
+	manacost="0"
+	casttime="0"
+	cooldowntime="105000"
+	cooldowntype="familiar3" 
+	casteffecttype="NoResponse"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	responsetype="NoResponse"
+	noninterrupting="true"
+	alwaysshowtimer="true"
+
+	noentercombat="true"
+	ispetultimate="true"
+	
+>
+	<!-- Tooltip Only -->
+	<constant name="mana" value="93,96,99,102,105,108,111,114,117,120,123,126,129,132,135" adjustment="none" />
+
+	<checkcost>
+		<compare a="source_mana_percent" b="1" op="ge" >
+			<invalidate/>
+		</compare>
+	</checkcost>
+
+	<onimpact>
+		<starttimer duration="450" />
+		<playanim name="walk_1" target="this_proxy_entity" />
+		<applystate name="State_Mystik_Burn_Cast" duration="450" target="this_proxy_entity" proxy="target_entity" />
+		<applystate name="State_Mystik_Mana" duration="450" target="source_entity" />
+		
+		<playeffect effect="effects/impact_self.effect" target="source_entity" source="source_entity"/>
+		<playeffect effect="effects/link_mystik.effect" target="target_entity" source="this_proxy_entity"/>
+
+	</onimpact>
+
+</ability>

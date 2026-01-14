@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_ElderStone"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	
+	cost="650"
+	components="Item_Mender Item_Manastone"
+
+	maxhealth="70"
+	maxhealthpercharge="13"
+	maxhealthperquality="7"
+	maxhealthperchargeperquality="1.3"
+	maxmana="40"
+	maxmanapercharge="6"
+	maxmanaperquality="4"
+	maxmanaperchargeperquality="0.6"
+	actiontype="passive"
+	maxcharges="10"
+
+	resistance="10" 		
+	
+	filters="defense,mana,health,maxmana,resistance"
+	empoweredeffects="Item_ElderStone_Empower_1,Item_ElderStone_Empower_3,Item_ElderStone_Empower_4"
+	showinpractice="true"
+>
+	<constant name="hp" value="70" adjustment="none" qualityvalue="7" qualityadjustment="common" op="add"/>
+	<constant name="mp" value="40" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
+	<constant name="hp_gain" value="13" adjustment="none" qualityvalue="1.3" qualityadjustment="common" op="add"/>
+	<constant name="mp_gain" value="6" adjustment="none" qualityvalue="0.6" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="armor_legendary" value="2.5" adjustment="none" qualityvalue="2.5" qualityadjustment="legendary" op="add"/>
+
+	<oncreate>
+		<setcharges a="0" />
+		<starttimer duration="60000" />
+	</oncreate>
+
+	<ontimer>
+		<setcharges a="charges" b="1" op="add" />
+		<compare a="charges" b="10" op="lt">
+			<starttimer duration="60000" />
+		</compare>
+		<else>
+			<setactivemodifierkey entity="this_entity" name="ElderStone_Max" />
+		</else>
+	</ontimer>
+
+	<modifier key="ElderStone_Max" modpriority="80" icon="icon_2.tga" />
+	<modifier key="ElderStone_Max2" modpriority="80" icon="icon_2.tga" resistance="15"/>
+	
+
+</crafteditem>
+ 

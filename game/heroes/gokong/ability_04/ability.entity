@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_GoKong4"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+	
+	anim="ability_4"
+	actiontype="target_self"
+
+	ignoreinvulnerable="true"
+
+	casttime="300"
+	castactiontime="300"
+	inheritmovement="true"
+	casteffect="effects/cast.effect"
+
+	range="1500"
+	
+	targetradius="1500"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+ 
+	
+	cooldowntime="80000"
+	manacost="100,110,120"
+	alwaysshowtimer="true"
+>
+	<!--tooltip only -->
+	<constant name="illusion_damage" value="25,30,35" adjustment="none" />
+	
+	
+	<onimpact>
+		<applystate name="State_GoKong_Ability4" duration="5000" />
+			<areaofeffect radius="2000" targetselection="all" targetscheme="nonillusion_enemy_heroes">
+			<spawnillusion owner="source_entity" source="source_entity" target="target_entity" count="1" lifetime="5000" spawneffect="" deatheffect="" playdeathanim="false" inflictdamagemultiplier="0.25,0.30,0.35" pushentity="true" uncontrollable="true" nofamiliar="true" />
+			<playanim name="run_1" target="stack_entity"/>
+			<setproxy entity="stack_entity" target="target_entity" />
+			<order command="attack" source="stack_entity" target="target_entity" />
+			<spawnprojectile name="Projectile_GoKong_Ability4_Spawn" source="source_entity" target="target_entity" bind="stack_entity" bindturn="true" bindstate="State_GoKong_Ability2_Bind" noresponse="true" bindpriority="1"/>
+			<applystate name="State_GoKong_Ability4_Illusion" target="stack_entity" proxy="target_entity" duration="-1" />
+		</areaofeffect>
+		<setaccumulator value="result" />
+		<compare a="result" b="0" op="gt">
+			<setactivemodifierkey name="teleport" />
+			<starttimer duration="5000" />
+		</compare>
+	</onimpact>
+	
+	<ontimer>
+		<setactivemodifierkey name="" />
+	</ontimer>
+	
+	
+	<modifier key="teleport" modpriority="100" anim="" cooldowntime="0" icon="icon_b.tga" actiontype="target_position" targetscheme="my_illusions" allowoutofrangecast="true" range="99999" manacost="25" casttime="0" castactiontime="0" dontshowhovercast="true" ignorecooldown="true" targetmaterial="">
+		<onimpact>
+			<pushentity searchfortarget="true" searchorigin="target_position" radius="99999" targetscheme="my_illusions" ignoreinvulnerable="true"/>
+			<compare a="stack_entity" b="0" op="ne">
+				<spawnprojectile name="Projectile_GoKong_Ability4" source="source_entity" target="stack_entity" bind="source_entity" bindturn="true" bindstate="State_GoKong_Ability2_Bind" noresponse="true" bindpriority="1"/>
+				<pushentityproxy entity="stack_entity" />
+				<order command="attack" source="source_entity" target="stack_entity" />
+			</compare>
+			<changeaccumulator b="1" op="sub" />
+			<compare a="accumulator" b="0" op="le">
+				<setactivemodifierkey name="" />
+				<starttimer duration="0" />
+			</compare>
+		</onimpact>
+	</modifier>
+	
+	
+
+
+
+
+</ability>

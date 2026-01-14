@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ladytinder_Ability4_HP"
+	maxhealthpercharge="50"
+	slowresistance="5"
+	stundurationmultiplier="-1.0"
+>
+	<oninflict>
+		<setvar0 a="source_maxhealth" b="0.012" op="mult" source="proxy_entity" />
+		<setcharges a="var0" />
+	</oninflict>
+</state>

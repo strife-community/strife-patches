@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tortus_Passive_2"
+
+	icon="icon.tga"
+	maxlevel="15"
+	actiontype="passive"
+	maxhealthmultiplier=".15"
+	propagatetoillusion="true"
+	
+>
+
+	<constant name="passive" value="15" adjustment="none" />
+
+</ability>

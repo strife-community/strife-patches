@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Fetterstone4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+	cooldowntime="75000"
+	actiontype="target_self"
+	manacost="90,100,110"
+	queue="front"
+	inheritmovement="true"
+	maxcharges="0"
+	alwaysshowtimer="true"
+	
+	
+>
+
+	<constant name="damage_increase" value="30,40,50" adjustment="none" />
+
+	<onimpact>
+		<applystate name="State_Fetterstone_Ability4" duration="15000" />
+		<starttimer duration="15000" />
+		<setcharges a="9" />
+		<setactivemodifierkey name="active" />
+	</onimpact>
+	
+	<modifier key="active" modpriority="101" maxcharges="9"
+	>	
+		<onattackpreimpact>
+			<removecharge />
+			<compare a="charges" b="0" op="eq" >
+				<expirestate name="State_Fetterstone_Ability4" target="source_entity" />
+				<starttimer duration="0" />
+				<setactivemodifierkey name="" />
+			</compare>
+		</onattackpreimpact>
+	</modifier>
+	
+
+	
+</ability>

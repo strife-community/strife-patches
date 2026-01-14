@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Lasthit_Empower_2"
+	
+	cost="380"
+>
+	<constant name="damage" value="25" adjustment="none" />
+
+	<!--Tooltip only-->
+	<constant name="damage_enchant" value="10" adjustment="none" qualityadjustment="common" op="add"/>
+
+
+</qualityitem>

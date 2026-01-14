@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ace_Ability4"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	ishidden="true"
+>
+	<onkilled>
+		<getconstant name="percent_hp_mana" />
+		<setvar2 a="result" b="100" op="div" />
+		<setvar0 source="proxy_entity" a="source_maxhealth" b="var2" op="mult" />
+		<heal target="proxy_entity" a="var0" />
+		<setvar1 source="proxy_entity" a="source_maxmana" b="var2" op="mult" />
+		<givemana target="proxy_entity" amount="var1" />
+		<playeffect effect="effects/heal.effect" source="this_inflictor_entity" />
+	</onkilled>
+</state>

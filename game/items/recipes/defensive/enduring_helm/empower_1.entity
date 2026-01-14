@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_EnduringHelm_Empower_1"
+	cost="440"
+	maxcharges="50"
+	maxhealthpercharge="1"
+>
+	<constant name="hp_bonus" value="1" adjustment="none" />
+	<onkill>
+		<targettype type="Tower"/>
+		<else>
+			<targettype type="enemy">
+				<addcharges/>
+			</targettype>
+		</else>
+	</onkill>
+</qualityitem>

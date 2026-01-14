@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Supercharger"
+
+	icon="icon.tga"
+	
+	cost="1485"
+	components="Item_Relic Item_Diamond Item_Booster"
+
+	legendaryeffect="Legendary_Supercharger"
+	
+	
+	actiontype="passive"
+
+	power="29"
+	powerperquality="3.2"
+
+	filters="power,ability,attack"
+
+	empoweredeffects="Item_Supercharger_Empower_1,Item_Supercharger_Empower_3"
+	
+	showinpractice="true"
+>
+	<!-- tool tip only -->
+	<constant name="power" value="29" adjustment="none" qualityvalue="3.2" qualityadjustment="common" op="add" />
+	<constant name="percent_manarestore" value="25" adjustment="none" qualityvalue="1.2" qualityadjustment="common" op="add" />
+	<constant name="bonus" value="2" adjustment="none" qualityvalue="2" qualityadjustment="legendary" op="add" />
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add" />
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<applystate name="State_Supercharger" target="source_entity" duration="2500" proxy="this_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<applystate name="State_Supercharger" target="source_entity" duration="2500" proxy="this_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
+	
+	<modifier key="supercharger_powered" modpriority="80" icon="icon_2.tga"
+	>
+
+	</modifier>
+	
+</crafteditem>

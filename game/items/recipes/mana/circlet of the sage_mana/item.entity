@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_CircletOfTheSage"
+
+	icon="icon.tga"
+	cost="210"
+	
+	
+	
+	components="Item_Manastone"
+	actiontype="passive"
+	filters="mana,maxmana,cd_reduction"
+	empoweredeffects="Item_CircletOfTheSage_Empower_1,Item_CircletOfTheSage_Empower_3,Item_CircletOfTheSage_Empower_4"
+	showinpractice="true"
+>
+	<constant name="mana" value="130" adjustment="none" qualityvalue="8" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="mana_legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+
+	<modifier key="circletofthesage" modpriority="25" exclusive="true" maxmana="130" reducedcooldowns="0.04" />
+	
+
+</crafteditem>

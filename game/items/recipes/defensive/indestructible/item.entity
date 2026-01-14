@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_HeadressOfRejuvenation"
+
+	icon="icon.tga"
+	
+	cost="290"
+	components="Item_Mender"
+
+	basehealthregen="2.7"
+	basehealthregenperquality="0.27"
+	
+	actiontype="passive"
+	filters="defense,health_regen"
+
+	empoweredeffects="Item_HeadressOfRejuvenation_Empower_3,Item_HeadressOfRejuvenation_Empower_4"
+	
+	showinpractice="true"
+>
+	<constant name="regen" value="2.7" adjustment="none" qualityvalue="0.27" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="regen_legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+
+</crafteditem>

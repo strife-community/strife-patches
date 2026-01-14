@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Gauntlet_Empower_4"
+	cost="550"
+>
+
+	<!-- Tooltip only -->
+	<constant name="gold_enchant" value="15" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
+
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<givegold amount="15" target="source_entity" position="source_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<givegold amount="15" target="source_entity" position="source_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
+	
+</qualityitem>

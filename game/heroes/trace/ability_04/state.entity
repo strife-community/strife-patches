@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Trace_Ability4"
+
+	icon="icon.tga"
+	effecttype=""
+
+	ishidden="true"
+	
+	passiveeffect="effects/state.effect"
+	powermultiplier="0.1,0.14,0.18"
+>
+
+
+	<onframe>
+
+		<evaluate a="movement" b=".007" op="mult" />
+		<setaccumulator value="result" />
+
+		<compare a="accumulator" b="0" op="gt" >
+		
+			<getconstant name="shield_percent" adjustmentsource="this_entity" />
+			<setvar0 a="result" b="100" op="div" />
+			<setvar0 a="source_maxhealth" b="var0" op="mult" />
+			<setvalue source="this_entity" name="source_max_shield" a="var0" />
+			
+			<setvar0 a="source_maxhealth" b="0.007" op="mult" />
+			<setvar0 a="var0" b="accumulator" op="mult" />
+
+			<setvalue source="this_owner_entity" name="source_shield" a="var0" b="source_shield" op="add" />
+			
+			<expirestate name="State_Trace_Ability4_Wait" target="source_entity" />
+		</compare>
+		
+	</onframe>
+
+	
+	<onattackeddamageevent>
+		<compare a="source_shield" b="damage_attempted" op="le">
+			<applystate name="State_Trace_Ability4_Empty" duration="1200" target="source_entity" />
+			<playeffect effect="effects/state_expire.effect" source="source_entity" />
+		</compare>
+		
+		<applystate name="State_Trace_Ability4_Cooldown" duration="1200" target="source_entity" />
+	</onattackeddamageevent>
+	
+	<onattackedpostimpact>
+		<targettype type="enemy">
+			<playeffect effect="effects/impact.effect" source="source_entity"/>
+		</targettype>
+	</onattackedpostimpact>
+	
+	
+	
+	<modifier key="shield_damage_cooldown" modpriority="101"
+	>
+		<onframe/>
+		
+	</modifier>
+
+	
+	<modifier key="shield_damage_empty" modpriority="100" passiveeffect="" powermultiplier="0"
+	>	
+		<onframe/>
+		
+		<onattackedpostimpact />
+		
+		<onattackingdamageevent />
+	</modifier>
+	
+	
+	<modifier key="shield_damage_wait" modpriority="100" passiveeffect="" powermultiplier="0"
+	>	
+		<onattackedpostimpact />
+		
+		<onattackingdamageevent />
+	</modifier>
+	
+	<modifier key="shield_generate" modpriority="100" 
+	>	
+		<onframe>
+
+			<evaluate a="140" b=".01" op="mult" />
+			<setaccumulator value="result" />
+
+			<compare a="accumulator" b="0" op="gt" >
+			
+				<getconstant name="shield_percent" adjustmentsource="this_entity" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="source_maxhealth" b="var0" op="mult" />
+				<setvalue source="this_entity" name="source_max_shield" a="var0" />
+				
+				<setvar0 a="source_maxhealth" b="0.01" op="mult" />
+				<setvar0 a="var0" b="accumulator" op="mult" />
+
+				<setvalue source="this_owner_entity" name="source_shield" a="var0" b="source_shield" op="add" />
+				
+				<expirestate name="State_Trace_Ability4_Wait" target="source_entity" />
+			</compare>
+			<else>
+			
+			</else>
+			
+		</onframe>
+	</modifier>
+
+</state>

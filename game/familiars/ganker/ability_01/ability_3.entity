@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ganker_Passive_3"
+
+	icon="icon.tga"
+	
+	
+	maxlevel="15"
+	
+
+	actiontype="passive"
+
+	propagatetoillusion="true"
+	
+>
+	<!-- Tooltip Only -->
+	<constant name="ooc_movespeed" value="10" adjustment="none" />
+
+	<aura state="Ability_Ganker_Passive_OOCBoost_3" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
+
+
+</ability>

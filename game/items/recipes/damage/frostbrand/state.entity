@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Frostbrand"
+
+	icon="/shared/icons/slow.tga"
+
+	passiveeffect="effects/state.effect"
+	
+	movespeedslow="0.2"
+	movespeedslowpercharge="0.002"
+	
+	effecttype="StatusDebuff CrowdControl"
+	allowtransfer="true"
+>
+	<oninflict>
+		<setcharges a="item_quality" b="10" op="mult"/>
+	</oninflict>
+
+	<modifier key="frostbrand_empower_2" modpriority="100"
+		attackspeed="-0.1"
+		>
+	</modifier>
+
+	<modifier key="frostbrand_empower_3" modpriority="100"
+		movespeedslow="0.25"
+		>
+	</modifier>
+</state>

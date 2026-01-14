@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bounder_Passive_1"
+
+	icon="icon.tga"
+	
+	
+	maxlevel="15"
+	
+
+	actiontype="passive"
+	
+	manacost="0"
+	cooldowntime="4000"
+	cooldowntype="familiar" 
+	
+	movespeedmultiplier="0.04"
+	propagatetoillusion="true"
+>
+
+	<constant name="passive" value="4" adjustment="none" />
+</ability>

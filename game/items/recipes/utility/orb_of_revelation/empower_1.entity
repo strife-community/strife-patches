@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Orb_Of_Revelation_Empower_1"
+	
+	cost="940"
+
+>
+	<!-- Tooltip only -->
+	<constant name="slow_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="slow_duration_enchant" value="3" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onimpact>
+		<compare a="source_team" b="1" op="eq" >
+			<spawnunit name="Gadget_Orb_Of_Revelation" target="target_position" team="1" pushentity="true" lifetime="8000" />
+			<playeffect effect="effects/aoe.effect" target="stack_entity" source="stack_entity" occlude="true" visibility="allies"/>
+
+			<spawnunit name="Gadget_Orb_Of_Revelation" target="target_position" team="2" pushentity="true" lifetime="8000" />
+			<setactivemodifierkey name="red" entity="stack_entity"/>
+			<playeffect effect="effects/aoe_red.effect" target="stack_entity" source="stack_entity" occlude="true" visibility="enemies"/>
+		</compare>
+		<else>
+			<spawnunit name="Gadget_Orb_Of_Revelation" target="target_position" team="2" pushentity="true" lifetime="8000" />
+			<playeffect effect="effects/aoe.effect" target="stack_entity" source="stack_entity" occlude="true" visibility="allies"/>
+
+			<spawnunit name="Gadget_Orb_Of_Revelation" target="target_position" team="1" pushentity="true" lifetime="8000" />
+			<setactivemodifierkey name="red" entity="stack_entity"/>
+			<playeffect effect="effects/aoe_red.effect" target="stack_entity" source="stack_entity" occlude="true" visibility="enemies"/>
+		</else>
+
+
+		<areaofeffect
+			radius="700"
+			center="target_position"
+			targetselection="all"
+			targetscheme="enemy_units"
+		>
+			<applystate name="State_Orb_Of_Revelation_Legendary" duration="3000" />
+		</areaofeffect>
+
+	</onimpact>
+
+</qualityitem>

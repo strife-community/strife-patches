@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_InfernoBrand"
+
+	icon="icon.tga"
+	
+	cost="1400"
+	components="Item_Relic Item_Healthstone Item_Sustainer"
+	
+	
+	actiontype="passive"
+	hoverareacastrange="500"
+	passiveeffect=""
+
+	resistance="10"
+	filters="magic_armor,armor,defense,ability,resistance"
+
+	empoweredeffects="Item_InfernoBrand_Empower_1,Item_InfernoBrand_Empower_3,Item_InfernoBrand_Empower_4"
+	
+	showinpractice="true"
+>
+	<constant name="damage" value="25" adjustment="item" qualityvalue="3" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="radius" value="500" adjustment="none" qualityvalue="50" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<onframe>
+		<getconstant name="radius" adjustmentsource="this_entity"/>
+		<targettype target="source_entity" type="alive" >
+			<areaofeffect
+				radius="result"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic DOT Splash"
+			>
+				<applystate target="target_entity" name="State_InfernoBrand" duration="100"  />
+				<getconstant name="damage" adjustmentsource="this_entity" />
+				
+				<setvar0 a="result" b="frametime" op="mult" />
+				<targettype target="source_entity" type="Courier" />
+				<else>
+					<cantarget targetscheme="neutral_units">
+						<cantarget targetscheme="idle_units"/>
+						<else>
+							<damage effecttype="Magic DOT Indirect Splash" amount="1" b="var0" op="mult"/>
+						</else>
+					</cantarget>
+					<cantarget targetscheme="enemy_nonneutral_units">
+						<damage effecttype="Magic DOT Indirect Splash" amount="1" b="var0" op="mult"/>
+					</cantarget>
+				</else>
+			</areaofeffect>
+		</targettype>
+	</onframe>
+
+</crafteditem>

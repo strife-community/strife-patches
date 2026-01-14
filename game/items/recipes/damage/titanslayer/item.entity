@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Titanslayer"
+	
+	icon="icon.tga"
+	
+	cost="1050"
+	components="Item_Warpcleft Item_Staff Item_Healthstone"
+
+	actiontype="passive"
+	filters="attack,attack_damage"
+
+	empoweredeffects="Item_Titanslayer_Empower_1,Item_Titanslayer_Empower_2,Item_Titanslayer_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="healthdamage" value="1.5" adjustment="item" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onattackingdamageevent>
+		<damageeffecttype effecttype="AttackDamage" >
+			<cantarget targetscheme="enemy_nonboss_units">
+				<getconstant name="healthdamage" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="target_maxhealth" b="var0" op="mult" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="result" op="add" />
+			</cantarget>
+		</damageeffecttype>
+	</onattackingdamageevent>
+	
+	<modifier key="titanslayer_empower_3" modpriority="100" >
+	
+		<onattackingdamageevent>
+			<damageeffecttype effecttype="AttackDamage" >
+				<cantarget targetscheme="enemy_nonboss_units">
+					<getconstant name="healthdamage" />
+					<setvar0 a="result" b="100" op="div" />
+					<getconstant name="healthdamage_bonus" />
+					<setvar1 a="result" b="100" op="div" />
+					
+					<setvar0 a="var0" b="var1" op="add" />
+					<setvar0 a="target_maxhealth" b="var0" op="mult" />
+					<setvalue name="damage_attempted" a="damage_attempted" b="result" op="add" />
+				</cantarget>
+			</damageeffecttype>
+		</onattackingdamageevent>
+	
+	</modifier>
+
+</crafteditem>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Blessed_Orb"
+
+	icon="icon.tga"
+	
+	cost="990"
+	components="Item_Blade Item_Booster"
+	
+	actiontype="passive"
+
+	supportmultiplier="0.15"
+	supportmultiplierperquality="0.015"
+	power="10"
+	powerperquality="1"
+
+	filters="power,ability,heal"
+
+	empoweredeffects="Item_Blessed_Orb_Empower_1,Item_Blessed_Orb_Empower_3"
+	
+	showinpractice="true"
+>
+	<!-- tool tip only -->
+	<constant name="power" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="amp" value="15" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
+
+	<constant name="legendary" value="15" adjustment="power_support" qualityvalue="30" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	
+</crafteditem>

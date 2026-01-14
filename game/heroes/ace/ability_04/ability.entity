@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ace4"
+
+	
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="300"
+	casteffect="effects/cast.effect"
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	manacost="100,115,130"
+	cooldowntime="60000"
+	novoiceresponse="true"
+	doubleactivate="true"
+	doubleactivatenoninterrupting="true"
+	
+	range="200"
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="200"
+>
+
+	<constant name="damage" value="240,295,350" adjustment="ability" />
+	
+	<constant name="execute_threshold" value="18,22,26" adjustment="none" />
+	<constant name="percent_hp_mana" value="25" adjustment="support" noshowintooltip="true" />
+	
+	
+	<onimpact>
+		<recordheroaggression  />
+		<aggression />
+		<combatevent effecttype="Counterable">
+			<onimpact>
+				<applystate name="State_Ace_Ability4" duration="frametime" proxy="source_entity" />
+				<playeffect effect="effects/initial_impact.effect" source="target_entity" target="target_entity"/>
+
+				<getconstant name="execute_threshold" adjustmentsource="this_entity" />
+				<setvar0 a="result" b="100" op="div" />
+				
+				<compare a="target_health_percent" b="var0" op="le" >
+					<kill />
+					<popup name="execute" target="target_entity" source="target_entity" />
+				</compare>
+				<else>
+					<getconstant name="damage" adjustmentsource="this_entity" />
+					<damage effecttype="Magic" amount="1" b="result" op="mult" />				
+				</else>
+				
+			</onimpact>
+		</combatevent>
+
+	</onimpact>
+
+	<ondoubleactivate>
+		<areaofeffect
+			radius="600"
+			targetselection="closest"
+			targetscheme="visible_enemy_heroes"
+			maxtotalimpacts="1"
+			effecttype="Magic"
+		>
+			<useability source="source_entity" slot="3"/>
+		</areaofeffect>
+		<compare a="result" b="0" op="eq">
+			<cancel />
+		</compare>
+	</ondoubleactivate>
+
+	<modifier key="acespin1" modpriority="100"
+		disabled="true"
+		>
+	 </modifier>
+
+</ability>

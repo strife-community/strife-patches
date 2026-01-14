@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rip3"
+
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	maxcharges="5"
+
+	actiontype="passive"
+
+>
+
+	<!-- end tool tip only -->
+	<constant name="damage_increase" value="45,60,75,90" adjustment="none" />
+	
+	<onlearn>
+		<pushentitysearch global="true" targetscheme="enemy_main_base_structure" ignoreinvulnerable="true" />
+		<applystate name="State_Rip_Ability3_Enemy_Sight" source="stack_entity" target="stack_entity" inflictor="stack_entity" spawner="stack_entity" proxy="source_entity" continuous="true" />
+		<setcharges a="5" />
+	</onlearn>
+	
+	<onupgrade>
+		<setcharges a="5" />
+	</onupgrade>
+	
+	<onframe>
+		<!-- if not seen by enemies, and in smoke - charge up -->
+		<hasmodifier entity="source_entity" name="smoke_cloud" >
+			<setactivemodifierkey name="Rip_ability3_megacrit" />
+			<setaccumulator value="0" />
+			<setcharges a="1" />
+		</hasmodifier>
+		<else>
+			<!-- if not seen by enemies, and no nearby visible active neutrals - charge up -->
+			<areaofeffect
+				radius="450"
+				targetselection="closest"
+				targetscheme="non_idle_visible_neutral"
+			>
+				<applystate name="State_Rip_Ability3_Sighted" target="source_entity" duration="50" /> 
+			</areaofeffect>
+			<else>
+				<setactivemodifierkey name="Rip_ability3_megacrit" />
+				<setaccumulator value="0" />
+				<setcharges a="1" />
+			</else>
+		</else>
+
+	</onframe>
+
+	
+	<modifier key="Rip_ability3_sighted" modpriority="100" >
+
+		<!-- if seen by enemies, prevent sight-based charge up -->
+		<onframe>
+		</onframe>
+		
+		<onattack>
+			<applystate name="State_Rip_Ability3_CDFix" duration="200" target="source_entity" />
+					
+			<removecharge />
+			<compare a="charges" b="1" op="eq">
+				<setactivemodifierkey name="Rip_ability3_megacrit" />
+			</compare>
+
+		</onattack>
+		
+	</modifier>
+	
+	<modifier key="Rip_ability3_megacrit" modpriority="100" passiveeffect="effects/sword_state.effect" maxcharges="5" icon="icon_b.tga" modifierkey="Rip_shadow">
+		
+		<onattackstart>
+			<playanim name="ability_3" source="source_entity" target="source_entity"/>
+		</onattackstart>
+		
+		<onattack>
+			<applystate name="State_Rip_Ability3_CDFix" duration="200" target="source_entity" />
+					
+			<getconstant name="damage_increase" />
+			<setvar0 a="result" b="100" op="div" />
+			<setvar0 a="source_attackdamage" b="result" op="mult" />
+			<bonusdamageadd target="" a="var0" />
+			<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+			<setactivemodifierkey name="" />
+			<setcharges a="5" />
+		</onattack>
+		
+		<onframe>
+		</onframe>
+		
+	</modifier>
+	
+	<modifier key="vanished" modpriority="200" passiveeffect="" >
+		
+		<!-- hide crits effects while using W -->	
+	</modifier>
+	
+	<!-- fixes bug  -->
+	<modifier key="cooldown_bug_fix" modpriority="300"  >
+		<onframe />
+
+	</modifier>
+	
+
+
+	
+
+</ability>

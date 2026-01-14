@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Lasthit"
+	
+	casttime="500"
+	castactiontime="0"
+	anim="item_1"
+	
+	icon="icon.tga"
+	
+	cost="280"
+	components="Item_Mender"
+	
+	maxlevel="1"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_creeps"
+	casteffecttype="Magic"
+	range="550"
+	manacost="0"
+	cooldowntype="Lasthit"
+	cooldowntime="12000"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="550"
+
+	filters="attack,activatable"
+
+	empoweredeffects="Item_Lasthit_Empower_1,Item_Lasthit_Empower_2,Item_Lasthit_Empower_5"
+	
+	showinpractice="true"
+>
+	<constant name="cooldown" value="2" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
+	<constant name="gold" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
+	<constant name="heal" value="15" qualityvalue="0" adjustment="none" qualityadjustment="common" op="add"/>
+
+	<constant name="damage" value="15" adjustment="none" />
+	<constant name="throw_damage" value="20" adjustment="none" />
+	
+	<onimpact effectdescription="true">
+		<spawnprojectile name="Projectile_Lasthit" offset="0 65 100"/>
+	</onimpact>
+
+	<onattackdamageevent >
+		<damagesupertype supertype="attack">
+			<damageeffecttype effecttype="Splash" />
+			<else>
+				<cantarget targetscheme="enemy_creeps">
+					<getconstant name="damage" adjustmentsource="tool_entity"/>
+					<setvar0 a="result" b="100" op="div" />
+					<setvar0 a="var0" b="1" op="add" />
+					<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+				</cantarget>
+			</else>
+		</damagesupertype>
+	</onattackdamageevent>
+</crafteditem>

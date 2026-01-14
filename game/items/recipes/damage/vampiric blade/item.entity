@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_VampiricBlade"
+	
+	icon="icon.tga"
+	cost="1020"
+	components="Item_GlovesOfHaste Item_Mender Item_Blade"
+	
+	actiontype="passive"
+	
+	resistance="10"
+	
+	filters="lifesteal,attack"
+
+	empoweredeffects="Item_VampiricBlade_Empower_1,Item_VampiricBlade_Empower_2,Item_VampiricBlade_Empower_3"
+	
+	showinpractice="true"
+>	
+	<constant name="vamp" value="12" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="10" adjustment="none" qualityvalue="1.5" qualityadjustment="common" op="add"/>
+	<constant name="heal" value="2.5" adjustment="none" qualityvalue="2.5" qualityadjustment="legendary" op="add"/>
+	
+	<modifier key="vampiricblade" modpriority="50" exclusive="true"
+		attacklifesteal="0.12"	  
+		attacklifestealperquality="0.015"
+	>	
+		<onattackpreimpact>
+			<islegendary>
+				<cantarget targetscheme="all_nonhero_nonboss_units">
+					<applystate name="State_VampiricBlade" duration="50" />
+				</cantarget>
+			</islegendary>
+		</onattackpreimpact>
+
+		<onkill>
+			
+		</onkill>
+	</modifier>
+	
+</crafteditem>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Fiki_Passive"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	actiontype="passive"
+	propagatetoillusion="true"
+	
+	
+>
+	<constant name="block" value="11,12.5,14,15.5,17,18.5,20,21.5,23,24.5,26,27.5,29,30.5,32" adjustment="none" op="add"/>
+
+
+	<onattackedpredamage> 
+			<targettype type="Tower"/>
+			<else>
+				<targettype type="player_controlled"/>
+				<else>
+					<combateffecttype effecttype="Attack">
+						<getconstant name="block" />
+						<setvalue name="combat_deflection" a="combat_deflection" b="result" op="add" />
+					</combateffecttype>
+				</else>
+			</else>
+	</onattackedpredamage>
+
+</ability>

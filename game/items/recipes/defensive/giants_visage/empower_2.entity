@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_GiantsVisage_Empower_2"
+	
+	cost="1500"
+	healthproportionregen="0.001"
+>
+	<constant name="regen_enchant" value="0.1" adjustment="none"/>
+
+
+</qualityitem>

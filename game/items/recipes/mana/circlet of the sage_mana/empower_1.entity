@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_CircletOfTheSage_Empower_1"
+	
+	cost="385"
+
+	maxmanapercharge="1"
+>
+	<!-- Tooltip only -->
+	<constant name="max_mana_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
+
+	<onframe>
+		<!-- Mana will loop without this! -->
+		<setvar0 a="source_maxmana" b="charges" op="sub" />
+
+
+		<setvar0 a="var0" b="0.1" op="mult" />
+		<setcharges a="var0" />
+		<setaccumulator value="var0" />
+	</onframe>
+
+</qualityitem>

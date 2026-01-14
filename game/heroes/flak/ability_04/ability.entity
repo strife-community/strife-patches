@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Flak4"
+
+	statuseffecttooltip=""
+	icon="icon.tga"
+	anim="ability_4"
+
+	casttime="400"
+	castactiontime="400"
+
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	
+	casteffecttype="Magic"
+	
+	manacost="70,75,80"
+	cooldowntime="60000"
+	range="1500"
+
+	forcerange="1500"
+	allowoutofrangecast="true"
+	
+	showlinecast="true"
+	linecastrange="1750"
+	linecastwidth="80"
+	
+
+>
+	<!-- tooltip only -->
+	<constant name="resistance" value="30,40,50" adjustment="ability" />
+	
+	<!--Slow Only-->
+	<constant name="slow" value="24,32,40" adjustment="none" />
+	
+	<onimpact>
+		<spawnprojectile name="Projectile_Flak_Ability4" source="source_entity" target="target_position" offset="30 250 0" pushentity="true" />
+		<playeffect effect="effects/cast.effect" source="source_entity" target="source_entity" occlude="true" /> 
+		<setproxy target="stack_entity" />
+		<setactivemodifierkey entity="this_entity" name="active" />
+	</onimpact>
+	
+	<modifier key="active" modpriority="100" icon="icon2.tga" actiontype="target_self" casttime="0" castactiontime="0" manacost="0" anim="" queue="front" inheritmovement="true" ignorecooldown="true">
+		<onimpact>
+			<kill target="this_proxy_entity" />
+			<setactivemodifierkey entity="this_entity" name="" />
+		</onimpact>
+	
+	 </modifier>
+	
+</ability>

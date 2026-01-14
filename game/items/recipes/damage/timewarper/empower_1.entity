@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Timewarper_Empower_1"
+	
+	cost="1705"
+
+>
+	<!-- Tooltip only -->
+	<constant name="manaregen_enchant" value="3" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="manaregen_duration_enchant" value="4" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onabilityimpact ignoreresponsetype="NoResponse">
+		<casteffecttype entity="inflictor_entity" effecttype="NoResponse" />
+		<else>
+			<applystate name="State_Timewarper_Legendary" target="source_entity" duration="4000" />
+		</else>
+	</onabilityimpact>
+
+</qualityitem>

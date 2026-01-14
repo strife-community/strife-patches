@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ray3"
+	
+	icon="icon.tga"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	cooldowntime="10000,8000,6000,4000"
+>
+	<constant name="damage" value="20,30,40,50" adjustment="ability" />
+
+
+	
+	<onattackstart>
+		<cantarget targetscheme="enemy_units">
+			<isready>
+				<addattackimpactactions>
+					<combatevent effecttype="Counterable">
+						<onimpact>
+							<applystate name="State_Ray_Ability3" duration="3000" target="target_entity" />
+							<playeffect effect="effects/impact.effect" source="target_entity" />
+						</onimpact>
+					</combatevent>
+				</addattackimpactactions>
+				<setattackprojectile name="Projectile_Ray_Ability3" />
+				<playeffect effect="effects/sound.effect" source="source_entity" />
+				<setaccumulator value="1" />
+			</isready>
+		</cantarget>
+	</onattackstart>
+
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_units" effecttype="AttackDamage">
+			<compare a="accumulator" b="1" op="eq">
+				<startcooldown />
+				<setaccumulator value="0" />
+				<applystate name="State_Ray_Ability3_Kill" duration="50" proxy="this_entity" target="target_entity" />
+			</compare>
+		</cantarget>	
+	</onattackpreimpact>
+	
+	<onattack >
+		<cantarget targetscheme="enemy_units" effecttype="AttackDamage">
+			<compare a="accumulator" b="1" op="eq">
+				<getconstant name="damage" entity="this_entity" adjustment="this_owner_entity"/>
+				<bonusdamageadd target="" a="result" />
+			</compare>
+		</cantarget>	
+	</onattack>
+	
+	<modifier key="grenade_shot" modpriority="100"  >
+		<onattack>
+			<targettype type="hero">
+				<cantarget targetscheme="enemy_units" effecttype="AttackDamage">
+					<startcooldown />
+				</cantarget>
+			</targettype>
+		</onattack>
+	</modifier>
+
+</ability>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Mask_Of_Madman"
+
+	icon="icon.tga"
+	
+	cost="1300"
+	components="Item_Staff Item_Staff Item_Healthstone"
+	anim="item_self"
+	
+	actiontype="target_self"
+	cooldowntime="22000"
+
+	queue="front"
+	inheritmovement="true"
+
+	botitem="MaskOfTheMadmanItem"
+	filters="other_mobility,attack_speed,activatable,attack"
+	alwaysshowtimer="true"
+
+	attacklifesteal="0.08"
+
+	empoweredeffects="Item_Mask_Of_Madman_Empower_1,Item_Mask_Of_Madman_Empower_2,Item_Mask_Of_Madman_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="scale" value="2" adjustment="none" qualityvalue="2" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+
+	<!--Tooltip Only-->
+	<constant name="vamp" value="8" adjustment="none" qualityvalue="1.0" qualityadjustment="common" op="add"/>
+	<constant name="attackspeed" value="45" adjustment="none" qualityvalue="4.5" qualityadjustment="common" op="add"/>
+	<constant name="movespeed" value="40" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
+	
+	<onimpact>
+		<starttimer duration="6000" />
+		<applystate name="State_Mask_of_Madman" target="source_entity" duration="6000" />
+	</onimpact>
+
+</crafteditem>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Titanslayer_Empower_1"
+	
+	cost="1650"
+
+>
+	<!-- Tooltip only -->
+	<constant name="damage_enchant" value="0.4" adjustment="item" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onattackingdamageevent>
+		<damageeffecttype effecttype="AttackDamage" >
+			<cantarget targetscheme="enemy_nonboss_units">
+				<getconstant name="healthdamage" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="target_maxhealth" b="var0" op="mult" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="result" op="add" />
+				
+				<getconstant name="damage_enchant" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="source_maxhealth" b="var0" op="mult" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="result" op="add" />
+			</cantarget>
+		</damageeffecttype>
+	</onattackingdamageevent>
+
+</qualityitem>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_InfernoBrand_Empower_4"
+	
+	cost="1400"
+
+	hoverareacastrange="350"
+>
+	<!-- Tooltip only -->
+	<constant name="damage_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="damage_real" value="35" adjustment="item" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="area_enchant" value="150" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+	<onframe>
+		<getconstant name="radius" adjustmentsource="this_entity"/>
+		<targettype target="source_entity" type="alive" >
+			<areaofeffect
+				radius="350"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic DOT Splash"
+			>
+				<applystate target="target_entity" name="State_InfernoBrand" duration="100"  />
+				<getconstant name="damage_real" adjustmentsource="this_entity" />
+				
+				<setvar0 a="result" b="frametime" op="mult" />
+				<targettype target="source_entity" type="Courier" />
+				<else>
+					<cantarget targetscheme="neutral_units">
+						<cantarget targetscheme="idle_units"/>
+						<else>
+							<damage effecttype="Magic DOT Indirect Splash" amount="1" b="var0" op="mult"/>
+						</else>
+					</cantarget>
+					<cantarget targetscheme="enemy_nonneutral_units">
+						<damage effecttype="Magic DOT Indirect Splash" amount="1" b="var0" op="mult"/>
+					</cantarget>
+				</else>
+			</areaofeffect>
+		</targettype>
+	</onframe>
+
+</qualityitem>

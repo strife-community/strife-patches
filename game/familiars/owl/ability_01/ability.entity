@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Owl_Passive"
+
+	icon="icon.tga"
+	
+	actiontype="passive"
+	reducedcooldowns=".13"
+	
+	propagatetoillusion="true"
+>
+	<constant name="passive" value="13" adjustment="none" />
+
+</ability>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Tinders_Chalice"
+
+	icon="icon.tga"
+	legendaryicon="l_icon.tga"
+	
+	cost="650"
+	components="Item_Blade Item_Manaregen1"
+	
+	actiontype="passive"	
+
+	filters="defense,heal,mana,mana_regen"
+
+	basemanaregen="0.95"
+	basemanaregenperquality="0.1"
+
+	empoweredeffects="Item_Tinders_Chalice_Empower_1,Item_Tinders_Chalice_Empower_2,Item_Tinders_Chalice_Empower_3"
+	
+	showinpractice="true"
+	
+>
+	<constant name="percent" value="40" qualityvalue="4" adjustment="support" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" qualityvalue="10" adjustment="none" qualityadjustment="common" op="add"/>
+	<constant name="legendary" value="2.5" qualityvalue="2.5" adjustment="none" qualityadjustment="legendary" op="add"/>
+
+
+	<!--Tooltip only-->
+	<constant name="regen" value="0.95" adjustment="none" qualityvalue="0.13" qualityadjustment="common" op="add"/>
+
+
+	<onactivatestart>
+		<setaccumulator value="source_mana" />
+	</onactivatestart>
+
+	<onactivateimpact>
+		<setaccumulator value="accumulator" valueb="source_mana" valueop="sub" />
+		<getconstant name="percent" />
+		<setvar0 a="result" b="100" op="div" />
+		<heal target="source_entity" a="accumulator" b="var0" op="mult" />
+		<compare a="accumulator" b="25" op="ge" >
+			<playeffect effect="effects/restore.effect" target="source_entity"/>
+		</compare>
+	</onactivateimpact>
+
+
+</crafteditem>

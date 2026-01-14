@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Zealotsblade"
+	
+	icon="icon.tga"
+	
+	cost="1270"
+	components="Item_Warpcleft Item_Healthstone"
+	craftingmaxcomponents="3"
+	
+	actiontype="passive"
+	maxcharges="3"
+
+	filters="other_mobility,attack_speed,attack"
+
+	empoweredeffects="Item_Zealotsblade_Empower_1,Item_Zealotsblade_Empower_2,Item_Zealotsblade_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="attackspeed" value="27" adjustment="none" qualityvalue="2.7" qualityadjustment="common" op="add"/>
+	<constant name="movespeed" value="35" adjustment="none" qualityvalue="3.5" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="power" value="2" adjustment="none" qualityvalue="2" qualityadjustment="legendary" op="add"/>
+	<modifier key="zealotsblade" modpriority="75" exclusive="true" legendaryeffect="Legendary_Zealotsblade"
+		baseattackspeed="0.27" 
+		movespeed="35"
+		baseattackspeedperquality="0.027"
+		movespeedperquality="3.5"
+	/>
+	
+</crafteditem> 

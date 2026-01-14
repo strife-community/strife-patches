@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+<!--
+		<modifier 
+			name="modifier0"
+			expirelife="100"
+			startalpha="1"
+			endalpha="1"
+		/>
+-->
+		<particlesystem name="system0" space="entity" scale="3">
+
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/smaterials/whitedot.material"
+				expirelife="500"
+				size="85"
+				startcolor="0 .2 .35"
+				endcolor="0 0 0"
+				depthbias="-200"
+			/>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="100"
+				minparticlelife="100"
+				maxparticlelife="200"
+				material="/shared/effects/smaterials/powersteal.material"
+				depthbias="-100"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					anchor="1"
+					startcolor="0 1 1"
+					midcolor="0 1 1"
+					endcolor="0 0 0"
+					startscale="0"
+					minendscale="10"
+					maxendscale="15"
+					minangle="0"
+					maxangle="360"
+					endscale="0"
+					turn="true"
+					flare="true"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				material="/shared/effects/smaterials/powersteal.material"
+				depthbias="-100"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					anchor="1"
+					startcolor=".4"
+					endcolor="0 0 0" 
+					startscale="0"
+					minendscale="20"
+					maxendscale="25"
+					minangle="0"
+					maxangle="360"
+					endscale="0"
+					turn="true"
+					flare="true"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+			
+			
+			
+			
+			
+			
+			
+		<particlesystem name="system1" space="world" scale="1">
+<!--
+			<simpleemitter
+				bone="_bone_center"
+				particlelife="2000"
+				spawnrate="100"
+				offsetsphere="30 30 0"
+				position="0 0 0"
+				depthbias="0"
+			>
+				<particle
+				>
+
+					<simpleemitter
+					bone="_bone_center"
+						life="2000"
+						spawnrate="3300"
+						count="5"
+						minparticlelife="200"
+						maxparticlelife="600"
+						gravity="25"
+						minspeed="300"
+						maxspeed="1500"
+						drag=".01"
+						material="/shared/effects/smaterials/whitedot.material"
+						offsetsphere="25"
+						minangle="0"
+						maxangle="35"
+						direction="0 0 1"
+						position="0 0 0"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							startcolor="1 1 1"
+							midcolor="1 1 1"
+							endcolor="0 0 0"
+							midcolorpos=".75"
+							minstartsize="30"
+							maxstartsize="70"
+							minmidsize="12"
+							maxmidsize="25"
+							endsize="0"
+							startalpha="0"
+							midalpha=".7"
+							endalpha="0"
+							midalphapos=".5"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+-->
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>
