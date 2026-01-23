@@ -31,7 +31,7 @@
 >
 
 	<constant name="damage" value="150,200,250" adjustment="ability" />
-	<constant name="attackspeedslow" value="15,20,25" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
+	<constant name="attackspeedslow" value="15,20,25" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add" noshowintooltip="true"  />
 	<!-- tooltiponly -->
 	<constant name="stun" value="1.4,1.7,2" adjustment="None" floatprecision="1" />
 	<constant name="slow" value="20" adjustment="none" noshowintooltip="true" />

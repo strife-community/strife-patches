@@ -28,7 +28,7 @@
 
 >
 	<constant name="damage" value="90,120,150" adjustment="ability" />
-	<constant name="penetration" value="10,15,20" adjustment="none" qualityvalue="1.0,1.5,2.0" qualityadjustment="common" op="add"/>
+	<constant name="penetration" value="10,15,20" adjustment="none" qualityvalue="1.0,1.5,2.0" qualityadjustment="common" op="add" noshowintooltip="true"/>
 	
 	<onimpact>
 		<applystate name="State_Chester_Ability4_Data" duration="8000" target="source_entity" />

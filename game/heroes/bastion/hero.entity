@@ -76,8 +76,8 @@
     abilitynomanaannouncement="sounds/voice/vo_oom.wav"
     abilitycooldownnomanaannouncement="sounds/voice/vo_oom.wav"
     
-    preglobalscale="1.35"
-    modelscale=".975"
+    preglobalscale="1"
+    modelscale="2.0"
     effectscale="1.0575"
     boundsheight="112"
     boundsradius="24"

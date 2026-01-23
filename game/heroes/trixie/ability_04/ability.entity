@@ -29,7 +29,7 @@
 	<!-- tooltiponly -->
 	<constant name="duration" value="2,2.5,3" adjustment="none" floatprecision="1" />
 	<constant name="resistance_reduction" value="20,30,40" adjustment="none" />
-	<constant name="cd_lower" value="20,25,30" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
+	<constant name="cd_lower" value="20,25,30" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add" noshowintooltip="true"/>
 	
 	<onimpact>
 		<spawnaffector name="Affector_Trixie_Ability4" target="target_position" />

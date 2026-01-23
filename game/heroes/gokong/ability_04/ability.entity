@@ -18,7 +18,7 @@
 	casteffect="effects/cast.effect"
 	
 
-	modifierkey="Lustergoldpassive3"
+
 	
 	range="1500"
 	
@@ -32,7 +32,7 @@
 >
 	<!--tooltip only -->
 	<constant name="illusion_damage" value="25,30,35" adjustment="none" />
-	<constant name="gold" value="2,3,4" adjustment="none" />
+	<constant name="gold" value="2,3,4" adjustment="none" noshowintooltip="true" />
 	
 	<aura state="State_Gokong_Gold_Aura" radius="1200" targetscheme="enemy_creeps" ignoreinvulnerable="true" />
 	

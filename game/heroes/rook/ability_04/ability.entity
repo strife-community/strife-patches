@@ -31,7 +31,7 @@
 	linecastwidth="150"
 >
 	<constant name="damage" value="200,265,330" adjustment="ability" />
-	<constant name="penetration" value="5,10,15" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="penetration" value="5,10,15" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add" noshowintooltip="true" />
 	
 	<onimpact>
 		<playeffect effect="effects/cast.effect" />

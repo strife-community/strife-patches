@@ -27,7 +27,7 @@
 >
 	<constant name="damage" value="150,200,250" adjustment="ability" />
 	<constant name="stun" value="1.4,1.7,2.0" adjustment="none" floatprecision="1" />
-	<constant name="percent" value="50,60,70" qualityvalue="0" adjustment="support" qualityadjustment="common" op="add"/>
+	<constant name="percent" value="50,60,70" qualityvalue="0" adjustment="support" qualityadjustment="common" op="add" noshowintooltip="true"/>
 
 	<onimpact>
 		<starttimer duration="5000" />

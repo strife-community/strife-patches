@@ -16,21 +16,20 @@
 	maxcharges="0"
 	alwaysshowtimer="true"
 	
+	
 	maxhealthpercharge="4,5,6"
 	
 	
 >
 
 	<constant name="damage_increase" value="5,15,25" adjustment="none" />
-	<constant name="hp_bonus" value="4,5,6" adjustment="none" />
-
-	<constant name="power_req" value="3,3,3" adjustment="none" />
+	<constant name="hp_bonus" value="4,5,6" adjustment="none" noshowintooltip="true" />
+    <constant name="power_req" value="3,3,3" adjustment="none" noshowintooltip="true" />
 
 	<onimpact>
 		<applystate name="State_Fetterstone_Ability4" duration="-1" />
-		<starttimer duration="-1" />
-		<setcharges a="9" />
 		<setactivemodifierkey name="active" />
+		
 	</onimpact>
 	
 	<onframe>

@@ -15,8 +15,6 @@
 
 	<!-- end tool tip only -->
 	<constant name="damage_increase" value="90,110,130,150" adjustment="none" />
-	<constant name="splash" value="35,40,45,50" adjustment="none" />
-	<constant name="radius" value="300" adjustment="none" noshowintooltip="true"/>
 	<aura state="State_Rip_Ability3_Splash" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
 	
 	<onlearn>
@@ -69,12 +67,10 @@
 				<setactivemodifierkey name="Rip_ability3_megacrit" />
 			</compare>
 			
-	        <applystate name="State_Rip_Ability3_Splash"/>
+	     
 		</onattack>
 			
-		<addattackimpactactions>
-			<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.35,.4,.45,.5" op="mult" radius="300" effecttype="AttackDamage" targetscheme="enemy_units" />
-	    </addattackimpactactions>
+		
 	
 
 
@@ -90,7 +86,6 @@
 		
 		<onattack>
 			<applystate name="State_Rip_Ability3_CDFix" duration="200" target="source_entity" />
-			<applystate name="State_Rip_Ability3_Splash"/>
 					
 			<getconstant name="damage_increase" />
 			<setvar0 a="result" b="100" op="div" />

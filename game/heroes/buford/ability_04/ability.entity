@@ -18,13 +18,14 @@
 	actiontype="target_entity"
 	targetscheme="enemy_heroes"
 	casteffecttype="Magic"
-	
 	criticalchance="1"
 	criticalmultiplier="1.3,1.4,1.5"
+	
+	
 
 	
 	range="1800"
-	manacost="80,90,100"
+	manacost="0"
 	cooldowntime="60000,55000,50000"
 	
 	showareacast="true"
@@ -64,21 +65,7 @@
 	</onchannelbreak>
 	
 
-	<ondamaged>
-		<hasstate name="Self_State_Buford_Ability4" target="this_owner_entity" >
-		<compare a="source_damage" b="0" op="gt" >
-			<targettype type="player_controlled">
-				<targettype type="self"/>
-				<else>
-					<delete target="this_proxy_entity" />
-					<breakchannel />
-					<resetcooldown />
-					<startcooldown duration="10000" />
-				</else>
-			</targettype>
-		</compare>
-		</hasstate>
-	</ondamaged>
+	
 
 	<modifier key="buford_cage" modpriority="100">
 		<ondamaged>

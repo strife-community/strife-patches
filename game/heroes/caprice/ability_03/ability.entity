@@ -13,7 +13,7 @@
 
 	<!-- tooltiponly -->
 	<constant name="damage" value="30,45,60,75" adjustment="Ability" />
-	<constant name="gold_enchant" value="35,40,45,50" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add"/>
+	<constant name="gold_enchant" value="35,40,45,50" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" noshowintooltip="true"/>
 	
 	<onattackstart >
 		<cantarget targetscheme="enemy_units">

@@ -11,6 +11,8 @@
 	actiontype="passive"
 	
 	mitigation="20"
+	stunneddurationmultiplier="-0.25"
+	slowresistance="0.025"
 		
 	
 	propagatetoillusion="true"
@@ -19,7 +21,7 @@
 
 	<constant name="passive" value="20" adjustment="none" />
 	<constant name="cc_reduction" value="25" adjustment="none" />
-	<aura state="CC_Reduction" radius="1200" targetscheme="self" ignoreinvulnerable="true" /> 
+	
 	
 
 </ability>
