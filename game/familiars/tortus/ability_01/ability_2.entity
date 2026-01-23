@@ -11,8 +11,14 @@
 >
 
 	<constant name="passive" value="15" adjustment="none" />
-	<constant name="damage_reduction" value="10" adjustment="none" noshowintooltip="false"/>
+	<constant name="damage_reduction" value="15" adjustment="none" noshowintooltip="false"/>
 	
-    <aura state="Block" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
+   <onattackeddamageevent>
+		<getconstant name="damage_reduction" adjustmentsource="tool_entity"/>
+		<setvar0 a="result" b="100" op="div" />
+		<setvar0 a="1" b="var0" op="sub" />
+		<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+		
+	</onattackeddamageevent>  
 
 </ability>

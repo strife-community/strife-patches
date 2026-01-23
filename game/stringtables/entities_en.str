@@ -672,7 +672,7 @@ Ability_Ace3_description										Activate to spawn $number_of_icicles$ icicles,
 Ability_Ace3_description_simple									Slows and damages attackers
 // Ability_Ace4
 Ability_Ace4_name												Ace in the Hole
-Ability_Ace4_description										Target enemy to deal ^o$damage$ Magic damage^*, or immediately kill them if they are below $execute_threshold$% Max Health.\n\nIf target is killed, restores 25% of Ace's health and mana.
+Ability_Ace4_description										Target enemy to deal ^o$damage$ Magic damage^*, or immediately kill them if they are below $execute_threshold$% Max Health.\n\nIf target is killed, restores 25% of Ace's health and mana and gets 50/100/150 gold
 Ability_Ace4_description_simple									Damage that heals on kill
 
 
@@ -687,15 +687,15 @@ Ability_Aemon1_description										Consecrate an area. The area will grant visi
 Ability_Aemon1_description_simple								Circle of bonus damage on attacks
 // Ability_Aemon2
 Ability_Aemon2_name												Hope
-Ability_Aemon2_description										Aemon gains a powerful buff of $resistance$ Resistance and $cc_reduction$% Crowd Control Reduction for $duration$ seconds. \n\nPassive: Aemon's attacks heal ally heroes within Consecration for $heal$.
-Ability_Aemon2_description_simple								Resistance buff and ally heal on attacks
+Ability_Aemon2_description										Aemon gains a powerful buff of $resistance$ Magic Armor and $cc_reduction$% Crowd Control Reduction for $duration$ seconds. \n\nPassive: Aemon's attacks heal ally heroes within Consecration for $heal$.
+Ability_Aemon2_description_simple								Magic Armor buff and ally heal on attacks
 // Ability_Aemon3
 Ability_Aemon3_name												Courage
 Ability_Aemon3_description										Aemon gains a burst of $movespeed$ Movement Speed for $mspeed_duration_outside_s$ seconds. If activated within Consecration, duration extends to $mspeed_duration_inside_s$ seconds. \n\nUpon activation, Aemon's next $max_charges$ attacks slow the target by $slow$% for $slow_duration_s$ second.
 Ability_Aemon3_description_simple								Movespeed burst and slow on attacks
 // Ability_Aemon4
 Ability_Aemon4_name												Justice
-Ability_Aemon4_description										Aemon calls down a pillar of light on him and on his Consecration, dealing ^o$damage$ Magic Damage^* to enemies. \n\nPassive: Aemon's attacks grant a charge of Justice. Enemy attacks consume a charge, have damage reduced by $damage_reduction_percent$% and deal ^o$back_attack$ Magic Damage^* back to the attacker.
+Ability_Aemon4_description										Aemon calls down a pillar of light on him and on his Consecration, dealing ^o$damage$ Magic Damage^* to enemies. \n\nPassive: Aemon's attacks grant a charge of Justice. Enemy attacks consume a charge, have damage reduced by $damage_reduction_percent$% and deal ^o$back_attack$ Magic Damage^* back to the attacker.Passively gives 14/18/22% control reduction
 Ability_Aemon4_description_simple								Heavy AOE damage and back attack
 
 
@@ -718,7 +718,7 @@ Ability_Bandito3_description									Target an ally to heal them for ^g$heal$ He
 Ability_Bandito3_description_simple								Heal and speed buff
 // Ability_Bandito4
 Ability_Bandito4_name											Double Down
-Ability_Bandito4_description									Passively grants a $multicast_chance$% chance to refund an ability's cooldown and mana cost on use.\n\nActivate to guarantee your next ability will refund, and double the odds of additional abilities refunding for the next 8 seconds.  Once expired, you lose the passive completely for $cooldown$ seconds.
+Ability_Bandito4_description									Passively grants a $multicast_chance$% chance to refund an ability's cooldown and mana cost on use.\n\nActivate to guarantee your next ability will refund, and double the odds of additional abilities refunding for the next 8 seconds.  Once expired, you lose the passive completely for $cooldown$ seconds.Passively gives 9/12/15% Magic lifesteal
 Ability_Bandito4_description:doubledown							You've doubled down! Your chances to refund are doubled!
 Ability_Bandito4_description:doubledown_off						Double Down is on cooldown, and will not activate.
 Ability_Bandito4_description_simple								Chance to refund ability cooldowns
@@ -739,7 +739,7 @@ Ability_Bastion2_description									Target location to charge there.  Impacts t
 Ability_Bastion2_description_simple								Charges to a location, dealing damage and stunning
 // Ability_Bastion3
 Ability_Bastion3_name											Golden Bracers
-Ability_Bastion3_description									Passively gives $maxhp$ Max Health. Activate to apply a shield to nearby allies equal to $shield_percent$% of your Max Health.
+Ability_Bastion3_description									Passively gives $maxhp$% Max Health. Activate to apply a shield to nearby allies equal to $shield_percent$% of your Max Health.
 Ability_Bastion3_description_simple								Passively increases maximum health. Activate to shield allies
 // State_Bastion_Ability3
 State_Bastion_Ability3_Tooltip_name								Shield of the Oracles
@@ -784,7 +784,7 @@ Ability_Blazer3_description										Passively adds ^o$attack_bonus$ Attack Dama
 Ability_Blazer3_description_simple								Bonus attack damage and charged critical strike
 // Ability_Blazer4
 Ability_Blazer4_name											Hunter Mode
-Ability_Blazer4_description										Activate to become shrouded for $duration$ seconds.  While shrouded, Blazer gains +^c100 movespeed^* & +^o10% Attack Damage^* when attacking from stealth.  Hunter Mode detects the position of nearby enemies below 50% health within 3000 range.
+Ability_Blazer4_description										Activate to become shrouded for $duration$ seconds.  While shrouded, Blazer gains +^c100 movespeed^* & +^o10% Attack Damage^* when attacking from stealth.  Hunter Mode detects the position of nearby enemies below 50% health within all over the maps.
 Ability_Blazer4_description_simple								Stealth, speed boost and detection of injured enemies
 
 
@@ -799,7 +799,7 @@ Ability_Bo1_description											Target direction to deal ^o$damage$ Magic dama
 Ability_Bo1_description_simple									Boomerang line damage and slow
 // Ability_Bo2
 Ability_Bo2_name												Inner Rage
-Ability_Bo2_description											Grants Bo 75 bonus movespeed and 10% damage reduction.  After 4 seconds, deals ^o$damage$ Magic damage^* to nearby enemies and stuns for $stun$ seconds.
+Ability_Bo2_description											Grants Bo 75 bonus movespeed and 10% damage reduction.  After 4 seconds, deals ^o$damage$ Magic damage^* to nearby enemies and stuns for $stun$ seconds.Passively gives 8/10/12/14% movespeed
 Ability_Bo2_description_simple									Speed boost. Stuns and damages nearby enemies after delay
 // Ability_Bo3
 Ability_Bo3_name												Tranquility Totem
@@ -822,11 +822,11 @@ Hero_Buford_description											Lives in the Bayou and uses bugs as weapons.
 Hero_Buford_role												Long range attack damage hero
 // Ability_Buford1
 Ability_Buford1_name											Poison Slug
-Ability_Buford1_description										Target location to create a cloud of toxic fumes. Fumes slow all enemies by $slow$% and reduces their resistance by $resistance$. If toxic fumes are ignited by Fire Slug they explode dealing ^o$damage_explode$ Magic damage^*.\n\n^444Toxic Ammo^*\nAttacks deal $damage_increase_attackbase$% bonus damage. Only one Ammo can be active.
+Ability_Buford1_description										Target location to create a cloud of toxic fumes. Fumes slow all enemies by $slow$% and reduces their Armor by $resistance$. If toxic fumes are ignited by Fire Slug they explode dealing ^o$damage_explode$ Magic damage^*.\n\n^444Toxic Ammo^*\nAttacks deal $damage_increase_attackbase$% bonus damage,+50 attack range. Only one Ammo can be active.
 Ability_Buford1_description_simple								AOE slow and attack damage increase
 // Ability_Buford2
 Ability_Buford2_name											Fire Slug
-Ability_Buford2_description										Target location to create a trail of fire. Enemies take ^o$damage$ Magic damage^* per second.\n\n^444Flame Ammo^*\nAttacks deal $splash$% splash damage to units in a $radius$ unit radius. Only one Ammo can be active.
+Ability_Buford2_description										Target location to create a trail of fire. Enemies take ^o$damage$ Magic damage^* per second.\n\n^444Flame Ammo^*\nAttacks deal $splash$% splash damage to units in a $radius$ unit radius,gives passive 15% attack speed. Only one Ammo can be active.
 Ability_Buford2_description_simple								Line DOT and attack splash
 // Ability_Buford3
 Ability_Buford3_name											Leech
@@ -853,7 +853,7 @@ Ability_Caprice2_description									Target location to deal ^o$damage$ Magic da
 Ability_Caprice2_description_simple								Area stun and damage
 // Ability_Caprice3
 Ability_Caprice3_name											Volatility
-Ability_Caprice3_description									^444Passive Skill^*\nPassively causes every third source of damage you apply to a target to combust, dealing ^o$damage$ bonus Magic damage^*.
+Ability_Caprice3_description									^444Passive Skill^*\nPassively causes every third source of damage you apply to a target to combust, dealing ^o$damage$ bonus Magic damage^*.Each hero kill/assist gives +35/40/45/50 gold
 Ability_Caprice3_description_simple								Grants bonus damage with multiple hits
 // State_Caprice_Ability3
 State_Caprice_Ability3_Tooltip_name								Volatility
@@ -885,7 +885,7 @@ Ability_Carter3_description										Cast a ring of fire around you that deals ^
 Ability_Carter3_description_simple								Fire ring burns enemies and boosts damage 
 // Ability_Carter4
 Ability_Carter4_name											Imminent Boom
-Ability_Carter4_description										Fires an accelerating homing missile at an enemy.  If the missile hits the enemy within 5 seconds, the missile will deal ^o$damage$ Magic damage^* and stun for $stun$ seconds.
+Ability_Carter4_description										Fires an accelerating homing missile at an enemy.  If the missile hits the enemy within 5 seconds, the missile will deal ^o$damage$ Magic damage^* and stun for $stun$ seconds.Passively gives heals you for 50/60/70% of mana spent
 Ability_Carter4_description_simple								Homing missile that stuns and damages
 
 
@@ -912,7 +912,7 @@ Ability_Chester3_description									Target an enemy or ally hero to create an i
 Ability_Chester3_description_simple								Creates an illusion that deals damage and explodes
 // Ability_Chester4
 Ability_Chester4_name											King Me!
-Ability_Chester4_description									Target an allied hero to grant them 30% damage reduction, and create a link between them and Chester.  Link deals ^o$damage$^* Magic Damage per second to enemies.
+Ability_Chester4_description									Target an allied hero to grant them 30% damage reduction, and create a link between them and Chester.  Link deals ^o$damage$^* Magic Damage per second to enemies.Passively gives 10/15/20 magic penetration all yours skills
 Ability_Chester4_description_simple								Ally protection and damage link
 State_Chester_Ability4_Tooltip_name								King Me!
 State_Chester_Ability4_description_simple						You're taking 30% less damage!
@@ -931,7 +931,7 @@ Ability_Claudessa1_description									Target direction to damage enemies in a l
 Ability_Claudessa1_description_simple							Line damage and pull.
 // Ability_Claudessa2
 Ability_Claudessa2_name											Scale Shield
-Ability_Claudessa2_description									Passively grants $resistance$ Resistance.\n\nTarget ally to heal for ^o$heal$^* Health and transfer your shield to them for $duration$ seconds.
+Ability_Claudessa2_description									Passively gives $resistance$ Armor and Magic armor.\n\nTarget ally to heal for ^o$heal$^* Health and transfer your shield to them for $duration$ seconds.
 Ability_Claudessa2_description_simple							Target heal and damage reduction
 // State_Claudessa_Ability2
 State_Claudessa_Ability2_Tooltip_name							Scale Shield
@@ -976,8 +976,8 @@ Ability_Eanu2_description										Target location to emit a geyser from Eanu's 
 Ability_Eanu2_description_simple								Push Eanu and target away from eachother
 // Ability_Eanu3
 Ability_Eanu3_name												Tidal Flow
-Ability_Eanu3_description										Eanu channels the tide Inward and Outward, alternating each cast.\n\nInward Tide restores $mana$ Mana and grants $resistance$ Resistance.\n\nOutward Tide reduces enemy Resistance by $resistance_reduction$. Enemies hit by Outward Tide become Wet for 5 seconds.
-Ability_Eanu3_description_simple								Mana/Resistance buff to self or Resistance debuff to Enemies
+Ability_Eanu3_description										Eanu channels the tide Inward and Outward, alternating each cast.\n\nInward Tide restores $mana$ Mana and grants $resistance$  Armor.\n\nOutward Tide reduces enemy Magic Armor by $resistance_reduction$. Enemies hit by Outward Tide become Wet for 5 seconds.Taking damage increases your power by 4/5/6/7 for 5 seconds, stacks 4 times.
+Ability_Eanu3_description_simple								Mana/Armor buff to self or Magic Armor debuff to Enemies
 // Ability_Eanu4
 Ability_Eanu4_name												Breaking Wave
 Ability_Eanu4_description										Target location to ride a massive wave, dealing ^o$damage$ Magic damage^* and stunning all enemies for $stun_duration$ seconds. Enemies touched by Breaking Wave become Wet for 5 seconds.
@@ -991,8 +991,8 @@ Hero_Fetterstone_role											Ranged attack damage
 Hero_Fetterstone_lore 											Lorne was a miner dwarf in the gem mines of Fetterstone Mountain in the northern reaches of Gael, in the mountain range known as Dwarf Rock. He was a simple miner, never longing for adventure or a life outside of the mines. But gems were his weakness, and he often yearned for more, many more in fact, than he had.\n\nOn a fateful day, Lorne entered into a small unexplored cavern in the mine and a glimmer caught his eye. He unearthed two mysterious weapons infused with dazzling gems. Astonishingly, they spoke to Lorne in a mental whisper. "Take us. We are yours. This is your destiny." The lure of the gems was unrelenting. Lorne took up the weapons, called Glimmer and Glint, and left the mines.\n\nSome weeks later, news of a gunslinging dwarf with mystical powers began to surface in northern Gael. Those who told the tales said the gunslinger called himself Fetterstone, after the mines of dwarf Rock, and that he executed lethal justice upon any he deemed to be evildoers. Some even said he was a haunted soul, fallen deep under the influence of some vengeful spirit, with magical weapons that held him spellbound to their dark will.
 // Ability_Fetterstone1
 Ability_Fetterstone1_name										Crystal Shot
-Ability_Fetterstone1_description								Target direction to fire crystal, dealing ^o$damage$ Magic damage^*, slowing slightly, and reducing Resistance by $resistance_reduction$.
-Ability_Fetterstone1_description_simple							Skillshot damage, slow and resistance reduction
+Ability_Fetterstone1_description								Target direction to fire crystal, dealing ^o$damage$ Magic damage^*, slowing slightly, and reducing Armor by $resistance_reduction$.
+Ability_Fetterstone1_description_simple							Skillshot damage, slow and armor reduction
 // State_Fetterstone_Ability1
 State_Fetterstone_Ability1_Tooltip_name							Crystal Shot
 State_Fetterstone_Ability1_description_simple					Fetterstone has increased the damage you take from attacks.
@@ -1011,7 +1011,7 @@ State_Fetterstone_Ability3_description_simple					Fetterstone has stolen some of
 State_Fetterstone_Ability3_name									Power Hungry
 // Ability_Fetterstone4
 Ability_Fetterstone4_name										Explosive Rounds
-Ability_Fetterstone4_description								Activate to equip Fetterstone's special ammunition.  For the next 9 attacks, Fetterstone deals $damage_increase$% bonus attack damage with 50% splash damage.
+Ability_Fetterstone4_description								Activate to equip Fetterstone's special ammunition.Fetterstone deals $damage_increase$% bonus attack damage with 30/40/50% splash damage.Passively, for every 3 points of Power above 100, you gain 4/5/6 health.
 Ability_Fetterstone4_description_simple							Attack damage, splash buff
 // State_Fetterstone_Ability4
 State_Fetterstone_Ability4_Tooltip_name							Explosive Rounds
@@ -1042,8 +1042,8 @@ Ability_Flak3_description:Flak_Ability3_4						Grants a new upgrade each time yo
 Ability_Flak3_description_simple								Assorted weapon upgrades
 // Ability_Flak4
 Ability_Flak4_name												EMP Cannon
-Ability_Flak4_description										Target direction to launch an EMP missle.  Upon reactivation, or contacting an enemy, the EMP explodes - slowing nearby enemies and lowering their Resistance by up to $resistance$.  More potent at closer ranges.
-Ability_Flak4_description_simple								Massive slow and resistance reduction
+Ability_Flak4_description										Target direction to launch an EMP missle.  Upon reactivation, or contacting an enemy, the EMP explodes - slowing nearby enemies and lowering their Armor by up to $resistance$.  More potent at closer ranges.Passively gives 7/11/15% Critical Chance
+Ability_Flak4_description_simple								Massive slow and armor reduction
 
 
 // Hero_GoKong
@@ -1065,7 +1065,7 @@ Ability_GoKong3_description										Activate to gain 200 bonus attack range and
 Ability_GoKong3_description_simple								Bonus range and damage
 // Ability_GoKong4
 Ability_GoKong4_name											Monkey Multiplier
-Ability_GoKong4_description										Activate to send an illusion to each nearby enemy hero.  Illusions cannot be killed and deal $illusion_damage$% damage.  \n\nReactive and target location to teleport to nearest illusion, consuming it.
+Ability_GoKong4_description										Activate to send an illusion to each nearby enemy hero.  Illusions cannot be killed and deal $illusion_damage$% damage.  \n\nReactive and target location to teleport to nearest illusion, consuming it.Passively increases gold from creeps by 2/3/4
 Ability_GoKong4_description_simple								Illusions and teleport
 
 // Hero_Hale
@@ -1083,7 +1083,7 @@ Ability_Hale2_description										Activate to empower next attack with ^o$damag
 Ability_Hale2_description_simple								Next attack deals line damage
 // Ability_Hale3
 Ability_Hale3_name												Sheol Calibur
-Ability_Hale3_description										Activate to grant a bonus $attackspeed$ Attack Speed^* for 5 seconds.  During this time, attacks heal Hale for $percent_heal$% max Health.
+Ability_Hale3_description										Activate to grant a bonus $attackspeed$ Attack Speed^* for 5 seconds.  During this time, attacks heal Hale for $percent_heal$% max Health.Passively gives 5/15/15/20% AttackSpeed
 Ability_Hale3_description_simple								Attack speed and lifesteal buff
 // Ability_Hale4
 Ability_Hale4_name												Earthquake
@@ -1143,7 +1143,7 @@ State_Iah_Ability3_Allies_name									Sandstorm
 State_Iah_Ability3_Allies_name_FRAME_effect
 // Ability_Iah4
 Ability_Iah4_name												Eclipse
-Ability_Iah4_description										Target area to summon a solar eclipse. After a short delay, heals allies for ^o$heal$ Health^* and deals ^o$damage$ Magic Damage^* to enemies.
+Ability_Iah4_description										Target area to summon a solar eclipse. After a short delay, heals allies for ^o$heal$ Health^* and deals ^o$damage$ Magic Damage^* to enemies.Each minute,grants an additional 30 MaxHP, 20 Mana, and 3 Power.Caps after 10 minutes
 Ability_Iah4_description_simple									Global range damage and heal
 
 
@@ -1158,16 +1158,16 @@ Ability_JinShe1_description										Target a direction to deal ^o$damage$ Magic
 Ability_JinShe1_description_simple								Skill shot damage and stun
 // Ability_JinShe2
 Ability_JinShe2_name											Whirling Embers
-Ability_JinShe2_description										Activate to deal ^o$damage$ Magic damage^* and apply a stacking -$penetration$ Penetration debuff for 5 seconds to nearby enemies.\n\nEach attack reduces Whirling Embers' cooldown by 2 seconds.
+Ability_JinShe2_description										Activate to deal ^o$damage$ Magic damage^* and apply a stacking -$penetration$ Magic Armor Penetration debuff for 5 seconds to nearby enemies.\n\nEach attack reduces Whirling Embers' cooldown by 2 seconds.
 Ability_JinShe2_description_simple								Area magic damage and debuff
 // Ability_JinShe3
 Ability_JinShe3_name											Firefall
-Ability_JinShe3_description										Target a location to launch there after a short channel.\n\nAfter landing, Jin She gains $resistance$ Resistance for 5 seconds.\n\nEnemy hero damage will interrupt channel.
+Ability_JinShe3_description										Target a location to launch there after a short channel.\n\nAfter landing, Jin She gains $resistance$ Armor for 5 seconds.\n\nEnemy hero damage will interrupt channel.
 Ability_JinShe3_description_simple								Long range jump
 State_JinShe_Ability3_Channel_name								Firefall..
 // Ability_JinShe4
 Ability_JinShe4_name											Firestarter
-Ability_JinShe4_description										Passively causes your ability hits to spawn embers. Embers deal ^o$damage_per_second$^* Magic damage per second to enemies.\n\nActivate to call embers to self, each dealing ^o$damage$^* Magic damage to enemies hit.  Each ember restores 2% Max Health to Jin She. 
+Ability_JinShe4_description										Passively causes your ability hits to spawn embers. Embers deal ^o$damage_per_second$^* Magic damage per second to enemies.\n\nActivate to call embers to self, each dealing ^o$damage$^* Magic damage to enemies hit.  Each ember restores 2% Max Health to Jin She.Passively increases health by 10/15/20 and power by 1/1.5/2 for each enemy killed, stacking to 10/13/16. Stacks are lost upon death. 
 Ability_JinShe4_description_simple								Passive damage, active heal/damage
 
 
@@ -1197,7 +1197,7 @@ State_Ladytinder_Ability3_name									Stonebark Shield
 State_Ladytinder_Ability3_name_FRAME_effect
 // Ability_Ladytinder4
 Ability_Ladytinder4_name										Nature's Fury
-Ability_Ladytinder4_description									Target position to summon Petals.  Petals has Health equal to 60% of Lady Tinder, deals ^o$damage$ Attack damage^*, and cannot move.
+Ability_Ladytinder4_description									Target position to summon Petals.  Petals has Health equal to 60% of Lady Tinder, deals ^o$damage$ Attack damage^*, and cannot move.Passively increases heals and shields by 9/12/15%.
 Ability_Ladytinder4_description_simple							Creates an attacking plant
 
 
@@ -1220,7 +1220,7 @@ Ability_Malady3_description										Target a location and drag to create a wall
 Ability_Malady3_description_simple								Creates an impassable wall
 // Ability_Malady4
 Ability_Malady4_name											Bolt of Bedlam
-Ability_Malady4_description										Target an enemy unit to deal ^o$damage$ Magic damage^*.
+Ability_Malady4_description										Target an enemy unit to deal ^o$damage$ Magic damage^*.Passively increases Magic Damage by 7/8/12%
 Ability_Malady4_description_simple								High magic damage
 State_Malady_Ability4_Channel_name								Charging..
 
@@ -1235,7 +1235,7 @@ Ability_Malph1_description										Target direction to fire an underground miss
 Ability_Malph1_description_simple								Homing missile with AoE damage and slow
 // Ability_Malph2
 Ability_Malph2_name												Healing Rations
-Ability_Malph2_description										Target ally to grant them a buff which heals them for ^o$heal$ Health^* over $duration$ seconds, providing $resistance$ resistance for the duration.
+Ability_Malph2_description										Target ally to grant them a buff which heals them for ^o$heal$ Health^* over $duration$ seconds, providing $resistance$ Armor and Magic Armor for the duration.
 Ability_Malph2_description_simple								Grant healing and resistance over time
 // Ability_Malph3
 Ability_Malph3_name												Mud Field
@@ -1243,7 +1243,7 @@ Ability_Malph3_description										Target area to create a mud field.  Enemies 
 Ability_Malph3_description_simple								Create a field that slows and weakens enemies
 // Ability_Malph4
 Ability_Malph4_name												The Underground
-Ability_Malph4_description										Target location to create a Mole Hole.  By right-clicking a Mole Hole, you will channel for 1.4 seconds - entering the underground upon completion.  While underground, you can then target near any Mole Hole to return above ground at that location.\n\nHoles are concealed from enemies until they stay next to it for $hole_reveal_time_sec$ second.
+Ability_Malph4_description										Target location to create a Mole Hole.  By right-clicking a Mole Hole, you will channel for 1.4 seconds - entering the underground upon completion.  While underground, you can then target near any Mole Hole to return above ground at that location.\n\nHoles are concealed from enemies until they stay next to it for $hole_reveal_time_sec$ second.Passively provides Power equal to 1/1.5/2% your Mana
 Ability_Malph4_description_simple								Tunnel between Mole Holes for map-wide mobility
 Ability_Malph4_description:Malph_underground					Target near Mole Hole to exit the underground.
 
@@ -1267,7 +1267,7 @@ Ability_Midknight3_description									Activate to raise Midknight's shield for 
 Ability_Midknight3_description_simple							Cleanses slow and stun, grants move speed and power
 // Ability_Midknight4
 Ability_Midknight4_name											Chains of Judgement
-Ability_Midknight4_description									Activate to attach a link to all nearby enemy heroes pulling them slightly towards Midknight. The chains slow enemies by $slow$% and break if enemies run farther than 1200 range.  Any heroes still linked after 3 seconds take ^o$damage$ Magic Damage^* and are stunned for $stun$ seconds.
+Ability_Midknight4_description									Activate to attach a link to all nearby enemy heroes pulling them slightly towards Midknight. The chains slow enemies by $slow$% and break if enemies run farther than 1200 range.  Any heroes still linked after 3 seconds take ^o$damage$ Magic Damage^* and are stunned for $stun$ seconds.Passively reduce the attack speed of enemies attacking you by 15/20/25%.
 Ability_Midknight4_description_simple							Stuns and damages nearby enemies after delay
 
 
@@ -1295,7 +1295,7 @@ Ability_Minerva3_description									Upon using an ability, gain a shield equal 
 Ability_Minerva3_description_simple								Grants shield on ability use
 // Ability_Minerva4
 Ability_Minerva4_name											Impaling Sting
-Ability_Minerva4_description									Target enemy to deal ^o$damage$ Magic damage^*. Deals +50% bonus damage if behind the target.
+Ability_Minerva4_description									Target enemy to deal ^o$damage$ Magic damage^*. Deals +50% bonus damage if behind the target.Passively each kill/assist grants 3 Power and 30 Health,10 charges
 Ability_Minerva4_description_simple								Damage, bonus damage if behind the target
 
 
@@ -1320,7 +1320,7 @@ Ability_Moxie3_description										^444Passive Skill^*\nPassively increases all
 Ability_Moxie3_description_simple								Movespeed on cast and increased spell damage
 // Ability_Moxie4
 Ability_Moxie4_name												Catastrophe
-Ability_Moxie4_description										Target area. After a delay, deals ^o$damage$ Magic damage^* and applies a 60% Movement Slow.\n\nEnemies near the center take an additional ^o$bonus_damage$ damage^* and bonus slow.
+Ability_Moxie4_description										Target area. After a delay, deals ^o$damage$ Magic damage^* and applies a 60% Movement Slow.\n\nEnemies near the center take an additional ^o$bonus_damage$ damage^* and bonus slow.Passively gives 5/10/15% power
 Ability_Moxie4_description_simple								Delayed area damage and slow
 Ability_Moxie4_effect_header
 Ability_Moxie4_IMPACT_effect
@@ -1346,7 +1346,7 @@ Ability_Nikolai3_description									Activate to damage all nearby enemies for $
 Ability_Nikolai3_description_simple								Area damage and shield buff
 // Ability_Nikolai4
 Ability_Nikolai4_name											Piledriver
-Ability_Nikolai4_description									Target direction to lunge, grabbing the first enemy hero you contact - launching you both into the air. While airborn you may continue to move.\n\nUpon landing, you deal ^o$damage$^* Magic Damage in a small area.\n\nIf enemy hero use CC Break to avoid being launched into the air, you get mana refunded and ability is put on $cooldown_reset$ second cooldown instead.
+Ability_Nikolai4_description									Target direction to lunge, grabbing the first enemy hero you contact - launching you both into the air. While airborn you may continue to move.\n\nUpon landing, you deal ^o$damage$^* Magic Damage in a small area.\n\nIf enemy hero use CC Break to avoid being launched into the air, you get mana refunded and ability is put on $cooldown_reset$ second cooldown instead.Passively provides Power equal to 0,7/0,9/1,1% of your Max Health
 Ability_Nikolai4_description_simple								Single target relocation
 
 // Hero_Pal
@@ -1365,7 +1365,7 @@ Ability_Pal2_description:pal_roll								Activate to cancel, returning to normal
 Ability_Pal2_description_simple									Bonus movement speed and stun
 // Ability_Pal3
 Ability_Pal3_name												Infernal Core
-Ability_Pal3_description										Activate to begin dealing ^o$damage_per_second$ Magic Damage/sec^* to nearby enemies & gain ^c+$resistance$ resistance^* while active.  Drains 20 mana/sec.
+Ability_Pal3_description										Activate to begin dealing ^o$damage_per_second$ Magic Damage/sec^* to nearby enemies & gain ^c+$resistance$ Magic Armor^* while active.  Drains 20 mana/sec.
 Ability_Pal3_description:burn_on								Activate to turn off Infernal Core.
 Ability_Pal3_description_simple									Area damage and defense bonus
 // Ability_Pal4
@@ -1388,9 +1388,9 @@ Ability_Ray2_name												Shock Field
 Ability_Ray2_description										Target area to create a circular fence that lasts 3 seconds.\n\nEnemies who walk through the fence are stunned for $stun$ seconds and take ^o$damage$ Magic damage^*.
 Ability_Ray2_description_simple									Create a Ring that Damages and Stuns
 // Ability_Ray3
-Ability_Ray3_name												Freeze Ray
-Ability_Ray3_description										^444Passive Skill^*\nPassively charges your next attack with ^o+$damage$ bonus Attack damage^* and tapering 50% Movement Slow.  Cooldown is reset if this skill kills a unit.
-Ability_Ray3_description_simple									Boosts attacks with damage and slow
+Ability_Ray3_name												Rearm
+Ability_Ray3_description									    Recharges all your abilities and items.Passively increases mana by 7/9/11/13%
+Ability_Ray3_description_simple									Recharges all your abilities and items.
 // Ability_Ray4
 Ability_Ray4_name												Death Ray
 Ability_Ray4_description										Target a direction to fire a laser after a brief delay.  Laser deals ^o$damage$ Magic damage^* to enemies along the line.  Damage is reduced by 12% for each enemy hero hit.
@@ -1404,7 +1404,7 @@ Hero_Rip_role
 Hero_Rip_lore													Rip, swordsman of the wastes, hails from a mysterious tribe of Elves – the Kenar-Ahdam – that eek out an existence in the ruins of Strife where they have been effectively exiled to by the other races of Gael as a result of suspicions that they are half-Dharkwave/half-Elf. As perpetual outcasts, the Kenar-Ahdam have remained largely insulated from the worlds around them and have preserved many of their old customs including Rhen-Dhit wherein the second son of the family is sent off to find fortune on their own so as not to challenge the first son for inheritance. Tyme, second son of Mhernad, ventured forth to join in the Trials of Strife in order to win himself a place within his tribe, and his tribe a place amongst the rest of the races of the planes.
 // Ability_Rip1
 Ability_Rip1_name												Smoke Cloud
-Ability_Rip1_description										Target area to create a smoke cloud, reducing enemy resistance by $resistance_reduction$ and drastically lowering their vision, while granting all allies inside the cloud $resistance$ resistance. While inside the cloud, you are stealthed until you deal damage or use an ability.
+Ability_Rip1_description										Target area to create a smoke cloud, reducing enemy Armor by $resistance_reduction$ and drastically lowering their vision, while granting all allies inside the cloud $resistance$ Magic Armor. While inside the cloud, you are stealthed until you deal damage or use an ability.
 Ability_Rip1_description_simple									Create cloud to confuse enemy and cloak yourself
 // State_Rip_Ability1_Self
 State_Rip_Ability1_Self_Tooltip_name							Smoke Cloud
@@ -1422,7 +1422,7 @@ Ability_Rip2_description										Target area to vanish for 1 second, then reapp
 Ability_Rip2_description_simple									Vanish and reappear dealing area damage
 // Ability_Rip3
 Ability_Rip3_name												Dark Empowerment
-Ability_Rip3_description										^444Passive Skill^*\nEvery 5th attack charges your blade.  Once charged, your next attack deals $damage_increase$% bonus Attack damage.\n\nAvoiding enemy vision instantly charges your blade.
+Ability_Rip3_description										^444Passive Skill^*\nEvery 5th attack charges your blade.  Once charged, your next attack deals $damage_increase$% bonus Attack damage.\n\nAvoiding enemy vision instantly charges your blade.Passively, your attacks deal 35/40/45/50% splash damage.
 Ability_Rip3_description_simple									Critical strike after being unseen
 // Ability_Rip4
 Ability_Rip4_name												Nether Strike
@@ -1454,7 +1454,7 @@ State_Rook_Ability3_Enemy_description_simple					You are taking increased damage
 State_Rook_Ability3_Enemy_name									Murder of Crows
 // Ability_Rook4
 Ability_Rook4_name												Deliverance
-Ability_Rook4_description										Launch a crow in target direction, damaging and stunning the first enemy hit.\n\nDeals up to ^o$damage$ Magic damage^* and stuns for up to 3.5 seconds, based on the distance travelled.
+Ability_Rook4_description										Launch a crow in target direction, damaging and stunning the first enemy hit.\n\nDeals up to ^o$damage$ Magic damage^* and stuns for up to 3.5 seconds, based on the distance travelled.Passively, your attacks penetrate 5/10/15% of enemy Armor.
 Ability_Rook4_description_simple								Skillshot that stuns and deals more damage at longer distances
 
 
@@ -1465,7 +1465,7 @@ Hero_Shank_role
 Hero_Shank_lore													Shank was a lone soul. Roving the hills of Strife, he slowly grew insane. Because of his lunatic outbursts and insane behavior, he began to grow troublesome to the four cities of Strife, and many times they attempted to imprison him. But he somehow forged a magic key (some say through supernatural insights afforded to him by his own insanity) and always escaped from his captors. He converted his prison shackle ball into a crude ally, naming it "Clunk," and went on further rampages. Shank used his magic key to enter through the gates of the Strife Arena and now fights in the trials. Apparently because he has very little else to do.
 // Ability_Shank1
 Ability_Shank1_name												Ground Pound
-Ability_Shank1_description										Activate to smash the ground below you, dealing ^o$damage$ Magic damage^* and applying a $slow$% Slow and Resistance reduction of $resistance$ to all nearby enemies.
+Ability_Shank1_description										Activate to smash the ground below you, dealing ^o$damage$ Magic damage^* and applying a $slow$% Slow and Armor reduction of $resistance$ to all nearby enemies.
 Ability_Shank1_description_simple								Slow and damage around self
 // Ability_Shank2
 Ability_Shank2_name												Jailbreak
@@ -1481,11 +1481,11 @@ State_Shank_Ability2_Enemy_description_simple					Shank has reduced your movespe
 State_Shank_Ability2_Enemy_name									Jailbreak
 // Ability_Shank3
 Ability_Shank3_name												Frenzy
-Ability_Shank3_description										Passively causes attacks to grant up to $resistance$ Resistance and $attackspeed$ Attack Speed over 3 attacks.  Buff lasts 4 seconds. \n\nActivating Frenzy gives Shank full charges. 
-Ability_Shank3_description_simple								Resistance and attack speed in combat
+Ability_Shank3_description										Passively causes attacks to grant up to $resistance$ Armor and $attackspeed$ Attack Speed over 3 attacks.  Buff lasts 4 seconds. \n\nActivating Frenzy gives Shank full charges. 
+Ability_Shank3_description_simple								Armor and attack speed in combat
 // Ability_Shank4
 Ability_Shank4_name												Manacle
-Ability_Shank4_description										Target direction to launch a chain that attaches to the first enemy hit.  The target is pulled back to Shank and takes ^o$damage$ Magic damage^*. Max drag range is 1500 units.
+Ability_Shank4_description										Target direction to launch a chain that attaches to the first enemy hit.  The target is pulled back to Shank and takes ^o$damage$ Magic damage^*. Max drag range is 1500 units.Passively receiving damage increases Armor by 4/5/6 units for 5 seconds, stacks 3 times
 Ability_Shank4_description_simple								Long range hook
 
 
@@ -1508,7 +1508,7 @@ Ability_Trace3_description										Activate to gain a burst of speed and ^o$att
 Ability_Trace3_description_simple								Speed up, empower attack, reactivate to return.
 // Ability_Trace4
 Ability_Trace4_name												Wanderlust
-Ability_Trace4_description										While moving, passively builds up a shield equal to $shield_percent$% of your Max HP.  While the shield is active, gain $percent_power_increase$% bonus power.\n\nTaking damage stops shield generation for 1.5 seconds.
+Ability_Trace4_description										While moving, passively builds up a shield equal to $shield_percent$% of your Max HP.  While the shield is active, gain $percent_power_increase$% bonus power.\n\nTaking damage stops shield generation for 1.5 seconds.After casting a spell, your next basic attack deals 20/25/30 bonus damage.
 Ability_Trace4_description_simple								Shield and power boost.
 
 
@@ -1531,7 +1531,7 @@ Ability_Trixie3_description										Target direction to fire a powerful beam.  
 Ability_Trixie3_description_simple								Strafe with strong line damage
 // Ability_Trixie4
 Ability_Trixie4_name											Croaking Curse
-Ability_Trixie4_description										Target location to turn all enemies into frogs for $duration$ seconds, slowing them by 35% and reducing their Resistance by $resistance_reduction$. \n\nFrogs cannot attack or use abilities.
+Ability_Trixie4_description										Target location to turn all enemies into frogs for $duration$ seconds, slowing them by 35% and reducing their Magic Armor by $resistance_reduction$. \n\nFrogs cannot attack or use abilities.Each kill/assist grants a 20/25/30% reduction of current cooldowns
 Ability_Trixie4_description_simple								Large area disable
 // State_Trixie_Ability4
 State_Trixie_Ability4_Tooltip_name								Croaking Curse
@@ -1560,7 +1560,7 @@ Ability_Vermillion3_description									^444Passive Skill^*\nPassively increases
 Ability_Vermillion3_description_simple							Increases attack range and damage
 // Ability_Vermillion4
 Ability_Vermillion4_name										Rocket Jump
-Ability_Vermillion4_description									Target location to deal ^o$damage$ Magic damage^* and stun targets for $stun$ seconds, launching Vermillion backwards.
+Ability_Vermillion4_description									Target location to deal ^o$damage$ Magic damage^* and stun targets for $stun$ seconds, launching Vermillion backwards.Passively gains 5/7/10% attack speed for 3 seconds when attacking, 3 stacks
 Ability_Vermillion4_description_simple							Area stun/damage and jump back
 State_Vermillion_Ability4_name									Focus Fire
 
@@ -1590,7 +1590,7 @@ State_Vex_Ability3_name											Anti-Matter Shield
 State_Vex_Ability3_name_FRAME_effect
 // Ability_Vex4
 Ability_Vex4_name												Orbital Drop
-Ability_Vex4_description										Target position to teleport, dealing ^o$damage$ Magic damage^* and stunning for 1 second.  \n\n2.0 second Channel Time.  Taking damage will put the skill on a 5 second cooldown.
+Ability_Vex4_description										Target position to teleport, dealing ^o$damage$ Magic damage^* and stunning for 1 second.  \n\n2.0 second Channel Time.  Taking damage will put the skill on a 5 second cooldown.\n 30/35/40% of Magic damage is healed back over time 
 Ability_Vex4_description_simple									Global teleport with damage and stun
 State_Vex_Ability4_Self_name									Teleporting..
 
@@ -1602,7 +1602,7 @@ Hero_Zaku_role
 Hero_Zaku_lore 
 // Ability_Zaku1
 Ability_Zaku1_name												Bioswarm
-Ability_Zaku1_description										Target direction to channel Bioswarm, dealing ^o$damage_per_second$ Magic damage^* per second.\n\nRemoves up to $resistance_reduction$ Resistance for 4 seconds.
+Ability_Zaku1_description										Target direction to channel Bioswarm, dealing ^o$damage_per_second$ Magic damage^* per second.\n\nRemoves up to $resistance_reduction$ Magic Armor for 4 seconds.
 Ability_Zaku1_description_simple								Channeled damage & resistance reduction
 State_Zaku_Ability1_Channel_name								Bioswarm
 State_Zaku_Ability1_Tooltip_name								Bioswarm
@@ -1620,7 +1620,7 @@ Ability_Zaku3_description										Activate to spawn a Mending Pod on the ground
 Ability_Zaku3_description_simple								Health / mana restore
 // Ability_Zaku4
 Ability_Zaku4_name												Death's Embrace
-Ability_Zaku4_description										Target ally to protect them from death for 6 seconds. If they die during this time, they will respawn shortly after pushing away and stunning all nearby enemies for .25 seconds. Target will revive with $percent_hp_mana$% Health / Mana with three roaches to attack nearby enemies.\n\nRoaches deal up to ^o$damage$ Attack Damage^* each and apply a $move_attack_slow$% slow to movement & attack speed.
+Ability_Zaku4_description										Target ally to protect them from death for 6 seconds. If they die during this time, they will respawn shortly after pushing away and stunning all nearby enemies for .25 seconds. Target will revive with $percent_hp_mana$% Health / Mana with three roaches to attack nearby enemies.\n\nRoaches deal up to ^o$damage$ Attack Damage^* each and apply a $move_attack_slow$% slow to movement & attack speed.Passively, the hero has an 80/90/100% chance to heal the nearest ally with the least HP by 50/100/150 Health when using spells.
 Ability_Zaku4_description_simple								Protection from death
 State_Zaku_Ability4_Tooltip_name								Death's Embrace
 State_Zaku_Ability4_description									You will revive shortly after dying.
@@ -1764,7 +1764,7 @@ State_PlacingBomb_Tooltip_name									Channeling Portal
 
 // Spellblade
 Item_Spellblade_name											Mystic Dagger
-Item_Spellblade_description										+$power$ Power\nUsing an ability that costs mana grants ^o$damage$ bonus damage^* on your next attack.
+Item_Spellblade_description										+10% Colldown Reduction \n+$power$ Power\nUsing an ability that costs mana grants ^o$damage$ bonus damage^* on your next attack.
 Item_Spellblade_description_simple								Grants Power. Using an ability grants ^obonus damage^* on next attack.
 Item_Spellblade_bonusdescription								Increases the damage bonus by $common_increase$%.
 Item_Spellblade_legendaryname									Unstable
@@ -1792,7 +1792,7 @@ Item_DemonEdge_Empower_3_description							Increases Attack Damage by $damage_en
 
 // PendantofDefiance
 Item_PendantofDefiance_name										Dampening Cloak
-Item_PendantofDefiance_description								+$hp$ Health\n+$resistance$ Resistance
+Item_PendantofDefiance_description								+$hp$ Health\n+$resistance$ Magic Armor
 Item_PendantofDefiance_description_simple						Grants Resistance and Health
 Item_PendantofDefiance_bonusdescription							Increases the Resistance and Health provided by $common_increase$%.
 Item_PendantofDefiance_legendaryname							Satanic
@@ -1800,40 +1800,40 @@ Item_PendantofDefiance_legendarydescription						For every 2% health lost, grant
 Item_PendantofDefiance_Empower_1_name							Masochism
 Item_PendantofDefiance_Empower_1_description					For every 2% health lost, grants $manareturn_enchant$ mana.
 Item_PendantofDefiance_Empower_2_name							Resistance
-Item_PendantofDefiance_Empower_2_description					Increases Resistance by $resistance_enchant$.
+Item_PendantofDefiance_Empower_2_description					Increases Magic Armor by $resistance_enchant$.
 Item_PendantofDefiance_Empower_3_name							Peace
 Item_PendantofDefiance_Empower_3_description					Provides $regen_enchant$ Health/sec while out of combat.
 
 // Item_ShamanHeaddress
 Item_ShamanHeaddress_name										Guardian Helm
-Item_ShamanHeaddress_description								+$resistance$ Resistance\n$magicheal$% of Magic damage is healed back over time.
+Item_ShamanHeaddress_description								+300 Health\n+$resistance$ Magic Armor\n$magicheal$% of Magic damage is healed back over time.
 Item_ShamanHeaddress_description_simple							Grants a lot of Resistance and regenerates a portion of Magic damage taken
-Item_ShamanHeaddress_bonusdescription							Increases the Resistance and heal provided by $common_increase$%.
-Item_ShamanHeaddress_legendarydescription						Increases Resistance by $resistance_legendary$ while under 20% health.
+Item_ShamanHeaddress_bonusdescription							Increases the Magic Armor and heal provided by $common_increase$%.
+Item_ShamanHeaddress_legendarydescription						Increases Magic Armor by $resistance_legendary$ while under 20% health.
 Item_ShamanHeaddress_legendaryname								Desperation
 Item_ShamanHeaddress_Empower_1_name								Desperation
-Item_ShamanHeaddress_Empower_1_description						Increases Resistance by $resistance_enchant$ while under 20% health.
+Item_ShamanHeaddress_Empower_1_description						Increases Magic Armor by $resistance_enchant$ while under 20% health.
 Item_ShamanHeaddress_Empower_2_name								Mending
 Item_ShamanHeaddress_Empower_2_description						Increases the heal percent by $heal_enchant$ and heals twice as fast.
 
 // Item_Kingsmail
 Item_Kingsmail_name												Golden Protector
-Item_Kingsmail_description										+$mitigation$ Mitigation\n+$hp_regen$ Health Regen
+Item_Kingsmail_description										+100 Health\n+$mitigation$ Armor\n+$hp_regen$ Health Regen
 Item_Kingsmail_description_simple								Grants Mitigation, and Health Regeneration
-Item_Kingsmail_bonusdescription									Increases the Resistance provided by $common_increase$%.
+Item_Kingsmail_bonusdescription									Increases the Armor provided by $common_increase$%.
 Item_Kingsmail_legendaryname									Adaptation
-Item_Kingsmail_legendarydescription								Increases Resistance by $armor_legendary$ for 3 seconds upon being attacked.  Stacks up to 4 times.
+Item_Kingsmail_legendarydescription								Increases Armor by $armor_legendary$ for 3 seconds upon being attacked.  Stacks up to 4 times.
 Item_Kingsmail_Empower_1_name									Adaptation
-Item_Kingsmail_Empower_1_description							Increases Mitigation by $mitigation_enchant$ for $mitigation_duration_enchant$ seconds upon being attacked.  Stacks up to $stack_enchant$ times.
+Item_Kingsmail_Empower_1_description							Increases Armor by $mitigation_enchant$ for $mitigation_duration_enchant$ seconds upon being attacked.  Stacks up to $stack_enchant$ times.
 Item_Kingsmail_Empower_2_name									Restoration
 Item_Kingsmail_Empower_2_description							Grants $healthregen_percent_enchant$% increased Health/sec.
 Item_Kingsmail_Empower_3_name									Focus
-Item_Kingsmail_Empower_3_description							Grants $mitigation_enchant$ more Mitigation but removes the health regeneration.
+Item_Kingsmail_Empower_3_description							Grants $mitigation_enchant$ more Armor but removes the health regeneration.
 
 // Item_ResilientVest
 Item_ResilientVest_name											Ranger's Vest
-Item_ResilientVest_description									+$resistance$ Resistance\n+$hp$ Health\nBlock $block$ damage against non-hero units.\nIncrease damage dealt against non-hero units by 10%.
-Item_ResilientVest_description_simple							Grants Resistance, increases Max Health and makes you stronger against non-heroes
+Item_ResilientVest_description									+$resistance$ Magic Armor\n+$hp$ Health\nBlock $block$ damage against non-hero units.\nIncrease damage dealt against non-hero units by 10%.
+Item_ResilientVest_description_simple							Grants Magic Armor, increases Max Health and makes you stronger against non-heroes
 Item_ResilientVest_bonusdescription								Increases the health provided by $common_increase$%.
 Item_ResilientVest_legendaryname								Recovery
 Item_ResilientVest_legendarydescription							When blocking an attack, restores $legendary$ health.
@@ -1846,13 +1846,13 @@ Item_ResilientVest_Empower_3_description						Block works against tower attacks.
 
 // Item_Shardplate
 Item_Shardplate_name											Iceforged Plate
-Item_Shardplate_description										+$resistance$ Resistance\n+$mitigation$ Mitigation\nEnemies that attack you have their attack speed slowed by $attackspeedslow$%.
-Item_Shardplate_description_simple								Grants Mitigation, Resistance, and slows the Attack Speed of attackers
-Item_Shardplate_bonusdescription								Increases the Resistance and slow provided by $common_increase$%.
+Item_Shardplate_description										+300 Health\n+$resistance$ Armor\nEnemies that attack you have their attack speed slowed by $attackspeedslow$%.
+Item_Shardplate_description_simple								Grants Armor and slows the Attack Speed of attackers
+Item_Shardplate_bonusdescription								Increases the Armor and slow provided by $common_increase$%.
 Item_Shardplate_legendaryname									Guardian
-Item_Shardplate_legendarydescription							Increases Resistance by $resistance_legendary$ while under 20% health.
+Item_Shardplate_legendarydescription							Increases Armor by $resistance_legendary$ while under 20% health.
 Item_Shardplate_Empower_1_name									Desperation
-Item_Shardplate_Empower_1_description							Increases Resistance by $resistance_enchant$ while under 20% Health.
+Item_Shardplate_Empower_1_description							Increases Armor by $resistance_enchant$ while under 20% Health.
 Item_Shardplate_Empower_2_name									Vigor
 Item_Shardplate_Empower_2_description							Grants $regenpercent_enchant$% increased Health/sec.
 Item_Shardplate_Empower_3_name									Command
@@ -1860,7 +1860,7 @@ Item_Shardplate_Empower_3_description							Grants allies around you $damageredu
 
 // Item_Buckler
 Item_Buckler_name												Silver Buckler
-Item_Buckler_description										+$resistance$ Resistance\n+$mitigation$ Mitigation
+Item_Buckler_description										+$resistance$ Magic Armor\n+$mitigation$ Armor\n10% reduction in incoming damage
 Item_Buckler_description_simple									Cheap, efficient Resistance and Mitigation
 Item_Buckler_bonusdescription									Increases the incoming attack damage reduction by $common_increase$%.
 Item_Buckler_legendaryname										Restoring
@@ -1870,11 +1870,11 @@ Item_Buckler_Empower_1_description								Increases Health/sec by $regen_enchant
 Item_Buckler_Empower_2_name										Focus
 Item_Buckler_Empower_2_description								Increases attack damage reduction by $deflection_enchant$.
 Item_Buckler_Empower_3_name										Resistance
-Item_Buckler_Empower_3_description								Grants an additional $resistance_enchant$ Resistance.
+Item_Buckler_Empower_3_description								Grants an additional $resistance_enchant$ Magic Armor.
 
 // Ancient Gem
 Item_AncientGem_name											Glacial Gem
-Item_AncientGem_description										Recipe grants additional $regen$ Mana/sec.
+Item_AncientGem_description										Recipe grants additional $regen$ Mana/sec.\n 8% Skill Cooldown Reduction
 Item_AncientGem_description_simple								Cheap, efficient Mana Regeneration
 Item_AncientGem_bonusdescription								Increases the mana regen provided by $common_increase$%.
 Item_AncientGem_legendaryname									Energizing
@@ -1890,7 +1890,7 @@ Item_AncientGem_Empower_4_description							Grants $movespeed$ Movement Speed.
 
 // Circlet of the Sage
 Item_CircletOfTheSage_name										Sage Circlet
-Item_CircletOfTheSage_description								+4% Cooldown Reduction.\nRecipe grants an additional $mana$ Mana.
+Item_CircletOfTheSage_description								Recipe grants an additional $mana$ Mana.\n Provides Power equal to 1% of your Mana
 Item_CircletOfTheSage_description_simple						Cheap, efficient Mana increase and Cooldown Reduction
 Item_CircletOfTheSage_bonusdescription							Increases the mana provided by $common_increase$%.
 Item_CircletOfTheSage_legendaryname								Sustaining
@@ -1906,7 +1906,7 @@ Item_CircletOfTheSage_Empower_4_description						Grants $magic_damage_enchant$% 
 
 // Fell Blade
 Item_FellBlade_name												Fel Blade
-Item_FellBlade_description										Recipe grants an additional $power$ power.\nIncreases movement speed by $speed_boost_percent$% while out of combat.
+Item_FellBlade_description										Recipe grants an additional 4% power.\nIncreases movement speed by $speed_boost_percent$% while out of combat.
 Item_FellBlade_description_simple								Cheap, efficient Power increase
 Item_FellBlade_bonusdescription									Increases the power provided by $common_increase$%.
 Item_FellBlade_legendaryname									Sharpened
@@ -1920,7 +1920,7 @@ Item_FellBlade_Empower_3_description							Grants $movespeed$ Movement Speed.
 
 // Tinders_Chalice
 Item_Tinders_Chalice_name										Cleric's Chalice
-Item_Tinders_Chalice_description								$regen$ Mana/sec\nHeals you for $percent$% of mana spent.
+Item_Tinders_Chalice_description								5% Cooldown Reduction\n10% Shields and Heals\n$regen$ Mana/sec\nHeals you for $percent$% of mana spent.
 Item_Tinders_Chalice_description_simple							Grants Mana Regen and heals you as you spend mana.
 Item_Tinders_Chalice_bonusdescription							Increases the power provided by $common_increase$%.
 Item_Tinders_Chalice_legendaryname								Blessed
@@ -1962,7 +1962,7 @@ Item_Gauntlet_Empower_4_description								Increase gold gained from hero kills/
 
 // Headress Of Rejuvenation
 Item_HeadressOfRejuvenation_name								Blood Pendant
-Item_HeadressOfRejuvenation_description							+$regen$ Health/sec.
+Item_HeadressOfRejuvenation_description							+$regen$ Health/sec.\nProvides 30% health regeneration when out of combat.
 Item_HeadressOfRejuvenation_description_simple					Cheap, efficient Health Regeneration
 Item_HeadressOfRejuvenation_bonusdescription					Increases the regeneration benefit by $common_increase$%.
 Item_HeadressOfRejuvenation_legendaryname						Restoring
@@ -1978,7 +1978,7 @@ Item_HeadressOfRejuvenation_Empower_4_description				Grants $potion_bonus$% incr
 
 // MaxManaPower
 Item_MaxManaPower_name											Diadem
-Item_MaxManaPower_description									Provides Power equal to $power$% of your Mana.
+Item_MaxManaPower_description									10% Colldown Reduction\n10% Max Mana Pool\nProvides Power equal to $power$% of your Mana.
 Item_MaxManaPower_description_simple							Grants additional Power based on Mana
 Item_MaxManaPower_bonusdescription								Increases the power gain provided by $common_increase$%.
 Item_MaxManaPower_legendaryname									Blood
@@ -1992,7 +1992,7 @@ Item_MaxManaPower_Empower_3_description							Regen $maxmana_manaregen_health_en
 
 // Giants Visage
 Item_GiantsVisage_name											Giant's Visage
-Item_GiantsVisage_description									+$resistance$ Resistance\nProvides Power equal to $power$% of your Max Health.
+Item_GiantsVisage_description									+$resistance$ Magic Armor\n+$mitigation$ Armor\n +10% Colldown Reduction\nProvides Power equal to $power$% of your Max Health.
 Item_GiantsVisage_description_simple							Grants Resistance and Power based on Health
 Item_GiantsVisage_bonusdescription								Increases the power gain provided by $common_increase$%.
 Item_GiantsVisage_legendaryname									
@@ -2020,13 +2020,13 @@ Item_ScalingPower_Empower_3_description							Increases max charges by $charges_
 
  // EnduringHelm
 Item_EnduringHelm_name											Enduring Helm
-Item_EnduringHelm_description									+$hp$ Health
+Item_EnduringHelm_description									+$hp$ Health\n Provides Power equal to 0,7%of your Max Health
 Item_EnduringHelm_description_simple							Cheap, efficient Max Health
 Item_EnduringHelm_bonusdescription								Increases the health provided by $common_increase$%.
 Item_EnduringHelm_legendaryname									Tempered
 Item_EnduringHelm_legendarydescription							Each unit killed grants you an additional $hp_bonus$ Health.  Stacks up to 40 times.
 Item_EnduringHelm_Empower_1_name								Dominion
-Item_EnduringHelm_Empower_1_description							Each unit killed grants $hp_bonus$ Health.  Stacks up to 50 times.
+Item_EnduringHelm_Empower_1_description							Gives 7% Max Health
 Item_EnduringHelm_Empower_2_name								Stamina
 Item_EnduringHelm_Empower_2_description							Increases Health by $hp_bonus$.
 Item_EnduringHelm_Empower_3_name								Fortitude
@@ -2034,7 +2034,7 @@ Item_EnduringHelm_Empower_3_description							Reduces tower damage by $tower_red
 
  // Elderstone
 Item_ElderStone_name											Elder Stone
-Item_ElderStone_description										+$hp$ Max Health\n+$mp$ Mana\n+10 Resistance\nEach minute, grants an additional $hp_gain$ Max Health and $mp_gain$ Mana. Caps after 10 minutes.
+Item_ElderStone_description										+$hp$ Max Health\n+$mp$ Mana\n+10 Magic Armor\nEach minute, grants an additional $hp_gain$ Max Health,1.5 Power and $mp_gain$ Mana. Caps after 10 minutes.
 Item_ElderStone_description_simple								Grants Resistance and additional Health and Mana over time
 Item_ElderStone_bonusdescription								Increases the health provided by $common_increase$%.
 Item_ElderStone_legendaryname									Heavy
@@ -2050,9 +2050,9 @@ Item_ElderStone_Empower_4_description							Grants $cooldown_enchant$% cooldown 
 
  // CrusaderShield
 Item_CrusaderShield_name										Captain's Crest
-Item_CrusaderShield_description									+$resistance$ Resistance\n+$mitigation$ Mitigation\nReduces damage taken from towers by $tower_buff$% and splash damage taken by $splash_buff$% to all nearby brawlers.
-Item_CrusaderShield_description_simple							Grants Resistance and a defence bonus to your brawlers
-Item_CrusaderShield_bonusdescription							Increases the Resistance provided by $common_increase$%.
+Item_CrusaderShield_description									+100 Health\n+$resistance$ Magic Armor\n+$mitigation$ Armor\nReduces damage taken from towers by $tower_buff$% and splash damage taken by $splash_buff$% to all nearby brawlers.
+Item_CrusaderShield_description_simple							Grants Magic Armor and a defence bonus to your brawlers
+Item_CrusaderShield_bonusdescription							Increases the Magic Armor provided by $common_increase$%.
 Item_CrusaderShield_legendaryname								Righteous
 Item_CrusaderShield_legendarydescription						Nearby allied brawlers also have their attack speed increased by $legendary$%.
 Item_CrusaderShield_Empower_1_name								Authority
@@ -2060,7 +2060,7 @@ Item_CrusaderShield_Empower_1_description						Nearby allied brawlers also have 
 Item_CrusaderShield_Empower_2_name								Preservation
 Item_CrusaderShield_Empower_2_description						Adds Regen to allied brawlers of $aura_boost_enchant$ Health/sec.
 Item_CrusaderShield_Empower_3_name								Focus
-Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$ Resistance. Increases brawlers tower damage reduction to $tower_reduction_enchant$%.
+Item_CrusaderShield_Empower_3_description						-$sacrifice_enchant$ Magic Armor. Increases brawlers tower damage reduction to $tower_reduction_enchant$%.
 
 Item_Shatterstone_name											Shatterstone
 Item_Shatterstone_description									+$power$ Power \n\n^091Activate: remove all Crowd Control.^*
@@ -2070,8 +2070,8 @@ Item_Shatterstone_legendaryname
 Item_Shatterstone_legendarydescription	
 
 Item_StoneSkin_name												Stone Skin
-Item_StoneSkin_description										^o+$damage$ Attack Damage^*\n\n^091Activate: gain $resistance$ Resistance and $ccreduction$% stun/slow reduction for $duration_sec$ seconds.^*
-Item_StoneSkin_description_simple								Grants ^oAttack Damage^*\n^091Activate: gain massive Resistance for a duration.^*
+Item_StoneSkin_description										+15% AttackSpeed\n^o+$damage$ Attack Damage^*\n\n^091Activate: gain $resistance$ Magic Armor and $ccreduction$% stun/slow reduction for $duration_sec$ seconds.^*
+Item_StoneSkin_description_simple								Grants ^oAttack Damage^*\n^091Activate: gain massive Magic Armor for a duration.^*
 Item_StoneSkin_bonusdescription									
 Item_StoneSkin_legendaryname									
 Item_StoneSkin_legendarydescription	
@@ -2080,7 +2080,7 @@ Item_StoneSkin_Empower_1_description							Reduces the cooldown by $cooldown_enc
 Item_StoneSkin_Empower_2_name									Regeneration
 Item_StoneSkin_Empower_2_description							Grants $healthregen_enchant$ Health/sec but removes $attack_enchant$ Attack Damage.
 Item_StoneSkin_Empower_3_name									Resistance
-Item_StoneSkin_Empower_3_description							Grants $resistance_enchant$% additional Resistance.
+Item_StoneSkin_Empower_3_description							Grants $resistance_enchant$% additional Magic Armor.
 
 // DesperationsEdge
 Item_DesperationsEdge_name										Crystalline Shiv
@@ -2104,9 +2104,9 @@ Item_Riftshards_description										^o+$attack_damage$ Attack Damage^*\nGrants 
 Item_Riftshards_description_simple								Bonus ^oAttack Damage^* and a chance to deal 2x damage
 Item_Riftshards_bonusdescription								Increases the critical chance and damage value by $common_increase$%.
 Item_Riftshards_legendaryname									Crushing
-Item_Riftshards_legendarydescription							Attacking the enemy reduces their Resistance by $resistance$ for 3 seconds.
+Item_Riftshards_legendarydescription							Attacking the enemy reduces their Armor by $resistance$ for 3 seconds.
 Item_Riftshards_Empower_1_name									Ruin
-Item_Riftshards_Empower_1_description							Attacking the enemy reduces their Resistance by $reduceresistance_enchant$ for $reduceresistance_duration_enchant$ seconds. Non-stacking.
+Item_Riftshards_Empower_1_description							Attacking the enemy reduces their Armor by $reduceresistance_enchant$ for $reduceresistance_duration_enchant$ seconds. Non-stacking.
 Item_Riftshards_Empower_2_name									Fortune
 Item_Riftshards_Empower_2_description							Increases percent chance to critical by $crit_enchant$.
 Item_Riftshards_Empower_3_name									Vampirism
@@ -2114,7 +2114,7 @@ Item_Riftshards_Empower_3_description							Grants $lifesteal_enchant$% Attack L
 
 // Assassin's shroud
 Item_AssasinsShroud_name										Shadowveil
-Item_AssasinsShroud_description								 	+100 Max Health\n\n^091Activate: apply shrouded for $duration$ seconds.  While shrouded, gain $movespeed$ Movement Speed and enemies must be within 600 range to see you.^*
+Item_AssasinsShroud_description								 	+10% Colldown Reduction\n+100 Max Health\n\n^091Activate: apply shrouded for $duration$ seconds.  While shrouded, gain $movespeed$ Movement Speed and enemies must be within 600 range to see you.^*
 Item_AssasinsShroud_description_simple							Grants Max Health\n^091Activate: become Shrouded and gain Movement Speed.^*
 Item_AssasinsShroud_bonusdescription							Increases the movespeed bonus by $common_increase$%.
 Item_AssasinsShroud_legendaryname								Malice
@@ -2211,14 +2211,14 @@ Item_Stormspirit_Empower_3_description							Grants $movespeed_enchant$ Movement
 
 // Item_Frostfield
 Item_FrostfieldPlate_name										Everwinter Charm
-Item_FrostfieldPlate_description								+$resistance$ Resistance\n\n^091Activate: slow nearby enemies and deal^* ^o$damage$ Magic damage^* ^091to them.^*
-Item_FrostfieldPlate_description_simple							Grants Resistance\n^091Activate: slow and damage nearby enemies.^*
+Item_FrostfieldPlate_description								+100 Health\n+$resistance$ Magic Armor\n+$mitigation$ Armor\n^091Activate: slow nearby enemies and deal^* ^o$damage$ Magic damage^* ^091to them.^*
+Item_FrostfieldPlate_description_simple							Grants Armor and Magic Armor\n^091Activate: slow and damage nearby enemies.^*
 Item_FrostfieldPlate_IMPACT_effect								Frost ring expands up to 500 radius, applying a tapering Slow for 4.5 seconds and dealing $damage$ Magic damage.
-Item_FrostfieldPlate_bonusdescription							Increases the damage and resistance by $common_increase$%
+Item_FrostfieldPlate_bonusdescription							Increases the damage and Magic Armor by $common_increase$%
 Item_FrostfieldPlate_legendaryname								Virtue
-Item_FrostfieldPlate_legendarydescription						Increases Resistance by $resistancelegendary$ for each enemy hero hit by Everwinter Charm for 4 seconds.
+Item_FrostfieldPlate_legendarydescription						Increases Magic Armor by $resistancelegendary$ for each enemy hero hit by Everwinter Charm for 4 seconds.
 Item_FrostfieldPlate_Empower_1_name								Virtue
-Item_FrostfieldPlate_Empower_1_description						Increases Resistance by $resistance_active_enchant$ for each enemy hero hit. Lasts $resistance_activeduration_enchant$ seconds.
+Item_FrostfieldPlate_Empower_1_description						Increases Magic Armor by $resistance_active_enchant$ for each enemy hero hit. Lasts $resistance_activeduration_enchant$ seconds.
 Item_FrostfieldPlate_Empower_2_name								Lasting
 Item_FrostfieldPlate_Empower_2_description						When activated Everwinter Charm will linger on the ground for $linger_enchant$ seconds.
 Item_FrostfieldPlate_Empower_3_name								Restraint
@@ -2242,7 +2242,7 @@ Item_RingOfSorcery_Empower_4_description						On Activate also grants $manaboost
 
 // Item_Mask_Of_Madman
 Item_Mask_Of_Madman_name										Berserker's Mask
-Item_Mask_Of_Madman_description									+$vamp$% Attack Lifesteal\n\n^091Activate: increase attack speed by $attackspeed$ and movement by $movespeed$ for 6 seconds.  Increases damage taken by 15% while active.^*
+Item_Mask_Of_Madman_description									20% AttackSpeed\n5% Critical Chance\n+$vamp$% Attack Lifesteal\n\n^091Activate: increase attack speed by $attackspeed$ and movement by $movespeed$ for 6 seconds.  Increases damage taken by 15% while active.^*
 Item_Mask_Of_Madman_description_simple							Grants Lifesteal\n^091Activate: increase Attack Speed and Movespeed - but take more damage.^*
 Item_Mask_Of_Madman_bonusdescription							Increases the damage and movespeed bonus by $common_increase$%.
 Item_Mask_Of_Madman_legendaryname								Resilience
@@ -2256,7 +2256,7 @@ Item_Mask_Of_Madman_Empower_3_description						Cooldown refreshes when participa
 
 // Item_Lasthit
 Item_Lasthit_name												Throwing Axe
-Item_Lasthit_description										Passive: increases your attack damage vs. non-hero units by $damage$%. \n\n^091Activate: deal 1.2x attack damage to a non-hero unit.^*
+Item_Lasthit_description										Passive: increases your attack damage vs. non-hero units by $damage$%. \n\n^091Activate: deal 1.2x attack damage to a non-hero unit.^*\nPassively, your attacks deal 35% area damage.
 Item_Lasthit_description_simple									Grants bonus Attack Damage vs non-heroes.\n^091Activate: damage target non-hero unit.^*
 Item_Lasthit_bonusdescription									Decreases the cooldown by $cooldown$ seconds.
 Item_Lasthit_legendaryname										Prosperous
@@ -2274,7 +2274,7 @@ Item_Lasthit_Empower_5_description								Killing a unit with the throwing axe h
 
 // Item_HealingScepter
 Item_HealingScepter_name										Healing Rod
-Item_HealingScepter_description									^091Activate: Heal target for^* ^o$heal$ Health^* ^091.^*
+Item_HealingScepter_description									+5 Power\n^091Activate: Heal target for^* ^o$heal$ Health^* ^091.^*
 Item_HealingScepter_description_simple							^091Activate: restore Health to target.^*
 Item_HealingScepter_bonusdescription							Increases the Health restored by $common_increase$%.
 Item_HealingScepter_legendaryname								Greater
@@ -2288,9 +2288,9 @@ Item_HealingScepter_Empower_3_description						Decreases heal to ^o$enchant_3_he
 
 // InfernoBrand
 Item_InfernoBrand_name											Inferno Brand
-Item_InfernoBrand_description									+$resistance$ Resistance\nPassively deals ^o$damage$ Magic damage/sec^* to enemies in a $radius$ radius.
-Item_InfernoBrand_description_simple							Grants Resistance and constantly burns nearby enemies
-Item_InfernoBrand_bonusdescription								Increases the damage & resistance by $common_increase$%.
+Item_InfernoBrand_description									+$resistance$ Magic Armor\nPassively deals ^o$damage$ Magic damage/sec^* to enemies in a $radius$ radius.
+Item_InfernoBrand_description_simple							Grants Magic Armor and constantly burns nearby enemies
+Item_InfernoBrand_bonusdescription								Increases the damage & magic armor by $common_increase$%.
 Item_InfernoBrand_legendaryname									Radiant
 Item_InfernoBrand_legendarydescription							Increases the area of effect to $radius$.
 Item_InfernoBrand_Empower_1_name								Influence
@@ -2298,13 +2298,13 @@ Item_InfernoBrand_Empower_1_description							Increases the area of effect by $r
 Item_InfernoBrand_Empower_2_name								Dedication
 Item_InfernoBrand_Empower_2_description							Damage increases by $healthregen_enchant$% of health regen. Damage no longer scales with power.
 Item_InfernoBrand_Empower_3_name								Virtue
-Item_InfernoBrand_Empower_3_description							Gain $resistance_enchant$ Resistance for each enemy hero being damaged.
+Item_InfernoBrand_Empower_3_description							Gain $resistance_enchant$ Magic Armor for each enemy hero being damaged.
 Item_InfernoBrand_Empower_4_name								Focus
 Item_InfernoBrand_Empower_4_description							Increases damage done by $damage_enchant$ but decrease area of effect by $area_enchant$.
 
 // Codex
 Item_Codex_name													Pyrostaff
-Item_Codex_description											^091Activate: deal^* ^o$damage$ Magic damage^* ^091to a target.^*
+Item_Codex_description											Increases your magic damage by 10%\n^091Activate: deal^* ^o$damage$ Magic damage^* ^091to a target.^*
 Item_Codex_description_simple									^091Activate: deal Magic damage to a target.^*
 Item_Codex_bonusdescription										Increases the damage of Pyrostaff by $common_increase$%.
 Item_Codex_legendaryname										Kill Stealing
@@ -2318,8 +2318,8 @@ Item_Codex_Empower_3_description								Increases the damage dealt by $damage_en
 
 // Hellflower
 Item_Hellflower_name											Cursed Wand
-Item_Hellflower_description										+$power$ Power\n\n^091Activate: Target an enemy to reduce their Resistance by $resistance$ and slow them by 30% for $duration$ seconds.^*
-Item_Hellflower_description_simple								Grants Power\n^091Activate: Target enemy to slow and reduce Resistance.^*
+Item_Hellflower_description										+$power$ Power\n\n^091Activate: Target an enemy to reduce their Magic Armor by $resistance$ and slow them by 30% for $duration$ seconds.^*
+Item_Hellflower_description_simple								Grants Power\n^091Activate: Target enemy to slow and reduce Magic Armor.^*
 Item_Hellflower_bonusdescription								Increases the duration by $common_increase$%.
 Item_Hellflower_legendaryname									Diseased
 Item_Hellflower_legendarydescription							Increases the slow effect of Cursed Wand by $legendary$%.
@@ -2328,7 +2328,7 @@ Item_Hellflower_Empower_1_description							Increases the percent of the slow ef
 Item_Hellflower_Empower_2_name									Observance
 Item_Hellflower_Empower_2_description							Grants vision of the target for the duration.
 Item_Hellflower_Empower_3_name									Ruin
-Item_Hellflower_Empower_3_description							Increases the Resistance reduction by $penetration_enchant$. Removes slow.
+Item_Hellflower_Empower_3_description							Increases the Magic Armor reduction by $penetration_enchant$. Removes slow.
 
 // State_Hellflower
 State_Hellflower_Tooltip_name									Entropy
@@ -2338,7 +2338,7 @@ State_Hellflower_name_FRAME_effect
 
 // Energizer
 Item_Energizer_name												Windrush
-Item_Energizer_description										+$movespeed$ Movement Speed. \n\n^091Activate: provide 100 Movement Speed to nearby allies for a 4 seconds.^*
+Item_Energizer_description										+125 Health\n+$movespeed$ Movement Speed. \n\n^091Activate: provide 100 Movement Speed to nearby allies for a 4 seconds.^*
 Item_Energizer_description_simple								Grants Movespeed\n^091Activate: provide a burst of move speed to nearby allies.^*
 Item_Energizer_bonusdescription									Reduces the cooldown of Windrush by $common_increase$%.
 Item_Energizer_legendaryname									Tenacious
@@ -2388,7 +2388,7 @@ Item_Blessed_Orb_Empower_3_description							Grants $mana_enchant$ Mana but remo
 
 // Timewarper
 Item_Timewarper_name											Wizard's Hourglass
-Item_Timewarper_description										+$power$ Power\n+$cd$% Cooldown Reduction
+Item_Timewarper_description										+$power$ Power\n+$cd$% Cooldown Reduction\n When used, makes you invulnerable for 2 seconds, preventing you from moving, attacking, or using abilities.
 Item_Timewarper_description_simple								Grants Power and Cooldown Reduction
 Item_Timewarper_bonusdescription								Increases the bonus by $common_increase$%.
 Item_Timewarper_legendaryname									Clear
@@ -2402,11 +2402,11 @@ Item_Timewarper_Empower_3_description							Grants $spellsteal_enchant$% Magic L
 
 // Zealot's blade
 Item_Zealotsblade_name											Zealot's Blade
-Item_Zealotsblade_description									+$attackspeed$ Attack Speed\n+$movespeed$ Movement Speed
+Item_Zealotsblade_description									+$attackspeed$ Attack Speed\n+$movespeed$ Movement Speed\n 5% Critical Chance
 Item_Zealotsblade_description_simple							Grants bonus Movement Speed and Attack Speed
 Item_Zealotsblade_bonusdescription								Increases the bonus attackspeed and movespeed by $common_increase$%
 Item_Zealotsblade_legendaryname									Charging
-Item_Zealotsblade_legendarydescription							Grants $power$ Power each attack, stacking up to 3 times.  Expires after 3 seconds of not attacking.
+Item_Zealotsblade_legendarydescription							Grants $power$ Power and AttackSpeed by 5% each attack, stacking up to 3 times.  Expires after 3 seconds of not attacking.
 Item_Zealotsblade_Empower_1_name								Rhythm
 Item_Zealotsblade_Empower_1_description							Grants $power_enchant$ Power each attack, stacking up to 3 times.  Expires after $power_duration_enchant$ seconds of not attacking.
 Item_Zealotsblade_Empower_2_name								Vampirism
@@ -2426,11 +2426,11 @@ Item_Soulstealer_Empower_1_description							Restores $mana_enchant$ Mana upon k
 Item_Soulstealer_Empower_2_name									Dominion
 Item_Soulstealer_Empower_2_description							Each unit killed grants you $power_enchant$ Power.  Stacks up to $stacks_enchant$ times. These stacks are lost if you die.
 Item_Soulstealer_Empower_3_name									Defense
-Item_Soulstealer_Empower_3_description							Grants $resistance_enchant$ Resistance but removes $mana_enchant$ Mana.
+Item_Soulstealer_Empower_3_description							Grants $resistance_enchant$ Magic Armor but removes $mana_enchant$ Mana.
 
 // Slayer
 Item_Slayer_name												Numbing Lantern
-Item_Slayer_description											+$health$ Health\nWhen you harm an enemy 3 times, their Power is lowered by $power_reduction$%. Lasts 6 seconds.
+Item_Slayer_description											+$health$ Health\nWhen you will cause damage an enemy 3 times, their Power is lowered by $power_reduction$%. Lasts 6 seconds.
 Item_Slayer_description_simple									Increases Health. Reduces enemy Power after 3 attacks.
 Item_Slayer_bonusdescription									Increases power reduction of the item by $common_increase$%.
 Item_Slayer_legendaryname										Ruin
@@ -2444,7 +2444,7 @@ Item_Slayer_Empower_3_description								Increases Power reduction to $powerredu
 
 // Vampiric Blade
 Item_VampiricBlade_name											Vampiric Dagger
-Item_VampiricBlade_description									+$vamp$% Attack Lifesteal\n+$resistance$ Resistance
+Item_VampiricBlade_description									+10% AttackSpeed\n+$vamp$% Attack Lifesteal\n+$resistance$ Magic Armor
 Item_VampiricBlade_description_simple							Grants Lifesteal
 Item_VampiricBlade_bonusdescription								Increases the lifesteal bonus by $common_increase$%.
 Item_VampiricBlade_legendaryname								Absorption
@@ -2458,7 +2458,7 @@ Item_VampiricBlade_Empower_3_description						Kills and assists restore $healthr
 
 // Item_ThunderClaw
 Item_ThunderClaw_name											Thundercaller
-Item_ThunderClaw_description									Every 5 attacks will cause chain lightning for ^o$damage$ Magic damage^*, bouncing up to 7 times.  \n\nDeals 150% damage to non-hero units.
+Item_ThunderClaw_description									+10% AttackSpeed\n Every 3 attacks will cause chain lightning for ^o$damage$ Magic damage^*, bouncing up to 7 times.  \n\nDeals 150% damage to non-hero units.
 Item_ThunderClaw_description_simple								Grants chance that your attacks will cause chain lightning
 Item_ThunderClaw_bonusdescription								Increases the damage by $common_increase$%.
 Item_ThunderClaw_legendaryname									Devastation
@@ -2467,20 +2467,20 @@ Item_ThunderClaw_Empower_1_name									Devastation
 Item_ThunderClaw_Empower_1_description							Targets hit by lightning have their Resistance decreased by $resistance_reduction_enchant$.
 Item_ThunderClaw_Empower_2_name									Redirection
 Item_ThunderClaw_Empower_2_description							Increases bounce limit to $bounce_enchant$.
-Item_ThunderClaw_Empower_3_name									Fortune
-Item_ThunderClaw_Empower_3_description							Decreased hits to trigger by $chance_enchant$.
+Item_ThunderClaw_Empower_3_name									Fast
+Item_ThunderClaw_Empower_3_description							Gives 10% AttackSpeed
 Item_ThunderClaw_Empower_4_name									Energy
 Item_ThunderClaw_Empower_4_description							On proc, gives $mana_enchant$ mana.
 
 // Item_Mana_Shield
 Item_Mana_Shield_name											Spirit Ward
-Item_Mana_Shield_description									+$resistance$ Resistance\n\n^091Activate: grant a shield to nearby allies equal to $shield_manapercent$% of your mana pool. Lasts 6 seconds.^*
+Item_Mana_Shield_description									+15% Heals and Shields\n150 Mana\n^091Activate: grant a shield to nearby allies equal to $shield_manapercent$% of your mana pool. Lasts 6 seconds.^*
 Item_Mana_Shield_description_simple								Grants Resistance\n^091Activate: Grants a shield to nearby allies.^*
 Item_Mana_Shield_bonusdescription								Increases the damage by $common_increase$%.
 Item_Mana_Shield_legendaryname									Energizing
 Item_Mana_Shield_legendarydescription							Mana Shield also restores $legendary$% of the damage you take in mana.
 Item_Mana_Shield_Empower_1_name									Conversion
-Item_Mana_Shield_Empower_1_description							Mana Shield also restores $mana_restore_enchant$% of the damage the shield absorbs in Mana.
+Item_Mana_Shield_Empower_1_description							Creates a shield equal to $shield_healthpercent$% of health
 Item_Mana_Shield_Empower_2_name									Charity
 Item_Mana_Shield_Empower_2_description							If the shield expires, $heal_enchant$% of the remaining shield will heal the target.
 Item_Mana_Shield_Empower_3_name									Protection
@@ -2488,23 +2488,23 @@ Item_Mana_Shield_Empower_3_description							Grants $support_enchant$% effective
 
 // Item_Shieldbreaker
 Item_Shieldbreaker_name											Crushing Mace
-Item_Shieldbreaker_description									^o+$attack_damage$ Attack Damage^*\nBasic attacks ignore $resistance$% of enemy Resistance.
-Item_Shieldbreaker_description_simple							Bonus ^oAttack Damage^* and basic attack Resistance penatration
+Item_Shieldbreaker_description									5% Critical Chance\n^o+$attack_damage$ Attack Damage^*\nBasic attacks ignore $resistance$% of enemy Armor.
+Item_Shieldbreaker_description_simple							Bonus ^oAttack Damage^* and basic attack Armor penatration
 Item_Shieldbreaker_bonusdescription								Increases the Resistance reduction by $common_increase$%.
 Item_Shieldbreaker_legendaryname								Sundering
 Item_Shieldbreaker_legendarydescription							Your attacks against non-boss units deal bonus damage equal to $legendary$% of the target's Max Health.
 Item_Shieldbreaker_Empower_1_name								Sundering
 Item_Shieldbreaker_Empower_1_description						Your attack deals bonus damage equal to $damagebonus_enchant$% of the target's Max Health.
 Item_Shieldbreaker_Empower_2_name								Reliance
-Item_Shieldbreaker_Empower_2_description						Your attacks always pierce through a minimum of $armorpierce_enchant$ Resistance.
+Item_Shieldbreaker_Empower_2_description						Your attacks always pierce through a minimum of $armorpierce_enchant$ Armor.
 Item_Shieldbreaker_Empower_3_name								Vampirism
 Item_Shieldbreaker_Empower_3_description						Grants $lifesteal_enchant$% Attack Lifesteal.
 
 // Item_Malevolence
 Item_Malevolence_name											Grimoire
-Item_Malevolence_description									+$power$ Power\nSpells ignore $resistance$% Resistance
-Item_Malevolence_description_simple								Grants Power and ability Resistance penetration
-Item_Malevolence_bonusdescription								Resistance reduction and spell power increased by $common_increase$%.
+Item_Malevolence_description									+$power$ Power\nSpells ignore $resistance$% Magic Armor
+Item_Malevolence_description_simple								Grants Power and ability Magic Armor penetration
+Item_Malevolence_bonusdescription								Magic Armor reduction and spell power increased by $common_increase$%.
 Item_Malevolence_legendaryname									Energized
 Item_Malevolence_legendarydescription							Increases mana regen by $regen$%.
 Item_Malevolence_Empower_1_name									Rejuvenation
@@ -2512,12 +2512,12 @@ Item_Malevolence_Empower_1_description							Grants $manaregen_enchant$% increas
 Item_Malevolence_Empower_2_name									Siphoning
 Item_Malevolence_Empower_2_description							$spellsteal_enchant$% Magic Lifesteal.
 Item_Malevolence_Empower_3_name									Reliance
-Item_Malevolence_Empower_3_description							Your spells always pierce through a minimum of $resistance_enchant$ Resistance.
+Item_Malevolence_Empower_3_description							Your spells always pierce through a minimum of $resistance_enchant$ Magic Armor.
 
 // Item_BarrierToken
 Item_BarrierToken_name											Barrier Token
-Item_BarrierToken_description									+$resistance$ Resistance\nReduces Magic damage by $reduction$% for 2 seconds before taking Magic damage.  25 sec cd.
-Item_BarrierToken_description_simple							Grants Resistance and anti-magic burst defense
+Item_BarrierToken_description									+$resistance$ Magic Armor\nReduces Magic damage by $reduction$% for 2 seconds before taking Magic damage.  25 sec cd.
+Item_BarrierToken_description_simple							Grants Magic Armor and anti-magic burst defense
 Item_BarrierToken_bonusdescription								Increases the magic damage reduction by $common_increase$%.
 Item_BarrierToken_legendaryname									Warding
 Item_BarrierToken_legendarydescription							The spell which triggers barrier token is reduced by an additional $legendary$%.
@@ -2526,11 +2526,11 @@ Item_BarrierToken_Empower_1_description							The spell which triggers barrier t
 Item_BarrierToken_Empower_2_name								Diligence
 Item_BarrierToken_Empower_2_description							Decreases cooldown by $cooldown_enchant$ seconds.
 Item_BarrierToken_Empower_3_name								Simplicity
-Item_BarrierToken_Empower_3_description							No longer gives $resistance_enchant$ Resistance.
+Item_BarrierToken_Empower_3_description							No longer gives $resistance_enchant$ Magic Amor.
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										Oracle's Trinket
-Item_OraclesTrinket_description									^o+$base_damage$ Attack Damage^*\n\n^091Activate: remove all stuns/slows/debuffs and provide 50% stun/slow reduction for $cc_state_duration_sec$ seconds. \n\nIf crowd control is successfully removed, heal for^* ^o$heal$^* ^091Health.^*
+Item_OraclesTrinket_description									+150 Health\n100 Mana\n10% Colldown Reduction\n^091Activate: remove all stuns/slows/debuffs within a radius of 500 and provide 50% stun/slow reduction for $cc_state_duration_sec$ seconds. \n\nIf crowd control is successfully removed, heal for^* ^o$heal$^* ^091Health.^*
 Item_OraclesTrinket_description_simple							Grants Resistance\n^091Activate: Stun/Slow removal and self heal^*
 Item_OraclesTrinket_Empower_1_name								Concentration
 Item_OraclesTrinket_Empower_1_description						Successfully removing crowd-control also restores $mana_enchant$ Mana.
@@ -2539,18 +2539,18 @@ Item_OraclesTrinket_Empower_2_description						Cleanses all allies in a 500 radi
 
 // Item_TwinFang
 Item_TwinFang_name												Arcane Emblem
-Item_TwinFang_description										+5 Power\nMagic attacks now penetrate 18 Resistance.
-Item_TwinFang_description_simple								Grants Power and ability Resistance penetration
+Item_TwinFang_description										+7 Power\nMagic attacks now penetrate 20 Magic Armor.
+Item_TwinFang_description_simple								Grants Power and ability Magic Armor penetration
 Item_TwinFang_Empower_1_name									Siphoning
 Item_TwinFang_Empower_1_description								$spellsteal_enchant$% Magic Lifesteal.
 Item_TwinFang_Empower_2_name									Focus
-Item_TwinFang_Empower_2_description								Additional $penetration_enchant$ Resistance penetration, but lose $resistance$ Resistance.
+Item_TwinFang_Empower_2_description								Additional $penetration_enchant$  Magic Armor penetration, but lose $resistance$ Magic Armor.
 Item_TwinFang_Empower_3_name									Heritage
 Item_TwinFang_Empower_3_description								Upon dealing magic damage to an enemy hero, permanently gain +$mana$ mana. Stacks 25 times.
 
 // Item_Titanslayer
 Item_Titanslayer_name											Titanslayer
-Item_Titanslayer_description									Attacks deal additional damage equal to ^o$healthdamage$%^* of your target's Max Health.
+Item_Titanslayer_description									+8 damage base attack\n15% AttackSpeed\nAttacks deal additional damage equal to ^o$healthdamage$%^* of your target's Max Health.
 Item_Titanslayer_description_simple								Bonus ^oAttack Damage^* based on target's Health
 Item_Titanslayer_Empower_1_name									Devastation
 Item_Titanslayer_Empower_1_description							Attacks add $damage_enchant$% of your Max Health in damage.
@@ -2570,7 +2570,7 @@ Item_Marchers_shop_categories									component,boots
 
 // Item_Sheepstick
 Item_SheepStick_name											Hexbane
-Item_SheepStick_description										^091Activate: applies Transfigured to target for 2.5 seconds. \n\nTransfigured enemies cannot attack or use abilities.^*
+Item_SheepStick_description										^091Activate: applies Transfigured to target for 2.5 seconds.While under the influence of this curse, the character is slowed down by 25%.\nTransfigured enemies cannot attack or use abilities.^*\nEach kill/assist gives 4 Power and 3% Colldown Reduction,5 time stack
 Item_SheepStick_description_simple								^091Activate: Disable an enemy briefly.^*
 Item_SheepStick_effect_header									Transfigured Effects
 Item_SheepStick_shop_flavor										Few shamanic implements are as unnerving as Totems of Kuldra: living, speaking, writhing staves that impart wisdom, strength, and speed and help their masters tap into the hidden flows of Mana and thus restore their power more speedily. Despite these ample benefits, most humans are loath to wield the pagan tools.
@@ -2587,7 +2587,7 @@ Item_SheepStick_Empower_3_description							Grants a slow effect of $slow_enchan
 
 // Item_Orb_Of_Revelation
 Item_Orb_Of_Revelation_name										Seer's Eye
-Item_Orb_Of_Revelation_description								+$resistance$ Resistance\n+$health$ Health\n\n^091Activate: Target an area to reveal the area for 8 seconds.^*
+Item_Orb_Of_Revelation_description								+10% Colldown Reduction\n+$health$ Health\n\n^091Activate: Target an area to reveal the area for 8 seconds.^*
 Item_Orb_Of_Revelation_description_simple						Grants Health and Resistance. \n^091Activate: reveal target area.^*
 Item_Orb_Of_Revelation_effect_header							Transfigured Effects
 Item_Orb_Of_Revelation_shop_flavor								Few shamanic implements are as unnerving as Totems of Kuldra: living, speaking, writhing staves that impart wisdom, strength, and speed and help their masters tap into the hidden flows of Mana and thus restore their power more speedily. Despite these ample benefits, most humans are loath to wield the pagan tools.
@@ -2608,7 +2608,7 @@ State_Orb_Of_Revelation_Reveal_name_FRAME_effect
 
 // Item_Frostbrand
 Item_Frostbrand_name											Frost Prism
-Item_Frostbrand_description										^o+$damage$ Attack Damage^*\nAttacks apply $slow$% movement slow to target.  Lasts 2.0 seconds.\nSlow is less powerful for ranged attackers.
+Item_Frostbrand_description										+18% AttackSpeed\n^o+$damage$ Attack Damage^*\nAttacks apply $slow$% movement slow to target.  Lasts 2.0 seconds.\nSlow is less powerful for ranged attackers.
 Item_Frostbrand_description_simple								Bonus ^oAttack Damage^* and causes your attacks to slow enemies
 Item_Frostbrand_effect_header									Frost Effect
 Item_Frostbrand_tooltip_flavor									Even after an hour in fire, it's still cold.
@@ -2643,7 +2643,7 @@ State_Eye_Of_TempraRanged_name									Frozen
 
 // Item_Dark_Bargain
 Item_Dark_Bargain_name											Dark Bargain
-Item_Dark_Bargain_description									^o+$damage$ Attack Damage^*\n\n^091Activate: Spend 500 gold to gain ^o+$perm_bonus$ Attack Damage permanently and ^o+$bonus$ Attack Damage^* ^091temporarily for 8 seconds. No cooldown. Can be stacked.^*
+Item_Dark_Bargain_description									5% Critical Chance\n^o+$damage$ Attack Damage^*\n\n^091Activate: Spend 500 gold to gain ^o+$perm_bonus$ Attack Damage permanently and ^o+$bonus$ Attack Damage^* ^091temporarily for 8 seconds. No cooldown. Can be stacked.^*
 Item_Dark_Bargain_description_simple							Bonus ^oAttack Damage^*. \n^091Activate: Trade gold for more ^oAttack Damage.^*
 Item_Dark_Bargain_Empower_1_name								Diligence	
 Item_Dark_Bargain_Empower_1_description							Increase bonus damage duration by $duration_enchant$ seconds.
@@ -2673,9 +2673,9 @@ Item_Unstable_Shard_Empower_3_description
 Ability_Bounder_Passive_1_name									Quickness
 Ability_Bounder_Passive_2_name									Quickness
 Ability_Bounder_Passive_3_name									Quickness
-Ability_Bounder_Passive_1_description							Increases Movespeed by 4%.
-Ability_Bounder_Passive_2_description							Increases Movespeed by 4%.
-Ability_Bounder_Passive_3_description							Increases Movespeed by 4%.
+Ability_Bounder_Passive_1_description							Increases Movespeed by 4%.Increases attack speed by 10% and critical strike chance by 10%.
+Ability_Bounder_Passive_2_description							Increases Movespeed by 4%.Increases attack speed by 10% and critical strike chance by 10%.
+Ability_Bounder_Passive_3_description							Increases Movespeed by 4%.Increases attack speed by 10% and critical strike chance by 10%.
 Ability_Bounder_Passive_1_description_simple					Increases Movespeed.
 Ability_Bounder_Passive_2_description_simple					Increases Movespeed.
 Ability_Bounder_Passive_3_description_simple					Increases Movespeed.
@@ -2711,23 +2711,23 @@ Ability_Bounder_Passive2_3_description_simple					Increases attack damage.
 
 // Fiki
 Ability_Fiki_Passive_name										Deflection
-Ability_Fiki_Passive_description								Reduces incoming creep damage by 11-32 (scales with hero level).
+Ability_Fiki_Passive_description								Reduces incoming creep damage by 35.\nIncreases damage to bosses by 15%.\n For killing forest monsters you receive an additional +10 gold.
 Ability_Fiki_Passive_description_simple							Reduces incoming creep damage.
 Ability_Fiki_TriggeredPassive_name								Rejuvenate
 Ability_Fiki_TriggeredPassive_description						When hero is below 75% HP, heals by 55-125 (scales with hero level).\n\n^c40 Second Cooldown.^*
 Ability_Fiki_TriggeredPassive_description_simple				Heals hero when below 75% HP.
 Ability_Fiki_Ult_name											Taunt
-Ability_Fiki_Ult_description									Target an enemy creep to have Fiki taunt enemies in a 450 AoE for 15 seconds.\n\nFiki has 2000-9000 health (scales with hero level) & receives 10x bonus damage from towers.\n\n^c90 Second Cooldown.^*
-Ability_Fiki_Ult_description_simple								Activate to taunt enemies in a small AoE.
+Ability_Fiki_Ult_description									Target an jungle monsters to have Fiki taunt enemies in a 450 AoE for 15 seconds.\n\nFiki has 2000-9000 health (scales with hero level) & receives 10x bonus damage from towers.\n\n^c90 Second Cooldown.^*
+Ability_Fiki_Ult_description_simple								Activate to taunt jungle monsters in a small AoE.
 
 
 // Fitz (Ganker)
 Ability_Ganker_Passive_1_name									On The Prowl
 Ability_Ganker_Passive_2_name									On The Prowl
 Ability_Ganker_Passive_3_name									On The Prowl
-Ability_Ganker_Passive_1_description							Increases movespeed by 10% while out of combat.
-Ability_Ganker_Passive_2_description							Increases movespeed by 10% while out of combat.
-Ability_Ganker_Passive_3_description							Increases movespeed by 10% while out of combat.
+Ability_Ganker_Passive_1_description							Increases movespeed by 10% while out of combat.Each kill/assist grants 30% reduction of current cooldowns
+Ability_Ganker_Passive_2_description							Increases movespeed by 10% while out of combat.Each kill/assist grants 30% reduction of current cooldowns
+Ability_Ganker_Passive_3_description							Increases movespeed by 10% while out of combat.Each kill/assist grants 30% reduction of current cooldowns
 Ability_Ganker_Passive_1_description_simple						Increases Movespeed while out of combat.
 Ability_Ganker_Passive_2_description_simple						Increases Movespeed while out of combat.
 Ability_Ganker_Passive_3_description_simple						Increases Movespeed while out of combat.
@@ -2773,9 +2773,9 @@ State_Ganker_Ult_3_name_FRAME_effect
 Ability_Luster_Passive_1_name									Luster Touch
 Ability_Luster_Passive_2_name									Luster Touch
 Ability_Luster_Passive_3_name									Luster Touch
-Ability_Luster_Passive_1_description							Increases gold from creeps by 3.
-Ability_Luster_Passive_2_description							Increases gold from creeps by 3.
-Ability_Luster_Passive_3_description							Increases gold from creeps by 3.
+Ability_Luster_Passive_1_description							Increases gold from creeps by 4.Your attacks deal 35% splash damage.
+Ability_Luster_Passive_2_description							Increases gold from creeps by 4.Your attacks deal 35% splash damage.
+Ability_Luster_Passive_3_description							Increases gold from creeps by 4.Your attacks deal 35% splash damage.
 Ability_Luster_Passive_1_description_simple						Increases gold from creeps.
 Ability_Luster_Passive_2_description_simple						Increases gold from creeps.
 Ability_Luster_Passive_3_description_simple						Increases gold from creeps.
@@ -2791,9 +2791,9 @@ Ability_Luster_TriggeredPassive_3_description_simple			Gets creep kills you miss
 Ability_Luster_Ult_1_name										Blast
 Ability_Luster_Ult_2_name										Blast
 Ability_Luster_Ult_3_name										Blast
-Ability_Luster_Ult_1_description								Deal 700-1008 damage to an enemy creep (scales with hero level).\n\n^c75 Second Cooldown.^*
-Ability_Luster_Ult_2_description								Deal 700-1008 damage to an enemy creep (scales with hero level).\n\n^c75 Second Cooldown.^*
-Ability_Luster_Ult_3_description								Deal 700-1008 damage to an enemy creep (scales with hero level).\n\n^c75 Second Cooldown.^*
+Ability_Luster_Ult_1_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 100 gold\n\n^c120 Second Cooldown.^*
+Ability_Luster_Ult_2_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 100 gold\n\n^c120 Second Cooldown.^*
+Ability_Luster_Ult_3_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 100 gold\n\n^c120 Second Cooldown.^*
 Ability_Luster_Ult_1_description_simple							Activate to deal damage to enemy creep.
 Ability_Luster_Ult_2_description_simple							Activate to deal damage to enemy creep.
 Ability_Luster_Ult_3_description_simple							Activate to deal damage to enemy creep.
@@ -2813,9 +2813,9 @@ Ability_Luster_Passive2_3_description							Grants $passive$ health upon killing
 Ability_Mystik_Passive_1_name									Spell Mastery
 Ability_Mystik_Passive_2_name									Spell Mastery
 Ability_Mystik_Passive_3_name									Spell Mastery
-Ability_Mystik_Passive_1_description							Increases Magic Damage by 6%.
-Ability_Mystik_Passive_2_description							Increases Magic Damage by 6%.
-Ability_Mystik_Passive_3_description							Increases Magic Damage by 6%.
+Ability_Mystik_Passive_1_description							Increases Magic Damage by 7%.Magical lifesteal $magiclifesteal$%,Magic armor penetration 15
+Ability_Mystik_Passive_2_description							Increases Magic Damage by 7%.Magical lifesteal $magiclifesteal$%,Magic armor penetration 15
+Ability_Mystik_Passive_3_description							Increases Magic Damage by 7%.Magical lifesteal $magiclifesteal$%,Magic armor penetration 15
 Ability_Mystik_Passive_1_description_simple						Amplifies magic damage.
 Ability_Mystik_Passive_2_description_simple						Amplifies magic damage.
 Ability_Mystik_Passive_3_description_simple						Amplifies magic damage.
@@ -2831,9 +2831,9 @@ Ability_Mystik_TriggeredPassive_3_description_simple			Mystik damages enemies yo
 Ability_Mystik_Ult_1_name										Inspiration
 Ability_Mystik_Ult_2_name										Inspiration
 Ability_Mystik_Ult_3_name										Inspiration
-Ability_Mystik_Ult_1_description								Regenerate 93-135 mana over 0.5 seconds (scales with hero level).\n\n^c105 Second Cooldown^*.
-Ability_Mystik_Ult_2_description								Regenerate 93-135 mana over 0.5 seconds (scales with hero level).\n\n^c105 Second Cooldown^*.
-Ability_Mystik_Ult_3_description								Regenerate 93-135 mana over 0.5 seconds (scales with hero level).\n\n^c105 Second Cooldown^*.
+Ability_Mystik_Ult_1_description								Regenerate 93-135 mana over 0.5 seconds (scales with hero level).\n\n^c60 Second Cooldown^*.
+Ability_Mystik_Ult_2_description								Regenerate 93-135 mana over 0.5 seconds (scales with hero level).\n\n^c60 Second Cooldown^*.
+Ability_Mystik_Ult_3_description								Regenerate 93-135 mana over 0.5 seconds (scales with hero level).\n\n^c60 Second Cooldown^*.
 Ability_Mystik_Ult_1_description_simple							Activate to regenerate mana.
 Ability_Mystik_Ult_2_description_simple							Activate to regenerate mana.
 Ability_Mystik_Ult_3_description_simple							Activate to regenerate mana.
@@ -2853,12 +2853,12 @@ Ability_Mystik_Passive2_3_description_simple					Dealing magic damage recovers H
 Ability_Pincer_Passive2_1_name									Defense
 Ability_Pincer_Passive2_2_name									Defense
 Ability_Pincer_Passive2_3_name									Defense
-Ability_Pincer_Passive2_1_description							Increases Resistance by 6-20 (scales with hero level).
-Ability_Pincer_Passive2_2_description							Increases Resistance by 6-20 (scales with hero level).
-Ability_Pincer_Passive2_3_description							Increases Resistance by 6-20 (scales with hero level).
-Ability_Pincer_Passive2_1_description_simple					Increases Resistance.
-Ability_Pincer_Passive2_2_description_simple					Increases Resistance.
-Ability_Pincer_Passive2_3_description_simple					Increases Resistance.
+Ability_Pincer_Passive2_1_description							Increases Armor by 20.\n 25% Crowd Control Reduction
+Ability_Pincer_Passive2_2_description							Increases Armor by 20.\n 25% Crowd Control Reduction
+Ability_Pincer_Passive2_3_description							Increases Armor by 20.\n 25% Crowd Control Reduction
+Ability_Pincer_Passive2_1_description_simple					Increases Armor.
+Ability_Pincer_Passive2_2_description_simple					Increases Armor.
+Ability_Pincer_Passive2_3_description_simple					Increases Armor.
 Ability_Pincer_TriggeredPassive_1_name							Retaliate
 Ability_Pincer_TriggeredPassive_2_name							Retaliate
 Ability_Pincer_TriggeredPassive_3_name							Retaliate
@@ -2893,9 +2893,9 @@ Ability_Pincer_Passive_3_description_simple						Increases Health Regen.
 Ability_Pusher_Passive_1_name									Resilience
 Ability_Pusher_Passive_2_name									Resilience
 Ability_Pusher_Passive_3_name									Resilience
-Ability_Pusher_Passive_1_description							Increases Resistance by 6-20 (scales with hero level).
-Ability_Pusher_Passive_2_description							Increases Resistance by 6-20 (scales with hero level).
-Ability_Pusher_Passive_3_description							Increases Resistance by 6-20 (scales with hero level).
+Ability_Pusher_Passive_1_description							Increases Magic Armor by 20.Gives 10 HP regen to creeps\n Increases damage to towers by 20%
+Ability_Pusher_Passive_2_description							Increases Magic Armor by 20.Gives 10 HP regen to creeps\n Increases damage to towers by 20%
+Ability_Pusher_Passive_3_description							Increases Magic Armor by 20.Gives 10 HP regen to creeps\n Increases damage to towers by 20%
 Ability_Pusher_Passive_1_description_simple						Increases Resistance.
 Ability_Pusher_Passive_2_description_simple						Increases Resistance.
 Ability_Pusher_Passive_3_description_simple						Increases Resistance.
@@ -2923,9 +2923,9 @@ Ability_Pusher_Ult_3_description_simple							Activate to buff allied brawlers.
 Ability_Razer_Passive2_1_name									Savagery
 Ability_Razer_Passive2_2_name									Savagery
 Ability_Razer_Passive2_3_name									Savagery
-Ability_Razer_Passive2_1_description							Increases attack damage by 2.7-9 (scales with hero level).
-Ability_Razer_Passive2_2_description							Increases attack damage by 2.7-9 (scales with hero level).
-Ability_Razer_Passive2_3_description							Increases attack damage by 2.7-9 (scales with hero level).
+Ability_Razer_Passive2_1_description							Increases attack damage by 9.10% physical armor penetration, 5% lifesteal
+Ability_Razer_Passive2_2_description							Increases attack damage by 9.10% physical armor penetration, 5% lifesteal
+Ability_Razer_Passive2_3_description							Increases attack damage by 9.10% physical armor penetration, 5% lifesteal
 Ability_Razer_Passive2_1_description_simple						Increases attack damage.
 Ability_Razer_Passive2_2_description_simple						Increases attack damage.
 Ability_Razer_Passive2_3_description_simple						Increases attack damage.
@@ -2968,9 +2968,9 @@ Ability_Razer_Passive_3_description_simple						Grants Resistance
 Ability_Tinker_Passive_1_name									Augmented Repairs
 Ability_Tinker_Passive_2_name									Augmented Repairs
 Ability_Tinker_Passive_3_name									Augmented Repairs
-Ability_Tinker_Passive_1_description							Increases Out-Of-Combat Regeneration by 3 Health & 1.5 Mana/sec.
-Ability_Tinker_Passive_2_description							Increases Out-Of-Combat Regeneration by 3 Health & 1.5 Mana/sec.
-Ability_Tinker_Passive_3_description							Increases Out-Of-Combat Regeneration by 3 Health & 1.5 Mana/sec.
+Ability_Tinker_Passive_1_description							Increases Out-Of-Combat Regeneration by 3 Health & 1.5 Mana/sec.Each kill/assist granst 50 gold
+Ability_Tinker_Passive_2_description							Increases Out-Of-Combat Regeneration by 3 Health & 1.5 Mana/sec.Each kill/assist granst 50 gold
+Ability_Tinker_Passive_3_description							Increases Out-Of-Combat Regeneration by 3 Health & 1.5 Mana/sec.Each kill/assist granst 50 gold
 Ability_Tinker_Passive_1_description_simple						Increases Out-Of-Combat Regeneration.
 Ability_Tinker_Passive_2_description_simple						Increases Out-Of-Combat Regeneration.
 Ability_Tinker_Passive_3_description_simple						Increases Out-Of-Combat Regeneration.
@@ -2998,9 +2998,9 @@ Ability_Tinker_Ult_3_description_simple							Activate to buff allied towers.
 Ability_Topps_Passive_1_name									Unleashed
 Ability_Topps_Passive_2_name									Unleashed
 Ability_Topps_Passive_3_name									Unleashed
-Ability_Topps_Passive_1_description								Increases Power by 6.6-15 (scales with hero level).
-Ability_Topps_Passive_2_description								Increases Power by 6.6-15 (scales with hero level).
-Ability_Topps_Passive_3_description								Increases Power by 6.6-15 (scales with hero level).
+Ability_Topps_Passive_1_description								Increases Power by 10%.Grants 3% HP regeneration from health and 5% mana regeneration from mana per second
+Ability_Topps_Passive_2_description								Increases Power by 10%.Grants 3% HP regeneration from health and 5% mana regeneration from mana per second
+Ability_Topps_Passive_3_description								Increases Power by 10%.Grants 3% HP regeneration from health and 5% mana regeneration from mana per second
 Ability_Topps_Passive_1_description_simple						Increases Power.
 Ability_Topps_Passive_2_description_simple						Increases Power.
 Ability_Topps_Passive_3_description_simple						Increases Power.
@@ -3037,12 +3037,12 @@ Ability_Topps_Passive2_3_description_simple						Grants CC-reduction.
 Ability_Tortus_Passive_1_name									Vitality
 Ability_Tortus_Passive_2_name									Vitality
 Ability_Tortus_Passive_3_name									Vitality
-Ability_Tortus_Passive_1_description_simple						Increases Max Health.
-Ability_Tortus_Passive_2_description_simple						Increases Max Health.
-Ability_Tortus_Passive_3_description_simple						Increases Max Health.
-Ability_Tortus_Passive_1_description							Increases Max Health by 15%.
-Ability_Tortus_Passive_2_description							Increases Max Health by 15%.
-Ability_Tortus_Passive_3_description							Increases Max Health by 15%.
+Ability_Tortus_Passive_1_description_simple						Increases Max Health.Reduces incoming damage by 15%
+Ability_Tortus_Passive_2_description_simple						Increases Max Health.Reduces incoming damage by 15%
+Ability_Tortus_Passive_3_description_simple						Increases Max Health.Reduces incoming damage by 15%
+Ability_Tortus_Passive_1_description							Increases Max Health by 15%.Reduces incoming damage by 15%
+Ability_Tortus_Passive_2_description							Increases Max Health by 15%.Reduces incoming damage by 15%
+Ability_Tortus_Passive_3_description							Increases Max Health by 15%.Reduces incoming damage by 15%
 Ability_Tortus_TriggeredPassive_1_name							Harden
 Ability_Tortus_TriggeredPassive_2_name							Harden
 Ability_Tortus_TriggeredPassive_3_name							Harden
@@ -3075,13 +3075,13 @@ Ability_Tortus_Passive2_3_description_simple					Increases mana regen
 
 // Zen (Owl)
 Ability_Owl_Passive_name										Wisdom
-Ability_Owl_Passive_description									Increases Cooldown Reduction by 13%.
+Ability_Owl_Passive_description									Increases Cooldown Reduction by 15%.Grants 10% maximum mana, 15% increase to heals and shields
 Ability_Owl_Passive_description_simple							Increases Cooldown Reduction.
 Ability_Owl_TriggeredPassive_name								Revitalize
 Ability_Owl_TriggeredPassive_description						Prevents you from losing Out-of-Combat Regeneration for 5 seconds the next time you enter combat.\n\n^c12 Second Cooldown^*. 
 Ability_Owl_TriggeredPassive_description_simple					Allows you to enter combat without losing OoC Regeneration.
 Ability_Owl_Ult_name											Knowledge
-Ability_Owl_Ult_description										Target a position up to 3500 range to scout it.\n\nGains vision & reveals enemies in a 700 AoE for 8 seconds.\n\n^c35 Second Cooldown^*. 
+Ability_Owl_Ult_description										Target a position up to 4500 range to scout it.\n\nGains vision & reveals enemies in a 700 AoE for 8 seconds.\n\n^c35 Second Cooldown^*. 
 Ability_Owl_Ult_description_simple								Activate to scout target area on map & reveal enemies.
 State_Owl_NoEnterCombat_Tooltip_name							Revitalize
 State_Owl_NoEnterCombat_description								Zen is preventing you from losing Out-Of-Combat Regeneration.
