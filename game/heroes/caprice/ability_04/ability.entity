@@ -46,7 +46,11 @@
     <onlearn>
         <setcharges a="2" />
     </onlearn> 
-	
+
+    <onupgrade>
+        <resetcooldown/>
+        <addcharges/>
+    </onupgrade>
     
     
     <ontimer>

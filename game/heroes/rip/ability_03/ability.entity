@@ -16,6 +16,7 @@
 	<!-- end tool tip only -->
 	<constant name="damage_increase" value="90,110,130,150" adjustment="none" />
 	<aura state="State_Rip_Ability3_Splash" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
+    <aura state="State_Rip_Ability3_Neutral_Sight" radius="450" targetscheme="non_idle_visible_neutral" ignoreinvulnerable="true" proxy="source_entity" />
 	
 	<onlearn>
 		<pushentitysearch global="true" targetscheme="enemy_main_base_structure" ignoreinvulnerable="true" />
@@ -35,19 +36,9 @@
 			<setcharges a="1" />
 		</hasmodifier>
 		<else>
-			<!-- if not seen by enemies, and no nearby visible active neutrals - charge up -->
-			<areaofeffect
-				radius="450"
-				targetselection="closest"
-				targetscheme="non_idle_visible_neutral"
-			>
-				<applystate name="State_Rip_Ability3_Sighted" target="source_entity" duration="50" /> 
-			</areaofeffect>
-			<else>
-				<setactivemodifierkey name="Rip_ability3_megacrit" />
-				<setaccumulator value="0" />
-				<setcharges a="1" />
-			</else>
+            <setactivemodifierkey name="Rip_ability3_megacrit" />
+            <setaccumulator value="0" />
+            <setcharges a="1" />
 		</else>
 
 	</onframe>

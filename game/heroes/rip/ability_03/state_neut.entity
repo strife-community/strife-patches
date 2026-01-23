@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rip_Ability3_Neutral_Sight"
+
+	icon="icon.tga"
+	ishidden="true"
+	impactinterval="100"
+
+>
+
+	<onimpact>
+        <applystate name="State_Rip_Ability3_Sighted" target="this_inflictor_entity" duration="150" />
+	</onimpact>
+
+</state>
