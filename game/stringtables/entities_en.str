@@ -853,7 +853,7 @@ Ability_Caprice2_description									Target location to deal ^o$damage$ Magic da
 Ability_Caprice2_description_simple								Area stun and damage
 // Ability_Caprice3
 Ability_Caprice3_name											Volatility
-Ability_Caprice3_description									^444Passive Skill^*\nPassively causes every third source of damage you apply to a target to combust, dealing ^o$damage$ bonus Magic damage^*.Each hero kill/assist gives +35/40/45/50 gold
+Ability_Caprice3_description									^444Passive Skill^*\nPassively causes every third source of damage you apply to a target to combust, dealing ^o$damage$ bonus Magic damage^*. Each hero kill/assist gives $bonus_gold$ gold
 Ability_Caprice3_description_simple								Grants bonus damage with multiple hits
 // State_Caprice_Ability3
 State_Caprice_Ability3_Tooltip_name								Volatility

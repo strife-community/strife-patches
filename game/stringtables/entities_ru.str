@@ -1000,7 +1000,7 @@ Ability_Caprice2_description_simple								отложенное оглушени
 
 // Ability_Caprice3
 Ability_Caprice3_name											Volatility
-Ability_Caprice3_description									^444Пассивное умение.^*\nПри каждом третьем попадании по цели происходит взрыв, наносящий дополнительно ^o$damage$ магического урона^*.За каждое убийство героя или помощь вы получаете 35/40/45/50 золота
+Ability_Caprice3_description									^444Пассивное умение.^*\nПри каждом третьем попадании по цели происходит взрыв, наносящий дополнительно ^o$damage$ магического урона^*. За каждое убийство героя или помощь вы получаете $bonus_gold$ золота
 Ability_Caprice3_description_simple								дополнительный урон при повторных попаданиях
 
 // State_Caprice_Ability3

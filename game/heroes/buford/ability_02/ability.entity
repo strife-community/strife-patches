@@ -19,7 +19,7 @@
 
 	activatescheme="movement"
 	
-	manacost="50"
+	manacost="0"
 	range="1000"
 	forcerange="900"
 	
@@ -42,7 +42,7 @@
 
 	<constant name="damage" value="25,35,45,55" adjustment="ability" />
 	<constant name="splash" value="35,40,45,50" adjustment="none" />
-	<constant name="radius" value="300" adjustment="none" noshowintooltip="true"/>
+	<constant name="radius" value="400" adjustment="none" noshowintooltip="true"/>
 
 	<onimpact>
 		<applystate name="State_Buford_Ability2_Fire" target="source_entity" duration="-1" />

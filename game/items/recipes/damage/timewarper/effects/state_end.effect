@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="deathExplosionLarge" deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.75">
+			
+			<sound
+				volume="0.45"
+				falloffstart="500"
+				falloffend="2500"
+				sample="../sounds/sfx_cast_end.wav"
+			/>
+		
+		
+			<light
+				position="0 0 50"
+				life="500"
+				startcolor="1.5 3 4"
+				endcolor="0 0 0"
+				falloffstart="0"
+				falloffend="150"
+			/>
+		
+
+			<simpleemitter
+				spawnrate="200"
+				life="150"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="0"
+				drag="0.05"
+				minspeed="200"
+				maxspeed="600"
+				acceleration="0"
+				position="0 0 15"
+				material="/shared/effects/smaterials/cartoon_dust.material"
+				minangle="90"
+				maxangle="90"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-90"
+					maxanglespeed="90"
+					color=".4 .6 .5"
+					minstartscale=".5"
+					maxstartscale="1"
+					endscale="1"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					endsize="75"
+					startalpha=".5"
+					endalpha="0"
+					turn="true"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+		
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

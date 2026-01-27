@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="deathExplosionLarge" deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			life="2000"
+			color=".9 .8 .7"
+			startalpha="1"
+			endalpha="1"
+			material="stone/material.material"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+				life="4000"
+				volume="0.85"
+				falloffstart="500"
+				falloffend="2500"
+				sample="../sounds/sfx_cast.wav"
+			/>
+
+			<billboard
+				expirelife="250"
+				material="/shared/effects/smaterials/whitedot.material"
+				size="20"
+				color="0 0 0"
+			/>
+			
+
+			
+			
+			
+			<light
+				bone="_bone_centerofchest"
+				position="125 0 150"
+				life="2350"
+				startcolor="0"
+				midcolor="3.5 2.5 2.5"
+				endcolor="0 0 0"
+				midcolorpos=".3"
+				falloffstart="0"
+				falloffend="400"
+			/>
+			
+
+			<simpleemitter
+				life="400"
+				bone="_bone_centerofchest"
+				spawnrate="250"
+				particlelife="550"
+				gravity="0"
+				drag="0.05"
+				acceleration="0"
+				position="0 0 15"
+				offsetsphere="35 35 50"
+				speed="250"
+				material="/shared/effects/smaterials/cartoon_dust.material"	
+				minangle="90"
+				maxangle="90"
+				direction="0 0 1"
+				depthbias="25"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-90"
+					maxanglespeed="90"
+					color=".4 .6 .5"
+					minscale=".8"
+					maxscale="1.2"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					endsize="75"
+					startalpha="1"
+					endalpha="0"
+					turn="true"
+				/>
+			</simpleemitter>
+
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+</thread>
+</effect>
