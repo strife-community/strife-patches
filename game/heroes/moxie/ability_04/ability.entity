@@ -34,7 +34,7 @@
 >
 	<constant name="damage" value="140,185,230" adjustment="ability" />
 	<constant name="bonus_damage" value="75,100,125" adjustment="ability" />
-	<constant name="powermultiplier" value="9,12,15" adjustment="none" />
+	<constant name="powermultiplier" value="9,12,15" adjustment="none" noshowintooltip="true"  />
 
 
 	<onimpact>

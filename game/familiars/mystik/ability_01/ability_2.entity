@@ -16,7 +16,7 @@
 >
 
 	<constant name="passive" value="7" floatprecision="0" adjustment="none" />
-	<constant name="magiclifesteal" value="80" adjustment="none" qualityvalue="8" qualityadjustment="rare" op="add" />
+	<constant name="magiclifesteal" value="8" adjustment="none" qualityvalue="0ё" qualityadjustment="rare" op="add" />
 	<constant name="penetration" value="15" adjustment="none" qualityvalue="1.0" qualityadjustment="common" op="add"/>
 	
 	<onattackingdamageevent>

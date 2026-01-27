@@ -44,12 +44,16 @@
     <constant name="sec_to_msec_mult" value="1000" adjustment="none" noshowintooltip="true" />
     
     <onlearn>
-        <setcharges a="4" />
+        <setcharges a="2" />
     </onlearn> 
 	
-    <onupgrade>
+	<onupgrade>
+	<resetcooldown/>
 	 <addcharges/>
     </onupgrade>
+    
+	
+    
     
     <ontimer>
         <addcharges entity="this_entity" count="1" />

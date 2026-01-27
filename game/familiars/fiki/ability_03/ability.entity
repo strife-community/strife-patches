@@ -7,7 +7,7 @@
 	maxlevel="15"
 
 	actiontype="target_entity"
-	targetscheme="enemy_nonboss_units"
+	targetscheme="neutral_units"
 	manacost="0"
 	cooldowntime="45000"
 	range="900"

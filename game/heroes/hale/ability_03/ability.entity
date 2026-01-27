@@ -28,7 +28,7 @@
 	<!--Display Only-->
 	<constant name="percent_heal" value="1.7,2.0,2.3,2.6" adjustment="support" floatprecision="1" />
 	<constant name="attackspeed" value="20,30,40,50" adjustment="none" />
-	<constant name="baseattackspeed" value="5,10,15,20" adjustment="none" />
+	<constant name="baseattackspeed" value="5,10,15,20" adjustment="none" noshowintooltip="true" />
 
 	<onimpact>
 		<starttimer duration="5000" />

@@ -103,9 +103,13 @@
     proximityscheme="neutral_aggro" 
 >
     <onkilled>
-	 <targettype target="target_entity" type="hero">
-        <applystate name="State_Cindara_Buff" target="target_entity" duration="-1"/>
-		</targettype>
+	 <setvar0 a="target_team" />
+        <foreachplayer>
+        <pushhero />
+	<compare target="stack_entity" a="target_team" b="var0" op="eq">
+        <applystate name="State_Cindara_Buff" continuous="true" target="stack_entity" />
+	</compare>
+        </foreachplayer>
         <compare a="target_team" b="1" op="eq">
             <spawnunit name="Gadget_TowerMaster_Vision" target="source_position" team="2" fixedposition="true" pushentity="true"/>
             <setaccumulator entity="stack_entity" value="1" />

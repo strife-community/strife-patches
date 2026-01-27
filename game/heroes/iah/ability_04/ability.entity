@@ -62,9 +62,6 @@
 		<compare a="charges" b="10" op="lt">
 			<starttimer duration="60000" />
 		</compare>
-		<else>
-			<setactivemodifierkey entity="this_entity" name="ElderStone_Max" />
-		</else>
 	</ontimer>
 	
 </ability>

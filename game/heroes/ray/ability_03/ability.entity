@@ -6,6 +6,7 @@
 	
 	casttime="2000"
 	castactiontime="2000"
+	channeltime="2000"
 
 
 	maxlevel="4"

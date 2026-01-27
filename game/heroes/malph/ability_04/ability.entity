@@ -47,7 +47,7 @@
         <spawnunit name="Pet_Malph_Ability4" count="1" maxactive="3,4,5" target="pos0" pushentity="true" proxy="this_entity" />
     </onimpact>
 	
-	<constant name="power" value="1.0,1.5,2.0" adjustment="none" qualityvalue="0.1,0.15,0.2" qualityadjustment="common" op="add"/>
+	<constant name="power" value="1.0,1.5,2.0" adjustment="none" qualityvalue="0.1,0.15,0.2" qualityadjustment="common" op="add" noshowintooltip="true" />
 	
 	<onframe>
 		<setcharges a="0.01,0.015,0.02" b="source_maxmana" op="mult" />

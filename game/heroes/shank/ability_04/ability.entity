@@ -48,7 +48,7 @@
 	</onimpact>
 	
 	<onattackeddamageevent>
-		<applystate name="Shank_Mitig" duration="5000" target="source_entity" />
+		<applystate name="State_Shank_Mitig" duration="5000" target="source_entity" />
 	</onattackeddamageevent>
 
 </ability>

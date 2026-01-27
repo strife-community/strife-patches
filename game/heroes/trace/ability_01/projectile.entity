@@ -2,7 +2,7 @@
 <projectile
 	name="Projectile_Trace_Ability1"
 
-	speed="1300"
+	speed="2000"
 	
 
 	preglobalscale="1.75"
@@ -15,7 +15,7 @@
 	
 	canturn="true"
 
-	lifetime="1600"
+	lifetime="1300"
 	
 	
 	touchradiusdiradjust="true"
@@ -38,27 +38,25 @@
 	</onimpact>
 
 	<ontouch>
-        <cantarget targetscheme="enemy_units_and_buildings">
-            <cantarget targetscheme="enemy_units_and_buildings">
-                <hasstate name="State_Trace_Ability1">
-                    <!-- don't hit the same guy twice   -->
-                </hasstate>
-                <else>
-                    
-                    <getconstant name="percent_damage" />
-                    <setvar0 a="result" b="100" op="div" />
-                    <setvar0 a="source_attackdamage" b="var0" op="mult" />
-                    <damage effecttype="AttackDamage Splash" amount="1" b="var0" op="mult" />
-                    <applystate name="State_Trace_Ability1" duration="1500" />
-                    <playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
-                    
-                    <setparam a="1" />
-                </else>
-            </cantarget>
-            
-            <recordheroaggression  />
-            <aggression />
-        </cantarget>
+		<cantarget targetscheme="enemy_units_and_buildings">
+			<cantarget targetscheme="enemy_units_and_buildings">
+				<hasstate name="State_Trace_Ability1">
+					<!-- don't hit the same guy twice   -->
+				</hasstate>
+				<else>
+					
+					<setvar0 a="source_attackdamage" b="0.8,0.95,1.1,1.25" op="mult" />
+					<damage effecttype="AttackDamage Splash" amount="1" b="var0" op="mult" />
+					<applystate name="State_Trace_Ability1" duration="1500" />
+					<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+					
+					<setparam a="1" />
+				</else>
+			</cantarget>
+			
+			<recordheroaggression  />
+			<aggression />
+		</cantarget>
 
 		<cantarget targetscheme="self">
 			<hasstate name="State_Trace_Ability1_CatchDelay" target="source_entity">
@@ -75,7 +73,7 @@
 		
 		<!-- pop bomb -->
 		<cantarget targetscheme="tracebomb" ignoreinvulnerable="true">
-			<compare a="source_team" b="target_team" op="eq">
+			<compare a="proxy_entity" b="target_entity" op="ne">
 				<kill target="target_entity" source="" />
 			</compare>
 		</cantarget>

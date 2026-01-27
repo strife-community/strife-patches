@@ -34,7 +34,7 @@
     <constant name="damage" value="50,65,80,95" adjustment="ability" />
 
     <!-- TOOL TIP ONLY! Real value is in "State_Fetterstone_Ability1"'s "resistance" attribute -->
-    <constant name="mitigation_reduction" value="8,12,16,20" adjustment="none" />
+    <constant name="resistance_reduction" value="8,12,16,20" adjustment="none" />
 
     <onimpact>
         <playeffect effect="effects/sound.effect" target="source_entity" />

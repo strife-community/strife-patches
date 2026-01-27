@@ -43,9 +43,10 @@
 
 	<constant name="damage" value="195,260,325" adjustment="ability" />
     <constant name="cooldown_reset" value="3" adjustment="none" noshowintooltip="true" />
-	<constant name="power" value="1,1,1" adjustment="none" op="add"/>
-	<constant name="percent_mult" value="0.007,0.009,0.011" adjustment="none" />
-    <!-- tooltip only -->
+	<!-- tooltip only -->
+	<constant name="power" value="1,1,1" adjustment="none" op="add" noshowintooltip="true" />
+	<constant name="percent_mult" value="0.007,0.009,0.011" adjustment="none" noshowintooltip="true" />
+ 
     <constant name="manacost" value="100,110,120" adjustment="none" noshowintooltip="true" />
 
 

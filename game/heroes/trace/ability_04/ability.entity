@@ -15,7 +15,7 @@
 >
 
 	<constant name="shield_percent" value="15,20,25" adjustment="none"  />
-	<constant name="damage" value="25,35,45" adjustment="item" qualityvalue="5" qualityadjustment="common" op="add" />
+	<constant name="damage" value="25,35,45" adjustment="item" qualityvalue="5" qualityadjustment="common" op="add" noshowintooltip="true" />
 	
 	<!-- tooltip only -->
 	<constant name="percent_power_increase" value="10,14,18" adjustment="none"  />

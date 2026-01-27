@@ -133,7 +133,7 @@
     power="105"
     attackduration="300"
     attackactiontime="180"
-    attackcooldown="916.67"
+    attackcooldown="916"
     attackdamagemin="58"
     attackdamageminperlevel="6.5"
     attackdamagemax="58"

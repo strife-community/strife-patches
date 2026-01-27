@@ -5,9 +5,8 @@
 	icon="icon.tga"
 	ishidden="false"
 	
-	basehealthregen="4"
-	basemanaregen="3.0"
-	 
+healthproportionregen="0.003"
+	manaproportionregen="0.005"
 >
 
 		

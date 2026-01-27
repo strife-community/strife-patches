@@ -27,10 +27,10 @@
 >
 	<constant name="percent_hp_mana" value="30,40,50" adjustment="support" />
 	<constant name="damage" value="100,150,200" adjustment="ability" />
-
-	<constant name="heal_enchant" value="50,100,150" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
-    <constant name="heal_chance_enchant" value="80,90,100" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
-	<!-- tool tip only -->
+    <!-- tool tip only -->
+	<constant name="heal_enchant" value="50,100,150" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" noshowintooltip="true" />
+    <constant name="heal_chance_enchant" value="80,90,100" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" noshowintooltip="true" />
+	
 	<constant name="move_attack_slow" value="30" adjustment="none" noshowintooltip="true" />
 
 	<onimpact>
