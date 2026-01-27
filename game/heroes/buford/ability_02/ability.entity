@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Buford2"
+
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="300"
+	castactiontime="300"
+	casteffect="effects/cast.effect"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+
+	targetscheme="target_position"
+	casteffecttype="Magic"
+
+	activatescheme="movement"
+	
+	manacost="50"
+	range="1000"
+	forcerange="900"
+	
+	cooldowntime="5000"
+
+	novoiceresponse="true"
+
+	queue="front"
+	
+	showlinecast="true"
+	linecastrange="1000"
+	linecastwidth="100"
+
+	showareacast="false"
+
+	allowoutofrangecast="true"
+	alwaysshowtimer="true"
+	
+>
+
+	<constant name="damage" value="25,35,45,55" adjustment="ability" />
+	<constant name="splash" value="35,40,45,50" adjustment="none" />
+	<constant name="radius" value="300" adjustment="none" noshowintooltip="true"/>
+
+	<onimpact>
+		<applystate name="State_Buford_Ability2_Fire" target="source_entity" duration="-1" />
+		<expirestate name="State_Buford_Ability1_Poison" target="source_entity" />
+		<expirestate name="State_Buford_Ability3_Leech" target="source_entity" />
+		
+		<spawnunit name="Gadget_Buford_Ability2_Target" count="1" target="source_position" pushentity="true" />
+		<spawnprojectile name="Projectile_Buford_Ability2" source="source_entity" target="target_position" offset="0 75 75" bind="stack_entity" />
+		<spawnaffector name="Affector_Buford_Ability2" target="stack_entity" />
+		
+		<spawnunit name="Gadget_Buford_Ability2" count="1" target="source_position" proxy="stack_entity" />
+		
+		<recordheroaggression  />
+			<aggression />
+		
+
+	</onimpact>
+
+
+	
+</ability>

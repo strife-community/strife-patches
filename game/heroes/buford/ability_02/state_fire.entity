@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Buford_Ability2_Fire"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	modifierkey="fire"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+>
+	<onattack>
+		<expirestate name="State_Buford_Ability1_Poison" target="source_entity" />
+		<expirestate name="State_Buford_Ability3_Leech" target="source_entity" />
+		<addattackimpactactions>
+			<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.35,.4,.45,.5" op="mult" radius="300" effecttype="AttackDamage" targetscheme="enemy_units" />
+			<setpos0 position="target_position" positionend="source_position" positionmodifier="pointonline" positionvalue="50" />
+			<placehazard target="pos0" hazardthreat="extreme" radius="300" duration="1500" />
+		</addattackimpactactions>
+	</onattack>
+
+</state>

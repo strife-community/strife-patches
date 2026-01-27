@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spawner
+	name="Spawner_BossKongor_Top"
+
+	visibility="all"
+	lifetime="-1"
+
+	iconsize="0.08"
+	icon="/shared/icons/minimap_circle.tga"
+	iconcolor="0.6000 0.0000 0.0000 1.0000"
+	iconvisibility="alive"
+
+	alwaysannounceteamless="false"
+	deathannouncementteamless="guardian_top_killed"
+	deathannouncementenemyteam="guardian_top_own_killed"
+	deathannouncementownteam="guardian_top_killed"
+
+	firstspawntime="60000"
+	spawninterval="360000"
+	spawnintervalpercharge="0"
+	spawnintervalvariation="0"
+	spawntimercondition="death"
+
+	pickmethod="random"
+	maxspawnsuntildeath="0"
+
+	overrideunitguardrules="false"
+	guardchasetime="3000"
+	guardchasedistance="1500"
+	guardreaggrochasetime="2000"
+	guardreaggrochasedistance="1000"
+	aggrorange="1000"
+
+	blockedbyunits="false"
+	blockedbyunitcorpses="false"
+	blockedbyunitsradius="1"
+	
+	showinui="true"
+	teamtapping="true"
+>
+  <!-- Other scripts can go here like an affector, but I haven't tested anything yet -->
+
+	<onspawnerdormant>
+		<pushentitybyname name="good_base" />	
+		<spawnunit name="Building_TopBossRespawn_1" target="this_position" angle="310" fixedposition="true" source="stack_entity" owner="stack_entity"  />
+	</onspawnerdormant>	
+  
+</spawner>
