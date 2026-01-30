@@ -13,7 +13,7 @@
 	actiontype="passive"
 	filters="defense,health_regen"
 
-	empoweredeffects="Item_HeadressOfRejuvenation_Empower_3,Item_HeadressOfRejuvenation_Empower_4,Item_HeadressOfRejuvenation_Empower_1,Item_HeadressOfRejuvenation_Empower_2"
+	empoweredeffects="Item_HeadressOfRejuvenation_Empower_3,Item_HeadressOfRejuvenation_Empower_4"
 	
 	showinpractice="true"
 >

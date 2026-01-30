@@ -61,8 +61,8 @@ Constant_attackspeed											Attack Speed
 Constant_movespeed												Move Speed
 Constant_movespeed_percent										% Move Speed
 Constant_bonus_attacks											Number Of Attacks
-Constant_resistance												Resistance
-Constant_mitigation												Mitigation
+Constant_resistance												Magic Armor
+Constant_mitigation											    Armor
 Constant_botharmor												Magic Armor & Armor
 Constant_abilityresistencereduction								Magic Armor Reduction
 Constant_penetration											Penetration
@@ -78,7 +78,7 @@ Constant_armor_per_charge										Armor Per Charge
 Constant_armor_reduction										Armor Reduction
 Constant_armor													Armor Bonus
 Constant_armor_pierce_percent									% Armor Pierce
-Constant_resistance_reduction									Resistance Reduction
+Constant_resistance_reduction									Magic Armor Reduction
 Constant_magic_armor											Magic Armor
 Constant_cost_hp												Base Health Cost
 Constant_damage_per_second										Base Damage/Sec
@@ -130,6 +130,9 @@ Constane_attackspeedslow										% Attack Speed Slow
 Constant_splash													Splash Damage
 Constant_back_attack                                            Base Return Damage
 Constant_malph_max_holes                                        Max Holes
+Constant_supportmultiplier                                      % Heal and Shield enhancement
+Constant_percent_mana                                           % Max Mana
+Constant_magiclifesteal                                         Magic lifesteal %
 
 CrowdControl_Stun												Stun
 CrowdControl_Slow												Slow
@@ -687,7 +690,7 @@ Ability_Aemon1_description										Consecrate an area. The area will grant visi
 Ability_Aemon1_description_simple								Circle of bonus damage on attacks
 // Ability_Aemon2
 Ability_Aemon2_name												Hope
-Ability_Aemon2_description										Aemon gains a powerful buff of $resistance$ Magic Armor and $cc_reduction$% Crowd Control Reduction for $duration$ seconds. \n\nPassive: Aemon's attacks heal ally heroes within Consecration for $heal$.
+Ability_Aemon2_description										Aemon gains a powerful buff of $mitigation$ Armor and $cc_reduction$% Crowd Control Reduction for $duration$ seconds. \n\nPassive: Aemon's attacks heal ally heroes within Consecration for $heal$.
 Ability_Aemon2_description_simple								Magic Armor buff and ally heal on attacks
 // Ability_Aemon3
 Ability_Aemon3_name												Courage
@@ -822,7 +825,7 @@ Hero_Buford_description											Lives in the Bayou and uses bugs as weapons.
 Hero_Buford_role												Long range attack damage hero
 // Ability_Buford1
 Ability_Buford1_name											Poison Slug
-Ability_Buford1_description										Target location to create a cloud of toxic fumes. Fumes slow all enemies by $slow$% and reduces their Armor by $resistance$. If toxic fumes are ignited by Fire Slug they explode dealing ^o$damage_explode$ Magic damage^*.\n\n^444Toxic Ammo^*\nAttacks deal $damage_increase_attackbase$% bonus damage,+50 attack range. Only one Ammo can be active.
+Ability_Buford1_description										Target location to create a cloud of toxic fumes. Fumes slow all enemies by $slow$% and reduces their Armor by $mitigation$. If toxic fumes are ignited by Fire Slug they explode dealing ^o$damage_explode$ Magic damage^*.\n\n^444Toxic Ammo^*\nAttacks deal $damage_increase_attackbase$% bonus damage,+50 attack range. Only one Ammo can be active.
 Ability_Buford1_description_simple								AOE slow and attack damage increase
 // Ability_Buford2
 Ability_Buford2_name											Fire Slug
@@ -931,7 +934,7 @@ Ability_Claudessa1_description									Target direction to damage enemies in a l
 Ability_Claudessa1_description_simple							Line damage and pull.
 // Ability_Claudessa2
 Ability_Claudessa2_name											Scale Shield
-Ability_Claudessa2_description									Passively gives $resistance$ Armor and Magic armor.\n\nTarget ally to heal for ^o$heal$^* Health and transfer your shield to them for $duration$ seconds.
+Ability_Claudessa2_description									Passively gives $botharmor$ Armor and Magic armor.\n\nTarget ally to heal for ^o$heal$^* Health and transfer your shield to them for $duration$ seconds.
 Ability_Claudessa2_description_simple							Target heal and damage reduction
 // State_Claudessa_Ability2
 State_Claudessa_Ability2_Tooltip_name							Scale Shield
@@ -976,7 +979,7 @@ Ability_Eanu2_description										Target location to emit a geyser from Eanu's 
 Ability_Eanu2_description_simple								Push Eanu and target away from eachother
 // Ability_Eanu3
 Ability_Eanu3_name												Tidal Flow
-Ability_Eanu3_description										Eanu channels the tide Inward and Outward, alternating each cast.\n\nInward Tide restores $mana$ Mana and grants $resistance$  Armor.\n\nOutward Tide reduces enemy Magic Armor by $resistance_reduction$. Enemies hit by Outward Tide become Wet for 5 seconds.Taking damage increases your power by 4/5/6/7 for 5 seconds, stacks 4 times.
+Ability_Eanu3_description										Eanu channels the tide Inward and Outward, alternating each cast.\n\nInward Tide restores $mana$ Mana and grants $mitigation$  Armor.\n\nOutward Tide reduces enemy Magic Armor by $resistance_reduction$. Enemies hit by Outward Tide become Wet for 5 seconds.Taking damage increases your power by 4/5/6/7 for 5 seconds, stacks 4 times.
 Ability_Eanu3_description_simple								Mana/Armor buff to self or Magic Armor debuff to Enemies
 // Ability_Eanu4
 Ability_Eanu4_name												Breaking Wave
@@ -991,7 +994,7 @@ Hero_Fetterstone_role											Ranged attack damage
 Hero_Fetterstone_lore 											Lorne was a miner dwarf in the gem mines of Fetterstone Mountain in the northern reaches of Gael, in the mountain range known as Dwarf Rock. He was a simple miner, never longing for adventure or a life outside of the mines. But gems were his weakness, and he often yearned for more, many more in fact, than he had.\n\nOn a fateful day, Lorne entered into a small unexplored cavern in the mine and a glimmer caught his eye. He unearthed two mysterious weapons infused with dazzling gems. Astonishingly, they spoke to Lorne in a mental whisper. "Take us. We are yours. This is your destiny." The lure of the gems was unrelenting. Lorne took up the weapons, called Glimmer and Glint, and left the mines.\n\nSome weeks later, news of a gunslinging dwarf with mystical powers began to surface in northern Gael. Those who told the tales said the gunslinger called himself Fetterstone, after the mines of dwarf Rock, and that he executed lethal justice upon any he deemed to be evildoers. Some even said he was a haunted soul, fallen deep under the influence of some vengeful spirit, with magical weapons that held him spellbound to their dark will.
 // Ability_Fetterstone1
 Ability_Fetterstone1_name										Crystal Shot
-Ability_Fetterstone1_description								Target direction to fire crystal, dealing ^o$damage$ Magic damage^*, slowing slightly, and reducing Armor by $resistance_reduction$.
+Ability_Fetterstone1_description								Target direction to fire crystal, dealing ^o$damage$ Magic damage^*, slowing slightly, and reducing Armor by $armor_reduction$.
 Ability_Fetterstone1_description_simple							Skillshot damage, slow and armor reduction
 // State_Fetterstone_Ability1
 State_Fetterstone_Ability1_Tooltip_name							Crystal Shot
@@ -1042,7 +1045,7 @@ Ability_Flak3_description:Flak_Ability3_4						Grants a new upgrade each time yo
 Ability_Flak3_description_simple								Assorted weapon upgrades
 // Ability_Flak4
 Ability_Flak4_name												EMP Cannon
-Ability_Flak4_description										Target direction to launch an EMP missle.  Upon reactivation, or contacting an enemy, the EMP explodes - slowing nearby enemies and lowering their Armor by up to $resistance$.  More potent at closer ranges.Passively gives 7/11/15% Critical Chance
+Ability_Flak4_description										Target direction to launch an EMP missle.  Upon reactivation, or contacting an enemy, the EMP explodes - slowing nearby enemies and lowering their Armor by up to $mitigation$.  More potent at closer ranges.Passively gives 7/11/15% Critical Chance
 Ability_Flak4_description_simple								Massive slow and armor reduction
 
 
@@ -1065,7 +1068,7 @@ Ability_GoKong3_description										Activate to gain 200 bonus attack range and
 Ability_GoKong3_description_simple								Bonus range and damage
 // Ability_GoKong4
 Ability_GoKong4_name											Monkey Multiplier
-Ability_GoKong4_description										Activate to send an illusion to each nearby enemy hero.  Illusions cannot be killed and deal $illusion_damage$% damage.  \n\nReactive and target location to teleport to nearest illusion, consuming it.Passively increases gold from creeps by 2/3/4
+Ability_GoKong4_description										Activate to send an illusion to each nearby enemy hero.  Illusions cannot be killed and deal $illusion_damage$% damage.  \n\nReactive and target location to teleport to nearest illusion, consuming it. Passively increases gold from creeps by 2/3/4
 Ability_GoKong4_description_simple								Illusions and teleport
 
 // Hero_Hale
@@ -1083,7 +1086,7 @@ Ability_Hale2_description										Activate to empower next attack with ^o$damag
 Ability_Hale2_description_simple								Next attack deals line damage
 // Ability_Hale3
 Ability_Hale3_name												Sheol Calibur
-Ability_Hale3_description										Activate to grant a bonus $attackspeed$ Attack Speed^* for 5 seconds.  During this time, attacks heal Hale for $percent_heal$% max Health.Passively gives 5/15/15/20% AttackSpeed
+Ability_Hale3_description										Activate to grant a bonus $attackspeed$ Attack Speed^* for 5 seconds.  During this time, attacks heal Hale for $percent_heal$% max Health. Passively gives 5/15/15/20% AttackSpeed
 Ability_Hale3_description_simple								Attack speed and lifesteal buff
 // Ability_Hale4
 Ability_Hale4_name												Earthquake
@@ -1158,7 +1161,7 @@ Ability_JinShe1_description										Target a direction to deal ^o$damage$ Magic
 Ability_JinShe1_description_simple								Skill shot damage and stun
 // Ability_JinShe2
 Ability_JinShe2_name											Whirling Embers
-Ability_JinShe2_description										Activate to deal ^o$damage$ Magic damage^* and apply a stacking -$penetration$ Magic Armor Penetration debuff for 5 seconds to nearby enemies.\n\nEach attack reduces Whirling Embers' cooldown by 2 seconds.
+Ability_JinShe2_description										Activate to deal ^o$damage$ Magic damage^* and apply a stacking $resistance_reduction$ Magic Armor Penetration debuff for 5 seconds to nearby enemies.\n\nEach attack reduces Whirling Embers' cooldown by 2 seconds.
 Ability_JinShe2_description_simple								Area magic damage and debuff
 // Ability_JinShe3
 Ability_JinShe3_name											Firefall
@@ -1235,7 +1238,7 @@ Ability_Malph1_description										Target direction to fire an underground miss
 Ability_Malph1_description_simple								Homing missile with AoE damage and slow
 // Ability_Malph2
 Ability_Malph2_name												Healing Rations
-Ability_Malph2_description										Target ally to grant them a buff which heals them for ^o$heal$ Health^* over $duration$ seconds, providing $resistance$ Armor and Magic Armor for the duration.
+Ability_Malph2_description										Target ally to grant them a buff which heals them for ^o$heal$ Health^* over $duration$ seconds, providing $botharmor$ Armor and Magic Armor for the duration.
 Ability_Malph2_description_simple								Grant healing and resistance over time
 // Ability_Malph3
 Ability_Malph3_name												Mud Field
@@ -1320,7 +1323,7 @@ Ability_Moxie3_description										^444Passive Skill^*\nPassively increases all
 Ability_Moxie3_description_simple								Movespeed on cast and increased spell damage
 // Ability_Moxie4
 Ability_Moxie4_name												Catastrophe
-Ability_Moxie4_description										Target area. After a delay, deals ^o$damage$ Magic damage^* and applies a 60% Movement Slow.\n\nEnemies near the center take an additional ^o$bonus_damage$ damage^* and bonus slow.Passively gives 5/10/15% power
+Ability_Moxie4_description										Target area. After a delay, deals ^o$damage$ Magic damage^* and applies a 60% Movement Slow.\n\nEnemies near the center take an additional ^o$bonus_damage$ damage^* and bonus slow.Passively gives 9/12/15% power
 Ability_Moxie4_description_simple								Delayed area damage and slow
 Ability_Moxie4_effect_header
 Ability_Moxie4_IMPACT_effect
@@ -1404,7 +1407,7 @@ Hero_Rip_role
 Hero_Rip_lore													Rip, swordsman of the wastes, hails from a mysterious tribe of Elves – the Kenar-Ahdam – that eek out an existence in the ruins of Strife where they have been effectively exiled to by the other races of Gael as a result of suspicions that they are half-Dharkwave/half-Elf. As perpetual outcasts, the Kenar-Ahdam have remained largely insulated from the worlds around them and have preserved many of their old customs including Rhen-Dhit wherein the second son of the family is sent off to find fortune on their own so as not to challenge the first son for inheritance. Tyme, second son of Mhernad, ventured forth to join in the Trials of Strife in order to win himself a place within his tribe, and his tribe a place amongst the rest of the races of the planes.
 // Ability_Rip1
 Ability_Rip1_name												Smoke Cloud
-Ability_Rip1_description										Target area to create a smoke cloud, reducing enemy Armor by $resistance_reduction$ and drastically lowering their vision, while granting all allies inside the cloud $resistance$ Magic Armor. While inside the cloud, you are stealthed until you deal damage or use an ability.
+Ability_Rip1_description										Target area to create a smoke cloud, reducing enemy Armor by $armor_reduction$ and drastically lowering their vision, while granting all allies inside the cloud $resistance$ Magic Armor. While inside the cloud, you are stealthed until you deal damage or use an ability.
 Ability_Rip1_description_simple									Create cloud to confuse enemy and cloak yourself
 // State_Rip_Ability1_Self
 State_Rip_Ability1_Self_Tooltip_name							Smoke Cloud
@@ -1465,7 +1468,7 @@ Hero_Shank_role
 Hero_Shank_lore													Shank was a lone soul. Roving the hills of Strife, he slowly grew insane. Because of his lunatic outbursts and insane behavior, he began to grow troublesome to the four cities of Strife, and many times they attempted to imprison him. But he somehow forged a magic key (some say through supernatural insights afforded to him by his own insanity) and always escaped from his captors. He converted his prison shackle ball into a crude ally, naming it "Clunk," and went on further rampages. Shank used his magic key to enter through the gates of the Strife Arena and now fights in the trials. Apparently because he has very little else to do.
 // Ability_Shank1
 Ability_Shank1_name												Ground Pound
-Ability_Shank1_description										Activate to smash the ground below you, dealing ^o$damage$ Magic damage^* and applying a $slow$% Slow and Armor reduction of $resistance$ to all nearby enemies.
+Ability_Shank1_description										Activate to smash the ground below you, dealing ^o$damage$ Magic damage^* and applying a $slow$% Slow and Armor reduction of $mitigation$ to all nearby enemies.
 Ability_Shank1_description_simple								Slow and damage around self
 // Ability_Shank2
 Ability_Shank2_name												Jailbreak
@@ -1481,7 +1484,7 @@ State_Shank_Ability2_Enemy_description_simple					Shank has reduced your movespe
 State_Shank_Ability2_Enemy_name									Jailbreak
 // Ability_Shank3
 Ability_Shank3_name												Frenzy
-Ability_Shank3_description										Passively causes attacks to grant up to $resistance$ Armor and $attackspeed$ Attack Speed over 3 attacks.  Buff lasts 4 seconds. \n\nActivating Frenzy gives Shank full charges. 
+Ability_Shank3_description										Passively causes attacks to grant up to $mitigation$ Armor and $attackspeed$ Attack Speed over 3 attacks.  Buff lasts 4 seconds. \n\nActivating Frenzy gives Shank full charges. 
 Ability_Shank3_description_simple								Armor and attack speed in combat
 // Ability_Shank4
 Ability_Shank4_name												Manacle
@@ -1896,7 +1899,7 @@ Item_CircletOfTheSage_bonusdescription							Increases the mana provided by $com
 Item_CircletOfTheSage_legendaryname								Sustaining
 Item_CircletOfTheSage_legendarydescription						Increases the mana bonus from other items/effects by $mana_legendary$%.
 Item_CircletOfTheSage_Empower_1_name							Intellect
-Item_CircletOfTheSage_Empower_1_description						Grants $max_mana_enchant$% bonus Mana.
+Item_CircletOfTheSage_Empower_1_description						Grants 10% bonus Mana.
 Item_CircletOfTheSage_Empower_2_name							Ages
 Item_CircletOfTheSage_Empower_2_description						Increases Mana by $mana_enchant$.
 Item_CircletOfTheSage_Empower_3_name							Alchemy
@@ -2035,10 +2038,10 @@ Item_EnduringHelm_Empower_3_description							Reduces tower damage by $tower_red
  // Elderstone
 Item_ElderStone_name											Elder Stone
 Item_ElderStone_description										+$hp$ Max Health\n+$mp$ Mana\n+10 Magic Armor\nEach minute, grants an additional $hp_gain$ Max Health,1.5 Power and $mp_gain$ Mana. Caps after 10 minutes.
-Item_ElderStone_description_simple								Grants Resistance and additional Health and Mana over time
+Item_ElderStone_description_simple								Grants Magic Armor and additional Health and Mana over time
 Item_ElderStone_bonusdescription								Increases the health provided by $common_increase$%.
 Item_ElderStone_legendaryname									Heavy
-Item_ElderStone_legendarydescription							When at max charges, increases Resistance further by $resistance_legendary$.
+Item_ElderStone_legendarydescription							When at max charges, increases Magic Armor further by $resistance_legendary$.
 Item_ElderStone_Empower_1_name									Heritage
 Item_ElderStone_Empower_1_description							When at max charges, increases Resistance further by $resistance_enchant$.
 Item_ElderStone_Empower_2_name									Experience
@@ -2107,8 +2110,8 @@ Item_Riftshards_legendaryname									Crushing
 Item_Riftshards_legendarydescription							Attacking the enemy reduces their Armor by $resistance$ for 3 seconds.
 Item_Riftshards_Empower_1_name									Ruin
 Item_Riftshards_Empower_1_description							Attacking the enemy reduces their Armor by $reduceresistance_enchant$ for $reduceresistance_duration_enchant$ seconds. Non-stacking.
-Item_Riftshards_Empower_2_name									Fortune
-Item_Riftshards_Empower_2_description							Increases percent chance to critical by $crit_enchant$.
+Item_Riftshards_Empower_2_name									Vampirism
+Item_Riftshards_Empower_2_description	                        Grants $lifesteal_enchant$% Attack Lifesteal.						
 Item_Riftshards_Empower_3_name									Vampirism
 Item_Riftshards_Empower_3_description							Grants $lifesteal_enchant$% Attack Lifesteal.
 
@@ -2256,7 +2259,7 @@ Item_Mask_Of_Madman_Empower_3_description						Cooldown refreshes when participa
 
 // Item_Lasthit
 Item_Lasthit_name												Throwing Axe
-Item_Lasthit_description										Passive: increases your attack damage vs. non-hero units by $damage$%. \n\n^091Activate: deal 1.2x attack damage to a non-hero unit.^*\nPassively, your attacks deal 35% area damage.
+Item_Lasthit_description										Passive: increases your attack damage vs. non-hero units by $damage$%. \n\n^091Activate: deal 1.2x attack damage to a non-hero unit.^*\nPassively, your attacks deal 20% splash damage.
 Item_Lasthit_description_simple									Grants bonus Attack Damage vs non-heroes.\n^091Activate: damage target non-hero unit.^*
 Item_Lasthit_bonusdescription									Decreases the cooldown by $cooldown$ seconds.
 Item_Lasthit_legendaryname										Prosperous
@@ -2409,8 +2412,8 @@ Item_Zealotsblade_legendaryname									Charging
 Item_Zealotsblade_legendarydescription							Grants $power$ Power and AttackSpeed by 5% each attack, stacking up to 3 times.  Expires after 3 seconds of not attacking.
 Item_Zealotsblade_Empower_1_name								Rhythm
 Item_Zealotsblade_Empower_1_description							Grants $power_enchant$ Power each attack, stacking up to 3 times.  Expires after $power_duration_enchant$ seconds of not attacking.
-Item_Zealotsblade_Empower_2_name								Vampirism
-Item_Zealotsblade_Empower_2_description							Grants $lifesteal_enchant$% Attack Lifesteal.
+Item_Zealotsblade_Empower_2_name								Crit
+Item_Zealotsblade_Empower_2_description							+5% Crit Chance
 Item_Zealotsblade_Empower_3_name								Haste
 Item_Zealotsblade_Empower_3_description							Increases Movement Speed by $movespeed_enchant$.
 
@@ -2497,8 +2500,8 @@ Item_Shieldbreaker_Empower_1_name								Sundering
 Item_Shieldbreaker_Empower_1_description						Your attack deals bonus damage equal to $damagebonus_enchant$% of the target's Max Health.
 Item_Shieldbreaker_Empower_2_name								Reliance
 Item_Shieldbreaker_Empower_2_description						Your attacks always pierce through a minimum of $armorpierce_enchant$ Armor.
-Item_Shieldbreaker_Empower_3_name								Vampirism
-Item_Shieldbreaker_Empower_3_description						Grants $lifesteal_enchant$% Attack Lifesteal.
+Item_Shieldbreaker_Empower_3_name								Speed
+Item_Shieldbreaker_Empower_3_description						+20% Attack Speed
 
 // Item_Malevolence
 Item_Malevolence_name											Grimoire
@@ -2791,9 +2794,9 @@ Ability_Luster_TriggeredPassive_3_description_simple			Gets creep kills you miss
 Ability_Luster_Ult_1_name										Blast
 Ability_Luster_Ult_2_name										Blast
 Ability_Luster_Ult_3_name										Blast
-Ability_Luster_Ult_1_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 100 gold\n\n^c120 Second Cooldown.^*
-Ability_Luster_Ult_2_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 100 gold\n\n^c120 Second Cooldown.^*
-Ability_Luster_Ult_3_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 100 gold\n\n^c120 Second Cooldown.^*
+Ability_Luster_Ult_1_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 50 gold\n\n^c60 Second Cooldown.^*
+Ability_Luster_Ult_2_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 50 gold\n\n^c60 Second Cooldown.^*
+Ability_Luster_Ult_3_description								Deal 700-1008 damage to an enemy creep (scales with hero level).You get an additional 50 gold\n\n^c60 Second Cooldown.^*
 Ability_Luster_Ult_1_description_simple							Activate to deal damage to enemy creep.
 Ability_Luster_Ult_2_description_simple							Activate to deal damage to enemy creep.
 Ability_Luster_Ult_3_description_simple							Activate to deal damage to enemy creep.
