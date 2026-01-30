@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_SheepStick_Empower_3"
+	
+	icon="icon.tga"
+
+	movespeedslow="0.25"
+	
+	effecttype="StatusDebuff StatusDisable CrowdControl"
+	allowtransfer="true"
+>
+
+</state>

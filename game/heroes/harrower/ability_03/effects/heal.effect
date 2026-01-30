@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+<!--
+		<modifier
+			owner="owner"
+			name="modifier0"
+			life="750"
+			startcolor="0"
+			endcolor="1"
+			alpha="1"
+		/>
+-->
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<sound
+				falloffstart="500"
+				falloffend="2000"
+				volume="0.25"
+				sample="../sounds/sfx_trail_%.wav"
+			/>
+<!--
+			<billboard
+				owner="target"
+				bone="_bone_centerofchest"
+				life="500"
+				material="/shared/effects/smaterials/whitedot.material"
+				startcolor="0 .125 .5"
+				endcolor="0 0 0"
+				depthbias="-50"
+				scale="5"
+			/>
+			
+			<trackeremitter
+				count="20"
+				owner="target"
+				bone="_bone_centerofchest"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="linear"
+				trackspeed="10"
+				spawnrate="5000"
+				minparticlelife="550"
+				maxparticlelife="750"
+				gravity="-35"
+				offsetsphere="0"
+				minspeed="200"
+				maxspeed="400"
+				distancelife="false"
+			>
+				<particle
+				anchor="1"
+				>
+				
+					<simpleemitter
+						count="150"
+						name="trail_01"
+						spawnrate="100"
+						minparticlelife="350"
+						maxparticlelife="550"
+						material="/shared/effects/smaterials/whitedot.material"
+					>
+						<particle
+							startcolor="0 .15 .5"
+							midcolor="0 .15 .5"
+							endcolor="0 0 0"
+							midcolorpos=".15"
+							startsize="8"
+							midsize="12"
+							endsize="6"
+						/>
+					</simpleemitter>
+
+				</particle>
+				
+			</trackeremitter>
+-->
+			
+			<trackeremitter
+				count="10"
+				owner="target"
+				bone="_bone_centerofchest"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="linear"
+				trackspeed="12"
+				spawnrate="20"
+				particlelife="5000"
+				gravity="-35"
+				offsetsphere="0"
+				minspeed="200"
+				maxspeed="400"
+				distancelife="true"
+			>
+				<particle
+					anchor="1"
+				>
+				
+					<simpleemitter
+						count="150"
+						name="trail_01"
+						spawnrate="200"
+						minparticlelife="100"
+						maxparticlelife="600"
+						material="/shared/effects/smaterials/whitedot.material"
+					>
+						<particle
+							startcolor=".05 .125 .125"
+							midcolor="0 .05 .1"
+							endcolor="0 0 0"
+							midcolorpos=".3"
+							startsize="10"
+							midsize="10"
+							endsize="0"
+						/>
+					</simpleemitter>
+
+				</particle>
+				
+			</trackeremitter>
+			
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+</effect>
+

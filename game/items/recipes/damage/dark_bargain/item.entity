@@ -20,8 +20,10 @@
     filters="activatable,attack,attack_damage"
     alwaysshowtimer="true"
 
-    basedamage="46"
-    basedamagepercharge="23"
+    basedamage="40"
+    basedamagepercharge="20"
+    criticalchance="0.05"
+    criticalmultiplier="2.0"
 
     empoweredeffects="Item_Dark_Bargain_Empower_1,Item_Dark_Bargain_Empower_2"
     
@@ -29,8 +31,8 @@
 >
 
     <!--Tooltip Only-->
-    <constant name="damage" value="46" adjustment="item" qualityvalue="0" qualityadjustment="common" op="add"/>
-    <constant name="bonus" value="23" adjustment="item" qualityvalue="0" qualityadjustment="common" op="add"/>
+    <constant name="damage" value="40" adjustment="item" qualityvalue="0" qualityadjustment="common" op="add"/>
+    <constant name="bonus" value="20" adjustment="item" qualityvalue="0" qualityadjustment="common" op="add"/>
     <constant name="perm_bonus" value="6" adjustment="item" qualityvalue="0" qualityadjustment="common" op="add"/>
     <constant name="gold" value="500" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
     

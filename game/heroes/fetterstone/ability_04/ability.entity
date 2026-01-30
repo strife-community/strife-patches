@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Fetterstone4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	
+	maxlevel="3"
+	requiredlevel="2,7,12"
+
+	actiontype="target_self"
+	
+	queue="front"
+	inheritmovement="true"
+	maxcharges="0"
+	alwaysshowtimer="true"
+	
+	
+	
+	maxhealthpercharge="4,5,6"
+	
+	
+>
+
+	<constant name="damage_increase" value="5,15,25" adjustment="none" />
+	<constant name="hp_bonus" value="4,5,6" adjustment="none" noshowintooltip="true" />
+    <constant name="power_req" value="3,3,3" adjustment="none" noshowintooltip="true" />
+
+	<onimpact>
+		<applystate name="State_Fetterstone_Ability4" duration="-1" />
+		<setactivemodifierkey name="active" />
+		
+	</onimpact>
+	
+	<onframe>
+		<setvar0 a="source_power" b="100" op="sub" />
+		<getconstant name="power_req" />
+		<setvar0 a="var0" b="result" op="div" />
+		<setvar0 a="var0" b="1" op="div" />
+		<setcharges a="var0" />
+	</onframe>
+	
+	<modifier key="active" modpriority="101" 
+	>	
+		<onimpact>
+			
+				<expirestate name="State_Fetterstone_Ability4" target="source_entity" />
+				<setactivemodifierkey name="" />
+			</onimpact>
+		
+	</modifier>
+	
+
+	
+</ability>

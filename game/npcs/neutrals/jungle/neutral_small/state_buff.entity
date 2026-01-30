@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jungle_Buff"
+
+	icon="icon.tga"
+	ishidden="false"
+	actiontype="passive"
+	powermultiplier="0.10"
+    reducedcooldowns=".10"
+	propagatetoillusions="true"
+	 
+>
+
+		
+
+	
+</state>

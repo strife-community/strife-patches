@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="deathExplosionLarge" deferred="1" useentityeffectscale="1">
+	<definitions>
+<!--
+		<modifier
+			name="modifier0"
+			life="2000"
+			color="1 1 1"
+			alpha="0"
+		/>
+-->
+
+		<particlesystem name="system0" space="world" scale="1.75">
+		
+			<billboard
+				expirelife="250"
+				material="/shared/effects/smaterials/whitedot.material"
+				size="20"
+				color="0 0 0"
+			/>
+			
+
+
+			
+
+			
+
+			<light
+				position="0 0 50"
+				life="1500"
+				startcolor="3"
+				endcolor="0 0 0"
+				falloffstart="0"
+				falloffend="250"
+			/>
+
+			<groundsprite
+				position="0 0 0"
+				expirelife="600"
+				material="/shared/effects/smaterials/dirtpile_groundsprite.material"
+				size="150"
+				color=".5 .4 .3"
+				startalpha=".75"
+				endalpha="0"
+			/>
+
+			<groundsprite
+				position="0 0 0"
+				expirelife="300"
+				material="/shared/effects/smaterials/big_hole_reveal.material"
+				size="100"
+				color="1 1 1"
+				startalpha=".6"
+				endalpha="0"
+			/>
+		
+<!--
+			<groundsprite
+				position="0 0 0"
+				expirelife="300"
+				material="/shared/effects/smaterials/big_hole_reveal.material"
+				size="125"
+				color="1 1 1"
+				startalpha=".6"
+				endalpha="0"
+				yaw="90"
+			/>
+-->
+			
+			
+			<groundsprite
+				position="0 0 0"
+				expirelife="300"
+				material="/shared/effects/smaterials/black_spot_ground.material"
+				size="70"
+				color="1 1 1"
+				startalpha=".5"
+				endalpha="0"
+			/>
+			
+			
+			
+
+			<debris
+				position="0 0 10"
+				minscale=".225"
+				maxscale=".33"
+				minlife="750"
+				maxlife="1000"
+				model="rocks_debris/model.mdf"
+				material="rocks_debris/material.material"
+				anim="idle"
+				minspeed="1500"
+				maxspeed="3000"
+				direction="0 0 1"
+				minrotationspeed="-90"
+				maxrotationspeed="90"
+				gravity="350"
+				minangle="0"
+				maxangle="2"
+				color="1 .8 .6"
+				collide="true"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				bounce="0"
+				reflect=".8"
+				animpose="false"
+				offsetsphere="200 200 50"
+			>
+			</debris>
+
+<!--
+			<debris
+				position="0 0 10"
+				minscale=".225"
+				maxscale=".33"
+				minlife="750"
+				maxlife="1200"
+				model="rocks_debris/model.mdf"
+				material="rocks_debris/material.material"
+				anim="idle"
+				minspeed="1000"
+				maxspeed="2000"
+				direction="0 0 1"
+				minrotationspeed="-90"
+				maxrotationspeed="90"
+				gravity="150"
+				minangle="0"
+				maxangle="2"
+				color="1 .8 .6"
+				collide="false"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				bounce="0"
+				reflect=".8"
+				animpose="false"
+				offsetsphere="250 250 50"
+			>
+			</debris>
+-->
+			
+
+
+<!--
+			<simpleemitter
+				spawnrate="500"
+				life="300"
+				minparticlelife="300"
+				maxparticlelife="500"
+				gravity="0"
+				drag="0.05"
+				minspeed="750"
+				maxspeed="1500"
+				acceleration="0"
+				position="0 0 15"
+				material="/shared/effects/smaterials/cartoon_dust.material"	
+				minangle="90"
+				maxangle="90"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-90"
+					maxanglespeed="90"
+					color=".65"
+					minscale=".5"
+					maxscale=".9"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					endsize="50"
+					startalpha="1"
+					endalpha="0"
+					turn="true"
+				/>
+			</simpleemitter>
+-->
+
+
+
+			<simpleemitter
+				spawnrate="200"
+				life="150"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="0"
+				drag="0.05"
+				minspeed="200"
+				maxspeed="600"
+				acceleration="0"
+				position="0 0 15"
+				material="/shared/effects/smaterials/cartoon_dust.material"	
+				minangle="90"
+				maxangle="90"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-90"
+					maxanglespeed="90"
+					color=".4 .6 .5"
+					minstartscale=".5"
+					maxstartscale="1"
+					endscale="1"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					endsize="75"
+					startalpha=".5"
+					endalpha="0"
+					turn="true"
+				/>
+			</simpleemitter>
+
+			
+			
+			
+			
+<!--
+			<simpleemitter
+				delay="1250"
+				startspawnrate="0"
+				endspawnrate="250"
+				life="400"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				minspeed="0"
+				maxspeed="100"
+				position="0 0 15"
+				material="/shared/effects/smaterials/cartoon_dust.material"	
+				offsetradial="40 0 0"
+				offsetsphere="0 0 50"
+				minangle="0"
+				maxangle="1"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-90"
+					maxanglespeed="90"
+					color=".3 .2 .1"
+					minstartscale=".5"
+					maxstartscale="1"
+					endscale="1"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					endsize="75"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					turn="true"
+				/>
+			</simpleemitter>	
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+</effect>

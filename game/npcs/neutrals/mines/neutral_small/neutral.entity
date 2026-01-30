@@ -107,6 +107,12 @@
 		</currentdamageeffecttype>
 	</ondamaged>
 
+	<onkilled>   
+    <targettype target="target_entity" type="hero">
+        <applystate name="State_Mines_Buff" target="target_entity" duration="60000"/>
+    </targettype>
+        </onkilled>
+		
 	<modifier key="variation1" modpriority="100" modelscale="1.0" attackactiontime="725" model="variation_1/model.mdf"/>
 
 	<modifier key="variation2" modpriority="100" modelscale="0.81" attackactiontime="550" model="variation_2/model.mdf"/>

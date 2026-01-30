@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="Vex_State_ShamanHeaddress"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	modifierkey="shamanheaddress_active"
+	displaylevel="true"
+	ishidden="false"
+
+>
+
+	<ondamaged>
+		<compare a="source_damage" b="0" op="gt">
+			<damagesupertype supertype="spell" >
+				<getconstant name="magicheal" />
+				<setvar0 a="result" b="100" op="div" />
+				<setvar0 a="damage_applied" b="var0" op="mult" />
+				<changeaccumulator b="var0" op="add" />
+			</damagesupertype>
+		</compare>
+	</ondamaged>
+	
+	<onframe>
+		<setvar0 a="source_maxhealth" b="0.01" op="mult" />
+		<setvar0 a="var0" b="frametime" op="mult" />
+		<setvar0 a="var0" b="accumulator" op="min" />
+		<heal a="var0" target="source_entity" />
+		<changeaccumulator b="var0" op="sub" />
+		<compare a="accumulator" b="0" op="le" >
+			<expire />
+		</compare>
+	</onframe>
+	
+</state>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Razer_Passive2_2"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	actiontype="passive"
+	basedamage="9"
+	attacklifesteal="0.05" 
+	attacklifestealperquality="0.02" 
+	propagatetoillusion="true"
+>
+	<constant name="passive" value="9" adjustment="none" />
+	<constant name="penetration" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="attacklifesteal" value="5" adjustment="none" qualityvalue="2" qualityadjustment="rare" op="add" />
+	
+	 <onattackingdamageevent>
+        <cantarget targetscheme="enemy_units">
+            <getconstant name="penetration" />
+            <setvar0 a="result" b="100" op="div" />
+            <setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
+        </cantarget>
+    </onattackingdamageevent>
+
+</ability>

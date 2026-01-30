@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Zealotsblade_Empower_2"
+	
+	cost="1770"
+	criticalchance="0.05"
+    criticalmultiplier="2.0"
+>
+	
+
+</qualityitem>

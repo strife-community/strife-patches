@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="Empower_Eanu"
+
+	icon="icon.tga"
+	ishidden="false"
+	
+	maxcharges="4"
+	powerpercharge="4,5,6,7"
+	
+>
+    <constant name="power_enchant" value="4,5,6,7" duration="5000" adjustment="none" />
+	<constant name="stacks_enchant" value="4" duration="5000" adjustment="none" />
+
+	  <oninflict>
+        <addcharges count="1" />
+    </oninflict>
+
+    <onrefresh>
+        <addcharges count="1" />
+    </onrefresh>
+	
+</state>

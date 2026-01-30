@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Mana_Shield_Empower_1"
+	
+	cost="1475"
+
+>
+
+	<!-- Tooltip only -->
+	<constant name="shield_healthpercent" value="30" adjustment="support" qualityvalue="0" qualityadjustment="common" op="add"/>
+
+	<onimpact>
+		<starttimer duration="6000" />
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Mana_Shield_Empower_1" duration="6000" />
+		</areaofeffect>
+		<playeffect effect="effects/cast.effect" target="source_entity" />
+	</onimpact>
+
+</qualityitem>

@@ -36,7 +36,8 @@
          don't forget to change value in state.entity and state_nopassive.entity!
          If that is fixed, use the constant there!
     -->
-    <constant name="resistance" value="6,9,12,15" adjustment="none" />
+    <constant name="resistance" value="5,10,15,20" adjustment="none" />
+
     <!-- Duration of ally buff (seconds) -->
     <constant name="duration" value="5" adjustment="none" noshowintooltip="true" />
 

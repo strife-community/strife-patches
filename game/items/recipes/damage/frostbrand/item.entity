@@ -9,6 +9,7 @@
     components="Item_GlovesOfHaste Item_Staff"
     basedamage="12"
     basedamageperquality="1"
+	baseattackspeed="0.18"
     
     actiontype="passive"
 
@@ -19,7 +20,7 @@
     
     showinpractice="true"
     >
-    <constant name="slow" value="20" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
+    <constant name="slow" value="25" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add"/>
     <constant name="damage" value="12" adjustment="item" qualityvalue="1" qualityadjustment="common" op="add"/>
     <constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
     <constant name="movespeed" value="8" adjustment="none" qualityvalue="8" qualityadjustment="legendary" op="add"/>

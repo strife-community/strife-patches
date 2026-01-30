@@ -83,7 +83,9 @@
 	proximityscheme="neutral_aggro"
 	
 	showinpractice="true"
+	
 >
+   
 	<onspawn>
 		<applystate name="State_NeutralScaling_Medium" duration="-1"/>
 
@@ -101,6 +103,13 @@
 			</else>
 		</chance>
 	</onspawn>
+	
+	<onkilled>   
+    <targettype target="target_entity" type="hero">
+        <applystate name="State_Swamp_Buff" target="target_entity" duration="60000"/>
+    </targettype>
+  </onkilled>
+		
 	
 	<ondamaged>
 		<currentdamageeffecttype effecttype="Splash">

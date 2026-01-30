@@ -20,6 +20,8 @@
 	cooldowntime="15000"
 	hoverareacastrange="300"
 	alwaysshowtimer="true"
+	
+	movespeedmultiplier="0.08,0.10,0.12,0.14"
 >
 	<constant name="damage" value="80,105,130,155" adjustment="ability" />
 	<constant name="damage_scale" value="10" adjustment="none" noshowintooltip="true"/>

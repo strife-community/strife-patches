@@ -37,11 +37,16 @@
 	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
 
 	alwaysshowtimer="true"
+	
+	powerpercharge="1"
 >
 
 	<constant name="damage" value="195,260,325" adjustment="ability" />
     <constant name="cooldown_reset" value="3" adjustment="none" noshowintooltip="true" />
-    <!-- tooltip only -->
+	<!-- tooltip only -->
+	<constant name="power" value="1,1,1" adjustment="none" op="add" noshowintooltip="true" />
+	<constant name="percent_mult" value="0.007,0.009,0.011" adjustment="none" noshowintooltip="true" />
+ 
     <constant name="manacost" value="100,110,120" adjustment="none" noshowintooltip="true" />
 
 
@@ -49,6 +54,11 @@
 		<spawnprojectile name="Projectile_Nikolai_Ability4_Leap" source="source_entity" target="target_position" bind="source_entity" bindstate="State_Bound" proxy="this_entity" pushentity="true" />
 		<spawnprojectile name="Projectile_Nikolai_Ability4_Cliff" source="source_entity" target="target_position" proxy="stack_entity" offset="0 75 0"/>
 	</onimpact>
+	
+	<onframe>
+        <getconstant name="power" nameb="percent_mult" op="mult" />
+        <setcharges a="result" b="source_maxhealth" op="mult" />
+    </onframe>
 	
 
 </ability>

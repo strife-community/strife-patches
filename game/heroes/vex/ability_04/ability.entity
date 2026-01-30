@@ -30,6 +30,8 @@
 	hoverareacastrange="1"
 >
 	<constant name="damage" value="150,200,250" adjustment="ability" />
+	<constant name="magicheal" value="30,35,40" adjustment="none" qualityvalue="2" qualityadjustment="common" op="add" noshowintooltip="true"/>
+	<aura state="State_Vex_Ability4_Heal" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
 	<onchannelend>
 		<unbind target="source_entity" />
 		<teleport source="source_entity"  interpolate="false" target="target_position" />

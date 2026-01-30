@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Indestructible"
+
+	icon="icon.tga"
+	
+	cost="1400"
+	components="Item_Heart Item_Healthstone Item_Sustainer"
+	
+	botitem="MaskItem"
+	actiontype="passive"
+	maxhealthmultiplier=".2"
+	cooldowntime="180000"
+	nocooldownreduction="true"
+	
+
+	filters="defense,health,health_regen"
+
+	empoweredeffects="Item_Indestructible_Empower_1,Item_Indestructible_Empower_3"
+	
+	
+	showinpractice="true"
+>
+	<constant name="hp" value="20" adjustment="none" qualityvalue="45" qualityadjustment="common" op="add"/>
+	<constant name="percent_hp" value="50" adjustment="none" qualityvalue="0.50" qualityadjustment="common" op="add"/>
+
+
+
+	<ondeath>
+		<isready>
+			<haseffecttype name="ZakuUlt" >
+			</haseffecttype>
+			<else>
+			<applystate name="State_Indestructible" target="source_entity" duration="1500" />
+			<spawnunit name="Gadget_Indestructible" fixedposition="true" count="1" target="source_position" pushentity="true" duration="3000"/>
+			<startcooldown />
+			<setactivemodifierkey name="" />
+			<protecteddeath target="source_entity" />
+			<setrespawntime target="source_entity" a="1500" />
+			<setrespawnposition target="source_entity" position="source_position" />
+			<getconstant name="percent_hp" />
+			<setvar0 a="result" b="100" op="div" />
+			<setrespawnhealthmultiplier target="source_entity" value="var0" />
+			<setrespawnmanamultiplier target="source_entity" value="var0" />
+			</else>
+		</isready>
+	</ondeath>
+	
+	<modifier key="Item_Indestructible_Ready" modpriority="100" passiveeffect=""
+	>
+		<onframe>
+			<isready />
+			<else>
+				<setactivemodifierkey name="" />
+			</else>	
+		</onframe>
+	</modifier>
+	
+	
+</crafteditem>

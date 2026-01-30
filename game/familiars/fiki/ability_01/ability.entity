@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Fiki_Passive"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	actiontype="passive"
+	propagatetoillusion="true"
+	
+	
+>
+	<constant name="block" value="35" adjustment="none" op="add"/>
+	
+	<constant name="boss_enchant" value="15" adjustment="none"/>
+	<constant name="gold" value="10" adjustment="none"/>
+	
+   
+
+	<onattackedpredamage> 
+			<targettype type="Tower"/>
+			<else>
+				<targettype type="player_controlled"/>
+				<else>
+					<combateffecttype effecttype="Attack">
+						<getconstant name="block" />
+						<setvalue name="combat_deflection" a="combat_deflection" b="result" op="add" />
+					</combateffecttype>
+				</else>
+			</else>
+	</onattackedpredamage>
+	
+	<onattackdamageevent>
+		<targettype type="boss">
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.15" op="mult" />
+		</targettype>
+	</onattackdamageevent>
+	
+	
+	
+  <onkill>
+    <targettype type="neutral">
+      <getconstant name="gold"/>
+      <givegold amount="result" source="source_entity" target="source_entity"/>
+    </targettype>
+  </onkill>
+
+	
+</ability>

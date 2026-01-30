@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Item2I"
+	
+	
+	
+	icon=""
+	portrait=""
+	model="effects/statue/model.mdf"
+	passiveeffect="effects/debris.effect"
+	
+	preglobalscale=".5"
+	modelscale="1"
+	effectscale="1"
+	boundsheight="0"
+	radiusheight="0"
+	boundsradius="0"
+	isselectable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canturn="turn"
+	canrotate="turn"
+	ismobile="turn"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="0"
+	sightrangenight="0"
+
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	hidealtinfo="true"
+	drawonmap="false"
+	unitwalking="true"
+	
+	lifetime="3000"
+>
+</gadget>

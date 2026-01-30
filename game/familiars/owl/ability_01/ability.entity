@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Owl_Passive"
+
+	icon="icon.tga"
+	
+	actiontype="passive"
+	reducedcooldowns=".15"
+	
+    supportmultiplier="0.15"
+	supportmultiplierperquality="0.015"
+	propagatetoillusion="true"
+	maxmanamultiplier=".10"
+>
+	<constant name="passive" value="15" adjustment="none" />
+	<constant name="supportmultiplier" value="15" adjustment="none" />
+	<constant name="maxmanamultiplier" value="10" adjustment="none" />
+	
+
+	
+</ability>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="Ability_Ganker_Passive_OOCBoost_3"
+
+	icon="icon.tga"
+	ishidden="true"
+	
+>
+
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+			<setactivemodifierkey name="ooc_speed_boost" />
+		</hasmodifier>
+	</onframe>
+	
+	
+	<modifier key="ooc_speed_boost" modpriority="100" movespeedmultiplier="0.1" passiveeffect="effects/state.effect">
+		<onframe>
+			<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onframe>
+	 </modifier>
+
+	
+</state>
