@@ -31,7 +31,6 @@
 
 	<onimpact>
 		<applystate name="State_Flak_Ability1" target="source_entity" duration="-1" />
-		<starttimer duration="-1" />
 		<setactivemodifierkey name="active" />
 		
 		
@@ -46,7 +45,6 @@
 		
 		<onimpact>
 			<expirestate name="State_Flak_Ability1" target="source_entity" />
-			<starttimer duration="0" />
 			<setactivemodifierkey name="" />
 			<delete target="this_proxy_entity" />
 		</onimpact>
@@ -54,6 +52,8 @@
 		<onframe>
 			<compare a="source_mana" b="5" op="le">
 				<setactivemodifierkey entity="this_entity" name="" /> 
+				<expirestate name="State_Flak_Ability1" target="source_entity" />
+				<delete target="this_proxy_entity" />
 			</compare>
 			<setvar0 a="8,10,12,14" b="frametime" op="mult" />
 			<takemana target="source_entity" amount="1" b="var0" op="mult" />
