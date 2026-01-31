@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Stack" 
+
+	icon="icon.tga"
+	ishidden="true"
+	
+	maxcharges="5"
+	
+	powerpercharge="4.0"
+	reducedcooldownspercharge=".03"
+>
+
+    <onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<addcharges count="1" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
+	
+	
+</state>

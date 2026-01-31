@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Graveyard_Buff"
+
+	icon="icon.tga"
+	ishidden="false"
+	
+	healthproportionregen="0.003"
+	manaproportionregen="0.005"
+>
+
+		
+
+	
+</state>

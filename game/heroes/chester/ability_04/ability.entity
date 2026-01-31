@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Chester4"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	anim="ability_4"
+	casttime="300"
+	castactiontime="300"
+	
+	maxlevel="3"
+	requiredlevel="6,11,15"
+
+	actiontype="target_entity"
+	targetscheme="ally_heroes"
+	manacost="100,125,150"
+	cooldowntime="75000,70000,65000"
+	casteffecttype=""
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="900"
+	range="900"
+	
+	doubleactivate="true"
+	doubleactivatenoninterrupting="true"
+
+>
+	<constant name="damage" value="90,120,150" adjustment="ability" />
+	
+	<onimpact>
+		<applystate name="State_Chester_Ability4_Data" duration="8000" target="source_entity" />
+		<applystate name="State_Chester_Ability4" duration="8000" proxy="source_entity" />
+		<setproxy entity="this_entity" target="target_entity" />
+		<playeffect effect="effects/sound.effect" source="target_entity" target="" occlude="true" />
+	</onimpact>
+	
+	<ondeath>
+		<expirestate name="State_Chester_Ability4" target="source_entity" />
+		<expirestate name="State_Chester_Ability4_Data" target="source_entity" />
+	</ondeath>
+
+	
+</ability>

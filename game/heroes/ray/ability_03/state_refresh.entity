@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Refresh"
+
+	icon="icon.tga"
+	
+	
+	
+	effecttype="Buff"
+	reducedcooldowns="10000"
+	
+	
+	deathpersist="true"
+
+> 
+      
+	 <constant name="refresh_enchant" value="100" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	 
+     <oninflict>
+	   <pushability entity="source_entity" slot="0"/>
+		<getconstant name="refresh_enchant" adjustmentsource="none" />
+		<setvar0 a="result" b="100" op="div"/>
+		<reducecooldown duration="0" entity="stack_entity" />
+		<setvar1 a="result" b="var0" op="mult"/>
+		<setvar2 a="result" b="1000" op="mult"/>
+		<reducecooldown duration="var2" entity="stack_entity" />
+		
+		<pushability entity="source_entity" slot="1"/>
+		<getconstant name="refresh_enchant" adjustmentsource="none" />
+		<setvar0 a="result" b="100" op="div"/>
+		<reducecooldown duration="0" entity="stack_entity" />
+		<setvar1 a="result" b="var0" op="mult"/>
+		<setvar2 a="result" b="1000" op="mult"/>
+		<reducecooldown duration="var2" entity="stack_entity" />
+					
+		<pushability entity="source_entity" slot="2"/>
+		<getconstant name="refresh_enchant" adjustmentsource="none" />
+		<setvar0 a="result" b="100" op="div"/>
+		<reducecooldown duration="0" entity="stack_entity" />
+		<setvar1 a="result" b="var0" op="mult"/>
+		<setvar2 a="result" b="1000" op="mult"/>
+		<reducecooldown duration="var2" entity="stack_entity" />
+					
+		<pushability entity="source_entity" slot="3"/>
+		<getconstant name="refresh_enchant" adjustmentsource="none" />
+		<setvar0 a="result" b="100" op="div"/>
+		<reducecooldown duration="0" entity="stack_entity" />
+		<setvar1 a="result" b="var0" op="mult"/>
+		<setvar2 a="result" b="1000" op="mult"/>
+		<reducecooldown duration="var2" entity="stack_entity" />
+	</oninflict>
+</state>

@@ -7,6 +7,6 @@
 
 >
 	<!-- Tooltip only -->
-	<constant name="damage_enchant" value="6" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="damage_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 </qualityitem>

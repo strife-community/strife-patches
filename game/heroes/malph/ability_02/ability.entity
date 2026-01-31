@@ -31,7 +31,7 @@
     <!-- Health healed by the ability -->
     <constant name="heal" value="100,135,170,205" adjustment="power_support" />
     <!-- TOOLTIP ONLY! Resistance given by ability. Real value is in "resistance" attribute of "State_Malph_Ability2"! -->
-    <constant name="resistance" value="15,20,25,30" adjustment="none" />
+    <constant name="resistance" value="5,10,15,20" adjustment="none" />
     <!-- Effect duration, seconds -->
     <constant name="duration" value="6" adjustment="none" noshowintooltip="true" />
 

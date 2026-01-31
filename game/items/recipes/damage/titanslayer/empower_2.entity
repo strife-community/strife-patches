@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Titanslayer_Empower_2"
+	
+	cost="1400"
+
+	attackrange="30"
+>
+	<!-- Tooltip only -->
+	<constant name="range_enchant" value="30" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

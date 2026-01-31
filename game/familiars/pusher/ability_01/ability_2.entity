@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pusher_Passive_2"
+
+	icon="icon.tga"
+	
+	
+	maxlevel="15"
+	
+
+	actiontype="passive"
+	
+	manacost="0"
+
+	resistance="20"
+	propagatetoillusion="true"
+	
+>
+
+	<constant name="passive" value="20" adjustment="none" />
+	<constant name="damge_increase" value="20" adjustment="none"/>
+	<constant name="aura_boost_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<aura state="Plander_Aura" radius="800" targetscheme="ally_creeps" effecttype="Buff" />
+	
+		
+  <ondamage>
+	<targettype type="building">
+		<getconstant name="damge_increase" entity="this_entity" />
+		<setvar0 a="result" b="100" op="div"/>
+		<setvar0 a="var0" b="1" op="add"/>
+		<scaledamage scale="var0"/>
+	</targettype>
+  </ondamage>
+
+	
+</ability>

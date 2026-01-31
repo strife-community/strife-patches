@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hero
-	name="Hero_Pal"
-	
-	showinpractice="true"
+    name="Hero_Pal"
+    
+    showinpractice="true"
 
-	team="final"
-	icon="icon.tga"
-	portrait="icon.tga"
-	model="model.mdf"
-	skin=""
-	mapicon="icon_circle.tga"
-	cutouticon="icon_full.tga"
-	
-	infoheight="240"
-	
-	
-	passiveeffect=""
-	
-	respawneffect="/shared/effects/respawn.effect"
-	selectedsound=""
-	selectedflavorsound=""
+    team="final"
+    icon="icon.tga"
+    portrait="icon.tga"
+    model="model.mdf"
+    skin=""
+    mapicon="icon_circle.tga"
+    cutouticon="icon_full.tga"
+    
+    infoheight="240"
+    
+    
+    passiveeffect=""
+    
+    respawneffect="/shared/effects/respawn.effect"
+    selectedsound=""
+    selectedflavorsound=""
 
-	heroselectannouncement="sounds/voice/vo_selecthero_1.wav"
-	heroselectflavorannouncement="sounds/voice/vo_selecthero_2.wav"
-	confirmmovesound="sounds/voice/vo_move_%.wav"
-	confirmattacksound="sounds/voice/vo_attack_%.wav"
-	nomanasound="sounds/voice/vo_oom_%.wav"
-	cooldownsound="sounds/voice/vo_cooldown_%.wav"
-	streaksound="sounds/voice/vo_ck_2.wav,sounds/voice/vo_ck_3.wav,sounds/voice/vo_ck_4.wav,sounds/voice/vo_ck_5.wav"
-	
-	creepkillannouncement="sounds/voice/vo_lasthit_1.wav,sounds/voice/vo_lasthit_2.wav,sounds/voice/vo_lasthit_3.wav"
-	herokillfrequentannouncement="sounds/voice/vo_herokill_%.wav"
-	herokillinfrequentannouncement="sounds/voice/vo_sporadickill_%.wav"
-	herolevelultannouncement="sounds/voice/vo_levelup_1.wav,sounds/voice/vo_levelup_2.wav,sounds/voice/vo_levelup_3.wav"
-	creepdamageannouncement="sounds/voice/vo_creepdamage_%.wav"
-	toweraggroannouncement="sounds/voice/vo_towerdamage_%.wav"
-	deathannouncement=""
-	respawnannouncement="sounds/voice/vo_spawn_%.wav"
-	itemacquireannouncement=""
-	itempurchaseannouncement="sounds/voice/vo_itempurchase_%.wav"
-	lowhealthannouncement="sounds/voice/vo_lowhealth_%.wav"
-	abilityflavorannouncement="sounds/voice/vo_ability_1.wav,sounds/voice/vo_ability_2.wav,sounds/voice/vo_ability_3.wav,sounds/voice/vo_ability_4.wav"
+    heroselectannouncement="sounds/voice/vo_selecthero_1.wav"
+    heroselectflavorannouncement="sounds/voice/vo_selecthero_2.wav"
+    confirmmovesound="sounds/voice/vo_move_%.wav"
+    confirmattacksound="sounds/voice/vo_attack_%.wav"
+    nomanasound="sounds/voice/vo_oom_%.wav"
+    cooldownsound="sounds/voice/vo_cooldown_%.wav"
+    streaksound="sounds/voice/vo_ck_2.wav,sounds/voice/vo_ck_3.wav,sounds/voice/vo_ck_4.wav,sounds/voice/vo_ck_5.wav"
+    
+    creepkillannouncement="sounds/voice/vo_lasthit_1.wav,sounds/voice/vo_lasthit_2.wav,sounds/voice/vo_lasthit_3.wav"
+    herokillfrequentannouncement="sounds/voice/vo_herokill_%.wav"
+    herokillinfrequentannouncement="sounds/voice/vo_sporadickill_%.wav"
+    herolevelultannouncement="sounds/voice/vo_levelup_1.wav,sounds/voice/vo_levelup_2.wav,sounds/voice/vo_levelup_3.wav"
+    creepdamageannouncement="sounds/voice/vo_creepdamage_%.wav"
+    toweraggroannouncement="sounds/voice/vo_towerdamage_%.wav"
+    deathannouncement=""
+    respawnannouncement="sounds/voice/vo_spawn_%.wav"
+    itemacquireannouncement=""
+    itempurchaseannouncement="sounds/voice/vo_itempurchase_%.wav"
+    lowhealthannouncement="sounds/voice/vo_lowhealth_%.wav"
+    abilityflavorannouncement="sounds/voice/vo_ability_1.wav,sounds/voice/vo_ability_2.wav,sounds/voice/vo_ability_3.wav,sounds/voice/vo_ability_4.wav"
     
     assistannouncement="sounds/voice/vo_ping_assist.wav"
     attackannouncement="sounds/voice/vo_ping_attack.wav"
@@ -79,124 +79,127 @@
     abilitycooldownannouncement="sounds/voice/vo_cooldown_%.wav"
     abilitynomanaannouncement="sounds/voice/vo_oom_%.wav"
     abilitycooldownnomanaannouncement="sounds/voice/vo_oom_%.wav"
-	
-	
-	preglobalscale=".5"
-	modelscale="1.225"
-	effectscale="1.1"
-	boundsheight="112"
-	boundsradius="24"
-	selectionradius="48"
-	targetoffset="0 0 54"
-	searchradius="105"
-	minsearchradius="65"
-	searchheight="125"
+    
+    
+    preglobalscale=".5"
+    modelscale="1.225"
+    effectscale="1.1"
+    boundsheight="112"
+    boundsradius="24"
+    selectionradius="48"
+    targetoffset="0 0 54"
+    searchradius="105"
+    minsearchradius="65"
+    searchheight="125"
 
-	revealrange="700"
-	revealtype="hero"
+    revealrange="700"
+    revealtype="hero"
 
-	category="cc tank"
-	difficulty="3"
-	movespeed="350"
-	turnrate="900"
-	turnsmoothing="0.01"
-	
-	maxhealth="765,837,908,981,1053,1125,1197,1270,1341,1414,1486,1557,1630,1701,1774"
-	maxhealthperlevel="0"
-	healthregen="3.08,3.3,3.52,3.74,3.96,4.18,4.4,4.62,4.84,5.06,5.28,5.5,5.72,5.94,6.16"
-	healthproportionregen="0"
-	
-	unitcriticalmultiplier="1.0"
-	
-	maxmana="380"
-	maxmanaperlevel="15"
-	manaregen="1.89,1.92,1.96,2.00,2.04,2.08,2.12,2.16,2.20,2.24,2.27,2.31,2.35,2.39,2.43"
-	manaproportionregen="0.0"
+    category="cc tank"
+    difficulty="3"
+    movespeed="310"
+    turnrate="900"
+    turnsmoothing="0.01"
+    
+    maxhealth="1100"
+    maxhealthperlevel="125"
+    healthregen="3.0,3.35,3.70,4.05,4.40,4.75,5.10,5.45,5.80,6.15,6.40,6.75,7.10,7.45,8.0"
+    healthproportionregen="0.001"
+    
+    unitcriticalmultiplier="1.0"
+    
+    maxmana="400"
+    maxmanaperlevel="35.71"
+    manaregen="2.0,2.20,2.40,2.60,2.80,3.0,3.20,3.40,3.60,3.80,4.0,4.20,4.40,4.60,5.0"
+    manaproportionregen="0"
 
-	resistance="10"
+    resistance="35"
+	resistanceperlevel="1"
+    mitigation="10"
+	mitigationperlevel="1"
 
-	inventory0="Ability_Pal1"
-	inventory1="Ability_Pal2"
-	inventory2="Ability_Pal3"
-	inventory3="Ability_Pal4"
-	inventory4=""
-	inventory5=""
-	inventory6=""
-	inventory7=""
-	inventory8="Ability_HomecomingStone_Home"
-	inventory9=""
-	inventory10="Ability_WardSwitch"
-	inventory11="Ability_AutomatedCourier"
+    inventory0="Ability_Pal1"
+    inventory1="Ability_Pal2"
+    inventory2="Ability_Pal3"
+    inventory3="Ability_Pal4"
+    inventory4=""
+    inventory5=""
+    inventory6=""
+    inventory7=""
+    inventory8="Ability_HomecomingStone_Home"
+    inventory9=""
+    inventory10="Ability_WardSwitch"
+    inventory11="Ability_AutomatedCourier"
 
 
-	power="100"
-	attackduration="400"
-	attackactiontime="350"
-	attackcooldown="1100"
-	attackdamagemin="63,65.93,68.86,71.79,74.71,77.64,80.57,83.5,86.43,89.36,92.29,95.21,98.14,101.07,104"
-	attackdamageminperlevel="0"
-	attackdamagemax="63,65.93,68.86,71.79,74.71,77.64,80.57,83.5,86.43,89.36,92.29,95.21,98.14,101.07,104"
-	attackdamagemaxperlevel="0"
-	attacknumanims="3"
-	attackoffset="0 30 100"
-	attackprojectile=""
-	attackrange="180"
-	attackstarteffect=""
-	attackactioneffect=""
-	attackimpacteffect="effects/impact.effect"
-	critimpacteffect="/shared/effects/crit_impact.effect"
-	attacktype="melee"
-	attackdamagetype="AttackDamage"
-	combattype="Hero"
+    power="90"
+    attackduration="800"
+    attackactiontime="450"
+    attackcooldown="1100"
+    attackdamagemin="64"
+    attackdamageminperlevel="2.92"
+    attackdamagemax="64"
+    attackdamagemaxperlevel="2.92"
+    attacknumanims="3"
+    attackoffset="0 30 100"
+    attackprojectile=""
+    attackrange="130"
+    attackstarteffect=""
+    attackactioneffect=""
+    attackimpacteffect="effects/impact.effect"
+    critimpacteffect="/shared/effects/crit_impact.effect"
+    attacktype="melee"
+    attackdamagetype="AttackDamage"
+    combattype="Hero"
 
-	aggrorange="600"
-	sightrangeday="1500"
-	sightrangenight="1500"
-	wanderrange="250"
+    aggrorange="600"
+    sightrangeday="1500"
+    sightrangenight="1500"
+    wanderrange="250"
 
-	primaryattribute="Agility"
-	strength="0"
-	strengthperlevel="0"
-	agility="0"
-	agilityperlevel="0"
-	intelligence="0"
-	intelligenceperlevel="0"
-	
-	previewpassiveeffect="effects/preview.effect"
-	previewmodel="preview.mdf"
-	previewpos="30 0 -120"
-	previewangles="45 0 0"
-	previewscale="0.5"
-	
-	storemodel="preview.mdf"
-	storepos="0 0 -100"
-	storeangles="33 0 0"
-	storescale="1.3"
-	
-	rolesurvival="3"
-	rolecrowdcontrol="4"
-	rolephysicaldamage="0"
-	rolemagicdamage="3"
-	roleutility="0"
-	
-	occlusionstealthtype="occlusion"
-	occlusionfadeineffect="/shared/effects/fade_in.effect"
-	occlusionfadeouteffect="/shared/effects/fade_out.effect"
+    primaryattribute="Agility"
+    strength="0"
+    strengthperlevel="0"
+    agility="0"
+    agilityperlevel="0"
+    intelligence="0"
+    intelligenceperlevel="0"
+    
+    previewpassiveeffect="effects/preview.effect"
+    previewmodel="preview.mdf"
+    previewpos="30 0 -120"
+    previewangles="45 0 0"
+    previewscale="0.5"
+    
+    storemodel="preview.mdf"
+    storepos="0 0 -100"
+    storeangles="33 0 0"
+    storescale="1.3"
+    
+    rolesurvival="3"
+    rolecrowdcontrol="4"
+    rolephysicaldamage="0"
+    rolemagicdamage="3"
+    roleutility="0"
+    
+    occlusionstealthtype="occlusion"
+    occlusionfadeineffect="/shared/effects/fade_in.effect"
+    occlusionfadeouteffect="/shared/effects/fade_out.effect"
 
-	defaultfamiliar="Familiar_Bounder"
-	itembuild="Pal"
-	levelbuild="1,2,3,3,3,4,3,1,1,1,4,2,2,2,4"
-	
-	
-	corpsetime="1000"
-	corpsefadetime="3000"
-	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+    defaultfamiliar="Familiar_Bounder"
+    itembuild="Pal"
+    levelbuild="1,2,3,3,3,4,3,1,1,1,4,2,2,2,4"
+    
+    
+    corpsetime="1000"
+    corpsefadetime="3000"
+    corpsefadeeffect="/shared/effects/corpse_sink.effect"
 >
-	<modifier key="counterstrife" modpriority="1" healthregen="0" manaregen="0" inventory8="" inventory9="Ability_SpawnInvulnerability" inventory10="" inventory11="" dropitemsondeath="true" movespeed="550" sightrangeday="1000" sightrangenight="1000" />
-	<modifier key="shop_access_dead" condition="!alive" modpriority="100" exclusive="true" shopaccess="Shop_Utility Shop_Basic Shop_bots Shop_Consumables Shop_MagicDefense Shop_PhysicalDefense Shop_Vitalboosters Shop_Artifacts Shop_Offense Shop_Crafted" stashaccess="true" />
-	<modifier key="no_aggro" modpriority="100" defaultbehavior="hold" /> 
-	
-	<modifier key="pal_roll" modpriority="100" model="ability_02/effects/ball_form/model.mdf" passiveeffect="ability_02/effects/trail.effect" infoheight="200" attackrange="50" />
-	<modifier key="Melee_Slow_resistence" condition="melee" modpriority="100" slowresistance="0.0" />
-	
+    <modifier key="counterstrife" modpriority="1" healthregen="0" manaregen="0" inventory8="" inventory9="Ability_SpawnInvulnerability" inventory10="" inventory11="" dropitemsondeath="true" movespeed="550" sightrangeday="1000" sightrangenight="1000" />
+    <modifier key="shop_access_dead" condition="!alive" modpriority="100" exclusive="true" shopaccess="Shop_Utility Shop_Basic Shop_bots Shop_Consumables Shop_MagicDefense Shop_PhysicalDefense Shop_Vitalboosters Shop_Artifacts Shop_Offense Shop_Crafted" stashaccess="true" />
+    <modifier key="no_aggro" modpriority="100" defaultbehavior="hold" /> 
+    
+    <modifier key="pal_roll" modpriority="100" model="ability_02/effects/ball_form/model.mdf" passiveeffect="ability_02/effects/trail.effect" infoheight="200" attackrange="50" />
+    <modifier key="Melee_Slow_resistence" condition="melee" modpriority="100" slowresistance="0.0" />
+    
 </hero>

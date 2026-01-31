@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cindara_Buff"
+
+	icon="icon.tga"
+	ishidden="false"
+	deathpersist="true"
+	
+	actiontype="passive"
+	movespeedmultiplierpercharge="0.05"
+	powermultiplierpercharge="0.07"
+	reducedcooldownspercharge=".08"
+	
+	maxcharges="999"
+	
+	propagatetoillusion="true"
+	
+	 
+>
+   
+    <oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+    </onrefresh>
+	
+	<onframe />
+		
+
+	
+</state>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Titanslayer_Empower_3"
+	
+	cost="1400"
+	
+>
+	<constant name="healthdamage_bonus" value="0.5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	
+	<onframe>
+		<compare a="source_health_percent" b="0.75" op="gt">
+			<setactivemodifierkey entity="this_entity" name="titanslayer_empower_3" />
+		</compare>
+		<else>
+			<setactivemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+	
+
+
+</qualityitem>

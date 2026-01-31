@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mines_Buff" 
+
+	icon="icon.tga"
+	ishidden="false"
+	
+	actiontype="passive"
+
+	movespeedmultiplier="0.08"
+	baseattackspeed="0.15"
+	
+>
+
+	
+
+	
+</state>

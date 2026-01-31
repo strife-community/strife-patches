@@ -83,7 +83,10 @@
 	proximityscheme="neutral_aggro"
 	
 	showinpractice="true"
+	
 >
+  
+	
 	<onspawn>
 		<applystate name="State_NeutralScaling_Large" duration="-1"/>
 
@@ -107,6 +110,12 @@
 			<scaledamage scale="0.85" />
 		</currentdamageeffecttype>
 	</ondamaged>
+	
+	<onkilled>   
+    <targettype target="target_entity" type="hero">
+        <applystate name="State_Swamp_Buff" target="target_entity" duration="60000"/>
+    </targettype>
+  </onkilled>
 
 	<modifier key="variation1" modpriority="100" modelscale="1.2" attackactiontime="425" model="variation_1/model.mdf"/>
 

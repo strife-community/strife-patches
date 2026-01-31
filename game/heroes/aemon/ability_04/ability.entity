@@ -5,7 +5,7 @@
     icon="icon.tga"
 
     maxlevel="3"
-    requiredlevel="6,11,15"
+    requiredlevel="1,11,15"
     casteffect="effects/aoe.effect"
     anim="ability_4"
 
@@ -22,10 +22,15 @@
 
     targetradius="350"
     targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	
+	stunneddurationmultiplier="-0.14,-0.18,-0.22"
+	slowresistance="0.14,0.18,0.22"
 
     maxcharges="3"
 
 >
+    <constant name="passive" value="14,18,22" adjustment="none" />
+	
     <!-- Damage dealt in AoE on activation -->
     <constant name="damage" value="100,125,150" adjustment="ability" />
     <!-- Damage returned to attacker -->

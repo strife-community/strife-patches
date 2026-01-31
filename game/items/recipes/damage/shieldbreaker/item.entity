@@ -7,8 +7,11 @@
     cost="1150"
     components="Item_Staff Item_Healthstone Item_Healthstone"
 
-    basedamage="6"
+    basedamage="5"
     basedamageperquality="0.5"
+	
+	criticalchance="0.05"
+    criticalmultiplier="2.0"
 
     actiontype="passive"
     filters="attack,attack_mod,attack_damage"
@@ -17,13 +20,13 @@
     
     showinpractice="true"
 >
-    <constant name="attack_damage" value="6" adjustment="item" qualityvalue="0.5" qualityadjustment="common" op="add"/>
-    <constant name="resistance" value="50" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
+    <constant name="attack_damage" value="5" adjustment="item" qualityvalue="0.5" qualityadjustment="common" op="add"/>
+    <constant name="resistance" value="30" adjustment="none" qualityvalue="4" qualityadjustment="common" op="add"/>
     <onattackimpact />
 
     <onattackingdamageevent>
         <cantarget targetscheme="enemy_units">
-            <getconstant name="resistance" />
+            <getconstant name="mitigation" />
             <setvar0 a="result" b="100" op="div" />
             <setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
         </cantarget>

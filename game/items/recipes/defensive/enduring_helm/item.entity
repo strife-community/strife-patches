@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_EnduringHelm"
+	
+	statuseffecttooltip=""
+	statuseffectheader=""
+	icon="icon.tga"
+	
+	cost="320"
+	components="Item_Healthstone"
+	
+	
+	powerpercharge="1"
+	maxhealth="120"
+	
+	actiontype="passive"
+	
+	
+
+	filters="defense,health"
+	empoweredeffects="Item_EnduringHelm_Empower_1,Item_EnduringHelm_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="hp" value="120" adjustment="none" qualityvalue="12" qualityadjustment="common" op="add"/>
+	
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	
+	<constant name="power" value=".70" adjustment="none" op="add"/>
+	 <constant name="percent_mult" value="0.01" adjustment="none" />
+	
+	<onframe>
+        <getconstant name="power" nameb="percent_mult" op="mult" />
+        <setcharges a="result" b="source_maxhealth" op="mult" />
+    </onframe>
+	 
+	
+	
+	
+
+</crafteditem>
+ 

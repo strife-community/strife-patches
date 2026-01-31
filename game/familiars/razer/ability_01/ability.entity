@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Razer_Passive_1"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	
+
+	actiontype="passive"
+	
+	resistance="4.5,5.25,6,6.75,7.5,8.25,9,9.75,10.5,11.25,12,12.75,13.5,14.25,15"
+	propagatetoillusion="true"
+	
+>
+
+	<constant name="passive" value="4.5,5.25,6,6.75,7.5,8.25,9,9.75,10.5,11.25,12,12.75,13.5,14.25,15" adjustment="none" />
+
+</ability>

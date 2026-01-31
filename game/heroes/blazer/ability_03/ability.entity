@@ -9,16 +9,16 @@
 	
 	maxcharges="30"
 	
-	basedamage="3,6,9,12"
+	basedamage="6,9,12,15"
 
 	actiontype="passive"
 >
 
 	<!-- tool tip only -->
-	<constant name="attack_bonus" value="3,6,9,12" adjustment="ability" />
+	<constant name="attack_bonus" value="6,9,12,15" adjustment="ability" />
 	<!-- end tool tip only -->
 	
-	<constant name="damage_increase" value="45,60,75,90" adjustment="none" />
+	<constant name="damage_increase" value="70,80,90,100" adjustment="none" />
 
 	<onattackstart>
 		<setaccumulator value="0" />

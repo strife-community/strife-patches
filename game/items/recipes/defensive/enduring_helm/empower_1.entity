@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_EnduringHelm_Empower_1"
+	cost="440"
+	maxhealthmultiplier=".07"
+	
+>
+	
+</qualityitem>

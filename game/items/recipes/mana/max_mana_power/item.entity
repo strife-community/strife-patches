@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_MaxManaPower"
+	
+	statuseffecttooltip=""
+	
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_Diamond Item_Brain"
+	maxcharges="255"
+	
+	actiontype="Passive"
+	filters="power,ability,mana"
+	
+
+	powerpercharge="1"
+	powerperchargeperquality="0.1"
+	maxmanamultiplier=".10"
+	reducedcooldowns=".10"
+
+	empoweredeffects="Item_MaxManaPower_Empower_1,Item_MaxManaPower_Empower_2,Item_MaxManaPower_Empower_3"
+	
+	showinpractice="true"
+>
+	<constant name="hp" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+
+	<!-- tool tip only -->
+	<constant name="power" value="3.0" adjustment="none" qualityvalue="0.3" qualityadjustment="common" op="add"/>
+	<constant name="reducedcooldowns" value="10" adjustment="none" qualityvalue="0.10" qualityadjustment="common" op="add"/>
+	<constant name="maxmanamultiplier" value="10" adjustment="none" qualityvalue="0.10" qualityadjustment="common" op="add"/>
+	<onframe>
+		<setcharges a="0.03" b="source_maxmana" op="mult" />
+	</onframe>
+	
+</crafteditem>

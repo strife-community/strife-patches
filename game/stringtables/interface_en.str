@@ -5976,11 +5976,11 @@ stattip_movementSpeed_desc			This is how quickly the hero moves in relation to o
 stattip_magicArmor					Magic Armor
 stattip_magicArmor_desc				Higher magic armor values reduce the amount of damage that a hero takes from certain spells and abilities.
 
-stattip_mitigation					Mitigation
-stattip_mitigation_desc				Mitigation reduces incoming damage by a flat amount, making it most effective against fast attackers.
+stattip_mitigation					Armor
+stattip_mitigation_desc				Higher armor values reduce the amount of attack damage that a hero will take.
 
-stattip_resistance					Resistance
-stattip_resistance_desc				Resistance reduces all damage taken, and lowers the effectiveness of Crowd Control on the hero.
+stattip_resistance					Magic Armor
+stattip_resistance_desc				Higher magic armor values reduce the amount of damage that a hero takes from certain spells and abilities.
 
 stattip_GPM							GPM
 stattip_GPM_desc					This value is the average GPM (Gold Per Minute) of a hero.
@@ -7607,8 +7607,8 @@ game_tooltip_dps								Attack DPS:
 game_tooltip_as									Attack Speed:
 game_tooltip_armor								Armor:
 game_tooltip_magicarmor							Magic Armor:
-game_tooltip_mitigation							Mitigation:
-game_tooltip_resistance							Resistance:
+game_tooltip_mitigation							Armor:
+game_tooltip_resistance							Magic Armor:
 game_tooltip_movespeed							Move Speed:
 game_tooltip_killassists						Kills + Assists:
 

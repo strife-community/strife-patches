@@ -10,7 +10,9 @@
     effecttype="StatusBuff Assist"
     allowtransfer="true"
 
-    resistance="15,20,25,30"
+    mitigation="5,10,15,20"
+	resistance="5,10,15,20"
+
 
 >
 

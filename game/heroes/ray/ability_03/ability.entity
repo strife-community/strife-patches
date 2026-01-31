@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ray3"
+	
+	icon="icon.tga"
+	
+	casttime="2000"
+	castactiontime="2000"
+	channeltime="2000"
+
+
+	maxlevel="4"
+	requiredlevel="4,7,10,13"
+	maxmanamultiplier="0.07,0.09,0.11,0.13"
+
+	actiontype="target_self"
+	manacost="700,650,600,550"
+	cooldowntime="0"
+>
+ 
+   
+   <onimpact>
+		<resetcooldown/>
+		<startcooldown />
+		<playeffect effect="effects/cast.effect" />
+		<setvar0 a="result" b="1" op="mult" />
+		<applystate name="State_Refresh" duration="300" />
+	</onimpact>
+
+    
+
+	
+	
+
+</ability>

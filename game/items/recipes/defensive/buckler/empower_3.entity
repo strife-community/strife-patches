@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Buckler_Empower_3"
+	resistance="11"
+	cost="355"
+>
+	<constant name="resistance_enchant" value="3" adjustment="none" />
+
+</qualityitem>

@@ -20,7 +20,7 @@
     showinpractice="true"
 >
     <constant name="power" value="14" adjustment="none" qualityvalue="1.4" qualityadjustment="common" op="add"/>
-    <constant name="resistance" value="45" adjustment="none" qualityvalue="3.5" qualityadjustment="common" op="add"/>
+    <constant name="resistance" value="30" adjustment="none" qualityvalue="3.0" qualityadjustment="common" op="add"/>
     <constant name="regen" value="3.5" adjustment="none" qualityvalue="3.5" qualityadjustment="legendary" op="add"/>
     <onattackimpact />
 

@@ -4,7 +4,7 @@
 
     icon="icon.tga"
     maxlevel="3"
-    requiredlevel="6,11,15"
+    requiredlevel="1,11,15"
     
     casttime="800"
     castactiontime="800"
@@ -28,10 +28,13 @@
     areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
     
     showrangeandradiusintooltip="true"
+	
+	powerpercharge="1"
+	powerperchargeperquality="0.1"
 >
     <!-- This is TOOLTIP ONLY for now. Source code doesn't allow putting constants into 'maxactive' attribute. -->
     <!-- Used value is in 'Pet_Malph_Ability4' spawnunit's attribute below -->
-    <constant name="malph_max_holes" value="2,3,4" adjustment="none" />
+    <constant name="malph_max_holes" value="3,4,5" adjustment="none" />
 
     <!-- Reveal radius -->
     <constant name="hole_reveal_radius" value="300" adjustment="none" noshowintooltip="true" />
@@ -41,8 +44,14 @@
     <onimpact>
         <setpos0 position="source_entity" positionend="target_position" positionmodifier="pointonline" positionvalue="200" />
         <!--getconstant name="malph_max_holes" /-->
-        <spawnunit name="Pet_Malph_Ability4" count="1" maxactive="2,3,4" target="pos0" pushentity="true" proxy="this_entity" />
+        <spawnunit name="Pet_Malph_Ability4" count="1" maxactive="3,4,5" target="pos0" pushentity="true" proxy="this_entity" />
     </onimpact>
+	
+	<constant name="power" value="1.0,1.5,2.0" adjustment="none" qualityvalue="0.1,0.15,0.2" qualityadjustment="common" op="add" noshowintooltip="true" />
+	
+	<onframe>
+		<setcharges a="0.01,0.015,0.02" b="source_maxmana" op="mult" />
+	</onframe>
 
     <modifier key="Malph_underground" casteffect="effects/exit.effect" modpriority="100" targetradius="0" showareacast="false" range="999999" ignorecooldown="true" cooldowntime="0" casttime="0" castactiontime="0" anim="anim_exit" icon="iconb.tga" >
         

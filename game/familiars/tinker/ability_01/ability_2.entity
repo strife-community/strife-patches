@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tinker_Passive_2"
+
+	icon="icon.tga"
+	
+	maxlevel="15"
+	actiontype="passive"
+	modifierkey="TinkerPassive"
+
+	
+>
+	<!-- tool tip only -->
+	<constant name="passive" value="75" adjustment="none" />
+	<constant name="gold" value="50" adjustment="none" />
+
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+			<setactivemodifierkey name="ooc_boost" />
+		</hasmodifier>
+	</onframe>
+	
+	<onkill propagatetoillusions="false" >
+		<isready>
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>
+					<targettype type="self" />
+					<else>
+						<startcooldown />
+						<getconstant name="gold" />
+						<givegold amount="result" target="source_entity" position="this_proxy_entity" />
+						<playeffect effect="/shared/effects/lasthit/lasthit_pusher.effect" source="this_proxy_entity" target="this_proxy_entity" occlude="true" />
+					</else>
+				</else>
+			</targettype>
+		</isready>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<isready>
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>
+					<targettype type="self" />
+					<else>
+						<startcooldown />
+						<getconstant name="gold" />
+						<givegold amount="result" target="source_entity" position="this_proxy_entity" />
+						<playeffect effect="/shared/effects/lasthit/lasthit_pusher.effect" source="this_proxy_entity" target="this_proxy_entity" occlude="true" />
+					</else>
+				</else>
+			</targettype>
+		</isready>
+	</onassist>
+	
+	<modifier key="ooc_boost" modpriority="100" passiveeffect="effects/state.effect" healthregen="3.0" manaregen="1.5">
+		<onframe>
+			<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</onframe>
+	 </modifier>
+
+</ability>

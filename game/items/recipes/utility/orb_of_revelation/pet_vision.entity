@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_ObservationVision"
+
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/shared/models/invis.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	iscontrollable="false"
+	preglobalscale="1"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="0"
+	radiusheight="0"
+	boundsradius="0"
+	selectionradius="0"
+	targetoffset="0 0 0"
+	isselectabe="false"
+	
+	movespeed="0"
+	turnrate="600"
+	turnsmoothing="0.05"
+	
+	maxhealth="1"
+	healthregen="1"
+
+	drawonmap="false"
+	
+	immunity=""
+	showlifetime="true"
+	invulnerable="true"
+	canattack="false"
+	hidealtinfo="true"
+	unitwalking="true"
+	cliffwalking="true"
+	buildingwalking="true"
+	
+	aggrorange="500"
+
+	sightrangeday="1700"
+	sightrangenight="1700"
+	clearvision2="true"
+	
+	goldbountymin="0"
+	goldbountymax="0"
+	experiencebounty="0"
+	
+	tiltfactor="1.0"
+	tiltspeed="90.0"
+	flying="true"
+	flyheight="0"
+	
+	continuousmodifiers="true"
+	deniablepercent="0.1"
+	
+
+	
+	corpsetime="0"
+	deathtime="00"
+
+	stealthtype="unrevealable"
+>
+
+	<modifier key="observatory_contested" modpriority="120"
+		sightrangeday="0"
+		sightrangenight="0"
+		passiveeffect=""
+	>
+	</modifier>
+</pet>

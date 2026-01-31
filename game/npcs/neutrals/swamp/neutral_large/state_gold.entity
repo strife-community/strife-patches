@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Swamp_Buff"
+
+	icon="icon.tga"
+	ishidden="false"
+	actiontype="passive"
+	
+	resistance="10"
+    mitigation="10"
+
+	
+	propagatetoillusions="true"
+	 
+>
+   
+   
+  
+
+		
+
+	
+</state>

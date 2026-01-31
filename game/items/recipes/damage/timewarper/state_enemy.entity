@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Item2I_Enemy"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_hero.effect"
+	
+	invulnerable="true"
+	disarmed="true"
+	silenced="true"
+	immobilized="true"
+	perplexed="true"
+	frozen="true"
+
+	ishidden="true"
+	
+	effecttype="StatusDebuff CrowdControl"
+	allowtransfer="true"
+>
+	<onexpired>
+		<kill source="" target="proxy_entity" />
+	</onexpired>
+</state>
