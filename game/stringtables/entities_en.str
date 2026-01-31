@@ -3169,6 +3169,29 @@ State_Kongor_Ability2_description								Your Movement Speed and Attack Speeds h
 Neutral_Kongor_name												Kongor
 Neutral_Kongor_description										King of Apes
 
+State_Baldir_Buff_name                                          Baldir Buff
+State_Baldir_Buff_description                                   0.5% Health/0.7% Mana, as well as 5 Defense and Magic Defense per stack
+
+State_Cindara_Buff_name                                         Cindara Buff
+State_Baldir_Buff_description                                   7% Power/8% Cooldown Reduction/5% Movement Speed per stack
+
+State_Graveyard_Buff_name                                       Graveyard_Buff
+State_Graveyard_Buff_description                                0.3% Health Regeneration/0.5% Mana Regeneration
+
+State_Jungle_Buff_name                                          Jungle Buff
+State_Jungle_Buff_description                                   10% Power/8% Skill Cooldown Reduction
+
+State_Mines_Buff_name                                           Mines Buff
+State_Mines_Buff_description                                    15% Attack Speed/8% Movement Speed
+
+State_Rare_Buff_name                                            Chest Buff
+State_Rare_Buff_description                                     For a kill/assist you get +50 gold
+
+State_Swamp_Buff_name                                           Swamp Buff
+State_Swamp_Buff_description                                    10 Armor and Magic Armor
+
+
+
 // Gadget_Kongor_Wall
 Gadget_Kongor_Wall_name											Stone Wall
 
