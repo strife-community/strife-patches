@@ -18,19 +18,15 @@
 >
 
 	<constant name="passive" value="20" adjustment="none" />
-	<constant name="damge_increase" value="20" adjustment="none"/>
 	<constant name="aura_boost_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 	<aura state="Plander_Aura" radius="800" targetscheme="ally_creeps" effecttype="Buff" />
 	
 		
-  <ondamage>
-	<targettype type="building">
-		<getconstant name="damge_increase" entity="this_entity" />
-		<setvar0 a="result" b="100" op="div"/>
-		<setvar0 a="var0" b="1" op="add"/>
-		<scaledamage scale="var0"/>
-	</targettype>
-  </ondamage>
+  <onattackdamageevent>
+			<targettype type="tower">
+				<setvalue name="damage_attempted" a="damage_attempted" b="1.20" op="mult" />
+			</targettype>
+	</onattackdamageevent>
 
 	
 </ability>
