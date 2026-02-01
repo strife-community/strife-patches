@@ -7,7 +7,7 @@
 	actiontype="target_entity"
 	targetscheme="enemy_creeps"
 	manacost="0"
-	cooldowntime="120000"
+	cooldowntime="60000"
 	range="749"
 
 	showareacast="true"
@@ -22,8 +22,8 @@
 	
 >
 	<constant name="damage" value="700,722,744,766,788,810,832,854,876,898,920,942,964,986,1008" adjustment="none" />
-	<constant name="cooldown" value="120" adjustment="none" />
-	<constant name="gold" value="100" adjustment="none"/>
+	<constant name="cooldown" value="60" adjustment="none" />
+	<constant name="gold" value="50" adjustment="none"/>
 	
 	
 	
