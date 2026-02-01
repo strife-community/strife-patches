@@ -1767,7 +1767,7 @@ State_PlacingBomb_Tooltip_name									Channeling Portal
 
 // Spellblade
 Item_Spellblade_name											Mystic Dagger
-Item_Spellblade_description										+10% Colldown Reduction \n+$power$ Power\nUsing an ability that costs mana grants ^o$damage$ bonus damage^* on your next attack.
+Item_Spellblade_description										+10% Cooldown Reduction \n+$power$ Power\nUsing an ability that costs mana grants ^o$damage$ bonus damage^* on your next attack.
 Item_Spellblade_description_simple								Grants Power. Using an ability grants ^obonus damage^* on next attack.
 Item_Spellblade_bonusdescription								Increases the damage bonus by $common_increase$%.
 Item_Spellblade_legendaryname									Unstable
@@ -1981,7 +1981,7 @@ Item_HeadressOfRejuvenation_Empower_4_description				Grants $potion_bonus$% incr
 
 // MaxManaPower
 Item_MaxManaPower_name											Diadem
-Item_MaxManaPower_description									10% Colldown Reduction\n10% Max Mana Pool\nProvides Power equal to $power$% of your Mana.
+Item_MaxManaPower_description									10% Cooldown Reduction\n10% Max Mana Pool\nProvides Power equal to $power$% of your Mana.
 Item_MaxManaPower_description_simple							Grants additional Power based on Mana
 Item_MaxManaPower_bonusdescription								Increases the power gain provided by $common_increase$%.
 Item_MaxManaPower_legendaryname									Blood
@@ -1995,7 +1995,7 @@ Item_MaxManaPower_Empower_3_description							Regen $maxmana_manaregen_health_en
 
 // Giants Visage
 Item_GiantsVisage_name											Giant's Visage
-Item_GiantsVisage_description									+$resistance$ Magic Armor\n+$mitigation$ Armor\n +10% Colldown Reduction\nProvides Power equal to $power$% of your Max Health.
+Item_GiantsVisage_description									+$resistance$ Magic Armor\n+$mitigation$ Armor\n +10% Cooldown Reduction\nProvides Power equal to $power$% of your Max Health.
 Item_GiantsVisage_description_simple							Grants Resistance and Power based on Health
 Item_GiantsVisage_bonusdescription								Increases the power gain provided by $common_increase$%.
 Item_GiantsVisage_legendaryname									
@@ -2117,7 +2117,7 @@ Item_Riftshards_Empower_3_description							Grants $lifesteal_enchant$% Attack L
 
 // Assassin's shroud
 Item_AssasinsShroud_name										Shadowveil
-Item_AssasinsShroud_description								 	+10% Colldown Reduction\n+100 Max Health\n\n^091Activate: apply shrouded for $duration$ seconds.  While shrouded, gain $movespeed$ Movement Speed and enemies must be within 600 range to see you.^*
+Item_AssasinsShroud_description								 	+10% Cooldown Reduction\n+100 Max Health\n\n^091Activate: apply shrouded for $duration$ seconds.  While shrouded, gain $movespeed$ Movement Speed and enemies must be within 600 range to see you.^*
 Item_AssasinsShroud_description_simple							Grants Max Health\n^091Activate: become Shrouded and gain Movement Speed.^*
 Item_AssasinsShroud_bonusdescription							Increases the movespeed bonus by $common_increase$%.
 Item_AssasinsShroud_legendaryname								Malice
@@ -2533,7 +2533,7 @@ Item_BarrierToken_Empower_3_description							No longer gives $resistance_enchan
 
 // Item_OraclesTrinket
 Item_OraclesTrinket_name										Oracle's Trinket
-Item_OraclesTrinket_description									+150 Health\n100 Mana\n10% Colldown Reduction\n^091Activate: remove all stuns/slows/debuffs within a radius of 500 and provide 50% stun/slow reduction for $cc_state_duration_sec$ seconds. \n\nIf crowd control is successfully removed, heal for^* ^o$heal$^* ^091Health.^*
+Item_OraclesTrinket_description									+150 Health\n100 Mana\n10% Cooldown Reduction\n^091Activate: remove all stuns/slows/debuffs within a radius of 500 and provide 50% stun/slow reduction for $cc_state_duration_sec$ seconds. \n\nIf crowd control is successfully removed, heal for^* ^o$heal$^* ^091Health.^*
 Item_OraclesTrinket_description_simple							Grants Resistance\n^091Activate: Stun/Slow removal and self heal^*
 Item_OraclesTrinket_Empower_1_name								Concentration
 Item_OraclesTrinket_Empower_1_description						Successfully removing crowd-control also restores $mana_enchant$ Mana.
@@ -2573,7 +2573,7 @@ Item_Marchers_shop_categories									component,boots
 
 // Item_Sheepstick
 Item_SheepStick_name											Hexbane
-Item_SheepStick_description										^091Activate: applies Transfigured to target for 2.5 seconds.While under the influence of this curse, the character is slowed down by 25%.\nTransfigured enemies cannot attack or use abilities.^*\nEach kill/assist gives 4 Power and 3% Colldown Reduction,5 time stack
+Item_SheepStick_description										^091Activate: applies Transfigured to target for 2.5 seconds.While under the influence of this curse, the character is slowed down by 25%.\nTransfigured enemies cannot attack or use abilities.^*\nEach kill/assist gives 4 Power and 3% Cooldown Reduction,5 time stack
 Item_SheepStick_description_simple								^091Activate: Disable an enemy briefly.^*
 Item_SheepStick_effect_header									Transfigured Effects
 Item_SheepStick_shop_flavor										Few shamanic implements are as unnerving as Totems of Kuldra: living, speaking, writhing staves that impart wisdom, strength, and speed and help their masters tap into the hidden flows of Mana and thus restore their power more speedily. Despite these ample benefits, most humans are loath to wield the pagan tools.
@@ -2590,7 +2590,7 @@ Item_SheepStick_Empower_3_description							Grants a slow effect of $slow_enchan
 
 // Item_Orb_Of_Revelation
 Item_Orb_Of_Revelation_name										Seer's Eye
-Item_Orb_Of_Revelation_description								+10% Colldown Reduction\n+$health$ Health\n\n^091Activate: Target an area to reveal the area for 8 seconds.^*
+Item_Orb_Of_Revelation_description								+10% Cooldown Reduction\n+$health$ Health\n\n^091Activate: Target an area to reveal the area for 8 seconds.^*
 Item_Orb_Of_Revelation_description_simple						Grants Health and Resistance. \n^091Activate: reveal target area.^*
 Item_Orb_Of_Revelation_effect_header							Transfigured Effects
 Item_Orb_Of_Revelation_shop_flavor								Few shamanic implements are as unnerving as Totems of Kuldra: living, speaking, writhing staves that impart wisdom, strength, and speed and help their masters tap into the hidden flows of Mana and thus restore their power more speedily. Despite these ample benefits, most humans are loath to wield the pagan tools.
@@ -3173,7 +3173,7 @@ State_Baldir_Buff_name                                          Baldir Buff
 State_Baldir_Buff_description                                   0.5% Health/0.7% Mana, as well as 5 Defense and Magic Defense per stack
 
 State_Cindara_Buff_name                                         Cindara Buff
-State_Baldir_Buff_description                                   7% Power/8% Cooldown Reduction/5% Movement Speed per stack
+State_Cindara_Buff_description                                  7% Power/8% Cooldown Reduction/5% Movement Speed per stack
 
 State_Graveyard_Buff_name                                       Graveyard_Buff
 State_Graveyard_Buff_description                                0.3% Health Regeneration/0.5% Mana Regeneration

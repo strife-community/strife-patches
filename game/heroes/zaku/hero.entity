@@ -105,17 +105,19 @@
     maxhealth="1000"
     maxhealthperlevel="100"
     healthregen="2.5,2.75,3.0,3.25,3.50,3.75,4.0,4.25,4.50,4.75,5.0,5.25,5.50,5.75,6.0"
-    healthproportionregen="0"
+    healthproportionregen="0.001"
 
     unitcriticalmultiplier="1.0"
     
     maxmana="400"
     maxmanaperlevel="28.57"
     manaregen="0"
-    manaproportionregen="0.002"
+    manaproportionregen="0"
     
     resistance="30"
+	resistanceperlevel="1"
     mitigation="30"
+	mitigationperlevel="1"
 
     inventory0="Ability_Zaku1"
     inventory1="Ability_Zaku2"
@@ -132,7 +134,7 @@
 
 
     power="90"
-	powerperlevel="2"
+	powerperlevel="0"
     attackduration="500"
     attackactiontime="350"
     attackcooldown="1100"
