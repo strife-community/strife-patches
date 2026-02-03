@@ -61,7 +61,7 @@
 
     hazardradius="800"
 
-    maxhealth="7300"
+    maxhealth="9200"
     healthregen="0"
 
     resistance="300"

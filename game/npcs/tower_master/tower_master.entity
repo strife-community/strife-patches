@@ -86,8 +86,8 @@
     sightrangenight="1400"
     
     experiencebounty="1000"
-    goldbountymin="2000"
-    goldbountymax="2000"
+    goldbountymin="1500"
+    goldbountymax="1500"
     goldbountyteam="0"
     goldbountyconsolation="0"
     goldbountypercentsplit="0.2,0.4,0.6,0.8,1.0"	

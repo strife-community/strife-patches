@@ -38,7 +38,7 @@
     selectionradius="115"
     targetoffset="0 0 64"
 
-    maxhealth="4600,6600"
+    maxhealth="6000,8000"
     healthregen="0"
 
     resistance="300"

@@ -111,8 +111,8 @@
     manaregen="2.0,2.2,2.4,2.6,2.8,3.0,3.2,3.4,3.6,3.8,4.0,4.2,4.4,4.6,5.0"
     manaproportionregen="0.0"
 
-    resistance="5"
-    mitigation="5"
+    resistance="15"
+    mitigation="15"
 
     inventory0="Ability_Harrower1"
     inventory1="Ability_Harrower2"
@@ -128,7 +128,7 @@
     inventory11="Ability_AutomatedCourier"
 
 
-    power="110"
+    power="100"
     attackduration="300"
     attackactiontime="200"
     attackcooldown="916"
