@@ -14,7 +14,7 @@
 >
 
 	<!-- end tool tip only -->
-	<constant name="damage_increase" value="90,110,130,150" adjustment="none" />
+	<constant name="damage_increase" value="70,80,90,100" adjustment="none" />
 	<aura state="State_Rip_Ability3_Splash" radius="1200" targetscheme="self" ignoreinvulnerable="true" />
     <aura state="State_Rip_Ability3_Neutral_Sight" radius="450" targetscheme="non_idle_visible_neutral" ignoreinvulnerable="true" proxy="source_entity" />
 	

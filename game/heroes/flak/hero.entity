@@ -101,8 +101,8 @@
     rolemagicdamage="1"
     roleutility="1"
 
-    maxhealth="700"
-    maxhealthperlevel="64.2"
+    maxhealth="580"
+    maxhealthperlevel="58.57"
     healthregen="2.0,2.14,2.28,2.42,2.56,2.70,2.84,2.98,3.12,3.26,3.40,3.54,3.70,3.84,3.98"
     healthproportionregen="0"
 

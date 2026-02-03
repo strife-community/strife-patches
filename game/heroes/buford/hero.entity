@@ -116,7 +116,7 @@
     manaproportionregen="0.0"
 
     resistance="0"
-    mitigation="0"
+    mitigation="5"
 
     inventory0="Ability_Buford1"
     inventory1="Ability_Buford2"

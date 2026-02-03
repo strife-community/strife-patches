@@ -103,8 +103,8 @@
 
     movespeed="340"
     
-    maxhealth="900"
-    maxhealthperlevel="85.7"
+    maxhealth="800"
+    maxhealthperlevel="71.42"
     healthregen="3.0,3.35,3.70,4.05,4.40,4.75,5.10,5.45,5.80,6.15,6.50,6.85,7.20,7.35,8.05"
     healthproportionregen="0"
     
@@ -115,8 +115,8 @@
     manaregen="1.5,1.6,1.7,1.8,1.9,2.0,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,3.0"
     manaproportionregen="0.0"
 
-    resistance="10"
-    mitigation="25"
+    resistance="25"
+    mitigation="10"
 
     inventory0="Ability_Fetterstone1"
     inventory1="Ability_Fetterstone2"
@@ -133,13 +133,13 @@
 
 
     power="105"
-    attackduration="450"
-    attackactiontime="300"
+    attackduration="500"
+    attackactiontime="400"
     attackcooldown="916"
     attackdamagemin="62"
-    attackdamageminperlevel="3.78"
+    attackdamageminperlevel="2.57"
     attackdamagemax="62"
-    attackdamagemaxperlevel="3.78"
+    attackdamagemaxperlevel="2.57"
     attacknumanims="2"
     attackrange="480"
     attackactioneffect="projectile/effects/attack_action.effect"

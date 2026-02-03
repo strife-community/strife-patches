@@ -3,7 +3,7 @@
 	name="Item_Zealotsblade_Empower_2"
 	
 	cost="1770"
-	criticalchance="0.05"
+	criticalchance="0.10"
     criticalmultiplier="2.0"
 >
 	

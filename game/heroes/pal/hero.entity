@@ -132,7 +132,7 @@
     inventory11="Ability_AutomatedCourier"
 
 
-    power="90"
+    power="85"
     attackduration="800"
     attackactiontime="450"
     attackcooldown="1100"

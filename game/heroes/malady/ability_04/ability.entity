@@ -27,8 +27,8 @@
 	
 	powerratiomultiplier="0.07,0.08,0.12"
 >
-	<constant name="damage" value="270,360,450" adjustment="ability" />
-	<constant name="passive" value="7,8,12" floatprecision="0" adjustment="none" />
+	<constant name="damage" value="270,310,350" adjustment="ability" />
+	<constant name="magic_damage_increase" value="7,8,12" floatprecision="0" adjustment="none" />
 	<onimpact>
 		<recordheroaggression  />
 		<aggression />
