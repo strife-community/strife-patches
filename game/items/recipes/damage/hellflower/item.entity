@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Hellflower"
+	
+	casttime="500"
+	castactiontime="200"
+	anim="item_1"
+	
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_Staff Item_Manastone"
+	craftingmaxcomponents="3"
+	maxlevel="1"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	range="650"
+	cooldowntime="50000"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	hoverareacastrange="650"
+	
+	impacteffect="effects/impact.effect"
+	
+	doubleactivate="true"
+	botitem="TargetEnemyItem"
+	filters="attack,caster,debuff_enemy,utility,activatable,power"
+
+	power="10"
+	powerperquality="0.6"
+
+	empoweredeffects="Item_Hellflower_Empower_1,Item_Hellflower_Empower_3" 
+	
+	showinpractice="true"
+>
+	<constant name="duration" value="4" adjustment="none" qualityvalue="0.4" qualityadjustment="common" op="add"/>
+	<constant name="resistance" value="35" adjustment="none" qualityvalue="0.4" qualityadjustment="common" op="add"/>
+	<!--Tooltip Only-->
+	<constant name="legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="power" value="10" qualityvalue="0.6" adjustment="none" qualityadjustment="common" op="add"/>
+	
+	<ondoubleactivate>
+		<areaofeffect
+			radius="650"
+			targetselection="closest"
+			targetscheme="visible_enemy_heroes"
+			maxtotalimpacts="1"
+			effecttype=""
+		>
+			<useitem source="this_entity" />
+		</areaofeffect>
+		<compare a="result" b="0" op="eq">
+			<cancel />
+		</compare>
+	</ondoubleactivate>
+	
+	<onimpact effectdescription="true">
+		<spawnprojectile name="Projectile_Hellflower" offset="0 200 160" source="source_entity" target="target_entity" />
+	</onimpact>
+</crafteditem>

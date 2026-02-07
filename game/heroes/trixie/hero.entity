@@ -131,7 +131,7 @@
 
     
     
-    power="100"
+    power="115"
 	powerperlevel="2"
     attackduration="300"
     attackactiontime="200"

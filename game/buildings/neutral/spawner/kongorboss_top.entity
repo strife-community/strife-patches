@@ -36,7 +36,7 @@
 	blockedbyunitsradius="1"
 	
 	showinui="true"
-	teamtapping="true"
+	teamtapping="false"
 	respawncountdowncolor="#01FCFF"
 >
   <!-- Other scripts can go here like an affector, but I haven't tested anything yet -->

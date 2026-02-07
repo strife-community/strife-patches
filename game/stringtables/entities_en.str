@@ -1429,7 +1429,7 @@ Ability_Rip3_description										^444Passive Skill^*\nEvery 5th attack charges 
 Ability_Rip3_description_simple									Critical strike after being unseen
 // Ability_Rip4
 Ability_Rip4_name												Nether Strike
-Ability_Rip4_description										Target direction to dash, attacking all enemies you pass through.  \n\nIf you hit at least 1 enemy, you may cast this ability again for up to 6 seconds - up to a total of 3 times.
+Ability_Rip4_description										Target direction to dash, attacking all enemies you pass through.  \n\nIf you hit at least 1 enemy, you may cast this ability again for up to 6 seconds - up to a total of 3 times.Passively, your attacks deal 30/40/50% splash damage.
 Ability_Rip4_description_simple									Dash through enemies and recast up to 3 times if an enemy was hit
 
  
@@ -1643,13 +1643,13 @@ State_Zaku_Ability4_FRAME_effect
 
 // Gloves of Haste
 Item_GlovesOfHaste_name											Agility Stone
-Item_GlovesOfHaste_description									15 Attack Speed
-Item_GlovesOfHaste_description_simple							15 Attack Speed
+Item_GlovesOfHaste_description									15 Attack Speed\n 2 Attack Damage
+Item_GlovesOfHaste_description_simple							15 Attack Speed\n 2 Attack Damage
 
 // Warpcleft
 Item_Warpcleft_name												Agility Relic
-Item_Warpcleft_description										36 Attack Speed
-Item_Warpcleft_description_simple								36 Attack Speed
+Item_Warpcleft_description										36 Attack Speed\n 5 Attack Damage
+Item_Warpcleft_description_simple								36 Attack Speed\n 5 Attack Damage
 
 // Blade
 Item_Blade_name													^oPower Shard^*
@@ -1863,7 +1863,7 @@ Item_Shardplate_Empower_3_description							Grants allies around you $damageredu
 
 // Item_Buckler
 Item_Buckler_name												Silver Buckler
-Item_Buckler_description										+$resistance$ Magic Armor\n+$mitigation$ Armor\n10% reduction in incoming damage
+Item_Buckler_description										+$resistance$ Magic Armor\n+$mitigation$ Armor\n7% reduction in incoming damage
 Item_Buckler_description_simple									Cheap, efficient Resistance and Mitigation
 Item_Buckler_bonusdescription									Increases the incoming attack damage reduction by $common_increase$%.
 Item_Buckler_legendaryname										Restoring
@@ -1877,7 +1877,7 @@ Item_Buckler_Empower_3_description								Grants an additional $resistance_encha
 
 // Ancient Gem
 Item_AncientGem_name											Glacial Gem
-Item_AncientGem_description										Recipe grants additional $regen$ Mana/sec.\n 8% Skill Cooldown Reduction
+Item_AncientGem_description										Recipe grants additional $regen$% Mana/sec.\n 8% Skill Cooldown Reduction\n Increases gold from creeps by 2
 Item_AncientGem_description_simple								Cheap, efficient Mana Regeneration
 Item_AncientGem_bonusdescription								Increases the mana regen provided by $common_increase$%.
 Item_AncientGem_legendaryname									Energizing
@@ -1965,7 +1965,7 @@ Item_Gauntlet_Empower_4_description								Increase gold gained from hero kills/
 
 // Headress Of Rejuvenation
 Item_HeadressOfRejuvenation_name								Blood Pendant
-Item_HeadressOfRejuvenation_description							+$regen$ Health/sec.\nProvides 30% health regeneration when out of combat.
+Item_HeadressOfRejuvenation_description							+$regen$% Health/sec.\nProvides 30% health regeneration when out of combat\nIncreases gold from creeps by 2
 Item_HeadressOfRejuvenation_description_simple					Cheap, efficient Health Regeneration
 Item_HeadressOfRejuvenation_bonusdescription					Increases the regeneration benefit by $common_increase$%.
 Item_HeadressOfRejuvenation_legendaryname						Restoring
@@ -2136,7 +2136,7 @@ Item_SpringBoots_description_simple								^091Activate: dash.^*
 
 // ASBoots
 Item_ASBoots_name												Fervor Boots
-Item_ASBoots_description										50 Movement Speed\n25 Attack Speed\n\n^091Activate to increase movespeed by 80 and to gain unit walking for 3 sec.^*
+Item_ASBoots_description										+5 Attack Damage\n+7% Critical Chance\n50 Movement Speed\n25 Attack Speed\n\n^091Activate to increase movespeed by 80 and to gain unit walking for 3 sec.^*
 Item_ASBoots_description_simple									Grants Atack Speed\n^091Activate: sprint, allows you to walk through units.^*
 
 // HealthBoots
@@ -2321,7 +2321,7 @@ Item_Codex_Empower_3_description								Increases the damage dealt by $damage_en
 
 // Hellflower
 Item_Hellflower_name											Cursed Wand
-Item_Hellflower_description										+$power$ Power\n\n^091Activate: Target an enemy to reduce their Magic Armor by $resistance$ and slow them by 30% for $duration$ seconds.^*
+Item_Hellflower_description										+$power$ Power\n\n^091Activate: Target an enemy to reduce their Armor and Magic Armor by $resistance$ and slow them by 30% for $duration$ seconds.^*
 Item_Hellflower_description_simple								Grants Power\n^091Activate: Target enemy to slow and reduce Magic Armor.^*
 Item_Hellflower_bonusdescription								Increases the duration by $common_increase$%.
 Item_Hellflower_legendaryname									Diseased
@@ -2398,7 +2398,7 @@ Item_Timewarper_legendaryname									Clear
 Item_Timewarper_legendarydescription							Each spell cast increases mana regen by $legendary$ for 4 seconds.
 Item_Timewarper_Empower_1_name									Efficiency
 Item_Timewarper_Empower_1_description							Each spell cast increases Mana/sec by $manaregen_enchant$ for $manaregen_duration_enchant$ seconds. Non-stacking.
-Item_Timewarper_Empower_2_name									Empowered
+Item_Timewarper_Empower_2_name									Mastery
 Item_Timewarper_Empower_2_description							Grants $magicdamage_enchant$% Magic Damage.
 Item_Timewarper_Empower_3_name									Siphoning
 Item_Timewarper_Empower_3_description							Grants $spellsteal_enchant$% Magic Lifesteal.
@@ -2412,7 +2412,7 @@ Item_Zealotsblade_legendaryname									Charging
 Item_Zealotsblade_legendarydescription							Grants $power$ Power and AttackSpeed by 5% each attack, stacking up to 3 times.  Expires after 3 seconds of not attacking.
 Item_Zealotsblade_Empower_1_name								Rhythm
 Item_Zealotsblade_Empower_1_description							Grants $power_enchant$ Power each attack, stacking up to 3 times.  Expires after $power_duration_enchant$ seconds of not attacking.
-Item_Zealotsblade_Empower_2_name								Crit
+Item_Zealotsblade_Empower_2_name								Fortune
 Item_Zealotsblade_Empower_2_description							+5% Crit Chance
 Item_Zealotsblade_Empower_3_name								Haste
 Item_Zealotsblade_Empower_3_description							Increases Movement Speed by $movespeed_enchant$.
@@ -2447,7 +2447,7 @@ Item_Slayer_Empower_3_description								Increases Power reduction to $powerredu
 
 // Vampiric Blade
 Item_VampiricBlade_name											Vampiric Dagger
-Item_VampiricBlade_description									+10% AttackSpeed\n+$vamp$% Attack Lifesteal\n+$resistance$ Magic Armor
+Item_VampiricBlade_description									+10% Attack Speed\n+$vamp$% Attack Lifesteal\n+$resistance$ Magic Armor
 Item_VampiricBlade_description_simple							Grants Lifesteal
 Item_VampiricBlade_bonusdescription								Increases the lifesteal bonus by $common_increase$%.
 Item_VampiricBlade_legendaryname								Absorption
@@ -2470,7 +2470,7 @@ Item_ThunderClaw_Empower_1_name									Devastation
 Item_ThunderClaw_Empower_1_description							Targets hit by lightning have their Resistance decreased by $resistance_reduction_enchant$.
 Item_ThunderClaw_Empower_2_name									Redirection
 Item_ThunderClaw_Empower_2_description							Increases bounce limit to $bounce_enchant$.
-Item_ThunderClaw_Empower_3_name									Fast
+Item_ThunderClaw_Empower_3_name									Speed
 Item_ThunderClaw_Empower_3_description							Gives 10% AttackSpeed
 Item_ThunderClaw_Empower_4_name									Energy
 Item_ThunderClaw_Empower_4_description							On proc, gives $mana_enchant$ mana.
@@ -2714,7 +2714,7 @@ Ability_Bounder_Passive2_3_description_simple					Increases attack damage.
 
 // Fiki
 Ability_Fiki_Passive_name										Deflection
-Ability_Fiki_Passive_description								Reduces incoming creep damage by 35.\nIncreases damage to bosses by 15%.\n For killing forest monsters you receive an additional +10 gold.
+Ability_Fiki_Passive_description								Reduces incoming creep damage by 35.\nIncreases damage to bosses by 15%.\n For killing forest monsters you receive an additional +8 gold.
 Ability_Fiki_Passive_description_simple							Reduces incoming creep damage.
 Ability_Fiki_TriggeredPassive_name								Rejuvenate
 Ability_Fiki_TriggeredPassive_description						When hero is below 75% HP, heals by 55-125 (scales with hero level).\n\n^c40 Second Cooldown.^*
@@ -3001,9 +3001,9 @@ Ability_Tinker_Ult_3_description_simple							Activate to buff allied towers.
 Ability_Topps_Passive_1_name									Unleashed
 Ability_Topps_Passive_2_name									Unleashed
 Ability_Topps_Passive_3_name									Unleashed
-Ability_Topps_Passive_1_description								Increases Power by 10%.Grants 3% HP regeneration from health and 5% mana regeneration from mana per second
-Ability_Topps_Passive_2_description								Increases Power by 10%.Grants 3% HP regeneration from health and 5% mana regeneration from mana per second
-Ability_Topps_Passive_3_description								Increases Power by 10%.Grants 3% HP regeneration from health and 5% mana regeneration from mana per second
+Ability_Topps_Passive_1_description								Increases Power by 10%.Grants 0,3% HP regeneration from health and 0,5% mana regeneration from mana per second
+Ability_Topps_Passive_2_description								Increases Power by 10%.Grants 0,3% HP regeneration from health and 0,5% mana regeneration from mana per second
+Ability_Topps_Passive_3_description								Increases Power by 10%.Grants 0,3% HP regeneration from health and 0,5% mana regeneration from mana per second
 Ability_Topps_Passive_1_description_simple						Increases Power.
 Ability_Topps_Passive_2_description_simple						Increases Power.
 Ability_Topps_Passive_3_description_simple						Increases Power.
@@ -3170,7 +3170,7 @@ Neutral_Kongor_name												Kongor
 Neutral_Kongor_description										King of Apes
 
 State_Baldir_Buff_name                                          Baldir Buff
-State_Baldir_Buff_description                                   0.5% Health/0.7% Mana, as well as 5 Defense and Magic Defense per stack
+State_Baldir_Buff_description                                   0.5% Health/0.7% Mana, as well as 5% Magic LifeSteal  and 5% AttackSpeed per stack
 
 State_Cindara_Buff_name                                         Cindara Buff
 State_Cindara_Buff_description                                  7% Power/8% Cooldown Reduction/5% Movement Speed per stack

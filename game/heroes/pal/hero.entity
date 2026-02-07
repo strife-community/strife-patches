@@ -97,7 +97,7 @@
 
     category="cc tank"
     difficulty="3"
-    movespeed="310"
+    movespeed="320"
     turnrate="900"
     turnsmoothing="0.01"
     

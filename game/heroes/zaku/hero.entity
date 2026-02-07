@@ -116,7 +116,7 @@
     
     resistance="30"
 	resistanceperlevel="1"
-    mitigation="30"
+    mitigation="25"
 	mitigationperlevel="1"
 
     inventory0="Ability_Zaku1"

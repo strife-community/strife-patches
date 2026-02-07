@@ -13,7 +13,7 @@
 	<constant name="block" value="35" adjustment="none" op="add"/>
 	
 	<constant name="boss_enchant" value="15" adjustment="none"/>
-	<constant name="gold" value="10" adjustment="none"/>
+	<constant name="gold" value="8" adjustment="none"/>
 	
    
 
