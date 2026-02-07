@@ -94,7 +94,7 @@
 
     category="cc tank"
     difficulty="3"
-    movespeed="350"
+    movespeed="320"
     turnrate="900"
     turnsmoothing="0.01"
     
@@ -104,14 +104,14 @@
     healthproportionregen="0.001"
     unitcriticalmultiplier="1.0"
     
-    maxmana="450"
-    maxmanaperlevel="46.4"
+    maxmana="300"
+    maxmanaperlevel="21.42"
     manaregen="2.0,2.3,2.6,2.9,3.2,3.5,3.8,4.1,4.4,4.7,5.0,5.3,5.6,5.9,6.0"
     manaproportionregen="0.0"
 
     resistance="10"
 	resistanceperlevel="1"
-    mitigation="35"
+    mitigation="25"
 	mitigationperlevel="1"
 
     inventory0="Ability_Claudessa1"
@@ -128,7 +128,7 @@
     inventory11="Ability_AutomatedCourier"
 
 
-    power="95"
+    power="85"
     attackduration="600"
     attackactiontime="350"
     attackcooldown="1100"

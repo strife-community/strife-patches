@@ -15,6 +15,9 @@
 	casttime="0"
 	castactiontime="0"
 	queue="front"
+	basedamage="5"
+	criticalchance="0.07"
+    criticalmultiplier="2.0"
 	
 
 	noentercombat="true"

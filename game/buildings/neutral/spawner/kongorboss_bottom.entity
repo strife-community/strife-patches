@@ -36,7 +36,7 @@
 	blockedbyunitsradius="1"
   
 	showinui="true"
-	teamtapping="true"
+	teamtapping="false"
 >
 
 

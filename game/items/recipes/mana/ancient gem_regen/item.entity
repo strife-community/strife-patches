@@ -10,18 +10,20 @@
 	
 	actiontype="passive"
 
-	basemanaregen="2.0"
-	basemanaregenperquality="0.20"
+	manaproportionregen="0.002"
 	reducedcooldowns=".08"
 
 	filters="mana,mana_regen"
+	
 
 	empoweredeffects="Item_AncientGem_Empower_3,Item_AncientGem_Empower_4"
 	
 	showinpractice="true"
 >
-	<constant name="regen" value="2.0" adjustment="none" qualityvalue="0.20" qualityadjustment="common" op="add"/>
+	<constant name="regen" value="0.2" adjustment="none" qualityvalue="0.20" qualityadjustment="common" op="add"/>
 	<constant name="regen_legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="gold" value="2" adjustment="none" />
+	<aura state="State_Gold_Aura2" radius="1200" targetscheme="enemy_creeps" ignoreinvulnerable="true" />
 
 </crafteditem>

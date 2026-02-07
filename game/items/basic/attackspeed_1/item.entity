@@ -10,6 +10,7 @@
 	actiontype="passive"
 
 	baseattackspeed="0.15"
+	basedamage="2"
 	
 	craftingcomponent="true"
 	filters="attack_speed_comp1,attack_speed_comp,components"

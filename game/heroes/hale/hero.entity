@@ -108,9 +108,9 @@
     
     unitcriticalmultiplier="1.0"
     
-    maxmana="150"
-    maxmanaperlevel="14.28"
-    manaregen="0.5,0.53,0.59,0.62,0.65,0.68,0.71,0.74,0.77,0.80,0.83,0.87,0.90,0.93,1"
+    maxmana="250"
+    maxmanaperlevel="17.85"
+    manaregen="1.0,1.07,1.14,1.21,1.28,1.35,1.42,1.49,1.56,1.63,1.70,1.77,1.85,1.92,2.0"
     manaproportionregen="0.0"
 
     resistance="5"
@@ -133,8 +133,8 @@
 
 
     power="135"
-    attackduration="900"
-    attackactiontime="500"
+    attackduration="600"
+    attackactiontime="350"
     attackcooldown="1100"
     attackdamagemin="82"
     attackdamageminperlevel="3.78"

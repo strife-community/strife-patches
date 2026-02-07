@@ -91,7 +91,7 @@
 
     category="physical"
     difficulty="3"
-    movespeed="390"
+    movespeed="370"
     turnrate="900"
     turnsmoothing="0.01"
     
@@ -130,7 +130,7 @@
     inventory11="Ability_AutomatedCourier"
 
 
-    power="105"
+    power="85"
     attackduration="300"
     attackactiontime="180"
     attackcooldown="916"

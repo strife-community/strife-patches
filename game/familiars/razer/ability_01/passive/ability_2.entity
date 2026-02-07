@@ -7,7 +7,7 @@
 	maxlevel="15"
 	actiontype="passive"
 	basedamage="9"
-	attacklifesteal="0.05" 
+	attacklifesteal="0.07" 
 	attacklifestealperquality="0.02" 
 	propagatetoillusion="true"
 >

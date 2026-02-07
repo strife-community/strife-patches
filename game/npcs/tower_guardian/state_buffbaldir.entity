@@ -9,8 +9,8 @@
 	actiontype="passive"
 	maxhealthmultiplierpercharge="0.05"
 	maxmanamultiplierpercharge="0.07"
-	resistancepercharge="5"
-    mitigationpercharge="5"
+	magiclifestealpercharge="0.05"
+    baseattackspeedpercharge="0.05"
 	maxcharges="999"
 
 	

@@ -133,10 +133,10 @@
     inventory11="Ability_AutomatedCourier"
 
 
-    power="150"
+    power="130"
 	powerperlevel="2"
     attackduration="600"
-    attackactiontime="400"
+    attackactiontime="200"
     attackcooldown="1100"
     attackdamagemin="68"
 	attackdamageminperlevel="3.28"

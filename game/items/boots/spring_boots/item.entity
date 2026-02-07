@@ -17,7 +17,7 @@
 	casteffecttype=""
 	casttime="0"
 	castactiontime="0"
-	cooldowntime="35000"
+	cooldowntime="25000"
 	manacost="0"
 	cooldowntype="SpringBoots"
 	disabled="true"

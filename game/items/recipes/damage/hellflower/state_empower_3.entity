@@ -5,7 +5,8 @@
 	passiveeffect="effects/state.effect"  
 	icon="icon.tga"
 	
-	resistance="-45"
+	resistance="-40"
+	mitigation="-40"
 >
 
 

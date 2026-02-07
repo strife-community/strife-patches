@@ -98,7 +98,7 @@
 
     category="cc tank"
     difficulty="2"
-    movespeed="345"
+    movespeed="320"
     turnrate="900"
     turnsmoothing="0.01"
     
@@ -114,7 +114,7 @@
     manaregen="1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.0,2.1,2.2,2.3,2.4,2.5,2.8"
     manaproportionregen="0.0"
 	
-    resistance="30"
+    resistance="20"
 	resistanceperlevel="1"
     mitigation="15"
 	mitigationperlevel="1"
@@ -133,7 +133,7 @@
     inventory11="Ability_AutomatedCourier"
 
 
-    power="105"
+    power="80"
     attackduration="600"
     attackactiontime="220"
     attackcooldown="1100"
