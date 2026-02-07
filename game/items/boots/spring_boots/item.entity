@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_SpringBoots"
+	
+	itemtype="Boots"
+	ignoredynamicactivation="true"
+  
+	statuseffecttooltip="State_SpringBoots"
+	statuseffectheader="true"
+	icon="icon.tga"
+	
+	cost="1250"
+	components="Item_Marchers"
+	
+	actiontype="target_position"
+	activatescheme="movement"
+	casteffecttype=""
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="35000"
+	manacost="0"
+	cooldowntype="SpringBoots"
+	disabled="true"
+	frontqueue="false"
+	inheritmovement="true"
+	noentercombat="true"
+
+	queue="none"
+
+	showlinecast="true"
+	linecastrange="605"
+	linecastmaxrange="605"
+	linecastwidth="80"
+
+	allowoutofrangecast="true"
+	forcerange="525"
+	range="525"
+
+
+	filters="boots,activatable,other_mobility"
+	
+	showinpractice="true"
+>
+	<onpurchase>
+		<setscriptvalue name="boots_purchased" value="1" />
+	</onpurchase>
+		
+	<modifier key="boots" modpriority="76" exclusive="true"
+		movespeed="55"
+		disabled="false"
+	>
+		
+		<onimpact>
+			<spawnprojectile name="Projectile_SpringBoots" source="source_entity" pushentity="true" target="target_position" bind="source_entity" bindturn="true" bindstate="State_SpringBoots" />
+			<setpos0 position="source_position" positionend="target_position" positionmodifier="pointonline" positionvalue="501" />
+			<spawnprojectile name="Projectile_SpringBoots_Cliff" source="source_entity" target="pos0" proxy="stack_entity" offsetspace="source_entity" offset="0 50 0" bindpriority="1" />
+			<playanim name="item_1" target="source_entity" />
+			<setscriptvalue name="boots_used" value="1" />
+		</onimpact>
+	</modifier>
+</item>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hellflower"
+
+	passiveeffect="effects/state.effect"  
+	icon="icon.tga"
+	
+	resistance="-40"
+	
+	effecttype="StatusDebuff"
+>
+
+
+</state>

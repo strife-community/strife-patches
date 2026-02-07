@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_ASBoots"
+	
+	itemtype="Boots"
+	ignoredynamicactivation="true"
+	
+	icon="icon.tga"
+	
+	cost="1080"
+	components="Item_Marchers"
+
+	cooldowntime="13000"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	queue="front"
+	
+
+	noentercombat="true"
+	
+	actiontype="target_self"
+	disabled="true"
+
+	filters="boots,attack_speed,other_mobility"	
+	
+	showinpractice="true"
+>
+	<onimpact>
+		<applystate name="State_ASBoots" duration="3000" />
+	</onimpact>
+
+	<modifier key="boots" modpriority="75" exclusive="true"
+		movespeed="50"
+		baseattackspeed="0.25"
+		disabled="false"
+	/>
+
+
+</item>

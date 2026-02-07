@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Warpcleft"
+	
+	icon="icon.tga"
+	
+	cost="2000"
+	craftingvalue="2000"
+
+	actiontype="passive"
+
+	baseattackspeed="0.36"
+	
+	craftingcomponent="true"
+	filters="attack_speed_comp2,attack_speed_comp,components"
+	
+	showinpractice="true"
+>
+</item>

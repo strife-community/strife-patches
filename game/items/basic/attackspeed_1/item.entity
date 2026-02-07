@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_GlovesOfHaste"
+	
+	icon="icon.tga"
+	
+	cost="835"
+	craftingvalue="800"
+
+	actiontype="passive"
+
+	baseattackspeed="0.15"
+	
+	craftingcomponent="true"
+	filters="attack_speed_comp1,attack_speed_comp,components"
+	
+	showinpractice="true"
+>
+</item>
