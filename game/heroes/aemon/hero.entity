@@ -112,7 +112,7 @@
 
     resistance="5"
 	resistanceperlevel="1"
-    mitigation="40"
+    mitigation="30"
 	mitigationperlevel="1"
 
     inventory0="Ability_Aemon1"

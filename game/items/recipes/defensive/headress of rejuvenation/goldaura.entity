@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gold_Aura"
+
+	icon="icon.tga"
+	
+>
+
+
+	<onkilled>
+		<cantarget target="target_entity" targetscheme="enemy_heroes" >
+			<getconstant name="gold" />
+			<givegold amount="result" target="this_inflictor_entity" position="this_inflictor_entity" />
+		</cantarget>
+	</onkilled>
+
+	
+</state>

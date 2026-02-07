@@ -33,7 +33,7 @@
 	
 	
 >
-	<constant name="damage" value="90,130,170" adjustment="ability" />
+	<constant name="damage" value="90,110,130" adjustment="ability" />
 	
 	
 	<onimpact>

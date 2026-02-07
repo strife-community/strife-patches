@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hellflower_Empower_3"
+
+	passiveeffect="effects/state.effect"  
+	icon="icon.tga"
+	
+	resistance="-40"
+	mitigation="-40"
+>
+
+
+</state>

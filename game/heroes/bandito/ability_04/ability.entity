@@ -25,7 +25,7 @@
 	<!--Display Only-->
 	<constant name="multicast_chance" value="18,24,30" adjustment="none" />
 	<constant name="cooldown" value="50" adjustment="none" noshowintooltip="true" />
-	<constant name="magiclifesteal" value="9,12,15" adjustment="none" noshowintooltip="true" />
+	<constant name="magiclifesteal" value="9,12,15" adjustment="none"  />
 	
 	
 	

@@ -7,8 +7,7 @@
 	cost="290"
 	components="Item_Mender"
 
-	basehealthregen="2.7"
-	basehealthregenperquality="0.27"
+	healthproportionregen="0.002"
 	
 	actiontype="passive"
 	filters="defense,health_regen"
@@ -17,11 +16,13 @@
 	
 	showinpractice="true"
 >
-	<constant name="regen" value="2.7" adjustment="none" qualityvalue="0.27" qualityadjustment="common" op="add"/>
+	<constant name="regen" value="0.2" adjustment="none" qualityvalue="0.27" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="regen_legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+	<constant name="gold" value="2" adjustment="none" />
 	
     <constant name="passive" value="30" adjustment="none" floatprecision="1" />
+	<aura state="State_Gold_Aura" radius="1200" targetscheme="enemy_creeps" ignoreinvulnerable="true" />
 
 	<onframe>
 		<hasmodifier entity="this_owner_entity" name="out_of_combat_regen">

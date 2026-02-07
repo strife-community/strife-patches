@@ -21,7 +21,7 @@
 	<!-- tool tip only -->
 	<constant name="resistance" value="8" adjustment="none" qualityvalue="0.8" qualityadjustment="common" op="add"/>
 	<constant name="mitigation" value="8" adjustment="none" qualityvalue="0.8" qualityadjustment="common" op="add"/>
-	<constant name="damage_reduction" value="10" adjustment="none" noshowintooltip="false"/>
+	<constant name="damage_reduction" value="6" adjustment="none" noshowintooltip="false"/>
 
 	<constant name="regen" value="1.5" adjustment="none" qualityvalue="1.5" qualityadjustment="legendary" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>

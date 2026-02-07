@@ -91,7 +91,7 @@
 
     category="cc tank"
     difficulty="2"
-    movespeed="350"
+    movespeed="325"
     turnrate="900"
     turnsmoothing="0.01"
     
@@ -118,7 +118,7 @@
 
     resistance="15"
 	resistanceperlevel="1"
-    mitigation="30"
+    mitigation="20"
 	mitigationperlevel="1"
 
     inventory0="Ability_Shank1"
