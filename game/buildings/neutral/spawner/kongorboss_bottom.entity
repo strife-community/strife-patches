@@ -16,7 +16,7 @@
 	deathannouncementownteam="guardian_bottom_killed"
   
 	firstspawntime="120000"
-	spawninterval="180000"
+	spawninterval="240000"
 	spawnintervalpercharge="0"
 	spawnintervalvariation="0"
 	spawntimercondition="death"
