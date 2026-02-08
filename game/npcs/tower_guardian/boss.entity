@@ -41,15 +41,15 @@
     
     infoheight="400"
 
-    maxhealth="1800"
+    maxhealth="2500"
     maxhealthperlevel="0"
     healthregen="0"
     healthproportionregen="0"
     maxmana="0"
     manaregen="10"
 
-    resistance="40"
-    mitigation="40"
+    resistance="65"
+    mitigation="65"
     immunity="BossImmunity"
 
     cancarryitems="false"
@@ -69,8 +69,8 @@
     attackactiontime="370"
     attackcooldown="1200"
     attacktargetscheme="everything_but_towers"
-    attackdamagemin="30"
-    attackdamagemax="30"
+    attackdamagemin="60"
+    attackdamagemax="60"
     attacknumanims="2"
     attackoffset="00 120 200"
     attackprojectile="Projectile_BossPowerUpAttack"

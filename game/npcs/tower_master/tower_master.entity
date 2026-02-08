@@ -40,15 +40,15 @@
     
     infoheight="425"
 
-    maxhealth="3500"
+    maxhealth="6500"
     maxhealthperlevel="0"
     healthregen="0"
     healthproportionregen="0"
     maxmana="0"
     manaregen="10"
 
-    resistance="40"
-    mitigation="40"
+    resistance="75"
+    mitigation="75"
     immunity="BossImmunity"
     ismobile="1"
     
@@ -67,8 +67,8 @@
     attackactiontime="300"
     attackcooldown="1000"
     attacktargetscheme="everything_but_towers"
-    attackdamagemin="37"
-    attackdamagemax="37"
+    attackdamagemin="80"
+    attackdamagemax="80"
     attacknumanims="2"
     attackoffset="20 175 245"
     attackprojectile="Projectile_TowerMasterAttack"
