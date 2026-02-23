@@ -9,6 +9,8 @@
 	craftingvalue="800"
 	
 	maxmana="120"
+	power="3"
+
 	
 	craftingcomponent="true"
 	filters="mana_comp2,mana_comp,components"

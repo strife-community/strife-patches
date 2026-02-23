@@ -16,6 +16,7 @@
 	anim="item_1"
 	
 	cooldowntime="180000"
+	power="35"
 	
 	noentercombat="true"
 	casteffect="effects/sound.effect"
@@ -29,6 +30,7 @@
 	<constant name="damage" value="1500" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
 	<constant name="enemy_damage" value="250" adjustment="item" qualityvalue="1" qualityadjustment="common" op="add"/>
 	<constant name="cd_lower" value="15" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="power" value="35" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
 
 	<constant name="legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>

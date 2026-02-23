@@ -2,11 +2,11 @@
 <qualityitem
 	name="Item_Malevolence_Empower_2"
 	
-	cost="1455"
-	magiclifesteal="0.05"
+	cost="1400"
+	magiclifesteal="0.10"
 
 >
 	<!-- Tooltip only -->
-	<constant name="spellsteal_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="spellsteal_enchant" value="10" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
 
 </qualityitem>

@@ -8,7 +8,7 @@
 	cost="410"
 	craftingvalue="400"
 	
-	basemanaregen="1.0"
+    manaproportionregen="0.001"
 	
 	craftingcomponent="true"
 	filters="mana_regen_comp1,mana_regen_comp,components"

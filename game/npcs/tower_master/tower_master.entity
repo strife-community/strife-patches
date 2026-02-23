@@ -47,8 +47,8 @@
     maxmana="0"
     manaregen="10"
 
-    resistance="75"
-    mitigation="75"
+    resistance="50"
+    mitigation="50"
     immunity="BossImmunity"
     ismobile="1"
     
@@ -67,8 +67,8 @@
     attackactiontime="300"
     attackcooldown="1000"
     attacktargetscheme="everything_but_towers"
-    attackdamagemin="80"
-    attackdamagemax="80"
+    attackdamagemin="70"
+    attackdamagemax="70"
     attacknumanims="2"
     attackoffset="20 175 245"
     attackprojectile="Projectile_TowerMasterAttack"

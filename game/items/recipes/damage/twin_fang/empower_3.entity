@@ -2,7 +2,7 @@
 <qualityitem
 	name="Item_TwinFang_Empower_3"
 	
-	cost="1000"
+	cost="1500"
 	maxmanapercharge="4"
 	maxcharges="25"
 

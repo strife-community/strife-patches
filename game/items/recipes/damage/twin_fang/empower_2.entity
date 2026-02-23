@@ -2,7 +2,7 @@
 <qualityitem
 	name="Item_TwinFang_Empower_2"
 	
-	cost="850"
+	cost="1300"
 	
 	resistance="-5"
 	modifierkey="twinfang_empower_2"

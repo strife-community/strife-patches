@@ -12,10 +12,10 @@
 	filters="defense,ability,attack,power,health"
 	maxcharges="120"
 
-	power="9"
-	powerperquality="0.9"
-	maxhealth="130"
-	maxhealthperquality="13"
+	power="12"
+	
+	maxhealth="140"
+	
 	maxhealthpercharge="1"
 
 	empoweredeffects="Item_Gauntlet_Empower_1,Item_Gauntlet_Empower_3,Item_Gauntlet_Empower_4"

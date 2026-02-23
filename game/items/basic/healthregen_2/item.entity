@@ -9,7 +9,7 @@
 
 	actiontype="passive"
 
-	basehealthregen="3.8"
+	healthproportionregen="0.002"
 	
 	craftingcomponent="true"
 	filters="health_regen_comp2,health_comp,components,health_regen_comp"

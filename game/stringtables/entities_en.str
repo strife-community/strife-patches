@@ -915,7 +915,7 @@ Ability_Chester3_description									Target an enemy or ally hero to create an i
 Ability_Chester3_description_simple								Creates an illusion that deals damage and explodes
 // Ability_Chester4
 Ability_Chester4_name											King Me!
-Ability_Chester4_description									Target an allied hero to grant them 30% damage reduction, and create a link between them and Chester.  Link deals ^o$damage$^* Magic Damage per second to enemies.Passively gives 10/15/20 magic penetration all yours skills
+Ability_Chester4_description									Target an allied hero to grant them 30% damage reduction, and create a link between them and Chester.  Link deals ^o$damage$^* Magic Damage per second to enemies.Passively gives 10/15/20% cooldown reduction
 Ability_Chester4_description_simple								Ally protection and damage link
 State_Chester_Ability4_Tooltip_name								King Me!
 State_Chester_Ability4_description_simple						You're taking 30% less damage!
@@ -1668,23 +1668,23 @@ Item_Relic_description_simple									27 Power
 
 // Manaregen1
 Item_Manaregen1_name											Clarity Shard
-Item_Manaregen1_description										1.0 Mana/sec
-Item_Manaregen1_description_simple								1.0 Mana/sec
+Item_Manaregen1_description										0.01% Mana/sec
+Item_Manaregen1_description_simple								0.01% Mana/sec
 
 // Manaregen2
 Item_Manaregen2_name											Clarity Stone
-Item_Manaregen2_description										2.0 Mana/sec
-Item_Manaregen2_description_simple								2.0 Mana/sec
+Item_Manaregen2_description										0.02% Mana/sec
+Item_Manaregen2_description_simple								0.02% Mana/sec
 
 // Mender
 Item_Mender_name												Vitality Shard
-Item_Mender_description											2 Health/sec
-Item_Mender_description_simple									2 Health/sec
+Item_Mender_description											0.01% Health/sec
+Item_Mender_description_simple									0.01% Health/sec
 
 // Sustainer
 Item_Sustainer_name												Vitality Stone
-Item_Sustainer_description										3.8 Health/sec
-Item_Sustainer_description_simple								3.8 Health/sec
+Item_Sustainer_description										0.02% Health/sec
+Item_Sustainer_description_simple								0.02% Health/sec
 
 // Healthstone
 Item_Healthstone_name											Health Shard
@@ -1703,18 +1703,18 @@ Item_Heart_description_simple									380 Health
 
 // Manastone
 Item_Manastone_name												Mana Shard
-Item_Manastone_description										60 Mana
-Item_Manastone_description_simple								60 Mana
+Item_Manastone_description										60 Mana\n+2 Power
+Item_Manastone_description_simple								60 Mana\n+2 Power
 
 // Diamond
 Item_Diamond_name												Mana Stone
-Item_Diamond_description										120 Mana
-Item_Diamond_description_simple									120 Mana
+Item_Diamond_description										120 Mana\n+3 Power
+Item_Diamond_description_simple									120 Mana\n+3 Power
 
 // Brain
 Item_Brain_name													Mana Crystal
-Item_Brain_description											170 Mana
-Item_Brain_description_simple									170 Mana
+Item_Brain_description											170 Mana\n+4 Power
+Item_Brain_description_simple									170 Mana\n+4 Power
 
 // Tome of Power
 Item_Tome_Power_name											Tome of Power
@@ -1863,7 +1863,7 @@ Item_Shardplate_Empower_3_description							Grants allies around you $damageredu
 
 // Item_Buckler
 Item_Buckler_name												Silver Buckler
-Item_Buckler_description										+$resistance$ Magic Armor\n+$mitigation$ Armor\n7% reduction in incoming damage
+Item_Buckler_description										+$resistance$ Magic Armor\n+$mitigation$ Armor\n6% reduction in incoming damage
 Item_Buckler_description_simple									Cheap, efficient Resistance and Mitigation
 Item_Buckler_bonusdescription									Increases the incoming attack damage reduction by $common_increase$%.
 Item_Buckler_legendaryname										Restoring
@@ -2214,7 +2214,7 @@ Item_Stormspirit_Empower_3_description							Grants $movespeed_enchant$ Movement
 
 // Item_Frostfield
 Item_FrostfieldPlate_name										Everwinter Charm
-Item_FrostfieldPlate_description								+100 Health\n+$resistance$ Magic Armor\n+$mitigation$ Armor\n^091Activate: slow nearby enemies and deal^* ^o$damage$ Magic damage^* ^091to them.^*
+Item_FrostfieldPlate_description								+100 Health\n$damage_reduction$% Reduction of incoming damage\n^091Activate: slow nearby enemies and deal^* ^o$damage$ Magic damage^* ^091to them.^*
 Item_FrostfieldPlate_description_simple							Grants Armor and Magic Armor\n^091Activate: slow and damage nearby enemies.^*
 Item_FrostfieldPlate_IMPACT_effect								Frost ring expands up to 500 radius, applying a tapering Slow for 4.5 seconds and dealing $damage$ Magic damage.
 Item_FrostfieldPlate_bonusdescription							Increases the damage and Magic Armor by $common_increase$%
@@ -2322,7 +2322,7 @@ Item_Codex_Empower_3_description								Increases the damage dealt by $damage_en
 // Hellflower
 Item_Hellflower_name											Cursed Wand
 Item_Hellflower_description										+$power$ Power\n\n^091Activate: Target an enemy to reduce their Armor and Magic Armor by $resistance$ and slow them by 30% for $duration$ seconds.^*
-Item_Hellflower_description_simple								Grants Power\n^091Activate: Target enemy to slow and reduce Magic Armor.^*
+Item_Hellflower_description_simple								Grants Power\n^091Activate: Target enemy to slow and reduce  Armors.^*
 Item_Hellflower_bonusdescription								Increases the duration by $common_increase$%.
 Item_Hellflower_legendaryname									Diseased
 Item_Hellflower_legendarydescription							Increases the slow effect of Cursed Wand by $legendary$%.
@@ -2331,7 +2331,7 @@ Item_Hellflower_Empower_1_description							Increases the percent of the slow ef
 Item_Hellflower_Empower_2_name									Observance
 Item_Hellflower_Empower_2_description							Grants vision of the target for the duration.
 Item_Hellflower_Empower_3_name									Ruin
-Item_Hellflower_Empower_3_description							Increases the Magic Armor reduction by $penetration_enchant$. Removes slow.
+Item_Hellflower_Empower_3_description							Increases the Armor and Magic Armor reduction by $penetration_enchant$. Removes slow.
 
 // State_Hellflower
 State_Hellflower_Tooltip_name									Entropy
@@ -2341,7 +2341,7 @@ State_Hellflower_name_FRAME_effect
 
 // Energizer
 Item_Energizer_name												Windrush
-Item_Energizer_description										+125 Health\n+$movespeed$ Movement Speed. \n\n^091Activate: provide 100 Movement Speed to nearby allies for a 4 seconds.^*
+Item_Energizer_description										+125 Health\n+$movespeed$ Movement Speed. \n\n^091Activate: provide 130 Movement Speed to nearby allies for a 4 seconds.^*
 Item_Energizer_description_simple								Grants Movespeed\n^091Activate: provide a burst of move speed to nearby allies.^*
 Item_Energizer_bonusdescription									Reduces the cooldown of Windrush by $common_increase$%.
 Item_Energizer_legendaryname									Tenacious
@@ -2419,8 +2419,8 @@ Item_Zealotsblade_Empower_3_description							Increases Movement Speed by $moves
 
 // Soulstealer
 Item_Soulstealer_name											Soulstealer
-Item_Soulstealer_description									+$manamax$ Mana\n$vamp$% Magic Lifesteal. Half for area of effect abilities. 
-Item_Soulstealer_description_simple								Grants Mana and Magic Lifesteal
+Item_Soulstealer_description									+$manamax$ Mana\n Dealing magic damage burns enemies, dealing true damage equal to 4% of their current health over 3 sec.
+Item_Soulstealer_description_simple								Grants Mana and Pure DOT damage
 Item_Soulstealer_bonusdescription								Increases the magic vampiric by $common_increase$%.
 Item_Soulstealer_legendaryname									Mana Draining
 Item_Soulstealer_legendarydescription							Restores $mana$ mana upon killing an enemy unit.
@@ -2433,7 +2433,7 @@ Item_Soulstealer_Empower_3_description							Grants $resistance_enchant$ Magic A
 
 // Slayer
 Item_Slayer_name												Numbing Lantern
-Item_Slayer_description											+$health$ Health\nWhen you will cause damage an enemy 3 times, their Power is lowered by $power_reduction$%. Lasts 6 seconds.
+Item_Slayer_description											+$power$ Power\nWhen you will cause damage an enemy 3 times, their Power is lowered by $power_reduction$%. Lasts 6 seconds.
 Item_Slayer_description_simple									Increases Health. Reduces enemy Power after 3 attacks.
 Item_Slayer_bonusdescription									Increases power reduction of the item by $common_increase$%.
 Item_Slayer_legendaryname										Ruin
@@ -2542,7 +2542,7 @@ Item_OraclesTrinket_Empower_2_description						Cleanses all allies in a 500 radi
 
 // Item_TwinFang
 Item_TwinFang_name												Arcane Emblem
-Item_TwinFang_description										+7 Power\nMagic attacks now penetrate 20 Magic Armor.
+Item_TwinFang_description										+7 Power\nMagic attacks now penetrate 20 Magic Armor.\n $magiclifesteal$% Magic lifesteal
 Item_TwinFang_description_simple								Grants Power and ability Magic Armor penetration
 Item_TwinFang_Empower_1_name									Siphoning
 Item_TwinFang_Empower_1_description								$spellsteal_enchant$% Magic Lifesteal.
@@ -2657,7 +2657,7 @@ Item_Dark_Bargain_Empower_3_description
 
 // Item_Unstable_Shard
 Item_Unstable_Shard_name										Unstable Shard
-Item_Unstable_Shard_description									Each kill/assist grants a $cd_lower$% reduction of current cooldowns.\n\n^091Activate: Instantly regenerate 1000 mana. Gain +500 max mana & 75% Cooldown Reduction for 9 seconds.\n\nOn expiration, you take 1500 Pure Damage & a mini-stun while dealing 250 Pure Damage to nearby enemies within 250 AoE.^*
+Item_Unstable_Shard_description									+$power$ Power\nEach kill/assist grants a $cd_lower$% reduction of current cooldowns.\n\n^091Activate: Instantly regenerate 1000 mana. Gain +500 max mana & 75% Cooldown Reduction for 9 seconds.\n\nOn expiration, you take 1500 Pure Damage & a mini-stun while dealing 250 Pure Damage to nearby enemies within 250 AoE.^*
 Item_Unstable_Shard_description_simple							Kills and assists reduce current cooldowns.\n^091Activate: Gain Cooldown Reduction, then explode.^*
 Item_Unstable_Shard_Empower_1_name								Greed	
 Item_Unstable_Shard_Empower_1_description						Gain 90% Cooldown Reduction on activation, but take +750 additional Pure Damage on expiration.
@@ -2776,9 +2776,9 @@ State_Ganker_Ult_3_name_FRAME_effect
 Ability_Luster_Passive_1_name									Luster Touch
 Ability_Luster_Passive_2_name									Luster Touch
 Ability_Luster_Passive_3_name									Luster Touch
-Ability_Luster_Passive_1_description							Increases gold from creeps by 4.Your attacks deal 35% splash damage.
-Ability_Luster_Passive_2_description							Increases gold from creeps by 4.Your attacks deal 35% splash damage.
-Ability_Luster_Passive_3_description							Increases gold from creeps by 4.Your attacks deal 35% splash damage.
+Ability_Luster_Passive_1_description							Increases gold from creeps by 3.Your attacks deal 35% splash damage.
+Ability_Luster_Passive_2_description							Increases gold from creeps by 3.Your attacks deal 35% splash damage.
+Ability_Luster_Passive_3_description							Increases gold from creeps by 3.Your attacks deal 35% splash damage.
 Ability_Luster_Passive_1_description_simple						Increases gold from creeps.
 Ability_Luster_Passive_2_description_simple						Increases gold from creeps.
 Ability_Luster_Passive_3_description_simple						Increases gold from creeps.
@@ -2926,9 +2926,9 @@ Ability_Pusher_Ult_3_description_simple							Activate to buff allied brawlers.
 Ability_Razer_Passive2_1_name									Savagery
 Ability_Razer_Passive2_2_name									Savagery
 Ability_Razer_Passive2_3_name									Savagery
-Ability_Razer_Passive2_1_description							Increases attack damage by 9.10% physical armor penetration, 5% lifesteal
-Ability_Razer_Passive2_2_description							Increases attack damage by 9.10% physical armor penetration, 5% lifesteal
-Ability_Razer_Passive2_3_description							Increases attack damage by 9.10% physical armor penetration, 5% lifesteal
+Ability_Razer_Passive2_1_description							Increases attack damage by 9.10% physical armor penetration, 7% lifesteal
+Ability_Razer_Passive2_2_description							Increases attack damage by 9.10% physical armor penetration, 7% lifesteal
+Ability_Razer_Passive2_3_description							Increases attack damage by 9.10% physical armor penetration, 7% lifesteal
 Ability_Razer_Passive2_1_description_simple						Increases attack damage.
 Ability_Razer_Passive2_2_description_simple						Increases attack damage.
 Ability_Razer_Passive2_3_description_simple						Increases attack damage.

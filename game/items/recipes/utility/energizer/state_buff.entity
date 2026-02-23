@@ -5,7 +5,7 @@
 	passiveeffect="effects/state.effect"
 	icon="icon.tga"
 	
-	movespeed="100"
+	movespeed="130"
 	unitwalking="true"
 
 	

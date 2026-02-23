@@ -7,7 +7,7 @@
 	
 	cost="750"
 	components="Item_GlovesOfHaste Item_Blade Item_Healthstone"  
-	maxhealth="150"
+	power="6"
 	
 	actiontype="passive"
 	legendaryeffect="Legendary_Slayer"
@@ -19,7 +19,7 @@
 >
 	<!--tooltip only -->
 	<constant name="power_reduction" value="25" qualityvalue="0.7" adjustment="none" qualityadjustment="common" op="add"/>
-	<constant name="health" value="150" qualityvalue="15" adjustment="none" qualityadjustment="common" op="add"/>
+	<constant name="power" value="6" qualityvalue="6" adjustment="none" qualityadjustment="common" op="add"/>
 
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="amp_legendary" value="2.5" qualityvalue="2.5" adjustment="none" qualityadjustment="legendary" op="add"/>
