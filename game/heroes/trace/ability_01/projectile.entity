@@ -2,7 +2,7 @@
 <projectile
 	name="Projectile_Trace_Ability1"
 
-	speed="2000"
+	speed="1300"
 	
 
 	preglobalscale="1.75"
@@ -15,7 +15,7 @@
 	
 	canturn="true"
 
-	lifetime="1300"
+	lifetime="1600"
 	
 	
 	touchradiusdiradjust="true"

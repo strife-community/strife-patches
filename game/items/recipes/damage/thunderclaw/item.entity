@@ -19,7 +19,7 @@
 	
 	showinpractice="true"
 >	
-	<constant name="damage" value="30" adjustment="item" qualityvalue="4.5" qualityadjustment="common" op="add"/>
+	<constant name="damage" value="45" adjustment="item" qualityvalue="4.5" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 
 	<!--Tooltip only-->
