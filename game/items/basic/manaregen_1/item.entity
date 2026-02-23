@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Manaregen1"
+
+	icon="icon.tga"
+	actiontype="passive"
+	
+	cost="410"
+	craftingvalue="400"
+	
+	basemanaregen="1.0"
+	
+	craftingcomponent="true"
+	filters="mana_regen_comp1,mana_regen_comp,components"
+	
+	showinpractice="true"
+>
+</item>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_TwinFang_Empower_3"
+	
+	cost="1000"
+	maxmanapercharge="4"
+	maxcharges="25"
+
+>
+
+	<!-- Tooltip only -->
+	<constant name="mana" value="4" adjustment="none"  />
+
+
+	<ondamage>
+		<damageeffecttype effecttype="Magic" >
+			<damageeffecttype effecttype="Indirect" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<targettype type="hero">
+						<addcharges />
+					</targettype>
+				</else>
+			</else>
+		</damageeffecttype>
+	</ondamage>
+
+</qualityitem>

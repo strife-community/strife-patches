@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_TwinFang_Empower_2"
+	
+	cost="850"
+	
+	resistance="-5"
+	modifierkey="twinfang_empower_2"
+
+>
+	<!-- Tooltip only -->
+	<constant name="resistance" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	<constant name="penetration_enchant" value="5" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+	
+	
+</qualityitem>

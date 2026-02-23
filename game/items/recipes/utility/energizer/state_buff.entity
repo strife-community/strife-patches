@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Energizer_Buff"
+	
+	passiveeffect="effects/state.effect"
+	icon="icon.tga"
+	
+	movespeed="100"
+	unitwalking="true"
+
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onimpact>
+
+	</onimpact>
+
+	<oninflict>
+		<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+	</oninflict>
+
+	<modifier key="energizer_empower_1" modpriority="100"
+		slowresistance="0.2"
+		>
+	</modifier>
+
+	<modifier key="energizer_empower_4" modpriority="100"
+		movespeed="150"
+		>
+	</modifier>
+</state>

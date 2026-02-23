@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Diamond"
+
+	icon="icon.tga"
+	actiontype="passive"
+	
+	cost="780"
+	craftingvalue="800"
+	
+	maxmana="120"
+	
+	craftingcomponent="true"
+	filters="mana_comp2,mana_comp,components"
+	
+	showinpractice="true"
+>
+</item>

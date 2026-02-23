@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Brain"
+
+	icon="icon.tga"
+	actiontype="passive"
+	
+	cost="1105"
+	craftingvalue="1200"
+	
+	maxmana="170"
+	
+	craftingcomponent="true"
+	filters="mana_comp3,mana_comp,components"
+	
+	showinpractice="true"
+>
+</item>

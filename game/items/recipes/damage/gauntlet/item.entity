@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Gauntlet"
+
+	icon="icon.tga"
+	legendaryicon="l_icon.tga"
+	
+	cost="450"
+	components="Item_Blade Item_Healthstone"
+	
+	actiontype="passive"	
+	filters="defense,ability,attack,power,health"
+	maxcharges="120"
+
+	power="9"
+	powerperquality="0.9"
+	maxhealth="130"
+	maxhealthperquality="13"
+	maxhealthpercharge="1"
+
+	empoweredeffects="Item_Gauntlet_Empower_1,Item_Gauntlet_Empower_3,Item_Gauntlet_Empower_4"
+	
+	showinpractice="true"
+>
+	<constant name="power" value="9" qualityvalue="0.9" adjustment="none" qualityadjustment="common" op="add"/>
+	<constant name="hp" value="130" qualityvalue="13" adjustment="none" qualityadjustment="common" op="add"/>
+	<constant name="common_increase" value="0" qualityvalue="10" adjustment="none" qualityadjustment="common" op="add"/>
+
+	<onpurchase>
+		<setscriptvalue name="recipe_purchase" value="1" />
+	</onpurchase>
+
+	<modifier key="tutorial2mod" modpriority="100" nosell="true" />
+
+</crafteditem>

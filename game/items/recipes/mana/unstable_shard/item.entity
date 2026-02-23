@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crafteditem
+	name="Item_Unstable_Shard"
+	
+	statuseffecttooltip="State_Unstable_Shard"
+	icon="icon.tga"
+
+	cost="1265"
+	components="Item_Brain Item_Brain Item_Relic"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="250"
+	castactiontime="250"
+	anim="item_1"
+	
+	cooldowntime="180000"
+	
+	noentercombat="true"
+	casteffect="effects/sound.effect"
+	botitem="TargetEnemyItem"	
+	filters="mana,power,ability"
+	empoweredeffects="Item_Unstable_Shard_Empower_1,Item_Unstable_Shard_Empower_2"
+	showinpractice="true"
+>
+	<constant name="cd_reduction" value="10" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="mana" value="1000" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="damage" value="1500" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="enemy_damage" value="250" adjustment="item" qualityvalue="1" qualityadjustment="common" op="add"/>
+	<constant name="cd_lower" value="15" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+
+	<constant name="legendary" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
+	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="refresh_enchant" value="100" adjustment="none" qualityvalue="1" qualityadjustment="common" op="add"/>
+	
+	<onimpact>
+		<resetcooldown/>
+		<startcooldown />
+		<getconstant name="mana"/>
+		<setvar0 a="result" b="1" op="mult" />
+		<givemana amount="var0"/>
+		<applystate name="State_Unstable_Shard_Mana" duration="9250" />
+		<applystate name="State_Unstable_Apply" duration="9500" />
+	</onimpact>
+	
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<pushability entity="source_entity" slot="0"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="1"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="2"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="3"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+	
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>
+				<targettype type="self" />
+				<else>
+					<pushability entity="source_entity" slot="0"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="1"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="2"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+					
+					<pushability entity="source_entity" slot="3"/>
+					<getconstant name="cd_lower" adjustmentsource="none" />
+					<setvar0 a="result" b="100" op="div"/>
+					<reducecooldown duration="0" entity="stack_entity" />
+					<setvar1 a="result" b="var0" op="mult"/>
+					<setvar2 a="result" b="1000" op="mult"/>
+					<reducecooldown duration="var2" entity="stack_entity" />
+				</else>
+			</else>
+		</targettype>
+	</onassist>
+
+	
+</crafteditem>

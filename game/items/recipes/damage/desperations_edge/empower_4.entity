@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_DesperationsEdge_Empower_4"
+	
+	cost="900"
+	magiclifesteal="0.03"
+
+>
+	<!-- Tooltip only -->
+	<constant name="spellsteal_enchant" value="3" adjustment="none" qualityvalue="0" qualityadjustment="legendary" op="add" />
+
+</qualityitem>

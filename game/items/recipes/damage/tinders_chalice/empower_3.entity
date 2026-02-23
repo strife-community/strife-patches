@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualityitem
+	name="Item_Tinders_Chalice_Empower_3"
+
+	cost="825"
+	supportmultiplier="0.03"
+>
+	<constant name="support_enchant" value="3" adjustment="none" />
+
+</qualityitem>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Manastone"
+
+	icon="icon.tga"
+	actiontype="passive"
+	
+	cost="390"
+	craftingvalue="400"
+	
+	maxmana="60"
+	
+	craftingcomponent="true"
+	filters="mana_comp1,mana_comp,components"
+	
+	showinpractice="true"
+>
+</item>

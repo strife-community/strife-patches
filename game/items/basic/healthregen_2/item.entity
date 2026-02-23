@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Sustainer"
+	
+	icon="icon.tga"
+	
+	cost="815"
+	craftingvalue="800"
+
+	actiontype="passive"
+
+	basehealthregen="3.8"
+	
+	craftingcomponent="true"
+	filters="health_regen_comp2,health_comp,components,health_regen_comp"
+	
+	showinpractice="true"
+>
+</item>
