@@ -46,10 +46,10 @@
 		<applystate name="State_Trace_Ability1_BoomerangOut" target="source_entity" duration="-1" proxy="this_entity" />
 		<applystate name="State_Trace_Ability1_CatchDelay" duration="100" target="source_entity" />
 		
-		<setpos0 position="source_position" offset="0 50 100" offsetspace="source_entity" />
-		<setpos1 position="target_position" offset="0 50 50" offsetspace="source_entity"/>
-		<setpos2 position="target_position" offset="0 50 50" offsetspace="source_entity"/>
-		<setpos3 position="source_position" offset="0 50 100" offsetspace="source_entity"/>
+		<setpos0 position="source_position" offset="0 50 50" offsetspace="source_entity" />
+		<setpos1 position="target_position" offset="-500 350 100" offsetspace="source_entity"/>
+		<setpos2 position="target_position" offset="700 350 100" offsetspace="source_entity"/>
+		<setpos3 position="source_position" offset="-150 -500 50" offsetspace="source_entity"/>
 		<spawnprojectile name="Projectile_Trace_Ability1" source="pos0" target="target_position" bezier="true" bezierpoint0="pos0" bezierpoint1="pos1" bezierpoint2="pos2" bezierpoint3="pos3"/>
 	</onimpact>
 

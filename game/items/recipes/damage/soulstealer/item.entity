@@ -6,23 +6,31 @@
 	icon="icon.tga"
 	cost="1250"
 	components="Item_Manastone Item_Relic"
-	magiclifesteal="0.30"
+	
 
 	actiontype="passive"
 
-	maxmana="200"
-	maxmanaperquality="10.0"
+	maxmana="100"
 
-	filters="ability,spell_vamp,lifesteal,maxmana,mana"
+
+	filters="ability,maxmana,mana"
 
 	empoweredeffects="Item_Soulstealer_Empower_1,Item_Soulstealer_Empower_2,Item_Soulstealer_Empower_3"
 	
 	showinpractice="true"
 >	
-	<constant name="vamp" value="30" adjustment="none" qualityvalue="3.0" qualityadjustment="common" op="add"/>
+	
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
-	<constant name="manamax" value="200" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
+	<constant name="manamax" value="100" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="mana" value="3" adjustment="none" qualityvalue="3" qualityadjustment="legendary" op="add"/>
+	
+	<onattackingdamageevent>
+	   <damageeffecttype effecttype="Magic">
+	     <cantarget targetscheme="enemy_units" effecttype="">
+		   <applystate name="State_Leandry_Debuff" target="target_entity" duration="3000" />
+		 </cantarget>
+	    </damageeffecttype>
+	</onattackingdamageevent>	
 
 
 

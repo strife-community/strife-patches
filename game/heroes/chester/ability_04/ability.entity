@@ -17,6 +17,7 @@
 	manacost="100,125,150"
 	cooldowntime="75000,70000,65000"
 	casteffecttype=""
+	reducedcooldowns=".10,.15,.20"
 	
 	showareacast="true"
 	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
@@ -28,6 +29,7 @@
 
 >
 	<constant name="damage" value="90,120,150" adjustment="ability" />
+	<constant name="reducedcooldowns" value="10,15,20" adjustment="ability" noshowintooltip="true"/>
 	
 	<onimpact>
 		<applystate name="State_Chester_Ability4_Data" duration="8000" target="source_entity" />

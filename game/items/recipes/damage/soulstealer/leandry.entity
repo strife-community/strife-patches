@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Leandry_Debuff"
+
+	icon="icon.tga"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+
+	
+	passiveeffect="effects/impact.effect"
+	
+	
+>
+	<onframe>
+		 <evaluate a="target_health" b="0.04" op="mult" />		
+		 <evaluate a="result" b="frametime" op="mult" />
+		 <damage effecttype="Familiar DOT" amount="0" b="result" op="add" nonlethal="true" />
+	</onframe>
+	
+     
+</state>

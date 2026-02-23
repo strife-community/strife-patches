@@ -22,7 +22,7 @@
 >
 
 	<constant name="power" value="10" adjustment="none" qualityvalue="0.8" qualityadjustment="common" op="add"/>
-	<constant name="damage" value="45" adjustment="item" qualityvalue="5" qualityadjustment="common" op="add" />
+	<constant name="damage" value="65" adjustment="item" qualityvalue="5" qualityadjustment="common" op="add" />
 
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add" />
 

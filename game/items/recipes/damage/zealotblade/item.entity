@@ -20,13 +20,13 @@
 	
 	showinpractice="true"
 >
-	<constant name="attackspeed" value="27" adjustment="none" qualityvalue="2.7" qualityadjustment="common" op="add"/>
+	<constant name="attackspeed" value="30" adjustment="none" qualityvalue="3" qualityadjustment="common" op="add"/>
 	<constant name="movespeed" value="35" adjustment="none" qualityvalue="3.5" qualityadjustment="common" op="add"/>
 	<constant name="common_increase" value="0" adjustment="none" qualityvalue="10" qualityadjustment="common" op="add"/>
 	<constant name="power" value="2" adjustment="none" qualityvalue="2" qualityadjustment="legendary" op="add"/>
 	<constant name="baseattackspeed" value="5" adjustment="none" qualityvalue="5" qualityadjustment="legendary" op="add"/>
 	<modifier key="zealotsblade" modpriority="75" exclusive="true" legendaryeffect="Legendary_Zealotsblade"
-		baseattackspeed="0.27" 
+		baseattackspeed="0.30" 
 		movespeed="35"
 		baseattackspeedperquality="0.027"
 		movespeedperquality="3.5"

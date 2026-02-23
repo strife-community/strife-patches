@@ -4,7 +4,7 @@
 
 	icon="icon.tga"
 	
-	cost="750"
+	cost="1250"
 	components="Item_Blade Item_Blade Item_Blade"
 	craftingmaxcomponents="3"
 	
@@ -12,6 +12,7 @@
 	
 	power="7"
 	filters="power,ability"
+	magiclifesteal="0.20"
 
 	empoweredeffects="Item_TwinFang_Empower_1,Item_TwinFang_Empower_2,Item_TwinFang_Empower_3"
 	
@@ -19,6 +20,7 @@
 >
 	<constant name="power" value="7" adjustment="none" qualityvalue="0.7" qualityadjustment="common" op="add"/>
 	<constant name="penetration" value="20" adjustment="none" qualityvalue="2.0" qualityadjustment="common" op="add"/>
+	<constant name="magiclifesteal" value="20" adjustment="none" qualityvalue="0" qualityadjustment="common" op="add"/>
 	
 	<onattackingdamageevent>
 		<getconstant name="penetration" adjustmentsource="none" />
