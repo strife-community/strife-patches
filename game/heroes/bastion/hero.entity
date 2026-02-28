@@ -71,6 +71,10 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+    abilityreadyannouncement="sounds/voice/vo_attack_2.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom.wav"
 	
 	preglobalscale="1.35"
 	modelscale=".975"
@@ -98,7 +102,7 @@
 	turnrate="900"
 	turnsmoothing="0.01"
 	
-	maxhealth="995,1067,1138,1211,1283,1355,1427,1500,1571,1644,1716,1787,1860,1931,2004"
+	maxhealth="765,837,908,981,1053,1125,1197,1270,1341,1414,1486,1557,1630,1701,1774"
 	maxhealthperlevel="0"
 	healthregen="3.08,3.3,3.52,3.74,3.96,4.18,4.4,4.62,4.84,5.06,5.28,5.5,5.72,5.94,6.16"
 	healthproportionregen="0"
@@ -110,10 +114,7 @@
 	manaregen="2.11,2.16,2.20,2.24,2.29,2.33,2.37,2.42,2.46,2.51,2.55,2.59,2.64,2.68,2.72"
 	manaproportionregen="0.0"
 
-	resistance="20"
-	resistanceperlevel="2.5"
-	mitigation="10"
-	mitigationperlevel="2.5"
+	resistance="10"
 
 	inventory0="Ability_Bastion1"
 	inventory1="Ability_Bastion2"

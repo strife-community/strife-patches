@@ -33,7 +33,7 @@
 
     queue="dropmovement"
     
-    maxcharges="2,3,4"
+    maxcharges="2"
     
     showareacast="true"
     areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
@@ -45,19 +45,12 @@
     
     <onlearn>
         <setcharges a="2" />
-    </onlearn> 
-	
-	<onupgrade>
-	<resetcooldown/>
-	 <addcharges/>
-    </onupgrade>
-    
-	
+    </onlearn>
     
     
     <ontimer>
         <addcharges entity="this_entity" count="1" />
-        <compare a="charges" b="2,3,4" op="lt">
+        <compare a="charges" b="2" op="lt">
             <getconstant name="cooldown" nameb="sec_to_msec_mult" op="mult" />
             <starttimer duration="result" applycooldownreduction="true"/>
         </compare>
@@ -65,13 +58,13 @@
     
     <!--TODO: doesn't work for some reason
     <onrefresh>
-        <setcharges a="2,3,4" />
+        <setcharges a="2" />
         <resettimer />
     </onrefresh>
     -->
 
     <onimpact>
-        <compare a="charges" b="2,3,4" op="eq">
+        <compare a="charges" b="2" op="eq">
             <getconstant name="cooldown" nameb="sec_to_msec_mult" op="mult" />
             <starttimer duration="result" applycooldownreduction="true"/>
         </compare>

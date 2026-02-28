@@ -7,7 +7,6 @@
     passiveeffect="effects/state_self.effect"
     effecttype="StatusBuff"
     allowtransfer="true"
-	attackrange="50"
 
 >
     <!-- Increasing attack damage. Starting with damage event -->
