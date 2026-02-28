@@ -7,15 +7,16 @@
 >
 	<constant name="duration_enchant" value="2" adjustment="item" />
 	
-	<onimpact>
-		<getconstant name="gold" adjustmentsource="none" />
-		<compare a="target_gold" b="result" op="ge" >
-			<spendgold amount="500" position="source_entity" />
-				<addcharges count="1" duration="10000" />
-				<applystate name="State_Bargain_Timer" duration="10000" proxy="this_entity" />
-				<starttimer duration="10000" />
-			<popup name="dark_bargain" source="source_entity" target="source_entity" />
-		</compare>
-	</onimpact>
+    <onimpact>
+        <getconstant name="gold" adjustmentsource="none" />
+        <compare a="target_gold" b="result" op="ge" >
+            <spendgold amount="500" position="source_entity" />
+                <addcharges count="1" duration="10000" />
+                <applystate name="State_Bargain_Timer" duration="10000" proxy="this_entity" />
+                <applystate name="State_Bargain_Permanent" continuous="true" proxy="this_entity" />
+                <starttimer duration="10000" />
+            <popup name="dark_bargain" source="source_entity" target="source_entity" />
+        </compare>
+    </onimpact>
 		
 </qualityitem>
