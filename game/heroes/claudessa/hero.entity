@@ -23,8 +23,8 @@
 	heroselectflavorannouncement="sounds/voice/vo_selecthero_2.wav"
 	confirmmovesound="sounds/voice/vo_move_%.wav"
 	confirmattacksound="sounds/voice/vo_attack_%.wav"
-	nomanasound="sounds/voice/vo_oom.wav"
-	cooldownsound="sounds/voice/vo_cooldown.wav"
+	nomanasound="sounds/voice/vo_oom_%.wav"
+	cooldownsound="sounds/voice/vo_cooldown_%.wav"
 	streaksound="sounds/voice/vo_ck_2.wav,sounds/voice/vo_ck_3.wav,sounds/voice/vo_ck_4.wav,sounds/voice/vo_ck_5.wav"
 	
 	creepkillannouncement="sounds/voice/vo_lasthit_1.wav,sounds/voice/vo_lasthit_2.wav,sounds/voice/vo_lasthit_3.wav"
@@ -73,6 +73,10 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+    abilityreadyannouncement="sounds/voice/vo_sporadickill_2.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown_%.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom_2.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom_%.wav"
 	
 	preglobalscale="1.9"
 	modelscale="1.1"
@@ -94,7 +98,7 @@
 	turnrate="900"
 	turnsmoothing="0.01"
 	
-	maxhealth="920,988,1055,1123,1190,1258,1326,1393,1461,1528,1596,1664,1730,1797,1865"
+	maxhealth="708,776,843,911,978,1046,1114,1181,1249,1316,1384,1452,1518,1585,1653"
 	maxhealthperlevel="0"
 	healthregen="3.08,3.3,3.52,3.74,3.96,4.18,4.4,4.62,4.84,5.06,5.28,5.5,5.72,5.94,6.16"
 	healthproportionregen="0"
@@ -106,10 +110,7 @@
 	manaregen="1.89,1.92,1.96,2.00,2.04,2.08,2.12,2.16,2.20,2.24,2.27,2.31,2.35,2.39,2.43"
 	manaproportionregen="0.0"
 
-    resistance="20"
-	resistanceperlevel="2.5"
-	mitigation="10"
-	mitigationperlevel="2.5"
+	resistance="10"
 
 	inventory0="Ability_Claudessa1"
 	inventory1="Ability_Claudessa2"

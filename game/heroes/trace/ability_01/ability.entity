@@ -40,7 +40,7 @@
 
 
 
-	<constant name="percent_damage" value="90,105,120,135" adjustment="none" />
+	<constant name="percent_damage" value="80,95,110,125" adjustment="none" />
 	
 	<onimpact>
 		<applystate name="State_Trace_Ability1_BoomerangOut" target="source_entity" duration="-1" proxy="this_entity" />
