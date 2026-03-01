@@ -64,8 +64,8 @@ function registerGameTimers()
 	local cindaraTimerPrefix 	= 'gameCooldownSquareCindara'
 	
 	local pregameDuration = 60000
-	local baldir_First_Spawn_Time = 120000
-	local cindara_First_Spawn_Time = 60000
+	local bossSpawnTime = 60000
+	local timeBeforeInitialBossSpawn = pregameDuration + bossSpawnTime
 
 	object:GetWidget('gameTimer'):RegisterWatchLua('MatchTime', function(widget, trigger) 
 		if (trigger.matchTime >= 0) and (trigger.matchTime <= 4000000000) then
@@ -75,7 +75,7 @@ function registerGameTimers()
 		end
 	end)
 	
-	local function registerBoss(bossPrefix, trigger, first_Spawn_Time)
+	local function registerBoss(bossPrefix, trigger)
 		local bossPanel 			= object:GetWidget(bossPrefix)
 		local bossCooldownLabel 	= object:GetWidget(bossPrefix .. '_cooldownText')
 		local bossCooldownPie 		= object:GetWidget(bossPrefix .. '_cooldown')
@@ -148,22 +148,21 @@ function registerGameTimers()
 		-- before boss spawn
 		bossCooldownPie:RegisterWatchLua('MatchTime', function(widget, trigger)
 			local nTime = getTimeSinceStart()
-            local time_with_pregame = first_Spawn_Time + pregameDuration
-			if (nTime > time_with_pregame) then
+			if (nTime > timeBeforeInitialBossSpawn) then
 				bossCooldownPie:UnregisterWatchLua('MatchTime')
 				widget:SetVisible(false)
 				bossCooldownLabel:SetVisible(false)
 				return
 			end
-			widget:SetVisible((first_Spawn_Time-nTime) > 0)
-			bossCooldownLabel:SetVisible((first_Spawn_Time-nTime) > 0)
-			bossCooldownLabel:SetText(libNumber.timeFormat(first_Spawn_Time-nTime))
-			widget:SetValue(1-((pregameDuration+nTime) / (time_with_pregame)))
+			widget:SetVisible((bossSpawnTime-nTime) > 0)
+			bossCooldownLabel:SetVisible((bossSpawnTime-nTime) > 0)
+			bossCooldownLabel:SetText(libNumber.timeFormat(bossSpawnTime-nTime))
+			widget:SetValue(1-((pregameDuration+nTime) / (timeBeforeInitialBossSpawn)))
 		end)
 	end
 
-	registerBoss(cindaraTimerPrefix, 'SpawnerInfo0', cindara_First_Spawn_Time)	-- Cindara
-	registerBoss(baldirTimerPrefix, 'SpawnerInfo1', baldir_First_Spawn_Time)		-- Baldir
+	registerBoss(cindaraTimerPrefix, 'SpawnerInfo0')	-- Cindara
+	registerBoss(baldirTimerPrefix, 'SpawnerInfo1')		-- Baldir
 end
 
 

@@ -71,6 +71,10 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+    abilityreadyannouncement="sounds/voice/vo_attack_2.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown_%.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom_%.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom_%.wav"
 	
 	preglobalscale="1.4"
 	modelscale="1.1"
@@ -99,7 +103,7 @@
 	roleutility="4"
 	
 	
-	maxhealth="920,988,1055,1123,1190,1258,1326,1393,1461,1528,1596,1664,1730,1797,1865"
+	maxhealth="708,776,843,911,978,1046,1114,1181,1249,1316,1384,1452,1518,1585,1653"
 	maxhealthperlevel="0"
 	healthregen="2.83,3.04,3.25,3.46,3.67,3.88,4.09,4.3,4.51,4.72,4.93,5.14,5.35,5.56,5.77"
 	healthproportionregen="0"
@@ -112,9 +116,6 @@
 	manaproportionregen="0.0"
 
 	resistance="10"
-	resistanceperlevel="1.5"
-	mitigation="10"
-	mitigationperlevel="1.5"
 
 	inventory0="Ability_Malph1"
 	inventory1="Ability_Malph2"
@@ -131,7 +132,6 @@
 
 
 	power="100"
-	powerperlevel="2"
 	attackduration="500"
 	attackactiontime="200"
 	attackcooldown="1100"

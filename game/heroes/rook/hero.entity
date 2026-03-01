@@ -71,6 +71,10 @@
 	watchoutannouncement="sounds/voice/vo_ping_watchout.wav"
 	wellannouncement="sounds/voice/vo_ping_well.wav"
 	wellplayedannouncement="sounds/voice/vo_ping_wellplayed.wav"
+    abilityreadyannouncement="sounds/voice/vo_attack_1.wav"
+    abilitycooldownannouncement="sounds/voice/vo_cooldown.wav"
+    abilitynomanaannouncement="sounds/voice/vo_oom.wav"
+    abilitycooldownnomanaannouncement="sounds/voice/vo_oom.wav"
 	
 	preglobalscale="1.6"
 	modelscale="1.0"
@@ -89,7 +93,7 @@
 
 	category="magic"
 	difficulty="4"
-	movespeed="355"
+	movespeed="330"
 	turnrate="900"
 	turnsmoothing="0.01"
 	
@@ -99,7 +103,7 @@
 	rolemagicdamage="0"
 	roleutility="2"
 
-	maxhealth="832,889,946,1003,1060,1118,1175,1232,1289,1346,1404,1461,1518,1575,1632"
+	maxhealth="640,697,754,811,868,926,983,1040,1097,1154,1212,1269,1326,1383,1440"
 	maxhealthperlevel="0"
 	healthregen="1.91,2.04,2.17,2.3,2.43,2.56,2.69,2.82,2.95,3.08,3.21,3.34,3.47,3.6,3.73"
 	healthproportionregen="0"
@@ -112,9 +116,6 @@
 	manaproportionregen="0.0"
 
 	resistance="10"
-	resistanceperlevel="1.5"
-	mitigation="10"
-	mitigationperlevel="1.5"
 
 	inventory0="Ability_Rook1"
 	inventory1="Ability_Rook2"
